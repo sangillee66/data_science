@@ -19,7 +19,7 @@ website:
       - text: "---"    
       - section: "Exercises"
         contents:   
-          - overview_exer.qmd
+          - overview_exec.qmd
 
   bread-crumbs: false
   back-to-top-navigation: true
