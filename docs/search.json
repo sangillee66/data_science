@@ -5,5 +5,56 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "웹사이트 소개",
+    "section": "",
+    "text": "이 웹사이트는 데이터 사이언스( Data Science)를 위한 개인 공부방으로 디자인되었다 .\n하지만 서울대학교에서 내가 개설한 데이터 사인언스 관련 교과목의 보충 웹사이트로 활용될 수도 있다.\n\n2024/1 M3450.001400 AI 융합교육을 위한 인문사회 컨텐츠 설계 (Designing Human and Social Education Contents for AI Convergence Education)",
+    "crumbs": [
+      "웹사이트 소개"
+    ]
+  },
+  {
+    "objectID": "index.html#웹사이트의-목적",
+    "href": "index.html#웹사이트의-목적",
+    "title": "웹사이트 소개",
+    "section": "",
+    "text": "이 웹사이트는 데이터 사이언스( Data Science)를 위한 개인 공부방으로 디자인되었다 .\n하지만 서울대학교에서 내가 개설한 데이터 사인언스 관련 교과목의 보충 웹사이트로 활용될 수도 있다.\n\n2024/1 M3450.001400 AI 융합교육을 위한 인문사회 컨텐츠 설계 (Designing Human and Social Education Contents for AI Convergence Education)",
+    "crumbs": [
+      "웹사이트 소개"
+    ]
+  },
+  {
+    "objectID": "index.html#웹사이트의-구조",
+    "href": "index.html#웹사이트의-구조",
+    "title": "웹사이트 소개",
+    "section": "웹사이트의 구조",
+    "text": "웹사이트의 구조\n\n데이터 사이언스 관련 내용을 모두 10개의 하위 섹션으로 나누었다.\n각 하위 섹션은 세 개의 컨텐츠를 갖는다.\n\n강의\n프레젠테이션\n실습",
+    "crumbs": [
+      "웹사이트 소개"
+    ]
+  },
+  {
+    "objectID": "index.html#참고문헌",
+    "href": "index.html#참고문헌",
+    "title": "웹사이트 소개",
+    "section": "참고문헌",
+    "text": "참고문헌\n\nWickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund, 2023, R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 2nd edition, Boston: O’Reilly. \n\n이 사이트의 내용은 위의 책에 많은 토대를 두고 있다.\n\nBonnell, Jerry, and Mitsunori Ogihara. 2023. Exploring Data Science with R and the Tidyverse. 1st edition. Chapman; Hall/CRC.\nIsmay, Chester, and Albert Y. Kim. 2024. Statistical Inference via Data Science: A ModernDive into R and the Tidyverse: A ModernDive into R and the Tidyverse. Boca Raton: Chapman; Hall/CRC.",
+    "crumbs": [
+      "웹사이트 소개"
+    ]
+  },
+  {
+    "objectID": "overview_lec.html",
+    "href": "overview_lec.html",
+    "title": "개요",
+    "section": "",
+    "text": "Back to top",
+    "crumbs": [
+      "Lectures",
+      "개요"
+    ]
   }
 ]
