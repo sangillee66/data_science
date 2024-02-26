@@ -1,6 +1,6 @@
 ---
-title: "개요"
+title: "R과 RStudio 소개"
 date-modified: last-modified
-number-sections: false
+number-sections: true
 lightbox: true
 ---
