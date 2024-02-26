@@ -9,13 +9,13 @@ website:
     contents: 
       - index.qmd
       - text: "---"    
-      - section: "Lectures"
+      - section: "R Lectures"
         contents: 
-          - overview_lec.qmd
-      - text: "---"    
-      - section: "Presentations"
-        contents:   
-          - overview_pres.qmd
+          - lec_01.qmd
+#      - text: "---"    
+#      - section: "Presentations"
+#        contents:   
+#          - overview_pres.qmd
       - text: "---"    
       - section: "Exercises"
         contents:   

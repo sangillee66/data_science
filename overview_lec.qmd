@@ -1,7 +1,0 @@
----
-title: "개요"
-date-modified: last-modified
-number-sections: false
-lightbox: true
-# suppress-bibliography: true
----
