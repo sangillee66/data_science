@@ -215,6 +215,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <a href="#%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0" id="toc-정리하기" class="nav-link" data-scroll-target="#%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0"><span class="header-section-number">4</span> 정리하기</a>
   <ul class="collapse">
 <li><a href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0-2" id="toc-데이터-살펴보기-2" class="nav-link" data-scroll-target="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0-2"><span class="header-section-number">4.1</span> 데이터 살펴보기</a></li>
+  <li><a href="#%EC%A3%BC%EC%9A%94-%ED%95%A8%EC%88%98" id="toc-주요-함수" class="nav-link" data-scroll-target="#%EC%A3%BC%EC%9A%94-%ED%95%A8%EC%88%98"><span class="header-section-number">4.2</span> 주요 함수</a></li>
   </ul>
 </li>
   <li><a href="#%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0" id="toc-불러오기" class="nav-link" data-scroll-target="#%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0"><span class="header-section-number">5</span> 불러오기</a></li>
@@ -775,8 +776,10 @@ $ time_hour      &lt;dttm&gt; 2013-01-01 05:00:00, 2013-01-01 05:00:00, 2013-01-
 12 China        2000 population 1280428583</code></pre>
 </div>
 </div>
-<section id="pivot_longer-함수" class="level4" data-number="4.1.1"><h4 data-number="4.1.1" class="anchored" data-anchor-id="pivot_longer-함수">
-<span class="header-section-number">4.1.1</span> <code>pivot_longer()</code> 함수</h4>
+</section><section id="주요-함수" class="level3" data-number="4.2"><h3 data-number="4.2" class="anchored" data-anchor-id="주요-함수">
+<span class="header-section-number">4.2</span> 주요 함수</h3>
+<section id="pivot_longer-함수" class="level4" data-number="4.2.1"><h4 data-number="4.2.1" class="anchored" data-anchor-id="pivot_longer-함수">
+<span class="header-section-number">4.2.1</span> <code>pivot_longer()</code> 함수</h4>
 <p><code>table4a</code>에서 1999과 2000은 변수명일 수 없다. <code>year</code>라는 변수의 속성이어야 한다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb39"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span></span>
@@ -797,8 +800,8 @@ $ time_hour      &lt;dttm&gt; 2013-01-01 05:00:00, 2013-01-01 05:00:00, 2013-01-
 6 China       2000  213766</code></pre>
 </div>
 </div>
-</section><section id="pivot_wider-함수" class="level4" data-number="4.1.2"><h4 data-number="4.1.2" class="anchored" data-anchor-id="pivot_wider-함수">
-<span class="header-section-number">4.1.2</span> <code>pivot_wider()</code> 함수</h4>
+</section><section id="pivot_wider-함수" class="level4" data-number="4.2.2"><h4 data-number="4.2.2" class="anchored" data-anchor-id="pivot_wider-함수">
+<span class="header-section-number">4.2.2</span> <code>pivot_wider()</code> 함수</h4>
 <p><code>table2</code>에서 <code>type</code> 변수는 두 개의 변수명을 포함하고 있다. 즉, <code>cases</code>와 <code>population</code>은 속성값이라기 보다는 변수명이다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb41"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider</a></span><span class="op">(</span></span>
