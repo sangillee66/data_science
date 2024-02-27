@@ -41,7 +41,7 @@ bibliography: references.bib
 
 -   스크립트 내에서 인스톨하기: `install.packages("패키지명")`
 
-쌍따옴표 속에 패키지 이름을 타이핑해야 한다. 한번 인스톨이 되면 업데이트하지 않는 한 새롭게 패키지를 인스톨할 필요가 없다. 인스톨된 패키지는 다음과를 사용하려면 스크립트 내에서 다음과 같이 타이핑하고 실행한다.
+쌍따옴표 속에 패키지 이름을 타이핑해야 한다. 한번 인스톨이 되면 업데이트하지 않는 한 새롭게 패키지를 인스톨할 필요가 없다. 인스톨된 패키지를 사용하려면 스크립트 내에서 다음과 같이 타이핑하고 실행한다.
 
 -   `library(패키지명)`
 
@@ -53,7 +53,7 @@ bibliography: references.bib
 
 ### tidyverse 패키지
 
-데이터사이언스 과정의 각 단계는 특징적인 과업으로 구성되어 있고, 거기에 맞춰 특징적인 함수들을 장착한 패키지들이 개발되어 왔다. 그런데 최근 RStudio는 데이터사이언스와 밀접히 관련된 패키지들을 모아 일종의 엄브렐러 패키지인 [`tidyverse`](https://www.tidyverse.org/)를 만들어 제공하고 있다. tidyverse 패키지는 패키지의 패키지인데, 핵심적인 구성 페키지에 다음과 같은 것들이 있다.
+데이터사이언스 과정의 각 단계는 특징적인 과업으로 구성되어 있고, 거기에 맞춰 특징적인 함수들을 장착한 패키지들이 개발되어 왔다. 그런데 최근 RStudio는 데이터사이언스와 밀접히 관련된 패키지들을 모아 일종의 엄브렐러 패키지인 [`tidyverse`](https://www.tidyverse.org/)를 만들어 제공하고 있다. tidyverse 패키지는 패키지의 패키지인데, 핵심적인 구성 패키지에 다음과 같은 것들이 있다.
 
 -   [`ggplot2`](https://ggplot2.tidyverse.org/): 시각화하기
 
@@ -95,13 +95,13 @@ library(palmerpenguins)
 penguins
 ```
 
-데이터의 자세히 살펴보면 몇 가지를 알 수 있다.
+데이터를 자세히 살펴보면 몇 가지를 알 수 있다.
 
--   티블(tibble)이라는 형식의 데이터 프레임이다.
+-   티블(tibble)이라는 형식의 데이터 프레임이다. 티블은 tidyverse의 공식 데이터 프레임 포맷이다.
 
 -   관측개체는 344개, 변수는 8개이다.
 
--   species, island, sex 변수의 유형은 팩트형(fctr)이고, bill_length_mm, bill_depth_mm은 실수형(dbl)이고, 나머지는 정수형(int)이다.
+-   `species`, `island`, `sex` 변수의 유형은 팩트형(`fctr`)이고, `bill_length_mm`, `bill_depth_mm`은 실수형(`dbl`)이고, 나머지는 정수형(`int`)이다.
 
 변수가 많아지면 전체 데이터를 조망하기 어렵기 때문에, 최초의 tidyverse 함수인 `glimpse()`를 사용하여 데이터의 행과 열을 바꾸어 보자.
 
@@ -111,11 +111,11 @@ glimpse(penguins)
 
 ### 그래프 만들기
 
-이 `penguins` 데이터와 `ggplot2()` 패키지를 이용하여 "펭귄의 날개 길이와 몸무게와의 관계"를 표현하는 그래프를 작성해 보자. `ggplot2()`의 문법에 대한 사항은 따로 공부할 기회가 있으므로 여기서는 제작 과정을 한 번 따라가 본다.
+이 `penguins` 데이터와 `ggplot2()` 패키지를 이용하여 "펭귄의 날개 길이와 몸무게의 관계"를 표현하는 그래프를 작성해 보자. `ggplot2()`의 문법에 대한 사항은 따로 공부할 기회가 있으므로 여기서는 제작 과정을 한 번 따라가 본다.
 
 #### 플롯 객체의 지정
 
-플롯 제작을 위한 시작이며, 어떤 데이터를 사용할지를 지정하는 단계이다.
+`ggplot()`이라는 함수를 통해 플롯 제작을 개시하는 단계이며, 어떤 데이터를 사용할지를 지정한다.
 
 ```{r}
 ggplot(data = penguins)
@@ -123,7 +123,7 @@ ggplot(data = penguins)
 
 #### 플롯의 심미성 지정
 
-데이터가 어떤 시각적 속성으로 표현될 것인가를 지정한다. 여기서는 간단히 어떤 변수가 x-축과 y-축에 나타나는지만 지정한다. `mapping = aes()` 아규먼트가 핵심이다.
+데이터가 어떤 시각적 속성으로 표현될 것인가를 지정한다. 여기서는 간단히 어떤 변수들이 x-축과 y-축에 나타나는지만 지정한다. `mapping = aes()` 아규먼트가 핵심이다.
 
 ```{r}
 ggplot(
@@ -158,7 +158,7 @@ ggplot(
 
 #### 기하 레이어의 첨가
 
-두 변수의 관련성을 보여주는 선형 기하를 첨가한다. 여기서는 OLS 회귀분석의 회귀선이다.
+두 변수의 관련성을 보여주는 선형 기하를 첨가한다. 여기서는 `geom_smooth()`를 이용하여 OLS 회귀선을 첨가한다.
 
 ```{r}
 ggplot(
@@ -192,7 +192,7 @@ ggplot(
 
 ### 데이터 살펴보기
 
-이 실습을 위해 미국 교통통계국(U.S. Bureau of Transportation)이 제공하는 데이터를 사용하는데, 이것은 2013년 한 해 동안 미국 뉴욕시를 출발한 336,776대에 대한 정보를 담고 있다. 이 데이터는 [`nycflights13`](https://github.com/tidyverse/nycflights13) 이라는 패키지에 포함되어 있으므로 해당 패키지를 불러온다. 그리고 나서 패키지에 포함되어 있는 `flights`라는 이름의 데이터를 불러온다.
+이 실습을 위해 미국 교통통계국(U.S. Bureau of Transportation)이 제공하는 데이터를 사용하는데, 이것은 2013년 한 해 동안 미국 뉴욕시를 출발한 336,776대의 항공기에 대한 정보를 담고 있다. 이 데이터는 [`nycflights13`](https://github.com/tidyverse/nycflights13) 이라는 패키지에 포함되어 있으므로 해당 패키지를 불러온다. 그리고 나서 패키지에 포함되어 있는 `flights`라는 이름의 데이터를 불러온다.
 
 ```{r}
 library(nycflights13)
@@ -205,7 +205,7 @@ glimpse(flights)
 
 #### `filter()` 함수
 
-특정 열(변수)에 의거해 조건을 만족하는 행을 솎아낸다. 무엇이 어떻게 바뀌었는지 살펴보라.
+특정 열(변수)에 의거해 조건을 만족하는 행을 솎아낸다. 함수가 무슨 일을 한 것인지 살펴보라.
 
 ```{r}
 filter(flights, month == 1 & day == 1)
@@ -213,7 +213,7 @@ filter(flights, month == 1 & day == 1)
 
 #### `arrange()` 함수
 
-특정 열(변수)에 의거해 행의 순서를 바꾼다. 무엇이 어떻게 바뀌었는지 살펴보라.
+특정 열(변수)에 의거해 행의 순서를 바꾼다. 함수가 무슨 일을 한 것인지 살펴보라.
 
 ```{r}
 arrange(flights, year, month, day)
@@ -221,7 +221,7 @@ arrange(flights, year, month, day)
 
 #### `distinct()` 함수
 
-특정 열(변수)에 의거해 (중복을 제거한) 고유한 행을 솎아 낸다. 무엇이 어떻게 바뀌었는지 살펴보라.
+특정 열(변수)에 의거해 (중복을 제거한) 고유한 행을 솎아 낸다. 함수가 무슨 일을 한 것인지 살펴보라.
 
 ```{r}
 distinct(flights, origin, dest)
@@ -233,7 +233,7 @@ distinct(flights, origin, dest)
 
 #### `select()` 함수
 
-열 중 일부를 솎아낸다. 무엇이 어떻게 바뀌었는지 살펴보라.
+열 중 일부를 솎아낸다. 무엇이 함수가 무슨 일을 한 것인지 살펴보라.
 
 ```{r}
 select(flights, year, month, day)
@@ -241,7 +241,7 @@ select(flights, year, month, day)
 
 #### `mutate()` 함수 
 
-열을 변형하여 새로운 열을 생성한다. 무엇이 어떻게 바뀌었는지 살펴보라.
+기존의 열을 변형하여 새로운 열을 생성한다. 함수가 무슨 일을 한 것인지 살펴보라.
 
 ```{r}
 mutate(flights,
@@ -252,7 +252,7 @@ mutate(flights,
 
 #### `rename()` 함수
 
-열의 이름을 변경한다. 무엇이 어떻게 바뀌었는지 살펴보라.
+열의 이름을 변경한다. 함수가 무슨 일을 한 것인지 살펴보라.
 
 ```{r}
 rename(flights, tail_num = tailnum)
@@ -260,7 +260,7 @@ rename(flights, tail_num = tailnum)
 
 #### `relocate()` 함수
 
-열의 위치(순서)를 변경한다. 무엇이 어떻게 바뀌었는지 살펴보라.
+열의 위치(순서)를 변경한다. 함수가 무슨 일을 한 것인지 살펴보라.
 
 ```{r}
 relocate(flights, time_hour, air_time)
@@ -270,7 +270,7 @@ relocate(flights, time_hour, air_time)
 
 #### `group_by()` 함수
 
-열에 의거해 전체 행을 그룹으로 분할한다. 무엇이 어떻게 바뀌었는지 살펴보라.
+열에 의거해 전체 행을 그룹으로 분할한다. 함수가 무슨 일을 한 것인지 살펴보라.
 
 ```{r}
 group_by(flights, month)
@@ -278,13 +278,13 @@ group_by(flights, month)
 
 #### `summerize()` 함수
 
-열의 통계량을 산출하여 새로운 열에 저장한다. 무엇이 어떻게 바뀌었는지 살펴보라.
+열의 통계량을 산출하여 새로운 열에 저장한다. 함수가 무슨 일을 한 것인지 살펴보라.
 
 ```{r}
 summarize(flights, delay = mean(dep_delay, na.rm = TRUE))
 ```
 
-위의 group_by() 함수와 결합하며, 그룹별로 열의 통계량을 산출하여 새로운 열에 저장할 수 있다.
+위의 `group_by()` 함수와 결합하면, 그룹별로 열의 통계량을 산출하여 새로운 열에 저장할 수 있다. 함수가 무슨 일을 한 것인지 살펴보라.
 
 ```{r}
 by_day <- group_by(flights, year, month, day)
@@ -293,7 +293,7 @@ summarize(by_day, delay = mean(dep_delay, na.rm = TRUE))
 
 ## 정리하기
 
-정리하기와 관련된 함수들은 대부분 [`tidyr`](https://tidyr.tidyverse.org/) 패키지에 포함되어 있다. 수많은 함수가 있지만 가장 중요한 두 개의 함수에만 집중한다.
+정리하기와 관련된 함수들은 대부분 [`tidyr`](https://tidyr.tidyverse.org/) 패키지에 포함되어 있다. 많은 함수가 있지만 가장 중요한 두 개의 함수에만 집중한다.
 
 ### 데이터 살펴보기
 
@@ -322,7 +322,7 @@ pivot_longer(
 
 #### `pivot_wider()` 함수
 
-`table2` 데이터에서 `type` 변수는 두 개의 변수명을 포함하고 있다. 즉, cases와 population은 속성값이라기 보다는 변수명이다.
+`table2`에서 `type` 변수는 두 개의 변수명을 포함하고 있다. 즉, `cases`와 `population`은 속성값이라기 보다는 변수명이다.
 
 ```{r}
 pivot_wider(
@@ -334,7 +334,7 @@ pivot_wider(
 
 ## 불러오기
 
-불러오기와 관련된 함수들은 대부분 [`readr`](https://readr.tidyverse.org/) 패키지에 포함되어 있다. 여러 유형의 파일을 불러오기 위해 여러 함수가 존재하지만 콤마분리값(comma-separated values, CSV) 형식의 데이터를 불러오는 함수만 실습한다.
+불러오기와 관련된 함수들은 대부분 [`readr`](https://readr.tidyverse.org/) 패키지에 포함되어 있다. 여러 유형의 파일을 불러오기 위해 여러 함수가 존재하지만, 콤마분리값(comma-separated values, CSV) 형식의 데이터를 불러오는 함수(`read_csv()`)만 실습한다.
 
 ```{r}
 students <- read_csv("data/students.csv", na = c("N/A", ""))
@@ -350,11 +350,13 @@ flights_day1 <- filter(flights, month == 1 & day == 1)
 glimpse(flights_day1)
 ```
 
-앞으로 할당 연산자보다 훨씬 더 빈번하게 사용될 연산자를 소개하고자 한다. 그것은 파이프 연산자(pipe operator)라는 것으로, `%>%` 혹은 `|>`로 표시하는 것이다. 원래 이 연산자의 원리는 [`magrittr`](https://magrittr.tidyverse.org/) 패키지에서 처음 소개된 것인데, 차츰 R 커뮤니티에 파급되더니 급기야는 대세로 자리잡았다. 그래서 특정 패키지를 깔지 않아도 파이프 연산자를 사용할 수 있게 하기 위해 Base R에 도입되었고(이것을 원파이프 연산자(native pipe operator)라고 부른다), 부호로 `%>%` 대신 `|>`를 사용한다. 둘 사이에 차이는 거의 없지만, 후자가 점점 표준으로 자리잡아가고 있기 때문에 본 수업시간에는 그것을 사용한다. 다음의 두 가지에 유의한다.
+앞으로 할당 연산자보다 훨씬 더 빈번하게 사용될 연산자를 소개하고자 한다. 그것은 파이프 연산자(pipe operator)라는 것으로, `%>%` 혹은 `|>`로 표시하는 것이다. 원래 이 연산자의 원리는 [`magrittr`](https://magrittr.tidyverse.org/) 패키지에서 처음 소개되었는데, 차츰 R 커뮤니티에 파급되더니 급기야는 대세로 자리잡았다. 그래서 특정 패키지를 깔지 않아도 파이프 연산자를 사용할 수 있게 하기 위해 Base R에 도입되었고(이것을 원파이프 연산자(native pipe operator)라고 부른다), 부호로 `%>%` 대신 `|>`를 사용한다. 둘 사이에 차이는 거의 없지만, 후자가 점점 표준이 되고 있기 때문에 본 수업에서는 그것을 사용한다. 다음의 두 가지에 유의한다.
 
--   현재 RStudio의 디폴트는 `%>%`로 설정되어 있다. 이것을 Tools \> Global Options \> Code에 가서 'Use native pipe operator, \|\> (requires R 4.1+)'를 선택해주어야 한다. 아래의 @fig-pipe-operator 를 참고하라.
+-   현재 RStudio의 디폴트는 `%>%`로 설정되어 있다. 이것을 Tools \> Global Options \> Code에 가서 'Use native pipe operator, \|\> (requires R 4.1+)'를 선택해 주어야 한다. 아래의 @fig-pipe-operator 를 참고하라.
 
 ![파이프 연산자(https://r4ds.hadley.nz/data-transform)](https://r4ds.hadley.nz/screenshots/rstudio-pipe-options.png){#fig-pipe-operator}
+
+-   단축키는 Crtl + Shift + M이다. 다른 건 몰라도 이 단축키만은 반드시 기억해야 한다.
 
 다음의 두 코드를 비교해 보라. 먼저 파이프 연산자를 사용하지 않은 경우이다.
 
@@ -365,7 +367,7 @@ flights3 <- select(flights2, year:day, dep_time, carrier, flight, speed)
 arrange(flights3, desc(speed))
 ```
 
-다음은 파이프 연산자를 사용한 경우이다. 동일한 결과를 가져다 주지만 훨신 더 간결하고 직관적이고 이해하기 쉽다.
+다음은 파이프 연산자를 사용한 경우이다. 동일한 결과를 가져다 주지만 훨신 더 간결하고 직관적이고 이해하기 쉽다. 파이프 연산자의 사용 원리는 뒤에서 자세히 배운다.
 
 ```{r}
 flights |> 

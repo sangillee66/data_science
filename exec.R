@@ -26,6 +26,7 @@ arrange(flights, desc(dep_delay))
 flights |> 
   distinct(origin, dest)
 
+
 flights |> 
   distinct(origin, dest, .keep_all = TRUE)
 
