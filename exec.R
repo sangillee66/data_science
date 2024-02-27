@@ -964,3 +964,7 @@ summarize_means <- function(df, summary_vars = where(is.numeric)) {
 diamonds |> 
   group_by(cut) |> 
   summarize_means()
+
+
+
+

@@ -11,5 +11,6 @@ execute:
   warning: false
   error: false
   freeze: auto
+editor: visual
 # suppress-bibliography: true
 ---
