@@ -61,6 +61,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./exec_02.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -170,6 +171,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">R과 RStudio 소개</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exec_02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R과 데이터사이언스</span></a>
+  </div>
+</li>
       </ul>
 </li>
     </ul>
@@ -182,27 +189,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
 <li><a href="#%EC%8B%A4%EC%8A%B5-%EA%B0%9C%EC%9A%94" id="toc-실습-개요" class="nav-link active" data-scroll-target="#%EC%8B%A4%EC%8A%B5-%EA%B0%9C%EC%9A%94">실습 개요</a></li>
   <li>
-<a href="#r%EA%B3%BC-rstudio-%EC%84%A4%EC%B9%98" id="toc-r과-rstudio-설치" class="nav-link" data-scroll-target="#r%EA%B3%BC-rstudio-%EC%84%A4%EC%B9%98">1. R과 RStudio 설치</a>
+<a href="#r%EA%B3%BC-rstudio-%EC%84%A4%EC%B9%98" id="toc-r과-rstudio-설치" class="nav-link" data-scroll-target="#r%EA%B3%BC-rstudio-%EC%84%A4%EC%B9%98"><span class="header-section-number">1</span> R과 RStudio 설치</a>
   <ul class="collapse">
-<li><a href="#r%EC%9D%98-%EC%84%A4%EC%B9%98" id="toc-r의-설치" class="nav-link" data-scroll-target="#r%EC%9D%98-%EC%84%A4%EC%B9%98">1.1 R의 설치</a></li>
-  <li><a href="#rstudio%EC%9D%98-%EC%84%A4%EC%B9%98" id="toc-rstudio의-설치" class="nav-link" data-scroll-target="#rstudio%EC%9D%98-%EC%84%A4%EC%B9%98">1.2 RStudio의 설치</a></li>
+<li><a href="#r%EC%9D%98-%EC%84%A4%EC%B9%98" id="toc-r의-설치" class="nav-link" data-scroll-target="#r%EC%9D%98-%EC%84%A4%EC%B9%98"><span class="header-section-number">1.1</span> R의 설치</a></li>
+  <li><a href="#rstudio%EC%9D%98-%EC%84%A4%EC%B9%98" id="toc-rstudio의-설치" class="nav-link" data-scroll-target="#rstudio%EC%9D%98-%EC%84%A4%EC%B9%98"><span class="header-section-number">1.2</span> RStudio의 설치</a></li>
   </ul>
 </li>
   <li>
-<a href="#rstudio-%EB%91%98%EB%9F%AC%EB%B3%B4%EA%B8%B0" id="toc-rstudio-둘러보기" class="nav-link" data-scroll-target="#rstudio-%EB%91%98%EB%9F%AC%EB%B3%B4%EA%B8%B0">2. RStudio 둘러보기</a>
+<a href="#rstudio-%EB%91%98%EB%9F%AC%EB%B3%B4%EA%B8%B0" id="toc-rstudio-둘러보기" class="nav-link" data-scroll-target="#rstudio-%EB%91%98%EB%9F%AC%EB%B3%B4%EA%B8%B0"><span class="header-section-number">2</span> RStudio 둘러보기</a>
   <ul class="collapse">
-<li><a href="#%EC%B0%BDpane-%ED%8C%A8%EC%9D%B8" id="toc-창pane-패인" class="nav-link" data-scroll-target="#%EC%B0%BDpane-%ED%8C%A8%EC%9D%B8">2.1 창(pane, 패인)</a></li>
-  <li><a href="#console-%EC%B0%BD%EC%97%90%EC%84%9C-%EB%86%80%EC%95%84%EB%B3%B4%EA%B8%B0" id="toc-console-창에서-놀아보기" class="nav-link" data-scroll-target="#console-%EC%B0%BD%EC%97%90%EC%84%9C-%EB%86%80%EC%95%84%EB%B3%B4%EA%B8%B0">2.2 Console 창에서 놀아보기</a></li>
+<li><a href="#%EC%B0%BDpane-%ED%8C%A8%EC%9D%B8" id="toc-창pane-패인" class="nav-link" data-scroll-target="#%EC%B0%BDpane-%ED%8C%A8%EC%9D%B8"><span class="header-section-number">2.1</span> 창(pane, 패인)</a></li>
+  <li><a href="#console-%EC%B0%BD%EC%97%90%EC%84%9C-%EB%86%80%EC%95%84%EB%B3%B4%EA%B8%B0" id="toc-console-창에서-놀아보기" class="nav-link" data-scroll-target="#console-%EC%B0%BD%EC%97%90%EC%84%9C-%EB%86%80%EC%95%84%EB%B3%B4%EA%B8%B0"><span class="header-section-number">2.2</span> Console 창에서 놀아보기</a></li>
   </ul>
 </li>
   <li>
-<a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8project%EC%99%80-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8script" id="toc-프로젝트project와-스크립트script" class="nav-link" data-scroll-target="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8project%EC%99%80-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8script">3. 프로젝트(project)와 스크립트(script)</a>
+<a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8project%EC%99%80-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8script" id="toc-프로젝트project와-스크립트script" class="nav-link" data-scroll-target="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8project%EC%99%80-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8script"><span class="header-section-number">3</span> 프로젝트(project)와 스크립트(script)</a>
   <ul class="collapse">
-<li><a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0" id="toc-프로젝트-만들기" class="nav-link" data-scroll-target="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0">3.1 프로젝트 만들기</a></li>
-  <li><a href="#%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0" id="toc-스크립트-만들기" class="nav-link" data-scroll-target="#%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0">3.2 스크립트 만들기</a></li>
+<li><a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0" id="toc-프로젝트-만들기" class="nav-link" data-scroll-target="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0"><span class="header-section-number">3.1</span> 프로젝트 만들기</a></li>
+  <li><a href="#%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0" id="toc-스크립트-만들기" class="nav-link" data-scroll-target="#%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0"><span class="header-section-number">3.2</span> 스크립트 만들기</a></li>
   </ul>
 </li>
-  <li><a href="#%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C" id="toc-참고문헌" class="nav-link" data-scroll-target="#%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C">4. 참고문헌</a></li>
+  <li><a href="#%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C" id="toc-참고문헌" class="nav-link" data-scroll-target="#%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C"><span class="header-section-number">4</span> 참고문헌</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
@@ -233,13 +240,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><section id="실습-개요" class="level2"><h2 class="anchored" data-anchor-id="실습-개요">실습 개요</h2>
+</header><section id="실습-개요" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="실습-개요">실습 개요</h2>
 <p>이 실습은 R과 RStudio의 기본기를 다지는 것이다. 이 실습을 통해 다음과 같은 과제를 수행할 것이다.</p>
 <ol type="1">
 <li><p>R과 RStudio 설치</p></li>
 <li><p>RStudio 둘러보기</p></li>
 <li><p>프로젝트와 스크립트</p></li>
-</ol></section><section id="r과-rstudio-설치" class="level2"><h2 class="anchored" data-anchor-id="r과-rstudio-설치">1. R과 RStudio 설치</h2>
+</ol></section><section id="r과-rstudio-설치" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="r과-rstudio-설치">
+<span class="header-section-number">1</span> R과 RStudio 설치</h2>
 <p>프로그램을 다운로드하기 위해 다음의 웹사이트로 이동한다. 여기는 RStudio를 만든 <a href="https://posit.co/">posit</a>(과거에는 회사명 자체도 RStudio였음)이라는 회사가 관리하는 RStudio Desktop 다운로드 페이지이다.</p>
 <p><a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a></p>
 <p>그러면 <a href="#fig-install-rstudio" class="quarto-xref">Figure&nbsp;1</a> 와 같이 R과 RStudio를 설치할 수 있는 화면이 나타날 것이다.</p>
@@ -251,7 +259,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 Figure&nbsp;1: 다운로드 화면
 </figcaption></figure>
 </div>
-<section id="r의-설치" class="level3"><h3 class="anchored" data-anchor-id="r의-설치">1.1 R의 설치</h3>
+<section id="r의-설치" class="level3" data-number="1.1"><h3 data-number="1.1" class="anchored" data-anchor-id="r의-설치">
+<span class="header-section-number">1.1</span> R의 설치</h3>
 <p>왼쪽의 다운로드 바를 클릭하면 <a href="https://cran.rstudio.com/">CRAN(The Comprehensive R Archive Network)</a>으로 이동한다. 조교의 도움을 받아 자신의 운영체계에 맞는 R의 최신 버전을 다운로드하고 자신의 디바이스에 설치한다. 이 다큐먼트 작성 시점 기준으로 R의 최신 버전은 4.3.2이다.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -266,10 +275,13 @@ Note
 <p>CRAN은 R의 핵심 소프트웨어 저장소(software repository)이다. R 프로그램 자체의 과거와 현재의 버전들 뿐만 아니라 수많은 R 패키지(package)(현재 대략 20,000개)가 모여 있는 곳이다. 1997년 Kurt Hornik와 Friedrich Leisch에 의해 처음 만들어졌으며, 현재에도 Hornik와 많은 자원봉사자들에 의해 운영되고 있다. 자세한 사항은 <a href="https://en.wikipedia.org/wiki/R_package#Comprehensive_R_Archive_Network_(CRAN)">Wikipedia</a>를 참조할 수 있다.</p>
 </div>
 </div>
-</section><section id="rstudio의-설치" class="level3"><h3 class="anchored" data-anchor-id="rstudio의-설치">1.2 RStudio의 설치</h3>
+</section><section id="rstudio의-설치" class="level3" data-number="1.2"><h3 data-number="1.2" class="anchored" data-anchor-id="rstudio의-설치">
+<span class="header-section-number">1.2</span> RStudio의 설치</h3>
 <p>R의 지배적인 IDE(Integrated Development Environment, 통합개발환경)인 RStudio를 설치한다. 다시 원래의 다운로드 페이지로 돌아와, 오른편의 다운로드 바를 클릭하면 윈도우즈용 RStudio의 파일을 다운로드할 수 있다. 스크롤 다운하면 다른 운영체계를 위한 RStudio를 다운로드할 수 있다. 조교의 도움을 받아 자신의 디바이스에 설치한다. 이 다큐먼트 작성 시점 기준으로 RStudio의 최신 버전은 2024년 1월 29일에 발표된 2023.12.1+402이다.</p>
-</section></section><section id="rstudio-둘러보기" class="level2"><h2 class="anchored" data-anchor-id="rstudio-둘러보기">2. RStudio 둘러보기</h2>
-<section id="창pane-패인" class="level3"><h3 class="anchored" data-anchor-id="창pane-패인">2.1 창(pane, 패인)</h3>
+</section></section><section id="rstudio-둘러보기" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="rstudio-둘러보기">
+<span class="header-section-number">2</span> RStudio 둘러보기</h2>
+<section id="창pane-패인" class="level3" data-number="2.1"><h3 data-number="2.1" class="anchored" data-anchor-id="창pane-패인">
+<span class="header-section-number">2.1</span> 창(pane, 패인)</h3>
 <p>Studio를 실행하면 아마도 대부분의 경우 <a href="#fig-3-panes" class="quarto-xref">Figure&nbsp;2</a> 와 같은 화면을 보게 될 것이다. 크게 세 개의 창으로 구성되어 있음을 알 수 있다.</p>
 <div id="fig-3-panes" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-3-panes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -293,7 +305,8 @@ Note
 <p>개별 창은 여러 개의 탭(tab)으로 구성되어 있는데, 탭의 기능이 매우 다양하기 때문에 소속 탭의 모든 기능을 포괄하는 일관성 있는 창 이름을 붙이는 것이 매우 어렵다. 예를 들어 Output 창의 경우 Plots와 Viewer 탭은 결과물을 보여주는 것이라 할 수 있지만 나머지 탭은 꼭 그렇지도 않다.</p>
 </div>
 </div>
-</section><section id="console-창에서-놀아보기" class="level3"><h3 class="anchored" data-anchor-id="console-창에서-놀아보기">2.2 Console 창에서 놀아보기</h3>
+</section><section id="console-창에서-놀아보기" class="level3" data-number="2.2"><h3 data-number="2.2" class="anchored" data-anchor-id="console-창에서-놀아보기">
+<span class="header-section-number">2.2</span> Console 창에서 놀아보기</h3>
 <p>여기서는 Console 창을 통해 R의 가장 기본적인 다음의 개념들에 대해 알아보고자 한다. Console 창은 R에서 CLI(command-line interface, 명령줄(어) 인터페이스) 역할을 하는 가장 핵심적인 부분이다. 사용자가 프로그램을 통해 컴퓨터와 상호작용하는 인터페이스이다.</p>
 <ul>
 <li><p>프롬프트(prompt): 명령 프롬프트(command prompt)라고도 불리는 것으로, CLI에서 명령어 대기 상태를 나타내는 일종의 부호이다. R에서는 <code>&gt;</code>를 사용한다.</p></li>
@@ -303,7 +316,8 @@ Note
 <li><p>벡터(vector): 숫자의 일차원적 집합으로 보통 개별 행(row) 혹은 개별 열(column)을 의미한다.</p></li>
 <li><p>데이터 프레임(data frame): 하나 이상의 벡터를 모아 둔 숫자의 2차원적 집합으로, 다수의 행과 다수의 열로 이루어진 테이블을 의미한다. 이것이 보통 우리가 데이터셋이라고 부르는 것이다.</p></li>
 </ul>
-<section id="프롬프트-할당-객체" class="level4"><h4 class="anchored" data-anchor-id="프롬프트-할당-객체">2.2.1 프롬프트, 할당, 객체</h4>
+<section id="프롬프트-할당-객체" class="level4" data-number="2.2.1"><h4 data-number="2.2.1" class="anchored" data-anchor-id="프롬프트-할당-객체">
+<span class="header-section-number">2.2.1</span> 프롬프트, 할당, 객체</h4>
 <p>콘솔 창에 R 프롬프트인 <code>&gt;</code>가 나타나 있을 것이다. 아래와 같이 숫자 1을 타이핑하고 실행을 위해 [enter] 키를 누른다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fl">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -338,7 +352,8 @@ Note
 <pre><code>[1] 3</code></pre>
 </div>
 </div>
-</section><section id="함수" class="level4"><h4 class="anchored" data-anchor-id="함수">2.2.2 함수</h4>
+</section><section id="함수" class="level4" data-number="2.2.2"><h4 data-number="2.2.2" class="anchored" data-anchor-id="함수">
+<span class="header-section-number">2.2.2</span> 함수</h4>
 <p><code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code> 함수를 사용하여 동일한 연산을 할 수 있다. <code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code> 은 R에 기본적으로 내장되어 있는 Base R 함수 중 하나이다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -374,7 +389,8 @@ Important
 <pre><code>[1] 2</code></pre>
 </div>
 </div>
-</section><section id="벡터와-데이터-프레임" class="level4"><h4 class="anchored" data-anchor-id="벡터와-데이터-프레임">2.2.3 벡터와 데이터 프레임</h4>
+</section><section id="벡터와-데이터-프레임" class="level4" data-number="2.2.3"><h4 data-number="2.2.3" class="anchored" data-anchor-id="벡터와-데이터-프레임">
+<span class="header-section-number">2.2.3</span> 벡터와 데이터 프레임</h4>
 <p>위에서 살펴본 숫자 하나하나는 큰 의미가 없다. 우리는 보통 숫자의 집합(array), 즉 벡터를 다룬다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">58</span>, <span class="fl">26</span>, <span class="fl">24</span><span class="op">)</span></span>
@@ -412,16 +428,20 @@ Note
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/View.html">View</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>여기서 중요한 것은 새로 생긴 창이다. 이것을 보통 Editor 창이라고 부른다. 이제부터 Console은 부차적인 목적으로만 사용할 것이고 Editor 창이 주인공이 된다.</p>
-</section></section></section><section id="프로젝트project와-스크립트script" class="level2"><h2 class="anchored" data-anchor-id="프로젝트project와-스크립트script">3. 프로젝트(project)와 스크립트(script)</h2>
-<section id="프로젝트-만들기" class="level3"><h3 class="anchored" data-anchor-id="프로젝트-만들기">3.1 프로젝트 만들기</h3>
-<section id="r-프로젝트의-개념" class="level4"><h4 class="anchored" data-anchor-id="r-프로젝트의-개념">3.1.1. R 프로젝트의 개념</h4>
+</section></section></section><section id="프로젝트project와-스크립트script" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="프로젝트project와-스크립트script">
+<span class="header-section-number">3</span> 프로젝트(project)와 스크립트(script)</h2>
+<section id="프로젝트-만들기" class="level3" data-number="3.1"><h3 data-number="3.1" class="anchored" data-anchor-id="프로젝트-만들기">
+<span class="header-section-number">3.1</span> 프로젝트 만들기</h3>
+<section id="r-프로젝트의-개념" class="level4" data-number="3.1.1"><h4 data-number="3.1.1" class="anchored" data-anchor-id="r-프로젝트의-개념">
+<span class="header-section-number">3.1.1</span> R 프로젝트의 개념</h4>
 <p>RStudio에서 프로젝트란 한 단위의 R 과업을 의미한다. 매우 단순한 과업도 있겠지만, 보통 데이터를 읽고, 정돈하고, 변형하고, 시각화하고, 모델링하는 등의 다양한 활동이 개입된다. 하나의 일관된 목적을 위해 이러한 다양한 일을 한다면, 이것들을 한데 모아 함께 관리하는 것이 좋을 것이다. 프로젝트는 하나의 과업을 위해 당신이 행한 모든 것이 체계적으로 정돈되어 있는 가상의 방이다. 좀 이질적인 과업을 하게 된다면 기존의 프로젝트 속에서 하기 보다는 또 다른 프로젝트를 만들어 그 속에서 하는 것이 효과적일 것이다.</p>
 <p>RStudio의 프로젝트는 실질적으로 하나의 폴더를 의미한다. 하나의 폴더 속에 모든 활동과 그것의 인풋 및 아웃풋이 모두 저장되고, RStudio는 그것을 체계적으로 관리할 수 있게 해주는 툴을 제공한다.</p>
 <p>다음과 같은 관행을 추천한다.</p>
 <ul>
 <li><p>디바이스에 모든 R 프로젝트를 포괄하는 최상위 폴더를 만든다. 걸맞는 폴더명(예: R_Projects)을 부여한다. 이것은 R 외부에서 미리 해둔다. 물론 Output 창의 Files 탭을 이용하면 R 내부에서도 할 수 있다.</p></li>
 <li><p>최상위 폴더 아래에 개별 R 프로젝트를 위한 폴더를 만든다. 과업에 걸맞는 폴더명(예: AI_Class_2024)을 부여한다. 이것을 R 외부에서 미리 해둘 수도 있고, R 내부에서 프로젝트를 생성할 때 할 수도 있다. 후자를 추천한다.</p></li>
-</ul></section><section id="r-프로젝트-만들기" class="level4"><h4 class="anchored" data-anchor-id="r-프로젝트-만들기">3.1.2 R 프로젝트 만들기</h4>
+</ul></section><section id="r-프로젝트-만들기" class="level4" data-number="3.1.2"><h4 data-number="3.1.2" class="anchored" data-anchor-id="r-프로젝트-만들기">
+<span class="header-section-number">3.1.2</span> R 프로젝트 만들기</h4>
 <p>두 가지 방법이 있다.</p>
 <ul>
 <li><p>최상단 메뉴를 이용: File &gt; New Project</p></li>
@@ -455,7 +475,8 @@ Tip
 <p>R 외부의 파일 관리 시스템(윈도우즈의 경우 파일 탐색기)를 사용하지 말고, Output 창의 Files 탭을 사용하는 것이 훨씬 유용하다. 파일 탐색기에서 제공하는 거의 대부분의 기능을 제공한다.</p>
 </div>
 </div>
-</section><section id="옵션의-변경" class="level4"><h4 class="anchored" data-anchor-id="옵션의-변경">3.1.3 옵션의 변경</h4>
+</section><section id="옵션의-변경" class="level4" data-number="3.1.3"><h4 data-number="3.1.3" class="anchored" data-anchor-id="옵션의-변경">
+<span class="header-section-number">3.1.3</span> 옵션의 변경</h4>
 <p>Rstudio의 기본 세팅값을 바꿀 수 있는 다양한 옵션이 존재한다. Tools &gt; Global Options를 선택하면 <a href="#fig-global-options" class="quarto-xref">Figure&nbsp;4</a> 과 같은 화면을 볼 수 있을 것이다. 다음의 두 가지를 해보라.</p>
 <ul>
 <li><p>그림에서 보는 것처럼, 가운데 Workspace 부분을 그림과 동일하게 변경하라. 이유는 묻지 마세요.</p></li>
@@ -469,15 +490,18 @@ Tip
 Figure&nbsp;4: 옵션의 변경
 </figcaption></figure>
 </div>
-</section></section><section id="스크립트-만들기" class="level3"><h3 class="anchored" data-anchor-id="스크립트-만들기">3.2 스크립트 만들기</h3>
-<section id="console에서-script-editor로" class="level4"><h4 class="anchored" data-anchor-id="console에서-script-editor로">3.2.1 Console에서 Script Editor로</h4>
+</section></section><section id="스크립트-만들기" class="level3" data-number="3.2"><h3 data-number="3.2" class="anchored" data-anchor-id="스크립트-만들기">
+<span class="header-section-number">3.2</span> 스크립트 만들기</h3>
+<section id="console에서-script-editor로" class="level4" data-number="3.2.1"><h4 data-number="3.2.1" class="anchored" data-anchor-id="console에서-script-editor로">
+<span class="header-section-number">3.2.1</span> Console에서 Script Editor로</h4>
 <p>Console은 명령어를 입력하고 그 결과를 볼 수 있는 곳이다. 이것은 Base R의 기본 기능을 RStudio가 충실하게 구현한 것이다. 그런데 제법 복잡한 R 프로젝트를 수행하고자 할 때 Console을 이용하는 방식은 제한점이 많다.</p>
 <ul>
 <li><p>다양하고 복잡한 R 명령어를 실행하고 그 결과를 보기에는 공간이 협소하다.</p></li>
 <li><p>Console에서 행한 것은 저장되지 않는다. 보다 정확하게 말하면, 산출물은 저장될 수 있지만, 그러한 산출물을 얻는데 동원데 일련의 코드는 저장되지 않는다. RStudio를 나갔다가 다시 들어오면 객체, 플롯 등의 산출물을 그대로 남아 있지만 어떤 과정을 거쳐 그러한 결과물을 산출했는지에 대한 것을 남아 있지 않다. 이런 점은 상당한 기간이 지난 후에는 더 큰 문제로 다가온다.</p></li>
 </ul>
 <p>이러한 의미에서 R을 가지고 행한 것을 모두 저장하는, 일종의 노트북 같은 것이 필요하다. 이것을 R 스크립트(script)라고 부르는데, 좌상의 Editor 창에서 스크립트를 다루고, .R이라는 화장자를 가진 파일로 저장한다.</p>
-</section><section id="스크립트-파일-생성하고-저장하기" class="level4"><h4 class="anchored" data-anchor-id="스크립트-파일-생성하고-저장하기">3.2.2 스크립트 파일 생성하고 저장하기</h4>
+</section><section id="스크립트-파일-생성하고-저장하기" class="level4" data-number="3.2.2"><h4 data-number="3.2.2" class="anchored" data-anchor-id="스크립트-파일-생성하고-저장하기">
+<span class="header-section-number">3.2.2</span> 스크립트 파일 생성하고 저장하기</h4>
 <p>스크립트 파일을 생성하는 세 가지 정도의 방법이 있다.</p>
 <ul>
 <li><p>File &gt; New File &gt; R Script 선택</p></li>
@@ -498,7 +522,8 @@ Figure&nbsp;5: 네 개의 창 (https://docs.posit.co/ide/user/ide/guide/ui/ui-pa
 <li><p>File &gt; Save 선택</p></li>
 <li><p>Save current document 아이콘 클릭</p></li>
 <li><p>단축키(Ctrl + S) 실행</p></li>
-</ul></section><section id="스크립트-파일에서의-실행" class="level4"><h4 class="anchored" data-anchor-id="스크립트-파일에서의-실행">3.2.3 스크립트 파일에서의 실행</h4>
+</ul></section><section id="스크립트-파일에서의-실행" class="level4" data-number="3.2.3"><h4 data-number="3.2.3" class="anchored" data-anchor-id="스크립트-파일에서의-실행">
+<span class="header-section-number">3.2.3</span> 스크립트 파일에서의 실행</h4>
 <p>앞에서 Console에서 했던 모든 일을 동일하게 할 수 있다. 단 실행 방식이 조금 다르다. 앞에서 생성한 df 데이터 프레임의 a 벡터(변수)의 평균값을 구하기 위해 이전과 동일하게 입력한다. 그런데 프롬프트가 없고, [enter]를 눌러도 실행되지 않는다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">a</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -525,14 +550,16 @@ Figure&nbsp;6: 스크립트 파일에서의 실행(<a href="https://docs.posit.c
 <ul>
 <li><p>단축키(Ctrl + Alt +P) 실행</p></li>
 <li><p>Editor 창의 우상에 있는 ‘Re-run the previous code region’ 아이콘을 클릭(<a href="#fig-run-script" class="quarto-xref">Figure&nbsp;6</a> 참조)</p></li>
-</ul></section><section id="코멘트" class="level4"><h4 class="anchored" data-anchor-id="코멘트">3.2.4 코멘트</h4>
+</ul></section><section id="코멘트" class="level4" data-number="3.2.4"><h4 data-number="3.2.4" class="anchored" data-anchor-id="코멘트">
+<span class="header-section-number">3.2.4</span> 코멘트</h4>
 <p>코드에 대한 코멘트를 스크립트 파일 곳곳에 남겨두면 나중에 코드 작성의 의도를 보다 쉽게 파악할 수 있다. 이와 관련하여 두 가지 사항을 알아두면 유용하다.</p>
 <p>첫째, # 표시 뒤의 것은 R이 실행하지 않기 때문에 중간중간에 # 표시를 하고 그 뒤에 자신의 코멘트를 남겨두는 것을 권한다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">a</span><span class="op">)</span> <span class="co"># 세 사람의 나이 평균을 구함. 첫 번째 사람 나이가 엄청나게 많음.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>둘째, 코드가 길어지면, 그것을 몇 개의 섹션으로 나누고 그것에 코멘트를 달아 줄 수 있다. 단축키(Crtl + Shift + R)를 실행하여 섹션 라벨(Section label)을 달 수 있고, Editor 창의 왼쪽 하단에 있는 작은 아이콘을 이용해 섹션을 빠르게 이동할 수 있다.</p>
-</section></section></section><section id="참고문헌" class="level2"><h2 class="anchored" data-anchor-id="참고문헌">4. 참고문헌</h2>
+</section></section></section><section id="참고문헌" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="참고문헌">
+<span class="header-section-number">4</span> 참고문헌</h2>
 <ul>
 <li><p>Wickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund, 2023,&nbsp;<a href="https://r4ds.hadley.nz/"><em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em></a><em>,</em>&nbsp;2nd edition, Boston: O’Reilly.</p></li>
 <li><p>Brendan R. E. Ansell, <a href="https://bookdown.org/ansellbr/WEHI_tidyR_course_book/">Introduction to R - tidyverse</a>, 웹북</p></li>
@@ -1071,7 +1098,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./exec_02.html" class="pagination-link" aria-label="R과 데이터사이언스">
+        <span class="nav-page-text">R과 데이터사이언스</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">

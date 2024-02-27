@@ -20,6 +20,7 @@ website:
       - section: "Exercises"
         contents:   
           - exec_01.qmd
+          - exec_02.qmd
 
   bread-crumbs: false
   back-to-top-navigation: true

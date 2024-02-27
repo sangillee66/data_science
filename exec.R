@@ -967,4 +967,9 @@ diamonds |>
 
 
 
+a <- c(58, 26, 24)
+b <- c("이상일", "김세창", "김우형")
+c <- c(TRUE, TRUE, FALSE)
 
+df <- data.frame(a, b, c)
+mean(df$a)
