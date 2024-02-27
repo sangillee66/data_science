@@ -867,7 +867,7 @@ $ minute         &lt;dbl&gt; 15, 29, 40, 45, 0, 58, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5
 $ time_hour      &lt;dttm&gt; 2013-01-01 05:00:00, 2013-01-01 05:00:00, 2013-01-01 0…</code></pre>
 </div>
 </div>
-<p>앞으로 할당 연산자보다 훨씬 더 빈번하게 사용될 연산자를 소개하고자 한다. 그것은 파이프 연산자(pipe operator)라는 것으로, <code>%&gt;%</code> 혹은 <code>|&gt;</code>로 표시하는 것이다. 원래 이 연산자의 원리는 <a href="https://magrittr.tidyverse.org/"><code>magrittr</code></a> 패키지에서 처음 소개되었는데, 차츰 R 커뮤니티에 파급되더니 급기야는 대세로 자리잡았다. 그래서 특정 패키지를 깔지 않아도 파이프 연산자를 사용할 수 있게 하기 위해 Base R에 도입되었고(이것을 원파이프 연산자(native pipe operator)라고 부른다), 부호로 <code>%&gt;%</code> 대신 <code>|&gt;</code>를 사용한다. 둘 사이에 차이는 거의 없지만, 후자가 점점 표준이 되고 있기 때문에 본 수업에서는 그것을 사용한다. 다음의 두 가지에 유의한다.</p>
+<p>앞으로 할당 연산자보다 훨씬 더 빈번하게 사용하게 될 연산자를 소개하려고 한다. 그것은 파이프 연산자(pipe operator)라는 것으로, <code>%&gt;%</code> 혹은 <code>|&gt;</code>로 표시하는 것이다. 원래 이 연산자의 원리는 <a href="https://magrittr.tidyverse.org/"><code>magrittr</code></a> 패키지에서 처음 소개되었는데, 차츰 R 커뮤니티에 파급되더니 급기야는 대세로 자리잡았다. 그래서 특정 패키지를 깔지 않아도 파이프 연산자를 사용할 수 있게 하기 위해 Base R에 도입되었고(이것을 원파이프 연산자(native pipe operator)라고 부른다), 부호로 <code>%&gt;%</code> 대신 <code>|&gt;</code>를 사용한다. 둘 사이에 차이는 거의 없지만, 후자가 점점 표준이 되고 있기 때문에 본 수업에서는 그것을 사용한다. 다음의 두 가지에 유의한다.</p>
 <ul>
 <li>현재 RStudio의 디폴트는 <code>%&gt;%</code>로 설정되어 있다. 이것을 Tools &gt; Global Options &gt; Code에 가서 ’Use native pipe operator, |&gt; (requires R 4.1+)’를 선택해 주어야 한다. 아래의 <a href="#fig-pipe-operator" class="quarto-xref">Figure&nbsp;2</a> 를 참고하라.</li>
 </ul>
