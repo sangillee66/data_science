@@ -204,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li>
 <a href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0" id="toc-데이터-불러오기" class="nav-link" data-scroll-target="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0"><span class="header-section-number">2</span> 데이터 불러오기</a>
   <ul class="collapse">
-<li><a href="#readr-%ED%8C%A8%ED%82%A4%EC%A7%80" id="toc-readr-패키지" class="nav-link" data-scroll-target="#readr-%ED%8C%A8%ED%82%A4%EC%A7%80"><span class="header-section-number">2.1</span> readr 패키지</a></li>
+<li><a href="#readr-%ED%8C%A8%ED%82%A4%EC%A7%80" id="toc-readr-패키지" class="nav-link" data-scroll-target="#readr-%ED%8C%A8%ED%82%A4%EC%A7%80"><span class="header-section-number">2.1</span> <code>readr</code> 패키지</a></li>
   <li><a href="#%EC%97%91%EC%85%80-%ED%8C%8C%EC%9D%BC" id="toc-엑셀-파일" class="nav-link" data-scroll-target="#%EC%97%91%EC%85%80-%ED%8C%8C%EC%9D%BC"><span class="header-section-number">2.2</span> 엑셀 파일</a></li>
   </ul>
 </li>
@@ -291,7 +291,11 @@ $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setos
 </div>
 </section><section id="티블-객체를-직접-생성하기" class="level4" data-number="1.2.2"><h4 data-number="1.2.2" class="anchored" data-anchor-id="티블-객체를-직접-생성하기">
 <span class="header-section-number">1.2.2</span> 티블 객체를 직접 생성하기</h4>
-<p><code>tibble</code> 객체를 직접 생성하는 방식에는 열-단위 방식과 행-단위 방식이 있다. 열-단위 방식(보다 일반적)은 우선 열-벡터를 만들고 그것을 결합해 최종적인 <code>tibble</code> 객체를 만드는 것이고, 행-단위 방식은 우선 행-벡터를 만들고 그것을 결합해 최종적인 <code>tibble</code> 객체를 만드는 것이다. 전자는 <code><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble()</a></code> 함수를 이용하고, 후자는 <code><a href="https://tibble.tidyverse.org/reference/tribble.html">tribble()</a></code> 함수를 이용한다. <code>tribble</code>은 전치티블(<strong>tr</strong>ansposed t<strong>ibble</strong>)의 약자이다.</p>
+<p><code>tibble</code> 객체를 직접 생성하는 방식은 두 가지로 나뉜다.</p>
+<ul>
+<li><p>열-단위 방식(보다 일반적): 우선 열-벡터를 만들고 그것을 결합해 최종적인 <code>tibble</code> 객체를 만든다. <code><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble()</a></code> 함수를 이용한다.</p></li>
+<li><p>행-단위 방식: 우선 행-벡터를 만들고 그것을 결합해 최종적인 <code>tibble</code> 객체를 만든다. <code><a href="https://tibble.tidyverse.org/reference/tribble.html">tribble()</a></code> 함수를 이용한다. <code>tribble</code>은 전치티블(<strong>tr</strong>ansposed t<strong>ibble</strong>)의 약자이다.</p></li>
+</ul>
 <div class="cell">
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span></span>
 <span>  x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">5</span><span class="op">)</span>, </span>
@@ -326,18 +330,18 @@ $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setos
 </section></section></section><section id="데이터-불러오기" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="데이터-불러오기">
 <span class="header-section-number">2</span> 데이터 불러오기</h2>
 <section id="readr-패키지" class="level3" data-number="2.1"><h3 data-number="2.1" class="anchored" data-anchor-id="readr-패키지">
-<span class="header-section-number">2.1</span> readr 패키지</h3>
+<span class="header-section-number">2.1</span> <code>readr</code> 패키지</h3>
 <section id="파일-형식" class="level4" data-number="2.1.1"><h4 data-number="2.1.1" class="anchored" data-anchor-id="파일-형식">
 <span class="header-section-number">2.1.1</span> 파일 형식</h4>
 <p><a href="https://readr.tidyverse.org/"><code>readr</code></a> 패키지는 다양한 함수를 이용해 다양한 형식의 데이터를 불러올 수 있게 도와준다.</p>
 <ul>
-<li><p>read_csv(): 콤마분리(comma-separated values, CSV) 형식의 파일</p></li>
-<li><p>read_csv2(): 세미콜론분리(semicolon-separated) 형식의 파일</p></li>
-<li><p>read_tsv(): 탭구분(tab-delimited) 형식의 파일</p></li>
-<li><p>read_delim(): 여타의 구분 형식의 파일</p></li>
-<li><p>read_fwf(): 고정폭(fixed-width) 형식의 파일</p></li>
-<li><p>read_table(): 공백구분 형식의 파일</p></li>
-<li><p>read_log(): 아파치 형식(Apache-style)의 로그 파일</p></li>
+<li><p><code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv()</a></code>: 콤마분리(comma-separated values, CSV) 형식의 파일</p></li>
+<li><p><code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv2()</a></code>: 세미콜론분리(semicolon-separated) 형식의 파일</p></li>
+<li><p><code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_tsv()</a></code>: 탭구분(tab-delimited) 형식의 파일</p></li>
+<li><p><code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_delim()</a></code>: 여타의 구분 형식의 파일</p></li>
+<li><p><code><a href="https://readr.tidyverse.org/reference/read_fwf.html">read_fwf()</a></code>: 고정폭(fixed-width) 형식의 파일</p></li>
+<li><p><code><a href="https://readr.tidyverse.org/reference/read_table.html">read_table()</a></code>: 공백구분 형식의 파일</p></li>
+<li><p><code><a href="https://readr.tidyverse.org/reference/read_log.html">read_log()</a></code>: 아파치 형식(Apache-style)의 로그 파일</p></li>
 </ul></section><section id="read_csv-함수의-활용" class="level4" data-number="2.1.2"><h4 data-number="2.1.2" class="anchored" data-anchor-id="read_csv-함수의-활용">
 <span class="header-section-number">2.1.2</span> <code>read_csv()</code> 함수의 활용</h4>
 <p>지난번 실습에서 사용한 데이터를 면밀히 살펴본다.</p>
@@ -362,7 +366,7 @@ $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setos
 <li><p>변수 형식: <code>mealPlan</code>은 문자형(chr)이 아니라 팩트형(fct)이, <code>AGE</code>는 문자형(chr)이 아니라 수치형(dbl)이 적절하다.</p></li>
 <li><p>결측치(NA): <code>favourite.food</code>의 ’N/A’는 형식에 맞지 않아 결측치가 아니라 문자로 취급된다. 따라서 ’N/A’가 결측치임을 알려주어야 한다.</p></li>
 </ul>
-<p>아래의 코드는 이러한 점을 반영하여 csv 파일을 다시 불러 들인 것이다. 각 아규먼트(<code>skip</code>, <code>col_names</code>, <code>col_types</code>, <code>na</code>)가 어떤 역할을 했는지 생각해 보라.</p>
+<p>아래의 코드는 이러한 점을 반영하여 csv 파일을 다시 불러오기 한 것이다. 조교의 도움을 받아 각 아규먼트(<code>skip</code>, <code>col_names</code>, <code>col_types</code>, <code>na</code>)가 어떤 역할을 했는지 생각해 본다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">students</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span></span>
 <span>  <span class="st">"https://pos.it/r4ds-students-csv"</span>, </span>
@@ -396,12 +400,12 @@ $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setos
 </div>
 <p>가장 널리 사용되는 명령어는 다음의 세 가지이다.</p>
 <ul>
-<li><p>read_xls(): xls 포맷의 엑셀 파일 불러들이기</p></li>
-<li><p>read_xlsx(): xlsx 포맷의 엑셀 파일 불러들이기</p></li>
-<li><p>read_excel(): xls, xlsx 포맷의 엑셀 파일 불러들이기</p></li>
+<li><p><code><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_xls()</a></code>: xls 포맷의 엑셀 파일 불러오기</p></li>
+<li><p><code><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_xlsx()</a></code>: xlsx 포맷의 엑셀 파일 불러오기</p></li>
+<li><p><code><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel()</a></code>: xls, xlsx 포맷의 엑셀 파일 불러오기</p></li>
 </ul></section><section id="read_excel-함수의-활용" class="level4" data-number="2.2.2"><h4 data-number="2.2.2" class="anchored" data-anchor-id="read_excel-함수의-활용">
-<span class="header-section-number">2.2.2</span> read_excel() 함수의 활용</h4>
-<p>World Population Prospects 2022 데이터를 직접 다운받아 실습을 진행하고자 한다. 이 데이터셋은 매우 중요하다. 다음의 절차에 따라 해당 엑셀 파일을 다운로드한다.</p>
+<span class="header-section-number">2.2.2</span> <code>read_excel()</code> 함수의 활용</h4>
+<p><code>World Population Prospects 2022</code> 데이터를 직접 다운받아 실습을 진행하고자 한다. 이 데이터셋은 매우 중요하다. 다음의 절차에 따라 해당 엑셀 파일을 다운로드한다.</p>
 <ul>
 <li><p>WPP 웹사이트(<a href="https://population.un.org/wpp/" class="uri">https://population.un.org/wpp/</a>)에 접속한다.</p></li>
 <li><p>Download Data Files를 클릭한다.</p></li>
@@ -419,7 +423,7 @@ $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setos
 <div class="cell">
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span></span>
 <span>  <span class="st">"WPP2022_GEN_F01_DEMOGRAPHIC_INDICATORS_COMPACT_REV1.xlsx"</span>, </span>
-<span>  sheet <span class="op">=</span> <span class="st">"Estimates"</span>, </span>
+<span>  sheet <span class="op">=</span> <span class="st">"Estimates"</span> </span>
 <span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 20,608 × 65
@@ -481,12 +485,12 @@ $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setos
 <span><span class="va">wpp_2022</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind_rows.html">bind_rows</a></span><span class="op">(</span><span class="va">wpp_2022_estimates</span>, <span class="va">wpp_2022_future</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/View.html">View</a></span><span class="op">(</span><span class="va">wpp_2022</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>조교의 도움을 받아 코드의 어떤 부분이 어떤 동작을 한 것인지 따져본다. 나중에 사용하기 위해, <code>writexl</code> 패키지의 <code><a href="https://docs.ropensci.org/writexl/reference/write_xlsx.html">write_xlsx()</a></code> 함수를 이용하여 엑셀 파일을 저장한다.</p>
+<p>조교의 도움을 받아 코드의 어떤 부분이 어떤 동작을 한 것인지 따져본다. 나중에 사용하기 위해, <code>writexl</code> 패키지의 <code><a href="https://docs.ropensci.org/writexl/reference/write_xlsx.html">write_xlsx()</a></code> 함수를 이용하여 엑셀 파일로 저장한다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/writexl/">writexl</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://docs.ropensci.org/writexl/reference/write_xlsx.html">write_xlsx</a></span><span class="op">(</span><span class="va">wpp_2022</span>, <span class="st">"wpp_2022.xlsx"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>그런데, 저장된 파일을 <code><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel()</a></code> 함수로 다시 불러 들이면 컬럼 형식에 대한 정보가 사라져 버린다. 이런 점 때문에 다음과 같은 대안이 있다. <a href="https://readr.tidyverse.org/"><code>readr</code></a> 패키지의 <code><a href="https://readr.tidyverse.org/reference/read_rds.html">write_rds()</a></code> 함수로 저장하고, 다시 <code><a href="https://readr.tidyverse.org/reference/read_rds.html">read_rds()</a></code> 함수로 불러들이면 정확히 동일한 것을 얻을 수 있다.</p>
+<p>그런데, 저장된 파일을 <code><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel()</a></code> 함수로 다시 불러 들이면 컬럼 형식에 대한 정보가 사라져 버리는 등의 에러가 발생한다. 이런 점 때문에 다음과 같은 대안이 존재한다. <a href="https://readr.tidyverse.org/"><code>readr</code></a> 패키지의 <code><a href="https://readr.tidyverse.org/reference/read_rds.html">write_rds()</a></code> 함수로 저장하고, 다시 <code><a href="https://readr.tidyverse.org/reference/read_rds.html">read_rds()</a></code> 함수로 불러들이면 정확히 동일한 것을 얻을 수 있다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_rds.html">write_rds</a></span><span class="op">(</span><span class="va">wpp_2022</span>, <span class="st">"wpp_2022.rds"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_rds.html">read_rds</a></span><span class="op">(</span><span class="st">"wpp_2022.rds"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -610,7 +614,7 @@ $ rel_f_65   &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,
 # ℹ 405,430 more rows</code></pre>
 </div>
 </div>
-<p>조교의 도움을 받아 각 아규먼트가 어떤 역할을 하는지 이해한다. 그리고 정돈된 데이터를 만들기 위해 왜 데이터 늘이기를 해야하는지 생각해 본라.</p>
+<p>조교의 도움을 받아 각 아규먼트가 어떤 역할을 하는지 이해한다. 그리고 정돈된 데이터를 만들기 위해 왜 데이터 ’늘이기’를 해야하는지 생각해 본라.</p>
 </section><section id="데이터-넓히기" class="level3" data-number="3.2"><h3 data-number="3.2" class="anchored" data-anchor-id="데이터-넓히기">
 <span class="header-section-number">3.2</span> 데이터 넓히기</h3>
 <p>실습을 위해 <code>tidyverse</code> 패키지에 포함되어 있는 <code>cms_patient_experience</code> 데이터를 사용한다. 이것은 미국의 <a href="https://www.cms.gov/">Centers of Medicare and Meicaid Services</a>가 제공한 데이터이다.</p>
@@ -665,7 +669,7 @@ $ rel_f_65   &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,
 # ℹ 1 more variable: CAHPS_GRP_12 &lt;dbl&gt;</code></pre>
 </div>
 </div>
-<p>이에 어떤 의료조직이 어떤 항목에서 얼마의 점수를 받았는지를 일목요연하게 알아 볼 수 있다. 조교의 도움을 받아 각 아규먼트가 어떤 역할을 하는지 이해한다. 정돈된 데이터를 만들기 위해 이번에는 왜 데이터 넓히기를 해야하는지 생각해 보라.</p>
+<p>이에 어떤 의료조직이 어떤 항목에서 얼마의 점수를 받았는지를 일목요연하게 알아 볼 수 있다. 조교의 도움을 받아 각 아규먼트가 어떤 역할을 하는지 이해한다. 정돈된 데이터를 만들기 위해 이번에는 왜 데이터 ’넓히기’를 해야하는지 생각해 보라.</p>
 </section><section id="데이터-결합하기" class="level3" data-number="3.3"><h3 data-number="3.3" class="anchored" data-anchor-id="데이터-결합하기">
 <span class="header-section-number">3.3</span> 데이터 결합하기</h3>
 <section id="조인join의-종류" class="level4" data-number="3.3.1"><h4 data-number="3.3.1" class="anchored" data-anchor-id="조인join의-종류">
@@ -682,7 +686,7 @@ $ rel_f_65   &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,
 <p>이들 중 <code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join()</a></code>이 가장 많이 사용되기 때문에 그것에 집중한다.</p>
 </section><section id="left_join-함수의-활용" class="level4" data-number="3.3.2"><h4 data-number="3.3.2" class="anchored" data-anchor-id="left_join-함수의-활용">
 <span class="header-section-number">3.3.2</span> <code>left_join()</code> 함수의 활용</h4>
-<p>실습을 위해 <a href="https://github.com/tidyverse/nycflights13"><code>nycflights13</code></a> 패키지의 데이터를 사용한다. 이 패키지에는 다섯 개의 데이터 프레임이 포함되어 있다.</p>
+<p>실습을 위해 <a href="https://github.com/tidyverse/nycflights13"><code>nycflights13</code></a> 패키지의 데이터를 사용한다. 이 패키지에는 다섯 개의 데이터 프레임이 포함되어 있다. 지난 번에는 첫 번째 데이터만 사용했다.</p>
 <ul>
 <li><p><code>flights</code>: 2013년 NYC를 출발한 모든 항공기</p></li>
 <li><p><code>weather</code>: 공항별 시간별 기상 상황</p></li>
@@ -724,7 +728,7 @@ Figure&nbsp;1: <code>nycflights13</code> 데이터(<a href="https://github.com/t
 # ℹ 336,766 more rows</code></pre>
 </div>
 </div>
-<p>flights2 데이터 프레임을 중심으로 나머지 4개의 데이터 프레임과 조인한다.</p>
+<p><code>flights2</code> 데이터를 중심으로 나머지 4개의 데이터와 조인한다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">airlines</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -881,7 +885,7 @@ Figure&nbsp;1: <code>nycflights13</code> 데이터(<a href="https://github.com/t
 # ℹ 4 more variables: alt &lt;dbl&gt;, tz &lt;dbl&gt;, dst &lt;chr&gt;, tzone &lt;chr&gt;</code></pre>
 </div>
 </div>
-<p><code>airports</code>의 경우만 왜 <code><a href="https://dplyr.tidyverse.org/reference/join_by.html">join_by()</a></code>라는 아규먼트가 필요했는지 생각해 보라.</p>
+<p><code>airports</code>의 경우만 왜 <code><a href="https://dplyr.tidyverse.org/reference/join_by.html">join_by()</a></code>라는 아규먼트가 필요한지 생각해 본다.</p>
 </section></section></section><section id="fig-nycflights-1" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="fig-nycflights-1">
 <span class="header-section-number">4</span> 참고문헌</h2>
 <ul>
