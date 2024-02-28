@@ -61,6 +61,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./exec_03.html" rel="next">
 <link href="./exec_01.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -177,6 +178,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">R과 데이터사이언스: 개요</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exec_03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">데이터 불러오기와 정리하기</span></a>
+  </div>
+</li>
       </ul>
 </li>
     </ul>
@@ -243,7 +250,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 27, 2024</p>
+      <p class="date-modified">February 28, 2024</p>
     </div>
   </div>
     
@@ -825,14 +832,14 @@ $ time_hour      &lt;dttm&gt; 2013-01-01 05:00:00, 2013-01-01 05:00:00, 2013-01-
 <span class="header-section-number">5</span> 불러오기</h2>
 <p>불러오기와 관련된 함수들은 대부분 <a href="https://readr.tidyverse.org/"><code>readr</code></a> 패키지에 포함되어 있다. 여러 유형의 파일을 불러오기 위해 여러 함수가 존재하지만, 콤마분리값(comma-separated values, CSV) 형식의 데이터를 불러오는 함수(<code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv()</a></code>)만 실습한다.</p>
 <div class="cell">
-<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">students</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/students.csv"</span>, na <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"N/A"</span>, <span class="st">""</span><span class="op">)</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">students</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"https://pos.it/r4ds-students-csv"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">students</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 6
 Columns: 5
 $ `Student ID`   &lt;dbl&gt; 1, 2, 3, 4, 5, 6
 $ `Full Name`    &lt;chr&gt; "Sunil Huffmann", "Barclay Lynn", "Jayendra Lyne", "Leo…
-$ favourite.food &lt;chr&gt; "Strawberry yoghurt", "French fries", NA, "Anchovies", …
+$ favourite.food &lt;chr&gt; "Strawberry yoghurt", "French fries", "N/A", "Anchovies…
 $ mealPlan       &lt;chr&gt; "Lunch only", "Lunch only", "Breakfast and lunch", "Lun…
 $ AGE            &lt;chr&gt; "4", "5", "7", NA, "five", "6"</code></pre>
 </div>
@@ -1476,6 +1483,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./exec_03.html" class="pagination-link" aria-label="데이터 불러오기와 정리하기">
+        <span class="nav-page-text">데이터 불러오기와 정리하기</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

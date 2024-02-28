@@ -239,7 +239,7 @@ distinct(flights, origin, dest)
 select(flights, year, month, day)
 ```
 
-#### `mutate()` 함수 
+#### `mutate()` 함수
 
 기존의 열을 변형하여 새로운 열을 생성한다. 함수가 무슨 일을 한 것인지 살펴보라.
 
@@ -339,7 +339,7 @@ pivot_wider(
 불러오기와 관련된 함수들은 대부분 [`readr`](https://readr.tidyverse.org/) 패키지에 포함되어 있다. 여러 유형의 파일을 불러오기 위해 여러 함수가 존재하지만, 콤마분리값(comma-separated values, CSV) 형식의 데이터를 불러오는 함수(`read_csv()`)만 실습한다.
 
 ```{r}
-students <- read_csv("data/students.csv", na = c("N/A", ""))
+students <- read_csv("https://pos.it/r4ds-students-csv")
 glimpse(students)
 ```
 

@@ -21,6 +21,7 @@ website:
         contents:   
           - exec_01.qmd
           - exec_02.qmd
+          - exec_03.qmd
 
   bread-crumbs: false
   back-to-top-navigation: true

@@ -974,3 +974,106 @@ c <- c(TRUE, TRUE, FALSE)
 
 df <- data.frame(a, b, c)
 mean(df$a)
+
+iris_tbl <- iris |> 
+  as_tibble() 
+iris_tbl
+
+iris
+
+
+
+students <- read_csv("https://pos.it/r4ds-students-csv")
+students
+students <- read_csv("https://pos.it/r4ds-students-csv", 
+                     skip = 1, 
+                     col_names = c("student_id", "full_name", "favorite_food", "meal_plan", "age"),
+                     col_types = cols(
+                       meal_plan = col_factor(),
+                       age = col_integer()),
+                     na = c("N/A", "")
+                     )
+students
+
+treatment <- tribble(
+  ~person,           ~treatment, ~response,
+  "Derrick Whitmore", 1,         7,
+  NA,                 2,         10,
+  NA,                 3,         NA,
+  "Katherine Burke",  1,         4
+)
+treatment
+
+library(readxl)
+read_excel("https://docs.google.com/spreadsheets/d/1V1nPp1tzOuutXFLb3G9Eyxi3qxeEhnOXUzL5_BcCQ0w/")
+
+           
+readxl_example()
+
+deaths_path <- readxl_example("deaths.xlsx")
+
+read_excel("https://population.un.org/")
+
+read_excel("https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/EXCEL_FILES/1_General/WPP2022_GEN_F01_DEMOGRAPHIC_INDICATORS_COMPACT_REV1.xlsx")
+
+library(openxlsx)
+read.xlsx("https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/EXCEL_FILES/1_General/WPP2022_GEN_F01_DEMOGRAPHIC_INDICATORS_COMPACT_REV1.xlsx")
+
+
+
+a <- read_excel(
+  "WPP2022_GEN_F01_DEMOGRAPHIC_INDICATORS_COMPACT_REV1.xlsx", 
+  sheet = "Estimates"
+  )
+
+new_names <- c("index", "variant", "region_name", "notes", "location_code", 
+  "ISO3", "ISO2", "SDMX", "type", "parent_code", "year", "pop_jan", 
+  "pop_jul", "male_jul", "female_jul", "pop_den", "sex_ratio", 
+  "median_age", "natural_change", "RNC", "pop_change", "PGR", 
+  "dubling_time", "births", "birth_by_f1519", "CBR", "TFR", "NRR", 
+  "mean_age_childbearing", "sex_ratio_birth", "deaths", 
+  "deaths_male", "deaths_female", "CDR", "life_exp", 
+  "life_exp_male", "life_exp_female", "life_exp_15", 
+  "life_exp_15_male", "life_exp_15_female", "life_exp_65", 
+  "life_exp_65_male", "life_exp_65_female", "life_exp_80", 
+  "life_exp_80_male", "life_exp_80_female", "infant_deaths", 
+  "IMR", "live_births", "under_five_deaths", "mortalty_under_five", 
+  "mort_bf_40", "mort_bf_40_male", "mort_bf_40_female", "mort_bf_60", 
+  "mort_bf_60_male", "mort_bf_60_female", "mort_bt_1550", 
+  "mort_bt_1550_male", "mort_bt_1550_female", "mort_bt_1560", 
+  "mort_bt_1560_male", "mort_bt_1560_female", "net_migrants", "NMR")
+
+WPP_2022_estimates <- read_excel(
+  "WPP2022_GEN_F01_DEMOGRAPHIC_INDICATORS_COMPACT_REV1.xlsx",
+  sheet = "Estimates",
+  skip = 17, # skip을 적용하는 순간 첫번째 행이 공란인 컬럼의 모든 값이 날아감 --> 희안함. 그래서 col_types를 적용해야 함.
+  col_names = new_names,
+  col_types = c(rep("guess", 3), "text", "guess", rep("text", 2), rep("guess", 58)),
+  na = c("...", "")
+  )
+
+WPP_2022_future <- read_excel(
+  "WPP2022_GEN_F01_DEMOGRAPHIC_INDICATORS_COMPACT_REV1.xlsx",
+  sheet = "Medium variant",
+  skip = 17, 
+  col_names = new_names,
+  col_types = c(rep("guess", 3), "text", "guess", rep("text", 2), rep("guess", 58)),
+  na = c("...", "")
+)
+
+WPP_2022 <- bind_rows(WPP_2022_estimates, WPP_2022_future)
+
+who2 |> 
+  distinct(year) |> 
+  max()
+
+library(gapminder)
+gapminder
+
+library(nycflights13)
+flights
+
+library(tidyverse)
+library(writexl)
+write_xlsx(wpp_2022, "wpp_2022.xlsx")
+read_excel("wpp_2022.xlsx")
