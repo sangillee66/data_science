@@ -12,14 +12,10 @@ website:
       - section: "R Lectures"
         contents: 
           - lec_01.qmd
-#      - text: "---"    
-#      - section: "Presentations"
-#        contents:   
-#          - overview_pres.qmd
-      - text: "---"    
-      - section: "Lab Lectures"
-        contents:
-          - lab_lec_01.qmd
+      # - text: "---"    
+      # - section: "Lab Lectures"
+      #   contents:
+      #     - lab_lec_01.qmd
       - text: "---"    
       - section: "Exercises"
         contents:   
