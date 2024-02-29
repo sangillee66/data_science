@@ -607,5 +607,16 @@
     "title": "Lab Lecture 01",
     "section": "",
     "text": "Back to top"
+  },
+  {
+    "objectID": "lab_lec_01.html#데이터",
+    "href": "lab_lec_01.html#데이터",
+    "title": "Lab Lecture 01",
+    "section": "데이터",
+    "text": "데이터\n\nlibrary(tidyverse)",
+    "crumbs": [
+      "Lab Lectures",
+      "Lab Lecture 01"
+    ]
   }
 ]
