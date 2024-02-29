@@ -331,7 +331,7 @@ Figure&nbsp;4: 심미성 요소: 투명도
 <p>크기와 투명도는 양적인 차이를 나타내는데 보다 적합하기 때문에 <code>class</code>라는 정성적인 범주의 차이를 보여주는데는 적합하지 않다. 심미성 매핑에서 가장 중요한 것은 결국 얼마나 적절한 시각 변수(visual variable)를 선택하느냐에 달려 있다.</p>
 </section><section id="기하-객체geometric-objects" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="기하-객체geometric-objects">
 <span class="header-section-number">2</span> 기하 객체(geometric objects)</h2>
-<p>다음의 두 그래프가 다르게 느껴지는 것은 그래프를 작성하기 위해 동원된 객체의 기하학적 특성이 다르기 때문이다. <a href="#fig-geometric-point" class="quarto-xref">Figure&nbsp;5</a> 와 <a href="#fig-geometric-smooth" class="quarto-xref">Figure&nbsp;6</a> 이 다르게 보이는 것은 기하 객체가 하나는 포인트(point)이고 다른 하나는 완만한 선(smooth)이기 때문이다.</p>
+<p>다음의 두 그래프가 다르게 느껴지는 것은 그래프를 작성하기 위해 동원된 객체의 기하학적 특성이 다르기 때문이다. <a href="#fig-geometric-point" class="quarto-xref">Figure&nbsp;5</a> 와 <a href="#fig-geometric-smooth" class="quarto-xref">Figure&nbsp;6</a> 이 다르게 보이는 것은 기하 객체가 하나는 포인트(<code>point</code>)이고 다른 하나는 완만한 선(<code>smooth</code>)이기 때문이다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -392,7 +392,8 @@ Figure&nbsp;8: 기하 객체: 포인트 + 완선 2
 </div>
 </div>
 </div>
-<p>두 결과의 차이는 color 심미성 요소를 글로벌하게 적용하느냐 로컬하게 적용하느냐(포인트 객체에만 적용)에 달린 것이다. 글로벌한 심미성은 <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code>속에서 설정하고, 국지적인 심미성은 개별 기하 객체 속에서 설정한다. 매우 중요한 사항이니 꼭 기억하도록 한다.</p>
+<p>두 결과의 차이는 <code>color</code> 심미성 요소를 글로벌하게 적용하느냐 로컬하게 적용하느냐(포인트 객체에만 적용)에 달린 것이다. 글로벌한 심미성은 <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code>속에서 설정하고, 국지적인 심미성은 개별 기하 객체 속에서 설정한다. 매우 중요한 사항이니 꼭 기억하도록 한다.</p>
+<p>재밌다.</p>
 
 
 </section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
