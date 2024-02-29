@@ -8,7 +8,7 @@ execute:
   echo: true
   warning: false
   error: false
-  freeze: auto
+  # freeze: auto
 editor: visual
 ---
 
