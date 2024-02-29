@@ -17,6 +17,10 @@ website:
 #        contents:   
 #          - overview_pres.qmd
       - text: "---"    
+      - section: "Lab Lectures"
+        contents:
+          - lab_lec_01.qmd
+      - text: "---"    
       - section: "Exercises"
         contents:   
           - exec_01.qmd
