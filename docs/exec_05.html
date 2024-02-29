@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.549">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="이상일(서울대학교 지리교육과)">
-
 <title>Data Science - 데이터 시각화하기</title>
 <style>
 code{white-space: pre-wrap;}
@@ -21,8 +18,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
-
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
@@ -42,8 +72,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -69,18 +98,12 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-
-
-<link rel="stylesheet" href="styles.css">
+}</script><link rel="stylesheet" href="styles.css">
 </head>
-
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -91,13 +114,9 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Data Science</a> 
         <div class="sidebar-tools-main">
@@ -112,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">웹사이트 소개</span></a>
@@ -127,15 +146,15 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lec_01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R과 데이터사이언스</span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -145,8 +164,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R과 RStudio 소개</span></a>
@@ -177,26 +196,22 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#실습-개요" id="toc-실습-개요" class="nav-link active" data-scroll-target="#실습-개요">실습 개요</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+<li><a href="#%EC%8B%A4%EC%8A%B5-%EA%B0%9C%EC%9A%94" id="toc-실습-개요" class="nav-link active" data-scroll-target="#%EC%8B%A4%EC%8A%B5-%EA%B0%9C%EC%9A%94">실습 개요</a></li>
+  <li><a href="#%EC%8B%AC%EB%AF%B8%EC%84%B1-%EB%A7%A4%ED%95%91aesthetic-mappings" id="toc-심미성-매핑aesthetic-mappings" class="nav-link" data-scroll-target="#%EC%8B%AC%EB%AF%B8%EC%84%B1-%EB%A7%A4%ED%95%91aesthetic-mappings"><span class="header-section-number">1</span> 심미성 매핑(aesthetic mappings)</a></li>
+  <li><a href="#%EA%B8%B0%ED%95%98-%EA%B0%9D%EC%B2%B4geometric-objects" id="toc-기하-객체geometric-objects" class="nav-link" data-scroll-target="#%EA%B8%B0%ED%95%98-%EA%B0%9D%EC%B2%B4geometric-objects"><span class="header-section-number">2</span> 기하 객체(geometric objects)</a></li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title d-none d-lg-block">데이터 시각화하기</h1>
 </div>
 
@@ -223,18 +238,164 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header>
+</header><section id="실습-개요" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="실습-개요">실습 개요</h2>
+<p>이 실습은 R로 데이터사이언스를 하는 과정 중 데이터 시각화하기(visualizing)를 다룬다. 데이터 시각화하기는 <a href="https://www.tidyverse.org/"><code>tidyverse</code></a>의 핵심 패키지 중의 하나인 <a href="https://ggplot2.tidyverse.org/"><code>ggplot2</code></a> 에서 제공된다. 모든 실습의 시작은 <a href="https://www.tidyverse.org/"><code>tidyverse</code></a> 패키지를 불러오는 것이다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>이 실습에서는 ggplot2 패키지 속에 포함되어 이쓴 mpg 데이터를 사용한다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">mpg</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 234 × 11
+   manufacturer model      displ  year   cyl trans drv     cty   hwy fl    class
+   &lt;chr&gt;        &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;
+ 1 audi         a4           1.8  1999     4 auto… f        18    29 p     comp…
+ 2 audi         a4           1.8  1999     4 manu… f        21    29 p     comp…
+ 3 audi         a4           2    2008     4 manu… f        20    31 p     comp…
+ 4 audi         a4           2    2008     4 auto… f        21    30 p     comp…
+ 5 audi         a4           2.8  1999     6 auto… f        16    26 p     comp…
+ 6 audi         a4           2.8  1999     6 manu… f        18    26 p     comp…
+ 7 audi         a4           3.1  2008     6 auto… f        18    27 p     comp…
+ 8 audi         a4 quattro   1.8  1999     4 manu… 4        18    26 p     comp…
+ 9 audi         a4 quattro   1.8  1999     4 auto… 4        16    25 p     comp…
+10 audi         a4 quattro   2    2008     4 manu… 4        20    28 p     comp…
+# ℹ 224 more rows</code></pre>
+</div>
+</div>
+<p>총 11개의 변수 중 다음의 세 가지 변수가 특히 중요하다.</p>
+<ul>
+<li><p><code>displ</code>: 자동차의 엔진 크기</p></li>
+<li><p><code>hwy</code>: 고속도로 연비</p></li>
+<li><p><code>class</code>: 자동차의 유형</p></li>
+</ul></section><section id="심미성-매핑aesthetic-mappings" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="심미성-매핑aesthetic-mappings">
+<span class="header-section-number">1</span> 심미성 매핑(aesthetic mappings)</h2>
+<p><code>displ</code>과 <code>hwy</code>의 관계가 <code>class</code>에 따라 어떻게 달라지는 지를 시각화한다. 다음의 두 그래프를 비교해 본다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span>, color <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-aesthetic-color" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-aesthetic-color-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="exec_05_files/figure-html/fig-aesthetic-color-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-aesthetic-color-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: 심미성 요소: 컬러
+</figcaption></figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span>, shape <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-aesthetic-shape" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-aesthetic-shape-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="exec_05_files/figure-html/fig-aesthetic-shape-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-aesthetic-shape-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: 심미성 요소: 형태
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p><a href="#fig-aesthetic-color" class="quarto-xref">Figure&nbsp;1</a> 과 <a href="#fig-aesthetic-shape" class="quarto-xref">Figure&nbsp;2</a> 중 어느 것이 더 효과적인 시각화라고 생각하는가? 컬러(color)와 형태(shape)라는 심미성 요소 외에 크기(size)와 투명도(alpha) 요소를 동일한 데이터에 적용해 본다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span>, size <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-aesthetic-size" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-aesthetic-size-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="exec_05_files/figure-html/fig-aesthetic-size-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-aesthetic-size-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: 심미성 요소: 크기
+</figcaption></figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span>, alpha <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-aesthetic-alpha" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-aesthetic-alpha-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="exec_05_files/figure-html/fig-aesthetic-alpha-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-aesthetic-alpha-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: 심미성 요소: 투명도
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>크기와 투명도는 양적인 차이를 나타내는데 보다 적합하기 때문에 <code>class</code>라는 정성적인 범주의 차이를 보여주는데는 적합하지 않다. 심미성 매핑에서 가장 중요한 것은 결국 얼마나 적절한 시각 변수(visual variable)를 선택하느냐에 달려 있다.</p>
+</section><section id="기하-객체geometric-objects" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="기하-객체geometric-objects">
+<span class="header-section-number">2</span> 기하 객체(geometric objects)</h2>
+<p>다음의 두 그래프가 다르게 느껴지는 것은 그래프를 작성하기 위해 동원된 객체의 기하학적 특성이 다르기 때문이다. <a href="#fig-geometric-point" class="quarto-xref">Figure&nbsp;5</a> 와 <a href="#fig-geometric-smooth" class="quarto-xref">Figure&nbsp;6</a> 이 다르게 보이는 것은 기하 객체가 하나는 포인트(point)이고 다른 하나는 완만한 선(smooth)이기 때문이다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-geometric-point" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-geometric-point-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="exec_05_files/figure-html/fig-geometric-point-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-geometric-point-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: 기하 객체: 포인트
+</figcaption></figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-geometric-smooth" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-geometric-smooth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="exec_05_files/figure-html/fig-geometric-smooth-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-geometric-smooth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: 기하 객체: 완선
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p><a href="#fig-aesthetic-color" class="quarto-xref">Figure&nbsp;1</a> 과 <a href="#fig-geometric-smooth" class="quarto-xref">Figure&nbsp;6</a> 두 개를 결합해 본다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span>, color <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-geometric-point-smooth-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-geometric-point-smooth-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="exec_05_files/figure-html/fig-geometric-point-smooth-1-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-geometric-point-smooth-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: 기하 객체: 포인트 + 완선 1
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>원하는 것이 아니다. 왜 이런 결과가 나왔으며, 어떻게 하면 원하는 것을 얻을 수 있을지 생각해 본다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-geometric-point-smooth-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-geometric-point-smooth-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="exec_05_files/figure-html/fig-geometric-point-smooth-2-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-geometric-point-smooth-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: 기하 객체: 포인트 + 완선 2
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>두 결과의 차이는 color 심미성 요소를 글로벌하게 적용하느냐 로컬하게 적용하느냐(포인트 객체에만 적용)에 달린 것이다. 글로벌한 심미성은 <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code>속에서 설정하고, 국지적인 심미성은 개별 기하 객체 속에서 설정한다. 매우 중요한 사항이니 꼭 기억하도록 한다.</p>
 
 
-<section id="실습-개요" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="실습-개요">실습 개요</h2>
-<p>이 실습은 R로 데이터사이언스를 하는 과정 중 데이터 시각화하기(visualizing)를 다룬다. 데이터 시각화하기는 <a href="https://www.tidyverse.org/"><code>tidyverse</code></a>의 핵심 패키지 중의 하나인 <a href="https://ggplot2.tidyverse.org/"><code>ggplot2</code></a> 에서 제공된다.</p>
-
-
-</section>
-
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -764,10 +925,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./exec_04.html" class="pagination-link  aria-label=" 데이터="" 변형하기"="">
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="./exec_04.html" class="pagination-link  aria-label=">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">데이터 변형하기</span>
       </a>          
   </div>
@@ -775,8 +934,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>Copyright 2024, Sang-Il Lee</p>
 </div>   
@@ -785,7 +943,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item compact">
+<li class="nav-item compact">
     <a class="nav-link" href="https://sangillee.snu.ac.kr/">
       <i class="bi bi-house" role="img">
 </i> 
@@ -804,11 +962,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
 </footer>
-
-
 
 
 </body></html>
