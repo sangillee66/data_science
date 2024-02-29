@@ -1077,3 +1077,79 @@ library(tidyverse)
 library(writexl)
 write_xlsx(wpp_2022, "wpp_2022.xlsx")
 read_excel("wpp_2022.xlsx")
+
+View(gapminder)
+
+gapminder |> 
+  add_count(year, continent, wt = pop) |>
+  mutate(pop_prop = pop * 100 / n) |> 
+  slice_max(pop_prop, by = c(year, continent)) |> 
+  filter(year == 2007)
+
+gapminder |> 
+  group_by(year, continent) |> 
+  mutate(
+    pop_cont = sum(pop),
+    pop_prop = pop * 100/ pop_cont
+  ) |> 
+  slice_max(pop_prop)
+
+# 연도별 대륙별 일인당 GDP
+
+gapminder |> 
+  group_by(year, continent) |> 
+  summarize(
+    sum_pop = sum(pop),
+    sum_gdp = sum(pop * gdpPercap),
+    gdp_percap_cont = sum_gdp / sum_pop
+  ) |> 
+  ggplot() +
+  geom_line(aes(x = year, y = gdp_percap_cont, color = continent), size = 1)
+
+# 연도별 대륙별 인구 비중
+
+gapminder |> 
+  group_by(year, continent) |> 
+  summarize(
+    sum_cont = sum(pop)
+  ) |> 
+  mutate(
+    sum_year = sum(sum_cont),
+    prop_cont = sum_cont * 100 / sum_year,
+  ) |> 
+  ggplot() +
+  geom_line(aes(x = year, y = prop_cont, color = continent), size = 1)
+
+gapminder |> 
+  count(year, continent, wt = pop) |> 
+  mutate(
+    sum_year = sum(n),
+    prop_cont = n * 100 / sum_year,
+    .by = year
+  ) |> 
+  ggplot() +
+  geom_line(aes(x = year, y = prop_cont, color = continent), size = 1)
+
+gapminder |> 
+  count(year, continent, wt = pop) |> 
+  group_by(year) |> # 킬링 파트
+  add_tally(wt = n, name = "sum_year") |> 
+  mutate(
+    prop_cont = n * 100 / sum_year
+  ) |> 
+  ggplot() +
+  geom_line(aes(x = year, y = prop_cont, color = continent), size = 1)
+
+
+# 연도별 국가별 대륙내 인구 비중
+
+gapminder |> 
+  group_by(year, continent) |> 
+  mutate(
+    sum_cont = sum(pop),
+    country_prop = pop * 100 / sum_cont
+  ) |> 
+  slice_max(country_prop) |> 
+  ggplot() +
+  geom_line(aes(x = year, y = country_prop, color = continent), size = 1)
+

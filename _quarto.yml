@@ -22,6 +22,7 @@ website:
           - exec_01.qmd
           - exec_02.qmd
           - exec_03.qmd
+          - exec_04.qmd
 
   bread-crumbs: false
   back-to-top-navigation: true

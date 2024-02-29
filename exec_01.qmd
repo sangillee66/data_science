@@ -289,12 +289,4 @@ mean(df$a) # 세 사람의 나이 평균을 구함. 첫 번째 사람 나이가 
 
 둘째, 코드가 길어지면, 그것을 몇 개의 섹션으로 나누고 그것에 코멘트를 달아 줄 수 있다. 단축키(Crtl + Shift + R)를 실행하여 섹션 라벨(Section label)을 달 수 있고, Editor 창의 왼쪽 하단에 있는 작은 아이콘을 이용해 섹션을 빠르게 이동할 수 있다.
 
-## 참고문헌
-
--   Wickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund, 2023, [*R for Data Science: Import, Tidy, Transform, Visualize, and Model Data*](https://r4ds.hadley.nz/)*,* 2nd edition, Boston: O’Reilly.
-
--   Brendan R. E. Ansell, [Introduction to R - tidyverse](https://bookdown.org/ansellbr/WEHI_tidyR_course_book/), 웹북
-
--   RStudio IDE User Guide (<https://docs.posit.co/ide/user/>)
-
--   김기환, 2023, [R 프로그래밍(개정판)](https://kilhwan.github.io/rprogramming/), 웹북
+## 

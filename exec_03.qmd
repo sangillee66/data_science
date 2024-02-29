@@ -365,14 +365,4 @@ flights2 |>
 
 `airports`의 경우만 왜 `join_by()`라는 아규먼트가 필요한지 생각해 본다.
 
-## 참고문헌 {#fig-nycflights-1}
-
--   Wickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund, 2023. [*R for Data Science: Import, Tidy, Transform, Visualize, and Model Data*](https://r4ds.hadley.nz/)*,* 2nd edition, Boston: O’Reilly.
-
--   Wickham, Hadley, and Garrett Grolemund. 2016. [*R for Data Science: Import, Tidy, Transform, Visualize, and Model Data*](https://r4ds.had.co.nz/index.html). 1st edition. Sebastopol, CA: O’Reilly.
-
--   Brendan R. E. Ansell, [Introduction to R - tidyverse](https://bookdown.org/ansellbr/WEHI_tidyR_course_book/), 웹북
-
--   RStudio IDE User Guide (<https://docs.posit.co/ide/user/>)
-
--   김기환, 2023, [R 프로그래밍(개정판)](https://kilhwan.github.io/rprogramming/), 웹북
+##  {#fig-nycflights-1}

@@ -51,9 +51,9 @@ bibliography: references.bib
 `install.packages()`함수에서는 반드시 패키지명을 쌍따옴표로 싸야하지만, `library()`함수에서는 그렇지 않다. 불러온 패키지는 R 세션이 유지되는 동안 내내 사용할 수 있지만, R 세션을 끝내고 다시 시작하면 다시 `library()`함수를 이용해 다시 불러와야 한다. 그래서 R 스크립트 파일의 시작 부분에는 패키지를 불러오는 코드를 위치시키고, 다시 스크립트 파일을 열 때마다 그 부분을 재실행하는 것이 좋은 습관이다.
 :::
 
-### tidyverse 패키지
+### `tidyverse` 패키지
 
-데이터사이언스 과정의 각 단계는 특징적인 과업으로 구성되어 있고, 거기에 맞춰 특징적인 함수들을 장착한 패키지들이 개발되어 왔다. 그런데 최근 RStudio는 데이터사이언스와 밀접히 관련된 패키지들을 모아 일종의 엄브렐러 패키지인 [`tidyverse`](https://www.tidyverse.org/)를 만들어 제공하고 있다. tidyverse 패키지는 패키지의 패키지인데, 핵심적인 구성 패키지에 다음과 같은 것들이 있다.
+데이터사이언스 과정의 각 단계는 특징적인 과업으로 구성되어 있고, 거기에 맞춰 특징적인 함수들을 장착한 패키지들이 개발되어 왔다. 그런데 최근 RStudio는 데이터사이언스와 밀접히 관련된 패키지들을 모아 일종의 엄브렐러 패키지인 [`tidyverse`](https://www.tidyverse.org/)를 만들어 제공하고 있다. [`tidyverse`](https://www.tidyverse.org/) 패키지는 패키지의 패키지인데, 핵심적인 구성 패키지에 다음과 같은 것들이 있다.
 
 -   [`ggplot2`](https://ggplot2.tidyverse.org/): 시각화하기
 
@@ -73,7 +73,7 @@ bibliography: references.bib
 
 -   [`purrr`](https://purrr.tidyverse.org/): 함수형 프로그래밍(functional programming) 관련
 
-tidyverse 패키지를 사용하는 것의 장점은 이 패키지만 불러오면 구성 패키지까지 한꺼번에 사용할 수 있게 된다는 점이다. 스크립트 내에서 다음과 같은 코드를 실행한다.
+[`tidyverse`](https://www.tidyverse.org/) 패키지를 사용하는 것의 장점은 이 패키지만 불러오면 구성 패키지까지 한꺼번에 사용할 수 있게 된다는 점이다. 스크립트 내에서 다음과 같은 코드를 실행한다.
 
 ```{r}
 library(tidyverse)
@@ -97,13 +97,13 @@ penguins
 
 데이터를 자세히 살펴보면 몇 가지를 알 수 있다.
 
--   티블(tibble)이라는 형식의 데이터 프레임이다. 티블은 tidyverse의 공식 데이터 프레임 포맷이다.
+-   티블(`tibble`)이라는 형식의 데이터 프레임이다. 티블은 [`tidyverse`](https://www.tidyverse.org/)의 공식 데이터 프레임 포맷이다.
 
 -   관측개체는 344개, 변수는 8개이다.
 
 -   `species`, `island`, `sex` 변수의 유형은 팩트형(`fctr`)이고, `bill_length_mm`, `bill_depth_mm`은 실수형(`dbl`)이고, 나머지는 정수형(`int`)이다.
 
-변수가 많아지면 전체 데이터를 조망하기 어렵기 때문에, 최초의 tidyverse 함수인 `glimpse()`를 사용하여 데이터의 행과 열을 바꾸어 보자.
+변수가 많아지면 전체 데이터를 조망하기 어렵기 때문에, 최초의 [`tidyverse`](https://www.tidyverse.org/) 함수인 `glimpse()`를 사용하여 데이터의 행과 열을 바꾸어 보자.
 
 ```{r}
 glimpse(penguins)
@@ -188,7 +188,7 @@ ggplot(
 
 ## 변형하기
 
-변형하기와 관련된 함수들은 대부분 [`dplyr`](https://dplyr.tidyverse.org/) 패키지에 포함되어 있다. 수많은 함수가 있지만 10개 내외의 함수만 중점적으로 살펴본다.
+변형하기와 관련된 함수들은 대부분 [`dplyr`](https://dplyr.tidyverse.org/) 패키지에 포함되어 있다.
 
 ### 데이터 살펴보기
 
@@ -199,13 +199,21 @@ library(nycflights13)
 glimpse(flights)
 ```
 
-### 행(row) 변형하기
+### 주요 함수
 
-행의 변화를 야기하는 함수들 중 여기서는 `filter()`, `arrange()`, `distinct()`만 다룬다.
+여기서는 가장 널리 사용되는 6개 함수에 대해서만 개략적으로 다룬다. 그 6개 함수는 `select()`, `filter()`, `arrange()`, `mutate()`, `group_by()`, `summerize()`이다. 조교의 도움을 받아 각 함수가 무슨 일을 한 것인지 이해한다.
+
+#### `select()` 함수
+
+열(변수) 중 일부를 솎아낸다. 즉, 변수의 갯수를 줄인다.
+
+```{r}
+select(flights, year, month, day)
+```
 
 #### `filter()` 함수
 
-특정 열(변수)에 의거해 조건을 만족하는 행을 솎아낸다. 함수가 무슨 일을 한 것인지 살펴보라.
+특정 열(변수)에 의거해 조건을 만족하는 행을 솎아낸다. 즉 관측개체의 갯수를 줄인다.
 
 ```{r}
 filter(flights, month == 1 & day == 1)
@@ -213,35 +221,15 @@ filter(flights, month == 1 & day == 1)
 
 #### `arrange()` 함수
 
-특정 열(변수)에 의거해 행의 순서를 바꾼다. 함수가 무슨 일을 한 것인지 살펴보라.
+특정 열(변수)에 의거해 행의 순서를 바꾼다.
 
 ```{r}
 arrange(flights, year, month, day)
 ```
 
-#### `distinct()` 함수
-
-특정 열(변수)에 의거해 (중복을 제거한) 고유한 행을 솎아 낸다. 함수가 무슨 일을 한 것인지 살펴보라.
-
-```{r}
-distinct(flights, origin, dest)
-```
-
-### 열(column) 변형하기
-
-열의 변화를 야기하는 함수들 중 여기서는 `select()`, `mutate()`, `rename()`, `relocate()`만 다룬다.
-
-#### `select()` 함수
-
-열 중 일부를 솎아낸다. 무엇이 함수가 무슨 일을 한 것인지 살펴보라.
-
-```{r}
-select(flights, year, month, day)
-```
-
 #### `mutate()` 함수
 
-기존의 열을 변형하여 새로운 열을 생성한다. 함수가 무슨 일을 한 것인지 살펴보라.
+기존의 열(변수)을 변형하여 새로운 열(변수)을 생성한다.
 
 ```{r}
 mutate(flights,
@@ -250,27 +238,9 @@ mutate(flights,
   )
 ```
 
-#### `rename()` 함수
-
-열의 이름을 변경한다. 함수가 무슨 일을 한 것인지 살펴보라.
-
-```{r}
-rename(flights, tail_num = tailnum)
-```
-
-#### `relocate()` 함수
-
-열의 위치(순서)를 변경한다. 함수가 무슨 일을 한 것인지 살펴보라.
-
-```{r}
-relocate(flights, time_hour, air_time)
-```
-
-### 그룹화하고 요약하기
-
 #### `group_by()` 함수
 
-열에 의거해 전체 행을 그룹으로 분할한다. 함수가 무슨 일을 한 것인지 살펴보라.
+열(변수)(범주형 변수, categorical variables)에 의거해 전체 행을 그룹으로 분할한다.
 
 ```{r}
 group_by(flights, month)
@@ -278,13 +248,13 @@ group_by(flights, month)
 
 #### `summerize()` 함수
 
-열의 통계량을 산출하여 새로운 열에 저장한다. 함수가 무슨 일을 한 것인지 살펴보라.
+열(변수)의 통계량을 산출하여 새로운 열(변수)에 저장한다.
 
 ```{r}
 summarize(flights, delay = mean(dep_delay, na.rm = TRUE))
 ```
 
-위의 `group_by()` 함수와 결합하면, 그룹별로 열의 통계량을 산출하여 새로운 열에 저장할 수 있다. 함수가 무슨 일을 한 것인지 살펴보라.
+위의 `group_by()` 함수와 결합하면, 그룹별로 열(변수)의 통계량을 산출하여 새로운 열(변수)에 저장할 수 있다.
 
 ```{r}
 by_day <- group_by(flights, year, month, day)
@@ -379,14 +349,4 @@ flights |>
   arrange(desc(speed))
 ```
 
-## 참고문헌
-
--   Wickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund, 2023. [*R for Data Science: Import, Tidy, Transform, Visualize, and Model Data*](https://r4ds.hadley.nz/)*,* 2nd edition, Boston: O’Reilly.
-
--   Wickham, Hadley, and Garrett Grolemund. 2016. [*R for Data Science: Import, Tidy, Transform, Visualize, and Model Data*](https://r4ds.had.co.nz/index.html). 1st edition. Sebastopol, CA: O’Reilly.
-
--   Brendan R. E. Ansell, [Introduction to R - tidyverse](https://bookdown.org/ansellbr/WEHI_tidyR_course_book/), 웹북
-
--   RStudio IDE User Guide (<https://docs.posit.co/ide/user/>)
-
--   김기환, 2023, [R 프로그래밍(개정판)](https://kilhwan.github.io/rprogramming/), 웹북
+## 
