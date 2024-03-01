@@ -25,6 +25,7 @@ website:
           - exec_04.qmd
           - exec_05.qmd
           - exec_06.qmd
+          - exec_07.qmd
 
   bread-crumbs: false
   back-to-top-navigation: true

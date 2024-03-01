@@ -1,0 +1,23 @@
+---
+title: "웹스크레이핑"
+author: 이상일(서울대학교 지리교육과)
+date-modified: last-modified
+number-sections: true
+format: 
+  html: 
+    toc: true
+code-link: true
+code-copy: true
+execute: 
+  warning: false
+  error: false
+  freeze: auto
+editor: visual
+bibliography: references.bib
+---
+
+## 실습 개요 {.unnumbered}
+
+이 실습은 데이터사이언스의 꽃이라고 할 수 있는 데이터 탐색(exploration)을 다룬다. 데이터 탐색하기는 데이터 변형하기와 데이터 시각화하기를 합친 것으로 이해할 수 있다. 다음의 사항을 이해하고 있는 것이 매우 중요하다.
+
+-   
