@@ -7,6 +7,7 @@ format:
   html: 
     toc: true
 code-link: true
+code-copy: true
 execute: 
   warning: false
   error: false
@@ -33,11 +34,11 @@ library(tidyverse)
 
 ## 핵심 레이어: 심미성과 기하
 
-이 8개 구성요소 중 가장 중요한 것은 '심미성(aesthetics)' 혹은 '심미성 부여(aesthetic mapping)'와 '기하(geometries)' 혹은 '기하 객체(geometric objects)'이다. 기하가 그래프의 전체 구조 혹은 형식을 규정하는 것이라면, 심미성은 기하의 외견을 규정한다. 결국 기하는 그래프의 유형(예: 막대 그래프, 산포도 등)과 관련되고, 심미성은 그래프의 시각적 속성(예: 컬러, 크기, 모양 등)과 관련된다. 이 두 가지는 독립적인 요소이지만, 어느 정도는 관련되어 있기도 하다. 모든 기하가 모든 심미성과 결합할 수 있는 것은 아니다. 특정한 기하는 오로지 특정한 심미성과만 결합한다. 예를 들어 포인트 기하 객체(`geom_point()`)는 크기(`size`) 심미성과 관련되지만, 라인 기하 객체(`geom_line()`)는 크기 심미성과는 관련되지 않고 라인폭(`linewidth`) 심미성과만 관련되는 식이다.
+이 8개 구성요소 중 가장 중요한 것은 '심미성(aesthetics)' 혹은 '심미성 매핑(aesthetic mapping)'와 '기하(geometries)' 혹은 '기하 객체(geometric objects)'이다. 기하가 그래프의 전체 구조 혹은 형식을 규정하는 것이라면, 심미성은 기하의 외견을 규정한다. 결국 기하는 그래프의 유형(예: 막대 그래프, 산포도 등)과 관련되고, 심미성은 그래프의 시각적 속성(예: 컬러, 크기, 모양 등)과 관련된다. 이 두 가지는 독립적인 요소이지만, 어느 정도는 관련되어 있기도 하다. 모든 기하가 모든 심미성과 결합할 수 있는 것은 아니다. 특정한 기하는 오로지 특정한 심미성과만 결합한다. 예를 들어 포인트 기하 객체(`geom_point()`)는 크기(`size`) 심미성과 관련되지만, 라인 기하 객체(`geom_line()`)는 크기 심미성과는 관련되지 않고 라인폭(`linewidth`) 심미성과만 관련되는 식이다.
 
-### 심미성 부여
+### 심미성 매핑
 
-`displ`과 `hwy`의 관계가 `class`에 따라 어떻게 달라지는지를 시각화한다. 다음의 두 그래프를 비교해 본다.
+심미성 매핑이란 다양한 시각적 속성 혹은 재료를 그래프에 적용 혹은 부여하는 과정을 의미한다. `displ`과 `hwy`의 관계가 `class`에 따라 어떻게 달라지는지를 시각화한다. 다음의 두 그래프를 비교해 본다.
 
 ```{r}
 #| label: fig-aesthetic-color
@@ -89,7 +90,7 @@ ggplot(mpg, aes(x = displ, y = hwy)) +
   geom_smooth()
 ```
 
-@fig-geometric-color 과 @fig-geometric-smooth 두 개를 결합해 본다.
+@fig-aesthetic-color 과 @fig-geometric-smooth 두 개를 결합해 본다.
 
 ```{r}
 #| label: fig-geometric-point-smooth-1

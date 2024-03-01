@@ -7,6 +7,7 @@ format:
   html: 
     toc: true
 code-link: true
+code-copy: true
 execute: 
   warning: false
   error: false

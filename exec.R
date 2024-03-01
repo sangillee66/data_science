@@ -1118,7 +1118,7 @@ gapminder |>
     prop_cont = sum_cont * 100 / sum_year,
   ) |> 
   ggplot() +
-  geom_line(aes(x = year, y = prop_cont, color = continent), size = 1)
+  geom_line(aes(x = year, y = prop_cont, color = continent), linewidth = 1)
 
 gapminder |> 
   count(year, continent, wt = pop) |> 
@@ -1128,7 +1128,7 @@ gapminder |>
     .by = year
   ) |> 
   ggplot() +
-  geom_line(aes(x = year, y = prop_cont, color = continent), size = 1)
+  geom_line(aes(x = year, y = prop_cont, color = continent), linewidth = 1)
 
 gapminder |> 
   count(year, continent, wt = pop) |> 
@@ -1138,7 +1138,7 @@ gapminder |>
     prop_cont = n * 100 / sum_year
   ) |> 
   ggplot() +
-  geom_line(aes(x = year, y = prop_cont, color = continent), size = 1)
+  geom_line(aes(x = year, y = prop_cont, color = continent), linewidth = 1)
 
 
 # 연도별 국가별 대륙내 인구 비중
