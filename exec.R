@@ -1189,3 +1189,114 @@ p1 + p2
 ggplot(mpg, aes(displ, hwy)) + 
   geom_point(colour = "red") +
   geom_text(data = mpg |> slice_sample(prop = 0.3), aes(label = class))
+
+
+
+library(tidyverse)
+library(gapminder)
+glimpse(gapminder)
+
+# 히스토그림
+gapminder |> 
+  filter(year == 2007) |>
+  ggplot(aes(x = gdpPercap)) +
+  geom_histogram()
+
+# 히스토그램 --> 밀도 + 정규분포
+
+a <- gapminder |> 
+  summarize(
+  mean = mean(gdpPercap),
+  sd = sd(gdpPercap)
+)
+
+gapminder |> 
+  filter(year == 2007) |>
+  ggplot(aes(x = gdpPercap)) +
+  geom_histogram(aes(y = after_stat(density))) + 
+  stat_function(fun = dnorm, color = "red", size = 1, 
+                args = list(mean = a$mean, sd = a$sd))
+
+# arrange
+gapminder |> 
+  filter(year == 2007) |> 
+  arrange(desc(gdpPercap))
+
+# 범주형 + 수치형 1
+gapminder |> 
+  filter(year == 2007) |> 
+  ggplot(aes(x = gdpPercap)) +
+  geom_density(aes(color = continent, fill = continent), alpha = 0.25)
+
+gapminder |> 
+  filter(year == 2007) |> 
+  ggplot(aes(x = gdpPercap, y = fct_reorder(continent, gdpPercap, median))) +
+  geom_boxplot(aes(color = continent))
+
+# 두 범주형
+gapminder |> 
+  filter(year == 2007) |> 
+  mutate(
+    gdp_class = cut_interval(gdpPercap, n =5, labels = c("very low", "low", "middle", "high", "very high"))
+  ) |> 
+  ggplot(aes(x = continent, y = gdp_class)) +
+  geom_count()
+
+gapminder |> 
+  filter(year == 2007) |> 
+  mutate(
+    gdp_class = cut_interval(gdpPercap, n =5, labels = c("very low", "low", "middle", "high", "very high"))
+  ) |> 
+  count(continent, gdp_class) |> 
+  ggplot(aes(x = continent, y = gdp_class)) +
+  geom_tile(aes(fill = n))
+
+
+
+# 두 수치형
+
+gapminder |> 
+  filter(year == 2007) |> 
+  ggplot(aes(x = gdpPercap, y = lifeExp)) +
+  geom_point(aes()) +
+  geom_smooth()
+
+gapminder |> 
+  filter(year == 2007) |> 
+  ggplot(aes(x = gdpPercap, y = lifeExp)) +
+  geom_bin_2d()
+
+gapminder |> 
+  filter(year == 2007) |> 
+  ggplot(aes(x = gdpPercap, y = lifeExp)) +
+  geom_boxplot(aes(group = cut_width(gdpPercap, 5000)))
+
+
+gapminder |> 
+  filter(year %in% c(1987, 1997, 2007)) |> 
+  ggplot(aes(x = gdpPercap, y = lifeExp)) +
+  geom_point() +
+  geom_smooth() +
+  facet_wrap(~year)
+
+
+# 세 변수 이상
+
+gapminder |> 
+  filter(year == 2007) |> 
+  ggplot(aes(x = log(gdpPercap), y = log(lifeExp))) +
+  geom_point(aes(size = pop)) +
+  geom_smooth()
+
+gapminder |> 
+  filter(year == 2007) |> 
+  ggplot(aes(x = log(gdpPercap), y = log(lifeExp))) +
+  geom_point() +
+  geom_smooth() +
+  facet_wrap(~continent)
+
+library(tidymodels)
+
+
+
+

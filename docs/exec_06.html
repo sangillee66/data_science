@@ -213,6 +213,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
 <li><a href="#%EC%8B%A4%EC%8A%B5-%EA%B0%9C%EC%9A%94" id="toc-실습-개요" class="nav-link active" data-scroll-target="#%EC%8B%A4%EC%8A%B5-%EA%B0%9C%EC%9A%94">실습 개요</a></li>
   <li><a href="#%ED%83%90%EC%83%89-%EC%A7%88%EB%AC%B8%EC%97%90-%EB%8B%B5%EC%9D%84-%EC%B0%BE%EC%95%84%EA%B0%80%EB%8A%94-%EA%B3%BC%EC%A0%95" id="toc-탐색-질문에-답을-찾아가는-과정" class="nav-link" data-scroll-target="#%ED%83%90%EC%83%89-%EC%A7%88%EB%AC%B8%EC%97%90-%EB%8B%B5%EC%9D%84-%EC%B0%BE%EC%95%84%EA%B0%80%EB%8A%94-%EA%B3%BC%EC%A0%95"><span class="header-section-number">1</span> 탐색: 질문에 답을 찾아가는 과정</a></li>
+  <li>
+<a href="#%ED%83%90%EC%83%89%EC%9D%98-%EC%9C%A0%ED%98%95" id="toc-탐색의-유형" class="nav-link" data-scroll-target="#%ED%83%90%EC%83%89%EC%9D%98-%EC%9C%A0%ED%98%95"><span class="header-section-number">2</span> 탐색의 유형</a>
+  <ul class="collapse">
+<li><a href="#%ED%95%9C-%EB%B3%80%EC%88%98%EC%9D%98-%EB%B3%80%EB%8F%99" id="toc-한-변수의-변동" class="nav-link" data-scroll-target="#%ED%95%9C-%EB%B3%80%EC%88%98%EC%9D%98-%EB%B3%80%EB%8F%99"><span class="header-section-number">2.1</span> 한 변수의 변동</a></li>
+  <li><a href="#%EB%91%90-%EB%B3%80%EC%88%98-%EA%B0%84%EC%9D%98-%EA%B3%B5%EB%B3%80%EB%8F%99" id="toc-두-변수-간의-공변동" class="nav-link" data-scroll-target="#%EB%91%90-%EB%B3%80%EC%88%98-%EA%B0%84%EC%9D%98-%EA%B3%B5%EB%B3%80%EB%8F%99"><span class="header-section-number">2.2</span> 두 변수 간의 공변동</a></li>
+  </ul>
+</li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
@@ -235,7 +242,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">March 1, 2024</p>
+      <p class="date-modified">March 2, 2024</p>
     </div>
   </div>
     
@@ -262,9 +269,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>탐색을 데이터 변형과 시각화의 연쇄 과정으로 보는 관점의 유용성을 매우 간단한 예를 통해 살펴보도록 한다.</p>
 <p>나의 질문은 이것이다.</p>
 <blockquote class="blockquote">
-<p>대륙별 최대국(인구가 가장 많은 나라)이 소속 대륙 전체에서 차지하는 비중이 어느 정도이고 대륙별로 어느 정도의 차이가 있는지, 그리고 대륙별 최대국의 비중이 시간이 지남에 따라 어떠한 경향을 보여주고 있고, 그러한 경향성에 대륙별 차이가 있는지이다.</p>
+<p>대륙별 최대국(인구가 가장 많은 나라)이 소속 대륙 전체에서 차지하는 비중이 어느 정도이고 대륙별로 어느 정도의 차이가 있는지, 그리고 대륙별 최대국의 비중이 시간이 지남에 따라 어떠한 변화 양상을 보여주고 있고, 그러한 양상에 대륙별 차이가 있는지의 여부이다.</p>
 </blockquote>
-<p><code>gapminder</code> 데이터를 살펴보라. 아무리 훑어 보아도 곧바로 이 질문에 답할 수는 없을 것이다. 이 질문에 대답하기 위해 우리는 두 가지의 연쇄적인 과제를 수행해야 한다.</p>
+<p><code>gapminder</code> 데이터를 살펴보라. 아무리 훑어 보아도 곧바로 이 질문에 답할 수는 없을 것이다. 이 질문에 답하기 위해 우리는 두 가지의 연쇄적인 과제를 수행해야 한다.</p>
 <ul>
 <li><p>질문에 답할 수 있는 형태로 데이터를 변형한다.</p></li>
 <li><p>변형한 데이터를 간명한 형태의 그래프로 시각화한다.</p></li>
@@ -304,10 +311,208 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>코드을 확인하고 자신의 코드와 비교해보라. 동일한 그래프에 이르는 조금 더 긴, 혹은 조금 더 짧은 코드가 가능할 것이다. 짧다고 좋은 것이 아니다. 자신이 이해하기 쉽고, 타인이 이해하기 쉬운 코드가 가장 좋은 코드이다. 중요한 것은, 데이터 탐색의 핵심이 데이터 변형과 데이터 시각화의 적절한 시퀀스라는 점을 이해하는 것이다. 위 코드는 <a href="https://dplyr.tidyverse.org/"><code>dplyr</code></a> 패키지와 <a href="https://ggplot2.tidyverse.org/"><code>ggplot2</code></a> 패키지를 연결하여 이 과업을 수행하는 과정을 잘 보여주고 있다.</p>
+<p>코드를 확인하고 자신의 코드와 비교해보라. 동일한 그래프에 이르는 조금 더 긴, 혹은 조금 더 짧은 코드가 가능할 것이다. 짧다고 좋은 것이 아니다. 자신이 이해하기 쉽고, 타인이 이해하기 쉬운 코드가 가장 좋은 코드이다. 중요한 것은, 데이터 탐색의 핵심이 데이터 변형과 데이터 시각화의 적절한 시퀀스라는 점을 이해하는 것이다. 위 코드는 <a href="https://dplyr.tidyverse.org/"><code>dplyr</code></a> 패키지와 <a href="https://ggplot2.tidyverse.org/"><code>ggplot2</code></a> 패키지를 연결하여 이 과업을 수행하는 과정을 잘 보여준다.</p>
+</section><section id="탐색의-유형" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="탐색의-유형">
+<span class="header-section-number">2</span> 탐색의 유형</h2>
+<section id="한-변수의-변동" class="level3" data-number="2.1"><h3 data-number="2.1" class="anchored" data-anchor-id="한-변수의-변동">
+<span class="header-section-number">2.1</span> 한 변수의 변동</h3>
+<p>변동(variation)이란 한 변수값이 보여주는 다양성의 양태이다. 개별 변수에 대해 변동이 보여주는 특성을 파악하는 것은 데이터 탐색의 가장 초보적인 단계이다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-histogram-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-histogram-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="exec_06_files/figure-html/fig-histogram-1-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histogram-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: 히스토그램
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>아주 높은 값을 보이는 국가들을 확인하기 위해 데이터 변형을 한다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">gdpPercap</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 142 × 6
+   country          continent  year lifeExp       pop gdpPercap
+   &lt;fct&gt;            &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;     &lt;int&gt;     &lt;dbl&gt;
+ 1 Norway           Europe     2007    80.2   4627926    49357.
+ 2 Kuwait           Asia       2007    77.6   2505559    47307.
+ 3 Singapore        Asia       2007    80.0   4553009    47143.
+ 4 United States    Americas   2007    78.2 301139947    42952.
+ 5 Ireland          Europe     2007    78.9   4109086    40676.
+ 6 Hong Kong, China Asia       2007    82.2   6980412    39725.
+ 7 Switzerland      Europe     2007    81.7   7554661    37506.
+ 8 Netherlands      Europe     2007    79.8  16570613    36798.
+ 9 Canada           Americas   2007    80.7  33390141    36319.
+10 Iceland          Europe     2007    81.8    301931    36181.
+# ℹ 132 more rows</code></pre>
+</div>
+</div>
+</section><section id="두-변수-간의-공변동" class="level3" data-number="2.2"><h3 data-number="2.2" class="anchored" data-anchor-id="두-변수-간의-공변동">
+<span class="header-section-number">2.2</span> 두 변수 간의 공변동</h3>
+<p>공변동(covariation)은 두 변수간의 관련성을 포괄적으로 부르는 통계학적인 용어이다. 어떤 두 변수가 개입되는냐에 따라 몇 가지 종류로 나누어 살펴본다.</p>
+<ul>
+<li><p>한 범주형 변수와 한 수치형 변수</p></li>
+<li><p>두 범주형 변수</p></li>
+<li><p>두 수치형 변수</p></li>
+</ul>
+<section id="한-범주형-변수와-한-수치형-변수" class="level4" data-number="2.2.1"><h4 data-number="2.2.1" class="anchored" data-anchor-id="한-범주형-변수와-한-수치형-변수">
+<span class="header-section-number">2.2.1</span> 한 범주형 변수와 한 수치형 변수</h4>
+<p>범주형 변수인 대륙에 의거해 수치형 변수인 일인당 GDP의 변동을 탐색한다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_density.html">geom_density</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">continent</span>, fill <span class="op">=</span> <span class="va">continent</span><span class="op">)</span>, alpha <span class="op">=</span> <span class="fl">0.25</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-density-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-density-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="exec_06_files/figure-html/fig-density-1-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-density-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: 한 범주형 변수와 한 수치형 변수: 밀도 분포
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>일인당 GDP의 대륙간 차이를 박스플롯을 통해 탐색할 수도 있다. 여기서 <code><a href="https://forcats.tidyverse.org/reference/fct_reorder.html">fct_reorder()</a></code> 는 데이터 시각화에서 매우 중요하다. 이것은 범주 변수의 범주 순서를 바꾸어 주는데, <a href="https://www.tidyverse.org/"><code>tidyverse</code></a>의 핵심 패키지인 <a href="https://forcats.tidyverse.org/"><code>forcats</code></a>의 한 함수이다. 이것을 적용하지 않으면 원래 지정된 순서인 알파벳 순서에 따라 박스플롯이 배열된다. 이것을 일인당 GDP의 중위수의 순서로 배열하게 한 것이다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span>, y <span class="op">=</span> <span class="fu"><a href="https://forcats.tidyverse.org/reference/fct_reorder.html">fct_reorder</a></span><span class="op">(</span><span class="va">continent</span>, <span class="va">gdpPercap</span>, <span class="va">median</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">continent</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-boxplot-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-boxplot-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="exec_06_files/figure-html/fig-boxplot-1-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boxplot-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: 한 범주형 변수와 한 수치형 변수: 박스틀롯
+</figcaption></figure>
+</div>
+</div>
+</div>
+</section><section id="두-범주형-변수" class="level4" data-number="2.2.2"><h4 data-number="2.2.2" class="anchored" data-anchor-id="두-범주형-변수">
+<span class="header-section-number">2.2.2</span> 두 범주형 변수</h4>
+<p>수치형 변수인 일인당 GDP를 동일 간격의 5개 그룹으로 나눈 새로운 범주형 변수를 생성하고, 그것과 또 다른 범주 변수인 대륙과의 관련성을 탐색한다. <code><a href="https://ggplot2.tidyverse.org/reference/geom_count.html">geom_count()</a></code> 기하 함수가 역할을 한다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
+<span>    gdp_class <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/cut_interval.html">cut_interval</a></span><span class="op">(</span><span class="va">gdpPercap</span>, n <span class="op">=</span><span class="fl">5</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"very low"</span>, <span class="st">"low"</span>, <span class="st">"middle"</span>, <span class="st">"high"</span>, <span class="st">"very high"</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">continent</span>, y <span class="op">=</span> <span class="va">gdp_class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_count.html">geom_count</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-count-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-count-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="exec_06_files/figure-html/fig-count-1-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-count-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: 두 범주형 변수: 카운트플롯
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>또 다른 방법은 데이터 변형을 위한 <code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code> 함수와 시각화 함수인 <code>geom_title()</code> 기하 함수를 결합하는 것이다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
+<span>    gdp_class <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/cut_interval.html">cut_interval</a></span><span class="op">(</span><span class="va">gdpPercap</span>, n <span class="op">=</span><span class="fl">5</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"very low"</span>, <span class="st">"low"</span>, <span class="st">"middle"</span>, <span class="st">"high"</span>, <span class="st">"very high"</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">continent</span>, <span class="va">gdp_class</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">continent</span>, y <span class="op">=</span> <span class="va">gdp_class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html">geom_tile</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">n</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-tile-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-tile-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="exec_06_files/figure-html/fig-tile-1-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tile-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: 두 범주형 변수: 타일플롯
+</figcaption></figure>
+</div>
+</div>
+</div>
+</section><section id="두-수치형-변수" class="level4" data-number="2.2.3"><h4 data-number="2.2.3" class="anchored" data-anchor-id="두-수치형-변수">
+<span class="header-section-number">2.2.3</span> 두 수치형 변수</h4>
+<p>두 수치형 변수인 일인당 GDP와 기대수명의 공변동을 탐색하는 가장 기본적이고도 가장 좋은 방법은 산포도를 그리는 것이다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-scatterplot-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-scatterplot-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="exec_06_files/figure-html/fig-scatterplot-1-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scatterplot-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: 두 수치형 변수: 산포도
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>일인당 GDP를 여러 급간으로 쪼개서 박스플롯을 적용하는 것도 하나의 대안일 수 있다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>group <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/cut_interval.html">cut_width</a></span><span class="op">(</span><span class="va">gdpPercap</span>, <span class="fl">5000</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-boxplot-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-boxplot-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="exec_06_files/figure-html/fig-boxplot-2-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boxplot-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: 두 수치형 변수: 박스플롯
+</figcaption></figure>
+</div>
+</div>
+</div>
+</section><section id="세-변수-이상" class="level4" data-number="2.2.4"><h4 data-number="2.2.4" class="anchored" data-anchor-id="세-변수-이상">
+<span class="header-section-number">2.2.4</span> 세 변수 이상</h4>
+<p><a href="#fig-scatterplot-1" class="quarto-xref">Figure&nbsp;6</a> 에 또 하나의 수치형 변수(인구 규모)를 결합할 수 있다. 두 축에 로그를 적용하니 두 변수의 관련성이 선형에 가까워 졌다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">gdpPercap</span><span class="op">)</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>size <span class="op">=</span> <span class="va">pop</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="exec_06_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><a href="#fig-scatterplot-1" class="quarto-xref">Figure&nbsp;6</a> 에 또 하나의 범주형 변수(대륙)를 결합할 수 있다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">gdpPercap</span><span class="op">)</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>size <span class="op">=</span> <span class="va">pop</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">continent</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="exec_06_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
-</section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></section></section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
