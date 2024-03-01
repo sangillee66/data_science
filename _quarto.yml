@@ -49,7 +49,7 @@ format:
       dark: darkly
     css: styles.css
     toc: true
-    embed-resources: true
+#    embed-resources: true
 
 execute:
   freeze: auto
