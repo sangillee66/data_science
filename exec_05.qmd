@@ -17,7 +17,11 @@ bibliography: references.bib
 
 ## 실습 개요 {.unnumbered}
 
-이 실습은 R로 데이터사이언스를 하는 과정 중 데이터 시각화하기(visualizing)를 다룬다. 데이터 시각화하기는 [`tidyverse`](https://www.tidyverse.org/)의 핵심 패키지 중의 하나인 [`ggplot2`](https://ggplot2.tidyverse.org/) 에서 제공된다. 실습을 위해 [`ggplot2`](https://ggplot2.tidyverse.org/) 패키지 속에 포함되어 있는 `mpg` 데이터와 diamonds 데이터를 사용한다. `mpg` 데이터의 11개 변수 중 다음의 세 가지 변수가 특히 중요한데, `displ`는 자동차의 엔진 크기이고, `hwy`는 고속도로 연비, `class`는 자동차의 유형이다. `diamond` 데이터는 총 54,000개의 다이아몬드에 대한 정보를 담고 있는데, 특히 가격(price) 캐럿(carat), 컬러(`color`), 투명도(`clarity`), 컷(`cut`)이 중요한 변수들이다.
+이 실습은 R로 데이터사이언스를 하는 과정 중 데이터 시각화하기(visualizing)를 다룬다. 다음의 사항을 다룬다. 데이터 시각화하기는 [`tidyverse`](https://www.tidyverse.org/)의 핵심 패키지 중의 하나인 [`ggplot2`](https://ggplot2.tidyverse.org/) 에서 제공된다.
+
+[`ggplot2`](https://ggplot2.tidyverse.org/)의 `gg`가 '그래프의 문법(grammar of graphic)'을 의미하는 것에서 알 수 있는 것처럼, [`ggplot2`](https://ggplot2.tidyverse.org/)는 그래프 제작의 일반 원리를 정교하게 구현하기 위해 만들어졌다. @fig-ggplot2-layers 에서 보는 것처럼, 모든 그래프는 8개의 주요 구성요소로 이루어져 있고, ggplot2는 각각의 구성요소를 마치 레이어(layer)를 쌓는 것과 같은 방식으로 구현한다(`+` 사인을 이용).
+
+![그래프의 8개 구성요소(<https://initiation.doana-r.com/06-ggplot2#1>)](images/clipboard-3014854163.png){#fig-ggplot2-layers}
 
 모든 실습의 시작은 [`tidyverse`](https://www.tidyverse.org/) 패키지를 불러오는 것이다.
 
@@ -25,17 +29,13 @@ bibliography: references.bib
 library(tidyverse)
 ```
 
-## 그래프의 구성요소: 레이어(layers)
-
-[`ggplot2`](https://ggplot2.tidyverse.org/)의 `gg`가 '그래프의 문법(grammar of graphic)'을 의미하는 것에서 알 수 있는 것처럼, [`ggplot2`](https://ggplot2.tidyverse.org/)는 그래프 제작의 일반 원리를 정교하게 구현하기 위해 만들어졌다. @fig-ggplot2-layers 에서 보는 것처럼, 모든 그래프는 8개의 주요 구성요소로 이루어져 있고, ggplot2는 각각의 구성요소를 마치 레이어를 쌓는 것과 같은 방식으로 구현한다(`+` 사인을 이용).
-
-![그래프의 8개 구성요소(<https://initiation.doana-r.com/06-ggplot2#1>)](images/clipboard-3014854163.png){#fig-ggplot2-layers}
+실습을 위해 [`ggplot2`](https://ggplot2.tidyverse.org/) 패키지 속에 포함되어 있는 `mpg` 데이터와 diamonds 데이터를 사용한다. `mpg` 데이터의 11개 변수 중 다음의 세 가지 변수가 특히 중요한데, `displ`는 자동차의 엔진 크기이고, `hwy`는 고속도로 연비, `class`는 자동차의 유형이다. `diamond` 데이터는 총 54,000개의 다이아몬드에 대한 정보를 담고 있는데, 특히 가격(price) 캐럿(carat), 컬러(`color`), 투명도(`clarity`), 컷(`cut`)이 중요한 변수들이다.
 
 ## 핵심 레이어: 심미성과 기하
 
 이 8개 구성요소 중 가장 중요한 것은 '심미성(aesthetics)' 혹은 '심미성 부여(aesthetic mapping)'와 '기하(geometries)' 혹은 '기하 객체(geometric objects)'이다. 기하가 그래프의 전체 구조 혹은 형식을 규정하는 것이라면, 심미성은 기하의 외견을 규정한다. 결국 기하는 그래프의 유형(예: 막대 그래프, 산포도 등)과 관련되고, 심미성은 그래프의 시각적 속성(예: 컬러, 크기, 모양 등)과 관련된다. 이 두 가지는 독립적인 요소이지만, 어느 정도는 관련되어 있기도 하다. 모든 기하가 모든 심미성과 결합할 수 있는 것은 아니다. 특정한 기하는 오로지 특정한 심미성과만 결합한다. 예를 들어 포인트 기하 객체(`geom_point()`)는 크기(`size`) 심미성과 관련되지만, 라인 기하 객체(`geom_line()`)는 크기 심미성과는 관련되지 않고 라인폭(`linewidth`) 심미성과만 관련되는 식이다.
 
-### 심미성 부여(aesthetic mappings)
+### 심미성 부여
 
 `displ`과 `hwy`의 관계가 `class`에 따라 어떻게 달라지는지를 시각화한다. 다음의 두 그래프를 비교해 본다.
 
@@ -71,7 +71,7 @@ ggplot(mpg, aes(x = displ, y = hwy, alpha = class)) +
 
 크기와 투명도는 양적인 차이를 나타내는데 적합한 심미성이기 때문에 `class`라는 정성적인 범주의 차이를 보여주는데는 적합하지 않다. 심미성 부여에서 가장 중요한 것은 결국 얼마나 적절한 심미성 요소, 혹은 시각 변수(visual variables)를 선택하느냐에 달려 있다.
 
-### 기하 객체(geometric objects)
+### 기하 객체
 
 @fig-geometric-point 와 @fig-geometric-smooth 이 다르게 보이는 것은 기하 객체가 하나는 포인트(`point`)이고 다른 하나는 완만한 선(`smooth`)이기 때문이다.
 
@@ -136,9 +136,9 @@ ggplot(mpg, aes(x = hwy)) +
 
 ## 다른 레이어
 
-### 스케일(scales)
+### 스케일
 
-스케일은 심미성이 구체적으로 어떻게 구현될지를 결정한다. 예를 들어 color 심미성이 적용되었다 하더라도 어떤 색상이 선정되어 어떻게 배열되는지에 따라 최종 그래프의 모습은 매우 달라질 수 있다. 그래프를 다시 나타낸다. 스케일이 어느 부분에 어떻게 적용되었는지 생각해 본다.
+스케일(scales)은 심미성이 구체적으로 어떻게 구현될지를 결정한다. 예를 들어 color 심미성이 적용되었다 하더라도 어떤 색상이 선정되어 어떻게 배열되는지에 따라 최종 그래프의 모습은 매우 달라질 수 있다. 그래프를 다시 나타낸다. 스케일이 어느 부분에 어떻게 적용되었는지 생각해 본다.
 
 ```{r}
 #| label: fig-scale-1
@@ -174,9 +174,9 @@ ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
 
 `scale_color_brewer()` 함수는 [ColorBrewer](https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3) 컬러 스케일을 사용한 것인데 익히고 있으면 많은 도움이 된다.
 
-### 패싯(facets)
+### 패싯
 
-패싯 레이어는 다면생성(faceting) 과정을 통해 하나의 플롯을 여러개의 하위 플롯으로 쪼갬으로서 생성된다.
+패싯(facets) 레이어는 다면생성(faceting) 과정을 통해 하나의 플롯을 여러개의 하위 플롯으로 쪼갬으로서 생성된다.
 
 ```{r}
 #| label: fig-facet-1
@@ -196,9 +196,9 @@ ggplot(mpg, aes(x = displ, y = hwy)) +
   facet_grid(drv ~ cyl)
 ```
 
-### 통계적 변환(statistical transformation)
+### 통계적 변환
 
-어떤 시각화 과정은 필연적으로 통계적 변환을 수반한다.
+어떤 시각화 과정은 필연적으로 통계적 변환(statistical transformation)을 수반한다.
 
 ```{r}
 #| label: fig-stat-1
@@ -250,9 +250,9 @@ ggplot(mpg, aes(x = drv, fill = class)) +
   geom_bar(position = "dodge")
 ```
 
-### 좌표(coordinates)
+### 좌표
 
-좌표 레이어 혹은 좌표계(coordinate systems)는 그래픽 요소들의 위치 결정에 기준이 되는 준거체계이다. 특히 두 가지가 함수가 유용하다. `coord_flip()` 함수는 축을 전환한다.
+좌표(coordinates) 레이어 혹은 좌표계(coordinate systems)는 그래픽 요소들의 위치 결정에 기준이 되는 준거체계이다. 특히 두 가지가 함수가 유용하다. `coord_flip()` 함수는 축을 전환한다.
 
 ```{r}
 #| label: fig-coordinates-1
@@ -272,9 +272,9 @@ ggplot(mpg, aes(cty, hwy)) +
   coord_fixed()
 ```
 
-### 테마(themes)
+### 테마
 
-테마는 한꺼 번에 전체적인 그래프의 외양을 결정한다. [`ggplot2`](https://ggplot2.tidyverse.org/)는 @fig-ggplot2-themes-1 에서 보는 처럼 모두 8가지 테마를 제공한다.
+테마(themes)는 그래프의 외양에 영향을 끼치는 또 다른 요소이다. 우선, 전체적인 외양을 한꺼번에 바꿀 수 있다. [`ggplot2`](https://ggplot2.tidyverse.org/)는 @fig-ggplot2-themes-1 에서 보는 처럼 모두 8가지 테마를 제공한다.
 
 ![ggplot2가 제공하는 테마(<https://r4ds.hadley.nz/communication>)](https://r4ds.hadley.nz/images/visualization-themes.png){#fig-ggplot2-themes-1}
 
@@ -316,9 +316,41 @@ ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
 
 ## 기타 사항
 
-### 레이아웃(layout)
+### 라벨과 주석
 
-레이아웃은 복수의 그래프를 적절히 배치하여 하나의 그래픽으로 융합하는 과정을 의미한다. 수 많은 [`ggplot2`](https://ggplot2.tidyverse.org/)의 [확장 패키지(ggplot2 extensions)](https://exts.ggplot2.tidyverse.org/) 중 하나이 [`patchwork`](https://patchwork.data-imaginist.com/) 패키지를 활용할 수 있다.
+`lab()` 함수를 활용하면 그래프의 다양한 종류의 라벨을 설정할 수 있다.
+
+```{r}
+#| label: fig-ggplot-label-1
+#| fig-cap: "라벨링"
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_point(aes(color = class)) +
+  geom_smooth(se = FALSE) +
+  labs(
+    x = "Engine displacement (L)",
+    y = "Highway fuel economy (mpg)",
+    color = "Car type",
+    title = "Fuel efficiency generally decreases with engine size",
+    subtitle = "Two seaters (sports cars) are an exception because of their light weight",
+    caption = "Data from fueleconomy.gov"
+  )
+```
+
+기하 함수인 `geom_text()` 혹은 `geom_label()`를 통해 그래프 속에 텍스트를 삽입할 수 있다. 주석이 겹치는 것을 방지하기 위해 `ggrepel` 패키지가 유용하게 사용될 수 있다.
+
+```{r}
+library(ggrepel)
+```
+
+```{r}
+ggplot(mpg, aes(displ, hwy)) + 
+  geom_point(colour = "red") +
+  geom_label_repel(data = mpg |> slice_sample(prop = 0.1), aes(label = class))
+```
+
+### 레이아웃
+
+레이아웃(layout)은 복수의 그래프를 적절히 배치하여 하나의 그래픽으로 융합하는 과정을 의미한다. 수 많은 [`ggplot2`](https://ggplot2.tidyverse.org/)의 [확장 패키지(ggplot2 extensions)](https://exts.ggplot2.tidyverse.org/) 중 하나이 [`patchwork`](https://patchwork.data-imaginist.com/) 패키지를 활용할 수 있다.
 
 ```{r}
 library(patchwork)

@@ -1180,3 +1180,8 @@ p2 <- ggplot(mpg, aes(x = drv, y = hwy)) +
   geom_boxplot() + 
   labs(title = "Plot 2")
 p1 + p2
+
+
+ggplot(mpg, aes(displ, hwy)) + 
+  geom_point(colour = "red") +
+  geom_text(data = mpg |> slice_sample(prop = 0.3), aes(label = class))
