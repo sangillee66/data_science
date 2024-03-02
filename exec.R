@@ -1298,5 +1298,19 @@ gapminder |>
 library(tidymodels)
 
 
+gapminder |> 
+  group_by(year, continent) |> 
+  mutate(
+    sum_pop = sum(pop)
+  ) |> 
+  ggplot(aes(x = year, y = sum_pop)) +
+  geom_area(aes(fill = fct_reorder2(continent, year, population), position = "stack")) +
+  scale_x_continuous(breaks = seq(1952, 2007, 5), labels = seq(1952, 2007, 5)) +
+  scale_y_continuous(breaks = seq(0, 7000000000, 1000000000), 
+                     labels = format(seq(0, 7000000000, 1000000000), big.mark = ",", scientific = FALSE)) +
+  labs(x = "Year", y = "Population", fill = "Continent") +
+  scale_fill_brewer(palette = "Set3")
 
 
+gapminder |> 
+fct_reorder2(continent, year, population)
