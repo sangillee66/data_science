@@ -1304,7 +1304,7 @@ gapminder |>
     sum_pop = sum(pop)
   ) |> 
   ggplot(aes(x = year, y = sum_pop)) +
-  geom_area(aes(fill = fct_reorder2(continent, year, population), position = "stack")) +
+  geom_area(aes(fill = fct_reorder2(continent, year, sum_pop))) +
   scale_x_continuous(breaks = seq(1952, 2007, 5), labels = seq(1952, 2007, 5)) +
   scale_y_continuous(breaks = seq(0, 7000000000, 1000000000), 
                      labels = format(seq(0, 7000000000, 1000000000), big.mark = ",", scientific = FALSE)) +
@@ -1313,4 +1313,8 @@ gapminder |>
 
 
 gapminder |> 
-fct_reorder2(continent, year, population)
+  group_by(year, continent) |> 
+  mutate(
+    a = fct_reorder2(continent, year, population)
+  )
+  
