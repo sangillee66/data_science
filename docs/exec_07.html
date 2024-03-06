@@ -338,8 +338,8 @@ Figure&nbsp;1: HTML의 위계 구조
 <p>선택 대상을 효과적으로 규정하기 위해 사용되는 것이 CSS(cascading style sheet) 선택자(selector)이다. CSS는 HTML의 시각적 구성을 통제하는 툴인데, html의 특정 부분을 지칭하는 작은 언어(miniature language)를 가지고 있고, CSS 선택자라 부른다.</p>
 <table class="table">
 <colgroup>
-<col style="width: 24%">
-<col style="width: 24%">
+<col style="width: 25%">
+<col style="width: 25%">
 <col style="width: 50%">
 </colgroup>
 <thead><tr class="header">
@@ -644,7 +644,6 @@ Warning
 <div class="cell">
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">start.date</span> <span class="op">&lt;-</span> <span class="st">"2023.01.01"</span></span>
 <span><span class="va">end.date</span> <span class="op">&lt;-</span> <span class="st">"2023.12.31"</span></span>
-<span></span>
 <span><span class="va">url</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_c.html">str_c</a></span><span class="op">(</span><span class="st">"https://search.naver.com/search.naver?where=news&amp;query=%EC%A7%80%EB%B0%A9%EC%86%8C%EB%A9%B8&amp;sm=tab_opt&amp;sort=0&amp;photo=0&amp;field=0&amp;pd=3&amp;ds="</span>, <span class="va">start.date</span>, <span class="st">"&amp;de="</span>, <span class="va">end.date</span>, <span class="st">"&amp;docid=&amp;related=0&amp;mynews=0&amp;office_type=0&amp;office_section_code=0&amp;news_office_checked=&amp;nso=so%3Ar%2Cp%3Afrom20230101to20231231&amp;is_sug_officeid=0&amp;office_category=0&amp;service_area=0"</span><span class="op">)</span></span>
 <span><span class="va">title</span> <span class="op">&lt;-</span> <span class="va">url</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
