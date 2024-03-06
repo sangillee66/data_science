@@ -230,6 +230,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#%EC%9B%B9%EC%8A%A4%ED%81%AC%EB%A0%88%EC%9D%B4%ED%95%91%EC%9D%98-%EC%8B%A4%EC%A0%9C-3-%EB%84%A4%EC%9D%B4%EB%B2%84-%EB%89%B4%EC%8A%A4-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%88%98%EC%A7%91%ED%95%98%EA%B8%B0" id="toc-웹스크레이핑의-실제-3-네이버-뉴스-데이터-수집하기" class="nav-link" data-scroll-target="#%EC%9B%B9%EC%8A%A4%ED%81%AC%EB%A0%88%EC%9D%B4%ED%95%91%EC%9D%98-%EC%8B%A4%EC%A0%9C-3-%EB%84%A4%EC%9D%B4%EB%B2%84-%EB%89%B4%EC%8A%A4-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%88%98%EC%A7%91%ED%95%98%EA%B8%B0"><span class="header-section-number">1.7</span> 웹스크레이핑의 실제 3: 네이버 뉴스 데이터 수집하기</a></li>
   </ul>
 </li>
+  <li><a href="#api%EC%9D%98-%ED%99%9C%EC%9A%A9" id="toc-api의-활용" class="nav-link" data-scroll-target="#api%EC%9D%98-%ED%99%9C%EC%9A%A9"><span class="header-section-number">2</span> API의 활용</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">3</span> </a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
@@ -336,9 +338,9 @@ Figure&nbsp;1: HTML의 위계 구조
 <p>선택 대상을 효과적으로 규정하기 위해 사용되는 것이 CSS(cascading style sheet) 선택자(selector)이다. CSS는 HTML의 시각적 구성을 통제하는 툴인데, html의 특정 부분을 지칭하는 작은 언어(miniature language)를 가지고 있고, CSS 선택자라 부른다.</p>
 <table class="table">
 <colgroup>
-<col style="width: 23%">
-<col style="width: 23%">
-<col style="width: 52%">
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 50%">
 </colgroup>
 <thead><tr class="header">
 <th>선택 대상</th>
@@ -476,7 +478,6 @@ Figure&nbsp;1: HTML의 위계 구조
 <p>위키피디어의 한 항목(List of countries and dependencies by population)에는 표 하나를 포함하고 있다. 해당 표의 데이터를 수집한다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"</span></span>
-<span></span>
 <span><span class="va">my_table</span> <span class="op">&lt;-</span> <span class="va">url</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_element</a></span><span class="op">(</span><span class="st">"table"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
@@ -538,7 +539,6 @@ Figure&nbsp;1: HTML의 위계 구조
 <p>위키피디어의 한 항목(List of FIPS country codes)에는 동일한 내용에 대해 여러개의표가 나타나 있다. 개별 표의 데이터를 수집한 후 결합하여 단일한 데이터 프레임을 구성한다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://en.wikipedia.org/wiki/List_of_FIPS_country_codes"</span></span>
-<span></span>
 <span><span class="va">my_tables</span> <span class="op">&lt;-</span> <span class="va">url</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements</a></span><span class="op">(</span><span class="st">"table"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
@@ -646,7 +646,6 @@ Warning
 <span><span class="va">end.date</span> <span class="op">&lt;-</span> <span class="st">"2023.12.31"</span></span>
 <span></span>
 <span><span class="va">url</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_c.html">str_c</a></span><span class="op">(</span><span class="st">"https://search.naver.com/search.naver?where=news&amp;query=%EC%A7%80%EB%B0%A9%EC%86%8C%EB%A9%B8&amp;sm=tab_opt&amp;sort=0&amp;photo=0&amp;field=0&amp;pd=3&amp;ds="</span>, <span class="va">start.date</span>, <span class="st">"&amp;de="</span>, <span class="va">end.date</span>, <span class="st">"&amp;docid=&amp;related=0&amp;mynews=0&amp;office_type=0&amp;office_section_code=0&amp;news_office_checked=&amp;nso=so%3Ar%2Cp%3Afrom20230101to20231231&amp;is_sug_officeid=0&amp;office_category=0&amp;service_area=0"</span><span class="op">)</span></span>
-<span></span>
 <span><span class="va">title</span> <span class="op">&lt;-</span> <span class="va">url</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements</a></span><span class="op">(</span><span class="st">".news_tit"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
@@ -686,9 +685,13 @@ Warning
 <p>마찬가지로 단 10개의 케이스만 수집되는 상황이 발생함.</p>
 </div>
 </div>
+</section></section></section><section id="api의-활용" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="api의-활용">
+<span class="header-section-number">2</span> API의 활용</h2>
+</section><section id="section" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="section">
+<span class="header-section-number">3</span> </h2>
 
 
-</section></section></section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
