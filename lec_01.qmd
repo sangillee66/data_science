@@ -1,5 +1,5 @@
 ---
-title: "R과 데이터사이언스"
+title: "R과 Rstudio"
 author: 이상일(서울대학교 지리교육과)
 date-modified: last-modified
 number-sections: false

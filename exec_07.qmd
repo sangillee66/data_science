@@ -1,5 +1,5 @@
 ---
-title: "웹스크레이핑"
+title: "데이터 수집하기"
 author: 이상일(서울대학교 지리교육과)
 date-modified: last-modified
 number-sections: true
@@ -18,6 +18,305 @@ bibliography: references.bib
 
 ## 실습 개요 {.unnumbered}
 
-이 실습은 데이터사이언스의 꽃이라고 할 수 있는 데이터 탐색(exploration)을 다룬다. 데이터 탐색하기는 데이터 변형하기와 데이터 시각화하기를 합친 것으로 이해할 수 있다. 다음의 사항을 이해하고 있는 것이 매우 중요하다.
+이 실습은 R로 데이터를 수집하는 과정을 다루다. R을 활용한 데이터 수집은 다양한 방법으로 진행될 수 있지만 여기서는 웹 스크레이핑과 API를 이용하는 방식에 집중한다.
 
--   
+## 웹스크레이핑
+
+웹스크레이핑(web scraping)이란 웹페이지로부터 특정한 데이터를 추출하는 것을 의미한다. R에서 웹스크레이핑은 rvest 패키지가 답당하는데, reaxl 패키지와 마찬가지로 tidyverse의 핵심 패키지는 아니기 때문에 따로 불러와야 한다.
+
+```{r}
+library(tidyverse)
+library(rvest)
+```
+
+### HTML 기초
+
+거의 모든 웹페이지는 HTML(HyperText Markup Language, 하이퍼텍스트 마크업 언어)로 만들어져 있다. HTML은 웹브라우저(web browser)를 통해 표출되는 사항(무엇이 어떻게)을 프로그래밍하는 마크업(markup) 언어이다. 웹스크레이핑 맥락에서 HTML에 대한 몇 가지 기초 사항은 숙지할 필요가 있다.
+
+-   웹페이지는 태그(tag)로 이루어져 있다. 각 태그는 시작 테그와 종료(끝) 태그로 구성되며, 둘 사이에 콘텐츠가 놓인다. 태그를 중심으로 개별 단위를 엘리먼트(element)라고 부르기도 한다.
+
+-   태그의 종류는 다양하다. 태그는 크게 세 가지로 구분되는데, 최상위인 html 태그, 웹페이지의 전반적인 구조를 결정하는 블록(block) 태그(예: hi, section, p, ol 태그 등), 블록 태그 내부의 특정 부분에만 적용되는 인라인(inline) 태그(예: b, i, a 태그 등)가 있다. 태그는 모두 100개 이상이 존재한다고 하는데, 그 중 많이 사용되는 것들은 다음과 같다.
+
+    -   html 태그: 모든 웹페이지에 존재하는 최상위 태그로, 그 하위에 head 태그와 body 태그를 가져야함.
+
+    -   head 태그: 웹페이지의 제목이나 머릿말과 같은 메타데이터로 구성
+
+    -   body 태그: 본문에 해당하는 부분
+
+    -   title 태그: 타이틀바에 입력될 텍스트 지정
+
+    -   link 태그: 외부 css 파일을 연결
+
+    -   meta 태그: 문서의 다양한 정보를 제공
+
+    -   script 태그: 외부 js 파일을 연결하거나 javascript 코드를 입력
+
+    -   div 태그: 상자 영역을 만듦
+
+    -   span 태그: 요소 일부분만 변경하고자 할 때 사용하는 것으로 인라인(inline tag)의 대표
+
+    -   img 태그: 이미지를 가져옴
+
+    -   h 태그: 제목 태그
+
+        -   h1, h2, h3, h4, h5, h6
+
+    -   table 태그: 표를 나타냄
+
+    -   p 태그: 문단을 표현
+
+    -   ul 태그: 번호가 없는 리스트
+
+    -   ol 태그: 번호가 있는 리스트
+
+    -   li 태그: ul 태그나 ol 태그 내에서 사용
+
+    -   br 태그: 줄 바꿈 기능을 하는 단독태그
+
+    -   b 태그: 굵은 글씨 지정
+
+    -   i 태그: 이탤릭체 글씨 지정
+
+    -   a 태그: 링크 이동
+
+    -   input 태그: 입력창을 만듬
+
+    -   button 태그: 버튼을 생성
+
+    -   select 태그: 선택 박스 창을 만듬
+
+    -   form 태그: 데이터 전송
+
+-   다양한 태그들이 복잡한 다단계 위계 구조를 이룬다.
+
+[![HTML의 위계 구조](https://odinuv.cz/common/css/html.svg){#fig-html-hier}](https://odinuv.cz/articles/html/)
+
+-   태그는 속성(attribute)을 가질 수 있다.
+
+    -   특별히 중요한 속성: class, identity
+
+    -   p나 div 태그와 같은 블록 태그: height, width, margin, padding
+
+    -   img 태그: src, alt, width, height
+
+    -   a 태그: href
+
+### HTML 요소의 선택
+
+HTML 요소란 태그와 속성으로 확정가능한 HTML의 특정 부분을 의미하는 것으로, 웹스크레이핑의 타깃의 주소와 같은 것이다.
+
+#### 단일 수준에서의 요소 선택
+
+선택 대상을 효과적으로 규정하기 위해 사용되는 것이 CSS(cascading style sheet) 선택자(selector)이다. CSS는 HTML의 시각적 구성을 통제하는 툴인데, html의 특정 부분을 지칭하는 작은 언어(miniature language)를 가지고 있고, CSS 선택자라 부른다.
+
+| 선택 대상              | 선택자(selector) | 결과                                                                                      |
+|-----------------|-----------------|--------------------------------------|
+| 태그(tag)              | table            | 모든 table 요소를 선택                                                                    |
+| 클래스(class)          | .className       | "className"이라는 class 속성을 갖는 모든 요소                                             |
+| 아이디(id)             | #idName          | "idName"이라는 id 속성을 갖는 모든 요소                                                   |
+| tag과 class의 결합     | tag.class        | "tag"이라는 tag의 "class"라는 class 속성을 가진 모든 요소                                 |
+| class1와 class2의 결합 | .class1.class2   | "class1"이라는 이름의 class 속성과 "class2"라는 이름의 class 속성을 동시에 갖는 모든 요소 |
+
+#### 하위 요소의 선택
+
+동일 수준에서 한 요소를 선택한 이후 그 하위에 있는 요소를 위계적으로 선정하는 과정이다. 만약 div 태그의 하위에 있는 span 태그의 하위에 있는 a 태그를 선택하고 싶다면 태그의 위계에 따라 요소를 나열하면 된다(div span a).
+
+#### 선택자의 확인
+
+정확한 선택자를 확인하는 것이 웹스크레이핑의 관건이다. 보통 해당 웹페이지에서 오른쪽 마우스 버튼을 누른 뒤 "검사"를 선택하여 이리저리 살펴보아야 한다. [SelectorGadget](https://chromewebstore.google.com/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb?pli=1)과 같은 브라우저 확장 프로그램이 도움이 될 수 있다.
+
+### 웹스크레이핑 단계과 rvest 함수
+
+1단계는 웹페이지 읽기 단계이다.
+
+`read_html()` 함수를 이용해 웹페이지를 읽어 들인다.
+
+2단계는 HTML 요소의 선택 단계이다.
+
+-   `html_element()`함수
+
+    -   하나의 요소만 리턴
+
+    -   주로 관측개체를 추출할 때 사용
+
+-   `html_elements()`함수
+
+    -   요소의 리스트를 리턴
+
+    -   주로 변수를 추출할 때 사용
+
+3단계는 하위 요소의 선택 단계이다. 여기에는 두 가지 방식이 있다.
+
+-   `html_element()`함수나 `html_elements()` 함수 속에 요소들을 위계에 따라 나열을 하되 요소 사이에 공란을 둔다.
+
+-   파이프 오퍼레이터를 활용한다.
+
+4단계는 요소로부터 데이터를 추출하는 단계이다. 다양한 함수를 적용할 수 있다.
+
+-   `html_table()`: 테이블 데이터를 추출한다.
+
+-   `html_text()`: 텍스트 데이터를 추출한다.
+
+-   `html_text2()`: 불필요한 부호와 공란을 제거한 텍스트 데이터를 추출한다.
+
+-   `html_attr()`과 `html_attrs()`: 하위 속성 데이터를 추출한다.
+
+### 간단한 웹스크레이핑의 예
+
+#### 데이터
+
+`rvest` 패키지에 내장되어 있는 예제([starwars](https://rvest.tidyverse.org/articles/starwars.html))를 활용하여 실습을 진행한다. 웹페이지에 접속하여 어떤 내용으로 구성되어 있는지 확인한다. 앞에서 언급한 것처럼, 오른쪽 마우스 버튼을 누르고 "검사"를 선택하면 해당 패이지의 HTML 구조를 살펴볼 수 있다. 모든 영화가 다음과 같은 동일한 구조를 가지고 있음을 확인한다.
+
+```{r}
+#| eval: false
+<section>
+  <h2 data-id="1">The Phantom Menace</h2>
+  <p>Released: 1999-05-19</p>
+  <p>Director: <span class="director">George Lucas</span></p>
+  
+  <div class="crawl">
+    <p>...</p>
+    <p>...</p>
+    <p>...</p>
+  </div>
+</section>
+```
+
+우리의 웹스크레이핑 목적은 7개의 영화별로 제목(title), 연도(year), 감독(director), 요약(intro) 속성을 갖는 데이터 프레임을 생성하는 것이다.
+
+#### 웹스크레이핑의 과정
+
+read_html() 함수를 이용하여 웹페이지를 읽어 들인다.
+
+```{r}
+url <- "https://rvest.tidyverse.org/articles/starwars.html"
+html <- read_html(url)
+```
+
+"section" 태그 요소를 선택한다.
+
+```{r}
+section <- html |> 
+  html_elements("section")
+section
+```
+
+제목과 감독명에 대한 선택자가 각각 h2 태그와 director 클래스에 들어가 있음을 알 수 있다. `html_element()`와 `html_text2()` 함수를 활용하여 데이터를 추출한다.
+
+```{r}
+section |> 
+  html_element("h2") |> 
+  html_text2()
+
+section |> 
+  html_element(".director") |> 
+  html_text2()
+```
+
+### 웹스크레이핑의 실제 1: 테이블이 하나 있는 경우
+
+위키피디어의 한 항목(List of countries and dependencies by population)에는 표 하나를 포함하고 있다. 해당 표의 데이터를 수집한다.
+
+```{r}
+url <- "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
+
+my_table <- url |> 
+  read_html() |> 
+  html_element("table") |> 
+  html_table()
+my_table
+
+my_table <- my_table |> 
+  select(-1, -7) |> 
+  rename(
+    location = "Location",
+    population = "Population",
+    pop_pct = "% ofworld",
+    date = "Date",
+    source = "Source (official or fromthe United Nations)"
+  ) |> 
+  mutate(
+    population = str_remove_all(population, ","),
+    population = as.numeric(population),
+    pop_pct = str_remove(pop_pct, "%"),
+    pop_pct = as.numeric(pop_pct),
+    date = dmy(date)
+  )
+my_table
+```
+
+### 웹스크레이핑의 실제 2: 테이블이 둘 이상인 경우
+
+위키피디어의 한 항목(List of FIPS country codes)에는 동일한 내용에 대해 여러개의표가 나타나 있다. 개별 표의 데이터를 수집한 후 결합하여 단일한 데이터 프레임을 구성한다.
+
+```{r}
+url <- "https://en.wikipedia.org/wiki/List_of_FIPS_country_codes"
+
+my_tables <- url |> 
+  read_html() |> 
+  html_elements("table") |> 
+  html_table() |> 
+  bind_rows()
+my_tables
+
+my_tables <- my_tables |> 
+  select(1, 2) |> 
+  rename(
+    code = "Code", 
+    short_name = "Short-form name"
+  ) |> 
+  mutate(
+    code = str_extract(code, "[A-Z][A-Z]")
+  )
+my_tables
+```
+
+### 웹스크레이핑의 실제 3: 네이버 뉴스 데이터 수집하기
+
+#### 기간을 설정하지 않은 경우
+
+네이버 신문(<https://news.naver.com/>)에 키워드(예: 지방소멸)로 검색한 기사를 제목과 내용으로 나누어 데이터를 수집한다.
+
+```{r}
+url <- "https://search.naver.com/search.naver?where=news&ie=utf8&sm=nws_hty&query=%EC%A7%80%EB%B0%A9%EC%86%8C%EB%A9%B8"
+title <- url |> 
+  read_html() |> 
+  html_elements(".news_tit") |> 
+  html_text2()
+contents <- url |> 
+  read_html() |> 
+  html_elements(".dsc_txt_wrap") |> 
+  html_text2()
+my_news <- tibble(title, contents)
+my_news
+```
+
+::: callout-warning
+한 번에 10개의 케이스밖에 수집되지 않는다. 방도를 강구해야 한다.
+:::
+
+#### 기간을 설정한 경우
+
+2023년 1월 1일부터 2023년 12월 31일까지로 기간을 설정하여 데이터를 수집한다.
+
+```{r}
+start.date <- "2023.01.01"
+end.date <- "2023.12.31"
+
+url <- str_c("https://search.naver.com/search.naver?where=news&query=%EC%A7%80%EB%B0%A9%EC%86%8C%EB%A9%B8&sm=tab_opt&sort=0&photo=0&field=0&pd=3&ds=", start.date, "&de=", end.date, "&docid=&related=0&mynews=0&office_type=0&office_section_code=0&news_office_checked=&nso=so%3Ar%2Cp%3Afrom20230101to20231231&is_sug_officeid=0&office_category=0&service_area=0")
+
+title <- url |> 
+  read_html() |> 
+  html_elements(".news_tit") |> 
+  html_text2()
+contents <- url |> 
+  read_html() |> 
+  html_elements(".dsc_txt_wrap") |> 
+  html_text2()
+my_news <- tibble(title, contents)
+my_news
+```
+
+::: callout-warning
+마찬가지로 단 10개의 케이스만 수집되는 상황이 발생함.
+:::
