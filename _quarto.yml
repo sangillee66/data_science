@@ -53,6 +53,6 @@ format:
 #    embed-resources: true
 
 execute:
-  freeze: auto
+  freeze: true
 
 editor: visual
