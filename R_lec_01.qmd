@@ -109,4 +109,8 @@ editor: visual
 
 ## RStudio Guide
 
+-   [RStudio IDE User Guide](https://docs.posit.co/ide/user/)
+
+-   [Posit Cheatsheets](https://posit.co/resources/cheatsheets/)
+
 # R vs. Python
