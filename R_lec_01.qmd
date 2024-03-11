@@ -147,6 +147,10 @@ editor: visual
 
 ## R Communities
 
+[![](images/clipboard-2625064294.png)](https://allisonhorst.com/everything-else)
+
+## R Communities
+
 ::: {layout="[45,55]" layout-valign="center"}
 ![](images/clipboard-271459863.png)
 
@@ -154,10 +158,9 @@ editor: visual
 :::
 
 ## R and Python in Harmony
-::: {layout="[45,55]" layout-valign="center"}
 
+::: {layout="[45,55]" layout-valign="center"}
 ![](images/clipboard-2653295805.png)
 
 ![](images/clipboard-702669114.png)
-
 :::
