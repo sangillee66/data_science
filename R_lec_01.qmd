@@ -21,7 +21,7 @@ code-link: true
 execute: 
   warning: false
   error: false
-  freeze: true
+  freeze: auto
 editor: visual
 # suppress-bibliography: true
 ---
