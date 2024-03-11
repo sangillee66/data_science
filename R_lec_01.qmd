@@ -125,7 +125,7 @@ editor: visual
 
 ## Google Trend
 
-![](images/clipboard-1227778562.png)
+![](images/clipboard-1227778562.png){fig-align="center"}
 
 ## Differences
 
