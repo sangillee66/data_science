@@ -15,7 +15,7 @@ editor: visual
 
 # History of R
 
-## Short History
+## Major Events
 
 ![](images/clipboard-1001165257.png){fig-align="center"}
 
@@ -23,9 +23,17 @@ editor: visual
 
 ![](images/clipboard-3509501427.png){fig-align="center"}
 
-## Fathers of R
+## S-Plus, 1997
 
-::: {layout="[25,50,25]" layout-valign="bottom"}
+::: {layout="[55,45]" layout-valign="center"}
+![](images/clipboard-1588861203.png){width="581"}
+
+![](images/clipboard-520867837.png){width="384"}
+:::
+
+## Fathers of R, 1993
+
+::: {layout="[25,50,25]" layout-valign="center"}
 ![George Ross Ihaka](images/clipboard-4103752460.png)
 
 ![University of Auckland](images/clipboard-3647657155.png)
@@ -39,7 +47,7 @@ editor: visual
 
 ## ggplot2, 2007
 
-::: {layout="[50,-10,40]" layout-valign="bottom"}
+::: {layout="[50,-10,40]" layout-valign="center"}
 ![](images/clipboard-2318221644.png)
 
 ![Hadley Wickham](images/clipboard-2910928344.png)
@@ -121,7 +129,7 @@ editor: visual
 
 ## Differences
 
-[![](images/clipboard-358948273.png)](https://r-craft.org/why-python-is-the-best-data-science-language-in-2023/)
+![](images/clipboard-358948273.png){fig-align="center"}
 
 ## Differences
 
@@ -147,7 +155,7 @@ editor: visual
 
 ## R Communities
 
-[![](images/clipboard-2625064294.png)](https://allisonhorst.com/everything-else)
+![](images/clipboard-2625064294.png){fig-align="center"}
 
 ## R Communities
 
