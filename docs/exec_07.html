@@ -220,8 +220,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
- <span class="menu-text">lab_01.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./lab_01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab01: R과 RStudio</span></a>
+  </div>
+</li>
       </ul>
 </li>
     </ul>
@@ -555,13 +558,13 @@ Figure&nbsp;1: HTML의 위계 구조
 <pre><code># A tibble: 241 × 7
    ``      Location    Population `% ofworld` Date  Source (official or …¹ ``   
    &lt;chr&gt;   &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;                  &lt;chr&gt;
- 1 –       World       8,093,905… 100%        9 Ma… UN projection[3]       ""   
+ 1 –       World       8,094,155… 100%        11 M… UN projection[3]       ""   
  2 1/2 [b] China       1,409,670… 17.4%       31 D… Official estimate[5]   "[c]"
  3 1/2 [b] India       1,392,329… 17.2%       1 Ju… Official projection[6] "[d]"
  4 3       United Sta… 335,893,2… 4.1%        1 Ja… Official estimate[7]   "[e]"
  5 4       Indonesia   279,118,8… 3.4%        1 Ju… National annual proje… ""   
  6 5       Pakistan    241,499,4… 3.0%        1 Ma… 2023 census result[9]  "[f]"
- 7 6       Nigeria     216,783,3… 2.7%        1 Ju… Official projection[1… ""   
+ 7 6       Nigeria     223,800,0… 2.8%        1 Ju… Official projection[1… ""   
  8 7       Brazil      203,080,7… 2.5%        1 Au… 2022 census result[11] ""   
  9 8       Bangladesh  169,828,9… 2.1%        14 J… 2022 census result[12] ""   
 10 9       Russia      146,203,6… 1.8%        1 Ja… Official estimate[13]  "[g]"
@@ -589,13 +592,13 @@ Figure&nbsp;1: HTML의 위계 구조
 <pre><code># A tibble: 241 × 5
    location      population pop_pct date       source                       
    &lt;chr&gt;              &lt;dbl&gt;   &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;                        
- 1 World         8093905000   100   2024-03-09 UN projection[3]             
+ 1 World         8094155000   100   2024-03-11 UN projection[3]             
  2 China         1409670000    17.4 2023-12-31 Official estimate[5]         
  3 India         1392329000    17.2 2023-07-01 Official projection[6]       
  4 United States  335893238     4.1 2024-01-01 Official estimate[7]         
  5 Indonesia      279118866     3.4 2023-07-01 National annual projection[8]
  6 Pakistan       241499431     3   2023-03-01 2023 census result[9]        
- 7 Nigeria        216783381     2.7 2022-07-01 Official projection[10]      
+ 7 Nigeria        223800000     2.8 2023-07-01 Official projection[10]      
  8 Brazil         203080756     2.5 2022-08-01 2022 census result[11]       
  9 Bangladesh     169828911     2.1 2022-06-14 2022 census result[12]       
 10 Russia         146203613     1.8 2024-01-01 Official estimate[13]        
@@ -679,18 +682,18 @@ Figure&nbsp;1: HTML의 위계 구조
 <span><span class="va">my_news</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 2
-   title                                                               contents 
-   &lt;chr&gt;                                                               &lt;chr&gt;    
- 1 "금산군 \"지방소멸대응 관련 의견을 들려주세요\""                    금산군 … 
- 2 "\"지역 갈등 벽 넘고 지방소멸 극복 동맹\""                          /더불어… 
- 3 "충북 보은군, 이달의 으뜸 공무원으로 방석종 지방소멸대응팀장 선정"  충북 보… 
- 4 "\"살기 위해 뭉친다\" 지방소멸 막을 소방수 '메가시티'"              현재 전… 
- 5 "민주당 전남도당·경북도당, 지방 소멸 극복 위한 공통공약 발표[2024 … 더불어민…
- 6 "\"지방소멸 어떻게 대응할까요\"…금산군, 온라인 설문"                충남 금… 
- 7 "[편집국에서] 총선 D-30, 소멸이 소멸되다"                           서울과 … 
- 8 "‘소멸위기’ 어촌에 활력을…해수부 올해 ‘1호 정책’은?"                '지방 소…
- 9 "“폐교 전 신입생 27명이었다”… 지방대 ‘도미노’ 소멸"                 학령인구…
-10 "방석종 보은군 지방소멸팀장 ‘이달의 으뜸 공무원’"                   충북 보… </code></pre>
+   title                                                                contents
+   &lt;chr&gt;                                                                &lt;chr&gt;   
+ 1 "논산시 \"지방소멸 위기를 부흥의 기회로\""                           특히 20…
+ 2 "울진군, 2025년 지방소멸대응기금 확보 시동"                          경북 울…
+ 3 "권순기 경상국립대 총장 “우주항공산업 중심 지방거점대 역할 다할 것”" 지방소… 
+ 4 "울진군, 2025년 지방소멸대응기금 확보 나서"                          울진군(…
+ 5 "한국지방자치학회, 고향사랑기부제 활성화 앞장선 '정우택.장동혁' 등…  장 의원…
+ 6 "난립하는 특구, 그리고 지방시대"                                     지방소… 
+ 7 "임상규 부지사, 지방소멸기금 우수 사업지 현장 방문"                  임상규 …
+ 8 "우동기 지방시대위원장 “수도권 주택팔고 지방이주땐 양도세 면제 추…   지방소… 
+ 9 "[이로운 비전] 조국 \"지방분권, 서울도 살고 지방도 사는 길\""        이로운… 
+10 "'지방소멸 극복 안간힘' 밀양시 인구증가 시책 보고회"                 경남 밀…</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
