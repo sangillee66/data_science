@@ -805,12 +805,12 @@
   {
     "objectID": "R_lec_01.html",
     "href": "R_lec_01.html",
-    "title": "R과 Rstudio",
+    "title": "R & RStudio",
     "section": "",
-    "text": "Back to top",
+    "text": "George Ross Ihaka\n\n\n\n\n\n\n\nUniversity of Auckland\n\n\n\n\n\n\n\nRobert C. Gentleman\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\nHadley Wickham",
     "crumbs": [
       "R 강의",
-      "R과 Rstudio"
+      "R & RStudio"
     ]
   },
   {
@@ -1017,6 +1017,17 @@
     "title": "R & RStudio",
     "section": "Bell Labs in 1975",
     "text": "Bell Labs in 1975",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
+  },
+  {
+    "objectID": "R_lec_01.html#rstudio-guide",
+    "href": "R_lec_01.html#rstudio-guide",
+    "title": "R & RStudio",
+    "section": "RStudio Guide",
+    "text": "RStudio Guide",
     "crumbs": [
       "R 강의",
       "R & RStudio"
