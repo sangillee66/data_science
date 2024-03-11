@@ -114,3 +114,50 @@ editor: visual
 -   [Posit Cheatsheets](https://posit.co/resources/cheatsheets/)
 
 # R vs. Python
+
+## Google Trend
+
+![](images/clipboard-1227778562.png)
+
+## Differences
+
+[![](images/clipboard-358948273.png)](https://r-craft.org/why-python-is-the-best-data-science-language-in-2023/)
+
+## Differences
+
+[![](images/clipboard-2470054351.png)](https://r-craft.org/the-3-reasons-you-should-learn-r-for-data-science/)
+
+## R for Open Science
+
+::: {layout="[45,55]" layout-valign="center"}
+![](images/clipboard-3188950491.png)
+
+![](images/clipboard-1041852686.png)
+:::
+
+## R for Reproducible Research
+
+::: {layout-ncol="3" layout-valign="center"}
+![](images/clipboard-182108294.png)
+
+![](images/clipboard-3965408841.png)
+
+![](images/clipboard-875106470.png)
+:::
+
+## R Communities
+
+::: {layout="[45,55]" layout-valign="center"}
+![](images/clipboard-271459863.png)
+
+![](images/clipboard-1363032995.png)
+:::
+
+## R and Python in Harmony
+::: {layout="[45,55]" layout-valign="center"}
+
+![](images/clipboard-2653295805.png)
+
+![](images/clipboard-702669114.png)
+
+:::

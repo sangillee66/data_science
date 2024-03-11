@@ -1087,5 +1087,82 @@
       "R 실습",
       "Lab01: R과 RStudio"
     ]
+  },
+  {
+    "objectID": "R_lec_01.html#google-trend",
+    "href": "R_lec_01.html#google-trend",
+    "title": "R & RStudio",
+    "section": "Google Trend",
+    "text": "Google Trend",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
+  },
+  {
+    "objectID": "R_lec_01.html#differences",
+    "href": "R_lec_01.html#differences",
+    "title": "R & RStudio",
+    "section": "Differences",
+    "text": "Differences",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
+  },
+  {
+    "objectID": "R_lec_01.html#differences-1",
+    "href": "R_lec_01.html#differences-1",
+    "title": "R & RStudio",
+    "section": "Differences",
+    "text": "Differences",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
+  },
+  {
+    "objectID": "R_lec_01.html#r-for-open-science",
+    "href": "R_lec_01.html#r-for-open-science",
+    "title": "R & RStudio",
+    "section": "R for Open Science",
+    "text": "R for Open Science",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
+  },
+  {
+    "objectID": "R_lec_01.html#r-for-reproducible-research",
+    "href": "R_lec_01.html#r-for-reproducible-research",
+    "title": "R & RStudio",
+    "section": "R for Reproducible Research",
+    "text": "R for Reproducible Research",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
+  },
+  {
+    "objectID": "R_lec_01.html#r-communities",
+    "href": "R_lec_01.html#r-communities",
+    "title": "R & RStudio",
+    "section": "R Communities",
+    "text": "R Communities",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
+  },
+  {
+    "objectID": "R_lec_01.html#r-and-python-in-harmony",
+    "href": "R_lec_01.html#r-and-python-in-harmony",
+    "title": "R & RStudio",
+    "section": "R and Python in Harmony",
+    "text": "R and Python in Harmony",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
   }
 ]
