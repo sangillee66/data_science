@@ -1,9 +1,22 @@
 ---
 title: "R & RStudio"
 author: Sang-Il Lee
+title-slide-attributes: 
+  data-background-image: R_5.gif
+  data-background-position: 85% 5%
+  data-background-size: 20%
+  data-background-opacity: "1e"
 date-modified: last-modified
 number-sections: false
-format: revealjs
+format: 
+  revealjs:
+#    footer: <https://sangillee.snu.ac.kr>
+    chalkboard: true
+    slide-number: true
+    pointer:
+      pointerSize: 20
+revealjs-plugins:
+  - pointer
 code-link: true
 execute: 
   warning: false
