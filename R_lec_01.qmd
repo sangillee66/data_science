@@ -114,5 +114,3 @@ editor: visual
 -   [Posit Cheatsheets](https://posit.co/resources/cheatsheets/)
 
 # R vs. Python
-
-\##
