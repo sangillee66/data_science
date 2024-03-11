@@ -801,5 +801,225 @@
       "R과 데이터사이언스",
       "데이터 수집하기"
     ]
+  },
+  {
+    "objectID": "R_lec_01.html",
+    "href": "R_lec_01.html",
+    "title": "R과 Rstudio",
+    "section": "",
+    "text": "Back to top",
+    "crumbs": [
+      "R 강의",
+      "R과 Rstudio"
+    ]
+  },
+  {
+    "objectID": "R_lec_01.html#section-1",
+    "href": "R_lec_01.html#section-1",
+    "title": "R & RStudio",
+    "section": "",
+    "text": "Bell Labs in 1975",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
+  },
+  {
+    "objectID": "R_lec_01.html#section",
+    "href": "R_lec_01.html#section",
+    "title": "R & RStudio",
+    "section": "",
+    "text": "Giorgi, et al., 2022",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
+  },
+  {
+    "objectID": "R_lec_01.html#fathers-of-r",
+    "href": "R_lec_01.html#fathers-of-r",
+    "title": "R & RStudio",
+    "section": "Fathers of R",
+    "text": "Fathers of R\n\n\n\n\n\n\nGeorge Ross Ihaka\n\n\n\n\n\n\n\nUniversity of Auckland\n\n\n\n\n\n\n\nRobert C. Gentleman",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
+  },
+  {
+    "objectID": "R_lec_01.html#official-birth",
+    "href": "R_lec_01.html#official-birth",
+    "title": "R & RStudio",
+    "section": "Official Birth",
+    "text": "Official Birth",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
+  },
+  {
+    "objectID": "R_lec_01.html#ggplot2",
+    "href": "R_lec_01.html#ggplot2",
+    "title": "R & RStudio",
+    "section": "ggplot2",
+    "text": "ggplot2",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
+  },
+  {
+    "objectID": "R_lec_01.html#ggplot2-2007",
+    "href": "R_lec_01.html#ggplot2-2007",
+    "title": "R & RStudio",
+    "section": "ggplot2, 2007",
+    "text": "ggplot2, 2007\n\n\n\n\n\n\n \n\n\n\n\n\nHadley Wickham",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
+  },
+  {
+    "objectID": "R_lec_01.html#rstudio-2011",
+    "href": "R_lec_01.html#rstudio-2011",
+    "title": "R & RStudio",
+    "section": "RStudio, 2011",
+    "text": "RStudio, 2011",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
+  },
+  {
+    "objectID": "R_lec_01.html#shiny-2012",
+    "href": "R_lec_01.html#shiny-2012",
+    "title": "R & RStudio",
+    "section": "shiny, 2012",
+    "text": "shiny, 2012",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
+  },
+  {
+    "objectID": "R_lec_01.html#tidyverse-2016",
+    "href": "R_lec_01.html#tidyverse-2016",
+    "title": "R & RStudio",
+    "section": "tidyverse, 2016",
+    "text": "tidyverse, 2016",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
+  },
+  {
+    "objectID": "R_lec_01.html#posit-2022",
+    "href": "R_lec_01.html#posit-2022",
+    "title": "R & RStudio",
+    "section": "posit, 2022",
+    "text": "posit, 2022",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
+  },
+  {
+    "objectID": "R_lec_01.html#quarto-2022",
+    "href": "R_lec_01.html#quarto-2022",
+    "title": "R & RStudio",
+    "section": "quarto, 2022",
+    "text": "quarto, 2022",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
+  },
+  {
+    "objectID": "R_lec_01.html#what-is-rstudio-for-r",
+    "href": "R_lec_01.html#what-is-rstudio-for-r",
+    "title": "R & RStudio",
+    "section": "What is RStudio for R?",
+    "text": "What is RStudio for R?",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
+  },
+  {
+    "objectID": "R_lec_01.html#what-is-rstudio-for-r-1",
+    "href": "R_lec_01.html#what-is-rstudio-for-r-1",
+    "title": "R & RStudio",
+    "section": "What is RStudio for R?",
+    "text": "What is RStudio for R?",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
+  },
+  {
+    "objectID": "R_lec_01.html#ide",
+    "href": "R_lec_01.html#ide",
+    "title": "R & RStudio",
+    "section": "IDE",
+    "text": "IDE",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
+  },
+  {
+    "objectID": "R_lec_01.html#four-panes-or-windows",
+    "href": "R_lec_01.html#four-panes-or-windows",
+    "title": "R & RStudio",
+    "section": "Four panes or windows",
+    "text": "Four panes or windows",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
+  },
+  {
+    "objectID": "R_lec_01.html#r-project",
+    "href": "R_lec_01.html#r-project",
+    "title": "R & RStudio",
+    "section": "R Project",
+    "text": "R Project",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
+  },
+  {
+    "objectID": "R_lec_01.html#r-project-1",
+    "href": "R_lec_01.html#r-project-1",
+    "title": "R & RStudio",
+    "section": "R Project",
+    "text": "R Project",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
+  },
+  {
+    "objectID": "R_lec_01.html#short-history",
+    "href": "R_lec_01.html#short-history",
+    "title": "R & RStudio",
+    "section": "Short History",
+    "text": "Short History",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
+  },
+  {
+    "objectID": "R_lec_01.html#bell-labs-in-1975",
+    "href": "R_lec_01.html#bell-labs-in-1975",
+    "title": "R & RStudio",
+    "section": "Bell Labs in 1975",
+    "text": "Bell Labs in 1975",
+    "crumbs": [
+      "R 강의",
+      "R & RStudio"
+    ]
   }
 ]

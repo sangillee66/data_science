@@ -9,13 +9,9 @@ website:
     contents: 
       - index.qmd
       - text: "---"    
-      - section: "R Lectures"
+      - section: "R 강의"
         contents: 
-          - lec_01.qmd
-      # - text: "---"    
-      # - section: "Lab Lectures"
-      #   contents:
-      #     - lab_lec_01.qmd
+          - R_lec_01.qmd
       - text: "---"    
       - section: "R과 데이터사이언스"
         contents:   
@@ -26,7 +22,11 @@ website:
           - exec_05.qmd
           - exec_06.qmd
           - exec_07.qmd
-
+      - text: "---"    
+      - section: "R 실습"
+        contents: 
+          - lab_01.qmd
+        
   bread-crumbs: false
   back-to-top-navigation: true
   page-navigation: true
