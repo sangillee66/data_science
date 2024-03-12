@@ -346,7 +346,7 @@ mean(df$a) # 세 사람의 나이 평균을 구함. 첫 번째 사람 나이가 
 둘째, 코드가 길어지면, 그것을 몇 개의 섹션으로 나누고 그것에 코멘트를 달아 줄 수 있다. 단축키(Crtl + Shift + R, Mac은 Command + Shift + R)를 실행하여 섹션 라벨(Section label)을 달 수 있고, Editor 창의 왼쪽 하단에 있는 작은 아이콘을 이용해 섹션을 빠르게 이동할 수 있다.
 
 ::: callout-note
-![](image/githublogo.png){width="270"}
+![](images/githublogo.png)
 
 작성한 코드 등 작업물들을 온라인 상에서 관리하고 다른 사람들과 공유하기 위해 Github 사용을 추천한다. 컴퓨터에 [Git](https://git-scm.com/)을 설치하고 [Github](https://github.com)에 접속하여 회원가입을 하면 Github를 사용할 수 있다. Github의 간단한 기능만을 익혀두어도 나중에 Quarto를 통하여 자신만의 웹사이트를 간단하게 제작할 수 있다.
 :::
