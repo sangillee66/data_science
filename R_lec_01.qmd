@@ -15,6 +15,7 @@ format:
     slide-number: true
     pointer:
       pointerSize: 20
+    embed-resources: false
 revealjs-plugins:
   - pointer
 code-link: true

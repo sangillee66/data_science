@@ -606,14 +606,14 @@
     "href": "lab_lec_01.html",
     "title": "Lab Lecture 01",
     "section": "",
-    "text": "Back to top"
+    "text": "library(tidyverse)"
   },
   {
     "objectID": "lab_lec_01.html#데이터",
     "href": "lab_lec_01.html#데이터",
     "title": "Lab Lecture 01",
-    "section": "데이터",
-    "text": "데이터\n\nlibrary(tidyverse)"
+    "section": "",
+    "text": "library(tidyverse)"
   },
   {
     "objectID": "exec_05.html#심미성-매핑aesthetic-mappings",
