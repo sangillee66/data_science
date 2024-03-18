@@ -12,6 +12,7 @@ website:
       - section: "R 강의"
         contents: 
           - R_lec_01.qmd
+          - R_lec_02.qmd
       - text: "---"    
       - section: "R과 데이터사이언스"
         contents:   
