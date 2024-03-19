@@ -35,7 +35,7 @@ editor: visual
 
 ## A data science process with R
 
-![](images/clipboard-2166217682.png)
+![](images/clipboard-3326006124.png)
 
 ## A data science process with R
 
@@ -62,7 +62,7 @@ editor: visual
 ## Relational and logical operators {.scrollable .smaller}
 
 | Type          | Operator    | Condition                                       |
-|---------------|---------------|-------------------------------------------|
+|---------------|---------------|------------------------------------------|
 | Relational    | `x < y`     | Where `x` less than `y`                         |
 |               | `x > y`     | Where `x` greater than `y`                      |
 |               | `x <= y`    | Where `x` less than or equal to `y`             |
@@ -146,7 +146,7 @@ df
 
 ![](images/clipboard-1556071055.png){fig-align="center"}
 
-## Tidyverse: philosophy  {.smaller}
+## Tidyverse: philosophy {.smaller}
 
 -   Human-centeredness
 
