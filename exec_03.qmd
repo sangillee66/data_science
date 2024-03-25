@@ -219,7 +219,23 @@ wpp_2022 <- bind_rows(wpp_2022_estimates, wpp_2022_future)
 View(wpp_2022)
 ```
 
-조교의 도움을 받아 코드의 어떤 부분이 어떤 동작을 한 것인지 따져본다. 나중에 사용하기 위해, `writexl` 패키지의 `write_xlsx()` 함수를 이용하여 엑셀 파일로 저장한다.
+조교의 도움을 받아 코드의 어떤 부분이 어떤 동작을 한 것인지 따져본다.
+
+그런데, 해야할 일이 한가지 더 남아있다. 많은 변수 중에 데이터 탐색이라는 측면에서 가장 중요한 것은 `type`이다. 다음을 통해 `type` 변수에 어떤 내용이 담겨 있는지 확인한다.
+
+```{r}
+wpp_2022 |>    
+  distinct(type)
+```
+
+이 변수를 통해 세계 전체(World), 국가군(SDG region, Region 등), 국가별(Country/Area)로 데이터를 활용할 수 있다는 것을 인지한다. 그런데, "Label/Separator"는 엑셀 내에서 분할선 역할만 하는 것으로 무의미하다. 이를 제거한다.
+
+```{r}
+wpp_2022 <- wpp_2022 |>    
+  filter(type != "Label/Separator")
+```
+
+이제 모든 과정이 끝났다. 나중에 사용하기 위해, `writexl` 패키지의 `write_xlsx()` 함수를 이용하여 엑셀 파일로 저장해 본다.
 
 ```{r}
 library(writexl)
