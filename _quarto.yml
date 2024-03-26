@@ -28,6 +28,8 @@ website:
       - section: "R 실습"
         contents: 
           - lab_01.qmd
+          - lab_02.qmd
+          - lab_03.qmd
         
   bread-crumbs: false
   back-to-top-navigation: true
