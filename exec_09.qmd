@@ -17,5 +17,3 @@ bibliography: references.bib
 ---
 
 ## 실습 개요 {.unnumbered}
-
-abc
