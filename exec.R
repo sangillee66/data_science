@@ -1478,3 +1478,100 @@ for(i in 1:10){
   Sys.sleep(0.1)
 }
 
+library(spData)
+library(tmap)
+library(sf)
+library(ggthemes)
+library(rworldmap)
+
+
+data(world)
+
+wpp_2022 <- read_rds("wpp_2022.rds")
+my_wpp <- wpp_2022 |> 
+  filter(year == 2024)
+
+world_data <- world |> 
+  left_join(my_wpp, join_by(iso_a2 == ISO2))
+
+grat_robin <- 
+  st_graticule(lat = c(-89.9, seq(-80, 80, 20), 89.9)) %>%
+  st_transform(crs = "+proj=robin")
+
+P <- ggplot() +
+  geom_sf(data = grat_robin, color = "gray70") +
+  geom_sf(data = world_data, aes(fill = TFR)) +
+  coord_sf(crs = "+proj=robin") +
+  scale_fill_viridis_c() +
+  theme_map()
+
+ggplotly(P)
+
+ggplot() +
+  geom_sf(data = world_data, aes(fill = TFR)) +
+  coord_sf(crs = "+proj=robin") +
+  scale_fill_viridis_c() +
+  theme_map()
+
+
+ggplot() +
+  geom_sf(data = world_data, aes(fill = TFR)) +
+  scale_x_continuous(breaks = seq(-180, 180, 30)) +
+  scale_y_continuous(breaks = c(-89.5, seq(-60, 60, 30), 89.5)) +
+  coord_sf(crs = "+proj=robin") +
+  scale_fill_viridis_c() +
+  theme(
+    panel.background = element_rect("white"),
+    panel.grid = element_line(color = "gray70")
+  )
+
+ggplot() +
+  geom_sf(
+    data = world_data, 
+    aes(fill = cut(TFR, breaks = c(0, 1.5, 2.1, 3, 4, 5, Inf), 
+                   labels = c("< 1.5", "1.5~2.1", "2.1~3.0", "3.0~4.0", "4.0~5.0", "> 5.0")))) +
+  scale_x_continuous(breaks = seq(-180, 180, 30)) +
+  scale_y_continuous(breaks = c(-89.5, seq(-60, 60, 30), 89.5)) +
+  coord_sf(crs = "+proj=robin") +
+  scale_fill_brewer(
+    name = "TFR", 
+    palette = "YlGnBu",
+    na.value = "gray80"
+  ) +
+  theme(
+    panel.background = element_rect("white"),
+    panel.grid = element_line(color = "gray70")
+  )
+
+# 참조: https://rstudio.github.io/leaflet/articles/choropleths.html
+
+bins <- c(0, 1.5, 2.1, 3, 4, 5, Inf)
+pal <- colorBin("YlOrRd", domain = world_data$TFR, bins = bins)
+labels <- sprintf("<strong>%s</strong><br/>%g",
+  world_data$name_long, world_data$TFR) |> lapply(htmltools::HTML)
+
+leaflet(world_data) |> 
+  addProviderTiles(providers$Esri.WorldTopoMap) |> 
+  addPolygons(
+    fillColor = ~pal(TFR),
+    weight =  2, 
+    opacity = 1,
+    color = "white",
+    dashArray = "3",
+    fillOpacity = 0.6,
+    highlightOptions = highlightOptions(
+      weight = 5,
+      color = "#666",
+      dashArray = "",
+      fillOpacity = 0.6,
+      bringToFront = TRUE),
+    label = labels,
+    labelOptions = labelOptions(
+      style = list("font-weight" = "normal", padding = "3px 8px"),
+      textsize = "15px",
+      direction = "auto")
+  ) |> 
+  addLegend(
+    pal = pal, values = ~TFR, opacity = 0.6, title = NULL,
+    position = "bottomright"
+  )
