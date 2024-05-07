@@ -8,7 +8,7 @@ format:
 editor: visual
 ---
 
-Chapter 1. 데이터사이언스의 개념과 원리 [{{< bi file-pdf-fill >}}](class_notes/1장 데이터사이언스의 개념과 원리(강의노트).pdf)
+Chapter 1. 데이터사이언스의 개념과 원리 [{{< bi file-pdf-fill >}}](class_notes/1장%20데이터사이언스의%20개념과%20원리(강의노트).pdf)
 
 Chapter 2. 인구 현상과 인문사회 콘텐츠
 

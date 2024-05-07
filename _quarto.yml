@@ -34,6 +34,7 @@ website:
           - R_lec_05.qmd
           - R_lec_06.qmd
           - R_lec_07.qmd
+          - R_lec_08.qmd
       - text: "---"    
       - section: "R 실습"
         contents: 

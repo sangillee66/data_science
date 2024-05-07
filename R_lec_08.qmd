@@ -1,0 +1,172 @@
+---
+title: "Communication with Data: Quarto"
+author: Sang-Il Lee
+title-slide-attributes: 
+  # data-background-image: R_6.gif
+  data-background-position: 85% 5%
+  data-background-size: 10%
+  data-background-opacity: "1e"
+date-modified: last-modified
+number-sections: false
+format: 
+  revealjs:
+#    footer: <https://sangillee.snu.ac.kr>
+    chalkboard: false
+    slide-number: true
+    pointer:
+      pointerSize: 20
+    embed-resources: false
+revealjs-plugins:
+  - pointer
+code-link: true
+execute: 
+  warning: false
+  error: false
+  freeze: auto
+editor: visual
+# suppress-bibliography: true
+editor_options: 
+  chunk_output_type: console
+---
+
+## Communication in a data science process
+
+![](images/clipboard-1239646791.png)
+
+## Packages
+
+![](images/clipboard-1401588796.png)
+
+## 
+
+![](images/clipboard-1590379712.png){fig-align="center"}
+
+## Thanks to Quarto
+
+![](https://sangillee.snu.ac.kr/me.png){fig-align="center"}
+
+<https://sangillee.snu.ac.kr/>
+
+## Quarto: Definition {.smaller}
+
+-   "과학적, 기술적 출판을 위한 오픈소스 시스템(an open-source scientific and technical publishing system)"
+
+    -   오픈소스 저작 시스템
+
+-   다양한 형식의 저작물(노트, 연구 논문, 프레젠테이션, 대시보드, 웹사이트, 블로그, 서적 등)을 다양한 디지털 포맷(HTML, PDF, MS Word, ePub 등)으로 출판할 수 있게 해주는 도구
+
+-   적용 분야의 스케일
+
+    -   개인 스케일: 노트, 레포트, 연구 논문, 프레젠테이션, 블로그 등의 작성 도구
+
+    -   그룹 스케일: 프로젝트의 원할한 진행을 위한 협업 프레임워크
+
+    -   사회 스케일: 과학 커뮤니티의 재현성(reproducibility) 고양
+
+## Quarto: Functions
+
+![<https://rstudio.github.io/cheatsheets/html/quarto.html>](https://rstudio.github.io/cheatsheets/html/images/quarto-illustration.png){fig-align="center"}
+
+## Quarto: Syntax
+
+-   마크다운(markdown) 언어: 팬독(pandoc)
+
+    -   마크업(markup) 언어: 다큐먼트의 구조와 포맷을 관장하는 텍스트-엔코딩 시스템
+
+    -   사용자의 편의성을 크게 향상시킨 마크업 언어
+
+-   Quarto 다규먼트: `.qmd`
+
+    -   프로그래밍 언어 + 워드프로세서
+
+## Quarto: Rendering
+
+-   `knitr` 패키지: `.qmd`를 `.md`로 전환
+
+-   `pandoc`: `.md`를 다양한 디지털 포맷으로 전환
+
+![<https://r4ds.hadley.nz/quarto>](https://quarto.org/docs/get-started/hello/images/rstudio-qmd-how-it-works.png)
+
+## Quarto documents: Basic structure
+
+-   YAML 해더(header)
+
+    -   일종의 메타데이터
+    -   다큐먼트의 전반적인 사항을 관장
+
+-   코드 청크(code chunk)
+
+    -   프로그래밍 언어가 들어가는 부분
+    -   R 스크립트 파일
+
+-   마크다운 텍스트(markdown text)
+
+    -   워드프로세서처럼 텍스트를 작성(도표 포함)
+
+## 
+
+![<https://r4ds.hadley.nz/quarto>](https://r4ds.hadley.nz/quarto/diamond-sizes-report.png){fig-align="center"}
+
+## YAML header {.smaller}
+
+| key              | 설명                                                               |
+|---------------------|---------------------------------------------------|
+| title            | 다큐먼트의 제목                                                    |
+| date             | 다큐먼트 작성 날짜                                                 |
+| author           | 다큐먼트 저자 이름                                                 |
+| format           | 다양한 포맷 관련 사항의 지정                                       |
+| toc              | 목차 삽입                                                          |
+| number-section   | 섹션 제목에 자동 번호 부여 여부                                    |
+| execute: echo    | 소스 코드의 포함 여부를 글로벌하게 설정, 보통 true                 |
+| execute: warning | 경고 메시지를 산출물에 나타나게 할지를 글로벌하게 설정, 보통 false |
+| editor           | 비주얼 에디터와 소스 에디터 중 선택, 보통 visual                   |
+
+## Code chunck {.smaller}
+
+| Option           | Run code | Show code | Output | Plots | Messages | Warnings |
+|------------------|:--------:|:---------:|:------:|:-----:|:--------:|:--------:|
+| `eval: false`    |    X     |           |   X    |   X   |    X     |    X     |
+| `include: false` |          |     X     |   X    |   X   |    X     |    X     |
+| `echo: false`    |          |     X     |        |       |          |          |
+| `results: hide`  |          |           |   X    |       |          |          |
+| `fig-show: hide` |          |           |        |   X   |          |          |
+| `message: false` |          |           |        |       |    X     |          |
+| `warning: false` |          |           |        |       |          |    X     |
+
+## Markdown text
+
+-   비주얼 에디터(visual editor) vs. 소스 에디터(source editor)
+
+-   마크다운 언어의 사용자 편이성을 한 번 더 강화한 것
+
+![](images/clipboard-1160965626.png)
+
+## 
+
+![](images/clipboard-835183693.png){fig-align="center"}
+
+## 
+
+::: {layout-ncol="3"}
+![](images/clipboard-4196951584.png)
+
+![](images/clipboard-4040612781.png)
+
+![](images/clipboard-3735377227.png)
+:::
+
+## Zotero
+
+![<https://quarto.org/docs/visual-editor/technical.html>](https://quarto.org/docs/visual-editor/images/visual-editing-citation-search.png){fig-align="center"}
+
+## Web publication
+
+-   Quarto Pub(<https://quartopub.com/>)
+
+-   GitHub Pages(<https://pages.github.com/>)
+
+-   Netlify(<https://www.netlify.com/>)
+
+## Quarto Pub
+
+![<https://quarto.org/docs/publishing/quarto-pub.html>](https://quarto.org/docs/publishing/images/quarto-pub-default-site.png){fig-align="center"}

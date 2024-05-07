@@ -2861,5 +2861,313 @@
       "R과 데이터사이언스",
       "데이터로 소통하기: 소통을 위한 시각화"
     ]
+  },
+  {
+    "objectID": "R_lec_08.html#communication-in-a-data-science-process",
+    "href": "R_lec_08.html#communication-in-a-data-science-process",
+    "title": "Communication with Data: Quarto",
+    "section": "Communication in a data science process",
+    "text": "Communication in a data science process",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#packages",
+    "href": "R_lec_08.html#packages",
+    "title": "Communication with Data: Quarto",
+    "section": "Packages",
+    "text": "Packages",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#quarto란",
+    "href": "R_lec_08.html#quarto란",
+    "title": "Communication with Data: Quarto",
+    "section": "Quarto란?",
+    "text": "Quarto란?\n\n“과학적, 기술적 출판을 위한 오픈소스 시스템(an open-source scientific and technical publishing system)”\n\n오픈소스 저작 시스템\n\n다양한 형식의 저작물(연구 논문, 프레젠테이션, 대시보드, 웹사이트, 블로그, 서적 등)을 다양한 디지털 포맷(HTML, PDF, MS Word, ePub 등)으로 출판할 수 있게 해주는 도구\n적용 분야의 스케일\n\n개인 스케일: 연구 노트, 레포트, 블로그 등의 작성 도구\n협업 스케일: 프로젝트의 원할한 진행을 위한 프레임워크\n사회 스케일: 과학 커뮤니티의 재현성(reproducibility) 고양",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#quarto의-정의",
+    "href": "R_lec_08.html#quarto의-정의",
+    "title": "Communication with Data: Quarto",
+    "section": "Quarto의 정의",
+    "text": "Quarto의 정의\n\n“과학적, 기술적 출판을 위한 오픈소스 시스템(an open-source scientific and technical publishing system)”\n\n오픈소스 저작 시스템\n\n다양한 형식의 저작물(노트, 연구 논문, 프레젠테이션, 대시보드, 웹사이트, 블로그, 서적 등)을 다양한 디지털 포맷(HTML, PDF, MS Word, ePub 등)으로 출판할 수 있게 해주는 도구\n적용 분야의 스케일\n\n개인 스케일: 노트, 레포트, 연구 논문, 프레젠테이션, 블로그 등의 작성 도구\n그룹 스케일: 프로젝트의 원할한 진행을 위한 협업 프레임워크\n사회 스케일: 과학 커뮤니티의 재현성(reproducibility) 고양",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#quarto의-기능",
+    "href": "R_lec_08.html#quarto의-기능",
+    "title": "Communication with Data: Quarto",
+    "section": "Quarto의 기능",
+    "text": "Quarto의 기능\n\nhttps://rstudio.github.io/cheatsheets/html/quarto.html",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#quarto의-구문syntax",
+    "href": "R_lec_08.html#quarto의-구문syntax",
+    "title": "Communication with Data: Quarto",
+    "section": "Quarto의 구문(syntax)",
+    "text": "Quarto의 구문(syntax)\n\n마크다운(markdown) 언어: 팬독(pandoc)\n\n마크업(markup) 언어: 다큐먼트의 구조와 포맷을 관장하는 텍스트-엔코딩 시스템\n사용자의 편의성을 크게 향상시킨 마크업 언어\n\nQuarto 다규먼트: .qmd\n\n프로그래밍 언어 + 워드프로세서",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#quarto의-렌더링rendering",
+    "href": "R_lec_08.html#quarto의-렌더링rendering",
+    "title": "Communication with Data: Quarto",
+    "section": "Quarto의 렌더링(rendering)",
+    "text": "Quarto의 렌더링(rendering)\n\nknitr 패키지: .qmd를 .md로 전환\npandoc: .md를 다양한 디지털 포맷으로 전환\n\n\nhttps://r4ds.hadley.nz/quarto",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#quarto-다큐먼트의-기본-구조",
+    "href": "R_lec_08.html#quarto-다큐먼트의-기본-구조",
+    "title": "Communication with Data: Quarto",
+    "section": "Quarto 다큐먼트의 기본 구조",
+    "text": "Quarto 다큐먼트의 기본 구조\n\nYAML 해더(header)\n\n일종의 메타데이터로 다큐먼트의 전반적인 사항을 관장\n\n코드 청크(code chunk)\n\n프로그래밍 언어가 들어가는 부분\nR 스크립트 파일\n\n마크다운 텍스트\n\n워드프로세서처럼 텍스트를 작성(도표 포함)",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#section-1",
+    "href": "R_lec_08.html#section-1",
+    "title": "Communication with Data: Quarto",
+    "section": "",
+    "text": "https://r4ds.hadley.nz/quarto",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#비주얼-에디터",
+    "href": "R_lec_08.html#비주얼-에디터",
+    "title": "Communication with Data: Quarto",
+    "section": "비주얼 에디터",
+    "text": "비주얼 에디터\n\n비주얼 에디터(visual editor) vs. 소스 에디터(source editor)\n마크다운 언어의 사용자 편이성을 한 번 더 강화한 것",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#yaml-헤더",
+    "href": "R_lec_08.html#yaml-헤더",
+    "title": "Communication with Data: Quarto",
+    "section": "YAML 헤더",
+    "text": "YAML 헤더\n\n\n\n\n\n\n\nkey\n설명\n\n\n\n\ntitle\n다큐먼트의 제목\n\n\ndate\n다큐먼트 작성 날짜\n\n\nauthor\n다큐먼트 저자 이름\n\n\nformat\n다양한 포맷 관련 사항의 지정\n\n\ntoc\n목차 삽입\n\n\nnumber-section\n섹션 제목에 자동 번호 부여 여부\n\n\nexecute: echo\n소스 코드의 포함 여부를 글로벌하게 설정, 보통 true\n\n\nexecute: warning\n경고 메시지를 산출물에 나타나게 할지를 글로벌하게 설정, 보통 false\n\n\neditor\n비주얼 에디터와 소스 에디터 중 선택, 보통 visual",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#코드-청크",
+    "href": "R_lec_08.html#코드-청크",
+    "title": "Communication with Data: Quarto",
+    "section": "코드 청크",
+    "text": "코드 청크\n\n\n\n\n\n\n\n\n\n\n\n\nOption\nRun code\nShow code\nOutput\nPlots\nMessages\nWarnings\n\n\n\n\neval: false\nX\n\nX\nX\nX\nX\n\n\ninclude: false\n\nX\nX\nX\nX\nX\n\n\necho: false\n\nX\n\n\n\n\n\n\nresults: hide\n\n\nX\n\n\n\n\n\nfig-show: hide\n\n\n\nX\n\n\n\n\nmessage: false\n\n\n\n\nX\n\n\n\nwarning: false\n\n\n\n\n\nX",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#마크다운-텍스트-비주얼-에디터",
+    "href": "R_lec_08.html#마크다운-텍스트-비주얼-에디터",
+    "title": "Communication with Data: Quarto",
+    "section": "마크다운 텍스트: 비주얼 에디터",
+    "text": "마크다운 텍스트: 비주얼 에디터\n\n비주얼 에디터(visual editor) vs. 소스 에디터(source editor)\n마크다운 언어의 사용자 편이성을 한 번 더 강화한 것",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#마크다운-텍스트",
+    "href": "R_lec_08.html#마크다운-텍스트",
+    "title": "Communication with Data: Quarto",
+    "section": "마크다운 텍스트",
+    "text": "마크다운 텍스트\n\n비주얼 에디터(visual editor) vs. 소스 에디터(source editor)\n마크다운 언어의 사용자 편이성을 한 번 더 강화한 것",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#웹-출판",
+    "href": "R_lec_08.html#웹-출판",
+    "title": "Communication with Data: Quarto",
+    "section": "웹 출판",
+    "text": "웹 출판\n\nQuarto Pub(https://quartopub.com/)\nGitHub Pages(https://pages.github.com/)\nNetlify(https://www.netlify.com/)",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#quarto-pub",
+    "href": "R_lec_08.html#quarto-pub",
+    "title": "Communication with Data: Quarto",
+    "section": "Quarto Pub",
+    "text": "Quarto Pub\n\n\nhttps://quarto.org/docs/publishing/quarto-pub.html",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#quarto에게-감사",
+    "href": "R_lec_08.html#quarto에게-감사",
+    "title": "Communication with Data: Quarto",
+    "section": "Quarto에게 감사",
+    "text": "Quarto에게 감사\n\nhttps://sangillee.snu.ac.kr/",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#thanks-to-quarto",
+    "href": "R_lec_08.html#thanks-to-quarto",
+    "title": "Communication with Data: Quarto",
+    "section": "Thanks to Quarto",
+    "text": "Thanks to Quarto\n\nhttps://sangillee.snu.ac.kr/",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#zotero",
+    "href": "R_lec_08.html#zotero",
+    "title": "Communication with Data: Quarto",
+    "section": "Zotero",
+    "text": "Zotero\n\nhttps://quarto.org/docs/visual-editor/technical.html",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#quarto-definition",
+    "href": "R_lec_08.html#quarto-definition",
+    "title": "Communication with Data: Quarto",
+    "section": "Quarto: Definition",
+    "text": "Quarto: Definition\n\n“과학적, 기술적 출판을 위한 오픈소스 시스템(an open-source scientific and technical publishing system)”\n\n오픈소스 저작 시스템\n\n다양한 형식의 저작물(노트, 연구 논문, 프레젠테이션, 대시보드, 웹사이트, 블로그, 서적 등)을 다양한 디지털 포맷(HTML, PDF, MS Word, ePub 등)으로 출판할 수 있게 해주는 도구\n적용 분야의 스케일\n\n개인 스케일: 노트, 레포트, 연구 논문, 프레젠테이션, 블로그 등의 작성 도구\n그룹 스케일: 프로젝트의 원할한 진행을 위한 협업 프레임워크\n사회 스케일: 과학 커뮤니티의 재현성(reproducibility) 고양",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#quarto-functions",
+    "href": "R_lec_08.html#quarto-functions",
+    "title": "Communication with Data: Quarto",
+    "section": "Quarto: Functions",
+    "text": "Quarto: Functions\n\nhttps://rstudio.github.io/cheatsheets/html/quarto.html",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#quarto-syntax",
+    "href": "R_lec_08.html#quarto-syntax",
+    "title": "Communication with Data: Quarto",
+    "section": "Quarto: Syntax",
+    "text": "Quarto: Syntax\n\n마크다운(markdown) 언어: 팬독(pandoc)\n\n마크업(markup) 언어: 다큐먼트의 구조와 포맷을 관장하는 텍스트-엔코딩 시스템\n사용자의 편의성을 크게 향상시킨 마크업 언어\n\nQuarto 다규먼트: .qmd\n\n프로그래밍 언어 + 워드프로세서",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#quarto-rendering",
+    "href": "R_lec_08.html#quarto-rendering",
+    "title": "Communication with Data: Quarto",
+    "section": "Quarto: Rendering",
+    "text": "Quarto: Rendering\n\nknitr 패키지: .qmd를 .md로 전환\npandoc: .md를 다양한 디지털 포맷으로 전환\n\n\nhttps://r4ds.hadley.nz/quarto",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#quarto-documents-basic-structure",
+    "href": "R_lec_08.html#quarto-documents-basic-structure",
+    "title": "Communication with Data: Quarto",
+    "section": "Quarto documents: Basic structure",
+    "text": "Quarto documents: Basic structure\n\nYAML 해더(header)\n\n일종의 메타데이터\n다큐먼트의 전반적인 사항을 관장\n\n코드 청크(code chunk)\n\n프로그래밍 언어가 들어가는 부분\nR 스크립트 파일\n\n마크다운 텍스트(markdown text)\n\n워드프로세서처럼 텍스트를 작성(도표 포함)",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#yaml-header",
+    "href": "R_lec_08.html#yaml-header",
+    "title": "Communication with Data: Quarto",
+    "section": "YAML header",
+    "text": "YAML header\n\n\n\n\n\n\n\nkey\n설명\n\n\n\n\ntitle\n다큐먼트의 제목\n\n\ndate\n다큐먼트 작성 날짜\n\n\nauthor\n다큐먼트 저자 이름\n\n\nformat\n다양한 포맷 관련 사항의 지정\n\n\ntoc\n목차 삽입\n\n\nnumber-section\n섹션 제목에 자동 번호 부여 여부\n\n\nexecute: echo\n소스 코드의 포함 여부를 글로벌하게 설정, 보통 true\n\n\nexecute: warning\n경고 메시지를 산출물에 나타나게 할지를 글로벌하게 설정, 보통 false\n\n\neditor\n비주얼 에디터와 소스 에디터 중 선택, 보통 visual",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#code-chunck",
+    "href": "R_lec_08.html#code-chunck",
+    "title": "Communication with Data: Quarto",
+    "section": "Code chunck",
+    "text": "Code chunck\n\n\n\n\n\n\n\n\n\n\n\n\nOption\nRun code\nShow code\nOutput\nPlots\nMessages\nWarnings\n\n\n\n\neval: false\nX\n\nX\nX\nX\nX\n\n\ninclude: false\n\nX\nX\nX\nX\nX\n\n\necho: false\n\nX\n\n\n\n\n\n\nresults: hide\n\n\nX\n\n\n\n\n\nfig-show: hide\n\n\n\nX\n\n\n\n\nmessage: false\n\n\n\n\nX\n\n\n\nwarning: false\n\n\n\n\n\nX",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#markdown-text",
+    "href": "R_lec_08.html#markdown-text",
+    "title": "Communication with Data: Quarto",
+    "section": "Markdown text",
+    "text": "Markdown text\n\n비주얼 에디터(visual editor) vs. 소스 에디터(source editor)\n마크다운 언어의 사용자 편이성을 한 번 더 강화한 것",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
+  },
+  {
+    "objectID": "R_lec_08.html#web-publication",
+    "href": "R_lec_08.html#web-publication",
+    "title": "Communication with Data: Quarto",
+    "section": "Web publication",
+    "text": "Web publication\n\nQuarto Pub(https://quartopub.com/)\nGitHub Pages(https://pages.github.com/)\nNetlify(https://www.netlify.com/)",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Quarto"
+    ]
   }
 ]
