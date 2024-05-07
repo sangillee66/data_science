@@ -1122,7 +1122,7 @@
     "href": "exec_08.html#quarto-다큐먼트의-기본-구조",
     "title": "데이터로 소통하기: Quarto 입문",
     "section": "\n2 Quarto 다큐먼트의 기본 구조",
-    "text": "2 Quarto 다큐먼트의 기본 구조\nFigure 1 을 바탕으로 Quarto 다큐먼트의 기본 구조를 설명하고자 한다. 왼쪽은 비주얼 에디터(visual editor)를 사용한 것이고, 오른쪽은 소스 에디터(source editor)를 사용한 것이다. 소스 에디터는 마크다운 구문을 그대로 사용하는 것이므로 마크다운의 기본 형식(https://quarto.org/docs/authoring/markdown-basics.html)에 대한 이해가 선행되어야 한다. 이에 반해 비주얼 에디터는 마치 워드프로세서를 다루듯 메뉴 형식으로 Quarto 다큐먼트를 작성할 수 있다. 비주얼 에디터에 대해서는 뒤에서 상세히 다루기로 한다.\n\n\n\n\n\nFigure 1: Quarto의 기본 구조와 비주얼 에디터\n\n\nFigure 1 의 왼쪽 그림에서 보다 잘 드러나는 것처럼, Quarto 다큐먼트는 크게 세 부분으로 나뉘어진다.\n\nYAML 해더(header)\n코드 청크(code chunk)\n마크다운 텍스트\n\n\n2.1 YAML 해더\nYAML 해더는 Quarto 다큐먼트의 최상단에 위치하는 것으로, 일종의 메터데이터로 다큐먼트의 전반적인 사항을 관장한다. YAML 해더 부분은 세개의 대시 부호(—)를 통해 다른 부분과 구분된다.\nYAML 해더의 모든 요소는 기본적으로 key: value의 행태를 띤다. key는 항목이고, value는 해당 항목에 대한 옵션값이다. 위의 예에는 title, format, editor의 세 key가 사용되었는데, 제목은 “Hello, Quarto”이며, 산출 포맷은 HTML이며, quarto 다큐먼트 작성을 비주얼 에디터를 통해 할 것이라는 점을 명시하고 있다.\n다양한 key를 설정할 수 있으며(https://quarto.org/docs/reference/formats/html.html), 다음의 것들이 중요하다.\n\n\n\n\n\n\nkey\n설명\n\n\n\ntitle\n다큐먼트의 제목\n\n\ndate\n다큐먼트 작성 날짜\n\n\nauthor\n다큐먼트 저자 이름\n\n\nformat\n다양한 포맷 관련 사항의 지정\n\n\ntoc\n목차 삽입\n\n\nnumber-section\n섹션 제목에 자동 번호 부여 여부\n\n\nexecute: echo\n소스 코드의 포함 여부를 글로벌하게 설정, 보통 visual\n\n\nexecute: warning\n경고 메시지를 산출물에 나타나게 할지를 글로벌하게 설정, 보통 false\n\n\neditor\n비주얼 에디터와 소스 에디터 중 선택, 보통 visual\n\n\n\n2.2 코드 정크\n프로그래밍 언어의 코드가 들어가는 부분이다. R를 사용하는 경우 {r}로 시작한다. 데이터 불러오기, 정리하기, 변형하기, 시각화하기, 탐색하기, 수집하기와 관련된 모든 종류의 코드가 여기에 들어갈 수 있다. 보통 하나의 Quarto 다큐먼트에 다수의 코드 정크가 포함된다.\n각 코드 정크의 앞 부분에 해당 코드 정크와 관련된 다양한 옵션을 #| 형태로 삽입할 수 있다. YAML 해더에서처럼, key: value의 행태를 띤다. 가장 중요한 옵션은 코드 청크의 내용이나 실행 결과 등이 산출물에 어떻게 표현되는지를 결정하는 것들이다. 다음의 표는 코드를 실행할지의 여부, 코드를 보여줄지의 여부, 코드의 결과를 보여줄지의 여부, 생성되는 플롯을 보여줄지의 여부, 메시지나 경고문을 보여줄지의 여부 등을 관장하는 다양한 옵션을 정리한 것이다.\n\n\n\n\n\n\n\n\n\n\n\nOption\nRun code\nShow code\nOutput\nPlots\nMessages\nWarnings\n\n\n\neval: false\nX\n\nX\nX\nX\nX\n\n\ninclude: false\n\nX\nX\nX\nX\nX\n\n\necho: false\n\nX\n\n\n\n\n\n\nresults: hide\n\n\nX\n\n\n\n\n\nfig-show: hide\n\n\n\nX\n\n\n\n\nmessage: false\n\n\n\n\nX\n\n\n\nwarning: false\n\n\n\n\n\nX\n\n\n\n2.3 마크다운 텍스트\n워드프로세서처럼 텍스트를 작성한다. 섹션 헤더, 하이퍼링크(hyperlink), 이미지 등을 지정할 수 있고, 인라인 코드 청크(inline code chunk)도 삽입할 수 있다. 마크다운 텍스트의 작성에 비주얼 에디터는 큰 역할을 한다. 비주얼 에디터는 마크다운 언어의 사용자 편이성을 한번 더 강화한 것으로 볼 수 있다.\n비주얼 에디터는 다음의 메뉴로 구성된다. 워드프로세서와 비슷한 형태를 가지고 있음을 알 수 있다. 많이 사용되는 기능은 아이콘의 형태로 전면에 배치되어 있다.\n\n포맷(Format), 삽입(Insert), 테이블(Table) 속에 다양한 하위 기능들이 포함되어 있다. Quarto를 마스트하는데 비주얼 에디터의 기능을 숙달하는 것이 필수적이다.",
+    "text": "2 Quarto 다큐먼트의 기본 구조\nFigure 1 을 바탕으로 Quarto 다큐먼트의 기본 구조를 설명하고자 한다. 왼쪽은 비주얼 에디터(visual editor)를 사용한 것이고, 오른쪽은 소스 에디터(source editor)를 사용한 것이다. 소스 에디터는 마크다운 구문을 그대로 사용하는 것이므로 마크다운의 기본 형식(https://quarto.org/docs/authoring/markdown-basics.html)에 대한 이해가 선행되어야 한다. 이에 반해 비주얼 에디터는 마치 워드프로세서를 다루듯 메뉴 형식으로 Quarto 다큐먼트를 작성할 수 있다. 비주얼 에디터에 대해서는 뒤에서 상세히 다루기로 한다.\n\n\n\n\n\nFigure 1: Quarto의 기본 구조와 비주얼 에디터\n\n\nFigure 1 의 왼쪽 그림에서 보다 잘 드러나는 것처럼, Quarto 다큐먼트는 크게 세 부분으로 나뉘어진다.\n\nYAML 해더(header)\n코드 청크(code chunk)\n마크다운 텍스트\n\n\n2.1 YAML 해더\nYAML 해더는 Quarto 다큐먼트의 최상단에 위치하는 것으로, 일종의 메터데이터로 다큐먼트의 전반적인 사항을 관장한다. YAML 해더 부분은 세개의 대시 부호(—)를 통해 다른 부분과 구분된다.\nYAML 해더의 모든 요소는 기본적으로 key: value의 행태를 띤다. key는 항목이고, value는 해당 항목에 대한 옵션값이다. 위의 예에는 title, format, editor의 세 key가 사용되었는데, 제목은 “Hello, Quarto”이며, 산출 포맷은 HTML이며, quarto 다큐먼트 작성을 비주얼 에디터를 통해 할 것이라는 점을 명시하고 있다.\n다양한 key를 설정할 수 있으며(https://quarto.org/docs/reference/formats/html.html), 다음의 것들이 중요하다.\n\n\n\n\n\n\nkey\n설명\n\n\n\ntitle\n다큐먼트의 제목\n\n\ndate\n다큐먼트 작성 날짜\n\n\nauthor\n다큐먼트 저자 이름\n\n\nformat\n다양한 포맷 관련 사항의 지정\n\n\ntoc\n목차 삽입\n\n\nnumber-section\n섹션 제목에 자동 번호 부여 여부\n\n\nexecute: echo\n소스 코드의 포함 여부를 글로벌하게 설정, 보통 true\n\n\nexecute: warning\n경고 메시지를 산출물에 나타나게 할지를 글로벌하게 설정, 보통 false\n\n\neditor\n비주얼 에디터와 소스 에디터 중 선택, 보통 visual\n\n\n\n2.2 코드 정크\n프로그래밍 언어의 코드가 들어가는 부분이다. R를 사용하는 경우 {r}로 시작한다. 데이터 불러오기, 정리하기, 변형하기, 시각화하기, 탐색하기, 수집하기와 관련된 모든 종류의 코드가 여기에 들어갈 수 있다. 보통 하나의 Quarto 다큐먼트에 다수의 코드 정크가 포함된다.\n각 코드 정크의 앞 부분에 해당 코드 정크와 관련된 다양한 옵션을 #| 형태로 삽입할 수 있다. YAML 해더에서처럼, key: value의 행태를 띤다. 가장 중요한 옵션은 코드 청크의 내용이나 실행 결과 등이 산출물에 어떻게 표현되는지를 결정하는 것들이다. 다음의 표는 코드를 실행할지의 여부, 코드를 보여줄지의 여부, 코드의 결과를 보여줄지의 여부, 생성되는 플롯을 보여줄지의 여부, 메시지나 경고문을 보여줄지의 여부 등을 관장하는 다양한 옵션을 정리한 것이다.\n\n\n\n\n\n\n\n\n\n\n\nOption\nRun code\nShow code\nOutput\nPlots\nMessages\nWarnings\n\n\n\neval: false\nX\n\nX\nX\nX\nX\n\n\ninclude: false\n\nX\nX\nX\nX\nX\n\n\necho: false\n\nX\n\n\n\n\n\n\nresults: hide\n\n\nX\n\n\n\n\n\nfig-show: hide\n\n\n\nX\n\n\n\n\nmessage: false\n\n\n\n\nX\n\n\n\nwarning: false\n\n\n\n\n\nX\n\n\n\n2.3 마크다운 텍스트\n워드프로세서처럼 텍스트를 작성한다. 섹션 헤더, 하이퍼링크(hyperlink), 이미지 등을 지정할 수 있고, 인라인 코드 청크(inline code chunk)도 삽입할 수 있다. 마크다운 텍스트의 작성에 비주얼 에디터는 큰 역할을 한다. 비주얼 에디터는 마크다운 언어의 사용자 편이성을 한번 더 강화한 것으로 볼 수 있다.\n비주얼 에디터는 다음의 메뉴로 구성된다. 워드프로세서와 비슷한 형태를 가지고 있음을 알 수 있다. 많이 사용되는 기능은 아이콘의 형태로 전면에 배치되어 있다.\n\n포맷(Format), 삽입(Insert), 테이블(Table) 속에 다양한 하위 기능들이 포함되어 있다. Quarto를 마스트하는데 비주얼 에디터의 기능을 숙달하는 것이 필수적이다.",
     "crumbs": [
       "R과 데이터사이언스",
       "데이터로 소통하기: Quarto 입문"
@@ -1602,7 +1602,7 @@
     "href": "exec_09.html",
     "title": "데이터로 소통하기: 대시보드 만들기",
     "section": "",
-    "text": "이번 실습은 Quarto를 이용하여 데이터 대시보드(dashboard)를 만드는 것이다.",
+    "text": "이번 실습은 Quarto를 이용하여 데이터 대시보드(dashboard)를 만드는 것이다. 그렇다.",
     "crumbs": [
       "R과 데이터사이언스",
       "데이터로 소통하기: 대시보드 만들기"
@@ -1613,7 +1613,7 @@
     "href": "exec_09.html#실습-개요",
     "title": "데이터로 소통하기: 대시보드 만들기",
     "section": "",
-    "text": "이번 실습은 Quarto를 이용하여 데이터 대시보드(dashboard)를 만드는 것이다.",
+    "text": "이번 실습은 Quarto를 이용하여 데이터 대시보드(dashboard)를 만드는 것이다. 그렇다.",
     "crumbs": [
       "R과 데이터사이언스",
       "데이터로 소통하기: 대시보드 만들기"
@@ -3032,7 +3032,7 @@
     "href": "R_lec_08.html#quarto-pub",
     "title": "Communication with Data: Quarto",
     "section": "Quarto Pub",
-    "text": "Quarto Pub\n\n\n\nhttps://quarto.org/docs/publishing/quarto-pub.html",
+    "text": "Quarto Pub\n\n\nhttps://quarto.org/docs/publishing/quarto-pub.html",
     "crumbs": [
       "R 프레젠테이션",
       "Communication with Data: Quarto"
@@ -3054,7 +3054,7 @@
     "href": "R_lec_08.html#thanks-to-quarto",
     "title": "Communication with Data: Quarto",
     "section": "Thanks to Quarto",
-    "text": "Thanks to Quarto\n\n\n\n\n\nhttps://sangillee.snu.ac.kr/",
+    "text": "Thanks to Quarto\n\nhttps://sangillee.snu.ac.kr/",
     "crumbs": [
       "R 프레젠테이션",
       "Communication with Data: Quarto"
@@ -3065,7 +3065,7 @@
     "href": "R_lec_08.html#zotero",
     "title": "Communication with Data: Quarto",
     "section": "Zotero",
-    "text": "Zotero\n\n\n\nhttps://quarto.org/docs/visual-editor/technical.html",
+    "text": "Zotero\n\nhttps://quarto.org/docs/visual-editor/technical.html",
     "crumbs": [
       "R 프레젠테이션",
       "Communication with Data: Quarto"
@@ -3087,7 +3087,7 @@
     "href": "R_lec_08.html#quarto-functions",
     "title": "Communication with Data: Quarto",
     "section": "Quarto: Functions",
-    "text": "Quarto: Functions\n\n\n\nhttps://rstudio.github.io/cheatsheets/html/quarto.html",
+    "text": "Quarto: Functions\n\nhttps://rstudio.github.io/cheatsheets/html/quarto.html",
     "crumbs": [
       "R 프레젠테이션",
       "Communication with Data: Quarto"
@@ -3109,7 +3109,7 @@
     "href": "R_lec_08.html#quarto-rendering",
     "title": "Communication with Data: Quarto",
     "section": "Quarto: Rendering",
-    "text": "Quarto: Rendering\n\nknitr 패키지: .qmd를 .md로 전환\npandoc: .md를 다양한 디지털 포맷으로 전환\n\n\n\n\nhttps://r4ds.hadley.nz/quarto",
+    "text": "Quarto: Rendering\n\nknitr 패키지: .qmd를 .md로 전환\npandoc: .md를 다양한 디지털 포맷으로 전환\n\n\nhttps://r4ds.hadley.nz/quarto",
     "crumbs": [
       "R 프레젠테이션",
       "Communication with Data: Quarto"
