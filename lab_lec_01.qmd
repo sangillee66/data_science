@@ -1,0 +1,19 @@
+---
+title: "Lab Lecture 01"
+author: 이상일(서울대학교 지리교육과)
+date-modified: last-modified
+format: pptx
+code-link: true
+execute: 
+  echo: true
+  warning: false
+  error: false
+  # freeze: auto
+editor: visual
+---
+
+## 데이터
+```{r}
+library(tidyverse)
+```
+
