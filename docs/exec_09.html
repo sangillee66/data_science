@@ -334,6 +334,27 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#실습-개요" id="toc-실습-개요" class="nav-link active" data-scroll-target="#실습-개요">실습 개요</a></li>
+  <li><a href="#대시보드의-기본-구조" id="toc-대시보드의-기본-구조" class="nav-link" data-scroll-target="#대시보드의-기본-구조"><span class="header-section-number">1</span> 대시보드의 기본 구조</a></li>
+  <li><a href="#레이아웃-설정" id="toc-레이아웃-설정" class="nav-link" data-scroll-target="#레이아웃-설정"><span class="header-section-number">2</span> 레이아웃 설정</a>
+  <ul class="collapse">
+  <li><a href="#행과-열의-설정" id="toc-행과-열의-설정" class="nav-link" data-scroll-target="#행과-열의-설정"><span class="header-section-number">2.1</span> 행과 열의 설정</a></li>
+  <li><a href="#탭셋의-설정" id="toc-탭셋의-설정" class="nav-link" data-scroll-target="#탭셋의-설정"><span class="header-section-number">2.2</span> 탭셋의 설정</a></li>
+  <li><a href="#페이지의-설정" id="toc-페이지의-설정" class="nav-link" data-scroll-target="#페이지의-설정"><span class="header-section-number">2.3</span> 페이지의 설정</a></li>
+  </ul></li>
+  <li><a href="#내용-요소" id="toc-내용-요소" class="nav-link" data-scroll-target="#내용-요소"><span class="header-section-number">3</span> 내용 요소</a>
+  <ul class="collapse">
+  <li><a href="#텍스트" id="toc-텍스트" class="nav-link" data-scroll-target="#텍스트"><span class="header-section-number">3.1</span> 텍스트</a></li>
+  <li><a href="#밸류박스" id="toc-밸류박스" class="nav-link" data-scroll-target="#밸류박스"><span class="header-section-number">3.2</span> 밸류박스</a></li>
+  <li><a href="#테이블" id="toc-테이블" class="nav-link" data-scroll-target="#테이블"><span class="header-section-number">3.3</span> 테이블</a></li>
+  <li><a href="#그래프" id="toc-그래프" class="nav-link" data-scroll-target="#그래프"><span class="header-section-number">3.4</span> 그래프</a></li>
+  <li><a href="#지도" id="toc-지도" class="nav-link" data-scroll-target="#지도"><span class="header-section-number">3.5</span> 지도</a></li>
+  </ul></li>
+  <li><a href="#내비게이션바-설정" id="toc-내비게이션바-설정" class="nav-link" data-scroll-target="#내비게이션바-설정"><span class="header-section-number">4</span> 내비게이션바 설정</a></li>
+  <li><a href="#테마-설정-및-게시" id="toc-테마-설정-및-게시" class="nav-link" data-scroll-target="#테마-설정-및-게시"><span class="header-section-number">5</span> 테마 설정 및 게시</a>
+  <ul class="collapse">
+  <li><a href="#테마-설정" id="toc-테마-설정" class="nav-link" data-scroll-target="#테마-설정"><span class="header-section-number">5.1</span> 테마 설정</a></li>
+  <li><a href="#인터넷-게시" id="toc-인터넷-게시" class="nav-link" data-scroll-target="#인터넷-게시"><span class="header-section-number">5.2</span> 인터넷 게시</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -360,7 +381,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">May 7, 2024</p>
+      <p class="date-modified">May 13, 2024</p>
     </div>
   </div>
     
@@ -373,9 +394,87 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="실습-개요" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="실습-개요">실습 개요</h2>
-<p>이번 실습은 Quarto를 이용하여 데이터 대시보드(dashboard)를 만드는 것이다. 그렇다.</p>
+<p>이번 실습은 Quarto를 이용하여 데이터 대시보드(dashboard)를 만드는 것이다.</p>
+</section>
+<section id="대시보드의-기본-구조" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="대시보드의-기본-구조"><span class="header-section-number">1</span> 대시보드의 기본 구조</h2>
+<p>대시보드는 기본적으로 다섯 가지의 구성요소로 이루어진다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/layout.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figcaption><a href="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/#tabset" class="uri">https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/#tabset</a></figcaption>
+</figure>
+</div>
+<p>첫째, 메인 바디(main body)는 대시보드의 핵심 요소이다. 메인 바디는 카드(card)라고 불리는 기본 단위들로 구성된다. 개별 카드는 다양한 내용 요소(텍스트, 그래프, 표, 지도, 밸류박스 등)를 가질 수 있다. 즉, 어떤 카드 속에는 그래프가 들어가며, 어떤 카드 속에는 지도가 들어간다. 이러한 카드들을 특정한 레이아웃 요소(페이지, 행, 열, 탭셋 등)를 통해 메인 바디에 배열된다. 페이지(page)는 대시보드 레이아웃의 최상위 레벨이다. 개별 페이지는 다수의 행(row) 혹은 열(column)로 구성될 수 있으며, 행 혹은 열을 또 다시 분할하고 싶을 때 탭셋(tabset)이 사용된다.</p>
+<p>둘째, 해더(header)는 대시보드의 가장 중요한 메타 정보(로고, 제목, 저자 등)를 포함한다.</p>
+<p>셋째, 내비게이터(navigator)는 최상위 레이아웃인 페이지간 이동을 통제한다.</p>
+<p>넷째, 사이드바(sidebar)는 주로 사용자의 인풋(input)을 받을 때 사용되는 것으로, 동적인 대시보드에서 주로 사용된다. Quarto는 사이드바외에 툴바(toolbar)와 카드인풋(card input)과 같은 옵션을 제공한다.</p>
+<p>다섯째, 푸터(footer)는 해더와 유사한 기능을 하는데, 주로 부차적인 매타 정도를 포함한다.</p>
+<p>다섯개의 구성 요소 중 가장 중요한 것은 메인 바디, 해더, 내비게이터이다. Quarto는 헤더와 내비게이터를 통합한 내비게이션바(navigation bar)를 제공한다. 사이드바는 Shiny 페키지를 활용한 동적인 대시보드에서는 매우 중요하지만, 이번 실습에서는 사용하지 않는다. 푸터는 가장 지엽적인 요소이다.</p>
+<p>다음의 대시보드를 살펴보자.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://quarto.org/docs/dashboards/examples/thumbnails/customer-churn-dashboard.png" class="img-fluid figure-img"></p>
+<figcaption><a href="https://quarto.org/docs/dashboards/" class="uri">https://quarto.org/docs/dashboards/</a></figcaption>
+</figure>
+</div>
+<p>이 대시보는 크게 내비게이션바와 메인 바디로 구성되어 있다. 네비게이션바를 통해 다음의 사항을 알 수 있다.</p>
+<ul>
+<li><p>이 대시보드의 제목(title)은 ’고객이탈(Customer Chrun)’이고 회사 이름은 DEMOCO(로고)이다.</p></li>
+<li><p>이 대시보드는 모두 두 개의 페이지(page)로 구성되어 있다. 페이지의 이름은 각각 Churn (Standard)와 ’Data’이다.</p></li>
+</ul>
+<p>메인 바디를 통해 다음의 사항을 알 수 있다.</p>
+<ul>
+<li><p>첫 번째 페이지(Churn (Standard))는 세 개의 행(row)로 구성되어 있다.</p></li>
+<li><p>첫 번째 페이지의 첫 번째 행은 세 개의 카드(card)로 구성되어 있는데, 내용 요소는 모두 밸류박스(value box)이다.</p></li>
+<li><p>첫 번째 페이지의 두 번째 행은 두 개의 열(즉, 카드)로 구성되어 있는데, 내용 요소는 모두 그래프(graph)이다.</p></li>
+<li><p>첫 번째 페이지의 세 번째 행은 단일한 열(즉, 카드)로 구성되어 있는데, 내용 요소는 테이블(table)이다.</p></li>
+<li><p>두 번째 페이지에도 다양한 사항이 포함되어 있다.</p></li>
+</ul>
+</section>
+<section id="레이아웃-설정" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="레이아웃-설정"><span class="header-section-number">2</span> 레이아웃 설정</h2>
+<section id="행과-열의-설정" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="행과-열의-설정"><span class="header-section-number">2.1</span> 행과 열의 설정</h3>
+</section>
+<section id="탭셋의-설정" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="탭셋의-설정"><span class="header-section-number">2.2</span> 탭셋의 설정</h3>
+</section>
+<section id="페이지의-설정" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="페이지의-설정"><span class="header-section-number">2.3</span> 페이지의 설정</h3>
+</section>
+</section>
+<section id="내용-요소" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="내용-요소"><span class="header-section-number">3</span> 내용 요소</h2>
+<section id="텍스트" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="텍스트"><span class="header-section-number">3.1</span> 텍스트</h3>
+</section>
+<section id="밸류박스" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="밸류박스"><span class="header-section-number">3.2</span> 밸류박스</h3>
+</section>
+<section id="테이블" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="테이블"><span class="header-section-number">3.3</span> 테이블</h3>
+</section>
+<section id="그래프" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="그래프"><span class="header-section-number">3.4</span> 그래프</h3>
+</section>
+<section id="지도" class="level3" data-number="3.5">
+<h3 data-number="3.5" class="anchored" data-anchor-id="지도"><span class="header-section-number">3.5</span> 지도</h3>
+</section>
+</section>
+<section id="내비게이션바-설정" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="내비게이션바-설정"><span class="header-section-number">4</span> 내비게이션바 설정</h2>
+</section>
+<section id="테마-설정-및-게시" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="테마-설정-및-게시"><span class="header-section-number">5</span> 테마 설정 및 게시</h2>
+<section id="테마-설정" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="테마-설정"><span class="header-section-number">5.1</span> 테마 설정</h3>
+</section>
+<section id="인터넷-게시" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="인터넷-게시"><span class="header-section-number">5.2</span> 인터넷 게시</h3>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
