@@ -1,0 +1,243 @@
+---
+title: "Communication with Data: Dashboards"
+author: Sang-Il Lee
+date: 05-14-2024
+title-slide-attributes: 
+  # data-background-image: R_6.gif
+  data-background-position: 85% 5%
+  data-background-size: 10%
+  data-background-opacity: "1e"
+date-modified: last-modified
+number-sections: false
+format: 
+  revealjs:
+#    footer: <https://sangillee.snu.ac.kr>
+    chalkboard: false
+    slide-number: true
+    pointer:
+      pointerSize: 20
+    embed-resources: false
+revealjs-plugins:
+  - pointer
+code-link: true
+execute: 
+  warning: false
+  error: false
+  freeze: auto
+editor: visual
+# suppress-bibliography: true
+editor_options: 
+  chunk_output_type: console
+---
+
+## The basic structure of a dashboard
+
+![](https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/layout.png){fig-align="center"}
+
+## The basic structure of a dashboard
+
+-   Main body
+
+    -   Cards: graphs, tables, maps, texts, valueboxes
+
+    -   Layout elements: rows, columns, tabsets, pages
+
+-   Header: Major metadata
+
+-   Navigator: Movement between pages
+
+-   Sidebar: Users' input
+
+-   Footer: Minor metadata
+
+## An example
+
+![](https://quarto.org/docs/dashboards/examples/thumbnails/customer-churn-dashboard.png){fig-align="center"}
+
+## An example
+
+<https://sangillee.quarto.pub/my-first-dashboard/>
+
+## Layout 1: Rows and Columns
+
+::: panel-tabset
+## Code
+
+``` r
+## Row {height=70%}
+
+Card 1
+
+## Row {height=30%}
+
+### Column {width=40%}
+
+Card 2-1 
+
+### Column {width=60%}
+
+Card 2-2 
+```
+
+## Result
+
+![](https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card3.png){fig-align="center" width="729"}
+:::
+
+## Layout 2: Tabsets
+
+::: panel-tabset
+## Code
+
+``` r
+## Row {height=70%}
+
+Card 1
+
+## Row {height=30% .tabset}
+
+### Column
+
+Card 2-1 {width=50%}
+
+### Column
+
+Card 2-2 {width=50%}
+```
+
+## Result
+
+![](https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/tabset1.png){fig-align="center" width="733"}
+:::
+
+## Layout: Pages
+
+::: panel-tabset
+## Code
+
+``` r
+# Page A
+
+## Row {height=70%}
+
+Card 1
+
+## Row {height=30%}
+
+### Column {width=40%}
+
+Card 2-1
+
+### Column {width=60%}
+
+Card 2-2
+
+# Page B
+
+Card 3
+```
+
+## Result
+
+![](https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card4.png){fig-align="center" width="726"}
+:::
+
+## Navigation Bars: YAML header
+
+![](https://quarto.org/docs/dashboards/images/navigation-toolbar.png){fig-align="center"}
+
+-   title
+
+-   author
+
+-   format: dashboard
+
+    -   logo
+
+    -   nav-buttons
+
+    -   scrolling: true
+
+-   theme: 25 bootswatch themes(<https://quarto.org/docs/dashboards/theming.html>)
+
+## Sidebars
+
+![](https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/sidebar.png){fig-align="center"}
+
+## Cards: Graphs
+
+-   그래프 카드: 그래프 하나를 만들어내는 코드 청크
+
+-   `ggplot2` 패키지, `plotly` 패키지
+
+``` r
+#| title: "Histogram of GDP per capita"
+library(tidyverse)
+library(gapminder)
+gapminder |> 
+  filter(year == 2007) |>
+  ggplot(aes(x = gdpPercap)) +
+  geom_histogram()
+```
+
+## Cards: Tables
+
+-   테이블 카드: 테이블 하나를 만들어내는 코드 청크
+
+-   `DT` 패키지, `knitr` 패키지
+
+``` r
+#| title: Lookup Table
+library(DT)
+datatable(gapminder, filter = "top", 
+          options = list(
+            pageLength = 5, autoWidth = TRUE
+          ))
+```
+
+## Cards: Maps
+
+-   지도 카드: 지도 하나를 만들어내는 코드 청크
+
+-   `ggplot2` 패키지, `leaflet` 패키지
+
+``` r
+#| title: A Reference Map 
+library(leaflet) 
+leaflet() |>  
+  addTiles()
+```
+
+## Cards: Texts
+
+-   텍스트 카드: 텍스트 박스 하나를 만들어내는 div
+-   `{.card}` 탭과 `title` 속성
+
+``` r
+::: {.card title="Text"}
+This is my first dashboard.
+:::
+```
+
+## Cards: Valueboxes
+
+-   밸류박스 카드: 밸류박스 하나를 만들어내는 코드 청크
+
+-   아이콘: bootstrap icon(<https://icons.getbootstrap.com/>)
+
+-   컬러: 8개(<https://quarto.org/docs/dashboards/data-display.html>)
+
+``` r
+#| content: valuebox
+#| title: "Number of Countries"
+n_countries <- gapminder |> distinct(country) |> nrow()
+list(
+  icon = "asterisk",
+  color = "primary",
+  value = n_countries
+)
+```
+
+## Web publication
+
+-   Quarto Pub(<https://quartopub.com/>)

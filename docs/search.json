@@ -3381,5 +3381,191 @@
       "R 실습",
       "Lab08: 데이터로 소통하기: Quarto"
     ]
+  },
+  {
+    "objectID": "R_lec_09.html#the-basic-structure-of-a-dashboard",
+    "href": "R_lec_09.html#the-basic-structure-of-a-dashboard",
+    "title": "Communication with Data: Dashboards",
+    "section": "The basic structure of a dashboard",
+    "text": "The basic structure of a dashboard",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Dashboards"
+    ]
+  },
+  {
+    "objectID": "R_lec_09.html#the-basic-structure-of-a-dashboard-1",
+    "href": "R_lec_09.html#the-basic-structure-of-a-dashboard-1",
+    "title": "Communication with Data: Dashboards",
+    "section": "The basic structure of a dashboard",
+    "text": "The basic structure of a dashboard\n\nMain body\n\nCards: graphs, tables, maps, texts, valueboxes\nLayout elements: rows, columns, tabsets, pages\n\nHeader: Major metadata\nNavigator: Movement between pages\nSidebar: Users’ input\nFooter: Minor metadata",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Dashboards"
+    ]
+  },
+  {
+    "objectID": "R_lec_09.html#an-example",
+    "href": "R_lec_09.html#an-example",
+    "title": "Communication with Data: Dashboards",
+    "section": "An example",
+    "text": "An example",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Dashboards"
+    ]
+  },
+  {
+    "objectID": "R_lec_09.html#layout-1-row-and-column",
+    "href": "R_lec_09.html#layout-1-row-and-column",
+    "title": "Communication with Data: Dashboards",
+    "section": "Layout 1: Row and Column",
+    "text": "Layout 1: Row and Column\n\nCodeResult\n\n\n## Row {height=70%}\n\nCard 1\n\n## Row {height=30%}\n\n### Column {width=40%}\n\nCard 2-1 \n\n### Column {width=60%}\n\nCard 2-2"
+  },
+  {
+    "objectID": "R_lec_09.html#layout-1-rows-and-columns",
+    "href": "R_lec_09.html#layout-1-rows-and-columns",
+    "title": "Communication with Data: Dashboards",
+    "section": "Layout 1: Rows and Columns",
+    "text": "Layout 1: Rows and Columns\n\nCodeResult\n\n\n## Row {height=70%}\n\nCard 1\n\n## Row {height=30%}\n\n### Column {width=40%}\n\nCard 2-1 \n\n### Column {width=60%}\n\nCard 2-2",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Dashboards"
+    ]
+  },
+  {
+    "objectID": "R_lec_09.html#layout-2-tabsets",
+    "href": "R_lec_09.html#layout-2-tabsets",
+    "title": "Communication with Data: Dashboards",
+    "section": "Layout 2: Tabsets",
+    "text": "Layout 2: Tabsets\n\nCodeResult\n\n\n## Row {height=70%}\n\nCard 1\n\n## Row {height=30% .tabset}\n\n### Column\n\nCard 2-1 {width=50%}\n\n### Column\n\nCard 2-2 {width=50%}",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Dashboards"
+    ]
+  },
+  {
+    "objectID": "R_lec_09.html#layout-pages",
+    "href": "R_lec_09.html#layout-pages",
+    "title": "Communication with Data: Dashboards",
+    "section": "Layout: Pages",
+    "text": "Layout: Pages\n\nCodeResult\n\n\n# Page A\n\n## Row {height=70%}\n\nCard 1\n\n## Row {height=30%}\n\n### Column {width=40%}\n\nCard 2-1\n\n### Column {width=60%}\n\nCard 2-2\n\n# Page B\n\nCard 3",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Dashboards"
+    ]
+  },
+  {
+    "objectID": "R_lec_09.html#navigation-bar-yaml-header",
+    "href": "R_lec_09.html#navigation-bar-yaml-header",
+    "title": "Communication with Data: Dashboards",
+    "section": "Navigation Bar: YAML header",
+    "text": "Navigation Bar: YAML header\n\ntitle\nauthor\nformat: dashboard\n\nlogo\nnav-buttons\nscrolling: true\n\ntheme: 25 bootswatch themes(https://quarto.org/docs/dashboards/theming.html)"
+  },
+  {
+    "objectID": "R_lec_09.html#navigation-bars-yaml-header",
+    "href": "R_lec_09.html#navigation-bars-yaml-header",
+    "title": "Communication with Data: Dashboards",
+    "section": "Navigation Bars: YAML header",
+    "text": "Navigation Bars: YAML header\n\n\ntitle\nauthor\nformat: dashboard\n\nlogo\nnav-buttons\nscrolling: true\n\ntheme: 25 bootswatch themes(https://quarto.org/docs/dashboards/theming.html)",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Dashboards"
+    ]
+  },
+  {
+    "objectID": "R_lec_09.html#sidebars",
+    "href": "R_lec_09.html#sidebars",
+    "title": "Communication with Data: Dashboards",
+    "section": "Sidebars",
+    "text": "Sidebars",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Dashboards"
+    ]
+  },
+  {
+    "objectID": "R_lec_09.html#cards-graphs",
+    "href": "R_lec_09.html#cards-graphs",
+    "title": "Communication with Data: Dashboards",
+    "section": "Cards: Graphs",
+    "text": "Cards: Graphs\n\n그래프 카드: 그래프 하나를 만들어내는 코드 청크\nggplot2 패키지, plotly 패키지\n\n#| title: \"Histogram of GDP per capita\"\nlibrary(tidyverse)\nlibrary(gapminder)\ngapminder |&gt; \n  filter(year == 2007) |&gt;\n  ggplot(aes(x = gdpPercap)) +\n  geom_histogram()",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Dashboards"
+    ]
+  },
+  {
+    "objectID": "R_lec_09.html#cards-tables",
+    "href": "R_lec_09.html#cards-tables",
+    "title": "Communication with Data: Dashboards",
+    "section": "Cards: Tables",
+    "text": "Cards: Tables\n\n테이블 카드: 테이블 하나를 만들어내는 코드 청크\nDT 패키지, knitr 패키지\n\n#| title: Lookup Table\nlibrary(DT)\ndatatable(gapminder, filter = \"top\", \n          options = list(\n            pageLength = 5, autoWidth = TRUE\n          ))",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Dashboards"
+    ]
+  },
+  {
+    "objectID": "R_lec_09.html#cards-maps",
+    "href": "R_lec_09.html#cards-maps",
+    "title": "Communication with Data: Dashboards",
+    "section": "Cards: Maps",
+    "text": "Cards: Maps\n\n지도 카드: 지도 하나를 만들어내는 코드 청크\nggplot2 패키지, leaflet 패키지\n\n#| title: A Reference Map \nlibrary(leaflet) \nleaflet() |&gt;  \n  addTiles()",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Dashboards"
+    ]
+  },
+  {
+    "objectID": "R_lec_09.html#cards-texts",
+    "href": "R_lec_09.html#cards-texts",
+    "title": "Communication with Data: Dashboards",
+    "section": "Cards: Texts",
+    "text": "Cards: Texts\n\n텍스트 카드: 텍스트 박스 하나를 만들어내는 div\n{.card} 탭과 title 속성\n\n::: {.card title=\"Text\"}\nThis is my first dashboard.\n:::",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Dashboards"
+    ]
+  },
+  {
+    "objectID": "R_lec_09.html#cards-valueboxes",
+    "href": "R_lec_09.html#cards-valueboxes",
+    "title": "Communication with Data: Dashboards",
+    "section": "Cards: Valueboxes",
+    "text": "Cards: Valueboxes\n\n밸류박스 카드: 밸류박스 하나를 만들어내는 코드 청크\n아이콘: bootstrap icon(https://icons.getbootstrap.com/)\n컬러: 8개(https://quarto.org/docs/dashboards/data-display.html)\n\n#| content: valuebox\n#| title: \"Number of Countries\"\nn_countries &lt;- gapminder |&gt; distinct(country) |&gt; nrow()\nlist(\n  icon = \"asterisk\",\n  color = \"primary\",\n  value = n_countries\n)",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Dashboards"
+    ]
+  },
+  {
+    "objectID": "R_lec_09.html#an-example-1",
+    "href": "R_lec_09.html#an-example-1",
+    "title": "Communication with Data: Dashboards",
+    "section": "An example",
+    "text": "An example\nhttps://sangillee.quarto.pub/my-first-dashboard/",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Dashboards"
+    ]
+  },
+  {
+    "objectID": "R_lec_09.html#web-publication",
+    "href": "R_lec_09.html#web-publication",
+    "title": "Communication with Data: Dashboards",
+    "section": "Web publication",
+    "text": "Web publication\n\nQuarto Pub(https://quartopub.com/)",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Dashboards"
+    ]
+  },
+  {
+    "objectID": "R_lec_09.html#navigation-bars",
+    "href": "R_lec_09.html#navigation-bars",
+    "title": "Communication with Data: Dashboards",
+    "section": "Navigation Bars",
+    "text": "Navigation Bars\n\n\ntitle\nauthor\nformat: dashboard\n\nlogo\nnav-buttons\nscrolling: true\n\ntheme: 25 bootswatch themes(https://quarto.org/docs/dashboards/theming.html)"
   }
 ]
