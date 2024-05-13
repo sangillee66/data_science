@@ -14,7 +14,7 @@ Chapter 2. 인구 현상과 인문사회 콘텐츠
 
 -   인구 현상과 인구 데이터 [{{< bi file-pdf-fill >}}](class_notes/2장 인구 현상과 인문사회 콘텐츠 1(강의노트).pdf)
 
--   인구 성장
+-   인구 성장 [{{< bi file-pdf-fill >}}](class_notes/2장 인구 현상과 인문사회 콘텐츠 2(강의노트).pdf)
 
 -   인구 분포
 
