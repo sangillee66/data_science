@@ -18,6 +18,6 @@ Chapter 2. 인구 현상과 인문사회 콘텐츠
 
 -   인구 동태와 인구 이동
 
-Chapter 3. 데이터 수집하기
+Chapter 3. 데이터 수집하기 [{{< bi file-pdf-fill >}}](class_notes/3장 데이터 수집하기(강의노트).pdf)
 
 Chapter 4. 데이터로 소통하기
