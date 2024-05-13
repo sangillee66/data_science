@@ -3244,7 +3244,7 @@
     "href": "exec_09.html#대시보드의-기본-구조",
     "title": "데이터로 소통하기: 대시보드 만들기",
     "section": "1 대시보드의 기본 구조",
-    "text": "1 대시보드의 기본 구조\n대시보드는 기본적으로 다섯 가지의 구성요소로 이루어진다.\n\n\n\nhttps://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/#tabset\n\n\n첫째, 메인 바디(main body)는 대시보드의 핵심 요소이다. 메인 바디는 카드(card)라고 불리는 기본 단위들로 구성된다. 개별 카드는 다양한 내용 요소(텍스트, 그래프, 표, 지도, 밸류박스 등)를 가질 수 있다. 즉, 어떤 카드 속에는 그래프가 들어가며, 어떤 카드 속에는 지도가 들어간다. 이러한 카드들을 특정한 레이아웃 요소(페이지, 행, 열, 탭셋 등)를 통해 메인 바디에 배열된다. 페이지(page)는 대시보드 레이아웃의 최상위 레벨이다. 개별 페이지는 다수의 행(row) 혹은 열(column)로 구성될 수 있으며, 행 혹은 열을 또 다시 분할하고 싶을 때 탭셋(tabset)이 사용된다.\n둘째, 해더(header)는 대시보드의 가장 중요한 메타 정보(로고, 제목, 저자 등)를 포함한다.\n셋째, 내비게이터(navigator)는 최상위 레이아웃인 페이지간 이동을 통제한다.\n넷째, 사이드바(sidebar)는 주로 사용자의 인풋(input)을 받을 때 사용되는 것으로, 동적인 대시보드에서 주로 사용된다. Quarto는 사이드바외에 툴바(toolbar)와 카드인풋(card input)과 같은 옵션을 제공한다.\n다섯째, 푸터(footer)는 해더와 유사한 기능을 하는데, 주로 부차적인 매타 정도를 포함한다.\n다섯개의 구성 요소 중 가장 중요한 것은 메인 바디, 해더, 내비게이터이다. Quarto는 헤더와 내비게이터를 통합한 내비게이션바(navigation bar)를 제공한다. 사이드바는 Shiny 페키지를 활용한 동적인 대시보드에서는 매우 중요하지만, 이번 실습에서는 사용하지 않는다. 푸터는 가장 지엽적인 요소이다.\n다음의 대시보드를 살펴보자.\n\n\n\nhttps://quarto.org/docs/dashboards/\n\n\n이 대시보는 크게 내비게이션바와 메인 바디로 구성되어 있다. 네비게이션바를 통해 다음의 사항을 알 수 있다.\n\n이 대시보드의 제목(title)은 ’고객이탈(Customer Chrun)’이고 회사 이름은 DEMOCO(로고)이다.\n이 대시보드는 모두 두 개의 페이지(page)로 구성되어 있다. 페이지의 이름은 각각 Churn (Standard)와 ’Data’이다.\n\n메인 바디를 통해 다음의 사항을 알 수 있다.\n\n첫 번째 페이지(Churn (Standard))는 세 개의 행(row)로 구성되어 있다.\n첫 번째 페이지의 첫 번째 행은 세 개의 카드(card)로 구성되어 있는데, 내용 요소는 모두 밸류박스(value box)이다.\n첫 번째 페이지의 두 번째 행은 두 개의 열(즉, 카드)로 구성되어 있는데, 내용 요소는 모두 그래프(graph)이다.\n첫 번째 페이지의 세 번째 행은 단일한 열(즉, 카드)로 구성되어 있는데, 내용 요소는 테이블(table)이다.\n두 번째 페이지에도 다양한 사항이 포함되어 있다.",
+    "text": "1 대시보드의 기본 구조\n대시보드는 기본적으로 다섯 가지의 구성요소로 이루어진다. 각각은 메인 바디, 헤더, 내비게이터, 사이드바, 푸터이다.\n\n\n\nhttps://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/#tabset\n\n\n첫째, 메인 바디(main body)는 대시보드의 핵심 요소이다. 메인 바디는 카드(card)라고 불리는 기본 단위들로 구성된다. 개별 카드는 다양한 내용 요소(텍스트, 그래프, 표, 지도, 밸류박스 등)를 가질 수 있다. 즉, 어떤 카드 속에는 그래프가 들어가며, 어떤 카드 속에는 지도가 들어간다. 이러한 카드들은 특정한 레이아웃 요소(페이지, 행, 열, 탭셋 등)를 통해 메인 바디에 배열된다. 페이지(page)는 대시보드 레이아웃 요소 중 최상위 레벨의 것이다. 개별 페이지는 다수의 행(row) 혹은 열(column)로 구성된다. 행 혹은 열을 또다른 행 혹은 열이 아닌 탭 클릭 방식으로 분할하고 싶을 때 탭셋(tabset)이 사용된다.\n둘째, 헤더(header)는 대시보드의 가장 중요한 메타 정보(로고, 제목, 저자 등)를 포함한다.\n셋째, 내비게이터(navigator)는 최상위 레이아웃인 페이지간 이동을 통제한다.\n넷째, 사이드바(sidebar)는 주로 사용자의 인풋(input)을 받을 때 사용되는 것으로, 동적인 대시보드에서 주로 사용된다. Quarto는 사이드바 외에 툴바(toolbar)와 카드인풋(card input)과 같은 옵션을 제공한다.\n다섯째, 푸터(footer)는 해더와 유사한 기능을 하는데, 주로 부차적인 매타 정도를 포함한다.\n다섯개의 구성 요소 중 가장 중요한 것은 메인 바디, 해더, 내비게이터이다. Quarto는 헤더와 내비게이터를 통합한 내비게이션바(navigation bar)를 제공한다. 사이드바는 Shiny 페키지를 활용한 동적인 대시보드에서는 매우 중요하지만, 이번 실습에서는 사용하지 않는다. 푸터는 가장 지엽적인 요소이다.\n다음의 대시보드를 살펴보자.\n\n\n\nhttps://quarto.org/docs/dashboards/\n\n\n이 대시보드는 크게 내비게이션바와 메인 바디로 구성되어 있다. 네비게이션바에는 다음의 내용이 포함되어 있다.\n\n이 대시보드의 제목(title)은 ’고객이탈(Customer Chrun)’이고 회사 이름은 DEMOCO(로고)이다.\n이 대시보드는 모두 두 개의 페이지(page)로 구성되어 있다. 페이지의 이름은 각각 ’Churn (Standard)’과 ’Data’이다.\n\n메인 바디는 다음과 같은 레이아웃 요소들로 구성되어 있다.\n\n첫 번째 페이지(Churn (Standard))는 세 개의 행(row)으로 구성되어 있다.\n첫 번째 페이지의 첫 번째 행은 세 개의 카드(card)로 구성되어 있는데, 내용 요소는 모두 밸류박스(value box)이다.\n첫 번째 페이지의 두 번째 행은 두 개의 열(즉, 카드)로 구성되어 있는데, 내용 요소는 모두 그래프(graph)이다.\n첫 번째 페이지의 세 번째 행은 단일한 열(즉, 카드)로 구성되어 있는데, 내용 요소는 테이블(table)이다.\n두 번째 페이지에도 다양한 사항이 포함되어 있을 것이다.",
     "crumbs": [
       "R과 데이터사이언스",
       "데이터로 소통하기: 대시보드 만들기"
@@ -3255,7 +3255,7 @@
     "href": "exec_09.html#레이아웃-설정",
     "title": "데이터로 소통하기: 대시보드 만들기",
     "section": "2 레이아웃 설정",
-    "text": "2 레이아웃 설정\n\n2.1 행과 열의 설정\n\n\n2.2 탭셋의 설정\n\n\n2.3 페이지의 설정",
+    "text": "2 레이아웃 설정\n\n2.1 행과 열의 설정\n행(row)과 열(column)은 가장 기본이 되는 레이아웃 요소이다. 기본 원칙은 다음과 같다.\n\n헤더 2(header 2) 레벨이 행과 열의 구분을 일차적으로 결정한다.\n헤더 3(header 3) 레벨이 하위 행과 열의 구분을 이차적으로 결정한다.\n\n## Row {height=70%}\n\nCard 1\n\n## Row {height=30%}\n\n### Column {width=40%}\n\nCard 2-1 \n\n### Column {width=60%}\n\nCard 2-2 \n위와 같이 설정하면 다음과 같은 결과를 얻을 수 있다. Row의 경우는 {height} 태그를 통해서, Column의 경우는 {width}태그를 통해 상대적인 크기를 설정할 수 있다.\n\n\n\nhttps://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/\n\n\n\n\n2.2 탭셋의 설정\n탭셋(tabset)은 행(row)과 열(column)을 다른 하위 행과 열이 아닌 탭의 설정을 통해 분할하고자 할 때 사용된다.\n## Row {height=70%}\n\nCard 1\n\n## Row {height=30% .tabset}\n\n### Column\n\nCard 2-1 {width=50%}\n\n### Column\n\nCard 2-2 {width=50%}\n위와 같이 설정하면 다음과 같은 결과를 얻을 수 있다. 탭셋의 설정을 위해 {.tabset} 태그가 사용된다는 점에 주의한다.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2.3 페이지의 설정\n페이지(page)는 최상위 레이아웃 요소이다. 기본 원칙은 다음과 같다.\n\n헤더 1(header 1) 레벨이 페이지의 구분을 결정한다.\nQuarto에서는 페이지가 내비게이션바에 나타난다.\n\n# Page A\n\n## Row {height=70%}\n\nCard 1\n\n## Row {height=30%}\n\n### Column {width=40%}\n\nCard 2-1\n\n### Column {width=60%}\n\nCard 2-2\n\n# Page B\n\nCard 3\n위와 같이 설정하면 다음과 같은 결과를 얻을 수 있다. 페이지가 내비게이션바에서 마치 탭셋처럼 존재하는 것에 주의한다.",
     "crumbs": [
       "R과 데이터사이언스",
       "데이터로 소통하기: 대시보드 만들기"
@@ -3276,8 +3276,8 @@
     "objectID": "exec_09.html#내용-요소",
     "href": "exec_09.html#내용-요소",
     "title": "데이터로 소통하기: 대시보드 만들기",
-    "section": "3 내용 요소",
-    "text": "3 내용 요소\n\n3.1 텍스트\n\n\n3.2 밸류박스\n\n\n3.3 테이블\n\n\n3.4 그래프\n\n\n3.5 지도",
+    "section": "\n3 내용 요소",
+    "text": "3 내용 요소\n\n3.1 텍스트\n\n3.2 밸류박스\n\n3.3 테이블\n\n3.4 그래프\n\n3.5 지도",
     "crumbs": [
       "R과 데이터사이언스",
       "데이터로 소통하기: 대시보드 만들기"
@@ -3287,7 +3287,7 @@
     "objectID": "exec_09.html#내비게이션바-설정",
     "href": "exec_09.html#내비게이션바-설정",
     "title": "데이터로 소통하기: 대시보드 만들기",
-    "section": "4 내비게이션바 설정",
+    "section": "\n4 내비게이션바 설정",
     "text": "4 내비게이션바 설정",
     "crumbs": [
       "R과 데이터사이언스",
@@ -3298,11 +3298,88 @@
     "objectID": "exec_09.html#테마-설정-및-게시",
     "href": "exec_09.html#테마-설정-및-게시",
     "title": "데이터로 소통하기: 대시보드 만들기",
-    "section": "5 테마 설정 및 게시",
-    "text": "5 테마 설정 및 게시\n\n5.1 테마 설정\n\n\n5.2 인터넷 게시",
+    "section": "\n5 테마 설정 및 게시",
+    "text": "5 테마 설정 및 게시\n\n5.1 테마 설정\n\n5.2 인터넷 게시",
     "crumbs": [
       "R과 데이터사이언스",
       "데이터로 소통하기: 대시보드 만들기"
+    ]
+  },
+  {
+    "objectID": "exec_09.html#카드와-내용-요소",
+    "href": "exec_09.html#카드와-내용-요소",
+    "title": "데이터로 소통하기: 대시보드 만들기",
+    "section": "4 카드와 내용 요소",
+    "text": "4 카드와 내용 요소\n카드(card)란 특정한 내용 요소(텍스트, 벨류박스, 테이블, 그래프, 지도 등)를 포함하고 있는, 대시보드의 가장 기본적인 단위이다. 다음의 두 가지 사항이 중요하다.\n\n카드의 제목이 중요하다. 완성된 대시보드 상에 등장하기 때문에 사용자가 이해하기 쉬운 제목이 부여되어야 한다.\n내용 요소에 따라 카드를 작성하는 방법이 조금 다르다.\n\n내용 요소 제작의 세세한 사항은 아래의 “예시 대시보드 만들기”에서 확인한다.\n\n4.1 그래프\nQuarto는 그래프 하나를 만들어내는 코드 청크를 하나의 카드로 인식한다. 그래프 카드의 제목은 코드 청크 내의 #| title: 옵션을 통해 부여된다. ggplot2와 같은 정적인 플롯 도구 뿐만 아니라 plotly와 같은 반응형 플롯 도구를 사용하여 그래프 카드를 생성한다.\n\n\n4.2 테이블\nQuarto는 테이블 하나를 디스플레이하는 코드 청크를 하나의 카드로 인식한다. 테이블 카드의 제목은 코드 청크 내의 #| title: 옵션을 통해 부여된다. knitr 패키지의 kable() 함수, DT 패키지의 datatable() 함수 등을 이용해 테이블 카드를 생성한다.\n\n\n4.3 지도\nQuarto는 지도 하나를 디스플레이하는 코드 청크를 하나의 카드로 인식한다. 지도 카드의 제목은 코드 청크 내의 #| title: 옵션을 통해 부여된다. ggplot2와 같은 정적인 지도 제작 도구 뿐만 아니라 leaflet과 같은 반응형 지도 제작 도구를 사용하여 지도 카드를 생성한다.\n\n\n4.4 텍스트\n일종의 텍스트 박스도 하나의 카드로 간주된다. 그래프, 테이블, 지도가 하나의 코드 청크가 하나의 카드로 인식되는데 반해 텍스트 카드는 다른 형식을 취한다. ::: {.card} div를 사용해야 하며 #| title: 옵션을 사용해 제목을 지정해야 한다.\n\n\n4.5 밸류박스\n요약적 수치를 큰 박스 속에 나타내는 것을 밸류박스(value box)라고 하는데, 코드 청크로 표현하지만 형식은 조금 다르다. #| content: valuebox라는 옵션이 반드시 포함되야 하며, 제목을 지정하기 위해 #| title: 옵션도 필요하다. 또한 리스트를 이용해 아이콘(icon), 컬러(color), 수치(value)를 지정해야 한다.\n아이콘은 부트스트랩 아이콘(bootstrap icon)이 사용된다. 적절한 아이콘을 찾고 그 이름을 #| title: 옵션을 통해 설정하는 것이 중요하다.\n모든 컬러가 다 사용가능한 것은 아니다. 아래의 표를 참조하여 컬러를 설정해야 한다.\n\n\n\nColor Alias\nDefault Theme Color(s)\n\n\n\n\nprimary\nBlue\n\n\nsecondary\nGray\n\n\nsuccess\nGreen\n\n\ninfo\nBright Blue\n\n\nwarning\nYellow/Orange\n\n\ndanger\nRed\n\n\nlight\nLight Gray\n\n\ndark\nBlack",
+    "crumbs": [
+      "R과 데이터사이언스",
+      "데이터로 소통하기: 대시보드 만들기"
+    ]
+  },
+  {
+    "objectID": "exec_09.html#내비게이션바와-사이드바의-설정",
+    "href": "exec_09.html#내비게이션바와-사이드바의-설정",
+    "title": "데이터로 소통하기: 대시보드 만들기",
+    "section": "3 내비게이션바와 사이드바의 설정",
+    "text": "3 내비게이션바와 사이드바의 설정\n\n3.1 내비게이션바의 설정\n내비게이션바는 헤더와 내비게이터로 구성된다. 내비게이터는 페이지가 설정된 경우에만 나타나게 된다. 여기서는 헤더에 집중하고자 한다. 대시보드 헤더는 다른 Quarto 다큐먼트와 마찬가지로 YAML 헤더를 통해 통제된다. 다음과 같은 요소들이 중요하다.\n\n제목(title): 대시보드 전체의 이름을 결정한다.\n저자(author): 만든 사람이나 관리 회사의 이름이지만, 부제로 활용되기도 한다.\n포맷(format): 기본 설정인 대시보드(dashboard) 하에 다양한 하위 설정이 가능하다.\n\nlogo: 로고 그림 파일을 지정하면 내비게이션바의 왼쪽 끝에 나타난다.\nnav-buttons: github이나 이메일 연결을 설정할 수 있다.\nscrolling: true 설정: 디폴트는 false인데, 레이아웃 요소들의 높이들의 합이 100%가 되도록 일괄적으로 조절된다. true로 지정하면, 개별 내용 요소의 원 크기를 그대로 살리면서 스크롤되게 디자인이 바뀐다. 둘 다를 실험해 보고 자신의 목적에 맞는 것을 고른다.\n\n테마(theme): 대시보드의 외관을 한꺼번에 바꿀 수 있다. 모두 25개의 부트스와치(bootswatch) 테마가 존재한다. 여러가지를 실험해 보고 자신의 취향에 맞는 것을 선정한다.\n\n\n\n3.2 사이드바의 설정\n사이드바(sidebar)는 {.sidebar} 태그를 통해 만들 수 있는데, 헤더 1(header 1) 레벨이므로 특정한 페이지에 종속되지 않는다. 사이드바는 주로 사용자의 투입을 받을 때 사용되기 때문에 동적인 대시보드에 주로 사용된다. 정적인 대시보드의 경우에는 텍스트를 통한 특정 정보의 제공에 사용될 수 있다.\n# {.sidebar}\nSidebar content\n위와 같이 설정하면 다음과 같은 결과를 얻을 수 있다.\n\n\n\nhttps://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/",
+    "crumbs": [
+      "R과 데이터사이언스",
+      "데이터로 소통하기: 대시보드 만들기"
+    ]
+  },
+  {
+    "objectID": "exec_09.html#테마-설정-및-출판하기",
+    "href": "exec_09.html#테마-설정-및-출판하기",
+    "title": "데이터로 소통하기: 대시보드 만들기",
+    "section": "\n5 테마 설정 및 출판하기",
+    "text": "5 테마 설정 및 출판하기\n\n5.1 테마 설정\n\n5.2 인터넷 게시",
+    "crumbs": [
+      "R과 데이터사이언스",
+      "데이터로 소통하기: 대시보드 만들기"
+    ]
+  },
+  {
+    "objectID": "exec_09.html#예시-대시보드-만들기",
+    "href": "exec_09.html#예시-대시보드-만들기",
+    "title": "데이터로 소통하기: 대시보드 만들기",
+    "section": "5 예시 대시보드 만들기",
+    "text": "5 예시 대시보드 만들기\n예시 대시보드(https://sangillee.quarto.pub/my-first-dashboard/)에 접속하여 구성을 살펴본다. 다음의 사항에 주목한다.\n\n내비게이션바에 서울대학교 로고가 있고, 오른쪽 맨 끝애 github 및 이메일 아이콘이 위치해 있다.\n대시보드가 네 개의 페이지(Intro, Graphs, Tables, Maps)로 나뉘어져 있고, 각 페이지마다 행, 열, 탭셋과 같은 레이아웃 요소들이 배치되어 있다.\n\n어떤 식으로 제작할 수 있을지 생각해 본다. 새로운 프로젝트를 생성하고 Quarto 다큐먼트를 생성한다. 아래는 해당 대시보드를 만들기 위해 사용된 코드이다. 참고하여 자신만의 대시보드를 만들어 본다.\n\n5.1 YAML 해더\n특히, nav-buttons: 옵션의 지정 형식에 주의한다. scrolling 옵션과 다양한 theme: 옵션을 시험해 본다.\n---\ntitle: \"My First Dashboard\"\nauthor: Sang-Il Lee\nformat: \n  dashboard:\n    logo: snu_logo_2.png\n    nav-buttons: \n      - icon: github\n        href: https://github.com/sangillee66\n        aria-label: GitHub\n      - icon: envelope\n        href: mailto:si_lee@snu.ac.kr\n        aria-label: Mail\n    # scrolling: true\ntheme: default\neditor: visual\neditor_options: \n  chunk_output_type: console\n---\n\n\n5.2 Intro 페이지\nIntro라는 이름의 페이지를 설정한다.\n# Intro\n\n5.2.1 첫번째 행: Text 카드\n행을 설정하고 행의 상대적인 높이(10%)를 지정한다.\n## Row {height=\"10%\"}\n텍스트 카드를 생성한다. 텍스트 카드를 생성하기 위해 {.card} 태그가 사용되어야 하며, 텍스트 카드의 제목을 지정하기 위해 title= 옵션이 사용되어야 함에 주의한다.\n::: {.card title=\"Text\"}\nThis is my first dashboard.\n:::\n\n\n5.2.2 두번째 행의 탭셋: Histogram of GDP per capita & Table of Mean Values\n행을 설정하고 행의 상대적인 높이(70%)를 지정한다. 탭셋을 생성하기 위해 {.tabset} 태그가 사용되어야 함에 주의한다.\n## Row {.tabset height=\"70%\"}\n그래프 카드를 생성하기 위해 ggplot2 패키지를 활용한다. 그래프 카드의 제목을 지정하기 위해 title= 옵션이 사용되어야 함에 주의한다.\n#| title: \"Histogram of GDP per capita\"\nlibrary(tidyverse)\nlibrary(gapminder)\ngapminder |&gt; \n  filter(year == 2007) |&gt;\n  ggplot(aes(x = gdpPercap)) +\n  geom_histogram()\n테이블 카드를 생성하기 위해 knitr 패키지의 kable() 함수를 활용한다. 테이블 카드의 제목을 지정하기 위해 title= 옵션이 사용되어야 함에 주의한다.\n#| title: \"Table of Mean Values\"\nlibrary(knitr)\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  summarize(\n    GDP_percap = mean(gdpPercap),\n    Life_Exp = mean(lifeExp),\n    Population = mean(pop),\n    .by = continent\n  ) |&gt; \n  kable()\n\n\n5.2.3 세번째 행의 3개의 밸류박스\n행을 설정하고 행의 상대적인 높이(20%)를 지정한다.\n## Row {height=\"20%\"}\n첫번째 밸류박스를 생성한다. #| content: valuebox 옵션과 #| title: 옵션이 사용됨에 주의한다.\n#| content: valuebox\n#| title: \"Number of Countries\"\nn_countries &lt;- gapminder |&gt; distinct(country) |&gt; nrow()\nlist(\n  icon = \"asterisk\",\n  color = \"primary\",\n  value = n_countries\n)\n두번째 밸류박스를 생성한다.\n#| content: valuebox\n#| title: \"First Year\"\nfirst_year &lt;- gapminder |&gt; distinct(year) |&gt; pull() |&gt; first()\nlist(\n  icon = \"airplane\",\n  color = \"secondary\",\n  value = first_year\n세번째 밸류박스를 생성한다.\n#| content: valuebox\n#| title: \"Last Year\"\nlast_year &lt;- gapminder |&gt; distinct(year) |&gt; pull() |&gt; last()\nlist(\n  icon = \"bank\",\n  color = \"success\",\n  value = last_year\n)\n\n\n\n5.3 Graphs 페이지\nGraphs라는 이름의 페이지를 설정한다.\n# Graphs\n\n5.3.1 첫번째 행의 그래프 카드: GDP and Life Expectancy\n행을 설정한다.\n## Row\nggplot2 패키지를 활용하여 그래프 카드를 생성한다.\n#| title: GDP and Life Expectancy\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = log10(gdpPercap), y = lifeExp)) +\n  geom_point(aes(color = continent), show.legend = FALSE) +\n  geom_smooth() + \n  facet_wrap(~continent, ncol = 5)\n\n\n5.3.2 두번째 행의 그래프 카드: Population & Life Expectancy\n첫번째 그래프(Population)를 위한 열을 설정한다.\n### Column\n그래프 카드를 생성한다.\n#| title: Population\ngapminder |&gt; \n  summarize(\n    sum_pop = sum(pop),\n    .by = c(year, continent)\n  ) |&gt; \n  ggplot(aes(x = year, y = sum_pop)) +\n  geom_area(aes(fill = continent)) +\n  labs(x = \"Year\", y = \"Population\", fill = \"Continents\")\n두번째 그래프(Life Expectancy)를 위한 열을 설정한다.\n### Column\n그래프 카드를 생성한다.\n#| title: Life Expectancy\ngapminder |&gt; \n  ggplot(aes(x = year, y = lifeExp)) +\n  geom_line(aes(color = continent, group = country)) +\n  labs(x = \"Year\", y = \"Life Expectancy\", color = \"Continents\")\n\n\n\n5.4 Tables 페이지\nTables라는 이름의 페이지를 설정한다.\n# Tables\n단일 행을 설정한다.\n## Row\nDT 패키지를 활용하여 테이블 카드를 생성한다.\n#| title: Lookup Table\nlibrary(DT)\ndatatable(gapminder, filter = \"top\", \n          options = list(\n            pageLength = 5, autoWidth = TRUE\n          ))\n\n\n5.5 Maps 페이지\nMaps라는 이름의 페이지를 설정한다.\n# Maps\n단일 행을 설정한다.\n## Row\nleaflet 패키지를 활용하여 지도 카드를 생성한다.\n#| title: A Reference Map \nlibrary(leaflet) \nleaflet() |&gt;  \n  addTiles()\n\n\n5.6 대시보드 웹 상에 출판하기\n블로그와 마찬가지로 다음의 절차에 따라 완성된 대시보드를 웹 상에 출판한다. 여기서는 Posit에서 제공하는 무료 출판 사이트인 Quarto Pub을 활용한다.\n\nQuarto Pub에 접속하여 계정을 만든다.\nRStudio에서, 왼쪽 하단부의 Terminal 탭을 누른다.\n프롬프트에 다음과 같이 입력하고 실행한다: quarto publish quarto-pub\n나머지 사항에 대해서는 조교의 도움을 받는다.",
+    "crumbs": [
+      "R과 데이터사이언스",
+      "데이터로 소통하기: 대시보드 만들기"
+    ]
+  },
+  {
+    "objectID": "lab_08.html",
+    "href": "lab_08.html",
+    "title": "Lab08: 데이터로 소통하기: Quarto",
+    "section": "",
+    "text": "File &gt; New File &gt; Quarto Document를 실행한다. Title과 Author란에 적절한 텍스트를 기입하고 아래에 위치한 Create 버튼을 클릭한다.\n\n그렇다면 아마도 아래의 화면이 보일 것이다.\n\n--- 으로 둘러싸인 YAML(YAML Ain’t Markup Language)에 아래와 같은 몇 가지 key: value 를 더해보자.\n\n---\nnumber-sections: true\nformat: \n  html: \n    toc: true\nexecute: \n  warning: false\n  error: false\n  freeze: auto\n---\n\n기본적인 Quarto 작성법은 다음과 같다.\n\n텍스트: 그냥 작성\n코드 청크(Code Chunk): Insert &gt; Executable Cell &gt; R(Ctrl+Alt+I)\n표(Table): Insert &gt; Table\n그림(Figure): Insert &gt; Figure\n링크(Link): (원하는 텍스트 선택 후) Insert &gt; Link\n머릿말(Header): Normal &gt; Header 1~6 중 선택\n\n이제 지난 실습록(데이터 수집하기)의 일부분을 재현해보자. 일반 텍스트와 코드 청크를 넣고 이를 렌더링해보면 그럴듯한 html 파일이 만들어짐을 확인할 수 있을 것이다.\n\n추가로 몇 가지의 팁을 소개한다.\n첫째, R의 패키지나 함수를 다르게 표시할 수 있다. 지금까지의 실습록에서 tidyverse 함수를 tidyverse 와 같이 표시하던 것이 기억날 것이다. 이는 해당 텍스트를 선택한 후, Format에서 Code를 누르면 생성된다. 혹은 Ctrl+D로 실행할 수 있다.\n둘째, Call-out 이다. 몇몇 실습록에서 아래와 같은 모습을 보았을 것이다. 문서 중간에 팁이나 주의를 알려주고 있다.\n\n\nCallout에는 공지(note), 팁(tip), 중요사항(important), 주의(caution), 경고(warning) 등이 있다. 이는 비주얼 에디터 메뉴 Insert-Callout에서 선택할 수 있고, ::: 으로 둘러싸인 부분에 글이나 코드 청크를 작성하면 된다.",
+    "crumbs": [
+      "R 실습",
+      "Lab08: 데이터로 소통하기: Quarto"
+    ]
+  },
+  {
+    "objectID": "lab_08.html#실습-1-기본-quarto-다큐먼트의-작성",
+    "href": "lab_08.html#실습-1-기본-quarto-다큐먼트의-작성",
+    "title": "Lab08: 데이터로 소통하기: Quarto",
+    "section": "",
+    "text": "File &gt; New File &gt; Quarto Document를 실행한다. Title과 Author란에 적절한 텍스트를 기입하고 아래에 위치한 Create 버튼을 클릭한다.\n\n그렇다면 아마도 아래의 화면이 보일 것이다.\n\n--- 으로 둘러싸인 YAML(YAML Ain’t Markup Language)에 아래와 같은 몇 가지 key: value 를 더해보자.\n\n---\nnumber-sections: true\nformat: \n  html: \n    toc: true\nexecute: \n  warning: false\n  error: false\n  freeze: auto\n---\n\n기본적인 Quarto 작성법은 다음과 같다.\n\n텍스트: 그냥 작성\n코드 청크(Code Chunk): Insert &gt; Executable Cell &gt; R(Ctrl+Alt+I)\n표(Table): Insert &gt; Table\n그림(Figure): Insert &gt; Figure\n링크(Link): (원하는 텍스트 선택 후) Insert &gt; Link\n머릿말(Header): Normal &gt; Header 1~6 중 선택\n\n이제 지난 실습록(데이터 수집하기)의 일부분을 재현해보자. 일반 텍스트와 코드 청크를 넣고 이를 렌더링해보면 그럴듯한 html 파일이 만들어짐을 확인할 수 있을 것이다.\n\n추가로 몇 가지의 팁을 소개한다.\n첫째, R의 패키지나 함수를 다르게 표시할 수 있다. 지금까지의 실습록에서 tidyverse 함수를 tidyverse 와 같이 표시하던 것이 기억날 것이다. 이는 해당 텍스트를 선택한 후, Format에서 Code를 누르면 생성된다. 혹은 Ctrl+D로 실행할 수 있다.\n둘째, Call-out 이다. 몇몇 실습록에서 아래와 같은 모습을 보았을 것이다. 문서 중간에 팁이나 주의를 알려주고 있다.\n\n\nCallout에는 공지(note), 팁(tip), 중요사항(important), 주의(caution), 경고(warning) 등이 있다. 이는 비주얼 에디터 메뉴 Insert-Callout에서 선택할 수 있고, ::: 으로 둘러싸인 부분에 글이나 코드 청크를 작성하면 된다.",
+    "crumbs": [
+      "R 실습",
+      "Lab08: 데이터로 소통하기: Quarto"
+    ]
+  },
+  {
+    "objectID": "lab_08.html#실습-2-개인-블로그-만들기",
+    "href": "lab_08.html#실습-2-개인-블로그-만들기",
+    "title": "Lab08: 데이터로 소통하기: Quarto",
+    "section": "\n2 실습 2: 개인 블로그 만들기",
+    "text": "2 실습 2: 개인 블로그 만들기\nQuarto를 활용하면 개인 블로그도 만들 수 있다. 어떻게 보면 블로그나 웹사이트는 위에서 만든 html의 집합이라고도 볼 수 있다. 블로그는 다음의 과정을 통해 생성할 수 있다.\n\n2.1 새로운 Quarto Blog 프로젝트 시작하기\nFile &gt; New Project &gt; Create Project &gt; Quarto Blog를 선택한다.\n\n\n\n\n\n\n\n\n\n\n\n\n\n디렉토리 이름과 경로를 설정하고, 아래에 위치한 Create Project 버튼을 클릭한다.\n\n\n2.2 렌더링하여 결과를 살펴보기\nRender 버튼을 클릭하여 결과를 확인한다. 결과는 오른쪽 패널의 Viewer 탭에 나타난다. Viewer 탭의 Show in new window 아이콘을 클릭하면 웹브라우저 상에 결과를 나타낼 수 있다.\n\nFiles 탭을 클릭하면 프로젝트 폴더에 다음과 같은 파일들이 생성되어 있음을 확인할 수 있다. 조교의 도움을 받아 각각의 파일이 어떠한 역할을 하는지 파악한다.\n\n\nFile\nDescription\n\n\n\n_quarto.yml\nQuarto 프로젝트 파일\n\n\nindex.qmd\n블로그의 홈페이지\n\n\nabout.qmd\n블로그의 어바우트 페이지\n\n\nposts/\n포스트를 포함하고 있는 폴더\n\n\nposts/_metadata.yml\n포스트가 공유하고 있는 옵션들\n\n\nstyles.css\n웹사이트의 CSS\n\n\n\n2.3 구성 요소 수정하기\n구성 요소를 수정하여 자신의 개인 블로그를 만들어 나간다.\n\n2.3.1 메타데이터\n블로그의 전체적인 모습은 _quarto.yml 파일에 의해 규정된다. _quarto.yml 파일의 내용을 살펴보고 조교의 도움을 받아 필요한 부분을 수정한다.\n다음의 웹사이트를 참조한다. 특히, 25개의 테마를 살펴보고, 그 중 하나를 선택한다. theme 만 바꿔주어도 아래와 같이 그럴듯한 블로그가 완성된다.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n다크 모드\n\n\n\n하나의 테마만 적용하는 것이 아니라, 다크 모드도 지정할 수 있다. 아래의 코드를 _quarto.yml 에 추가해보자.\n\ntheme:\n  light: flatly\n  dark: darkly\n\n\n\n\n2.3.2 홈페이지(home page)\n블로그의 홈페이지는 포스트 디렉토리에 포함되는 모든 포스트의 리스트를 제공하는 것으로 index.qmd 파일에 의해 규정된다. index.qmd 파일의 내용을 살펴보고 조교의 도움을 받아 필요한 부분을 수정한다.\n다음의 웹사이트를 참조한다. 특히 리스팅 유형(listing types) 옵션 세개(default, table, grid)를 살펴보고, 그 중 하나를 선택한다. 아래의 그림을 보면 그 차이를 직관적으로 알 수 있을 것이다.\n\n\n\n\n2.3.3 어바우트 페이지(about page)\n어바우트 페이지는 블로그와 블로그의 저작자에 대한 부가 정보를 제공하는 것으로 about.qmd 파일에 의해 규정된다. about.qmd 파일의 내용을 살펴보고 조교의 도움을 받아 필요한 부분을 수정한다.\n다음의 웹사이트를 참조한다. 특히 템플릿(template) 옵션 다섯개(jolla, trestles, solana, marquee, broadside)를 살펴보고, 그 중 하나를 선택한다. 아래는 jolla(좌)와 solana(우) 템플릿의 모습이다. 원한다면 사진도 변경할 수 있다.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2.3.4 포스트 디렉토리(posts directory)\n블로그의 콘텐츠는 포스트 디렉토리 속에 포함되어 있다. 기본적으로 하나의 포스트는 하나의 폴더인데, 개별 폴더 속에는 index.qmd라는 이름의 Quarto 파일이 들어 있다. 그리고 Quarto 다큐먼트에 포함되어 있는 이미지는 images라는 서브 폴더에 저장되어 있다.\n정리하면, 블로그를 만들기 위해 만든 폴더에 생성되는 .yml 파일은 블로그의 전체적인 모습을, index.qmd는 생성될 첫 블로그 페이지를, about.qmd는 블로그 정보를 담당한다. 이렇게 만들어진 블로그에 새로운 글은 하위의 post 폴더 내에 다시 qmd 파일을 생성하고 렌더링하여 포스팅할 수 있다.\n이제 다음의 절차에 따라 새로운 포스트를 생성해 본다.\n\nposts 디렉토리 아래에 새로운 디렉토리를 생성한다. 이름은 날짜와 주제가 결합된 형태로 하면 좋다.\n새로운 디렉토리에 index.qmd 파일을 생성한다. 아래와 같이 YAML 해더를 수정하고, 실습 1에서처럼 새로운 포스트를 작성한다.\n지금까지 배운 7번의 R 실습을 복습 겸 블로그에 차근차근 포스팅하여 나만의 기술 블로그로 만들 수도 있다.\n\n2.4 블로그를 웹 상에 출판하기\n어느 정도 개인 블로그가 완성되었다면, 다음의 절차에 따라 웹에 출판한다. 여기서는 Posit에서 제공하는 무료 출판 사이트인 Quarto Pub을 활용한다.\n\nQuarto Pub에 접속하여 계정을 만든다.\nRStudio에서, 왼쪽 하단부의 Terminal 탭을 누른다.\n프롬프트에 다음과 같이 입력하고 실행한다: quarto publish quarto-pub\n\n\n\n\n\n조교의 도움을 받고, 다음을 웹사이트를 참고한다.",
+    "crumbs": [
+      "R 실습",
+      "Lab08: 데이터로 소통하기: Quarto"
     ]
   }
 ]

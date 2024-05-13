@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -321,6 +355,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Lab07: 데이터 수집하기</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab_08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab08: 데이터로 소통하기: Quarto</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -341,19 +381,27 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#탭셋의-설정" id="toc-탭셋의-설정" class="nav-link" data-scroll-target="#탭셋의-설정"><span class="header-section-number">2.2</span> 탭셋의 설정</a></li>
   <li><a href="#페이지의-설정" id="toc-페이지의-설정" class="nav-link" data-scroll-target="#페이지의-설정"><span class="header-section-number">2.3</span> 페이지의 설정</a></li>
   </ul></li>
-  <li><a href="#내용-요소" id="toc-내용-요소" class="nav-link" data-scroll-target="#내용-요소"><span class="header-section-number">3</span> 내용 요소</a>
+  <li><a href="#내비게이션바와-사이드바의-설정" id="toc-내비게이션바와-사이드바의-설정" class="nav-link" data-scroll-target="#내비게이션바와-사이드바의-설정"><span class="header-section-number">3</span> 내비게이션바와 사이드바의 설정</a>
   <ul class="collapse">
-  <li><a href="#텍스트" id="toc-텍스트" class="nav-link" data-scroll-target="#텍스트"><span class="header-section-number">3.1</span> 텍스트</a></li>
-  <li><a href="#밸류박스" id="toc-밸류박스" class="nav-link" data-scroll-target="#밸류박스"><span class="header-section-number">3.2</span> 밸류박스</a></li>
-  <li><a href="#테이블" id="toc-테이블" class="nav-link" data-scroll-target="#테이블"><span class="header-section-number">3.3</span> 테이블</a></li>
-  <li><a href="#그래프" id="toc-그래프" class="nav-link" data-scroll-target="#그래프"><span class="header-section-number">3.4</span> 그래프</a></li>
-  <li><a href="#지도" id="toc-지도" class="nav-link" data-scroll-target="#지도"><span class="header-section-number">3.5</span> 지도</a></li>
+  <li><a href="#내비게이션바의-설정" id="toc-내비게이션바의-설정" class="nav-link" data-scroll-target="#내비게이션바의-설정"><span class="header-section-number">3.1</span> 내비게이션바의 설정</a></li>
+  <li><a href="#사이드바의-설정" id="toc-사이드바의-설정" class="nav-link" data-scroll-target="#사이드바의-설정"><span class="header-section-number">3.2</span> 사이드바의 설정</a></li>
   </ul></li>
-  <li><a href="#내비게이션바-설정" id="toc-내비게이션바-설정" class="nav-link" data-scroll-target="#내비게이션바-설정"><span class="header-section-number">4</span> 내비게이션바 설정</a></li>
-  <li><a href="#테마-설정-및-게시" id="toc-테마-설정-및-게시" class="nav-link" data-scroll-target="#테마-설정-및-게시"><span class="header-section-number">5</span> 테마 설정 및 게시</a>
+  <li><a href="#카드와-내용-요소" id="toc-카드와-내용-요소" class="nav-link" data-scroll-target="#카드와-내용-요소"><span class="header-section-number">4</span> 카드와 내용 요소</a>
   <ul class="collapse">
-  <li><a href="#테마-설정" id="toc-테마-설정" class="nav-link" data-scroll-target="#테마-설정"><span class="header-section-number">5.1</span> 테마 설정</a></li>
-  <li><a href="#인터넷-게시" id="toc-인터넷-게시" class="nav-link" data-scroll-target="#인터넷-게시"><span class="header-section-number">5.2</span> 인터넷 게시</a></li>
+  <li><a href="#그래프" id="toc-그래프" class="nav-link" data-scroll-target="#그래프"><span class="header-section-number">4.1</span> 그래프</a></li>
+  <li><a href="#테이블" id="toc-테이블" class="nav-link" data-scroll-target="#테이블"><span class="header-section-number">4.2</span> 테이블</a></li>
+  <li><a href="#지도" id="toc-지도" class="nav-link" data-scroll-target="#지도"><span class="header-section-number">4.3</span> 지도</a></li>
+  <li><a href="#텍스트" id="toc-텍스트" class="nav-link" data-scroll-target="#텍스트"><span class="header-section-number">4.4</span> 텍스트</a></li>
+  <li><a href="#밸류박스" id="toc-밸류박스" class="nav-link" data-scroll-target="#밸류박스"><span class="header-section-number">4.5</span> 밸류박스</a></li>
+  </ul></li>
+  <li><a href="#예시-대시보드-만들기" id="toc-예시-대시보드-만들기" class="nav-link" data-scroll-target="#예시-대시보드-만들기"><span class="header-section-number">5</span> 예시 대시보드 만들기</a>
+  <ul class="collapse">
+  <li><a href="#yaml-해더" id="toc-yaml-해더" class="nav-link" data-scroll-target="#yaml-해더"><span class="header-section-number">5.1</span> YAML 해더</a></li>
+  <li><a href="#intro-페이지" id="toc-intro-페이지" class="nav-link" data-scroll-target="#intro-페이지"><span class="header-section-number">5.2</span> Intro 페이지</a></li>
+  <li><a href="#graphs-페이지" id="toc-graphs-페이지" class="nav-link" data-scroll-target="#graphs-페이지"><span class="header-section-number">5.3</span> Graphs 페이지</a></li>
+  <li><a href="#tables-페이지" id="toc-tables-페이지" class="nav-link" data-scroll-target="#tables-페이지"><span class="header-section-number">5.4</span> Tables 페이지</a></li>
+  <li><a href="#maps-페이지" id="toc-maps-페이지" class="nav-link" data-scroll-target="#maps-페이지"><span class="header-section-number">5.5</span> Maps 페이지</a></li>
+  <li><a href="#대시보드-웹-상에-출판하기" id="toc-대시보드-웹-상에-출판하기" class="nav-link" data-scroll-target="#대시보드-웹-상에-출판하기"><span class="header-section-number">5.6</span> 대시보드 웹 상에 출판하기</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -398,19 +446,19 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="대시보드의-기본-구조" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="대시보드의-기본-구조"><span class="header-section-number">1</span> 대시보드의 기본 구조</h2>
-<p>대시보드는 기본적으로 다섯 가지의 구성요소로 이루어진다.</p>
+<p>대시보드는 기본적으로 다섯 가지의 구성요소로 이루어진다. 각각은 메인 바디, 헤더, 내비게이터, 사이드바, 푸터이다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/layout.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 <figcaption><a href="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/#tabset" class="uri">https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/#tabset</a></figcaption>
 </figure>
 </div>
-<p>첫째, 메인 바디(main body)는 대시보드의 핵심 요소이다. 메인 바디는 카드(card)라고 불리는 기본 단위들로 구성된다. 개별 카드는 다양한 내용 요소(텍스트, 그래프, 표, 지도, 밸류박스 등)를 가질 수 있다. 즉, 어떤 카드 속에는 그래프가 들어가며, 어떤 카드 속에는 지도가 들어간다. 이러한 카드들을 특정한 레이아웃 요소(페이지, 행, 열, 탭셋 등)를 통해 메인 바디에 배열된다. 페이지(page)는 대시보드 레이아웃의 최상위 레벨이다. 개별 페이지는 다수의 행(row) 혹은 열(column)로 구성될 수 있으며, 행 혹은 열을 또 다시 분할하고 싶을 때 탭셋(tabset)이 사용된다.</p>
-<p>둘째, 해더(header)는 대시보드의 가장 중요한 메타 정보(로고, 제목, 저자 등)를 포함한다.</p>
+<p>첫째, 메인 바디(main body)는 대시보드의 핵심 요소이다. 메인 바디는 카드(card)라고 불리는 기본 단위들로 구성된다. 개별 카드는 다양한 내용 요소(텍스트, 그래프, 표, 지도, 밸류박스 등)를 가질 수 있다. 즉, 어떤 카드 속에는 그래프가 들어가며, 어떤 카드 속에는 지도가 들어간다. 이러한 카드들은 특정한 레이아웃 요소(페이지, 행, 열, 탭셋 등)를 통해 메인 바디에 배열된다. 페이지(page)는 대시보드 레이아웃 요소 중 최상위 레벨의 것이다. 개별 페이지는 다수의 행(row) 혹은 열(column)로 구성된다. 행 혹은 열을 또다른 행 혹은 열이 아닌 탭 클릭 방식으로 분할하고 싶을 때 탭셋(tabset)이 사용된다.</p>
+<p>둘째, 헤더(header)는 대시보드의 가장 중요한 메타 정보(로고, 제목, 저자 등)를 포함한다.</p>
 <p>셋째, 내비게이터(navigator)는 최상위 레이아웃인 페이지간 이동을 통제한다.</p>
-<p>넷째, 사이드바(sidebar)는 주로 사용자의 인풋(input)을 받을 때 사용되는 것으로, 동적인 대시보드에서 주로 사용된다. Quarto는 사이드바외에 툴바(toolbar)와 카드인풋(card input)과 같은 옵션을 제공한다.</p>
+<p>넷째, 사이드바(sidebar)는 주로 사용자의 인풋(input)을 받을 때 사용되는 것으로, 동적인 대시보드에서 주로 사용된다. Quarto는 사이드바 외에 툴바(toolbar)와 카드인풋(card input)과 같은 옵션을 제공한다.</p>
 <p>다섯째, 푸터(footer)는 해더와 유사한 기능을 하는데, 주로 부차적인 매타 정도를 포함한다.</p>
-<p>다섯개의 구성 요소 중 가장 중요한 것은 메인 바디, 해더, 내비게이터이다. Quarto는 헤더와 내비게이터를 통합한 내비게이션바(navigation bar)를 제공한다. 사이드바는 Shiny 페키지를 활용한 동적인 대시보드에서는 매우 중요하지만, 이번 실습에서는 사용하지 않는다. 푸터는 가장 지엽적인 요소이다.</p>
+<p>다섯개의 구성 요소 중 가장 중요한 것은 메인 바디, 해더, 내비게이터이다. Quarto는 헤더와 내비게이터를 통합한 내비게이션바(navigation bar)를 제공한다. 사이드바는 <code>Shiny</code> 페키지를 활용한 동적인 대시보드에서는 매우 중요하지만, 이번 실습에서는 사용하지 않는다. 푸터는 가장 지엽적인 요소이다.</p>
 <p>다음의 대시보드를 살펴보자.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -418,60 +466,404 @@ ul.task-list li input[type="checkbox"] {
 <figcaption><a href="https://quarto.org/docs/dashboards/" class="uri">https://quarto.org/docs/dashboards/</a></figcaption>
 </figure>
 </div>
-<p>이 대시보는 크게 내비게이션바와 메인 바디로 구성되어 있다. 네비게이션바를 통해 다음의 사항을 알 수 있다.</p>
+<p>이 대시보드는 크게 내비게이션바와 메인 바디로 구성되어 있다. 네비게이션바에는 다음의 내용이 포함되어 있다.</p>
 <ul>
 <li><p>이 대시보드의 제목(title)은 ’고객이탈(Customer Chrun)’이고 회사 이름은 DEMOCO(로고)이다.</p></li>
-<li><p>이 대시보드는 모두 두 개의 페이지(page)로 구성되어 있다. 페이지의 이름은 각각 Churn (Standard)와 ’Data’이다.</p></li>
+<li><p>이 대시보드는 모두 두 개의 페이지(page)로 구성되어 있다. 페이지의 이름은 각각 ’Churn (Standard)’과 ’Data’이다.</p></li>
 </ul>
-<p>메인 바디를 통해 다음의 사항을 알 수 있다.</p>
+<p>메인 바디는 다음과 같은 레이아웃 요소들로 구성되어 있다.</p>
 <ul>
-<li><p>첫 번째 페이지(Churn (Standard))는 세 개의 행(row)로 구성되어 있다.</p></li>
+<li><p>첫 번째 페이지(Churn (Standard))는 세 개의 행(row)으로 구성되어 있다.</p></li>
 <li><p>첫 번째 페이지의 첫 번째 행은 세 개의 카드(card)로 구성되어 있는데, 내용 요소는 모두 밸류박스(value box)이다.</p></li>
 <li><p>첫 번째 페이지의 두 번째 행은 두 개의 열(즉, 카드)로 구성되어 있는데, 내용 요소는 모두 그래프(graph)이다.</p></li>
 <li><p>첫 번째 페이지의 세 번째 행은 단일한 열(즉, 카드)로 구성되어 있는데, 내용 요소는 테이블(table)이다.</p></li>
-<li><p>두 번째 페이지에도 다양한 사항이 포함되어 있다.</p></li>
+<li><p>두 번째 페이지에도 다양한 사항이 포함되어 있을 것이다.</p></li>
 </ul>
 </section>
 <section id="레이아웃-설정" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="레이아웃-설정"><span class="header-section-number">2</span> 레이아웃 설정</h2>
 <section id="행과-열의-설정" class="level3" data-number="2.1">
 <h3 data-number="2.1" class="anchored" data-anchor-id="행과-열의-설정"><span class="header-section-number">2.1</span> 행과 열의 설정</h3>
+<p>행(row)과 열(column)은 가장 기본이 되는 레이아웃 요소이다. 기본 원칙은 다음과 같다.</p>
+<ul>
+<li><p>헤더 2(header 2) 레벨이 행과 열의 구분을 일차적으로 결정한다.</p></li>
+<li><p>헤더 3(header 3) 레벨이 하위 행과 열의 구분을 이차적으로 결정한다.</p></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Row {height=70%}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Card <span class="dv">1</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Row {height=30%}</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="do">### Column {width=40%}</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>Card <span class="dv">2-1</span> </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="do">### Column {width=60%}</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Card <span class="dv">2-2</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>위와 같이 설정하면 다음과 같은 결과를 얻을 수 있다. Row의 경우는 <code>{height}</code> 태그를 통해서, Column의 경우는 <code>{width}</code>태그를 통해 상대적인 크기를 설정할 수 있다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figcaption><a href="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/" class="uri">https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/</a></figcaption>
+</figure>
+</div>
 </section>
 <section id="탭셋의-설정" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="탭셋의-설정"><span class="header-section-number">2.2</span> 탭셋의 설정</h3>
+<p>탭셋(tabset)은 행(row)과 열(column)을 다른 하위 행과 열이 아닌 탭의 설정을 통해 분할하고자 할 때 사용된다.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Row {height=70%}</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>Card <span class="dv">1</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Row {height=30% .tabset}</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="do">### Column</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>Card <span class="dv">2-1</span> {width<span class="ot">=</span><span class="dv">50</span>%}</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="do">### Column</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>Card <span class="dv">2-2</span> {width<span class="ot">=</span><span class="dv">50</span>%}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>위와 같이 설정하면 다음과 같은 결과를 얻을 수 있다. 탭셋의 설정을 위해 <code>{.tabset}</code> 태그가 사용된다는 점에 주의한다.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/tabset1.png" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/tabset2.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
 </section>
 <section id="페이지의-설정" class="level3" data-number="2.3">
 <h3 data-number="2.3" class="anchored" data-anchor-id="페이지의-설정"><span class="header-section-number">2.3</span> 페이지의 설정</h3>
+<p>페이지(page)는 최상위 레이아웃 요소이다. 기본 원칙은 다음과 같다.</p>
+<ul>
+<li><p>헤더 1(header 1) 레벨이 페이지의 구분을 결정한다.</p></li>
+<li><p>Quarto에서는 페이지가 내비게이션바에 나타난다.</p></li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Page A</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Row {height=70%}</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>Card <span class="dv">1</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Row {height=30%}</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="do">### Column {width=40%}</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>Card <span class="dv">2-1</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="do">### Column {width=60%}</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>Card <span class="dv">2-2</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Page B</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>Card <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>위와 같이 설정하면 다음과 같은 결과를 얻을 수 있다. 페이지가 내비게이션바에서 마치 탭셋처럼 존재하는 것에 주의한다.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card4.png" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card5.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
 </section>
 </section>
-<section id="내용-요소" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="내용-요소"><span class="header-section-number">3</span> 내용 요소</h2>
-<section id="텍스트" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="텍스트"><span class="header-section-number">3.1</span> 텍스트</h3>
+<section id="내비게이션바와-사이드바의-설정" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="내비게이션바와-사이드바의-설정"><span class="header-section-number">3</span> 내비게이션바와 사이드바의 설정</h2>
+<section id="내비게이션바의-설정" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="내비게이션바의-설정"><span class="header-section-number">3.1</span> 내비게이션바의 설정</h3>
+<p>내비게이션바는 헤더와 내비게이터로 구성된다. 내비게이터는 페이지가 설정된 경우에만 나타나게 된다. 여기서는 헤더에 집중하고자 한다. 대시보드 헤더는 다른 Quarto 다큐먼트와 마찬가지로 YAML 헤더를 통해 통제된다. 다음과 같은 요소들이 중요하다.</p>
+<ul>
+<li><p>제목(title): 대시보드 전체의 이름을 결정한다.</p></li>
+<li><p>저자(author): 만든 사람이나 관리 회사의 이름이지만, 부제로 활용되기도 한다.</p></li>
+<li><p>포맷(format): 기본 설정인 대시보드(dashboard) 하에 다양한 하위 설정이 가능하다.</p>
+<ul>
+<li><p>logo: 로고 그림 파일을 지정하면 내비게이션바의 왼쪽 끝에 나타난다.</p></li>
+<li><p>nav-buttons: github이나 이메일 연결을 설정할 수 있다.</p></li>
+<li><p>scrolling: true 설정: 디폴트는 false인데, 레이아웃 요소들의 높이들의 합이 100%가 되도록 일괄적으로 조절된다. true로 지정하면, 개별 내용 요소의 원 크기를 그대로 살리면서 스크롤되게 디자인이 바뀐다. 둘 다를 실험해 보고 자신의 목적에 맞는 것을 고른다.</p></li>
+</ul></li>
+<li><p>테마(theme): 대시보드의 외관을 한꺼번에 바꿀 수 있다. 모두 25개의 <a href="https://quarto.org/docs/dashboards/theming.html">부트스와치(bootswatch)</a> 테마가 존재한다. 여러가지를 실험해 보고 자신의 취향에 맞는 것을 선정한다.</p></li>
+</ul>
 </section>
-<section id="밸류박스" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="밸류박스"><span class="header-section-number">3.2</span> 밸류박스</h3>
+<section id="사이드바의-설정" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="사이드바의-설정"><span class="header-section-number">3.2</span> 사이드바의 설정</h3>
+<p>사이드바(sidebar)는 <code>{.sidebar}</code> 태그를 통해 만들 수 있는데, 헤더 1(header 1) 레벨이므로 특정한 페이지에 종속되지 않는다. 사이드바는 주로 사용자의 투입을 받을 때 사용되기 때문에 동적인 대시보드에 주로 사용된다. 정적인 대시보드의 경우에는 텍스트를 통한 특정 정보의 제공에 사용될 수 있다.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># {.sidebar}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>Sidebar content</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>위와 같이 설정하면 다음과 같은 결과를 얻을 수 있다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/sidebar.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figcaption><a href="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/" class="uri">https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/</a></figcaption>
+</figure>
+</div>
 </section>
-<section id="테이블" class="level3" data-number="3.3">
-<h3 data-number="3.3" class="anchored" data-anchor-id="테이블"><span class="header-section-number">3.3</span> 테이블</h3>
 </section>
-<section id="그래프" class="level3" data-number="3.4">
-<h3 data-number="3.4" class="anchored" data-anchor-id="그래프"><span class="header-section-number">3.4</span> 그래프</h3>
+<section id="카드와-내용-요소" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="카드와-내용-요소"><span class="header-section-number">4</span> 카드와 내용 요소</h2>
+<p>카드(card)란 특정한 내용 요소(텍스트, 벨류박스, 테이블, 그래프, 지도 등)를 포함하고 있는, 대시보드의 가장 기본적인 단위이다. 다음의 두 가지 사항이 중요하다.</p>
+<ul>
+<li><p>카드의 제목이 중요하다. 완성된 대시보드 상에 등장하기 때문에 사용자가 이해하기 쉬운 제목이 부여되어야 한다.</p></li>
+<li><p>내용 요소에 따라 카드를 작성하는 방법이 조금 다르다.</p></li>
+</ul>
+<p>내용 요소 제작의 세세한 사항은 아래의 “예시 대시보드 만들기”에서 확인한다.</p>
+<section id="그래프" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="그래프"><span class="header-section-number">4.1</span> 그래프</h3>
+<p>Quarto는 그래프 하나를 만들어내는 코드 청크를 하나의 카드로 인식한다. 그래프 카드의 제목은 코드 청크 내의 <code>#| title:</code> 옵션을 통해 부여된다. <code>ggplot2</code>와 같은 정적인 플롯 도구 뿐만 아니라 <code>plotly</code>와 같은 반응형 플롯 도구를 사용하여 그래프 카드를 생성한다.</p>
 </section>
-<section id="지도" class="level3" data-number="3.5">
-<h3 data-number="3.5" class="anchored" data-anchor-id="지도"><span class="header-section-number">3.5</span> 지도</h3>
+<section id="테이블" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="테이블"><span class="header-section-number">4.2</span> 테이블</h3>
+<p>Quarto는 테이블 하나를 디스플레이하는 코드 청크를 하나의 카드로 인식한다. 테이블 카드의 제목은 코드 청크 내의 <code>#| title:</code> 옵션을 통해 부여된다. <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html"><code>knitr</code> 패키지</a>의 <code>kable()</code> 함수, <a href="https://rstudio.github.io/DT/"><code>DT</code> 패키지</a>의 <code>datatable()</code> 함수 등을 이용해 테이블 카드를 생성한다.</p>
+</section>
+<section id="지도" class="level3" data-number="4.3">
+<h3 data-number="4.3" class="anchored" data-anchor-id="지도"><span class="header-section-number">4.3</span> 지도</h3>
+<p>Quarto는 지도 하나를 디스플레이하는 코드 청크를 하나의 카드로 인식한다. 지도 카드의 제목은 코드 청크 내의 <code>#| title:</code> 옵션을 통해 부여된다. <code>ggplot2</code>와 같은 정적인 지도 제작 도구 뿐만 아니라 <a href="https://leafletjs.com/"><code>leaflet</code></a>과 같은 반응형 지도 제작 도구를 사용하여 지도 카드를 생성한다.</p>
+</section>
+<section id="텍스트" class="level3" data-number="4.4">
+<h3 data-number="4.4" class="anchored" data-anchor-id="텍스트"><span class="header-section-number">4.4</span> 텍스트</h3>
+<p>일종의 텍스트 박스도 하나의 카드로 간주된다. 그래프, 테이블, 지도가 하나의 코드 청크가 하나의 카드로 인식되는데 반해 텍스트 카드는 다른 형식을 취한다. <code>::: {.card}</code>&nbsp;div를 사용해야 하며 <code>#| title:</code> 옵션을 사용해 제목을 지정해야 한다.</p>
+</section>
+<section id="밸류박스" class="level3" data-number="4.5">
+<h3 data-number="4.5" class="anchored" data-anchor-id="밸류박스"><span class="header-section-number">4.5</span> 밸류박스</h3>
+<p>요약적 수치를 큰 박스 속에 나타내는 것을 밸류박스(value box)라고 하는데, 코드 청크로 표현하지만 형식은 조금 다르다. <code>#| content: valuebox</code>라는 옵션이 반드시 포함되야 하며, 제목을 지정하기 위해 <code>#| title:</code> 옵션도 필요하다. 또한 리스트를 이용해 아이콘(icon), 컬러(color), 수치(value)를 지정해야 한다.</p>
+<p>아이콘은 <a href="https://icons.getbootstrap.com/">부트스트랩 아이콘(bootstrap icon)</a>이 사용된다. 적절한 아이콘을 찾고 그 이름을 <code>#| title:</code> 옵션을 통해 설정하는 것이 중요하다.</p>
+<p>모든 컬러가 다 사용가능한 것은 아니다. 아래의 표를 참조하여 컬러를 설정해야 한다.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Color Alias</th>
+<th>Default Theme Color(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>primary</code></td>
+<td>Blue</td>
+</tr>
+<tr class="even">
+<td><code>secondary</code></td>
+<td>Gray</td>
+</tr>
+<tr class="odd">
+<td><code>success</code></td>
+<td>Green</td>
+</tr>
+<tr class="even">
+<td><code>info</code></td>
+<td>Bright Blue</td>
+</tr>
+<tr class="odd">
+<td><code>warning</code></td>
+<td>Yellow/Orange</td>
+</tr>
+<tr class="even">
+<td><code>danger</code></td>
+<td>Red</td>
+</tr>
+<tr class="odd">
+<td><code>light</code></td>
+<td>Light Gray</td>
+</tr>
+<tr class="even">
+<td><code>dark</code></td>
+<td>Black</td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
-<section id="내비게이션바-설정" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="내비게이션바-설정"><span class="header-section-number">4</span> 내비게이션바 설정</h2>
+<section id="예시-대시보드-만들기" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="예시-대시보드-만들기"><span class="header-section-number">5</span> 예시 대시보드 만들기</h2>
+<p>예시 대시보드(<a href="https://sangillee.quarto.pub/my-first-dashboard/" class="uri">https://sangillee.quarto.pub/my-first-dashboard/</a>)에 접속하여 구성을 살펴본다. 다음의 사항에 주목한다.</p>
+<ul>
+<li><p>내비게이션바에 서울대학교 로고가 있고, 오른쪽 맨 끝애 github 및 이메일 아이콘이 위치해 있다.</p></li>
+<li><p>대시보드가 네 개의 페이지(Intro, Graphs, Tables, Maps)로 나뉘어져 있고, 각 페이지마다 행, 열, 탭셋과 같은 레이아웃 요소들이 배치되어 있다.</p></li>
+</ul>
+<p>어떤 식으로 제작할 수 있을지 생각해 본다. 새로운 프로젝트를 생성하고 Quarto 다큐먼트를 생성한다. 아래는 해당 대시보드를 만들기 위해 사용된 코드이다. 참고하여 자신만의 대시보드를 만들어 본다.</p>
+<section id="yaml-해더" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="yaml-해더"><span class="header-section-number">5.1</span> YAML 해더</h3>
+<p>특히, <code>nav-buttons:</code> 옵션의 지정 형식에 주의한다. <code>scrolling</code> 옵션과 다양한 <code>theme:</code> 옵션을 시험해 본다.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"My First Dashboard"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span> Sang<span class="sc">-</span>Il Lee</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>format<span class="sc">:</span> </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  dashboard<span class="sc">:</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    logo<span class="sc">:</span> snu_logo_2.png</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    nav<span class="sc">-</span>buttons<span class="sc">:</span> </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> icon<span class="sc">:</span> github</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        href<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>github.com<span class="sc">/</span>sangillee66</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        aria<span class="sc">-</span>label<span class="sc">:</span> GitHub</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span> icon<span class="sc">:</span> envelope</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        href<span class="sc">:</span> mailto<span class="sc">:</span>si_lee<span class="sc">@</span>snu.ac.kr</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        aria<span class="sc">-</span>label<span class="sc">:</span> Mail</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># scrolling: true</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>theme<span class="sc">:</span> default</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>editor<span class="sc">:</span> visual</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>editor_options<span class="sc">:</span> </span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  chunk_output_type<span class="sc">:</span> console</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="테마-설정-및-게시" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="테마-설정-및-게시"><span class="header-section-number">5</span> 테마 설정 및 게시</h2>
-<section id="테마-설정" class="level3" data-number="5.1">
-<h3 data-number="5.1" class="anchored" data-anchor-id="테마-설정"><span class="header-section-number">5.1</span> 테마 설정</h3>
+<section id="intro-페이지" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="intro-페이지"><span class="header-section-number">5.2</span> Intro 페이지</h3>
+<p>Intro라는 이름의 페이지를 설정한다.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Intro</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="첫번째-행-text-카드" class="level4" data-number="5.2.1">
+<h4 data-number="5.2.1" class="anchored" data-anchor-id="첫번째-행-text-카드"><span class="header-section-number">5.2.1</span> 첫번째 행: Text 카드</h4>
+<p>행을 설정하고 행의 상대적인 높이(10%)를 지정한다.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Row {height="10%"}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>텍스트 카드를 생성한다. 텍스트 카드를 생성하기 위해 <code>{.card}</code> 태그가 사용되어야 하며, 텍스트 카드의 제목을 지정하기 위해 <code>title=</code> 옵션이 사용되어야 함에 주의한다.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span> {.card title<span class="ot">=</span><span class="st">"Text"</span>}</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>This is my first dashboard.</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="인터넷-게시" class="level3" data-number="5.2">
-<h3 data-number="5.2" class="anchored" data-anchor-id="인터넷-게시"><span class="header-section-number">5.2</span> 인터넷 게시</h3>
+<section id="두번째-행의-탭셋-histogram-of-gdp-per-capita-table-of-mean-values" class="level4" data-number="5.2.2">
+<h4 data-number="5.2.2" class="anchored" data-anchor-id="두번째-행의-탭셋-histogram-of-gdp-per-capita-table-of-mean-values"><span class="header-section-number">5.2.2</span> 두번째 행의 탭셋: Histogram of GDP per capita &amp; Table of Mean Values</h4>
+<p>행을 설정하고 행의 상대적인 높이(70%)를 지정한다. 탭셋을 생성하기 위해 <code>{.tabset}</code> 태그가 사용되어야 함에 주의한다.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Row {.tabset height="70%"}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>그래프 카드를 생성하기 위해 <code>ggplot2</code> 패키지를 활용한다. 그래프 카드의 제목을 지정하기 위해 <code>title=</code> 옵션이 사용되어야 함에 주의한다.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: "Histogram of GDP per capita"</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> gdpPercap)) <span class="sc">+</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>테이블 카드를 생성하기 위해 <code>knitr</code> 패키지의 <code>kable()</code> 함수를 활용한다. 테이블 카드의 제목을 지정하기 위해 <code>title=</code> 옵션이 사용되어야 함에 주의한다.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: "Table of Mean Values"</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">GDP_percap =</span> <span class="fu">mean</span>(gdpPercap),</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Life_Exp =</span> <span class="fu">mean</span>(lifeExp),</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">Population =</span> <span class="fu">mean</span>(pop),</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">.by =</span> continent</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="세번째-행의-3개의-밸류박스" class="level4" data-number="5.2.3">
+<h4 data-number="5.2.3" class="anchored" data-anchor-id="세번째-행의-3개의-밸류박스"><span class="header-section-number">5.2.3</span> 세번째 행의 3개의 밸류박스</h4>
+<p>행을 설정하고 행의 상대적인 높이(20%)를 지정한다.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Row {height="20%"}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>첫번째 밸류박스를 생성한다. <code>#| content: valuebox</code> 옵션과 <code>#| title:</code> 옵션이 사용됨에 주의한다.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| content: valuebox</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: "Number of Countries"</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>n_countries <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span> <span class="fu">distinct</span>(country) <span class="sc">|&gt;</span> <span class="fu">nrow</span>()</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">icon =</span> <span class="st">"asterisk"</span>,</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="st">"primary"</span>,</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> n_countries</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>두번째 밸류박스를 생성한다.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| content: valuebox</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: "First Year"</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>first_year <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span> <span class="fu">distinct</span>(year) <span class="sc">|&gt;</span> <span class="fu">pull</span>() <span class="sc">|&gt;</span> <span class="fu">first</span>()</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">icon =</span> <span class="st">"airplane"</span>,</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="st">"secondary"</span>,</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> first_year</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>세번째 밸류박스를 생성한다.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| content: valuebox</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: "Last Year"</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>last_year <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span> <span class="fu">distinct</span>(year) <span class="sc">|&gt;</span> <span class="fu">pull</span>() <span class="sc">|&gt;</span> <span class="fu">last</span>()</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">icon =</span> <span class="st">"bank"</span>,</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="st">"success"</span>,</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> last_year</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="graphs-페이지" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="graphs-페이지"><span class="header-section-number">5.3</span> Graphs 페이지</h3>
+<p>Graphs라는 이름의 페이지를 설정한다.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Graphs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="첫번째-행의-그래프-카드-gdp-and-life-expectancy" class="level4" data-number="5.3.1">
+<h4 data-number="5.3.1" class="anchored" data-anchor-id="첫번째-행의-그래프-카드-gdp-and-life-expectancy"><span class="header-section-number">5.3.1</span> 첫번째 행의 그래프 카드: GDP and Life Expectancy</h4>
+<p>행을 설정한다.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Row</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>ggplot2</code> 패키지를 활용하여 그래프 카드를 생성한다.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: GDP and Life Expectancy</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log10</span>(gdpPercap), <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> continent), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span> </span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>continent, <span class="at">ncol =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="두번째-행의-그래프-카드-population-life-expectancy" class="level4" data-number="5.3.2">
+<h4 data-number="5.3.2" class="anchored" data-anchor-id="두번째-행의-그래프-카드-population-life-expectancy"><span class="header-section-number">5.3.2</span> 두번째 행의 그래프 카드: Population &amp; Life Expectancy</h4>
+<p>첫번째 그래프(Population)를 위한 열을 설정한다.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Column</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>그래프 카드를 생성한다.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: Population</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">sum_pop =</span> <span class="fu">sum</span>(pop),</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">.by =</span> <span class="fu">c</span>(year, continent)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> sum_pop)) <span class="sc">+</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="fu">aes</span>(<span class="at">fill =</span> continent)) <span class="sc">+</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">y =</span> <span class="st">"Population"</span>, <span class="at">fill =</span> <span class="st">"Continents"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>두번째 그래프(Life Expectancy)를 위한 열을 설정한다.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Column</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>그래프 카드를 생성한다.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: Life Expectancy</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> continent, <span class="at">group =</span> country)) <span class="sc">+</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">y =</span> <span class="st">"Life Expectancy"</span>, <span class="at">color =</span> <span class="st">"Continents"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="tables-페이지" class="level3" data-number="5.4">
+<h3 data-number="5.4" class="anchored" data-anchor-id="tables-페이지"><span class="header-section-number">5.4</span> Tables 페이지</h3>
+<p>Tables라는 이름의 페이지를 설정한다.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>단일 행을 설정한다.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Row</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>DT</code> 패키지를 활용하여 테이블 카드를 생성한다.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: Lookup Table</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(gapminder, <span class="at">filter =</span> <span class="st">"top"</span>, </span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">options =</span> <span class="fu">list</span>(</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">pageLength =</span> <span class="dv">5</span>, <span class="at">autoWidth =</span> <span class="cn">TRUE</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>          ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="maps-페이지" class="level3" data-number="5.5">
+<h3 data-number="5.5" class="anchored" data-anchor-id="maps-페이지"><span class="header-section-number">5.5</span> Maps 페이지</h3>
+<p>Maps라는 이름의 페이지를 설정한다.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Maps</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>단일 행을 설정한다.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Row</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>leaflet</code> 패키지를 활용하여 지도 카드를 생성한다.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: A Reference Map </span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet) </span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>() <span class="sc">|&gt;</span>  </span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="대시보드-웹-상에-출판하기" class="level3" data-number="5.6">
+<h3 data-number="5.6" class="anchored" data-anchor-id="대시보드-웹-상에-출판하기"><span class="header-section-number">5.6</span> 대시보드 웹 상에 출판하기</h3>
+<p>블로그와 마찬가지로 다음의 절차에 따라 완성된 대시보드를 웹 상에 출판한다. 여기서는 <a href="https://posit.co/">Posit</a>에서 제공하는 무료 출판 사이트인 <a href="https://quartopub.com/">Quarto Pub</a>을 활용한다.</p>
+<ul>
+<li><p><a href="https://quartopub.com/">Quarto Pub</a>에 접속하여 계정을 만든다.</p></li>
+<li><p>RStudio에서, 왼쪽 하단부의 Terminal 탭을 누른다.</p></li>
+<li><p>프롬프트에 다음과 같이 입력하고 실행한다: quarto publish quarto-pub</p></li>
+<li><p>나머지 사항에 대해서는 조교의 도움을 받는다.</p></li>
+</ul>
 
 
 </section>
