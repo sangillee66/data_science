@@ -27,3 +27,7 @@ Chapter 2. 인구 현상과 인문사회 콘텐츠
 Chapter 3. 데이터 수집하기 [{{< bi file-pdf-fill >}}](class_notes/3장%20데이터%20수집하기(강의노트).pdf)
 
 Chapter 4. 데이터로 소통하기
+
+-   기본 개념 [{{< bi file-pdf-fill >}}](class_notes/4장 데이터로 소통하기 1(강의노트).pdf)
+
+-   대시보드와 교육 [{{< bi file-pdf-fill >}}](class_notes/4장 데이터로 소통하기 2(강의노트).pdf)
