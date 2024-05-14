@@ -1,0 +1,494 @@
+---
+title: "Lab09: 데이터로 소통하기: 대시보드 만들기"
+author: "이상일(서울대학교 지리교육과)<br>김세창(서울대학교 지리교육과 석사)<br>김우형(서울대학교 지리교육과 석사과정)"
+date-modified: last-modified
+number-sections: true
+format: 
+  html: 
+    toc: true
+    embed-resources: true
+code-link: true
+code-copy: true
+execute: 
+  warning: false
+  error: false
+  freeze: auto
+editor: visual
+bibliography: references.bib
+editor_options: 
+  chunk_output_type: console
+---
+
+## 실습 개요 {.unnumbered}
+
+이번 실습은 Quarto를 이용하여 데이터 대시보드(dashboard)를 만드는 것이다.
+
+## 레이아웃 설정법
+
+### 페이지의 설정
+
+페이지(page)는 최상위 레이아웃 요소이다. 기본 원칙은 다음과 같다.
+
+-   헤더 1(header 1) 레벨이 페이지의 구분을 결정한다.
+
+-   Quarto에서는 페이지가 내비게이션바에 나타난다.
+
+``` r
+# Page A
+
+# Page B
+```
+
+### 사이드바의 설정
+
+사이드바(sidebar)는 `{.sidebar}` 태그를 통해 만들 수 있는데, 헤더 1(header 1) 레벨이므로 특정한 페이지에 종속되지 않는다. 사이드바는 주로 사용자의 투입을 받을 때 사용되기 때문에 동적인 대시보드에 주로 사용된다. 정적인 대시보드의 경우에는 텍스트를 통한 특정 정보의 제공에 사용될 수 있다.
+
+``` r
+# {.sidebar}
+Sidebar content
+```
+
+### 행과 열의 설정
+
+행(row)과 열(column)은 가장 기본이 되는 레이아웃 요소이다. 기본 원칙은 다음과 같다.
+
+-   헤더 2(header 2) 레벨이 행과 열의 구분을 일차적으로 결정한다.
+
+-   헤더 3(header 3) 레벨이 하위 행과 열의 구분을 이차적으로 결정한다.
+
+-   Row와 Column 옆에 `{height}`, `{width}` 태그를 통해 가로 세로의 상대적인 크기를 정한다.
+
+``` r
+## Row {height=70%}
+
+Card 1
+
+## Row {height=30%}
+
+### Column {width=40%}
+
+Card 2-1
+
+### Column {width=60%}
+
+Card 2-2
+
+# Page B
+
+Card 3
+```
+
+### 탭셋의 설정
+
+Row나 Column에 {.tabset}을 표기하면, 하위의 행과 열이 탭으로 구분된다. 이렇게 하면 카드의 크기가 지나치게 줄어드는 단점을 해소할 수 있다.
+
+### 기본 구조 살펴보기
+
+위를 바탕으로 대시보드의 골격을 작성해본다.
+
+``` r
+---
+title: "dashboard"
+format: dashboard
+theme: default
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+
+# {.sidebar}
+Sidebar content
+
+# Page A
+
+## Row {height=70%}
+
+Card 1
+
+## Row {height=30%}
+
+### Column {width=40%}
+
+Card 2-1
+
+### Column {width=60%}
+
+Card 2-2 {.tabset}
+
+#### Column
+
+Card 2-1 {width=50%}
+
+#### Column
+
+Card 2-2 {width=50%}
+
+# Page B
+
+Card 3
+```
+
+위와 같이 설정하면 다음과 같은 결과를 얻을 수 있다.
+
+![](images/clipboard-968812471.png)
+
+## 카드와 내용 요소
+
+카드(card)란 특정한 내용 요소(텍스트, 벨류박스, 테이블, 그래프, 지도 등)를 포함하고 있는, 대시보드의 가장 기본적인 단위이다. 다음의 두 가지 사항이 중요하다.
+
+-   카드의 제목이 중요하다. 완성된 대시보드 상에 등장하기 때문에 사용자가 이해하기 쉬운 제목이 부여되어야 한다.
+
+-   내용 요소에 따라 카드를 작성하는 방법이 조금 다르다.
+
+내용 요소 제작의 세세한 사항은 아래의 "예시 대시보드 만들기"에서 확인한다.
+
+### 그래프
+
+Quarto는 그래프 하나를 만들어내는 코드 청크를 하나의 카드로 인식한다. 그래프 카드의 제목은 코드 청크 내의 `#| title:` 옵션을 통해 부여된다. `ggplot2`와 같은 정적인 플롯 도구 뿐만 아니라 `plotly`와 같은 반응형 플롯 도구를 사용하여 그래프 카드를 생성한다.
+
+### 테이블
+
+Quarto는 테이블 하나를 디스플레이하는 코드 청크를 하나의 카드로 인식한다. 테이블 카드의 제목은 코드 청크 내의 `#| title:` 옵션을 통해 부여된다. [`knitr` 패키지](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)의 `kable()` 함수, [`DT` 패키지](https://rstudio.github.io/DT/)의 `datatable()` 함수 등을 이용해 테이블 카드를 생성한다.
+
+### 지도
+
+Quarto는 지도 하나를 디스플레이하는 코드 청크를 하나의 카드로 인식한다. 지도 카드의 제목은 코드 청크 내의 `#| title:` 옵션을 통해 부여된다. `ggplot2`와 같은 정적인 지도 제작 도구 뿐만 아니라 [`leaflet`](https://leafletjs.com/)과 같은 반응형 지도 제작 도구를 사용하여 지도 카드를 생성한다.
+
+### 텍스트
+
+일종의 텍스트 박스도 하나의 카드로 간주된다. 그래프, 테이블, 지도가 하나의 코드 청크가 하나의 카드로 인식되는데 반해 텍스트 카드는 다른 형식을 취한다. `::: {.card}` div를 사용해야 하며 괄호 내부에 `title=` 옵션을 사용해 제목을 지정해야 한다. 가령 `{.card title="Text"}`와 같이 표기해야 한다.
+
+### 밸류박스
+
+요약적 수치를 큰 박스 속에 나타내는 것을 밸류박스(value box)라고 하는데, 코드 청크로 표현하지만 형식은 조금 다르다. `#| content: valuebox`라는 옵션이 반드시 포함되야 하며, 제목을 지정하기 위해 `#| title:` 옵션도 필요하다. 또한 리스트를 이용해 아이콘(icon), 컬러(color), 수치(value)를 지정해야 한다.
+
+아이콘은 [부트스트랩 아이콘(bootstrap icon)](https://icons.getbootstrap.com/)이 사용된다. 적절한 아이콘을 찾고 그 이름을 `#| title:` 옵션을 통해 설정하는 것이 중요하다.
+
+모든 컬러가 다 사용가능한 것은 아니다. 아래의 표를 참조하여 컬러를 설정해야 한다.
+
+| Color Alias | Default Theme Color(s) |
+|-------------|------------------------|
+| `primary`   | Blue                   |
+| `secondary` | Gray                   |
+| `success`   | Green                  |
+| `info`      | Bright Blue            |
+| `warning`   | Yellow/Orange          |
+| `danger`    | Red                    |
+| `light`     | Light Gray             |
+| `dark`      | Black                  |
+
+## 예시 대시보드 만들기
+
+위의 사항을 바탕으로 예시 대시보드(<https://sechangkim.quarto.pub/my-first-dashboard/>)에 접속하여 구성을 살펴본다. 다음의 사항에 주목한다.
+
+-   내비게이션바에 서울대학교 로고가 있고, 오른쪽 맨 끝애 홈페이지 및 이메일 아이콘이 위치해 있다.
+
+-   대시보드가 네 개의 페이지(Intro, Graphs, Tables, Maps)로 나뉘어져 있고, 각 페이지마다 행, 열, 탭셋과 같은 레이아웃 요소들이 배치되어 있다.
+
+어떤 식으로 제작할 수 있을지 생각해 본다. 새로운 프로젝트를 생성하고 Quarto 다큐먼트를 생성한다. 아래는 해당 대시보드를 만들기 위해 사용된 코드이다. 참고하여 자신만의 대시보드를 만들어 본다. 단, 로고 및 홈페이지 주소는 반드시 자신의 것으로 수정해야 한다.
+
+### YAML 해더
+
+특히, `nav-buttons:` 옵션의 지정 형식에 주의한다. `scrolling` 옵션과 다양한 `theme:` 옵션을 시험해 본다.
+
+``` r
+---
+title: "My First Dashboard"
+author: Your name
+format: 
+  dashboard:
+    embed-resources: true
+    logo: img/snu_ui_download.png
+    nav-buttons: 
+      - icon: house-door-fill
+        href: Your Blog Address
+        aria-label: GitHub
+      - icon: envelope
+        href: mailto:vs5345@snu.ac.kr
+        aria-label: Mail
+theme: default
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+```
+
+### Intro 페이지
+
+Intro라는 이름의 페이지를 설정한다.
+
+``` r
+# Intro
+```
+
+#### 첫번째 행: Text 카드
+
+행을 설정하고 행의 상대적인 높이(10%)를 지정한다.
+
+``` r
+## Row {height="12%"}
+```
+
+텍스트 카드를 생성한다. 텍스트 카드를 생성하기 위해 `{.card}` 태그가 사용되어야 하며, 텍스트 카드의 제목을 지정하기 위해 `title=` 옵션이 사용되어야 함에 주의한다.
+
+``` r
+::: {.card title="Text"}
+This is my first dashboard.
+:::
+```
+
+#### 두번째 행의 탭셋: Histogram of GDP per capita & Table of Mean Values
+
+행을 설정하고 행의 상대적인 높이(70%)를 지정한다. 탭셋을 생성하기 위해 `{.tabset}` 태그가 사용되어야 함에 주의한다.
+
+``` r
+## Row {.tabset height="70%"}
+```
+
+그래프 카드를 생성하기 위해 `ggplot2` 패키지를 활용한다. 그래프 카드의 제목을 지정하기 위해 `title=` 옵션이 사용되어야 함에 주의한다. 두 개의 그래프를 지난 실습에서 배웠던 `patchwork` 함수로 가로 배치하였다. 이때 산출될 플롯의 크기는 `fig-width`와 `fig-height`로 조정할 수 있다.
+
+``` r
+#| title: "Histogram of GDP per capita"
+#| fig-width: 20
+#| fig-height: 6
+library(tidyverse)
+library(gapminder)
+library(patchwork)
+
+p1 <- gapminder |> 
+  filter(year==2007) |> 
+  ggplot(aes(x=gdpPercap))+
+  geom_histogram()
+
+p2 <- gapminder |> 
+  filter(year==2007) |> 
+  ggplot(aes(x=gdpPercap, y=lifeExp))+
+  geom_point()
+
+p1|p2
+```
+
+테이블 카드를 생성하기 위해 `knitr` 패키지의 `kable()` 함수를 활용한다. 테이블 카드의 제목을 지정하기 위해 `title=` 옵션이 사용되어야 함에 주의한다.
+
+``` r
+#| title: "Table of Mean Values"
+library(knitr)
+gapminder |> 
+  filter(year == 2007) |> 
+  summarize(
+    GDP_percap = mean(gdpPercap),
+    Life_Exp = mean(lifeExp),
+    Population = mean(pop),
+    .by = continent
+  ) |> 
+  kable()
+```
+
+#### 세번째 행의 3개의 밸류박스
+
+행을 설정하고 행의 상대적인 높이(18%)를 지정한다.
+
+``` r
+## Row {height="18%"}
+```
+
+첫번째 밸류박스를 생성한다. `#| content: valuebox` 옵션과 `#| title:` 옵션이 사용됨에 주의한다.
+
+``` r
+#| content: valuebox
+#| title: "Number of Countries"
+n_countries <- gapminder |> distinct(country) |> nrow()
+list(
+  icon = "asterisk",
+  color = "primary",
+  value = n_countries
+)
+```
+
+두번째 밸류박스를 생성한다.
+
+``` r
+#| content: valuebox
+#| title: "First Year"
+first_year <- gapminder |> distinct(year) |> pull() |> first()
+list(
+  icon = "airplane",
+  color = "secondary",
+  value = first_year
+```
+
+세번째 밸류박스를 생성한다.
+
+``` r
+#| content: valuebox
+#| title: "Last Year"
+last_year <- gapminder |> distinct(year) |> pull() |> last()
+list(
+  icon = "bank",
+  color = "success",
+  value = last_year
+)
+```
+
+더 다양한 아이콘이 궁금하다면 [이 웹사이트](https://icons.getbootstrap.com/)를 참고할 것.
+
+### Graphs 페이지
+
+Graphs라는 이름의 페이지를 설정한다.
+
+``` r
+# Graphs
+```
+
+#### 첫번째 행의 그래프 카드: GDP and Life Expectancy
+
+행을 설정한다.
+
+``` r
+## Row
+```
+
+`ggplot2` 패키지를 활용하여 그래프 카드를 생성한다.
+
+``` r
+#| title: GDP and Life Expectancy
+gapminder |> 
+  filter(year == 2007) |> 
+  ggplot(aes(x = log10(gdpPercap), y = lifeExp)) +
+  geom_point(aes(color = continent), show.legend = FALSE) +
+  geom_smooth() + 
+  facet_wrap(~continent, ncol = 5)
+```
+
+#### 두번째 행의 그래프 카드: Population & Life Expectancy
+
+첫번째 그래프(Population)를 위한 열을 설정한다.
+
+``` r
+### Column
+```
+
+그래프 카드를 생성한다.
+
+``` r
+#| title: Population
+gapminder |> 
+  summarize(
+    sum_pop = sum(pop),
+    .by = c(year, continent)
+  ) |> 
+  ggplot(aes(x = year, y = sum_pop)) +
+  geom_area(aes(fill = continent)) +
+  labs(x = "Year", y = "Population", fill = "Continents")
+```
+
+두번째 그래프(Life Expectancy)를 위한 열을 설정한다.
+
+``` r
+### Column
+```
+
+그래프 카드를 생성한다.
+
+``` r
+#| title: Life Expectancy
+gapminder |> 
+  ggplot(aes(x = year, y = lifeExp)) +
+  geom_line(aes(color = continent, group = country)) +
+  labs(x = "Year", y = "Life Expectancy", color = "Continents")
+```
+
+### Tables 페이지
+
+Tables라는 이름의 페이지를 설정한다.
+
+``` r
+# Tables
+```
+
+단일 행을 설정한다.
+
+``` r
+## Row
+```
+
+`DT` 패키지를 활용하여 테이블 카드를 생성한다.
+
+``` r
+#| title: Lookup Table
+library(DT)
+datatable(gapminder, filter = "top", 
+          options = list(
+            pageLength = 5, autoWidth = TRUE
+          ))
+```
+
+::: {.callout-note collapse="false"}
+## `DT()` 함수
+
+다음 주 강의에 조금 더 자세히 배우겠지만, DT는 다양한 표 형식을 제공한다. 아래의 코드는 필터링 기능과 수정 기능, 다운로드 버튼을 생성해준다.
+
+```{r}
+library(DT)
+library(gapminder)
+datatable(gapminder,
+          filter = "top",
+          editable=TRUE,
+          extensions = "Buttons",
+          options = list(
+            pageLength = 15,
+            autoWidth = TRUE,
+            dom = "Bfrtip",
+            buttons=c("copy", "excel", "pdf", "print")
+          ))
+```
+:::
+
+### Maps 페이지
+
+Maps라는 이름의 페이지를 설정한다.
+
+``` r
+# Maps
+```
+
+단일 행을 설정한다.
+
+``` r
+## Row
+```
+
+`leaflet` 패키지를 활용하여 지도 카드를 생성한다.
+
+``` r
+#| title: A Reference Map 
+library(leaflet) 
+leaflet() |>  
+  addTiles()
+```
+
+::: {.callout-note collapse="false"}
+## leaflet 패키지
+
+`leaflet()` 함수는 다양한 지도와 환경설정을 제공한다. 초점을 경도 0도, 위도 20도에 두고 확대 정도를 3단계로 두고 싶다면 아래와 같은 코드를 사용할 수 있다. 또한 배경 지도도 변경할 수 있는데, 이 때는 `addProviderTiles()` 함수를 활용할 수 있다.
+
+```{r}
+#| title: A Reference Map 
+library(leaflet) 
+leaflet() |>  
+  setView(lng=0, lat=20, zoom=3) |> 
+  addProviderTiles('CartoDB.Positron')
+```
+:::
+
+### 대시보드 웹 상에 출판하기
+
+블로그와 마찬가지로 다음의 절차에 따라 완성된 대시보드를 웹 상에 출판한다. 여기서는 [Posit](https://posit.co/)에서 제공하는 무료 출판 사이트인 [Quarto Pub](https://quartopub.com/)을 활용한다.
+
+-   [Quarto Pub](https://quartopub.com/)에 접속하여 계정을 만든다.
+
+-   RStudio에서, 왼쪽 하단부의 Terminal 탭을 누른다.
+
+-   프롬프트에 다음과 같이 입력하고 실행한다: quarto publish quarto-pub
+
+-   나머지 사항에 대해서는 조교의 도움을 받는다.

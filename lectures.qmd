@@ -12,9 +12,9 @@ Chapter 1. 데이터사이언스의 개념과 원리 [{{< bi file-pdf-fill >}}](
 
 Chapter 2. 인구 현상과 인문사회 콘텐츠
 
--   인구 현상과 인구 데이터 [{{< bi file-pdf-fill >}}](class_notes/2장 인구 현상과 인문사회 콘텐츠 1(강의노트).pdf)
+-   인구 현상과 인구 데이터 [{{< bi file-pdf-fill >}}](class_notes/2장%20인구%20현상과%20인문사회%20콘텐츠%201(강의노트).pdf)
 
--   인구 성장 [{{< bi file-pdf-fill >}}](class_notes/2장 인구 현상과 인문사회 콘텐츠 2(강의노트).pdf)
+-   인구 성장 [{{< bi file-pdf-fill >}}](class_notes/2장%20인구%20현상과%20인문사회%20콘텐츠%202(강의노트).pdf)
 
 -   인구 분포
 
@@ -24,6 +24,6 @@ Chapter 2. 인구 현상과 인문사회 콘텐츠
 
 -   인구 이동
 
-Chapter 3. 데이터 수집하기 [{{< bi file-pdf-fill >}}](class_notes/3장 데이터 수집하기(강의노트).pdf)
+Chapter 3. 데이터 수집하기 [{{< bi file-pdf-fill >}}](class_notes/3장%20데이터%20수집하기(강의노트).pdf)
 
 Chapter 4. 데이터로 소통하기

@@ -30,25 +30,13 @@ editor_options:
   chunk_output_type: console
 ---
 
-## The basic structure of a dashboard
+## R dashboard tools: A transition
 
-![](https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/layout.png){fig-align="center"}
+::: {layout-ncol="2"}
+![](images/clipboard-371284902.png)
 
-## The basic structure of a dashboard
-
--   Main body
-
-    -   Cards: graphs, tables, maps, texts, valueboxes
-
-    -   Layout elements: rows, columns, tabsets, pages
-
--   Header: Major metadata
-
--   Navigator: Movement between pages
-
--   Sidebar: Users' input
-
--   Footer: Minor metadata
+![](images/clipboard-2426207477.png)
+:::
 
 ## An example
 

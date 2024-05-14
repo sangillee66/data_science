@@ -48,6 +48,7 @@ website:
           - lab_06.qmd
           - lab_07.qmd
           - lab_08.qmd
+          - lab_09.qmd
 
   bread-crumbs: false
   back-to-top-navigation: true
