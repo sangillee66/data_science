@@ -3173,56 +3173,56 @@
   {
     "objectID": "exec_10.html",
     "href": "exec_10.html",
-    "title": "데이터로 소통하기: 소통을 위한 시각화",
+    "title": "데이터로 소통하기: 동적, 반응형 시각화",
     "section": "",
     "text": "이번 실습은 대시보드의 구성 요소로 활용할 수 있는 다양한 시각화 기법을 익히는 것이다. 우리는 지금까지 도표(차트, 플롯, 그래프, 테이블)를 중심으로 데이터 시각화 기법을 공부하였다. 특히 ggplot2 패키지는 이러한 과정에서 핵심적인 역할을 했다. 그런데 지금까지의 모든 도표는 정적(static) 이라는 특징이 있다. 많은 경우 도표는 정적으로 표현될 수 밖에 없으며, 또한 많은 경우 도표는 정적인 것으로 충분하며, 어떤 경우에는 동적인 것보다 더 낳다.\n소통을 위한 시각화 재료로서 정적인 도표가 가지는 절대적인 중요성에도 불구하고, 상호작용성(interactivity)과 역동성(animatedness)이 부가된 도표는 어떤 상항에서 소통의 본질적 가치를 고양하는데 많은 도움을 줄 수 있다.\n더 나아가 지금까지는 시각적 도구로서 그래프에 집중한 경향이 있다. 시각적 도구로서 지도(maps)가 가지는 가치에도 불구하고 그래프에 비해 복잡한 측면이 있기 때문에 지금까지 다루지 않았다. 그러나, “지도는 텍스트, 테이블, 챠트와 같은 것들 보다 훨씬 더 효과적으로 정보를 전달할 수 있다.”(Dougherty and Ilyankou 2021)\ntidyverse 패키지는 기본이고, gapminder 데이터를 실습의 여러 곳에서 활용할 것이다.\n\nlibrary(tidyverse)\nlibrary(gapminder)",
     "crumbs": [
       "R과 데이터사이언스",
-      "데이터로 소통하기: 소통을 위한 시각화"
+      "데이터로 소통하기: 동적, 반응형 시각화"
     ]
   },
   {
     "objectID": "exec_10.html#실습-개요",
     "href": "exec_10.html#실습-개요",
-    "title": "데이터로 소통하기: 소통을 위한 시각화",
+    "title": "데이터로 소통하기: 동적, 반응형 시각화",
     "section": "",
     "text": "이번 실습은 대시보드의 구성 요소로 활용할 수 있는 다양한 시각화 기법을 익히는 것이다. 우리는 지금까지 도표(차트, 플롯, 그래프, 테이블)를 중심으로 데이터 시각화 기법을 공부하였다. 특히 ggplot2 패키지는 이러한 과정에서 핵심적인 역할을 했다. 그런데 지금까지의 모든 도표는 정적(static) 이라는 특징이 있다. 많은 경우 도표는 정적으로 표현될 수 밖에 없으며, 또한 많은 경우 도표는 정적인 것으로 충분하며, 어떤 경우에는 동적인 것보다 더 낳다.\n소통을 위한 시각화 재료로서 정적인 도표가 가지는 절대적인 중요성에도 불구하고, 상호작용성(interactivity)과 역동성(animatedness)이 부가된 도표는 어떤 상항에서 소통의 본질적 가치를 고양하는데 많은 도움을 줄 수 있다.\n더 나아가 지금까지는 시각적 도구로서 그래프에 집중한 경향이 있다. 시각적 도구로서 지도(maps)가 가지는 가치에도 불구하고 그래프에 비해 복잡한 측면이 있기 때문에 지금까지 다루지 않았다. 그러나, “지도는 텍스트, 테이블, 챠트와 같은 것들 보다 훨씬 더 효과적으로 정보를 전달할 수 있다.”(Dougherty and Ilyankou 2021)\ntidyverse 패키지는 기본이고, gapminder 데이터를 실습의 여러 곳에서 활용할 것이다.\n\nlibrary(tidyverse)\nlibrary(gapminder)",
     "crumbs": [
       "R과 데이터사이언스",
-      "데이터로 소통하기: 소통을 위한 시각화"
+      "데이터로 소통하기: 동적, 반응형 시각화"
     ]
   },
   {
     "objectID": "exec_10.html#테이블tables",
     "href": "exec_10.html#테이블tables",
-    "title": "데이터로 소통하기: 소통을 위한 시각화",
+    "title": "데이터로 소통하기: 동적, 반응형 시각화",
     "section": "\n1 테이블(Tables)",
     "text": "1 테이블(Tables)\n우리는 지금까지 테이블의 중요성에 대해 거의 다루지 않았다. 그러나 상호작용형 테이블 혹은 대화형 테이블이 되었을 때, 많은 경우, 테이블은 가장 효과적인 정보 전달 도구가 된다. 특히, 데이터 변형하기를 통해 새로운 요약 테이블을 생성하고, 그것을 대화형으로 제시하는 것은 매우 중요한 데이터사이언스의 과정이다. 여기서는 DT(Data Tables) 패키지를 활용하여 간단한 대화형 테이블을 만들어 본다.\n\nlibrary(DT)\n\n그리고 gapminder 데이터를 datatable() 함수를 통해 불러온다.\n\ndatatable(gapminder)\n\n\n\n\n\n\n결과를 좀 더 크게 보기 위해, Render 버튼 바로 오른편에 있는 아이콘을 클릭해 Chunk Output in Console를 선택할 수 있다. 결과 테이블을 이리저리 살펴본다. 언뚯 보면 View() 함수를 활용해 데이터프레임을 살펴보는 것과 유사한 것처럼 보이지만, 부가적인 기능을 제공한다.\nDT 패키지는 DataTables라고 하는 JavaScript 라이브러리(https://datatables.net/)에 기반하고 있다. 즉, DT 패키지는 DataTables의 래퍼(wrapper) 패키지이다. DT 패키지는 테이블의 상호작용성과 관련하여 몇 가지 기능을 제공한다.\n\nPagination: 페이지를 이동할 수 있는 기능\nInstant search: 즉각적인 찾기 기능(Search에 타이핑하기 시작하면 즉각즉으로 검색 결과 보여줌)\nMulti-column ordering: 다중 컬럼 정렬 기능(컬럼 하나를 선택한 후 ctrl을 누른 상태에서 다른 컬럼을 선택)\n\n그러나 datatable() 함수의 다양한 아규먼트를 활용하면 테이블의 시각성 및 상호작용성을 보다 향상시킬 수 있다. 그 중 몇 가지 기능을 여기에서 살펴본다. 다음의 웹사이트를 참고할 수 있다.\nhttps://rstudio.github.io/DT/\n\n1.1 테이블 CSS 클래스\ndatatable 함수의 class 아규먼트를 통해 테이블의 외관을 바꿀 수 있다. 다음과 같은 옵션이 가능하다.\n\n\n\n\n\n\nClass name\nDescription\n\n\n\ndisplay\n\nstripe, hover, row-border, order-column을 동시 적용한 디폴트\n\n\ncell-border\n모든 셀의 상하좌우에 경계선 표시\n\n\ncompact\n여백 축소\n\n\nhover\n마우스의 위치에 따라 점멸 효과\n\n\nnowrap\n줄바꿈 없이 텍스트 표시\n\n\norder-column\n정렬의 키가 되는 컬럼에 하이라이트 표시\n\n\nrow-border\n행별 경계선 표시\n\n\nstripe\n행을 스트라이프로 표시\n\n\n\n아래와 같이 cell-border과 compact를 함께 실행해 보고 테이블의 변화를 확인한다.\n\ndatatable(head(gapminder), class = \"cell-border compact\")\n\n\n\n\n\n\n또한 특정 컬럼의 정렬 방식(왼편, 오른편, 중앙)을 변경할 수 있다. 사용가능한 옵션은 다음과 같다.\n\n\nClass name\nDescription\n\n\n\ndt[-head|-body]-left\n왼편 정렬\n\n\ndt[-head|-body]-center\n가운데 정렬\n\n\ndt[-head|-body]-right\n오른편 정렬\n\n\ndt[-head|-body]-justify\n양쪽 맞춤\n\n\ndt[-head|-body]-nowrap\n줄바꿈 없는 맞춤\n\n\n\n아래는 첫 번째와 두 번째 컬럼(country, continent)의 내용(body)을 가운데 정렬로 나타낸다.\n\ndatatable(head(gapminder),\n          options = list(\n            columnDefs = list(list(className = \"dt-body-center\", targets = 1:2))\n          ))\n\n\n\n\n\n\n1.2 테이블 에디팅\neditable 아규먼트를 통해 테이블의 값을 수정할 수 있게 만들 수 있다. 테이블의 특정 셀에 더블클릭하면 수정할 수 있다.\n\ndatatable(head(gapminder), editable = \"cell\")\n\n\n\n\n\n\n1.3 컬럼 필터\n다음과 같은 방식으로 필터를 설정할 수 있다.\n\ndatatable(gapminder, filter = \"top\", \n          options = list(\n            pageLength = 5, autoWidth = TRUE\n          ))",
     "crumbs": [
       "R과 데이터사이언스",
-      "데이터로 소통하기: 소통을 위한 시각화"
+      "데이터로 소통하기: 동적, 반응형 시각화"
     ]
   },
   {
     "objectID": "exec_10.html#그래프graphs",
     "href": "exec_10.html#그래프graphs",
-    "title": "데이터로 소통하기: 소통을 위한 시각화",
+    "title": "데이터로 소통하기: 동적, 반응형 시각화",
     "section": "\n2 그래프(Graphs)",
     "text": "2 그래프(Graphs)\n\n2.1 반응형 그래프\n반응형 시각화 도구라 최근 널리 각광을 받고 있는 것이 Plotly이다. Plotly는 사실 캐나다 퀘백에 본사를 두고 있는 데이터 시각화 전문 회사 이름이다. 그러나 보통 데이터 시각화용 JavaScript 라이버러리를 일컽는다. 이 라이버러리는 다양한 오픈소스 프로그래밍 언어에서 사용가능하며(이기준 2023), R의 랩퍼 프로그램이 plotly 패키지이다(https://plotly.com/r/).\n\nlibrary(plotly)\n\ngapminder 데이터를 이용하여 간단한 그래프를 그려보자. 문법이 ggplot2와 크게 다르지 않음을 알 수 있다.\n\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  plot_ly(x = ~gdpPercap, y = ~lifeExp, color = ~continent,\n          text = ~paste(\"Country: \", country, \n                        \"&lt;br&gt;GDP per capita: \", gdpPercap, \n                        \"$&lt;br&gt;Life Expectancy at Birth:\", lifeExp))\n\n\n\n\n\n\n줌(zoom), 팬(pan), 박스 선택(box select), 라소 선택(Lasso select), 줌인(zome in), 줌 아웃(zoom out) 등과 같은 상호작용 기능을 확인한다. 또 그래프 상의 데이터 포인트 위에 마우스를 올리면 text 아규먼트를 통해 설정한 내용을 볼 수 있다. 그리고 범례를 클릭하면 특정 continent의 국가를 나타나지 않게 할 수 있다.\n이와 같이 plotly 패키지를 직접 사용하면 다양한 기능을 활용할 수 있겠지만, plotly 패키지가 제공하는 ggplotly() 함수를 활용하면 ggplot2로 만들어진 그래프를 단숨에 plotly 그래프로 바꿀 수 있다. 물론 정확히 같지는 않다.\n\nP &lt;- gapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent)) +\n  geom_point() + \n  scale_color_brewer(palette = \"Set2\") +\n  theme_minimal()\nggplotly(P)\n\n\n\n\n\n\n다음 예제 역시 반응형이지만 바로 다음에서 다룰 동적인 특성도 동시에 가지고 있는 그래프를 만드는 것이다. 역시 plotly 패키지를 이용한다.\n\ngapminder |&gt; \n  plot_ly(x = ~log10(gdpPercap), y = ~lifeExp,\n          text = ~paste(\"Country: \", country)) |&gt; \n  add_markers(color = ~continent, size = ~pop, frame = ~year, \n              marker = list(sizeref = 0.2, sizemode = \"area\"))\n\n\n\n\n\n\n하단에 있는 Play 버튼을 누르면 연도에 따라 그래프가 바뀌면서 동적인 효과가 나타나게 된다.\n\n2.2 동적 그래프\n이 실습에서는 gganimate 패키지(https://gganimate.com/)를 활용하여, 동적 그래프(animated graphs)를 만드는 방법을 익히도록 한다. gganimate 패키지를 설치한 후 불러온다.\n\nlibrary(gganimate)\n\n우선 정적인 그래프를 그린다.\n\nP &lt;- gapminder |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, size = pop, color = continent)) +\n  geom_point(show.legend = FALSE, alpha = 0.7) +\n  scale_x_log10() +\n  scale_size(range = c(2, 12))\nP\n\n\n\n\n\n\n\n이 그래프는 두 변수 간에 양적인 관련성이 있다는 사실은 명백히 보여주지만, 데이터 변형의 측면에서는 잘못된 것이다. 모든 연도(1952~2007년간 5년 단위)가 나타나 있어서 한 국가가 그래프에 12번 등장한다.\n이를 극복하는 ggplot2 패키지의 facet_wrap() 함수를 활용하는 것이다.\n\nP + facet_wrap(~year)\n\n\n\n\n\n\n\n이 그래프는 두 변수간의 양적인 상관관계가 12개 모두의 연도에서 나타난다는 사실을 명확히 보여준다. 그러나 그래프를 세세히 살펴보면 알 수 있듯이, 두 변수의 관련성이라는 측면에서 개별 국가가 시간의 흐름에 따라 어떻게 변화해 나가는지에 대한 사항을 파악하기는 매우 어렵다.\ngganimate 패키지의 transition_time() 함수를 활용하여 동적인 그래프를 작성해 본다.\n\nP + transition_time(year) +\n  labs(title = \"Year: {frame_time}\")\n\n\n\n\n\n\n\n대륙별로 분할하여 표현할 수도 있다.\n\nP + facet_wrap(~continent) +\n  transition_time(year) +\n  labs(title = \"Year: {frame_time}\")\n\n\n\n\n\n\n\n움직임을 조금 더 역동적이게 만들어 볼 수 있다.\n\nP + transition_time(year) +\n  labs(title = \"Year: {frame_time}\") +\n  shadow_wake(wake_length = 0.1, alpha = FALSE)\n\n\n\n\n\n\n\n그래프를 저장하고 싶으면 anim_save() 함수를 활용할 수 있다. ggsave() 함수와 동일한 문법을 갖는다.",
     "crumbs": [
       "R과 데이터사이언스",
-      "데이터로 소통하기: 소통을 위한 시각화"
+      "데이터로 소통하기: 동적, 반응형 시각화"
     ]
   },
   {
     "objectID": "exec_10.html#지도maps",
     "href": "exec_10.html#지도maps",
-    "title": "데이터로 소통하기: 소통을 위한 시각화",
+    "title": "데이터로 소통하기: 동적, 반응형 시각화",
     "section": "\n3 지도(Maps)",
     "text": "3 지도(Maps)\n\n3.1 정적 지도\nggplot2 패키지를 이용하여 정적 지도를 그려본다. 데이터는 지난 실습에서 사용한 WPP 2022(World Population Prospects 2022)이다. 2024년 전세계 국가별 TFR(Total Fertility Rate, 합계출산율) 지도를 그려본다.\n일반적으로 지도는 형상 데이터와 속성 데이터를 결합해야만 제작할 수 있다. 여기서 형상 데이터는 전세계 국가 경계 데이터이고, 속성 데이터는 TFR이 포함된 WPP 2022 데이터이다. 형상 데이터는 spData 패키지에 들어 있는 world를 사용한다. 이러한 형상 데이터를 다루는데 가장 널리 사용되고 있는 중요한 것이 sf 패키지(https://r-spatial.github.io/sf/)이다. 가능한 벡터 형식의 데이터는 sf 패키지의 st_as_sf() 함수를 통해 sf 객체로 변환하는 것이 좋다.\n\nlibrary(spData)\nlibrary(sf)\ndata(world)\nworld &lt;- st_as_sf(world)\n\nWPP 2022 데이터를 불러와 2024년만 골라낸다.\n\nwpp_2022 &lt;- read_rds(\"wpp_2022.rds\")\nmy_wpp &lt;- wpp_2022 |&gt; \n  filter(year == 2024)\n\n두 데이터를 left_join 함수를 이용하여 결합한다.\n\nworld_data &lt;- world |&gt;\n  left_join(my_wpp, join_by(iso_a2 == ISO2))\n\n로빈슨 도법(Robinson projection)의 지도를 제작한다. ggplot2 패키지로 지도를 그리는 가장 좋은 방법은 geom_sf()와 coord_sf()를 결합하는 것이다. scale_x_continuous()와 scale_y_continuous()의 내용은 그래티큘(graticule, 경위선망)을 원하는 방식대로 지도에 포함시키기 위한 것이다. 조교에게 문의하기 바란다.\n\nggplot() +\n  geom_sf(data = world_data, aes(fill = TFR)) +\n  coord_sf(crs = \"+proj=robin\") +\n  scale_fill_viridis_c() +\n  scale_x_continuous(breaks = seq(-180, 180, 30)) +\n  scale_y_continuous(breaks = c(-89.5, seq(-60, 60, 30), 89.5)) +\n  theme(\n    panel.background = element_rect(\"white\"),\n    panel.grid = element_line(color = \"gray80\")\n  )\n\n\n\n\n\n\n\n\n3.2 반응형 지도\n위에서 사용한 plotly 패키지의 ggplotly() 함수를 활용하면 반응형 지도를 생성할 수 있다. 지도의 코드 중 달라진 것은 둘째 줄 aes()에 text = name_long이 첨가되었다는 것이다. 마우스로 국가를 가리킬 때 이름이 나타날 수 있게 조치한 것이다.\n\nP &lt;- ggplot() +\n  geom_sf(data = world_data, aes(fill = TFR, text = name_long)) +\n  coord_sf(crs = \"+proj=robin\") +\n  scale_fill_viridis_c() +\n  scale_x_continuous(breaks = seq(-180, 180, 30)) +\n  scale_y_continuous(breaks = c(-89.5, seq(-60, 60, 30), 89.5)) +\n  theme(\n    panel.background = element_rect(\"white\"),\n    panel.grid = element_line(color = \"gray80\")\n  )\nggplotly(P)\n\n\n\n\n\n지도 위에서 plotly 가 제공하는 다양한 기능을 적용해 볼 필요가 있다. 반응형 그래프에 비해 반응형 지도의 유용성이 더 높아 보인다.\n그러나 반응형 지도 제작에 가장 널리 쓰이는 것은 leaflet이다. leaflet은 웹 상의 반응형 지도 제작에 특화된 JavaScript 라이브러리이다(https://leafletjs.com/). 이 라이브러리를 R에서 쓸 수 있게 도와주는 래퍼 패키지가 leaflet 패키지이다(https://rstudio.github.io/leaflet/).\n\nlibrary(leaflet)\n\n매우 단순한 반응형 지도를 만들어 본다.\n\nleaflet() |&gt; \n  addTiles() |&gt; \n  addPopups(126.955184, 37.460422, \"Sang-Il's Office\",\n            options = popupOptions(closeButton = FALSE))\n\n\n\n\n\n\n위에서 작성했던 TFR 세계지도를 leaflet 패키지의 다양한 함수와 아규먼트를 활용하여 반응형 지도를 제작해 본다. 코드에 대한 자세한 설명은 생략하니, 구글링과 조교의 도움을 받도록 한다.\n\nbins &lt;- c(0, 1.5, 2.1, 3, 4, 5, Inf)\npal &lt;- colorBin(\"YlOrRd\", domain = world_data$TFR, bins = bins)\nlabels &lt;- sprintf(\"&lt;strong&gt;%s&lt;/strong&gt;&lt;br/&gt;%g\",\n  world_data$name_long, world_data$TFR) |&gt; lapply(htmltools::HTML)\n\nleaflet(world_data) |&gt; \n  addProviderTiles(providers$Esri.WorldTopoMap) |&gt; \n  addPolygons(\n    fillColor = ~pal(TFR),\n    weight =  2, \n    opacity = 1,\n    color = \"white\",\n    dashArray = \"3\",\n    fillOpacity = 0.6,\n    highlightOptions = highlightOptions(\n      weight = 5,\n      color = \"#666\",\n      dashArray = \"\",\n      fillOpacity = 0.6,\n      bringToFront = TRUE),\n    label = labels,\n    labelOptions = labelOptions(\n      style = list(\"font-weight\" = \"normal\", padding = \"3px 8px\"),\n      textsize = \"15px\",\n      direction = \"auto\")\n  ) |&gt; \n  addLegend(\n    pal = pal, values = ~TFR, opacity = 0.6, title = NULL,\n    position = \"bottomright\"\n  )",
     "crumbs": [
       "R과 데이터사이언스",
-      "데이터로 소통하기: 소통을 위한 시각화"
+      "데이터로 소통하기: 동적, 반응형 시각화"
     ]
   },
   {

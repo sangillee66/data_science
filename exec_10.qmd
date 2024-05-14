@@ -1,5 +1,5 @@
 ---
-title: "데이터로 소통하기: 소통을 위한 시각화"
+title: "데이터로 소통하기: 동적, 반응형 시각화"
 author: 이상일(서울대학교 지리교육과)
 date-modified: last-modified
 number-sections: true
@@ -68,7 +68,7 @@ datatable(gapminder)
 `datatable` 함수의 `class` 아규먼트를 통해 테이블의 외관을 바꿀 수 있다. 다음과 같은 옵션이 가능하다.
 
 | Class name     | Description                                                          |
-|----------------|----------------------------------------------------------------------|
+|----------------|-------------------------------------------------------|
 | `display`      | `stripe`, `hover`, `row-border`, `order-column`을 동시 적용한 디폴트 |
 | `cell-border`  | 모든 셀의 상하좌우에 경계선 표시                                     |
 | `compact`      | 여백 축소                                                            |
