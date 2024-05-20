@@ -223,7 +223,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">데이터로 소통하기: 소통을 위한 시각화</span></a>
+ <span class="menu-text">데이터로 소통하기: 동적, 반응형 시각화</span></a>
   </div>
 </li>
       </ul>
@@ -286,6 +286,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Communication with Data: Quarto</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R_lec_09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Communication with Data: Dashboards</span></a>
+  </div>
+</li>
       </ul>
 </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -346,6 +352,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Lab08: 데이터로 소통하기: Quarto</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab_09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab09: 데이터로 소통하기: 대시보드 만들기</span></a>
+  </div>
+</li>
       </ul>
 </li>
     </ul>
@@ -401,7 +413,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">May 12, 2024</p>
+      <p class="date-modified">May 20, 2024</p>
     </div>
   </div>
     
@@ -682,7 +694,7 @@ Figure&nbsp;1: HTML의 위계 구조 (&lt;https://odinuv.cz/articles/html/&gt;)
 <pre><code># A tibble: 241 × 7
    ``      Location    Population `% ofworld` Date  Source (official or …¹ ``   
    &lt;chr&gt;   &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;                  &lt;chr&gt;
- 1 –       World       8,104,769… 100%        5 Ma… UN projection[3]       ""   
+ 1 –       World       8,107,340… 100%        18 M… UN projection[3]       ""   
  2 1/2 [b] China       1,409,670… 17.4%       31 D… Official estimate[5]   "[c]"
  3 1/2 [b] India       1,400,744… 17.3%       1 Ma… Official projection[6] "[d]"
  4 3       United Sta… 335,893,2… 4.1%        1 Ja… Official estimate[7]   "[e]"
@@ -716,7 +728,7 @@ Figure&nbsp;1: HTML의 위계 구조 (&lt;https://odinuv.cz/articles/html/&gt;)
 <pre><code># A tibble: 241 × 5
    location      population pop_pct date       source                       
    &lt;chr&gt;              &lt;dbl&gt;   &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;                        
- 1 World         8104769000   100   2024-05-05 UN projection[3]             
+ 1 World         8107340000   100   2024-05-18 UN projection[3]             
  2 China         1409670000    17.4 2023-12-31 Official estimate[5]         
  3 India         1400744000    17.3 2024-03-01 Official projection[6]       
  4 United States  335893238     4.1 2024-01-01 Official estimate[7]         
@@ -808,16 +820,16 @@ Figure&nbsp;1: HTML의 위계 구조 (&lt;https://odinuv.cz/articles/html/&gt;)
 <pre><code># A tibble: 10 × 2
    title                                                               contents 
    &lt;chr&gt;                                                               &lt;chr&gt;    
- 1 "[지방소멸 경고등] 위기 속 작은 희망…영월 옥동초교의 실험"          "연합뉴… 
- 2 "지자체 ‘지방소멸기금’ 최대 160억 지원"                             "지방소… 
- 3 "접경지, 청년 창업 ‘확대’…지방소멸 ‘극복’ 시도"                     "[앵커] …
- 4 "우수 지자체에 지방소멸대응기금 집중 지원한다…배분체계 개선"        "행정안… 
- 5 "저출산율·양극화… 韓사회는 왜 소멸의 길을 가고 있나"                "사람들… 
- 6 "[인터뷰] 천하람 \"저출산·지방소멸·정치개혁…미래세대 이슈에 집중\"" "또 지방…
- 7 "[매일경제TV] 지방 소멸 막기 위한 정책"                             "인구 감…
- 8 "지역소멸 시대, 농협의 역할에 변화가 필요하다"                      "농식품… 
- 9 "여당 재선 엄태영 \"지방소멸위기 처한 제천·단양 반드시 살리겠다\""  "'실천하…
-10 "“강진군, 지역소멸 위기 극복 인구정책 롤모델 급부상”"               "군에 따…</code></pre>
+ 1 "'18년째 제자리' 지방교부세율 인상 현실화되나"                      "곡성, … 
+ 2 "“의대증원 확정, 수업거부 실익 소멸”…의대생 복귀 촉구"              "“서울…  
+ 3 "서울에 온 성심당… “지방소멸 극복은 로컬, 지역 가치서 찾아야”"      "성심당,…
+ 4 "대구·경북 통합 논의 재점화… 통합법 제정 후 지방선거 적용"          "홍 시장…
+ 5 "해남군, 인구 소멸 대응 생활인구 확대 주력"                         "먼저 지…
+ 6 "지방銀 최초로 전국구 간판 건 ‘이곳’…은행권 ‘메기’ 될까"            "특히 지…
+ 7 "대구·경북발 통합 논의…지방행정체제 개편 신호탄 되나"               "사람이 …
+ 8 "이철우 경북도지사 \"대구·경북 통합해 지방 활성화해야\""            "19일 경…
+ 9 "인력이 없는 '조선업 도시'…野 김태선 \"지방소멸 방지 특별법 제정\"… "산업 도…
+10 "[편집국에서] '4·10 총선’의 숨은 패자, 지방"                        "부산은 …</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -979,9 +991,9 @@ Warning
 <p>시도 데이터와 시군구 데이터를 분리하여 저장한다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data_sido</span> <span class="op">&lt;-</span> <span class="va">data</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">C1</span> <span class="op">&gt;</span> <span class="fl">10</span>, <span class="va">C1</span> <span class="op">&lt;</span> <span class="fl">100</span><span class="op">)</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nchar.html">nchar</a></span><span class="op">(</span><span class="va">C1</span><span class="op">)</span> <span class="op">==</span> <span class="fl">2</span><span class="op">)</span> </span>
 <span><span class="va">data_sigungu</span> <span class="op">&lt;-</span> <span class="va">data</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">C1</span> <span class="op">&gt;</span> <span class="fl">100</span> <span class="op">&amp;</span> <span class="op">!</span><span class="va">C1_NM</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"동부"</span>, <span class="st">"면부"</span>, <span class="st">"읍부"</span><span class="op">)</span> <span class="op">&amp;</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_sub.html">str_sub</a></span><span class="op">(</span><span class="va">C1</span>, <span class="fl">5</span>, <span class="fl">5</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nchar.html">nchar</a></span><span class="op">(</span><span class="va">C1</span><span class="op">)</span> <span class="op">==</span> <span class="fl">5</span> <span class="op">&amp;</span> <span class="op">!</span><span class="va">C1_NM</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"동부"</span>, <span class="st">"면부"</span>, <span class="st">"읍부"</span><span class="op">)</span> <span class="op">&amp;</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_sub.html">str_sub</a></span><span class="op">(</span><span class="va">C1</span>, <span class="fl">5</span>, <span class="fl">5</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="그래프-작성" class="level4" data-number="3.3.5"><h4 data-number="3.3.5" class="anchored" data-anchor-id="그래프-작성">
 <span class="header-section-number">3.3.5</span> 그래프 작성</h4>

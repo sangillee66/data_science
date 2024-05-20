@@ -28,6 +28,6 @@ Chapter 3. 데이터 수집하기 [{{< bi file-pdf-fill >}}](class_notes/3장%20
 
 Chapter 4. 데이터로 소통하기
 
--   기본 개념 [{{< bi file-pdf-fill >}}](class_notes/4장 데이터로 소통하기 1(강의노트).pdf)
+-   기본 개념 [{{< bi file-pdf-fill >}}](class_notes/4장%20데이터로%20소통하기%201(강의노트).pdf)
 
--   대시보드와 교육 [{{< bi file-pdf-fill >}}](class_notes/4장 데이터로 소통하기 2(강의노트).pdf)
+-   대시보드와 교육 [{{< bi file-pdf-fill >}}](class_notes/4장%20데이터로%20소통하기%202(강의노트).pdf)
