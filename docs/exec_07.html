@@ -73,7 +73,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -521,7 +524,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <div id="fig-html-hier" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-html-hier-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="https://odinuv.cz/articles/html/"><img src="https://odinuv.cz/common/css/html.svg" class="img-fluid figure-img"></a>
+<a href="https://odinuv.cz/articles/html/"><span class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1"><img src="https://odinuv.cz/common/css/html.svg" class="img-fluid figure-img"></span></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-html-hier-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: HTML의 위계 구조 (&lt;https://odinuv.cz/articles/html/&gt;)
@@ -545,9 +548,9 @@ Figure&nbsp;1: HTML의 위계 구조 (&lt;https://odinuv.cz/articles/html/&gt;)
 <p>선택 대상을 효과적으로 규정하기 위해 사용되는 것이 CSS(cascading style sheet) 선택자(selector)이다. CSS는 HTML의 시각적 구성을 통제하는 툴인데, html의 특정 부분을 지칭하는 작은 언어(miniature language)를 가지고 있고, CSS 선택자라 부른다.</p>
 <table class="table">
 <colgroup>
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 61%">
+<col style="width: 18%">
+<col style="width: 13%">
+<col style="width: 68%">
 </colgroup>
 <thead><tr class="header">
 <th>선택 대상</th>
@@ -820,15 +823,15 @@ Figure&nbsp;1: HTML의 위계 구조 (&lt;https://odinuv.cz/articles/html/&gt;)
 <pre><code># A tibble: 10 × 2
    title                                                               contents 
    &lt;chr&gt;                                                               &lt;chr&gt;    
- 1 "'18년째 제자리' 지방교부세율 인상 현실화되나"                      "곡성, … 
- 2 "서울에 온 성심당… “지방소멸 극복은 로컬, 지역 가치서 찾아야”"      "성심당,…
- 3 "\"지방 소멸 대응 위해 대구·경북 통합해야\""                        "◀이철…  
+ 1 "\"지방 소멸 대응 위해 대구·경북 통합해야\""                        "◀이철…  
+ 2 "'18년째 제자리' 지방교부세율 인상 현실화되나"                      "곡성, … 
+ 3 "서울에 온 성심당… “지방소멸 극복은 로컬, 지역 가치서 찾아야”"      "성심당,…
  4 "“의대증원 확정, 수업거부 실익 소멸”…의대생 복귀 촉구"              "“서울…  
  5 "해남군, 인구 소멸 대응 생활인구 확대 주력"                         "먼저 지…
- 6 "지방銀 최초로 전국구 간판 건 ‘이곳’…은행권 ‘메기’ 될까"            "특히 지…
- 7 "대구·경북발 통합 논의…지방행정체제 개편 신호탄 되나"               "사람이 …
- 8 "이철우 경북도지사 \"대구·경북 통합해 지방 활성화해야\""            "19일 경…
- 9 "‘규제 완화’…은퇴자 지방 이주 많아질까?"                            "은퇴기… 
+ 6 "‘규제 완화’…은퇴자 지방 이주 많아질까?"                            "은퇴기… 
+ 7 "지방銀 최초로 전국구 간판 건 ‘이곳’…은행권 ‘메기’ 될까"            "특히 지…
+ 8 "대구·경북발 통합 논의…지방행정체제 개편 신호탄 되나"               "사람이 …
+ 9 "이철우 경북도지사 \"대구·경북 통합해 지방 활성화해야\""            "19일 경…
 10 "인력이 없는 '조선업 도시'…野 김태선 \"지방소멸 방지 특별법 제정\"… "산업 도…</code></pre>
 </div>
 </div>
@@ -1047,7 +1050,7 @@ Warning
 <span>       y <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="exec_07_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><a href="exec_07_files/figure-html/unnamed-chunk-21-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="exec_07_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -1118,6 +1121,9 @@ Warning
 </div>
 
 
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-1">Figure&nbsp;1: HTML의 위계 구조 (&lt;https://odinuv.cz/articles/html/&gt;)</span>
+</div>
 </section></section></section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1690,7 +1696,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </ul>
 </div>
   </div>
-</footer>
+</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 </body></html>
