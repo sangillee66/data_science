@@ -78,4 +78,6 @@ format:
 execute:
   freeze: auto
 
+lightbox: true
+
 editor: visual
