@@ -545,9 +545,9 @@ Figure&nbsp;1: HTML의 위계 구조 (&lt;https://odinuv.cz/articles/html/&gt;)
 <p>선택 대상을 효과적으로 규정하기 위해 사용되는 것이 CSS(cascading style sheet) 선택자(selector)이다. CSS는 HTML의 시각적 구성을 통제하는 툴인데, html의 특정 부분을 지칭하는 작은 언어(miniature language)를 가지고 있고, CSS 선택자라 부른다.</p>
 <table class="table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 13%">
-<col style="width: 68%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 61%">
 </colgroup>
 <thead><tr class="header">
 <th>선택 대상</th>
@@ -821,15 +821,15 @@ Figure&nbsp;1: HTML의 위계 구조 (&lt;https://odinuv.cz/articles/html/&gt;)
    title                                                               contents 
    &lt;chr&gt;                                                               &lt;chr&gt;    
  1 "'18년째 제자리' 지방교부세율 인상 현실화되나"                      "곡성, … 
- 2 "“의대증원 확정, 수업거부 실익 소멸”…의대생 복귀 촉구"              "“서울…  
- 3 "서울에 온 성심당… “지방소멸 극복은 로컬, 지역 가치서 찾아야”"      "성심당,…
- 4 "대구·경북 통합 논의 재점화… 통합법 제정 후 지방선거 적용"          "홍 시장…
+ 2 "서울에 온 성심당… “지방소멸 극복은 로컬, 지역 가치서 찾아야”"      "성심당,…
+ 3 "\"지방 소멸 대응 위해 대구·경북 통합해야\""                        "◀이철…  
+ 4 "“의대증원 확정, 수업거부 실익 소멸”…의대생 복귀 촉구"              "“서울…  
  5 "해남군, 인구 소멸 대응 생활인구 확대 주력"                         "먼저 지…
  6 "지방銀 최초로 전국구 간판 건 ‘이곳’…은행권 ‘메기’ 될까"            "특히 지…
  7 "대구·경북발 통합 논의…지방행정체제 개편 신호탄 되나"               "사람이 …
  8 "이철우 경북도지사 \"대구·경북 통합해 지방 활성화해야\""            "19일 경…
- 9 "인력이 없는 '조선업 도시'…野 김태선 \"지방소멸 방지 특별법 제정\"… "산업 도…
-10 "[편집국에서] '4·10 총선’의 숨은 패자, 지방"                        "부산은 …</code></pre>
+ 9 "‘규제 완화’…은퇴자 지방 이주 많아질까?"                            "은퇴기… 
+10 "인력이 없는 '조선업 도시'…野 김태선 \"지방소멸 방지 특별법 제정\"… "산업 도…</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -993,13 +993,31 @@ Warning
 <div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data_sido</span> <span class="op">&lt;-</span> <span class="va">data</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nchar.html">nchar</a></span><span class="op">(</span><span class="va">C1</span><span class="op">)</span> <span class="op">==</span> <span class="fl">2</span><span class="op">)</span> </span>
 <span><span class="va">data_sigungu</span> <span class="op">&lt;-</span> <span class="va">data</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nchar.html">nchar</a></span><span class="op">(</span><span class="va">C1</span><span class="op">)</span> <span class="op">==</span> <span class="fl">5</span> <span class="op">&amp;</span> <span class="op">!</span><span class="va">C1_NM</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"동부"</span>, <span class="st">"면부"</span>, <span class="st">"읍부"</span><span class="op">)</span> <span class="op">&amp;</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_sub.html">str_sub</a></span><span class="op">(</span><span class="va">C1</span>, <span class="fl">5</span>, <span class="fl">5</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nchar.html">nchar</a></span><span class="op">(</span><span class="va">C1</span><span class="op">)</span> <span class="op">==</span> <span class="fl">5</span> <span class="op">&amp;</span> <span class="op">!</span><span class="va">C1_NM</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"동부"</span>, <span class="st">"면부"</span>, <span class="st">"읍부"</span><span class="op">)</span> <span class="op">&amp;</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_sub.html">str_sub</a></span><span class="op">(</span><span class="va">C1</span>, <span class="fl">5</span>, <span class="fl">5</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_rds.html">write_rds</a></span><span class="op">(</span><span class="va">data_sigungu</span>, <span class="st">"data_sigungu.rds"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_rds.html">read_rds</a></span><span class="op">(</span><span class="st">"data_sigungu.rds"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 229 × 3
+      C1 C1_NM    index
+   &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;
+ 1 11010 종로구   0.965
+ 2 11020 중구     0.931
+ 3 11030 용산구   1.02 
+ 4 11040 성동구   1.00 
+ 5 11050 광진구   1.20 
+ 6 11060 동대문구 0.994
+ 7 11070 중랑구   0.751
+ 8 11080 성북구   0.929
+ 9 11090 강북구   0.589
+10 11100 도봉구   0.578
+# ℹ 219 more rows</code></pre>
+</div>
 </div>
 </section><section id="그래프-작성" class="level4" data-number="3.3.5"><h4 data-number="3.3.5" class="anchored" data-anchor-id="그래프-작성">
 <span class="header-section-number">3.3.5</span> 그래프 작성</h4>
 <p>인구소멸위험지수 연구에서 주로 사용되는 5개의 위험도 클래스의 구분법을 적용하고, 위험도 클래스별로 특정한 색상을 적용하고, 그래프의 범례에 5개의 클래스가 모두 나타나게 하려다보니 코드가 조금 복잡해졌다. 그러나 익혀두면 다른 그래프 작성에 도움이 되니, 조교의 도움을 받아 살펴보도록 한다.</p>
 <div class="cell">
-<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data_sido</span> <span class="op">&lt;-</span> <span class="va">data_sido</span> <span class="op">|&gt;</span> </span>
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data_sido</span> <span class="op">&lt;-</span> <span class="va">data_sido</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
 <span>    index_class <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span></span>
 <span>      <span class="va">index</span> <span class="op">&lt;</span> <span class="fl">0.2</span> <span class="op">~</span> <span class="st">"1"</span>,</span>
@@ -1057,7 +1075,7 @@ Warning
 <span class="header-section-number">3.4.2</span> <code>httr2</code> 패키지 활용: 처음 100개 검색 결과 추출</h4>
 <p>’지방소멸’을 검색어로 하여 최초의 100개 검색 결과에 대한 데이터(특히, 제목과 내용)를 수집한다.</p>
 <div class="cell">
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://httr2.r-lib.org">httr2</a></span><span class="op">)</span></span>
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://httr2.r-lib.org">httr2</a></span><span class="op">)</span></span>
 <span><span class="va">search</span> <span class="op">&lt;-</span> <span class="st">"지방소멸"</span></span>
 <span><span class="va">your_url</span> <span class="op">&lt;-</span> <span class="st">"https://openapi.naver.com/v1/search/news.json"</span></span>
 <span><span class="va">result_naver</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://httr2.r-lib.org/reference/request.html">request</a></span><span class="op">(</span><span class="va">your_url</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
@@ -1078,7 +1096,7 @@ Warning
 </section><section id="httr2-패키지-활용-for-함수를-이용하여-1000개-검색-결과-추출" class="level4" data-number="3.4.3"><h4 data-number="3.4.3" class="anchored" data-anchor-id="httr2-패키지-활용-for-함수를-이용하여-1000개-검색-결과-추출">
 <span class="header-section-number">3.4.3</span> <code>httr2</code> 패키지 활용: <code>for</code> 함수를 이용하여 1,000개 검색 결과 추출</h4>
 <div class="cell">
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">all_news</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">all_news</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">search</span> <span class="op">&lt;-</span> <span class="st">"지방소멸"</span></span>
 <span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span><span class="op">{</span></span>
 <span>  <span class="va">news</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://httr2.r-lib.org/reference/request.html">request</a></span><span class="op">(</span><span class="va">your_url</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
