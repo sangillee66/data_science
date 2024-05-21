@@ -1,0 +1,276 @@
+---
+title: "Advanced R"
+author: Sang-Il Lee
+date: 05-21-2024
+title-slide-attributes: 
+  # data-background-image: R_6.gif
+  data-background-position: 85% 5%
+  data-background-size: 10%
+  data-background-opacity: "1e"
+date-modified: last-modified
+number-sections: false
+format: 
+  revealjs:
+#    footer: <https://sangillee.snu.ac.kr>
+    chalkboard: false
+    slide-number: true
+    pointer:
+      pointerSize: 20
+    embed-resources: false
+revealjs-plugins:
+  - pointer
+code-link: true
+execute: 
+  warning: false
+  error: false
+  freeze: auto
+editor: visual
+# suppress-bibliography: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# Advanced Communication
+
+## Tables: interactive and stylish
+
+-   DataTable (<https://datatables.net/>)
+
+    -   R wrapper package: DT package (<https://rstudio.github.io/DT/>)
+
+![<https://posit.co/blog/dt-an-r-interface-to-the-datatables-library/>](https://posit.co/wp-content/uploads/2015/06/BLOG-dt-an-r-interface-to-the-datatables-library.jpg){fig-align="center"}
+
+## Tables: `DT` examples {.smaller .scrollable}
+
+```{r}
+library(tidyverse)
+library(DT)
+iris2 = iris[c(1:10, 51:60, 101:110), ]
+datatable(iris2, filter = 'top', options = list(
+  pageLength = 5, autoWidth = TRUE
+))
+```
+
+## Tables: `DT` examples {.smaller .scrollable}
+
+```{r}
+datatable(iris) %>% 
+  formatStyle('Sepal.Length', fontWeight = styleInterval(5, c('normal', 'bold'))) %>%
+  formatStyle(
+    'Sepal.Width',
+    color = styleInterval(c(3.4, 3.8), c('white', 'blue', 'red')),
+    backgroundColor = styleInterval(3.4, c('gray', 'yellow'))
+  ) %>%
+  formatStyle(
+    'Petal.Length',
+    background = styleColorBar(iris$Petal.Length, 'steelblue'),
+    backgroundSize = '100% 90%',
+    backgroundRepeat = 'no-repeat',
+    backgroundPosition = 'center'
+  ) %>%
+  formatStyle(
+    'Species',
+    transform = 'rotateX(45deg) rotateY(20deg) rotateZ(30deg)',
+    backgroundColor = styleEqual(
+      unique(iris$Species), c('lightblue', 'lightgreen', 'lightpink')
+    )
+  )
+```
+
+## Graphs: static and extended
+
+::: {layout-ncol="2"}
+![](images/clipboard-3146270133.png)
+
+![](images/clipboard-741368461.png)
+:::
+
+## Graphs: `gganimate` example
+
+```{r}
+#| fig-asp: 0.618
+library(tidyverse)
+library(gganimate)
+library(gapminder)
+p <- ggplot(
+  gapminder, 
+  aes(x = gdpPercap, y=lifeExp, size = pop, colour = country)
+  ) +
+  geom_point(show.legend = FALSE, alpha = 0.7) +
+  scale_color_viridis_d() +
+  scale_size(range = c(2, 12)) +
+  scale_x_log10() +
+  labs(x = "GDP per capita", y = "Life expectancy")
+p + transition_time(year) +
+  labs(title = "Year: {frame_time}")
+```
+
+## Graphs: interactive, animated, 3D
+
+-   JavaScript library
+
+    -   Plotly (<https://plotly.com/graphing-libraries/>)
+
+    -   D3 (<https://d3js.org/>)
+
+    -   Highcharts (<https://www.highcharts.com/>)
+
+    -   ECharts ([https://echarts.apache.org/](https://echarts.apache.org/en/))
+
+    -   dygraphs (<https://dygraphs.com/>)
+
+-   Wrapper packages
+
+## Graphs: `plotly` example
+
+-   Plotly (<https://plotly.com/graphing-libraries/>)
+
+    -   R wrapper package: `plotly` package (<https://plotly.com/r/>)
+    -   `ggplotly()` function
+
+![](images/clipboard-33952309.png){fig-align="center"}
+
+## Graphs: `plotly` example
+
+```{r}
+library(plotly)
+fig <- plot_ly(data = iris, x = ~Sepal.Length, y = ~Petal.Length, color = ~Species)
+fig
+```
+
+## Maps: geometric data
+
+-   `sf` package (<https://r-spatial.github.io/sf/>)
+
+![](images/clipboard-3930476942.jpeg){fig-align="center"}
+
+## Maps: geometric data
+
+```{r}
+#| output: false
+library(sf)
+library(tmap)
+sigungu_shp <- st_read("sigungu.shp", options = "ENCODING=CP949")
+```
+
+```{r}
+qtm(sigungu_shp)
+```
+
+## Maps: static, a map as a graph
+
+-   `ggplot2` package (<https://ggplot2.tidyverse.org/>)
+
+    -   `geom_sf()`
+
+    -   `geom_sf_label()`
+
+    -   `geom_sf_text()`
+
+    -   `coord_sf()`
+
+    -   `stat_sf()`
+
+## Maps: static, a map as a map
+
+-   `tmap` package (<https://r-tmap.github.io/tmap/articles/tmap_vv.html>)
+
+![](images/clipboard-3147080854.png){fig-align="center"}
+
+## Maps: interactive, animated, 3D
+
+-   `Plotly` (<https://plotly.com/graphing-libraries/>)
+
+    -   R wrapper package: `plotly` package (<https://plotly.com/r/>)
+
+-   `Leaflet` (<https://leafletjs.com/>)
+
+    -   R wrapper packag: `leaflet` (<https://rstudio.github.io/leaflet/>)
+
+-   `rayshader` package (<https://www.rayshader.com/>)
+
+## Maps: `leaflet` example
+
+```{r}
+library(leaflet)
+leaflet() |> 
+  addTiles() |> 
+  # addProviderTiles('CartoDB.Positron') |> 
+  addPopups(126.955184, 37.460422, "Sang-Il's Office")
+```
+
+## Maps: `rayshader` example
+
+![<https://www.rayshader.com/>](images/clipboard-3713320529.png){fig-align="center"}
+
+## Maps: `rayshader` example
+
+![](https://wp.unil.ch/citadyne-news/files/2023/02/thworld.jpeg){fig-align="center"}
+
+## Maps: `rayshader` example {.smaller}
+
+{{< video seoul_ani.mp4 height = "600" >}}
+
+# More Advanced R
+
+## Advanced interactivity: Shiny
+
+![<https://shiny.posit.co/>](images/clipboard-3736716242.png){fig-align="center"}
+
+## Advanced interactivity: Shiny
+
+-   Web publication: <https://www.shinyapps.io/>
+
+![](images/clipboard-2928271543.png){fig-align="center"}
+
+## Advanced interactivity: Shiny
+
+-   My first Shiny app
+
+-   Spatial Kernel Density Estimation
+
+<https://sangillee.shinyapps.io/SpatialKernelDensityEstimation/>
+
+## Advanced modeling
+
+![<https://www.tidymodels.org/>](images/clipboard-3467293569.png){fig-align="center"}
+
+## Advanced programming
+
+![<https://purrr.tidyverse.org/>](images/clipboard-3235294248.png){fig-align="center"}
+
+## R and Generative AI: ChatGPT
+
+-   Automated code generation
+
+-   Learning programming concepts
+
+-   Creative writing and documentation
+
+-   Debugging assistance
+
+-   Improved Shiny app development
+
+-   Assistance with statistics and data science
+
+## R and Generative AI: ChatGPT
+
+-   Air (<https://github.com/soumyaray/air>)
+
+-   TheOpenAIR (<https://openair-lib.org/>)
+
+-   RTutor (<https://github.com/gexijin/RTutor>)
+
+-   askgpt (<https://github.com/JBGruber/askgpt>)
+
+-   gptstudio (<https://github.com/MichelNivard/gptstudio>)
+
+-   gpttools (<https://github.com/JamesHWade/gpttools>)
+
+-   gptchatteR (<https://github.com/isinaltinkaya/gptchatteR>)
+
+## R and Generative AI: General
+
+-   `GenAI` (<https://genai.gd.edu.kg/>)
+
+![](https://genai.gd.edu.kg/assets/img/overview.svg)

@@ -858,7 +858,7 @@
     "href": "R_lec_01.html#r-and-python-in-harmony",
     "title": "R & RStudio",
     "section": "R and Python in Harmony",
-    "text": "R and Python in Harmony",
+    "text": "R and Python in Harmony\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGeorge Ross Ihaka\nUniversity of Auckland\nRobert C. Gentleman\nHadley Wickham",
     "crumbs": [
       "R 프레젠테이션",
       "R & RStudio"
@@ -3643,6 +3643,534 @@
     "crumbs": [
       "R 실습",
       "Lab09: 데이터로 소통하기: 대시보드 만들기"
+    ]
+  },
+  {
+    "objectID": "R_lec_09.html#tables",
+    "href": "R_lec_09.html#tables",
+    "title": "Communication with Data: Advanced R",
+    "section": "Tables",
+    "text": "Tables",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Advanced R"
+    ]
+  },
+  {
+    "objectID": "R_lec_09.html#r-shiny-package",
+    "href": "R_lec_09.html#r-shiny-package",
+    "title": "Communication with Data: Advanced R",
+    "section": "R shiny package",
+    "text": "R shiny package",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Communication with Data: Advanced R"
+    ]
+  },
+  {
+    "objectID": "R_lec_10.html#r-dashboard-tools-a-transition",
+    "href": "R_lec_10.html#r-dashboard-tools-a-transition",
+    "title": "Communication with Data: Dashboards",
+    "section": "R dashboard tools: A transition",
+    "text": "R dashboard tools: A transition"
+  },
+  {
+    "objectID": "R_lec_10.html#an-example",
+    "href": "R_lec_10.html#an-example",
+    "title": "Communication with Data: Dashboards",
+    "section": "An example",
+    "text": "An example"
+  },
+  {
+    "objectID": "R_lec_10.html#an-example-1",
+    "href": "R_lec_10.html#an-example-1",
+    "title": "Communication with Data: Dashboards",
+    "section": "An example",
+    "text": "An example\nhttps://sangillee.quarto.pub/my-first-dashboard/"
+  },
+  {
+    "objectID": "R_lec_10.html#layout-1-rows-and-columns",
+    "href": "R_lec_10.html#layout-1-rows-and-columns",
+    "title": "Communication with Data: Dashboards",
+    "section": "Layout 1: Rows and Columns",
+    "text": "Layout 1: Rows and Columns\n\nCodeResult\n\n\n## Row {height=70%}\n\nCard 1\n\n## Row {height=30%}\n\n### Column {width=40%}\n\nCard 2-1 \n\n### Column {width=60%}\n\nCard 2-2"
+  },
+  {
+    "objectID": "R_lec_10.html#layout-2-tabsets",
+    "href": "R_lec_10.html#layout-2-tabsets",
+    "title": "Communication with Data: Dashboards",
+    "section": "Layout 2: Tabsets",
+    "text": "Layout 2: Tabsets\n\nCodeResult\n\n\n## Row {height=70%}\n\nCard 1\n\n## Row {height=30% .tabset}\n\n### Column\n\nCard 2-1 {width=50%}\n\n### Column\n\nCard 2-2 {width=50%}"
+  },
+  {
+    "objectID": "R_lec_10.html#layout-pages",
+    "href": "R_lec_10.html#layout-pages",
+    "title": "Communication with Data: Dashboards",
+    "section": "Layout: Pages",
+    "text": "Layout: Pages\n\nCodeResult\n\n\n# Page A\n\n## Row {height=70%}\n\nCard 1\n\n## Row {height=30%}\n\n### Column {width=40%}\n\nCard 2-1\n\n### Column {width=60%}\n\nCard 2-2\n\n# Page B\n\nCard 3"
+  },
+  {
+    "objectID": "R_lec_10.html#navigation-bars-yaml-header",
+    "href": "R_lec_10.html#navigation-bars-yaml-header",
+    "title": "Communication with Data: Dashboards",
+    "section": "Navigation Bars: YAML header",
+    "text": "Navigation Bars: YAML header\n\n\n\n\n\n\ntitle\nauthor\nformat: dashboard\n\nlogo\nnav-buttons\nscrolling: true\n\ntheme: 25 bootswatch themes(https://quarto.org/docs/dashboards/theming.html)"
+  },
+  {
+    "objectID": "R_lec_10.html#sidebars",
+    "href": "R_lec_10.html#sidebars",
+    "title": "Communication with Data: Dashboards",
+    "section": "Sidebars",
+    "text": "Sidebars"
+  },
+  {
+    "objectID": "R_lec_10.html#cards-graphs",
+    "href": "R_lec_10.html#cards-graphs",
+    "title": "Communication with Data: Dashboards",
+    "section": "Cards: Graphs",
+    "text": "Cards: Graphs\n\n그래프 카드: 그래프 하나를 만들어내는 코드 청크\nggplot2 패키지, plotly 패키지\n\n#| title: \"Histogram of GDP per capita\"\nlibrary(tidyverse)\nlibrary(gapminder)\ngapminder |&gt; \n  filter(year == 2007) |&gt;\n  ggplot(aes(x = gdpPercap)) +\n  geom_histogram()"
+  },
+  {
+    "objectID": "R_lec_10.html#cards-tables",
+    "href": "R_lec_10.html#cards-tables",
+    "title": "Communication with Data: Dashboards",
+    "section": "Cards: Tables",
+    "text": "Cards: Tables\n\n테이블 카드: 테이블 하나를 만들어내는 코드 청크\nDT 패키지, knitr 패키지\n\n#| title: Lookup Table\nlibrary(DT)\ndatatable(gapminder, filter = \"top\", \n          options = list(\n            pageLength = 5, autoWidth = TRUE\n          ))"
+  },
+  {
+    "objectID": "R_lec_10.html#cards-maps",
+    "href": "R_lec_10.html#cards-maps",
+    "title": "Communication with Data: Dashboards",
+    "section": "Cards: Maps",
+    "text": "Cards: Maps\n\n지도 카드: 지도 하나를 만들어내는 코드 청크\nggplot2 패키지, leaflet 패키지\n\n#| title: A Reference Map \nlibrary(leaflet) \nleaflet() |&gt;  \n  addTiles()"
+  },
+  {
+    "objectID": "R_lec_10.html#cards-texts",
+    "href": "R_lec_10.html#cards-texts",
+    "title": "Communication with Data: Dashboards",
+    "section": "Cards: Texts",
+    "text": "Cards: Texts\n\n텍스트 카드: 텍스트 박스 하나를 만들어내는 div\n{.card} 탭과 title 속성\n\n::: {.card title=\"Text\"}\nThis is my first dashboard.\n:::"
+  },
+  {
+    "objectID": "R_lec_10.html#cards-valueboxes",
+    "href": "R_lec_10.html#cards-valueboxes",
+    "title": "Communication with Data: Dashboards",
+    "section": "Cards: Valueboxes",
+    "text": "Cards: Valueboxes\n\n밸류박스 카드: 밸류박스 하나를 만들어내는 코드 청크\n아이콘: bootstrap icon(https://icons.getbootstrap.com/)\n컬러: 8개(https://quarto.org/docs/dashboards/data-display.html)\n\n#| content: valuebox\n#| title: \"Number of Countries\"\nn_countries &lt;- gapminder |&gt; distinct(country) |&gt; nrow()\nlist(\n  icon = \"asterisk\",\n  color = \"primary\",\n  value = n_countries\n)"
+  },
+  {
+    "objectID": "R_lec_10.html#web-publication",
+    "href": "R_lec_10.html#web-publication",
+    "title": "Communication with Data: Dashboards",
+    "section": "Web publication",
+    "text": "Web publication\n\nQuarto Pub(https://quartopub.com/)"
+  },
+  {
+    "objectID": "R_lec_10.html#tables",
+    "href": "R_lec_10.html#tables",
+    "title": "Communication with Data: Advanced R",
+    "section": "Tables",
+    "text": "Tables"
+  },
+  {
+    "objectID": "R_lec_10.html#r-shiny-package",
+    "href": "R_lec_10.html#r-shiny-package",
+    "title": "Communication with Data: Advanced R",
+    "section": "R shiny package",
+    "text": "R shiny package\n\nhttps://shiny.posit.co/"
+  },
+  {
+    "objectID": "R_lec_10.html#shinyapps.io",
+    "href": "R_lec_10.html#shinyapps.io",
+    "title": "Communication with Data: Advanced R",
+    "section": "shinyapps.io",
+    "text": "shinyapps.io"
+  },
+  {
+    "objectID": "R_lec_10.html#my-first-shiny-app",
+    "href": "R_lec_10.html#my-first-shiny-app",
+    "title": "Communication with Data: Advanced R",
+    "section": "My first shiny app",
+    "text": "My first shiny app\nSpatial Kernel Density Estimation\nhttps://sangillee.shinyapps.io/SpatialKernelDensityEstimation/"
+  },
+  {
+    "objectID": "R_lec_10.html#tables-interactive-and-stylish",
+    "href": "R_lec_10.html#tables-interactive-and-stylish",
+    "title": "Advanced R",
+    "section": "Tables: interactive and stylish",
+    "text": "Tables: interactive and stylish\n\n\nDataTable (https://datatables.net/)\n\nR wrapper package: DT package (https://rstudio.github.io/DT/)\n\n\n\n\nhttps://posit.co/blog/dt-an-r-interface-to-the-datatables-library/",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Advanced R"
+    ]
+  },
+  {
+    "objectID": "R_lec_10.html#dt-examples",
+    "href": "R_lec_10.html#dt-examples",
+    "title": "Communication with Data: Advanced R",
+    "section": "DT examples",
+    "text": "DT examples"
+  },
+  {
+    "objectID": "R_lec_10.html#dt-examples-interactive",
+    "href": "R_lec_10.html#dt-examples-interactive",
+    "title": "Communication with Data: Advanced R",
+    "section": "DT examples: interactive",
+    "text": "DT examples: interactive"
+  },
+  {
+    "objectID": "R_lec_10.html#dt-examples-stylish",
+    "href": "R_lec_10.html#dt-examples-stylish",
+    "title": "Communication with Data: Advanced R",
+    "section": "DT examples: stylish",
+    "text": "DT examples: stylish"
+  },
+  {
+    "objectID": "R_lec_10.html#dt-examples-interactive-.smaller-.scrollable",
+    "href": "R_lec_10.html#dt-examples-interactive-.smaller-.scrollable",
+    "title": "Communication with Data: Advanced R",
+    "section": "DT examples: interactive {.smaller; .scrollable}",
+    "text": "DT examples: interactive {.smaller; .scrollable}"
+  },
+  {
+    "objectID": "R_lec_10.html#tables-dt-examples",
+    "href": "R_lec_10.html#tables-dt-examples",
+    "title": "Advanced R",
+    "section": "Tables: DT examples",
+    "text": "Tables: DT examples",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Advanced R"
+    ]
+  },
+  {
+    "objectID": "R_lec_10.html#tables-dt-examples-1",
+    "href": "R_lec_10.html#tables-dt-examples-1",
+    "title": "Advanced R",
+    "section": "Tables: DT examples",
+    "text": "Tables: DT examples",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Advanced R"
+    ]
+  },
+  {
+    "objectID": "R_lec_10.html#graphs-interactive-animated-3d",
+    "href": "R_lec_10.html#graphs-interactive-animated-3d",
+    "title": "Advanced R",
+    "section": "Graphs: interactive, animated, 3D",
+    "text": "Graphs: interactive, animated, 3D\n\n\nJavaScript library\n\nPlotly (https://plotly.com/graphing-libraries/)\nD3 (https://d3js.org/)\nHighcharts (https://www.highcharts.com/)\nECharts (https://echarts.apache.org/)\ndygraphs (https://dygraphs.com/)\n\n\nWrapper packages",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Advanced R"
+    ]
+  },
+  {
+    "objectID": "R_lec_10.html#graphs-plotly-example",
+    "href": "R_lec_10.html#graphs-plotly-example",
+    "title": "Advanced R",
+    "section": "Graphs: plotly example",
+    "text": "Graphs: plotly example\n\n\nPlotly (https://plotly.com/graphing-libraries/)\n\nR wrapper package: plotly package (https://plotly.com/r/)\n\nggplotly() function",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Advanced R"
+    ]
+  },
+  {
+    "objectID": "R_lec_10.html#maps-static",
+    "href": "R_lec_10.html#maps-static",
+    "title": "Communication with Data: Advanced R",
+    "section": "Maps: static",
+    "text": "Maps: static\n\n\nsf package (https://r-spatial.github.io/sf/)"
+  },
+  {
+    "objectID": "R_lec_10.html#maps-static-1",
+    "href": "R_lec_10.html#maps-static-1",
+    "title": "Communication with Data: Advanced R",
+    "section": "Maps: static",
+    "text": "Maps: static\n\n\nggplot2 package (https://ggplot2.tidyverse.org/)\n\ngeom_sf()\ngeom_sf_label()\ngeom_sf_text()\ncoord_sf()\nstat_sf()"
+  },
+  {
+    "objectID": "R_lec_10.html#maps-interactive-animated-3d",
+    "href": "R_lec_10.html#maps-interactive-animated-3d",
+    "title": "Advanced R",
+    "section": "Maps: interactive, animated, 3D",
+    "text": "Maps: interactive, animated, 3D\n\n\nPlotly (https://plotly.com/graphing-libraries/)\n\nR wrapper package: plotly package (https://plotly.com/r/)\n\n\n\nLeaflet (https://leafletjs.com/)\n\nR wrapper packag: leaflet (https://rstudio.github.io/leaflet/)\n\n\nrayshader package (https://www.rayshader.com/)",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Advanced R"
+    ]
+  },
+  {
+    "objectID": "R_lec_10.html#maps-static-2",
+    "href": "R_lec_10.html#maps-static-2",
+    "title": "Communication with Data: Advanced R",
+    "section": "Maps: static",
+    "text": "Maps: static\n\n\ntmap package (https://r-tmap.github.io/tmap/articles/tmap_vv.html)"
+  },
+  {
+    "objectID": "R_lec_10.html#maps-geometric-data",
+    "href": "R_lec_10.html#maps-geometric-data",
+    "title": "Advanced R",
+    "section": "Maps: geometric data",
+    "text": "Maps: geometric data\n\n\nsf package (https://r-spatial.github.io/sf/)",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Advanced R"
+    ]
+  },
+  {
+    "objectID": "R_lec_10.html#maps-static-a-map-as-a-graph",
+    "href": "R_lec_10.html#maps-static-a-map-as-a-graph",
+    "title": "Advanced R",
+    "section": "Maps: static, a map as a graph",
+    "text": "Maps: static, a map as a graph\n\n\nggplot2 package (https://ggplot2.tidyverse.org/)\n\ngeom_sf()\ngeom_sf_label()\ngeom_sf_text()\ncoord_sf()\nstat_sf()",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Advanced R"
+    ]
+  },
+  {
+    "objectID": "R_lec_10.html#maps-static-a-map-as-a-map",
+    "href": "R_lec_10.html#maps-static-a-map-as-a-map",
+    "title": "Advanced R",
+    "section": "Maps: static, a map as a map",
+    "text": "Maps: static, a map as a map\n\n\ntmap package (https://r-tmap.github.io/tmap/articles/tmap_vv.html)",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Advanced R"
+    ]
+  },
+  {
+    "objectID": "R_lec_10.html#maps-leaflet-example",
+    "href": "R_lec_10.html#maps-leaflet-example",
+    "title": "Advanced R",
+    "section": "Maps: leaflet example",
+    "text": "Maps: leaflet example",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Advanced R"
+    ]
+  },
+  {
+    "objectID": "R_lec_10.html#maps-rayshader-example",
+    "href": "R_lec_10.html#maps-rayshader-example",
+    "title": "Advanced R",
+    "section": "Maps: rayshader example",
+    "text": "Maps: rayshader example\n\nhttps://www.rayshader.com/",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Advanced R"
+    ]
+  },
+  {
+    "objectID": "R_lec_10.html#maps-rayshader-example-1",
+    "href": "R_lec_10.html#maps-rayshader-example-1",
+    "title": "Advanced R",
+    "section": "Maps: rayshader example",
+    "text": "Maps: rayshader example",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Advanced R"
+    ]
+  },
+  {
+    "objectID": "R_lec_10.html#maps-rayshader-example-2",
+    "href": "R_lec_10.html#maps-rayshader-example-2",
+    "title": "Advanced R",
+    "section": "Maps: rayshader example",
+    "text": "Maps: rayshader example",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Advanced R"
+    ]
+  },
+  {
+    "objectID": "R_lec_10.html#graphs-interactive-animated-3d-1",
+    "href": "R_lec_10.html#graphs-interactive-animated-3d-1",
+    "title": "Communication with Data: Advanced R",
+    "section": "Graphs: interactive, animated, 3D",
+    "text": "Graphs: interactive, animated, 3D\n\nPlotly (https://plotly.com/graphing-libraries/)\nD3 (https://d3js.org/)\nHighcharts (https://www.highcharts.com/)\nECharts (https://echarts.apache.org/)\ndygraphs (https://dygraphs.com/)"
+  },
+  {
+    "objectID": "R_lec_10.html#graphs-static-and-extended",
+    "href": "R_lec_10.html#graphs-static-and-extended",
+    "title": "Advanced R",
+    "section": "Graphs: static and extended",
+    "text": "Graphs: static and extended",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Advanced R"
+    ]
+  },
+  {
+    "objectID": "R_lec_10.html#advanced-interactivity-r-shiny-package",
+    "href": "R_lec_10.html#advanced-interactivity-r-shiny-package",
+    "title": "Communication with Data: Advanced R",
+    "section": "Advanced interactivity: R shiny package",
+    "text": "Advanced interactivity: R shiny package\n\nhttps://shiny.posit.co/"
+  },
+  {
+    "objectID": "R_lec_10.html#advanced-interactivity",
+    "href": "R_lec_10.html#advanced-interactivity",
+    "title": "Communication with Data: Advanced R",
+    "section": "Advanced interactivity",
+    "text": "Advanced interactivity\n\nR Shiny package (https://shiny.posit.co/)"
+  },
+  {
+    "objectID": "R_lec_10.html#advanced-interactivity-shiny",
+    "href": "R_lec_10.html#advanced-interactivity-shiny",
+    "title": "Advanced R",
+    "section": "Advanced interactivity: Shiny",
+    "text": "Advanced interactivity: Shiny\n\nhttps://shiny.posit.co/",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Advanced R"
+    ]
+  },
+  {
+    "objectID": "R_lec_10.html#advanced-interactivity-shiny-1",
+    "href": "R_lec_10.html#advanced-interactivity-shiny-1",
+    "title": "Advanced R",
+    "section": "Advanced interactivity: Shiny",
+    "text": "Advanced interactivity: Shiny\n\nWeb publication: https://www.shinyapps.io/",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Advanced R"
+    ]
+  },
+  {
+    "objectID": "R_lec_10.html#advanced-interactivity-shiny-2",
+    "href": "R_lec_10.html#advanced-interactivity-shiny-2",
+    "title": "Advanced R",
+    "section": "Advanced interactivity: Shiny",
+    "text": "Advanced interactivity: Shiny\n\nMy first Shiny app\nSpatial Kernel Density Estimation\n\nhttps://sangillee.shinyapps.io/SpatialKernelDensityEstimation/",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Advanced R"
+    ]
+  },
+  {
+    "objectID": "R_lec_10.html#advanced-modeling",
+    "href": "R_lec_10.html#advanced-modeling",
+    "title": "Advanced R",
+    "section": "Advanced modeling",
+    "text": "Advanced modeling\n\nhttps://www.tidymodels.org/",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Advanced R"
+    ]
+  },
+  {
+    "objectID": "R_lec_10.html#advance-programming",
+    "href": "R_lec_10.html#advance-programming",
+    "title": "Communication with Data: Advanced R",
+    "section": "Advance programming",
+    "text": "Advance programming\n\n\nhttps://purrr.tidyverse.org/"
+  },
+  {
+    "objectID": "R_lec_10.html#advanced-programming",
+    "href": "R_lec_10.html#advanced-programming",
+    "title": "Advanced R",
+    "section": "Advanced programming",
+    "text": "Advanced programming\n\nhttps://purrr.tidyverse.org/",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Advanced R"
+    ]
+  },
+  {
+    "objectID": "R_lec_10.html#r-and-ai",
+    "href": "R_lec_10.html#r-and-ai",
+    "title": "Communication with Data: Advanced R",
+    "section": "R and AI",
+    "text": "R and AI\n\nGenAI (https://genai.gd.edu.kg/)"
+  },
+  {
+    "objectID": "R_lec_10.html#r-and-generative-ai",
+    "href": "R_lec_10.html#r-and-generative-ai",
+    "title": "Communication with Data: Advanced R",
+    "section": "R and Generative AI",
+    "text": "R and Generative AI\n\n\nGenAI (https://genai.gd.edu.kg/)"
+  },
+  {
+    "objectID": "R_lec_10.html#r-and-generative-art",
+    "href": "R_lec_10.html#r-and-generative-art",
+    "title": "Communication with Data: Advanced R",
+    "section": "R and Generative Art",
+    "text": "R and Generative Art"
+  },
+  {
+    "objectID": "R_lec_10.html#r-and-generative-ai-1",
+    "href": "R_lec_10.html#r-and-generative-ai-1",
+    "title": "Communication with Data: Advanced R",
+    "section": "R and Generative AI",
+    "text": "R and Generative AI\n\n\nGenAI (https://genai.gd.edu.kg/)"
+  },
+  {
+    "objectID": "R_lec_10.html#r-and-generative-ai-chatgpt",
+    "href": "R_lec_10.html#r-and-generative-ai-chatgpt",
+    "title": "Advanced R",
+    "section": "R and Generative AI: ChatGPT",
+    "text": "R and Generative AI: ChatGPT\n\nAutomated code generation\nLearning programming concepts\nCreative writing and documentation\nDebugging assistance\nImproved Shiny app development\nAssistance with statistics and data science",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Advanced R"
+    ]
+  },
+  {
+    "objectID": "R_lec_10.html#r-and-generative-ai-chatgpt-1",
+    "href": "R_lec_10.html#r-and-generative-ai-chatgpt-1",
+    "title": "Advanced R",
+    "section": "R and Generative AI: ChatGPT",
+    "text": "R and Generative AI: ChatGPT\n\nAir (https://github.com/soumyaray/air)\nTheOpenAIR (https://openair-lib.org/)\nRTutor (https://github.com/gexijin/RTutor)\naskgpt (https://github.com/JBGruber/askgpt)\ngptstudio (https://github.com/MichelNivard/gptstudio)\ngpttools (https://github.com/JamesHWade/gpttools)\ngptchatteR (https://github.com/isinaltinkaya/gptchatteR)",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Advanced R"
+    ]
+  },
+  {
+    "objectID": "R_lec_10.html#r-and-generative-ai-general",
+    "href": "R_lec_10.html#r-and-generative-ai-general",
+    "title": "Advanced R",
+    "section": "R and Generative AI: General",
+    "text": "R and Generative AI: General\n\n\nGenAI (https://genai.gd.edu.kg/)",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Advanced R"
+    ]
+  },
+  {
+    "objectID": "R_lec_10.html#graphs-gganimate-example",
+    "href": "R_lec_10.html#graphs-gganimate-example",
+    "title": "Advanced R",
+    "section": "Graphs: gganimate example",
+    "text": "Graphs: gganimate example",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Advanced R"
+    ]
+  },
+  {
+    "objectID": "R_lec_10.html#graphs-plotly-example-1",
+    "href": "R_lec_10.html#graphs-plotly-example-1",
+    "title": "Advanced R",
+    "section": "Graphs: plotly example",
+    "text": "Graphs: plotly example",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Advanced R"
+    ]
+  },
+  {
+    "objectID": "R_lec_10.html#maps-geometric-data-1",
+    "href": "R_lec_10.html#maps-geometric-data-1",
+    "title": "Advanced R",
+    "section": "Maps: geometric data",
+    "text": "Maps: geometric data",
+    "crumbs": [
+      "R 프레젠테이션",
+      "Advanced R"
     ]
   }
 ]

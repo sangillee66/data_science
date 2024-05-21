@@ -37,6 +37,7 @@ website:
           - R_lec_07.qmd
           - R_lec_08.qmd
           - R_lec_09.qmd
+          - R_lec_10.qmd
       - text: "---"    
       - section: "R 실습"
         contents: 
@@ -78,6 +79,6 @@ format:
 execute:
   freeze: auto
 
-lightbox: true
+# lightbox: true
 
 editor: visual
