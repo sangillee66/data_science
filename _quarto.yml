@@ -50,6 +50,7 @@ website:
           - lab_07.qmd
           - lab_08.qmd
           - lab_09.qmd
+          - lab_10.qmd
 
   bread-crumbs: false
   back-to-top-navigation: true

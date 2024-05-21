@@ -4172,5 +4172,235 @@
       "R 프레젠테이션",
       "Advanced R"
     ]
+  },
+  {
+    "objectID": "lab_10.html",
+    "href": "lab_10.html",
+    "title": "Lab10: 데이터로 소통하기: 동적, 반응형 시각화",
+    "section": "",
+    "text": "이번 실습은 대시보드의 구성 요소로 활용할 수 있는 다양한 시각화 기법을 익히는 것이다.\n소통을 위한 시각화 재료로서 정적인 도표가 가지는 절대적인 중요성에도 불구하고, 상호작용성(interactivity)과 역동성(animatedness)이 부가된 도표는 어떤 상항에서 소통의 본질적 가치를 고양하는데 많은 도움을 줄 수 있다.\n동시에 텍스트, 테이블, 차트와 같은 것들 보다 훨씬 더 효과적으로 정보를 전달할 수 있는 지도(maps) 역시 만들어볼 것이다.\ntidyverse 패키지는 기본이고, gapminder 데이터를 실습의 여러 곳에서 활용할 것이다.\n\nlibrary(tidyverse)\nlibrary(gapminder)",
+    "crumbs": [
+      "R 실습",
+      "Lab10: 데이터로 소통하기: 동적, 반응형 시각화"
+    ]
+  },
+  {
+    "objectID": "lab_10.html#실습-개요",
+    "href": "lab_10.html#실습-개요",
+    "title": "Lab10: 데이터로 소통하기: 동적, 반응형 시각화",
+    "section": "",
+    "text": "이번 실습은 대시보드의 구성 요소로 활용할 수 있는 다양한 시각화 기법을 익히는 것이다.\n소통을 위한 시각화 재료로서 정적인 도표가 가지는 절대적인 중요성에도 불구하고, 상호작용성(interactivity)과 역동성(animatedness)이 부가된 도표는 어떤 상항에서 소통의 본질적 가치를 고양하는데 많은 도움을 줄 수 있다.\n동시에 텍스트, 테이블, 차트와 같은 것들 보다 훨씬 더 효과적으로 정보를 전달할 수 있는 지도(maps) 역시 만들어볼 것이다.\ntidyverse 패키지는 기본이고, gapminder 데이터를 실습의 여러 곳에서 활용할 것이다.\n\nlibrary(tidyverse)\nlibrary(gapminder)",
+    "crumbs": [
+      "R 실습",
+      "Lab10: 데이터로 소통하기: 동적, 반응형 시각화"
+    ]
+  },
+  {
+    "objectID": "lab_10.html#테이블tables",
+    "href": "lab_10.html#테이블tables",
+    "title": "Lab10: 데이터로 소통하기: 동적, 반응형 시각화",
+    "section": "\n1 테이블(Tables)",
+    "text": "1 테이블(Tables)\n우리는 지금까지 테이블의 중요성에 대해 거의 다루지 않았다. 그러나 상호작용형 테이블 혹은 대화형 테이블이 되었을 때, 많은 경우, 테이블은 가장 효과적인 정보 전달 도구가 된다. 특히, 데이터 변형하기를 통해 새로운 요약 테이블을 생성하고, 그것을 대화형으로 제시하는 것은 매우 중요한 데이터사이언스의 과정이다. 여기서는 DT(Data Tables) 패키지를 활용하여 간단한 대화형 테이블을 만들어 본다.\n\nlibrary(DT)\n\n그리고 gapminder 데이터를 datatable() 함수를 통해 불러온다.\n\ndatatable(gapminder)\n\n\n\n\n\n\nDT 패키지는 테이블의 상호작용성과 관련하여 몇 가지 기능을 제공한다.\n\nInstant search: 즉각적인 찾기 기능(Search에 타이핑하기 시작하면 즉각적으로 검색 결과 보여줌)\nMulti-column ordering: 다중 컬럼 정렬 기능(컬럼 하나를 선택한 후 ctrl을 누른 상태에서 다른 컬럼을 선택)\nfiltering: 값을 정렬할 수 있는 기능\neditable: 셀 값을 수정할 수 있는 기능\nPagination: 페이지를 이동할 수 있는 기능\nButtons: 셀 숨기기, CSV, PDF, XLSX 등의 확장자로 내보내기 등을 수행하는 버튼 생성 기능\n\n그 중 몇 가지 기능을 여기에서 살펴본다. 다음의 웹사이트를 참고할 수 있다.\nhttps://rstudio.github.io/DT/\n\n1.1 테이블 에디팅\neditable 아규먼트를 통해 테이블의 값을 수정할 수 있게 만들 수 있다. 테이블의 특정 셀에 더블클릭하면 수정할 수 있다.\n\ndatatable(head(gapminder), editable = \"cell\")\n\n\n\n\n\n\n1.2 컬럼 필터\n다음과 같은 방식으로 필터를 설정할 수 있다. 동시에 한 페이지에 보이는 행의 개수, 너비 자동 지정 등도 함께 추가한다.\n\ndatatable(gapminder, filter = \"top\", \n          options = list(\n            pageLength = 5, autoWidth = TRUE\n          ))\n\n\n\n\n\n\n1.3 버튼 기능\nextenstion에 Buttons, dom 에 Bftip, buttons 에 c(\"copy\", \"excel\", \"pdf\", \"print\") 를 입력하면 버튼 기능을 활성화할 수 있다. 각 아규먼트가 무엇을 의미하는지는 다음의 사이트를 참고할 것. https://datatables.net/extensions/buttons/\n\ndatatable(gapminder, filter = \"top\",\n          extensions = \"Buttons\",\n          options = list(\n            pageLength = 5,\n            autoWidth = TRUE,\n            dom = \"Bftip\",\n            buttons=c(\"copy\", \"excel\", \"pdf\", \"print\")\n          ))\n\n\n\n\n\n\n\n\n\n\n\nMore Options\n\n\n\n\n\n이 밖에도 아래와 같은 다양한 기능을 제공한다. 이를 참고하면 테이블의 모양을 조금 더 자유롭게 수정할 수 있다.\n\n1.4 테이블 CSS 클래스\ndatatable 함수의 class 아규먼트: 테이블의 외관 수정\n\n\n\n\n\n\nClass name\nDescription\n\n\n\ndisplay\n\nstripe, hover, row-border, order-column을 동시 적용한 디폴트\n\n\ncell-border\n모든 셀의 상하좌우에 경계선 표시\n\n\ncompact\n여백 축소\n\n\nhover\n마우스의 위치에 따라 점멸 효과\n\n\nnowrap\n줄바꿈 없이 텍스트 표시\n\n\norder-column\n정렬의 키가 되는 컬럼에 하이라이트 표시\n\n\nrow-border\n행별 경계선 표시\n\n\nstripe\n행을 스트라이프로 표시\n\n\n\n아래와 같이 cell-border과 compact를 함께 실행해 보고 테이블의 변화를 확인한다.\n\ndatatable(head(gapminder), class = \"compact stripe\")\n\n\n\n\n\n\n또한 특정 컬럼의 정렬 방식(왼편, 오른편, 중앙)을 변경할 수 있다. 사용가능한 옵션은 다음과 같다.\n\n\nClass name\nDescription\n\n\n\ndt[-head|-body]-left\n왼편 정렬\n\n\ndt[-head|-body]-center\n가운데 정렬\n\n\ndt[-head|-body]-right\n오른편 정렬\n\n\ndt[-head|-body]-justify\n양쪽 맞춤\n\n\ndt[-head|-body]-nowrap\n줄바꿈 없는 맞춤\n\n\n\n아래는 첫 번째와 두 번째 컬럼(country, continent)의 내용(body)을 가운데 정렬로 나타낸다.\n\ndatatable(head(gapminder),\n          options = list(\n            columnDefs = list(list(className = \"dt-body-center\", targets = 1:2)) \n            ))",
+    "crumbs": [
+      "R 실습",
+      "Lab10: 데이터로 소통하기: 동적, 반응형 시각화"
+    ]
+  },
+  {
+    "objectID": "lab_10.html#그래프graphs",
+    "href": "lab_10.html#그래프graphs",
+    "title": "Lab10: 데이터로 소통하기: 동적, 반응형 시각화",
+    "section": "\n2 그래프(Graphs)",
+    "text": "2 그래프(Graphs)\n\n2.1 반응형 그래프\nPlotly는 보통 데이터 시각화용 JavaScript 라이브러리를 일컽는다. 이 라이브러리는 다양한 오픈소스 프로그래밍 언어에서 사용가능하며, R의 랩퍼 프로그램이 plotly 패키지이다\n\nlibrary(plotly)\n\n먼저 gapminder 데이터를 이용하여 간단한 그래프를 그려보자. 문법이 ggplot2와 크게 다르지 않음을 알 수 있다.\n\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  plot_ly(x = ~gdpPercap, y = ~lifeExp, color = ~continent,\n          text = ~paste(\"Country: \", country, \n                        \"&lt;br&gt;GDP per capita: \", gdpPercap, \n                        \"$&lt;br&gt;Life Expectancy at Birth:\", lifeExp))\n\n\n\n\n\n다음 예제 역시 반응형이지만 바로 다음에서 다룰 동적인 특성도 동시에 가지고 있는 그래프를 만드는 것이다. 역시 plotly 패키지를 이용한다.\n\ngapminder |&gt; \n  plot_ly(x = ~log10(gdpPercap), y = ~lifeExp,\n          text = ~paste(\"Country:\", country, \"&lt;/br&gt;Continent:\", continent, \n\"&lt;/br&gt;lifeExp:\", lifeExp)) |&gt; \n  add_markers(color = ~continent, size = ~pop, frame = ~year, \n              marker = list(sizeref = 0.2, sizemode = \"area\"))\n\n\n\n\n\n그러나 지금까지 실습 수업에서는 ggplot()을 사용해서 그래프를 그려왔기 때문에, 아무래도 그쪽이 더 익숙할 것이다. 다행히도 plotly 패키지가 제공하는 ggplotly() 함수를 활용하면 ggplot2로 만들어진 그래프를 단숨에 plotly 그래프로 바꿀 수 있다. 물론 정확히 같지는 않다.\n\nP &lt;- gapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent)) +\n  geom_point() + \n  scale_color_brewer(palette = \"Set2\") +\n  theme_minimal()\n\nggplotly(P)\n\n\n\n\n\n\n2.2 동적 그래프\n이번에는 동적 그래프(animated graphs)를 만들어본다. gganimate 패키지(https://gganimate.com/)를 활용하기 위해, 우선 gganimate 패키지를 설치하고 불러온다.\n\nlibrary(gganimate)\n\n동적인 그래프의 효과를 알기 위해, 먼저 정적인 지도를 그려보자.\n\nP &lt;- gapminder |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, size = pop, color = continent)) +\n  geom_point(show.legend = FALSE, alpha = 0.7) +\n  scale_x_log10() +\n  scale_size(range = c(2, 12))\nP\n\n\n\n\n\n\n\n이 그래프는 두 변수 간에 양적인 관련성이 있다는 사실은 명백히 보여주지만, 데이터 변형의 측면에서는 잘못된 것이다. 모든 연도(1952~2007년간 5년 단위)가 나타나 있어서 한 국가가 그래프에 12번 등장한다.\n정적인 그래프에서 이를 극복하기 위해서는 ggplot2 패키지의 facet_wrap() 함수를 활용할 수 있다.\n\nP + facet_wrap(~year)\n\n\n\n\n\n\n\n이 그래프는 두 변수간의 양적인 상관관계가 12개 모두의 연도에서 나타난다는 사실을 명확히 보여준다. 그러나 그래프를 세세히 살펴보면 알 수 있듯이, 두 변수의 관련성이라는 측면에서 개별 국가가 시간의 흐름에 따라 어떻게 변화해 나가는지에 대한 사항을 파악하기는 매우 어렵다.\ngganimate 패키지의 transition_time() 함수를 활용하여 동적인 그래프를 작성해 본다.\n\nP + transition_time(year) +\n  labs(title = \"Year: {frame_time}\")\n\n\n\n\n\n\n\n대륙별로 분할하여 표현할 수도 있다.\n\nP + facet_wrap(~continent) +\n  transition_time(year) +\n  labs(title = \"Year: {frame_time}\")\n\n\n\n\n\n\n\n그래프를 저장하고 싶으면 anim_save() 함수를 활용할 수 있다. ggsave() 함수와 동일한 문법을 갖는다.\n\nP + facet_wrap(~continent) +\n  transition_time(year) +\n  labs(title = \"Year: {frame_time}\")\n\nanim_save(\"anim_P.gif\")",
+    "crumbs": [
+      "R 실습",
+      "Lab10: 데이터로 소통하기: 동적, 반응형 시각화"
+    ]
+  },
+  {
+    "objectID": "lab_10.html#지도maps",
+    "href": "lab_10.html#지도maps",
+    "title": "Lab10: 데이터로 소통하기: 동적, 반응형 시각화",
+    "section": "\n3 지도(Maps)",
+    "text": "3 지도(Maps)\n\n3.1 정적 지도\n\n3.1.1 세계 지도\nggplot2 패키지를 이용하여 정적 지도를 그려본다. 데이터는 지난 실습에서 사용한 WPP 2022(World Population Prospects 2022)이다. 2024년 전세계 국가별 TFR(Total Fertility Rate, 합계출산율) 지도를 그려본다.\n일반적으로 지도는 형상 데이터와 속성 데이터를 결합해야만 제작할 수 있다. 여기서 형상 데이터는 전세계 국가 경계 데이터이고, 속성 데이터는 TFR이 포함된 WPP 2022 데이터이다. 형상 데이터는 spData 패키지에 들어 있는 world를 사용한다. 이러한 형상 데이터를 다루는데 가장 널리 사용되고 있는 중요한 것이 sf 패키지(https://r-spatial.github.io/sf/)이다. 가능한 벡터 형식의 데이터는 sf 패키지의 st_as_sf() 함수를 통해 sf 객체로 변환하는 것이 좋다.\n\nlibrary(spData)\nlibrary(sf)\ndata(world)\nworld &lt;- st_as_sf(world)\n\nWPP 2022 데이터를 불러와 2024년만 골라낸다.\n\nwpp_2022 &lt;- read_rds(\"wpp_2022.rds\")\nmy_wpp &lt;- wpp_2022 |&gt; \n  filter(year == 2024)\n\n두 데이터를 left_join 함수를 이용하여 결합한다.\n\nworld_data &lt;- world |&gt;\n  left_join(my_wpp, join_by(iso_a2 == ISO2))\n\n로빈슨 도법(Robinson projection)의 지도를 제작한다. ggplot2 패키지로 지도를 그리는 가장 좋은 방법은 geom_sf()와 coord_sf()를 결합하는 것이다.\n\nworld_map &lt;- ggplot() +\n  geom_sf(data = world_data, aes(fill = TFR, text = name_long)) +\n  coord_sf(crs = \"+proj=robin\") +\n  scale_fill_viridis_c() +\n  scale_x_continuous(breaks = seq(-180, 180, 30)) +\n  scale_y_continuous(breaks = c(-89.5, seq(-60, 60, 30), 89.5)) +\n  theme(\n    panel.background = element_rect(\"white\"),\n    panel.grid = element_line(color = \"gray80\")\n  )\nworld_map\n\n\n\n\n\n\n\n\n3.1.2 우리나라 지도\n먼저 eTL에 탑재되어 있는 파일(sido.shp, sigungu.shp)을 다운로드하고, 아래의 코드를 통해 불러온다.\n\nsido_shp &lt;- st_read(\"sido.shp\", options = \"ENCODING=CP949\")\n\noptions:        ENCODING=CP949 \nReading layer `sido' from data source \n  `D:\\R_Websites\\Subjects\\Data_Science\\sido.shp' using driver `ESRI Shapefile'\nSimple feature collection with 17 features and 4 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: 746255.1 ymin: 1458982 xmax: 1387941 ymax: 2068161\nProjected CRS: Korea_2000_Korea_Unified_Coordinate_System\n\nsigungu_shp &lt;- st_read(\"sigungu.shp\", options = \"ENCODING=CP949\")\n\noptions:        ENCODING=CP949 \nReading layer `sigungu' from data source \n  `D:\\R_Websites\\Subjects\\Data_Science\\sigungu.shp' using driver `ESRI Shapefile'\nSimple feature collection with 229 features and 9 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: 746255.1 ymin: 1458982 xmax: 1387941 ymax: 2068161\nProjected CRS: Korea_2000_Korea_Unified_Coordinate_System\n\n\n또한 지역소멸위험지수 데이터를 불러온다. 아래 코드는 지난번 실습 때 rds 파일 포맷으로 저장해 둔 것을 가정한 것이다. 실습의 편의를 위해 파일을 제공하니 프로젝트 폴더에 저장한 후, 아래의 코드를 통해 불러온다.\n\ndata_sigungu &lt;- read_rds(\"data_sigungu.rds\")\n\n다음으로 도형 데이터(sigungu_shp)와 속성 데이터(data_sigungu)를 공통 키(key)를 활용하여 결합한다.\n\nsigungu_data &lt;- sigungu_shp |&gt; \n  left_join(\n    data_sigungu, join_by(SGG1_CD == C1)\n  )\n\n이제 ggplot2 패키지를 이용하여 지도를 제작한다. 탭셋을 바꿔가며 ’Lab07: 데이터 수집하기’에서 인구소멸위험지수의 시도별 그래프를 제작한 것과 비교해 보면, 매우 유사하다는 것을 알 수 있다. ggplot2에서는 그래프와 지도의 구분이 없다. 이것은 ggplot2의 장점이자 단점이다.\n\n\nggplot: 지도 제작\nggplot: 그래프 제작\n\n\n\n\nsigungu_data &lt;- sigungu_data |&gt; \n  mutate(\n    index_class = case_when(\n      index &lt; 0.2 ~ \"1\",\n      index &gt;= 0.2 & index &lt; 0.5 ~ \"2\",\n      index &gt;= 0.5 & index &lt; 1.0 ~ \"3\",\n      index &gt;= 1.0 & index &lt; 1.5 ~ \"4\",\n      index &gt;= 1.5 ~ \"5\"\n    ),\n    index_class = factor(index_class, levels = as.character(1:5))\n  )\n\nclass_color &lt;- c(\"1\" = \"#d7191c\", \"2\" = \"#fdae61\",\n                 \"3\" = \"#ffffbf\", \"4\" = \"#a6d96a\", \n                 \"5\" = \"#1a9641\")\nggplot() +\n  geom_sf(data = sigungu_data, aes(fill = index_class), show.legend = TRUE) +\n  geom_sf(data = sido_shp, fill = NA, lwd = 0.5) +\n  scale_fill_manual(name = \"Classes\", \n                    labels = c(\"&lt; 0.2\", \"0.2 ~ 0.5\", \"0.5 ~ 1.0\", \n                               \"1.0 ~ 1.5\", \"&gt;= 1.5\"), \n                    values = class_color, drop = FALSE) \n\n\n\n\n\n\n\n\n\n\ndata_sido &lt;- data_sido |&gt; \n  mutate(\n    index_class = case_when(\n      index &lt; 0.2 ~ \"1\",\n      index &gt;= 0.2 & index &lt; 0.5 ~ \"2\",\n      index &gt;= 0.5 & index &lt; 1.0 ~ \"3\",\n      index &gt;= 1.0 & index &lt; 1.5 ~ \"4\",\n      index &gt;= 1.5 ~ \"5\"\n    ),\n    index_class = factor(index_class, levels = as.character(1:5))\n  )\n\nclass_color &lt;- c(\"1\" = \"#d7191c\", \"2\" = \"#fdae61\",\n                 \"3\" = \"#ffffbf\", \"4\" = \"#a6d96a\", \n                 \"5\" = \"#1a9641\")\ndata_sido |&gt; \n  ggplot(aes(x = index, y = fct_reorder(C1_NM, index))) +\n  geom_col(aes(fill = index_class), show.legend = TRUE) +\n  geom_text(aes(label = format(round(index, digits = 3), \n                               nsmall = 3)), hjust = -0.1) +\n  scale_x_continuous(limits = c(0, 1.5)) +\n  scale_fill_manual(name = \"Classes\", \n                    labels = c(\"&lt; 0.2\", \"0.2 ~ 0.5\", \"0.5 ~ 1.0\", \n                               \"1.0 ~ 1.5\", \"&gt;= 1.5\"), \n                    values = class_color, drop = FALSE) +\n  labs(title = \"인구소멸위험지수, 2022년\", \n       x = \"인구소멸위험지수\", \n       y = \"\")\n\n\n\n\n\n\n3.2 반응형 지도\n위에서 사용한 plotly 패키지의 ggplotly() 함수를 활용하면 반응형 지도를 생성할 수 있다. 지도의 코드 중 달라진 것은 둘째 줄 aes()에 text = name_long이 첨가되었다는 것이다. 마우스로 국가를 가리킬 때 이름이 나타날 수 있게 조치한 것이다.\n\nggplotly(world_map)\n\n\n\n\n\n우리나라 지도는 다른 방식으로 반응형으로 만들어 본다. 여기서는 ggiraph 패키지를 사용한다. 처음 사용하는 패키지이므로 인스톨을 먼저 해야 한다. 코드는 크게 세 부분으로 나뉜다.\n\n전반부: 커서를 특정 시군구 위에 올렸을 때 나타나는 정보를 좀 더 다양하게 하려는 조치이다.\n중반부: 실제 지도를 그리는 핵심 코드이다. 산출물에 커서를 올렸을 때 나타나는 정보는 전반부에 작성한 코드가 포함되어 있기 때문에 나타나는 것이다.\n후반부: 커서를 올렸을 때 색이 회색으로 변하게 만들어주는 부가 코드\n\n\nlibrary(ggiraph)\nsigungu_data &lt;- sigungu_data |&gt; \n  mutate(\n    index = format(index, digits = 4, nsmall = 4),\n    my_tooltip = str_c(\"Name: \", SGG1_FNM, \"\\n Index: \", index)\n  )\ngg &lt;- ggplot() +\n  geom_sf_interactive(data = sigungu_data, \n                      aes(fill = index_class, tooltip = my_tooltip, data_id = SGG1_FNM), show.legend = TRUE) +\n  geom_sf(data = sido_shp, fill = NA, lwd = 0.5) +\n  scale_fill_manual(name = \"Classes\", \n                    labels = c(\"&lt; 0.2\", \"0.2 ~ 0.5\", \"0.5 ~ 1.0\", \n                               \"1.0 ~ 1.5\", \"&gt;= 1.5\"), \n                    values = class_color, drop = FALSE) \ngirafe(ggobj = gg) |&gt; \n  girafe_options(\n    opts_hover(css = \"fill: gray\")\n  )\n\n\n\n\n\n그러나 반응형 지도 제작에 가장 널리 쓰이는 것은 leaflet이다. leaflet은 웹 상의 반응형 지도 제작에 특화된 JavaScript 라이브러리이다(https://leafletjs.com/). 이 라이브러리를 R에서 쓸 수 있게 도와주는 래퍼 패키지가 leaflet 패키지이다(https://rstudio.github.io/leaflet/).\n위에서 작성했던 TFR 세계지도를 leaflet 패키지의 다양한 함수와 아규먼트를 활용하여 반응형 지도를 제작해 본다. 코드에 대한 자세한 설명은 생략하니, 구글링과 조교의 도움을 받도록 한다.\n\nlibrary(leaflet)\nbins &lt;- c(0, 1.5, 2.1, 3, 4, 5, Inf)\npal &lt;- colorBin(\"YlOrRd\", domain = world_data$TFR, bins = bins)\nlabels &lt;- sprintf(\"&lt;strong&gt;%s&lt;/strong&gt;&lt;br/&gt;%g\",\n  world_data$name_long, world_data$TFR) |&gt; lapply(htmltools::HTML)\n\nleaflet(world_data) |&gt; \n  addProviderTiles(providers$Esri.WorldTopoMap) |&gt; \n  addPolygons(\n    fillColor = ~pal(TFR),\n    weight =  0.5, \n    opacity = 1,\n    color = \"white\",\n    dashArray = \"3\",\n    fillOpacity = 0.6,\n    highlightOptions = highlightOptions(\n      weight = 5,\n      color = \"#666\",\n      dashArray = \"\",\n      fillOpacity = 0.6,\n      bringToFront = TRUE),\n    label = labels,\n    labelOptions = labelOptions(\n      style = list(\"font-weight\" = \"normal\", padding = \"3px 8px\"),\n      textsize = \"15px\",\n      direction = \"auto\")\n  ) |&gt; \n  addLegend(\n    pal = pal, values = ~TFR, opacity = 0.6, title = NULL,\n    position = \"bottomright\"\n  )\n\n\n\n\n\n이 코드를 잘 활용하면 우리나라 시군구 지도를 완전한 반응형으로 만들 수 있다. 한번 시도해 보면 좋을 것 같다.\n(참고: https://sechangkim.quarto.pub/interactive-dashboard)",
+    "crumbs": [
+      "R 실습",
+      "Lab10: 데이터로 소통하기: 동적, 반응형 시각화"
+    ]
+  },
+  {
+    "objectID": "new_10.html#tables-interactive-and-stylish",
+    "href": "new_10.html#tables-interactive-and-stylish",
+    "title": "Advanced R",
+    "section": "Tables: interactive and stylish",
+    "text": "Tables: interactive and stylish\n\n\nDataTable (https://datatables.net/)\n\nR wrapper package: DT package (https://rstudio.github.io/DT/)\n\n\n\n\nhttps://posit.co/blog/dt-an-r-interface-to-the-datatables-library/"
+  },
+  {
+    "objectID": "new_10.html#tables-dt-examples",
+    "href": "new_10.html#tables-dt-examples",
+    "title": "Advanced R",
+    "section": "Tables: DT examples",
+    "text": "Tables: DT examples"
+  },
+  {
+    "objectID": "new_10.html#tables-dt-examples-1",
+    "href": "new_10.html#tables-dt-examples-1",
+    "title": "Advanced R",
+    "section": "Tables: DT examples",
+    "text": "Tables: DT examples"
+  },
+  {
+    "objectID": "new_10.html#graphs-static-and-extended",
+    "href": "new_10.html#graphs-static-and-extended",
+    "title": "Advanced R",
+    "section": "Graphs: static and extended",
+    "text": "Graphs: static and extended"
+  },
+  {
+    "objectID": "new_10.html#graphs-gganimate-example",
+    "href": "new_10.html#graphs-gganimate-example",
+    "title": "Advanced R",
+    "section": "Graphs: gganimate example",
+    "text": "Graphs: gganimate example"
+  },
+  {
+    "objectID": "new_10.html#graphs-interactive-animated-3d",
+    "href": "new_10.html#graphs-interactive-animated-3d",
+    "title": "Advanced R",
+    "section": "Graphs: interactive, animated, 3D",
+    "text": "Graphs: interactive, animated, 3D\n\n\nJavaScript library\n\nPlotly (https://plotly.com/graphing-libraries/)\nD3 (https://d3js.org/)\nHighcharts (https://www.highcharts.com/)\nECharts (https://echarts.apache.org/)\ndygraphs (https://dygraphs.com/)\n\n\nWrapper packages"
+  },
+  {
+    "objectID": "new_10.html#graphs-plotly-example",
+    "href": "new_10.html#graphs-plotly-example",
+    "title": "Advanced R",
+    "section": "Graphs: plotly example",
+    "text": "Graphs: plotly example\n\n\nPlotly (https://plotly.com/graphing-libraries/)\n\nR wrapper package: plotly package (https://plotly.com/r/)\n\nggplotly() function"
+  },
+  {
+    "objectID": "new_10.html#graphs-plotly-example-1",
+    "href": "new_10.html#graphs-plotly-example-1",
+    "title": "Advanced R",
+    "section": "Graphs: plotly example",
+    "text": "Graphs: plotly example"
+  },
+  {
+    "objectID": "new_10.html#maps-geometric-data",
+    "href": "new_10.html#maps-geometric-data",
+    "title": "Advanced R",
+    "section": "Maps: geometric data",
+    "text": "Maps: geometric data\n\n\nsf package (https://r-spatial.github.io/sf/)"
+  },
+  {
+    "objectID": "new_10.html#maps-geometric-data-1",
+    "href": "new_10.html#maps-geometric-data-1",
+    "title": "Advanced R",
+    "section": "Maps: geometric data",
+    "text": "Maps: geometric data"
+  },
+  {
+    "objectID": "new_10.html#maps-static-a-map-as-a-graph",
+    "href": "new_10.html#maps-static-a-map-as-a-graph",
+    "title": "Advanced R",
+    "section": "Maps: static, a map as a graph",
+    "text": "Maps: static, a map as a graph\n\n\nggplot2 package (https://ggplot2.tidyverse.org/)\n\ngeom_sf()\ngeom_sf_label()\ngeom_sf_text()\ncoord_sf()\nstat_sf()"
+  },
+  {
+    "objectID": "new_10.html#maps-static-a-map-as-a-map",
+    "href": "new_10.html#maps-static-a-map-as-a-map",
+    "title": "Advanced R",
+    "section": "Maps: static, a map as a map",
+    "text": "Maps: static, a map as a map\n\n\ntmap package (https://r-tmap.github.io/tmap/articles/tmap_vv.html)"
+  },
+  {
+    "objectID": "new_10.html#maps-interactive-animated-3d",
+    "href": "new_10.html#maps-interactive-animated-3d",
+    "title": "Advanced R",
+    "section": "Maps: interactive, animated, 3D",
+    "text": "Maps: interactive, animated, 3D\n\n\nPlotly (https://plotly.com/graphing-libraries/)\n\nR wrapper package: plotly package (https://plotly.com/r/)\n\n\n\nLeaflet (https://leafletjs.com/)\n\nR wrapper packag: leaflet (https://rstudio.github.io/leaflet/)\n\n\nrayshader package (https://www.rayshader.com/)"
+  },
+  {
+    "objectID": "new_10.html#maps-leaflet-example",
+    "href": "new_10.html#maps-leaflet-example",
+    "title": "Advanced R",
+    "section": "Maps: leaflet example",
+    "text": "Maps: leaflet example"
+  },
+  {
+    "objectID": "new_10.html#maps-rayshader-example",
+    "href": "new_10.html#maps-rayshader-example",
+    "title": "Advanced R",
+    "section": "Maps: rayshader example",
+    "text": "Maps: rayshader example\n\nhttps://www.rayshader.com/"
+  },
+  {
+    "objectID": "new_10.html#maps-rayshader-example-1",
+    "href": "new_10.html#maps-rayshader-example-1",
+    "title": "Advanced R",
+    "section": "Maps: rayshader example",
+    "text": "Maps: rayshader example"
+  },
+  {
+    "objectID": "new_10.html#maps-rayshader-example-2",
+    "href": "new_10.html#maps-rayshader-example-2",
+    "title": "Advanced R",
+    "section": "Maps: rayshader example",
+    "text": "Maps: rayshader example"
+  },
+  {
+    "objectID": "new_10.html#advanced-interactivity-shiny",
+    "href": "new_10.html#advanced-interactivity-shiny",
+    "title": "Advanced R",
+    "section": "Advanced interactivity: Shiny",
+    "text": "Advanced interactivity: Shiny\n\nhttps://shiny.posit.co/"
+  },
+  {
+    "objectID": "new_10.html#advanced-interactivity-shiny-1",
+    "href": "new_10.html#advanced-interactivity-shiny-1",
+    "title": "Advanced R",
+    "section": "Advanced interactivity: Shiny",
+    "text": "Advanced interactivity: Shiny\n\nWeb publication: https://www.shinyapps.io/"
+  },
+  {
+    "objectID": "new_10.html#advanced-interactivity-shiny-2",
+    "href": "new_10.html#advanced-interactivity-shiny-2",
+    "title": "Advanced R",
+    "section": "Advanced interactivity: Shiny",
+    "text": "Advanced interactivity: Shiny\n\nMy first Shiny app\nSpatial Kernel Density Estimation\n\nhttps://sangillee.shinyapps.io/SpatialKernelDensityEstimation/"
+  },
+  {
+    "objectID": "new_10.html#advanced-modeling",
+    "href": "new_10.html#advanced-modeling",
+    "title": "Advanced R",
+    "section": "Advanced modeling",
+    "text": "Advanced modeling\n\nhttps://www.tidymodels.org/"
+  },
+  {
+    "objectID": "new_10.html#advanced-programming",
+    "href": "new_10.html#advanced-programming",
+    "title": "Advanced R",
+    "section": "Advanced programming",
+    "text": "Advanced programming\n\nhttps://purrr.tidyverse.org/"
+  },
+  {
+    "objectID": "new_10.html#r-and-generative-ai-chatgpt",
+    "href": "new_10.html#r-and-generative-ai-chatgpt",
+    "title": "Advanced R",
+    "section": "R and Generative AI: ChatGPT",
+    "text": "R and Generative AI: ChatGPT\n\nAutomated code generation\nLearning programming concepts\nCreative writing and documentation\nDebugging assistance\nImproved Shiny app development\nAssistance with statistics and data science"
+  },
+  {
+    "objectID": "new_10.html#r-and-generative-ai-chatgpt-1",
+    "href": "new_10.html#r-and-generative-ai-chatgpt-1",
+    "title": "Advanced R",
+    "section": "R and Generative AI: ChatGPT",
+    "text": "R and Generative AI: ChatGPT\n\nAir (https://github.com/soumyaray/air)\nTheOpenAIR (https://openair-lib.org/)\nRTutor (https://github.com/gexijin/RTutor)\naskgpt (https://github.com/JBGruber/askgpt)\ngptstudio (https://github.com/MichelNivard/gptstudio)\ngpttools (https://github.com/JamesHWade/gpttools)\ngptchatteR (https://github.com/isinaltinkaya/gptchatteR)"
+  },
+  {
+    "objectID": "new_10.html#r-and-generative-ai-general",
+    "href": "new_10.html#r-and-generative-ai-general",
+    "title": "Advanced R",
+    "section": "R and Generative AI: General",
+    "text": "R and Generative AI: General\n\n\nGenAI (https://genai.gd.edu.kg/)"
   }
 ]
