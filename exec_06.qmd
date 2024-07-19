@@ -12,8 +12,11 @@ execute:
   warning: false
   error: false
   freeze: auto
+lightbox: true
 editor: visual
 bibliography: references.bib
+editor_options: 
+  chunk_output_type: console
 ---
 
 ## 실습 개요 {.unnumbered}

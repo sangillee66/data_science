@@ -404,7 +404,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#quarto란" id="toc-quarto란" class="nav-link" data-scroll-target="#quarto란"><span class="header-section-number">1</span> Quarto란?</a></li>
   <li><a href="#quarto-다큐먼트의-기본-구조" id="toc-quarto-다큐먼트의-기본-구조" class="nav-link" data-scroll-target="#quarto-다큐먼트의-기본-구조"><span class="header-section-number">2</span> Quarto 다큐먼트의 기본 구조</a>
   <ul class="collapse">
-  <li><a href="#yaml-해더" id="toc-yaml-해더" class="nav-link" data-scroll-target="#yaml-해더"><span class="header-section-number">2.1</span> YAML 해더</a></li>
+  <li><a href="#yaml-헤더" id="toc-yaml-헤더" class="nav-link" data-scroll-target="#yaml-헤더"><span class="header-section-number">2.1</span> YAML 헤더</a></li>
   <li><a href="#코드-청크" id="toc-코드-청크" class="nav-link" data-scroll-target="#코드-청크"><span class="header-section-number">2.2</span> 코드 청크</a></li>
   <li><a href="#마크다운-텍스트" id="toc-마크다운-텍스트" class="nav-link" data-scroll-target="#마크다운-텍스트"><span class="header-section-number">2.3</span> 마크다운 텍스트</a></li>
   </ul></li>
@@ -419,7 +419,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#새로운-quarto-blog-프로젝트-시작하기" id="toc-새로운-quarto-blog-프로젝트-시작하기" class="nav-link" data-scroll-target="#새로운-quarto-blog-프로젝트-시작하기"><span class="header-section-number">4.1</span> 새로운 Quarto Blog 프로젝트 시작하기</a></li>
   <li><a href="#렌더링하여-결과를-살펴보기" id="toc-렌더링하여-결과를-살펴보기" class="nav-link" data-scroll-target="#렌더링하여-결과를-살펴보기"><span class="header-section-number">4.2</span> 렌더링하여 결과를 살펴보기</a></li>
   <li><a href="#구성-요소-수정하기" id="toc-구성-요소-수정하기" class="nav-link" data-scroll-target="#구성-요소-수정하기"><span class="header-section-number">4.3</span> 구성 요소 수정하기</a></li>
-  <li><a href="#블로그를-웹-상에-출판하기" id="toc-블로그를-웹-상에-출판하기" class="nav-link" data-scroll-target="#블로그를-웹-상에-출판하기"><span class="header-section-number">4.4</span> 블로그를 웹 상에 출판하기</a></li>
+  <li><a href="#블로그를-웹-상에-배포하기" id="toc-블로그를-웹-상에-배포하기" class="nav-link" data-scroll-target="#블로그를-웹-상에-배포하기"><span class="header-section-number">4.4</span> 블로그를 웹 상에 배포하기</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -510,13 +510,13 @@ Figure&nbsp;1: Quarto의 기본 구조와 비주얼 에디터
 </div>
 <p><a href="#fig-example" class="quarto-xref">Figure&nbsp;1</a> 의 왼쪽 그림에서 보다 잘 드러나는 것처럼, Quarto 다큐먼트는 크게 세 부분으로 나뉘어진다.</p>
 <ul>
-<li><p>YAML 해더(header)</p></li>
+<li><p>YAML 헤더(header)</p></li>
 <li><p>코드 청크(code chunk)</p></li>
 <li><p>마크다운 텍스트</p></li>
 </ul>
-<section id="yaml-해더" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="yaml-해더"><span class="header-section-number">2.1</span> YAML 해더</h3>
-<p>YAML 해더는 Quarto 다큐먼트의 최상단에 위치하는 것으로, 일종의 메타데이터로 다큐먼트의 전반적인 사항을 관장한다. YAML 해더 부분은 세 개의 대시 부호(- - -)를 통해 다른 부분과 구분된다.</p>
+<section id="yaml-헤더" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="yaml-헤더"><span class="header-section-number">2.1</span> YAML 헤더</h3>
+<p>YAML 헤더는 Quarto 다큐먼트의 최상단에 위치하는 것으로, 일종의 메타데이터로 다큐먼트의 전반적인 사항을 관장한다. YAML 헤더 부분은 세 개의 대시 부호(- - -)를 통해 다른 부분과 구분된다.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -530,7 +530,7 @@ Tip
 <p>YAML은 YAML Ain’t Markup Language의 약자이며, 한글로 ’예믈’이라고 읽는다.</p>
 </div>
 </div>
-<p>YAML 해더의 모든 요소는 기본적으로 <code>key: value</code>의 행태를 띤다. key는 항목이고, value는 해당 항목에 대한 옵션값이다. 위의 예에는 <code>title</code>, <code>format</code>, <code>editor</code>의 세 key가 사용되었는데, 제목은 “Hello, Quarto”이며, 산출 포맷은 HTML이며, quarto 다큐먼트 작성을 비주얼 에디터를 통해 할 것이라는 점을 명시하고 있다.</p>
+<p>YAML 헤더의 모든 요소는 기본적으로 <code>key: value</code>의 행태를 띤다. key는 항목이고, value는 해당 항목에 대한 옵션값이다. 위의 예에는 <code>title</code>, <code>format</code>, <code>editor</code>의 세 key가 사용되었는데, 제목은 “Hello, Quarto”이며, 산출 포맷은 HTML이며, quarto 다큐먼트 작성을 비주얼 에디터를 통해 할 것이라는 점을 명시하고 있다.</p>
 <p>다양한 key를 설정할 수 있으며(<a href="https://quarto.org/docs/reference/formats/html.html" class="uri">https://quarto.org/docs/reference/formats/html.html</a>), 다음의 것들이 중요하다.</p>
 <table class="table">
 <colgroup>
@@ -586,7 +586,7 @@ Tip
 <section id="코드-청크" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="코드-청크"><span class="header-section-number">2.2</span> 코드 청크</h3>
 <p>프로그래밍 언어의 코드가 들어가는 부분이다. R를 사용하는 경우 <code>{r}</code>로 시작한다. 데이터 불러오기, 정리하기, 변형하기, 시각화하기, 탐색하기, 수집하기와 관련된 모든 종류의 코드가 여기에 들어갈 수 있다. 보통 하나의 Quarto 다큐먼트에 다수의 코드 정크가 포함된다. 각 코드 청크 내에서 코드를 실행할 수 있다. 한 단위씩 실행할 때는 <strong>ctrl + enter</strong> 단축기를 사용하지만 한 코드 청크 내 모든 코드를 실행하고자 할 때는 <strong>ctrl + shift + enter</strong> 단축기를 사용한다.</p>
-<p>각 코드 청크의 앞 부분에 해당 코드 정크와 관련된 다양한 옵션을 <code>#|</code> 형태로 삽입할 수 있다. YAML 해더에서처럼, <code>key: value</code>의 행태를 띤다. 가장 중요한 옵션은 코드 청크의 내용이나 실행 결과 등이 산출물에 어떻게 표현되는지를 결정하는 것들이다. 다음의 표는 코드를 실행할지의 여부, 코드를 보여줄지의 여부, 코드의 결과를 보여줄지의 여부, 생성되는 플롯을 보여줄지의 여부, 메시지나 경고문을 보여줄지의 여부 등을 관장하는 다양한 옵션을 정리한 것이다.</p>
+<p>각 코드 청크의 앞 부분에 해당 코드 정크와 관련된 다양한 옵션을 <code>#|</code> 형태로 삽입할 수 있다. YAML 헤더에서처럼, <code>key: value</code>의 행태를 띤다. 가장 중요한 옵션은 코드 청크의 내용이나 실행 결과 등이 산출물에 어떻게 표현되는지를 결정하는 것들이다. 다음의 표는 코드를 실행할지의 여부, 코드를 보여줄지의 여부, 코드의 결과를 보여줄지의 여부, 생성되는 플롯을 보여줄지의 여부, 메시지나 경고문을 보여줄지의 여부 등을 관장하는 다양한 옵션을 정리한 것이다.</p>
 <table class="table">
 <colgroup>
 <col style="width: 24%">
@@ -677,7 +677,7 @@ Tip
 </section>
 <section id="마크다운-텍스트" class="level3" data-number="2.3">
 <h3 data-number="2.3" class="anchored" data-anchor-id="마크다운-텍스트"><span class="header-section-number">2.3</span> 마크다운 텍스트</h3>
-<p>워드프로세서처럼 텍스트를 작성한다. 섹션 해더, 하이퍼링크(hyperlink), 이미지 등을 지정할 수 있고, 인라인 코드 청크(inline code chunk)도 삽입할 수 있다. 마크다운 텍스트의 작성에 비주얼 에디터는 큰 역할을 한다. 비주얼 에디터는 마크다운 언어의 사용자 편이성을 한번 더 강화한 것으로 볼 수 있다.</p>
+<p>워드프로세서처럼 텍스트를 작성한다. 섹션 헤더, 하이퍼링크(hyperlink), 이미지 등을 지정할 수 있고, 인라인 코드 청크(inline code chunk)도 삽입할 수 있다. 마크다운 텍스트의 작성에 비주얼 에디터는 큰 역할을 한다. 비주얼 에디터는 마크다운 언어의 사용자 편이성을 한번 더 강화한 것으로 볼 수 있다.</p>
 <p>비주얼 에디터는 다음의 메뉴로 구성된다. 워드프로세서와 비슷한 형태를 가지고 있음을 알 수 있다. 많이 사용되는 기능은 아이콘을 통해 전면에 배치되어 있다.</p>
 <p><a href="https://quarto.org/docs/visual-editor/images/visual-editing-toolbar.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="https://quarto.org/docs/visual-editor/images/visual-editing-toolbar.png" class="img-fluid"></a></p>
 <p>포맷(Format), 삽입(Insert), 테이블(Table) 메뉴 속에 다양한 하위 기능들이 포함되어 있다. Quarto를 마스트하는데 비주얼 에디터의 기능을 숙달하는 것이 필수적이다.</p>
@@ -815,7 +815,7 @@ Figure&nbsp;2: 렌더링 결과
 <p>다음의 절차에 따라 새로운 포스트를 생성해 본다.</p>
 <ul>
 <li><p>posts 디렉토리 아래에 새로운 디렉토리를 생성한다. 이름은 날짜와 주제가 결합된 형태로 하면 좋다.</p></li>
-<li><p>새로운 디렉토리에 index.qmd 파일을 생성한다. 아래와 같이 YAML 해더를 수정하고, 실습 1에서처럼 새로운 포스트를 작성한다.</p></li>
+<li><p>새로운 디렉토리에 index.qmd 파일을 생성한다. 아래와 같이 YAML 헤더를 수정하고, 실습 1에서처럼 새로운 포스트를 작성한다.</p></li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
@@ -827,8 +827,8 @@ Figure&nbsp;2: 렌더링 결과
 </div>
 </section>
 </section>
-<section id="블로그를-웹-상에-출판하기" class="level3" data-number="4.4">
-<h3 data-number="4.4" class="anchored" data-anchor-id="블로그를-웹-상에-출판하기"><span class="header-section-number">4.4</span> 블로그를 웹 상에 출판하기</h3>
+<section id="블로그를-웹-상에-배포하기" class="level3" data-number="4.4">
+<h3 data-number="4.4" class="anchored" data-anchor-id="블로그를-웹-상에-배포하기"><span class="header-section-number">4.4</span> 블로그를 웹 상에 배포하기</h3>
 <p>완성된 개인 블로그를 다음의 절차에 따라 웹에 출판한다. 여기서는 <a href="https://posit.co/">Posit</a>에서 제공하는 무료 출판 사이트인 <a href="https://quartopub.com/">Quarto Pub</a>을 활용한다.</p>
 <ul>
 <li><p><a href="https://quartopub.com/">Quarto Pub</a>에 접속하여 계정을 만든다.</p></li>
@@ -1424,7 +1424,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","loop":false});
+<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

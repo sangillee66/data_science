@@ -12,6 +12,7 @@ execute:
   warning: false
   error: false
   freeze: auto
+lightbox: true
 editor: visual
 bibliography: references.bib
 editor_options: 

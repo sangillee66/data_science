@@ -78,6 +78,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -184,7 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">실습 개요</span></a>
+ <span class="menu-text">R과 RStudio 소개</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -440,7 +443,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 18, 2024</p>
+      <p class="date-modified">July 19, 2024</p>
     </div>
   </div>
     
@@ -630,7 +633,7 @@ $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setos
 <div id="fig-wpp-1" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-wpp-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/clipboard-698029418.png" class="img-fluid figure-img">
+<a href="images/clipboard-698029418.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1"><img src="images/clipboard-698029418.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-wpp-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: WPP 데이터 홈페이지
@@ -642,7 +645,7 @@ Figure&nbsp;1: WPP 데이터 홈페이지
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/clipboard-2503548496.png" class="img-fluid figure-img"></p>
+<p><a href="images/clipboard-2503548496.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="WPP 데이터 선택"><img src="images/clipboard-2503548496.png" class="img-fluid figure-img" alt="WPP 데이터 선택"></a></p>
 <figcaption>WPP 데이터 선택</figcaption>
 </figure>
 </div>
@@ -1064,7 +1067,7 @@ $ rel_f_65   &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,
 <div id="fig-nycflights13-1" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-nycflights13-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://r4ds.hadley.nz/diagrams/relational.png" class="img-fluid figure-img">
+<a href="https://r4ds.hadley.nz/diagrams/relational.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-glightbox="description: .lightbox-desc-3"><img src="https://r4ds.hadley.nz/diagrams/relational.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nycflights13-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: <code>nycflights13</code> 데이터(<a href="https://github.com/tidyverse/nycflights13" class="uri">https://github.com/tidyverse/nycflights13</a>)
@@ -1256,6 +1259,11 @@ Figure&nbsp;2: <code>nycflights13</code> 데이터(<a href="https://github.com/t
 <p><code>airports</code>의 경우만 왜 <code>join_by()</code>라는 아규먼트가 사용되었는데, 이 경우에는 공통키의 이름이 동일하지 않기 때문이다. 즉, <code>flights2</code> 데이터의 origin 컬럼과 <code>airports</code> 데이터의 faa가 공통키임을 지정해 주어야 하는 것이다.</p>
 
 
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-1">Figure&nbsp;1: WPP 데이터 홈페이지</span>
+<span class="glightbox-desc lightbox-desc-2">WPP 데이터 선택</span>
+<span class="glightbox-desc lightbox-desc-3">Figure&nbsp;2: <code>nycflights13</code> 데이터(<a href="https://github.com/tidyverse/nycflights13" class="uri">https://github.com/tidyverse/nycflights13</a>)</span>
+</div>
 </section>
 </section>
 </section>
@@ -1837,6 +1845,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":false,"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 

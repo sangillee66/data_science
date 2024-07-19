@@ -78,6 +78,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -425,8 +428,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#graphs-페이지" id="toc-graphs-페이지" class="nav-link" data-scroll-target="#graphs-페이지"><span class="header-section-number">5.3</span> Graphs 페이지</a></li>
   <li><a href="#tables-페이지" id="toc-tables-페이지" class="nav-link" data-scroll-target="#tables-페이지"><span class="header-section-number">5.4</span> Tables 페이지</a></li>
   <li><a href="#maps-페이지" id="toc-maps-페이지" class="nav-link" data-scroll-target="#maps-페이지"><span class="header-section-number">5.5</span> Maps 페이지</a></li>
-  <li><a href="#대시보드-웹-상에-출판하기" id="toc-대시보드-웹-상에-출판하기" class="nav-link" data-scroll-target="#대시보드-웹-상에-출판하기"><span class="header-section-number">5.6</span> 대시보드 웹 상에 출판하기</a></li>
   </ul></li>
+  <li><a href="#대시보드를-웹상에-배포하기" id="toc-대시보드를-웹상에-배포하기" class="nav-link" data-scroll-target="#대시보드를-웹상에-배포하기"><span class="header-section-number">6</span> 대시보드를 웹상에 배포하기</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -453,7 +456,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">May 13, 2024</p>
+      <p class="date-modified">July 19, 2024</p>
     </div>
   </div>
     
@@ -473,20 +476,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>대시보드는 기본적으로 다섯 가지의 구성요소로 이루어진다. 각각은 메인 바디, 헤더, 내비게이터, 사이드바, 푸터이다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/layout.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><a href="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/layout.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/#tabset"><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/layout.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/#tabset"></a></p>
 <figcaption><a href="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/#tabset" class="uri">https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/#tabset</a></figcaption>
 </figure>
 </div>
-<p>첫째, 메인 바디(main body)는 대시보드의 핵심 요소이다. 메인 바디는 카드(card)라고 불리는 기본 단위들로 구성된다. 개별 카드는 다양한 내용 요소(텍스트, 그래프, 표, 지도, 밸류박스 등)를 가질 수 있다. 즉, 어떤 카드 속에는 그래프가 들어가며, 어떤 카드 속에는 지도가 들어간다. 이러한 카드들은 특정한 레이아웃 요소(페이지, 행, 열, 탭셋 등)를 통해 메인 바디에 배열된다. 페이지(page)는 대시보드 레이아웃 요소 중 최상위 레벨의 것이다. 개별 페이지는 다수의 행(row) 혹은 열(column)로 구성된다. 행 혹은 열을 또다른 행 혹은 열이 아닌 탭 클릭 방식으로 분할하고 싶을 때 탭셋(tabset)이 사용된다.</p>
+<p>첫째, 메인 바디(main body)는 대시보드의 핵심 요소이다. 메인 바디는 카드(card)라고 불리는 기본 단위들로 구성된다. 개별 카드는 다양한 내용 요소(텍스트, 그래프, 표, 지도, 밸류박스 등)를 가질 수 있다. 즉, 어떤 카드 속에는 그래프가 들어가며, 어떤 카드 속에는 지도가 들어간다. 이러한 카드들은 특정한 레이아웃 요소(페이지, 행, 열, 탭셋 등)를 통해 메인 바디에 배열된다. 페이지(page)는 대시보드 레이아웃 요소 중 최상위 레벨인데, 개별 페이지는 다수의 행(row) 혹은 열(column)로 구성된다. 행 혹은 열을 또다른 행 혹은 열이 아닌 탭 클릭 방식으로 분할하고 싶을 때 탭셋(tabset)이 사용된다.</p>
 <p>둘째, 헤더(header)는 대시보드의 가장 중요한 메타 정보(로고, 제목, 저자 등)를 포함한다.</p>
 <p>셋째, 내비게이터(navigator)는 최상위 레이아웃인 페이지간 이동을 통제한다.</p>
 <p>넷째, 사이드바(sidebar)는 주로 사용자의 인풋(input)을 받을 때 사용되는 것으로, 동적인 대시보드에서 주로 사용된다. Quarto는 사이드바 외에 툴바(toolbar)와 카드인풋(card input)과 같은 옵션을 제공한다.</p>
-<p>다섯째, 푸터(footer)는 해더와 유사한 기능을 하는데, 주로 부차적인 매타 정도를 포함한다.</p>
+<p>다섯째, 푸터(footer)는 헤더와 유사한 기능을 하는데, 주로 부차적인 매타 정도를 포함한다.</p>
 <p>다섯개의 구성 요소 중 가장 중요한 것은 메인 바디, 해더, 내비게이터이다. Quarto는 헤더와 내비게이터를 통합한 내비게이션바(navigation bar)를 제공한다. 사이드바는 <code>Shiny</code> 페키지를 활용한 동적인 대시보드에서는 매우 중요하지만, 이번 실습에서는 사용하지 않는다. 푸터는 가장 지엽적인 요소이다.</p>
 <p>다음의 대시보드를 살펴보자.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://quarto.org/docs/dashboards/examples/thumbnails/customer-churn-dashboard.png" class="img-fluid figure-img"></p>
+<p><a href="https://quarto.org/docs/dashboards/examples/thumbnails/customer-churn-dashboard.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="https://quarto.org/docs/dashboards/"><img src="https://quarto.org/docs/dashboards/examples/thumbnails/customer-churn-dashboard.png" class="img-fluid figure-img" alt="https://quarto.org/docs/dashboards/"></a></p>
 <figcaption><a href="https://quarto.org/docs/dashboards/" class="uri">https://quarto.org/docs/dashboards/</a></figcaption>
 </figure>
 </div>
@@ -529,7 +532,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>위와 같이 설정하면 다음과 같은 결과를 얻을 수 있다. Row의 경우는 <code>{height}</code> 태그를 통해서, Column의 경우는 <code>{width}</code>태그를 통해 상대적인 크기를 설정할 수 있다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><a href="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-glightbox="description: .lightbox-desc-3" title="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/"><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/"></a></p>
 <figcaption><a href="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/" class="uri">https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/</a></figcaption>
 </figure>
 </div>
@@ -557,10 +560,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/tabset1.png" class="img-fluid"></p>
+<p><a href="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/tabset1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/tabset1.png" class="img-fluid"></a></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/tabset2.png" class="img-fluid"></p>
+<p><a href="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/tabset2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/tabset2.png" class="img-fluid"></a></p>
 </div>
 </div>
 </div>
@@ -598,10 +601,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card4.png" class="img-fluid"></p>
+<p><a href="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card4.png" class="img-fluid"></a></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card5.png" class="img-fluid"></p>
+<p><a href="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card5.png" class="img-fluid"></a></p>
 </div>
 </div>
 </div>
@@ -632,7 +635,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>위와 같이 설정하면 다음과 같은 결과를 얻을 수 있다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/sidebar.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><a href="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/sidebar.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" data-glightbox="description: .lightbox-desc-8" title="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/"><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/sidebar.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/"></a></p>
 <figcaption><a href="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/" class="uri">https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/</a></figcaption>
 </figure>
 </div>
@@ -642,7 +645,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="4" class="anchored" data-anchor-id="카드와-내용-요소"><span class="header-section-number">4</span> 카드와 내용 요소</h2>
 <p>카드(card)란 특정한 내용 요소(텍스트, 벨류박스, 테이블, 그래프, 지도 등)를 포함하고 있는, 대시보드의 가장 기본적인 단위이다. 다음의 두 가지 사항이 중요하다.</p>
 <ul>
-<li><p>카드의 제목이 중요하다. 완성된 대시보드 상에 등장하기 때문에 사용자가 이해하기 쉬운 제목이 부여되어야 한다.</p></li>
+<li><p>카드의 제목이 중요하다. 완성된 대시보드 상에 등장하기 때문에 이해하기 쉬운 제목이 부여되어야 한다.</p></li>
 <li><p>내용 요소에 따라 카드를 작성하는 방법이 조금 다르다.</p></li>
 </ul>
 <p>내용 요소 제작의 세세한 사항은 아래의 “예시 대시보드 만들기”에서 확인한다.</p>
@@ -652,7 +655,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="테이블" class="level3" data-number="4.2">
 <h3 data-number="4.2" class="anchored" data-anchor-id="테이블"><span class="header-section-number">4.2</span> 테이블</h3>
-<p>Quarto는 테이블 하나를 디스플레이하는 코드 청크를 하나의 카드로 인식한다. 테이블 카드의 제목은 코드 청크 내의 <code>#| title:</code> 옵션을 통해 부여된다. <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html"><code>knitr</code> 패키지</a>의 <code>kable()</code> 함수, <a href="https://rstudio.github.io/DT/"><code>DT</code> 패키지</a>의 <code>datatable()</code> 함수 등을 이용해 테이블 카드를 생성한다.</p>
+<p>Quarto는 테이블 하나를 디스플레이하는 코드 청크를 하나의 카드로 인식한다. 테이블 카드의 제목은 코드 청크 내의 <code>#| title:</code> 옵션을 통해 부여된다. <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html"><code>knitr</code> 패키지</a>의 <code>kable()</code> 함수, <a href="https://gt.rstudio.com/">gt 패키지</a>의 <code>gt()</code> 함수, <a href="https://rstudio.github.io/DT/"><code>DT</code> 패키지</a>의 <code>datatable()</code> 함수 등을 이용해 테이블 카드를 생성한다.</p>
 </section>
 <section id="지도" class="level3" data-number="4.3">
 <h3 data-number="4.3" class="anchored" data-anchor-id="지도"><span class="header-section-number">4.3</span> 지도</h3>
@@ -665,7 +668,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="밸류박스" class="level3" data-number="4.5">
 <h3 data-number="4.5" class="anchored" data-anchor-id="밸류박스"><span class="header-section-number">4.5</span> 밸류박스</h3>
 <p>요약적 수치를 큰 박스 속에 나타내는 것을 밸류박스(value box)라고 하는데, 코드 청크로 표현하지만 형식은 조금 다르다. <code>#| content: valuebox</code>라는 옵션이 반드시 포함되야 하며, 제목을 지정하기 위해 <code>#| title:</code> 옵션도 필요하다. 또한 리스트를 이용해 아이콘(icon), 컬러(color), 수치(value)를 지정해야 한다.</p>
-<p>아이콘은 <a href="https://icons.getbootstrap.com/">부트스트랩 아이콘(bootstrap icon)</a>이 사용된다. 적절한 아이콘을 찾고 그 이름을 <code>#| title:</code> 옵션을 통해 설정하는 것이 중요하다.</p>
+<p>아이콘은 <a href="https://icons.getbootstrap.com/">부트스트랩 아이콘(bootstrap icon)</a>이 사용된다. 적절한 아이콘을 찾고 그 이름을 <code>icon =</code> 옵션을 통해 설정하는 것이 중요하다.</p>
 <p>모든 컬러가 다 사용가능한 것은 아니다. 아래의 표를 참조하여 컬러를 설정해야 한다.</p>
 <table class="table">
 <thead>
@@ -879,8 +882,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>() <span class="sc">|&gt;</span>  </span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="대시보드-웹-상에-출판하기" class="level3" data-number="5.6">
-<h3 data-number="5.6" class="anchored" data-anchor-id="대시보드-웹-상에-출판하기"><span class="header-section-number">5.6</span> 대시보드 웹 상에 출판하기</h3>
+</section>
+<section id="대시보드를-웹상에-배포하기" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="대시보드를-웹상에-배포하기"><span class="header-section-number">6</span> 대시보드를 웹상에 배포하기</h2>
 <p>블로그와 마찬가지로 다음의 절차에 따라 완성된 대시보드를 웹 상에 출판한다. 여기서는 <a href="https://posit.co/">Posit</a>에서 제공하는 무료 출판 사이트인 <a href="https://quartopub.com/">Quarto Pub</a>을 활용한다.</p>
 <ul>
 <li><p><a href="https://quartopub.com/">Quarto Pub</a>에 접속하여 계정을 만든다.</p></li>
@@ -890,7 +894,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 
 
-</section>
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-1"><a href="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/#tabset" class="uri">https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/#tabset</a></span>
+<span class="glightbox-desc lightbox-desc-2"><a href="https://quarto.org/docs/dashboards/" class="uri">https://quarto.org/docs/dashboards/</a></span>
+<span class="glightbox-desc lightbox-desc-3"><a href="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/" class="uri">https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/</a></span>
+<span class="glightbox-desc lightbox-desc-8"><a href="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/" class="uri">https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/</a></span>
+</div>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -1470,6 +1479,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","loop":false,"descPosition":"bottom","selector":".lightbox"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 

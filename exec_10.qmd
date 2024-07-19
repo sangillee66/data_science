@@ -12,6 +12,7 @@ execute:
   warning: false
   error: false
   freeze: auto
+lightbox: true
 editor: visual
 bibliography: references.bib
 editor_options: 
@@ -20,13 +21,13 @@ editor_options:
 
 ## 실습 개요 {.unnumbered}
 
-이번 실습은 대시보드의 구성 요소로 활용할 수 있는 다양한 시각화 기법을 익히는 것이다. 우리는 지금까지 도표(차트, 플롯, 그래프, 테이블)를 중심으로 데이터 시각화 기법을 공부하였다. 특히 `ggplot2` 패키지는 이러한 과정에서 핵심적인 역할을 했다. 그런데 지금까지의 모든 도표는 정적(static) 이라는 특징이 있다. 많은 경우 도표는 정적으로 표현될 수 밖에 없으며, 또한 많은 경우 도표는 정적인 것으로 충분하며, 어떤 경우에는 동적인 것보다 더 낳다.
+이번 실습은 대시보드의 구성 요소로 활용할 수 있는 다양한 시각화 기법을 익히는 것이다. 우리는 지금까지 도표(차트, 플롯, 그래프, 테이블)를 중심으로 데이터 시각화 기법을 다루었다. 특히 `ggplot2` 패키지는 이러한 과정에서 핵심적인 역할을 했다. 그런데 지금까지의 모든 도표는 정적(static) 이라는 특징이 있다. 많은 경우 도표는 정적으로 표현될 수 밖에 없으며, 또한 많은 경우 도표는 정적인 것으로 충분하며, 어떤 경우에는 동적인 것보다 더 낳다.
 
-소통을 위한 시각화 재료로서 정적인 도표가 가지는 절대적인 중요성에도 불구하고, 상호작용성(interactivity)과 역동성(animatedness)이 부가된 도표는 어떤 상항에서 소통의 본질적 가치를 고양하는데 많은 도움을 줄 수 있다.
+소통을 위한 시각화 재료로서 정적인 도표가 가지는 절대적인 중요성에도 불구하고, 상호작용성(interactivity)과 역동성(animatedness)이 부가된 도표는 어떤 상항에서는 소통의 본질적 가치를 고양하는데 많은 도움을 줄 수 있다.
 
 더 나아가 지금까지는 시각적 도구로서 그래프에 집중한 경향이 있다. 시각적 도구로서 지도(maps)가 가지는 가치에도 불구하고 그래프에 비해 복잡한 측면이 있기 때문에 지금까지 다루지 않았다. 그러나, "지도는 텍스트, 테이블, 챠트와 같은 것들 보다 훨씬 더 효과적으로 정보를 전달할 수 있다."[@dougherty2021]
 
-`tidyverse` 패키지는 기본이고, `gapminder` 데이터를 실습의 여러 곳에서 활용할 것이다.
+`gapminder` 데이터를 실습의 여러 곳에서 활용할 것이다.
 
 ```{r}
 library(tidyverse)
@@ -49,17 +50,23 @@ datatable(gapminder)
 
 </br>
 
-결과를 좀 더 크게 보기 위해, Render 버튼 바로 오른편에 있는 아이콘을 클릭해 Chunk Output in Console를 선택할 수 있다. 결과 테이블을 이리저리 살펴본다. 언뚯 보면 View() 함수를 활용해 데이터프레임을 살펴보는 것과 유사한 것처럼 보이지만, 부가적인 기능을 제공한다.
+결과를 좀 더 크게 보기 위해, Render 버튼 바로 오른편에 있는 아이콘을 클릭해 Chunk Output in Console를 선택할 수 있다. 결과 테이블을 이리저리 살펴본다. 언뚯 보면 View() 함수를 활용해 데이터프레임을 살펴보는 것과 유사한 것처럼 보이지만, 부가적인 기능이 제공된다.
 
 `DT` 패키지는 `DataTables`라고 하는 JavaScript 라이브러리(<https://datatables.net/>)에 기반하고 있다. 즉, `DT` 패키지는 `DataTables`의 래퍼(wrapper) 패키지이다. `DT` 패키지는 테이블의 상호작용성과 관련하여 몇 가지 기능을 제공한다.
 
 -   Pagination: 페이지를 이동할 수 있는 기능
 
--   Instant search: 즉각적인 찾기 기능(Search에 타이핑하기 시작하면 즉각즉으로 검색 결과 보여줌)
+-   Instant search: 즉각적인 찾기 기능(Search에 타이핑하기 시작하면 즉각적으로 검색 결과 보여줌)
 
 -   Multi-column ordering: 다중 컬럼 정렬 기능(컬럼 하나를 선택한 후 ctrl을 누른 상태에서 다른 컬럼을 선택)
 
-그러나 `datatable()` 함수의 다양한 아규먼트를 활용하면 테이블의 시각성 및 상호작용성을 보다 향상시킬 수 있다. 그 중 몇 가지 기능을 여기에서 살펴본다. 다음의 웹사이트를 참고할 수 있다.
+-   Filtering: 값을 정렬할 수 있는 기능
+
+-   Editable: 셀 값을 수정할 수 있는 기능
+
+-   Buttons: 셀 숨기기, CSV, PDF, XLSX 등의 확장자로 내보내기 등을 수행하는 버튼 생성 기능
+
+그 중 몇 가지 기능을 여기에서 살펴본다. 다음의 웹사이트를 참고할 수 있다.
 
 <https://rstudio.github.io/DT/>
 
@@ -68,7 +75,7 @@ datatable(gapminder)
 `datatable` 함수의 `class` 아규먼트를 통해 테이블의 외관을 바꿀 수 있다. 다음과 같은 옵션이 가능하다.
 
 | Class name     | Description                                                          |
-|----------------|----------------------------------------------------------------------|
+|------------------|------------------------------------------------------|
 | `display`      | `stripe`, `hover`, `row-border`, `order-column`을 동시 적용한 디폴트 |
 | `cell-border`  | 모든 셀의 상하좌우에 경계선 표시                                     |
 | `compact`      | 여백 축소                                                            |
@@ -120,7 +127,23 @@ datatable(head(gapminder), editable = "cell")
 ```{r}
 datatable(gapminder, filter = "top", 
           options = list(
-            pageLength = 5, autoWidth = TRUE
+            pageLength = 5, 
+            autoWidth = TRUE
+          ))
+```
+
+### 버튼 기능
+
+`extenstion`에 Buttons, `dom`에 Bftip, `buttons`에 `c("copy", "excel", "pdf", "print")`를 입력하면 버튼 기능을 활성화할 수 있다. 각 아규먼트가 무엇을 의미하는지는 다음의 사이트([https://datatables.net/extensions/buttons/](#0))를 참고할 수 있다.
+
+```{r}
+datatable(gapminder, filter = "top",
+          extensions = "Buttons",
+          options = list(
+            pageLength = 5,
+            autoWidth = TRUE,
+            dom = "Bftip",
+            buttons = c("copy", "excel", "pdf", "print")
           ))
 ```
 
@@ -147,7 +170,7 @@ gapminder |>
 
 </br>
 
-줌(zoom), 팬(pan), 박스 선택(box select), 라소 선택(Lasso select), 줌인(zome in), 줌 아웃(zoom out) 등과 같은 상호작용 기능을 확인한다. 또 그래프 상의 데이터 포인트 위에 마우스를 올리면 `text` 아규먼트를 통해 설정한 내용을 볼 수 있다. 그리고 범례를 클릭하면 특정 continent의 국가를 나타나지 않게 할 수 있다.
+줌(zoom), 팬(pan), 박스 선택(box select), 라소 선택(Lasso select), 줌인(zome in), 줌 아웃(zoom out) 등과 같은 상호작용 기능을 확인할 수 있다. 또 그래프 상의 데이터 포인트 위에 마우스를 올리면 `text` 아규먼트를 통해 설정한 내용을 볼 수 있다. 그리고 범례를 클릭하면 특정 continent의 국가를 나타나지 않게 할 수 있다.
 
 이와 같이 `plotly` 패키지를 직접 사용하면 다양한 기능을 활용할 수 있겠지만, `plotly` 패키지가 제공하는 `ggplotly()` 함수를 활용하면 `ggplot2`로 만들어진 그래프를 단숨에 `plotly` 그래프로 바꿀 수 있다. 물론 정확히 같지는 않다.
 
@@ -198,7 +221,7 @@ P
 
 이 그래프는 두 변수 간에 양적인 관련성이 있다는 사실은 명백히 보여주지만, 데이터 변형의 측면에서는 잘못된 것이다. 모든 연도(1952\~2007년간 5년 단위)가 나타나 있어서 한 국가가 그래프에 12번 등장한다.
 
-이를 극복하는 `ggplot2` 패키지의 `facet_wrap()` 함수를 활용하는 것이다.
+이를 해결하기 위해 `ggplot2` 패키지의 `facet_wrap()` 함수를 활용한다.
 
 ```{r}
 P + facet_wrap(~year)
@@ -239,7 +262,7 @@ P + transition_time(year) +
 
 ggplot2 패키지를 이용하여 정적 지도를 그려본다. 데이터는 지난 실습에서 사용한 WPP 2022(World Population Prospects 2022)이다. 2024년 전세계 국가별 TFR(Total Fertility Rate, 합계출산율) 지도를 그려본다.
 
-일반적으로 지도는 형상 데이터와 속성 데이터를 결합해야만 제작할 수 있다. 여기서 형상 데이터는 전세계 국가 경계 데이터이고, 속성 데이터는 TFR이 포함된 WPP 2022 데이터이다. 형상 데이터는 `spData` 패키지에 들어 있는 world를 사용한다. 이러한 형상 데이터를 다루는데 가장 널리 사용되고 있는 중요한 것이 `sf` 패키지(<https://r-spatial.github.io/sf/>)이다. 가능한 벡터 형식의 데이터는 `sf` 패키지의 `st_as_sf()` 함수를 통해 sf 객체로 변환하는 것이 좋다.
+일반적으로 지도는 형상 데이터와 속성 데이터를 결합해야만 제작할 수 있다. 여기서 형상 데이터는 전세계 국가 경계 데이터이고, 속성 데이터는 TFR이 포함된 WPP 2022 데이터이다. 형상 데이터는 `spData` 패키지에 들어 있는 world를 사용한다. 이러한 형상 데이터를 다루는데 있어 거의 표준처럼 사용되고 있는 것이 `sf` 패키지(<https://r-spatial.github.io/sf/>)이다. 벡터 형식의 데이터는 `sf` 패키지의 `st_as_sf()` 함수를 통해 sf 객체로 변환하는 것이 좋다.
 
 ```{r}
 library(spData)
@@ -295,7 +318,7 @@ korea_sgg <- korea_sgg |>
   st_as_sf()
 ```
 
-그런데 파일을 열어보고서 경악한다. 행정구역코드가 없다. 그래서 이 방법을 포기한다. 행정구역 파일은 통계청의 [통계지리정보서비스](https://sgis.kostat.go.kr/)에서 구할 수 있다. 다운받는 방법을 익히면 좋겠지만, 시간 절약을 위해 다운받아 정리한 파일을 그냥 제공한다. 프로젝트 폴더에 파일을 저장한 후, 아래의 코드를 통해 불러온다.
+그런데 파일을 열어보고서 경악한다. 행정구역코드가 없다. 그래서 이 방법은 포기한다. 행정구역 파일은 통계청의 [통계지리정보서비스](https://sgis.kostat.go.kr/)에서 구할 수 있다. 다운받는 방법을 익히면 좋겠지만, 시간 절약을 위해 다운받아 정리한 파일을 그냥 제공한다. 프로젝트 폴더에 파일을 저장한 후, 아래의 코드를 통해 불러온다.
 
 ```{r}
 #| output: false
@@ -303,7 +326,7 @@ sido_shp <- st_read("sido.shp", options = "ENCODING=CP949")
 sigungu_shp <- st_read("sigungu.shp", options = "ENCODING=CP949")
 ```
 
-시군구 경계 파일을 그려본다. 가장 사랑하는 지도 패키지 `tmap`을 오로지 여기서만 한번 사용한다. 처음 사용하는 것이니, 인스톨을 먼저 해야한다. `qtm()` 함수는 가장 빠르게 지도를 그려준다.
+시군구 경계 파일을 그려본다. 지도 제작 전문 패키지인 [`tmap`](https://r-tmap.github.io/tmap/)의 `qtm()` 함수를 이용하여 시군구 경계에 대한 지도를 빠르게 그려본다. 좀 더 복잡한 `tmap`의 문법을 사용한 지도 제작은 맨 뒤에서 다루기로 한다.
 
 ```{r}
 library(tmap)
@@ -337,7 +360,7 @@ sigungu_data <- sigungu_data |>
       index >= 1.0 & index < 1.5 ~ "4",
       index >= 1.5 ~ "5"
     ),
-    index_class = factor(index_class, levels = as.character(1:5))
+    index_class = fct(index_class, levels = as.character(1:5))
   )
 
 class_color <- c("1" = "#d7191c", "2" = "#fdae61",
@@ -354,7 +377,7 @@ ggplot() +
 
 ### 반응형 지도
 
-위에서 사용한 `plotly` 패키지의 `ggplotly()` 함수를 활용하면 반응형 지도를 생성할 수 있다. 지도의 코드 중 달라진 것은 둘째 줄 `aes()`에 `text = name_long`이 첨가되었다는 것이다. 마우스로 국가를 가리킬 때 이름이 나타날 수 있게 조치한 것이다.
+위에서 사용한 `plotly` 패키지의 `ggplotly()` 함수를 활용하면 반응형 지도를 생성할 수 있다. 앞의 코드 둘째 줄에 `aes()`에 `text = name_long`이 설정되어 있는데, 마우스로 국가를 가리킬 때 이름이 나타날 수 있게 조치한 것이다.
 
 ```{r}
 ggplotly(world_map)
@@ -362,7 +385,7 @@ ggplotly(world_map)
 
 지도 위에서 `plotly` 가 제공하는 다양한 기능을 적용해 볼 필요가 있다. 반응형 그래프에 비해 반응형 지도의 유용성이 더 높아 보인다.
 
-우리나라 지도는 다른 방식으로 반응형으로 만들어 본다. 여기서는 `ggiraph` 패키지를 사용한다. 처음 사용하는 패키지이므로 인스톨을 먼저 해야 한다. 코드의 전반부는 커서를 특정 시군구 위에 올렸을 때 나타나는 정보를 좀 더 다양하게 하려는 조치이다. 중간의 코드가 핵심인데, 찬찬히 살펴보면 그렇게 복잡하지 않다. 마지막은 완전히 엑스트라한 것인데, 커서를 특정 시군구 위에 올렸을 때 색이 회색으로 변하게 만들기 위한 것이다.
+우리나라 지도는 다른 방식으로 반응형으로 만들어 본다. 여기서는 `ggiraph` 패키지를 사용한다. 처음 사용하는 패키지이므로 인스톨을 먼저 해야 한다. 코드의 전반부는 커서를 특정 시군구 위에 올렸을 때 나타나는 정보를 좀 더 다양하게 하려는 조치이다. 중간의 코드가 핵심인데, 찬찬히 살펴보면 그렇게 복잡하지 않다. 마지막은 완전히 지엽적인 것인데, 커서를 특정 시군구 위에 올렸을 때 색이 회색으로 변하게 하기 위한 것이다.
 
 ```{r}
 library(ggiraph)
@@ -372,13 +395,19 @@ sigungu_data <- sigungu_data |>
     my_tooltip = str_c("Name: ", SGG1_FNM, "\n Index: ", index)
   )
 gg <- ggplot() +
-  geom_sf_interactive(data = sigungu_data, 
-                      aes(fill = index_class, tooltip = my_tooltip, data_id = SGG1_FNM), show.legend = TRUE) +
+  geom_sf_interactive(
+    data = sigungu_data, 
+    aes(
+      fill = index_class, 
+      tooltip = my_tooltip, 
+      data_id = SGG1_FNM
+      ), 
+    show.legend = TRUE) +
   geom_sf(data = sido_shp, fill = NA, lwd = 0.5) +
-  scale_fill_manual(name = "Classes", 
-                    labels = c("< 0.2", "0.2 ~ 0.5", "0.5 ~ 1.0", 
-                               "1.0 ~ 1.5", ">= 1.5"), 
-                    values = class_color, drop = FALSE) 
+  scale_fill_manual(
+    name = "Classes", 
+    labels = c("< 0.2", "0.2 ~ 0.5", "0.5 ~ 1.0", "1.0 ~ 1.5", ">= 1.5"), 
+    values = class_color, drop = FALSE) 
 girafe(ggobj = gg) |> 
   girafe_options(
     opts_hover(css = "fill: gray")
@@ -402,7 +431,7 @@ leaflet() |>
 
 </br>
 
-위에서 작성했던 TFR 세계지도를 `leaflet` 패키지의 다양한 함수와 아규먼트를 활용하여 반응형 지도를 제작해 본다. 코드에 대한 자세한 설명은 생략하니, 구글링과 조교의 도움을 받도록 한다.
+위에서 작성했던 TFR 세계지도를 `leaflet` 패키지의 다양한 함수와 아규먼트를 활용하여 반응형 지도를 제작해 본다.
 
 ```{r}
 bins <- c(0, 1.5, 2.1, 3, 4, 5, Inf)
@@ -437,6 +466,33 @@ leaflet(world_data) |>
   )
 ```
 
-이 코드를 잘 활용하면 우리나라 시군구 지도를 완전한 반응형으로 만들 수 있다. 한번 시도해 보면 좋을 것 같다.
-
 </br>
+
+우리나라 시군구 단위의 인구소멸위험지수에 대한 지도를 반응형으로 만들어 본다. 여기서는 `tmap`을 활용한다. 해당 시군구 위에 클릭하면 지역소멸위험지수가 나타난다.
+
+```{r}
+class_color <- c("1" = "#d7191c", "2" = "#fdae61",
+                 "3" = "#ffffbf", "4" = "#a6d96a", 
+                 "5" = "#1a9641")
+sigungu_data <- sigungu_data |> 
+  mutate(
+    index = as.numeric(index)
+  )
+tmap_mode(mode = "view")
+my_tmap <- tm_shape(sigungu_data) + 
+  tm_polygons(
+    col = "index",
+    palette = class_color, 
+    breaks = c(0, 0.2, 0.5, 1.0, 1.5, Inf), 
+    labels = c("< 0.2", "0.2~0.5", "0.5~1.0", "1.0~1.5", ">= 1.5"),
+    title = "Classes", 
+    popup.vars=c("지역소멸위험지수: " = "index"), 
+    popup.format = list(index = list(digits = 3)), 
+    id = "SGG1_FNM", 
+    alpha = 0.6, 
+    border.alpha = 0.5
+  ) +
+  tm_shape(sido_shp) + tm_borders(lwd = 2)
+my_tmap
+tmap_save(my_tmap, "지방소멸위험지수.html")
+```
