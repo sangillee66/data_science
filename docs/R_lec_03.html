@@ -7,17 +7,17 @@
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
-<meta name="author" content="Sang-Il Lee">
-<title>Data Science - Data Import and Tidying</title>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-<link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
-<link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
-<style>
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.4.549">
+
+  <meta name="author" content="Sang-Il Lee">
+  <title>Data Science - Data Import and Tidying</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -95,13 +95,13 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-<link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
-<link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-<link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-<link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-<link href="site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
-<link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-<style type="text/css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
 
   .callout {
     margin-top: 1em;
@@ -299,7 +299,7 @@
   }
 
   </style>
-<style type="text/css">
+  <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -391,7 +391,8 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-image="R_2.gif" data-background-opacity="1e" data-background-position="85% 5%" data-background-size="20%" class="quarto-title-block center"><h1 class="title">Data Import and Tidying</h1>
+<section id="title-slide" data-background-image="R_2.gif" data-background-opacity="1e" data-background-position="85% 5%" data-background-size="20%" class="quarto-title-block center">
+  <h1 class="title">Data Import and Tidying</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -401,19 +402,29 @@ Sang-Il Lee
 </div>
 </div>
 
-</section><section><section id="data-import" class="title-slide slide level1 center"><h1>Data Import</h1>
+</section>
+<section>
+<section id="data-import" class="title-slide slide level1 center">
+<h1>Data Import</h1>
 
-</section><section id="a-data-science-process-with-r-1st-step" class="slide level2"><h2>A data science process with R: 1st step</h2>
+</section>
+<section id="a-data-science-process-with-r-1st-step" class="slide level2">
+<h2>A data science process with R: 1st step</h2>
 
-<img data-src="images/clipboard-1225375471.png" class="r-stretch"></section><section id="readr-package" class="slide level2"><h2>
-<code>readr</code> package</h2>
+<img data-src="images/clipboard-1225375471.png" class="r-stretch"></section>
+<section id="readr-package" class="slide level2">
+<h2><code>readr</code> package</h2>
 
-<img data-src="images/clipboard-1251213286.png" class="quarto-figure quarto-figure-center r-stretch"></section><section id="main-functions-of-readr-package" class="slide level2"><h2>Main functions of <code>readr</code> package</h2>
+<img data-src="images/clipboard-1251213286.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="main-functions-of-readr-package" class="slide level2">
+<h2>Main functions of <code>readr</code> package</h2>
 <table>
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th>Names</th>
 <th>Formats</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td><code>read_csv()</code></td>
@@ -444,20 +455,23 @@ Sang-Il Lee
 <td>아파치 형식(Apache-style)의 로그 파일</td>
 </tr>
 </tbody>
-</table></section><section id="main-arguments-of-read_csv" class="slide level2"><h2>Main arguments of <code>read_csv()</code>
-</h2>
+</table>
+</section>
+<section id="main-arguments-of-read_csv" class="slide level2">
+<h2>Main arguments of <code>read_csv()</code></h2>
 <ul>
 <li><p>컬럼명: <code>col_names</code></p></li>
-<li>
-<p>컬럼의 데이터 유형 지정과 파싱(parsing): <code>col_types = cols()</code></p>
+<li><p>컬럼의 데이터 유형 지정과 파싱(parsing): <code>col_types = cols()</code></p>
 <ul>
 <li><p><code>col_double()</code></p></li>
 <li><p><code>col_integer()</code></p></li>
 <li><p><code>col_character()</code></p></li>
 <li><p><code>col_logical()</code></p></li>
+</ul></li>
 </ul>
-</li>
-</ul></section><section id="related-packages" class="slide level2"><h2>Related packages</h2>
+</section>
+<section id="related-packages" class="slide level2">
+<h2>Related packages</h2>
 <div class="quarto-layout-panel" data-layout="[30,30, 30]">
 <div class="quarto-layout-row quarto-layout-valign-center">
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
@@ -471,68 +485,92 @@ Sang-Il Lee
 </div>
 </div>
 </div>
-</section><section id="readxl-package" class="slide level2"><h2>
-<code>readxl</code> package</h2>
+</section>
+<section id="readxl-package" class="slide level2">
+<h2><code>readxl</code> package</h2>
 <ul>
-<li>
-<p><code>read_xls(), read_xlsx(), read_excel()</code></p>
+<li><p><code>read_xls(), read_xlsx(), read_excel()</code></p>
 <ul>
 <li><p><code>sheet</code></p></li>
 <li><p><code>skip</code></p></li>
 <li><p><code>col_names</code></p></li>
 <li><p><code>col_types</code>: “skip”, “guess”, “text”, “logical”, “numeric”, etc.</p></li>
+</ul></li>
 </ul>
-</li>
-</ul></section><section id="another-way" class="slide level2"><h2>Another way</h2>
+</section>
+<section id="another-way" class="slide level2">
+<h2>Another way</h2>
 
-<img data-src="images/clipboard-3854717875.png" class="r-stretch"></section></section><section><section id="tibble" class="title-slide slide level1 center"><h1>Tibble</h1>
+<img data-src="images/clipboard-3854717875.png" class="r-stretch"></section></section>
+<section>
+<section id="tibble" class="title-slide slide level1 center">
+<h1>Tibble</h1>
 
-</section><section id="tibble-package" class="slide level2"><h2>
-<code>tibble</code> package</h2>
+</section>
+<section id="tibble-package" class="slide level2">
+<h2><code>tibble</code> package</h2>
 <ul>
 <li>A new type of dataframe provided by tidyverse</li>
 </ul>
 
-<img data-src="images/clipboard-3459494907.png" class="quarto-figure quarto-figure-center r-stretch"></section><section id="tibble-vs.-data.frame" class="slide level2"><h2>tibble vs.&nbsp;data.frame</h2>
+<img data-src="images/clipboard-3459494907.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="tibble-vs.-data.frame" class="slide level2">
+<h2>tibble vs.&nbsp;data.frame</h2>
 
-<img data-src="images/clipboard-2404269740.png" class="quarto-figure quarto-figure-center r-stretch"></section><section id="data-viewer" class="slide level2"><h2>Data viewer</h2>
+<img data-src="images/clipboard-2404269740.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="data-viewer" class="slide level2">
+<h2>Data viewer</h2>
 <ul>
 <li><p>Like an Excel view</p></li>
-<li>
-<p>How to initiate</p>
+<li><p>How to initiate</p>
 <ul>
-<li><p><code><a href="https://rdrr.io/r/utils/View.html">View()</a></code> function</p></li>
+<li><p><code>View()</code> function</p></li>
 <li><p>Click on an icon in Environment window</p></li>
-</ul>
-</li>
-<li>
-<p>Functions</p>
+</ul></li>
+<li><p>Functions</p>
 <ul>
 <li><p>Sorting</p></li>
 <li><p>Scrolling</p></li>
 <li><p>Filtering</p></li>
 <li><p>Searching</p></li>
+</ul></li>
 </ul>
-</li>
-</ul></section><section id="data-viewer-1" class="slide level2"><h2>Data viewer</h2>
+</section>
+<section id="data-viewer-1" class="slide level2">
+<h2>Data viewer</h2>
 
-<img data-src="images/clipboard-3652581161.png" class="r-stretch"></section><section id="data-viewer-2" class="slide level2"><h2>Data viewer</h2>
+<img data-src="images/clipboard-3652581161.png" class="r-stretch"></section>
+<section id="data-viewer-2" class="slide level2">
+<h2>Data viewer</h2>
 
-<img data-src="images/clipboard-2907343879.png" class="r-stretch"></section></section><section><section id="data-tidying" class="title-slide slide level1 center"><h1>Data Tidying</h1>
+<img data-src="images/clipboard-2907343879.png" class="r-stretch"></section></section>
+<section>
+<section id="data-tidying" class="title-slide slide level1 center">
+<h1>Data Tidying</h1>
 
-</section><section id="tidyr-package" class="slide level2"><h2>
-<code>tidyr</code> package</h2>
+</section>
+<section id="tidyr-package" class="slide level2">
+<h2><code>tidyr</code> package</h2>
 
-<img data-src="images/clipboard-1046439731.png" class="quarto-figure quarto-figure-center r-stretch"></section><section id="the-concept-of-tidy-data" class="slide level2"><h2>The concept of tidy data</h2>
+<img data-src="images/clipboard-1046439731.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="the-concept-of-tidy-data" class="slide level2">
+<h2>The concept of tidy data</h2>
 
-<img data-src="images/clipboard-4067066416.png" class="r-stretch"></section><section id="the-concept-of-tidy-data-1" class="slide level2"><h2>The concept of tidy data</h2>
+<img data-src="images/clipboard-4067066416.png" class="r-stretch"></section>
+<section id="the-concept-of-tidy-data-1" class="slide level2">
+<h2>The concept of tidy data</h2>
 
-<img data-src="images/clipboard-3412852372.png" class="r-stretch"></section><section id="the-concept-of-tidy-data-2" class="slide level2"><h2>The concept of tidy data</h2>
+<img data-src="images/clipboard-3412852372.png" class="r-stretch"></section>
+<section id="the-concept-of-tidy-data-2" class="slide level2">
+<h2>The concept of tidy data</h2>
 <ul>
 <li><p>개별 변수(variable)는 열(column) 하나를 차지한다. 즉, 개별 열에는 하나의 변수가 위치한다.</p></li>
 <li><p>개별 관측개체(observation)는 하나의 행(row)을 차지한다. 즉, 개별 행에는 하나의 관측개체가 위치한다.</p></li>
 <li><p>개별 값(value)은 하나의 셀(cell)을 차지한다. 즉, 개별 셀에는 하나의 값이 위치한다.</p></li>
-</ul></section><section id="examples-table1" class="slide level2"><h2>Examples: table1</h2>
+</ul>
+</section>
+<section id="examples-table1" class="slide level2">
+<h2>Examples: table1</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a></a>table1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -548,9 +586,10 @@ Sang-Il Lee
 6 China        2000 213766 1280428583</code></pre>
 </div>
 </div>
-</section><section id="examples-table2" class="slide level2"><h2>Examples: table2</h2>
+</section>
+<section id="examples-table2" class="slide level2">
+<h2>Examples: table2</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>table2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 12 × 4
    country      year type            count
@@ -569,9 +608,10 @@ Sang-Il Lee
 12 China        2000 population 1280428583</code></pre>
 </div>
 </div>
-</section><section id="examples-table3" class="slide level2"><h2>Examples: table3</h2>
+</section>
+<section id="examples-table3" class="slide level2">
+<h2>Examples: table3</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>table3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
   country      year rate             
@@ -584,26 +624,35 @@ Sang-Il Lee
 6 China        2000 213766/1280428583</code></pre>
 </div>
 </div>
-</section><section id="benefits-of-tidy-data" class="slide level2"><h2>Benefits of tidy data</h2>
+</section>
+<section id="benefits-of-tidy-data" class="slide level2">
+<h2>Benefits of tidy data</h2>
 
-<img data-src="images/clipboard-3106963859.png" class="r-stretch"></section><section id="benefits-of-tidy-data-1" class="slide level2"><h2>Benefits of tidy data</h2>
+<img data-src="images/clipboard-3106963859.png" class="r-stretch"></section>
+<section id="benefits-of-tidy-data-1" class="slide level2">
+<h2>Benefits of tidy data</h2>
 
-<img data-src="images/clipboard-3609380673.png" class="r-stretch"></section><section id="benefits-of-tidy-data-2" class="slide level2"><h2>Benefits of tidy data</h2>
+<img data-src="images/clipboard-3609380673.png" class="r-stretch"></section>
+<section id="benefits-of-tidy-data-2" class="slide level2">
+<h2>Benefits of tidy data</h2>
 
-<img data-src="images/clipboard-1736663833.png" class="r-stretch"></section><section id="core-methods-of-data-tidying" class="slide level2"><h2>Core methods of data tidying</h2>
+<img data-src="images/clipboard-1736663833.png" class="r-stretch"></section>
+<section id="core-methods-of-data-tidying" class="slide level2">
+<h2>Core methods of data tidying</h2>
 
-<img data-src="images/clipboard-1179593338.png" class="quarto-figure quarto-figure-center r-stretch"></section><section id="wide-form-vs.-long-form" class="slide level2"><h2>wide form vs.&nbsp;long form</h2>
+<img data-src="images/clipboard-1179593338.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="wide-form-vs.-long-form" class="slide level2">
+<h2>wide form vs.&nbsp;long form</h2>
 
-<img data-src="images/clipboard-2491549849.png" class="quarto-figure quarto-figure-center r-stretch"></section><section id="lengthening-data" class="slide level2"><h2>Lengthening data</h2>
+<img data-src="images/clipboard-2491549849.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="lengthening-data" class="slide level2">
+<h2>Lengthening data</h2>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-1-1">table4a</a></li>
-<li><a href="#tabset-1-2">Result</a></li>
-</ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">table4a</a></li><li><a href="#tabset-1-2">Result</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>table4a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>table4a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 3
   country     `1999` `2000`
@@ -616,12 +665,12 @@ Sang-Il Lee
 </div>
 <div id="tabset-1-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>table4a <span class="sc">|&gt;</span> </span>
-<span id="cb9-2"><a></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb9-3"><a></a>    <span class="at">cols =</span> <span class="fu">c</span>(<span class="st">`</span><span class="at">1999</span><span class="st">`</span>, <span class="st">`</span><span class="at">2000</span><span class="st">`</span>),</span>
-<span id="cb9-4"><a></a>    <span class="at">names_to =</span> <span class="st">"year"</span>, </span>
-<span id="cb9-5"><a></a>    <span class="at">values_to =</span> <span class="st">"cases"</span></span>
-<span id="cb9-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>table4a <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb7-3"><a></a>    <span class="at">cols =</span> <span class="fu">c</span>(<span class="st">`</span><span class="at">1999</span><span class="st">`</span>, <span class="st">`</span><span class="at">2000</span><span class="st">`</span>),</span>
+<span id="cb7-4"><a></a>    <span class="at">names_to =</span> <span class="st">"year"</span>, </span>
+<span id="cb7-5"><a></a>    <span class="at">values_to =</span> <span class="st">"cases"</span></span>
+<span id="cb7-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
   country     year   cases
@@ -637,18 +686,19 @@ Sang-Il Lee
 </div>
 </div>
 </div>
-</section><section id="lengthening-data-1" class="slide level2"><h2>Lengthening data</h2>
+</section>
+<section id="lengthening-data-1" class="slide level2">
+<h2>Lengthening data</h2>
 
-<img data-src="images/clipboard-2601245679.png" class="r-stretch"></section><section id="widening-data" class="slide level2"><h2>Widening data</h2>
+<img data-src="images/clipboard-2601245679.png" class="r-stretch"></section>
+<section id="widening-data" class="slide level2">
+<h2>Widening data</h2>
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-2-1">table2</a></li>
-<li><a href="#tabset-2-2">Result</a></li>
-</ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">table2</a></li><li><a href="#tabset-2-2">Result</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>table2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>table2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 12 × 4
    country      year type            count
@@ -670,12 +720,12 @@ Sang-Il Lee
 </div>
 <div id="tabset-2-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>table2 <span class="sc">|&gt;</span> </span>
-<span id="cb13-2"><a></a>  <span class="fu">pivot_wider</span>(</span>
-<span id="cb13-3"><a></a>    <span class="at">id_cols =</span> <span class="fu">c</span>(country, year),</span>
-<span id="cb13-4"><a></a>    <span class="at">names_from =</span> type, </span>
-<span id="cb13-5"><a></a>    <span class="at">values_from =</span> count</span>
-<span id="cb13-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>table2 <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb11-3"><a></a>    <span class="at">id_cols =</span> <span class="fu">c</span>(country, year),</span>
+<span id="cb11-4"><a></a>    <span class="at">names_from =</span> type, </span>
+<span id="cb11-5"><a></a>    <span class="at">values_from =</span> count</span>
+<span id="cb11-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
   country      year  cases population
@@ -691,18 +741,30 @@ Sang-Il Lee
 </div>
 </div>
 </div>
-</section><section id="widening-data-1" class="slide level2"><h2>Widening data</h2>
+</section>
+<section id="widening-data-1" class="slide level2">
+<h2>Widening data</h2>
 
-<img data-src="images/clipboard-3400622461.png" class="r-stretch"></section></section><section><section id="data-join" class="title-slide slide level1 center"><h1>Data Join</h1>
+<img data-src="images/clipboard-3400622461.png" class="r-stretch"></section></section>
+<section>
+<section id="data-join" class="title-slide slide level1 center">
+<h1>Data Join</h1>
 
-</section><section id="dplyr-package" class="slide level2"><h2>
-<code>dplyr</code> package</h2>
+</section>
+<section id="dplyr-package" class="slide level2">
+<h2><code>dplyr</code> package</h2>
 
-<img data-src="images/clipboard-3059639685.png" class="quarto-figure quarto-figure-center r-stretch"></section><section id="keys" class="slide level2"><h2>Keys</h2>
+<img data-src="images/clipboard-3059639685.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="keys" class="slide level2">
+<h2>Keys</h2>
 
-<img data-src="images/clipboard-1575493085.png" class="r-stretch"></section><section id="types-of-join" class="slide level2"><h2>Types of join</h2>
+<img data-src="images/clipboard-1575493085.png" class="r-stretch"></section>
+<section id="types-of-join" class="slide level2">
+<h2>Types of join</h2>
 
-<img data-src="images/clipboard-1394869847.png" class="quarto-figure quarto-figure-center r-stretch"></section><section id="types-of-join-1" class="slide level2"><h2>Types of join</h2>
+<img data-src="images/clipboard-1394869847.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="types-of-join-1" class="slide level2">
+<h2>Types of join</h2>
 <div class="quarto-layout-panel" data-layout="[45, -5, 45]">
 <div class="quarto-layout-row quarto-layout-valign-center">
 <div class="quarto-layout-cell" style="flex-basis: 47.4%;justify-content: center;">
@@ -716,12 +778,15 @@ Sang-Il Lee
 </div>
 </div>
 </div>
-</section><section id="types-of-join-2" class="slide level2"><h2>Types of join</h2>
+</section>
+<section id="types-of-join-2" class="slide level2">
+<h2>Types of join</h2>
 <div class="quarto-layout-panel" data-layout="[45, -5, 45]">
 <div class="quarto-layout-row quarto-layout-valign-center">
 <div class="quarto-layout-cell" style="flex-basis: 47.4%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/clipboard-2197162614.png" class="quarto-figure quarto-figure-center"></p>
+<figure>
+<p><img data-src="images/clipboard-2197162614.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 </div>
@@ -730,7 +795,8 @@ Sang-Il Lee
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 47.4%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="images/clipboard-2555805146.png" class="quarto-figure quarto-figure-center"></p>
+<figure>
+<p><img data-src="images/clipboard-2555805146.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 </div>
@@ -743,10 +809,27 @@ Sang-Il Lee
 </div>
 </div>
 </section></section>
-</div>
+    </div>
   </div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script><script src="site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="site_libs/revealjs/plugin/notes/notes.js"></script><script src="site_libs/revealjs/plugin/search/search.js"></script><script src="site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
@@ -937,7 +1020,46 @@ Sang-Il Lee
           RevealZoom
         ]
       });
-    </script><script id="quarto-html-after-body" type="application/javascript">
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
         const mode = bsSheetEl.getAttribute("data-mode");
@@ -1091,6 +1213,6 @@ Sang-Il Lee
       }
     });
     </script>
-
+    
 
 </body></html>

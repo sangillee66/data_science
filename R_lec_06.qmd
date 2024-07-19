@@ -67,8 +67,8 @@ editor: visual
 아시아의 1957년과 2007년의 1인당 GDP는 얼마이며 순위는 어떠한가? 1인당 GDP의 순위가 상승하였는가?
 
 ## Question 1
-::: panel-tabset
 
+::: panel-tabset
 ## Result
 
 ```{r}
@@ -99,7 +99,6 @@ gapminder |>
   filter(year %in% c(1957, 2007)) |> 
   arrange(year, desc(gdp_percap_cont))
 ```
-
 :::
 
 ## Question 2

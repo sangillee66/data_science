@@ -3,6 +3,7 @@ title: "웹사이트 소개"
 date-modified: last-modified
 number-sections: false
 lightbox: true
+bibliography: references.bib
 ---
 
 ## 웹사이트의 목적
@@ -33,14 +34,38 @@ lightbox: true
 
 -   Wickham, Hadley, and Garrett Grolemund. 2016. [*R for Data Science: Import, Tidy, Transform, Visualize, and Model Data*](https://r4ds.had.co.nz/index.html). 1st edition. Sebastopol, CA: O’Reilly.
 
+-   Grolemund, Garrett. 2014. [*Hands-On Programming with R: Write Your Own Functions and Simulations*](https://rstudio-education.github.io/hopr/index.html). O’Reilly Media, Inc..
+
 -   Bonnell, Jerry, and Mitsunori Ogihara. 2023. [*Exploring Data Science with R and the Tidyverse*](https://ds4world.cs.miami.edu/). 1st edition. Chapman; Hall/CRC.
 
 -   Irizarry, Rafael A. 2020. [*Introduction to Data Science: Data Analysis and Prediction Algorithms with R*](https://rafalab.dfci.harvard.edu/dsbook-part-1/). Boca Raton: CRC Press, Taylor & Francis Group.
 
 -   Ismay, Chester, and Albert Y. Kim. 2024. [*Statistical Inference via Data Science: A ModernDive into R and the Tidyverse: A ModernDive into R and the Tidyverse*](https://moderndive.com/). Boca Raton: Chapman; Hall/CRC. 
 
--   Brendan R. E. Ansell, [Introduction to R - tidyverse](https://bookdown.org/ansellbr/WEHI_tidyR_course_book/), 웹북
+-   Stauffer, R., Chimiak-Opoka, Joanna, Rodríguez-R, Luis Miguel, Simon, Thorsten, Zeileis, Achim, 2024, [*Introduction to Programming with R*](https://discdown.org/rprogramming/index.html), 웹북
+
+-   Douglas, Alex, Roos, Deon, Mancini, Francesca, Couto Ana, Lusseau, David, 2024, [*An Introduction to R*](https://intro2r.com/), 웹북
+
+-   Batra, Neale, ed., 2024, [*The Epidemiologist R Handbook*](https://epirhandbook.com/en/index.html), 웹북
+
+-   Doser, Jeffrey W., Finley, Andrew O., Melfi, Vince, 2022, [*R Programming for Data Sciences*](https://www.jeffdoser.com/files/for875/_book/), 웹북
+
+-   Bonnin Sarah, 2020, [*Introduction to R 2021*](https://biocorecrg.github.io/CRG_RIntroduction/), 웹북
+
+-   Brendan R. E. Ansell, [*Introduction to R - tidyverse*](https://bookdown.org/ansellbr/WEHI_tidyR_course_book/), 웹북
+
+-   [*Introduction to R*](https://r-unimelb.gitbook.io/rbook), 웹북
+
+-   [*Data Analysis and Visualization in R for Ecologists*](https://datacarpentry.org/R-ecology-lesson/index.html), 웹북
+
+-   [*R for Epidemiology*](https://www.r4epi.com/), 웹북
 
 -   RStudio IDE User Guide (<https://docs.posit.co/ide/user/>)
 
+-   한국알사용자회, [데이터 과학을 지탱하는 기본기](https://r2bit.com/book_analytics/index.html), 웹북
+
+-   한국알사용자회, [데이터 시각화](https://r2bit.com/book_viz/), 웹북
+
 -   김기환, 2023, [R 프로그래밍(개정판)](https://kilhwan.github.io/rprogramming/), 웹북
+
+[@grolemund2014]

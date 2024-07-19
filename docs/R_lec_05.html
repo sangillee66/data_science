@@ -7,17 +7,17 @@
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
-<meta name="author" content="Sang-Il Lee">
-<title>Data Science - Data Visualization</title>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-<link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
-<link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
-<style>
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.4.549">
+
+  <meta name="author" content="Sang-Il Lee">
+  <title>Data Science - Data Visualization</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -95,13 +95,13 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-<link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
-<link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-<link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-<link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-<link href="site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
-<link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-<style type="text/css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
 
   .callout {
     margin-top: 1em;
@@ -299,7 +299,7 @@
   }
 
   </style>
-<style type="text/css">
+  <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -391,7 +391,8 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-image="R_4.gif" data-background-opacity="1e" data-background-position="85% 5%" data-background-size="20%" class="quarto-title-block center"><h1 class="title">Data Visualization</h1>
+<section id="title-slide" data-background-image="R_4.gif" data-background-opacity="1e" data-background-position="85% 5%" data-background-size="20%" class="quarto-title-block center">
+  <h1 class="title">Data Visualization</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -401,42 +402,52 @@ Sang-Il Lee
 </div>
 </div>
 
-</section><section><section id="basic-concepts" class="title-slide slide level1 center"><h1>Basic Concepts</h1>
+</section>
+<section>
+<section id="basic-concepts" class="title-slide slide level1 center">
+<h1>Basic Concepts</h1>
 
-</section><section id="a-data-science-process-with-r-4th-step" class="slide level2"><h2>A data science process with R: 4th step</h2>
+</section>
+<section id="a-data-science-process-with-r-4th-step" class="slide level2">
+<h2>A data science process with R: 4th step</h2>
 
-<img data-src="images/clipboard-1040421420.png" class="r-stretch"></section><section id="ggplot2-package" class="slide level2"><h2>
-<code>ggplot2</code> package</h2>
+<img data-src="images/clipboard-1040421420.png" class="r-stretch"></section>
+<section id="ggplot2-package" class="slide level2">
+<h2><code>ggplot2</code> package</h2>
 
-<img data-src="images/clipboard-3146270133.png" class="quarto-figure quarto-figure-center r-stretch"></section><section id="grammar-of-graphics" class="slide level2"><h2>Grammar of graphics</h2>
+<img data-src="images/clipboard-3146270133.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="grammar-of-graphics" class="slide level2">
+<h2>Grammar of graphics</h2>
 
-<img data-src="images/clipboard-3968277018.png" class="quarto-figure quarto-figure-center r-stretch"></section><section id="eight-components-of-ggplot2" class="slide level2"><h2>Eight components of <code>ggplot2</code>
-</h2>
+<img data-src="images/clipboard-3968277018.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="eight-components-of-ggplot2" class="slide level2">
+<h2>Eight components of <code>ggplot2</code></h2>
 
-<img data-src="https://sangillee.snu.ac.kr/data_science/images/clipboard-3014854163.png" class="quarto-figure quarto-figure-center r-stretch"><p class="caption"><a href="https://initiation.doana-r.com/06-ggplot2#1" class="uri">https://initiation.doana-r.com/06-ggplot2#1</a></p></section></section><section><section id="core-components" class="title-slide slide level1 center"><h1>Core Components</h1>
+<img data-src="https://sangillee.snu.ac.kr/data_science/images/clipboard-3014854163.png" class="quarto-figure quarto-figure-center r-stretch"><p class="caption"><a href="https://initiation.doana-r.com/06-ggplot2#1" class="uri">https://initiation.doana-r.com/06-ggplot2#1</a></p></section></section>
+<section>
+<section id="core-components" class="title-slide slide level1 center">
+<h1>Core Components</h1>
 
-</section><section id="aesthetics-geometries" class="slide level2"><h2>Aesthetics &amp; Geometries</h2>
+</section>
+<section id="aesthetics-geometries" class="slide level2">
+<h2>Aesthetics &amp; Geometries</h2>
 <ul>
-<li>
-<p>심미성(aesthetics) 혹은 심미성 매핑(aesthetic mapping)</p>
+<li><p>심미성(aesthetics) 혹은 심미성 매핑(aesthetic mapping)</p>
 <ul>
 <li><p>그래프의 외견을 규정</p></li>
 <li><p>시각 변수 혹은 속성: color, size, shape 등</p></li>
-</ul>
-</li>
-<li>
-<p>기하(geometries) 혹은 기하 객체(geometric objects)</p>
+</ul></li>
+<li><p>기하(geometries) 혹은 기하 객체(geometric objects)</p>
 <ul>
 <li><p>그래프의 전체 구조 혹은 형식을 규정</p></li>
 <li><p>그래프의 유형: bar chart, line chart 등</p></li>
+</ul></li>
 </ul>
-</li>
-</ul></section><section id="aesthetics-geometries-1" class="slide level2"><h2>Aesthetics &amp; Geometries</h2>
+</section>
+<section id="aesthetics-geometries-1" class="slide level2">
+<h2>Aesthetics &amp; Geometries</h2>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-1-1">Code</a></li>
-<li><a href="#tabset-1-2">Result</a></li>
-</ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Code</a></li><li><a href="#tabset-1-2">Result</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="cell">
@@ -451,7 +462,8 @@ Sang-Il Lee
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="R_lec_05_files/figure-html/unnamed-chunk-2-1.png" width="672"></p>
+<figure>
+<p><img data-src="R_lec_05_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -459,7 +471,9 @@ Sang-Il Lee
 </div>
 </div>
 </div>
-</section><section id="aesthetics" class="slide level2"><h2>Aesthetics</h2>
+</section>
+<section id="aesthetics" class="slide level2">
+<h2>Aesthetics</h2>
 <ul>
 <li><p>x-axis, y-axis</p></li>
 <li><p>color, fill</p></li>
@@ -467,7 +481,10 @@ Sang-Il Lee
 <li><p>size</p></li>
 <li><p>alpha</p></li>
 <li><p>position</p></li>
-</ul></section><section id="geometries" class="slide level2"><h2>Geometries</h2>
+</ul>
+</section>
+<section id="geometries" class="slide level2">
+<h2>Geometries</h2>
 <ul>
 <li><p><code>geom_point()</code></p></li>
 <li><p><code>geom_line()</code></p></li>
@@ -476,59 +493,55 @@ Sang-Il Lee
 <li><p><code>geom_smooth()</code></p></li>
 <li><p><code>geom_boxplot(), geom_violin()</code></p></li>
 <li><p><code>geom_text(), geom_label()</code></p></li>
-</ul></section></section><section><section id="other-components" class="title-slide slide level1 center"><h1>Other Components</h1>
+</ul>
+</section></section>
+<section>
+<section id="other-components" class="title-slide slide level1 center">
+<h1>Other Components</h1>
 
-</section><section id="scale" class="slide level2"><h2>Scale</h2>
+</section>
+<section id="scale" class="slide level2">
+<h2>Scale</h2>
 <ul>
 <li><p>심미성의 구체적 구현</p></li>
-<li>
-<p>x-axis, y-axis</p>
+<li><p>x-axis, y-axis</p>
 <ul>
-<li>
-<code>scale_x_continuous()</code>, <code>scale_x_discrete()</code>
-</li>
-</ul>
-</li>
-<li>
-<p>color and fill</p>
+<li><code>scale_x_continuous()</code>, <code>scale_x_discrete()</code></li>
+</ul></li>
+<li><p>color and fill</p>
 <ul>
-<li>
-<code>scale_color_brewer()</code>, <code>scale_fill_brewer()</code>
-</li>
-<li>
-<code>scale_color_manual()</code>, <code>scale_fill_manual()</code>
-</li>
-</ul>
-</li>
-<li>
-<p>others</p>
+<li><code>scale_color_brewer()</code>, <code>scale_fill_brewer()</code></li>
+<li><code>scale_color_manual()</code>, <code>scale_fill_manual()</code></li>
+</ul></li>
+<li><p>others</p>
 <ul>
 <li><p><code>scale_shape()</code>, <code>scale_size()</code></p></li>
 <li><p><code>scale_linetype()</code>, <code>scale_linewidth()</code></p></li>
+</ul></li>
 </ul>
-</li>
-</ul></section><section id="facet" class="slide level2"><h2>Facet</h2>
+</section>
+<section id="facet" class="slide level2">
+<h2>Facet</h2>
 <ul>
 <li><p>다면생성(faceting) 과정을 통해, 하나의 플롯을 여러 개의 하위 플롯으로 분할</p></li>
-<li>
-<p>두 가지 중요 함수</p>
+<li><p>두 가지 중요 함수</p>
 <ul>
 <li><p><code>facet_wrap()</code></p></li>
 <li><p><code>facet_grid()</code></p></li>
+</ul></li>
 </ul>
-</li>
-</ul></section><section id="facet-1" class="slide level2"><h2>Facet</h2>
+</section>
+<section id="facet-1" class="slide level2">
+<h2>Facet</h2>
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-2-1">Normal</a></li>
-<li><a href="#tabset-2-2">Faceting</a></li>
-</ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Normal</a></li><li><a href="#tabset-2-2">Faceting</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="R_lec_05_files/figure-html/unnamed-chunk-3-1.png" width="672"></p>
+<figure>
+<p><img data-src="R_lec_05_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -538,7 +551,8 @@ Sang-Il Lee
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="R_lec_05_files/figure-html/unnamed-chunk-4-1.png" width="672"></p>
+<figure>
+<p><img data-src="R_lec_05_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -546,47 +560,57 @@ Sang-Il Lee
 </div>
 </div>
 </div>
-</section><section id="statistical-transformation" class="slide level2"><h2>Statistical transformation</h2>
+</section>
+<section id="statistical-transformation" class="slide level2">
+<h2>Statistical transformation</h2>
 
-<img data-src="images/clipboard-3826441672.png" class="quarto-figure quarto-figure-center r-stretch"><p class="caption"><a href="https://r4ds.hadley.nz/layers" class="uri">https://r4ds.hadley.nz/layers</a></p></section><section id="coordinates" class="slide level2"><h2>Coordinates</h2>
+<img data-src="images/clipboard-3826441672.png" class="quarto-figure quarto-figure-center r-stretch"><p class="caption"><a href="https://r4ds.hadley.nz/layers" class="uri">https://r4ds.hadley.nz/layers</a></p></section>
+<section id="coordinates" class="slide level2">
+<h2>Coordinates</h2>
 <ul>
 <li><p>그래픽 요소들의 위치 결정에 기준이 되는 준거 체계</p></li>
-<li>
-<p>두 가지 중요 함수</p>
+<li><p>두 가지 중요 함수</p>
 <ul>
 <li><p><code>coord_flip()</code></p></li>
 <li><p><code>coord_fixed()</code></p></li>
+</ul></li>
 </ul>
-</li>
-</ul></section><section id="theme" class="slide level2"><h2>Theme</h2>
+</section>
+<section id="theme" class="slide level2">
+<h2>Theme</h2>
 <ul>
-<li>
-<p>그래프의 전체적인 외양(테마)를 수정</p>
+<li><p>그래프의 전체적인 외양(테마)를 수정</p>
 <ul>
 <li>8개 테마 제공</li>
-</ul>
-</li>
-<li>
-<p>그래프의 세부 구성 요소를 수정</p>
+</ul></li>
+<li><p>그래프의 세부 구성 요소를 수정</p>
 <ul>
 <li><code>theme()</code></li>
+</ul></li>
 </ul>
-</li>
-</ul></section><section id="theme-1" class="slide level2"><h2>Theme</h2>
+</section>
+<section id="theme-1" class="slide level2">
+<h2>Theme</h2>
 
-<img data-src="images/clipboard-57653269.png" class="quarto-figure quarto-figure-center r-stretch"><p class="caption"><a href="https://r4ds.hadley.nz/communication" class="uri">https://r4ds.hadley.nz/communication</a></p></section><section id="theme-2" class="slide level2"><h2>Theme</h2>
+<img data-src="images/clipboard-57653269.png" class="quarto-figure quarto-figure-center r-stretch"><p class="caption"><a href="https://r4ds.hadley.nz/communication" class="uri">https://r4ds.hadley.nz/communication</a></p></section>
+<section id="theme-2" class="slide level2">
+<h2>Theme</h2>
 <ul>
-<li>
-<p>수 많은 옵션 <a href="https://ggplot2.tidyverse.org/reference/theme.html" class="uri">https://ggplot2.tidyverse.org/reference/theme.html</a></p>
+<li><p>수 많은 옵션 <a href="https://ggplot2.tidyverse.org/reference/theme.html" class="uri">https://ggplot2.tidyverse.org/reference/theme.html</a></p>
 <ul>
 <li><p>axis 관련</p></li>
 <li><p>legend 관련</p></li>
 <li><p>plot.title 관련</p></li>
+</ul></li>
 </ul>
-</li>
-</ul></section></section><section><section id="ggplot2-extensions" class="title-slide slide level1 center"><h1>ggplot2 Extensions</h1>
+</section></section>
+<section>
+<section id="ggplot2-extensions" class="title-slide slide level1 center">
+<h1>ggplot2 Extensions</h1>
 <p><a href="https://exts.ggplot2.tidyverse.org/" class="uri">https://exts.ggplot2.tidyverse.org/</a></p>
-</section><section id="major-extensions" class="slide level2"><h2>Major extensions</h2>
+</section>
+<section id="major-extensions" class="slide level2">
+<h2>Major extensions</h2>
 <ul>
 <li><p><code>patchwork</code></p></li>
 <li><p><code>ggplotly</code></p></li>
@@ -602,10 +626,27 @@ Sang-Il Lee
 </div>
 </div>
 </section></section>
-</div>
+    </div>
   </div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script><script src="site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="site_libs/revealjs/plugin/notes/notes.js"></script><script src="site_libs/revealjs/plugin/search/search.js"></script><script src="site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
@@ -796,7 +837,46 @@ Sang-Il Lee
           RevealZoom
         ]
       });
-    </script><script id="quarto-html-after-body" type="application/javascript">
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
         const mode = bsSheetEl.getAttribute("data-mode");
@@ -950,6 +1030,6 @@ Sang-Il Lee
       }
     });
     </script>
-
+    
 
 </body></html>

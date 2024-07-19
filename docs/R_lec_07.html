@@ -7,17 +7,17 @@
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
-<meta name="author" content="Sang-Il Lee">
-<title>Data Science - Data Collection</title>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-<link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
-<link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
-<style>
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.4.549">
+
+  <meta name="author" content="Sang-Il Lee">
+  <title>Data Science - Data Collection</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -95,13 +95,13 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-<link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
-<link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-<link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-<link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-<link href="site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
-<link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-<style type="text/css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
 
   .callout {
     margin-top: 1em;
@@ -299,7 +299,7 @@
   }
 
   </style>
-<style type="text/css">
+  <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -391,7 +391,8 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-opacity="1e" data-background-position="85% 5%" data-background-size="10%" class="quarto-title-block center"><h1 class="title">Data Collection</h1>
+<section id="title-slide" data-background-opacity="1e" data-background-position="85% 5%" data-background-size="10%" class="quarto-title-block center">
+  <h1 class="title">Data Collection</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -401,9 +402,14 @@ Sang-Il Lee
 </div>
 </div>
 
-</section><section><section id="collecting-data-from-files-on-the-web" class="title-slide slide level1 center"><h1>Collecting Data from Files on the Web</h1>
+</section>
+<section>
+<section id="collecting-data-from-files-on-the-web" class="title-slide slide level1 center">
+<h1>Collecting Data from Files on the Web</h1>
 
-</section><section id="section" class="slide level2"><h2></h2>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
 <div class="quarto-layout-panel" data-layout-ncol="3">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
@@ -417,13 +423,11 @@ Sang-Il Lee
 </div>
 </div>
 </div>
-</section><section id="readr-package" class="slide level2"><h2>
-<code>readr</code> package</h2>
+</section>
+<section id="readr-package" class="slide level2">
+<h2><code>readr</code> package</h2>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-1-1">Code</a></li>
-<li><a href="#tabset-1-2">Result</a></li>
-</ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Code</a></li><li><a href="#tabset-1-2">Result</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="cell">
@@ -434,9 +438,6 @@ Sang-Il Lee
 </div>
 <div id="tabset-1-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-2"><a></a><span class="fu">library</span>(readr)</span>
-<span id="cb2-3"><a></a><span class="fu">read_csv</span>(<span class="st">"https://pos.it/r4ds-students-csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 5
   `Student ID` `Full Name`      favourite.food     mealPlan            AGE  
@@ -452,24 +453,20 @@ Sang-Il Lee
 </div>
 </div>
 </div>
-</section><section id="openxlsx-package" class="slide level2"><h2>
-<code>openxlsx</code> package</h2>
+</section>
+<section id="openxlsx-package" class="slide level2">
+<h2><code>openxlsx</code> package</h2>
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-2-1">Code</a></li>
-<li><a href="#tabset-2-2">Result</a></li>
-</ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Code</a></li><li><a href="#tabset-2-2">Result</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(openxlsx)</span>
-<span id="cb4-2"><a></a><span class="fu">read.xlsx</span>(<span class="st">"https://github.com/awalker89/openxlsx/raw/master/inst/readTest.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">library</span>(openxlsx)</span>
+<span id="cb3-2"><a></a><span class="fu">read.xlsx</span>(<span class="st">"https://github.com/awalker89/openxlsx/raw/master/inst/readTest.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-2-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">library</span>(openxlsx)</span>
-<span id="cb5-2"><a></a><span class="fu">read.xlsx</span>(<span class="st">"https://github.com/awalker89/openxlsx/raw/master/inst/readTest.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Var1 Var2   Var3 Var4  Var5         Var6 Var7
 1   TRUE    1   1.00    a 42042 3209324 This   NA
@@ -487,26 +484,21 @@ Sang-Il Lee
 </div>
 </div>
 </div>
-</section><section id="googlesheet4-package" class="slide level2"><h2>
-<code>googlesheet4</code> package</h2>
+</section>
+<section id="googlesheet4-package" class="slide level2">
+<h2><code>googlesheet4</code> package</h2>
 <div class="panel-tabset">
-<ul id="tabset-3" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-3-1">Code</a></li>
-<li><a href="#tabset-3-2">Result</a></li>
-</ul>
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Code</a></li><li><a href="#tabset-3-2">Result</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">library</span>(googlesheets4)</span>
-<span id="cb7-2"><a></a><span class="fu">gs4_deauth</span>()</span>
-<span id="cb7-3"><a></a><span class="fu">read_sheet</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1U6Cf_qEOhiR9AZqTqS3mbMF3zt2db48ZP5v3rkrAEJY/edit#gid=780868077"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">library</span>(googlesheets4)</span>
+<span id="cb5-2"><a></a><span class="fu">gs4_deauth</span>()</span>
+<span id="cb5-3"><a></a><span class="fu">read_sheet</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1U6Cf_qEOhiR9AZqTqS3mbMF3zt2db48ZP5v3rkrAEJY/edit#gid=780868077"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-3-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">library</span>(googlesheets4)</span>
-<span id="cb8-2"><a></a><span class="fu">gs4_deauth</span>()</span>
-<span id="cb8-3"><a></a><span class="fu">read_sheet</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1U6Cf_qEOhiR9AZqTqS3mbMF3zt2db48ZP5v3rkrAEJY/edit#gid=780868077"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 624 × 6
    country continent  year lifeExp      pop gdpPercap
@@ -527,51 +519,50 @@ Sang-Il Lee
 </div>
 </div>
 </div>
-</section></section><section><section id="web-scraping" class="title-slide slide level1 center"><h1>Web Scraping</h1>
+</section></section>
+<section>
+<section id="web-scraping" class="title-slide slide level1 center">
+<h1>Web Scraping</h1>
 
-</section><section id="rvest-package" class="slide level2"><h2>
-<code>rvest</code> package</h2>
+</section>
+<section id="rvest-package" class="slide level2">
+<h2><code>rvest</code> package</h2>
 
-<img data-src="images/clipboard-1209836452.png" class="quarto-figure quarto-figure-center r-stretch"></section><section id="example-1-website" class="slide level2"><h2>Example 1: Website</h2>
+<img data-src="images/clipboard-1209836452.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="example-1-website" class="slide level2">
+<h2>Example 1: Website</h2>
 <p><a href="https://rvest.tidyverse.org/articles/starwars.html">vignette(“starwars”)</a></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="sc">&lt;</span>section<span class="sc">&gt;</span></span>
-<span id="cb10-2"><a></a>  <span class="er">&lt;</span>h2 data<span class="sc">-</span>id<span class="ot">=</span><span class="st">"1"</span><span class="sc">&gt;</span>The Phantom Menace<span class="sc">&lt;</span><span class="er">/</span>h2<span class="sc">&gt;</span></span>
-<span id="cb10-3"><a></a>  <span class="er">&lt;</span>p<span class="sc">&gt;</span>Released<span class="sc">:</span> <span class="dv">1999-05-19</span><span class="sc">&lt;</span><span class="er">/</span>p<span class="sc">&gt;</span></span>
-<span id="cb10-4"><a></a>  <span class="er">&lt;</span>p<span class="sc">&gt;</span>Director<span class="sc">:</span> <span class="er">&lt;</span>span class<span class="ot">=</span><span class="st">"director"</span><span class="sc">&gt;</span>George Lucas<span class="sc">&lt;</span><span class="er">/</span>span<span class="sc">&gt;</span><span class="er">&lt;/</span>p<span class="sc">&gt;</span></span>
-<span id="cb10-5"><a></a>  </span>
-<span id="cb10-6"><a></a>  <span class="er">&lt;</span>div class<span class="ot">=</span><span class="st">"crawl"</span><span class="sc">&gt;</span></span>
-<span id="cb10-7"><a></a>    <span class="er">&lt;</span>p<span class="sc">&gt;</span>...<span class="sc">&lt;</span><span class="er">/</span>p<span class="sc">&gt;</span></span>
-<span id="cb10-8"><a></a>    <span class="er">&lt;</span>p<span class="sc">&gt;</span>...<span class="sc">&lt;</span><span class="er">/</span>p<span class="sc">&gt;</span></span>
-<span id="cb10-9"><a></a>    <span class="er">&lt;</span>p<span class="sc">&gt;</span>...<span class="sc">&lt;</span><span class="er">/</span>p<span class="sc">&gt;</span></span>
-<span id="cb10-10"><a></a>  <span class="er">&lt;/</span>div<span class="sc">&gt;</span></span>
-<span id="cb10-11"><a></a><span class="er">&lt;/</span>section<span class="sc">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="sc">&lt;</span>section<span class="sc">&gt;</span></span>
+<span id="cb7-2"><a></a>  <span class="er">&lt;</span>h2 data<span class="sc">-</span>id<span class="ot">=</span><span class="st">"1"</span><span class="sc">&gt;</span>The Phantom Menace<span class="sc">&lt;</span><span class="er">/</span>h2<span class="sc">&gt;</span></span>
+<span id="cb7-3"><a></a>  <span class="er">&lt;</span>p<span class="sc">&gt;</span>Released<span class="sc">:</span> <span class="dv">1999-05-19</span><span class="sc">&lt;</span><span class="er">/</span>p<span class="sc">&gt;</span></span>
+<span id="cb7-4"><a></a>  <span class="er">&lt;</span>p<span class="sc">&gt;</span>Director<span class="sc">:</span> <span class="er">&lt;</span>span class<span class="ot">=</span><span class="st">"director"</span><span class="sc">&gt;</span>George Lucas<span class="sc">&lt;</span><span class="er">/</span>span<span class="sc">&gt;</span><span class="er">&lt;/</span>p<span class="sc">&gt;</span></span>
+<span id="cb7-5"><a></a>  </span>
+<span id="cb7-6"><a></a>  <span class="er">&lt;</span>div class<span class="ot">=</span><span class="st">"crawl"</span><span class="sc">&gt;</span></span>
+<span id="cb7-7"><a></a>    <span class="er">&lt;</span>p<span class="sc">&gt;</span>...<span class="sc">&lt;</span><span class="er">/</span>p<span class="sc">&gt;</span></span>
+<span id="cb7-8"><a></a>    <span class="er">&lt;</span>p<span class="sc">&gt;</span>...<span class="sc">&lt;</span><span class="er">/</span>p<span class="sc">&gt;</span></span>
+<span id="cb7-9"><a></a>    <span class="er">&lt;</span>p<span class="sc">&gt;</span>...<span class="sc">&lt;</span><span class="er">/</span>p<span class="sc">&gt;</span></span>
+<span id="cb7-10"><a></a>  <span class="er">&lt;/</span>div<span class="sc">&gt;</span></span>
+<span id="cb7-11"><a></a><span class="er">&lt;/</span>section<span class="sc">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="example-1-title" class="slide level2"><h2>Example 1: Title</h2>
+</section>
+<section id="example-1-title" class="slide level2">
+<h2>Example 1: Title</h2>
 <div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-4-1">Code</a></li>
-<li><a href="#tabset-4-2">Result</a></li>
-</ul>
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Code</a></li><li><a href="#tabset-4-2">Result</a></li></ul>
 <div class="tab-content">
 <div id="tabset-4-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">library</span>(rvest)</span>
-<span id="cb11-2"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://rvest.tidyverse.org/articles/starwars.html"</span></span>
-<span id="cb11-3"><a></a><span class="fu">read_html</span>(url) <span class="sc">|&gt;</span> </span>
-<span id="cb11-4"><a></a>  <span class="fu">html_elements</span>(<span class="st">"section"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb11-5"><a></a>  <span class="fu">html_element</span>(<span class="st">"h2"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb11-6"><a></a>  <span class="fu">html_text2</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">library</span>(rvest)</span>
+<span id="cb8-2"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://rvest.tidyverse.org/articles/starwars.html"</span></span>
+<span id="cb8-3"><a></a><span class="fu">read_html</span>(url) <span class="sc">|&gt;</span> </span>
+<span id="cb8-4"><a></a>  <span class="fu">html_elements</span>(<span class="st">"section"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb8-5"><a></a>  <span class="fu">html_element</span>(<span class="st">"h2"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb8-6"><a></a>  <span class="fu">html_text2</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-4-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">library</span>(rvest)</span>
-<span id="cb12-2"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://rvest.tidyverse.org/articles/starwars.html"</span></span>
-<span id="cb12-3"><a></a><span class="fu">read_html</span>(url) <span class="sc">|&gt;</span> </span>
-<span id="cb12-4"><a></a>  <span class="fu">html_elements</span>(<span class="st">"section"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb12-5"><a></a>  <span class="fu">html_element</span>(<span class="st">"h2"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb12-6"><a></a>  <span class="fu">html_text2</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "The Phantom Menace"      "Attack of the Clones"   
 [3] "Revenge of the Sith"     "A New Hope"             
@@ -582,55 +573,36 @@ Sang-Il Lee
 </div>
 </div>
 </div>
-</section><section id="example-1-all-together" class="slide level2"><h2>Example 1: All together</h2>
+</section>
+<section id="example-1-all-together" class="slide level2">
+<h2>Example 1: All together</h2>
 <div class="panel-tabset">
-<ul id="tabset-5" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-5-1">Code</a></li>
-<li><a href="#tabset-5-2">Result</a></li>
-</ul>
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Code</a></li><li><a href="#tabset-5-2">Result</a></li></ul>
 <div class="tab-content">
 <div id="tabset-5-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>section <span class="ot">&lt;-</span> <span class="fu">read_html</span>(url) <span class="sc">|&gt;</span> </span>
-<span id="cb14-2"><a></a>  <span class="fu">html_elements</span>(<span class="st">"section"</span>)</span>
-<span id="cb14-3"><a></a><span class="fu">tibble</span>(</span>
-<span id="cb14-4"><a></a>  <span class="at">title =</span> section <span class="sc">|&gt;</span> </span>
-<span id="cb14-5"><a></a>    <span class="fu">html_element</span>(<span class="st">"h2"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb14-6"><a></a>    <span class="fu">html_text2</span>(),</span>
-<span id="cb14-7"><a></a>  <span class="at">released =</span> section <span class="sc">|&gt;</span> </span>
-<span id="cb14-8"><a></a>    <span class="fu">html_element</span>(<span class="st">"p"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb14-9"><a></a>    <span class="fu">html_text2</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb14-10"><a></a>    <span class="fu">str_remove</span>(<span class="st">"Released: "</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb14-11"><a></a>    <span class="fu">parse_date</span>(),</span>
-<span id="cb14-12"><a></a>  <span class="at">director =</span> section <span class="sc">|&gt;</span> </span>
-<span id="cb14-13"><a></a>    <span class="fu">html_element</span>(<span class="st">".director"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb14-14"><a></a>    <span class="fu">html_text2</span>(),</span>
-<span id="cb14-15"><a></a>  <span class="at">intro =</span> section <span class="sc">|&gt;</span> </span>
-<span id="cb14-16"><a></a>    <span class="fu">html_element</span>(<span class="st">".crawl"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb14-17"><a></a>    <span class="fu">html_text2</span>()</span>
-<span id="cb14-18"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>section <span class="ot">&lt;-</span> <span class="fu">read_html</span>(url) <span class="sc">|&gt;</span> </span>
+<span id="cb10-2"><a></a>  <span class="fu">html_elements</span>(<span class="st">"section"</span>)</span>
+<span id="cb10-3"><a></a><span class="fu">tibble</span>(</span>
+<span id="cb10-4"><a></a>  <span class="at">title =</span> section <span class="sc">|&gt;</span> </span>
+<span id="cb10-5"><a></a>    <span class="fu">html_element</span>(<span class="st">"h2"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb10-6"><a></a>    <span class="fu">html_text2</span>(),</span>
+<span id="cb10-7"><a></a>  <span class="at">released =</span> section <span class="sc">|&gt;</span> </span>
+<span id="cb10-8"><a></a>    <span class="fu">html_element</span>(<span class="st">"p"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb10-9"><a></a>    <span class="fu">html_text2</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb10-10"><a></a>    <span class="fu">str_remove</span>(<span class="st">"Released: "</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb10-11"><a></a>    <span class="fu">parse_date</span>(),</span>
+<span id="cb10-12"><a></a>  <span class="at">director =</span> section <span class="sc">|&gt;</span> </span>
+<span id="cb10-13"><a></a>    <span class="fu">html_element</span>(<span class="st">".director"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb10-14"><a></a>    <span class="fu">html_text2</span>(),</span>
+<span id="cb10-15"><a></a>  <span class="at">intro =</span> section <span class="sc">|&gt;</span> </span>
+<span id="cb10-16"><a></a>    <span class="fu">html_element</span>(<span class="st">".crawl"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb10-17"><a></a>    <span class="fu">html_text2</span>()</span>
+<span id="cb10-18"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-5-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>section <span class="ot">&lt;-</span> <span class="fu">read_html</span>(url) <span class="sc">|&gt;</span> </span>
-<span id="cb15-2"><a></a>  <span class="fu">html_elements</span>(<span class="st">"section"</span>)</span>
-<span id="cb15-3"><a></a><span class="fu">tibble</span>(</span>
-<span id="cb15-4"><a></a>  <span class="at">title =</span> section <span class="sc">|&gt;</span> </span>
-<span id="cb15-5"><a></a>    <span class="fu">html_element</span>(<span class="st">"h2"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb15-6"><a></a>    <span class="fu">html_text2</span>(),</span>
-<span id="cb15-7"><a></a>  <span class="at">released =</span> section <span class="sc">|&gt;</span> </span>
-<span id="cb15-8"><a></a>    <span class="fu">html_element</span>(<span class="st">"p"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb15-9"><a></a>    <span class="fu">html_text2</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb15-10"><a></a>    <span class="fu">str_remove</span>(<span class="st">"Released: "</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb15-11"><a></a>    <span class="fu">parse_date</span>(),</span>
-<span id="cb15-12"><a></a>  <span class="at">director =</span> section <span class="sc">|&gt;</span> </span>
-<span id="cb15-13"><a></a>    <span class="fu">html_element</span>(<span class="st">".director"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb15-14"><a></a>    <span class="fu">html_text2</span>(),</span>
-<span id="cb15-15"><a></a>  <span class="at">intro =</span> section <span class="sc">|&gt;</span> </span>
-<span id="cb15-16"><a></a>    <span class="fu">html_element</span>(<span class="st">".crawl"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb15-17"><a></a>    <span class="fu">html_text2</span>()</span>
-<span id="cb15-18"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 7 × 4
   title                   released   director         intro                     
@@ -647,7 +619,9 @@ Sang-Il Lee
 </div>
 </div>
 </div>
-</section><section id="example-2-naver-news" class="slide level2"><h2>Example 2: Naver news</h2>
+</section>
+<section id="example-2-naver-news" class="slide level2">
+<h2>Example 2: Naver news</h2>
 <div class="r-fit-text">
 <ul>
 <li><p><a href="https://news.naver.com/">네이버 뉴스</a></p></li>
@@ -655,667 +629,635 @@ Sang-Il Lee
 <li><p>검색 결과: <a href="https://search.naver.com/search.naver?where=news&amp;ie=utf8&amp;sm=nws_hty&amp;query=%EC%A7%80%EB%B0%A9%EC%86%8C%EB%A9%B8" class="uri">https://search.naver.com/search.naver?where=news&amp;ie=utf8&amp;sm=nws_hty&amp;query=%EC%A7%80%EB%B0%A9%EC%86%8C%EB%A9%B8</a></p></li>
 </ul>
 </div>
-</section><section id="example-2-naver-news-1" class="slide level2"><h2>Example 2: Naver news</h2>
+</section>
+<section id="example-2-naver-news-1" class="slide level2">
+<h2>Example 2: Naver news</h2>
 <div class="panel-tabset">
-<ul id="tabset-6" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-6-1">Code</a></li>
-<li><a href="#tabset-6-2">Result</a></li>
-</ul>
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Code</a></li><li><a href="#tabset-6-2">Result</a></li></ul>
 <div class="tab-content">
 <div id="tabset-6-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://search.naver.com/search.naver?where=news&amp;ie=utf8&amp;sm=nws_hty&amp;query=%EC%A7%80%EB%B0%A9%EC%86%8C%EB%A9%B8"</span></span>
-<span id="cb17-2"><a></a>title <span class="ot">&lt;-</span> url <span class="sc">|&gt;</span> </span>
-<span id="cb17-3"><a></a>  <span class="fu">read_html</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb17-4"><a></a>  <span class="fu">html_elements</span>(<span class="st">".news_tit"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb17-5"><a></a>  <span class="fu">html_text2</span>()</span>
-<span id="cb17-6"><a></a>contents <span class="ot">&lt;-</span> url <span class="sc">|&gt;</span> </span>
-<span id="cb17-7"><a></a>  <span class="fu">read_html</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb17-8"><a></a>  <span class="fu">html_elements</span>(<span class="st">".dsc_txt_wrap"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb17-9"><a></a>  <span class="fu">html_text2</span>()</span>
-<span id="cb17-10"><a></a><span class="fu">tibble</span>(title, contents)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://search.naver.com/search.naver?where=news&amp;ie=utf8&amp;sm=nws_hty&amp;query=%EC%A7%80%EB%B0%A9%EC%86%8C%EB%A9%B8"</span></span>
+<span id="cb12-2"><a></a>title <span class="ot">&lt;-</span> url <span class="sc">|&gt;</span> </span>
+<span id="cb12-3"><a></a>  <span class="fu">read_html</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb12-4"><a></a>  <span class="fu">html_elements</span>(<span class="st">".news_tit"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb12-5"><a></a>  <span class="fu">html_text2</span>()</span>
+<span id="cb12-6"><a></a>contents <span class="ot">&lt;-</span> url <span class="sc">|&gt;</span> </span>
+<span id="cb12-7"><a></a>  <span class="fu">read_html</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb12-8"><a></a>  <span class="fu">html_elements</span>(<span class="st">".dsc_txt_wrap"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb12-9"><a></a>  <span class="fu">html_text2</span>()</span>
+<span id="cb12-10"><a></a><span class="fu">tibble</span>(title, contents)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-6-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://search.naver.com/search.naver?where=news&amp;ie=utf8&amp;sm=nws_hty&amp;query=%EC%A7%80%EB%B0%A9%EC%86%8C%EB%A9%B8"</span></span>
-<span id="cb18-2"><a></a>title <span class="ot">&lt;-</span> url <span class="sc">|&gt;</span> </span>
-<span id="cb18-3"><a></a>  <span class="fu">read_html</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb18-4"><a></a>  <span class="fu">html_elements</span>(<span class="st">".news_tit"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb18-5"><a></a>  <span class="fu">html_text2</span>()</span>
-<span id="cb18-6"><a></a>contents <span class="ot">&lt;-</span> url <span class="sc">|&gt;</span> </span>
-<span id="cb18-7"><a></a>  <span class="fu">read_html</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb18-8"><a></a>  <span class="fu">html_elements</span>(<span class="st">".dsc_txt_wrap"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb18-9"><a></a>  <span class="fu">html_text2</span>()</span>
-<span id="cb18-10"><a></a><span class="fu">tibble</span>(title, contents)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 2
    title                                                               contents 
    &lt;chr&gt;                                                               &lt;chr&gt;    
- 1 "[지방소멸 경고등] 위기 속 작은 희망…영월 옥동초교의 실험"          "연합뉴… 
- 2 "지자체 ‘지방소멸기금’ 최대 160억 지원"                             "지방소… 
- 3 "접경지, 청년 창업 ‘확대’…지방소멸 ‘극복’ 시도"                     "[앵커] …
- 4 "우수 지자체에 지방소멸대응기금 집중 지원한다…배분체계 개선"        "행정안… 
- 5 "저출산율·양극화… 韓사회는 왜 소멸의 길을 가고 있나"                "사람들… 
- 6 "[인터뷰] 천하람 \"저출산·지방소멸·정치개혁…미래세대 이슈에 집중\"" "또 지방…
- 7 "[매일경제TV] 지방 소멸 막기 위한 정책"                             "인구 감…
- 8 "지역소멸 시대, 농협의 역할에 변화가 필요하다"                      "농식품… 
- 9 "여당 재선 엄태영 \"지방소멸위기 처한 제천·단양 반드시 살리겠다\""  "'실천하…
-10 "“강진군, 지역소멸 위기 극복 인구정책 롤모델 급부상”"               "군에 따…</code></pre>
+ 1 "'인구감소지역 규제'는 특례로 빼고…지방소멸위기 극복"               "폐교를 …
+ 2 "인구감소지역 지원 특례 62개… '지방소멸위기 극복' 효과 낼까"        "인구감… 
+ 3 "강원자치도, 지방소멸 대응 골드시티 성공전략 모색"                  "서울 과…
+ 4 "'인구감소지역 규제 특례' 발표... 지방소멸 벗어날 수 있을까?"       "지방소… 
+ 5 "[속보]윤 대통령 \"전북특별자치법 개정 추진…지방소멸 대응 과제 반…  "윤석열 …
+ 6 "폐교 지자체 무상 양도·빈집 철거 간소화 등 규제 특례로 지방소멸 대… "정부는 …
+ 7 "[인터뷰 ①] 최응천 청장 \"국가유산 활용, 인구감소·지방소멸 극복 …   "이영태 …
+ 8 "호텔 HDC, 인구 감소로 인한 지방 소멸 문제 '해법' 제시"             "김정환 …
+ 9 "한총리 \"지방 폐교, 문화예술 공간 활용…농어촌민박 규제 완화\""     "한 총리…
+10 "'지방 소멸' 섬뜩한 경고에… 지자체·공공기관 협력한다"               "이번 포…</code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-</section></section><section><section id="api" class="title-slide slide level1 center"><h1>API</h1>
+</section></section>
+<section>
+<section id="api" class="title-slide slide level1 center">
+<h1>API</h1>
 <p><code>httr2</code> package</p>
 
-<img data-src="images/clipboard-2579380411.png" class="quarto-figure quarto-figure-center r-stretch"></section><section id="example-naver-news" class="slide level2"><h2>Example: Naver news</h2>
+<img data-src="images/clipboard-2579380411.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="example-naver-news" class="slide level2">
+<h2>Example: Naver news</h2>
 <div class="r-fit-text">
 <ul>
 <li><p>NAVER Developer (<a href="https://developers.naver.com/main/" class="uri">https://developers.naver.com/main/</a>)</p></li>
-<li>
-<p>[Products]-[서비스 API]-[검색] (<a href="https://developers.naver.com/products/service-api/search/search.md" class="uri">https://developers.naver.com/products/service-api/search/search.md</a>)</p>
+<li><p>[Products]-[서비스 API]-[검색] (<a href="https://developers.naver.com/products/service-api/search/search.md" class="uri">https://developers.naver.com/products/service-api/search/search.md</a>)</p>
 <ul>
 <li><p>오픈 API 이용 신청</p></li>
 <li><p>개발 가이드 보기</p></li>
-</ul>
-</li>
-<li>
-<p>오픈 API 이용 신청</p>
+</ul></li>
+<li><p>오픈 API 이용 신청</p>
 <ul>
 <li><p>애플리케이션 이름</p></li>
-<li>
-<p>비로그인 오픈 API 서비스 환경</p>
+<li><p>비로그인 오픈 API 서비스 환경</p>
 <ul>
 <li><p>WEB 설정</p></li>
 <li><p>웹 서비스 URL: http://localhost</p></li>
-</ul>
-</li>
-</ul>
-</li>
+</ul></li>
+</ul></li>
 </ul>
 </div>
-</section><section id="example-naver-news-1" class="slide level2"><h2>Example: Naver news</h2>
+</section>
+<section id="example-naver-news-1" class="slide level2">
+<h2>Example: Naver news</h2>
 <div class="panel-tabset">
-<ul id="tabset-7" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-7-1">Code 1</a></li>
-<li><a href="#tabset-7-2">Result 1</a></li>
-<li><a href="#tabset-7-3">Code 2</a></li>
-</ul>
+<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Code 1</a></li><li><a href="#tabset-7-2">Result 1</a></li><li><a href="#tabset-7-3">Code 2</a></li></ul>
 <div class="tab-content">
 <div id="tabset-7-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">library</span>(httr2)</span>
-<span id="cb20-2"><a></a>search <span class="ot">&lt;-</span> <span class="st">"지방소멸"</span></span>
-<span id="cb20-3"><a></a>your_url <span class="ot">&lt;-</span> <span class="st">"https://openapi.naver.com/v1/search/news.json"</span></span>
-<span id="cb20-4"><a></a>result_naver <span class="ot">&lt;-</span> <span class="fu">request</span>(your_url) <span class="sc">|&gt;</span> </span>
-<span id="cb20-5"><a></a>  <span class="fu">req_headers</span>(</span>
-<span id="cb20-6"><a></a>    <span class="st">"X-Naver-Client-ID"</span> <span class="ot">=</span> your_ClientID,</span>
-<span id="cb20-7"><a></a>    <span class="st">"X-Naver-Client-Secret"</span> <span class="ot">=</span> your_Client_Secret</span>
-<span id="cb20-8"><a></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb20-9"><a></a>  <span class="fu">req_url_query</span>(</span>
-<span id="cb20-10"><a></a>    <span class="at">query =</span> search,</span>
-<span id="cb20-11"><a></a>    <span class="at">display =</span> <span class="dv">100</span>,</span>
-<span id="cb20-12"><a></a>    <span class="at">start =</span> <span class="dv">1</span>,</span>
-<span id="cb20-13"><a></a>    <span class="at">sort =</span> <span class="st">"date"</span></span>
-<span id="cb20-14"><a></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb20-15"><a></a>  <span class="fu">req_perform</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb20-16"><a></a>  <span class="fu">resp_body_json</span>() </span>
-<span id="cb20-17"><a></a>naver_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">t</span>(<span class="fu">sapply</span>(result_naver<span class="sc">$</span>items, data.frame)))</span>
-<span id="cb20-18"><a></a>naver_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">library</span>(httr2)</span>
+<span id="cb14-2"><a></a>search <span class="ot">&lt;-</span> <span class="st">"지방소멸"</span></span>
+<span id="cb14-3"><a></a>your_url <span class="ot">&lt;-</span> <span class="st">"https://openapi.naver.com/v1/search/news.json"</span></span>
+<span id="cb14-4"><a></a>result_naver <span class="ot">&lt;-</span> <span class="fu">request</span>(your_url) <span class="sc">|&gt;</span> </span>
+<span id="cb14-5"><a></a>  <span class="fu">req_headers</span>(</span>
+<span id="cb14-6"><a></a>    <span class="st">"X-Naver-Client-ID"</span> <span class="ot">=</span> your_ClientID,</span>
+<span id="cb14-7"><a></a>    <span class="st">"X-Naver-Client-Secret"</span> <span class="ot">=</span> your_Client_Secret</span>
+<span id="cb14-8"><a></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb14-9"><a></a>  <span class="fu">req_url_query</span>(</span>
+<span id="cb14-10"><a></a>    <span class="at">query =</span> search,</span>
+<span id="cb14-11"><a></a>    <span class="at">display =</span> <span class="dv">100</span>,</span>
+<span id="cb14-12"><a></a>    <span class="at">start =</span> <span class="dv">1</span>,</span>
+<span id="cb14-13"><a></a>    <span class="at">sort =</span> <span class="st">"date"</span></span>
+<span id="cb14-14"><a></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb14-15"><a></a>  <span class="fu">req_perform</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb14-16"><a></a>  <span class="fu">resp_body_json</span>() </span>
+<span id="cb14-17"><a></a>naver_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">t</span>(<span class="fu">sapply</span>(result_naver<span class="sc">$</span>items, data.frame)))</span>
+<span id="cb14-18"><a></a>naver_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-7-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">library</span>(httr2)</span>
-<span id="cb21-2"><a></a>search <span class="ot">&lt;-</span> <span class="st">"지방소멸"</span></span>
-<span id="cb21-3"><a></a>your_url <span class="ot">&lt;-</span> <span class="st">"https://openapi.naver.com/v1/search/news.json"</span></span>
-<span id="cb21-4"><a></a>result_naver <span class="ot">&lt;-</span> <span class="fu">request</span>(your_url) <span class="sc">|&gt;</span> </span>
-<span id="cb21-5"><a></a>  <span class="fu">req_headers</span>(</span>
-<span id="cb21-6"><a></a>    <span class="st">"X-Naver-Client-ID"</span> <span class="ot">=</span> your_ClientID,</span>
-<span id="cb21-7"><a></a>    <span class="st">"X-Naver-Client-Secret"</span> <span class="ot">=</span> your_Client_Secret</span>
-<span id="cb21-8"><a></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb21-9"><a></a>  <span class="fu">req_url_query</span>(</span>
-<span id="cb21-10"><a></a>    <span class="at">query =</span> search,</span>
-<span id="cb21-11"><a></a>    <span class="at">display =</span> <span class="dv">100</span>,</span>
-<span id="cb21-12"><a></a>    <span class="at">start =</span> <span class="dv">1</span>,</span>
-<span id="cb21-13"><a></a>    <span class="at">sort =</span> <span class="st">"date"</span></span>
-<span id="cb21-14"><a></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb21-15"><a></a>  <span class="fu">req_perform</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb21-16"><a></a>  <span class="fu">resp_body_json</span>() </span>
-<span id="cb21-17"><a></a>naver_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">t</span>(<span class="fu">sapply</span>(result_naver<span class="sc">$</span>items, data.frame)))</span>
-<span id="cb21-18"><a></a>naver_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                                                                                           title
-1                                                             '저출생' 파장에 사회 전반이 '흔들'
-2                                                     포천시의회, 인구감소대응특위 위원장단 선임
-3                                                 농협 경제사업 강화로 지역 일자리 창출 확대해야
-4                                            지역&lt;b&gt;소멸&lt;/b&gt; 시대, 농협의 역할에 변화가 필요하다
-5                          장성군, 나주시·화순·담양군과 전남권 개발제한구역 전면 해제 공동건의
-6                               상품권·온라인 포인트·상장 주식…7월부터 쉽고 편하게 기부하세요
-7                                                         전통시장 부활‥&amp;quot;상권 살리자&amp;quot;
-8                                                경남도청 산악회, 전남 사랑애 서포터즈 홍보 앞장
-9                                         전북하이텍고-완주군, 협약형 특성화고 1차 서류심사 통과
-10                  하승철 하동군수, 국토부에 컴팩트 매력도시 현안 사업 건의..제2차관 만나 확...
-11                   Professor Story / 군장대 외식조리과 이선일 교수 ”캡스톤 디자인에 입각하...
-12                   '전라·제주 여성가족정책 네트워크' 출범…전북여성가족재단, 지역주도 여성...
-13                                                  [매일경제TV] &lt;b&gt;지방 소멸&lt;/b&gt; 막기 위한 정책
-14                     [인터뷰] 천하람 “개혁신당 3석, ‘소신파 정치인’ 멸종 막겠다는 국민 뜻”
-15               [헬로 이슈토크] 중구영도구 조승환 당선인 &amp;quot;기업유치·일자리 창출 집중&amp;quot;
-16                                                  '1명 출산할 때 1억 원'...저출생 해결책 될까?
-17                                             경남도청 산악회, '전남 사랑애 서포터즈 홍보' 앞장
-18                                                              7월부터 '이것'도 기부 가능해진다
-19                                                  영주시, 제1회 추경예산안 1조 1천838억원 편성
-20                                                                일본의 ‘2지역 거주인구 대책’
-21                                   &amp;quot;혐오정치 끝내러 왔다&amp;quot; 서미화, '이준석' 콕 찍었다
-22                                     경상북도시장군수협의회 정례회 개최…저출생 극복 성금 전달
-23                                            &amp;quot;전남권 개발제한구역 전면 해제&amp;quot; 공동건의
-24                             7월부터 백화점·마트 상품권, 상장 주식, 네이버 포인트도 기부 가능
-25                          제주-광주전남 '혁신플랫폼', 미래형운송기기·미래모빌리티 발전 '맞손'
-26                          장성군, 나주시‧화순군‧담양군, 전남권 개발제한구역 전면 해제 공동건의
-27                                  “목포대 의과대학 유치 결의”… 목포시 5월 시정현안회의 개최
-28                                     주식·백화점 상품권·네이버 페이도 기부된다…7월31일 시행
-29                               일본판 ‘고향사랑기부제’ 9조원 뭉칫돈…답례품 경쟁 과열 양상도
-30                                    장성군 등 전남 중부권 4개 시군, 개발제한구역 전면 해제해야
-31                                               백화점 상품권·주식 등 유가증권 기부 가능해진다
-32                                           경남도청 산악회, 전남 사랑애 서포터즈 홍보 앞장선다
-33                                         &amp;quot;네이버포인트·백화점상품권으로 기부하세요&amp;quot;
-34                  '전남 사랑애 서포터즈' 홍보 앞장선 경남도청 산악회...전남도청 산악회와 상...
-35                                      강원대 김헌영 총장, '차이나는 클라스 – 위대한 질문' 출연
-36                              [취재파일] 인공위성에 찍힌 생생한 북한, 경제학자가 분석했더니...
-37                                              경남도청 산악회, '전남 사랑애서포터즈' 홍보 앞장
-38                              &amp;quot;백화점 상품권, 네이버 포인트도 기부 가능&amp;quot;...입법 예고
-39                                 '영호남 화합' 경남도청 산악회, 전남 사랑애 서포터즈 홍보 앞장
-40                              경북도의회, 경북도 2억1700만원 감액ㆍ경북교육청 9억818만 원 감액
-41                                                      김헌영 강원대 총장, 차이나는 클라스 출연
-42                                               경남도청 산악회, 전남 사랑애 서포터즈 홍보 앞장
-43                   대학 캠퍼스에도 실버타운 들어서나? 고령화시대 새 먹거리로 주목[황재성의 ...
-44           [인터뷰] 천하람 &amp;quot;저출산·&lt;b&gt;지방소멸&lt;/b&gt;·정치개혁…미래세대 이슈에 집중&amp;quot;
-45                                            함양 서상초, '경남 작은학교 살리기 공모 사업' 선정
-46    &amp;quot;조국당 돌풍 진원지 '광주', 민주당 뼈아프게 새겨야&amp;quot;...&amp;quot;전주 떠난 KCC, 연...
-47                 &amp;quot;어린이 없는 놀이터 부지기수&amp;quot;…초등생 확 줄고 문 닫는 유치원 '속출'
-48         [청년이 희망이다] &amp;quot;완도를 제주처럼 멋지게&amp;quot;…피어싱한 20대 여성 이장의 도...
-49                                  7월부터 백화점 상품권·네이버 포인트·주식도 기부 가능해진다
-50                         경상북도시장군수협의회, 정기회의 개최…저출생 극복 성금 2000만원 전달
-51                                     접경지, 청년 창업 ‘확대’…&lt;b&gt;지방소멸&lt;/b&gt; ‘극복’ 시도
-52                                   하승철 하동군수, 국토교통부에 컴팩트 매력도시 현안사업 건의
-53                                                 세종시-청양군, 고향기부 활성화 위해 교차 기부
-54                                                    전남도-전남도새마을회, 지역 미래 발전 맞손
-55                                  경상북도시장군수협의회 정례회 개최…저출생 성금 2천만원 전달
-56                                              고령군, 2040 중장기 종합발전계획 주민설명회 개최
-57                                     영주시, 2024년도 제1회 추가경정 예산안 1조 1838억 원 편성
-58                                                '농사짓는 현직 도의원' 김성일, 전남도의장 도전
-59                                                지자체 ‘&lt;b&gt;지방소멸&lt;/b&gt;기금’ 최대 160억 지원
-60                               경북 김천시, 제1회 추경예산안 1조4850억 원 편성…1200억 원 증액
-61                                          호서대, ㈜한국후꼬꾸와 '외국인 유학생 취업' 산학협력
-62                                            고령군, '2040 중장기 종합발전계획 주민설명회' 개최
-63                                         재개발·재건축 규제 풀어도 '내 집 마련' 멀어지는 이유
-64                           장성군-4개 시.군 자치단체장, 전남권 개발제한구역 전면해제 공동 건의
-65                                                    전남도-전남도새마을회, 지역 미래 발전 맞손
-66                          저출산 극복 위한 국회 세미나···&amp;quot;부영모델 확산여부 관심&amp;quot;
-67                                                        세종-청양 고향사랑기부제 교차기부 동참
-68                                    저출산 극복 위한 기업의 역할과 국회의 지원방안 세미나 개최
-69                      [위클리오늘] 경상북도시장군수협의회 정례회 개최 … 저출생 극복 성금 전달
-70                           “인구정책 1번지 비법이 뭔가요?” …강진군 인구정책 벤치마킹 이어져
-71                      포천시의회 '인구감소 대응 특위' 열고 임종훈 위원장·안애경 부위원장 선임
-72                                                성평등 실현을 위한 최초 광역형 성평등기구 출범
-73                  포천시의회 인구감소 위기 대응 특별위원회 출범: 위기 극복을 위한 기대와 과...
-74                   경남도립남해대학-경남국제외국인학교, 글로컬대학사업 및 교육발전특구사업 ...
-75                                                 울진 월변지구 개발 속도…2026년 기반시설 준공
-76                            나주시,, 장성군화순담양군과 전남권 개발제한구역 전면 해제 공동건의
-77                                  하승철 하동군수, 국토교통부에 컴팩트 매력도시 현안 사업 건의
-78                                              함양 서상초, 경남 작은학교 살리기 공모 사업 선정
-79                                  [e추천경매물건]송파 올림픽선수촌 131.8㎡, 18.8억원 매물 나와
-80                                                   영월군 '경기의정포럼, 2024 의정워크숍' 개최
-81                                        태백시, 청년 및 신혼부부 대상, 만원 임대료 입주자 모집
-82  [지역&lt;b&gt;소멸&lt;/b&gt;을 막아라] &amp;quot;고등학교서도 유학생이 공부를…&amp;quot; 김천고 한국의 '이튼...
-83                                        &amp;quot;은퇴 준비라는 것은 행복하게 살기 위한 준비&amp;quot;
-84                              [&lt;b&gt;지방소멸&lt;/b&gt; 경고등] 위기 속 작은 희망…영월 옥동초교의 실험
-85              여당 재선 엄태영 &amp;quot;&lt;b&gt;지방소멸&lt;/b&gt;위기 처한 제천·단양 반드시 살리겠다&amp;quot;
-86            &amp;quot;닥터바리스타 방탄커피&amp;quot; 등 4일 캐시워크 돈버는퀴즈 전체 문제+정답![단독]
-87                                   저출산율·양극화… 韓사회는 왜 &lt;b&gt;소멸&lt;/b&gt;의 길을 가고 있나
-88                                                영월군의회, 집행부와 함께 우수사례 현장 워크숍
-89                                              함양 서상초, 경남 작은학교 살리기 공모 사업 선정
-90                                   초고령사회 눈앞… 실버타운 승부수로 ‘두 마리 토끼’ 잡는다
-91                             장성군, 나주‧화순‧담양군 '전남권 개발제한구역 전면 해제' 공동건의
-92                                                  전남도-전남도새마을회, 지역 미래 발전 '맞손'
-93                                                               [에디터 프리즘] 1만원 로또 주택
-94                                                    영주시, 제1회 추경예산안 1조 1838억원 편성
-95                  포천시의회, '인구감소 위기 대응 특별위원회' 제1차 회의 개의···위원장·...
-96                                                             TK 출신 제3지대 당선인 누가 있나?
-97                                                   세종-청양 고향사랑기부제 교차기부 동참 눈길
-98                                                           곡성군, 곡성군민의 날 기념행사 개최
-99                                                   세종-청양 고향사랑기부제 교차기부 동참 눈길
-100                             경북 시장군수협의회, 봉화서 현안사업 논의…저출생 극복 성금 전달
-                                                                                                                                        originallink
-1                                                                                   http://news.lghellovision.net/news/articleView.html?idxno=465222
-2                                                                                              https://www.ekn.kr/web/view.php?key=20240505022040658
-3                                                                                           http://www.ikpnews.net/news/articleView.html?idxno=63718
-4                                                                                           http://www.ikpnews.net/news/articleView.html?idxno=63748
-5                                                                                                 http://www.metroseoul.co.kr/article/20240503500443
-6                                                                           https://www.khan.co.kr/national/national-general/article/202405052105005
-7                                                                                                   https://ysmbc.co.kr/article/xs4IrUpxIvOloOE6-Wap
-8                                                                                        http://www.bzeronews.com/news/articleView.html?idxno=658800
-9                                                                                        http://www.jeonmin.co.kr/news/articleView.html?idxno=396957
-10                                                                                                           http://kpenews.com/View.aspx?No=3220350
-11                                                                                          https://www.cooknchefnews.com/news/view/1065594646252469
-12                                                                                       http://www.jeonmin.co.kr/news/articleView.html?idxno=396923
-13                                                                                                             https://www.mk.co.kr/article/11007802
-14                                                                      https://www.kmib.co.kr/article/view.asp?arcid=0020067996&amp;code=61111511&amp;cp=nv
-15                                                                                  http://news.lghellovision.net/news/articleView.html?idxno=465236
-16                                                                                                 https://www.ytn.co.kr/_ln/0103_202405051638546366
-17                                                                                    http://www.newsworker.co.kr/news/articleView.html?idxno=330301
-18                                                                                      https://kizmom.hankyung.com/news/view.html?aid=202405057572o
-19                                                                                              https://www.imaeil.com/page/view/2024050510280271096
-20                                                                                           http://www.m-economynews.com/news/article.html?no=43234
-21  https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003026837&amp;CMPT_CD=P0010&amp;utm_source=naver&amp;utm_medium=newsearch&amp;utm_campaign=naver_news
-22                                                                                                      http://www.kbsm.net/news/view.php?idx=432238
-23                                                                                         http://www.gjdream.com/news/articleView.html?idxno=643188
-24                                                                                        https://www.khan.co.kr/local/Seoul/article/202405051351001
-25                                                                                        http://www.jejusori.net/news/articleView.html?idxno=426460
-26                                                                                                                  http://www.breaknews.com/1030675
-27                                                                                                                  http://www.breaknews.com/1030678
-28                                                                       https://www.newsis.com/view/?id=NISX20240505_0002724228&amp;cID=10201&amp;pID=10200
-29                                                                                                             https://www.mk.co.kr/article/11007655
-30                                                                 https://www.seoul.co.kr/news/publicnews/2024/05/05/20240505500013?wlog_tag3=naver
-31                                                                                    https://www.daejonilbo.com/news/articleView.html?idxno=2129301
-32                                                                      https://www.kmib.co.kr/article/view.asp?arcid=0020067282&amp;code=61121111&amp;cp=nv
-33                                                                                 https://www.pinpointnews.co.kr/news/articleView.html?idxno=263670
-34                                                                                                     http://www.fnnews.com/news/202405051022317579
-35                                                                                      https://www.kfenews.co.kr/news/articleView.html?idxno=622449
-36                                                                 https://news.sbs.co.kr/news/endPage.do?news_id=N1007634612&amp;plink=ORI&amp;cooper=NAVER
-37                                                                                      https://www.getnews.co.kr/news/articleView.html?idxno=672848
-38                                                                 http://mbn.mk.co.kr/pages/news/newsView.php?category=mbn00003&amp;news_seq_no=5024235
-39                                                                                                           http://kpenews.com/View.aspx?No=3220235
-40                                                                                       https://www.viva100.com/main/view.php?key=20240505010001236
-41                                                                                           http://www.kado.net/news/articleView.html?idxno=1242301
-42                                          https://www.nocutnews.co.kr/news/6140009?utm_source=naver&amp;utm_medium=article&amp;utm_campaign=20240505090021
-43                                                                               https://www.donga.com/news/Economy/article/all/20240503/124781088/1
-44                                                                                                  https://www.newspim.com/news/view/20240503000891
-45                                                                                 https://www.newsfreezone.co.kr/news/articleView.html?idxno=566597
-46                                                                                           http://www.jbsori.com/news/articleView.html?idxno=13653
-47                                                                                                             https://www.news1.kr/articles/5405720
-48                                                                                       https://www.yna.co.kr/view/AKR20240502125500054?input=1195m
-49                                                                                       https://www.yna.co.kr/view/AKR20240503145200530?input=1195m
-50                                                                                     http://www.kyongbuk.co.kr/news/articleView.html?idxno=4008149
-51                                                                                     https://news.kbs.co.kr/news/pc/view/view.do?ncd=7956125&amp;ref=A
-52                                                                                     https://www.gukjenews.com/news/articleView.html?idxno=2986228
-53                                                                                                    http://www.tjb.co.kr/news05/bodo/view/id/68673
-54                                                                                                        http://www.mdilbo.com/detail/GQFJv6/719453
-55                                                                                       http://www.seoulwire.com/news/articleView.html?idxno=608284
-56                                                                            https://tk.newdaily.co.kr/site/data/html/2024/05/04/2024050400025.html
-57                                                                            https://tk.newdaily.co.kr/site/data/html/2024/05/04/2024050400022.html
-58                                                    https://www.pressian.com/pages/articles/2024050415371612178?utm_source=naver&amp;utm_medium=search
-59                                                                                                    https://www.nongmin.com/article/20240503500818
-60                                                                                       https://www.viva100.com/main/view.php?key=20240504010001227
-61                                                                                        https://www.newscj.com/news/articleView.html?idxno=3136319
-62                                                                                 https://www.newsfreezone.co.kr/news/articleView.html?idxno=566538
-63                                          https://www.nocutnews.co.kr/news/6139991?utm_source=naver&amp;utm_medium=article&amp;utm_campaign=20240504013010
-64                                                                                           https://www.sportsseoul.com/news/read/1425760?ref=naver
-65                                                                                                                  http://www.breaknews.com/1030622
-66                                                                                            https://www.smartfn.co.kr/article/view/sfn202405040004
-67                                                                                      https://www.joongdo.co.kr/web/view.php?key=20240504010001069
-68                                                                                   https://www.pointdaily.co.kr/news/articleView.html?idxno=200233
-69                                                                                     http://www.weeklytoday.com/news/articleView.html?idxno=624157
-70                                                                                                 http://www.betanews.net:8080/article/1465815.html
-71                                                                                     http://www.kihoilbo.co.kr/news/articleView.html?idxno=1086658
-72                                                                                      http://www.kwangju.co.kr/article.php?aid=1714784400767780007
-73                                                                                       https://www.nbntv.co.kr/news/articleView.html?idxno=3016437
-74                                                                                       https://www.viva100.com/main/view.php?key=20240504010001210
-75                                                                                              https://www.imaeil.com/page/view/2024050214395197733
-76                                                                                             http://news.heraldcorp.com/view.php?ud=20240504050015
-77                                                                                       https://www.viva100.com/main/view.php?key=20240504010001183
-78                                                                                       https://www.viva100.com/main/view.php?key=20240504010001192
-79                                                                                http://www.edaily.co.kr/news/newspath.asp?newsid=01305446638885640
-80                                                                                               https://www.cnbnews.com/news/article.html?no=657877
-81                                                                                               https://www.cnbnews.com/news/article.html?no=657865
-82                                                                                                    https://www.ajunews.com/view/20240502122350957
-83                                                                                       http://www.bzeronews.com/news/articleView.html?idxno=658762
-84                                                                                       https://www.yna.co.kr/view/AKR20240503055600062?input=1195m
-85                                                                                                             https://www.news1.kr/articles/5404966
-86                                                                                      http://www.economytalk.kr/news/articleView.html?idxno=255139
-87                                                                                         http://www.segye.com/newsView/20240502514555?OutUrl=naver
-88                                                                                             https://www.ekn.kr/web/view.php?key=20240504022570355
-89                                                                                https://www.dnews.co.kr/uhtml/view.jsp?idxno=202405040209432560677
-90                                                                               https://www.donga.com/news/Economy/article/all/20240503/124783492/1
-91                                                                                        https://www.newscj.com/news/articleView.html?idxno=3136270
-92                                                                                    http://www.newsworker.co.kr/news/articleView.html?idxno=330231
-93                                                                                                       https://www.joongang.co.kr/article/25247008
-94                                                                                     https://www.gukjenews.com/news/articleView.html?idxno=2985952
-95                                                                                   http://www.enewstoday.co.kr/news/articleView.html?idxno=2123484
-96                                                                               https://www.tbc.co.kr/news/view?pno=20240503161448AE02264&amp;id=186773
-97                                                                                      https://www.psnews.co.kr/news/articleView.html?idxno=2054256
-98                                                                                              https://view.asiae.co.kr/article/2024050321094252385
-99                                                                                       http://www.bzeronews.com/news/articleView.html?idxno=658740
-100                                                                          http://news.heraldcorp.com/village/view.php?ud=202405032033528048618_10
-                                                                      link
-1         http://news.lghellovision.net/news/articleView.html?idxno=465222
-2                    https://www.ekn.kr/web/view.php?key=20240505022040658
-3                 http://www.ikpnews.net/news/articleView.html?idxno=63718
-4                 http://www.ikpnews.net/news/articleView.html?idxno=63748
-5                       http://www.metroseoul.co.kr/article/20240503500443
-6            https://n.news.naver.com/mnews/article/032/0003294520?sid=102
-7                         https://ysmbc.co.kr/article/xs4IrUpxIvOloOE6-Wap
-8              http://www.bzeronews.com/news/articleView.html?idxno=658800
-9              http://www.jeonmin.co.kr/news/articleView.html?idxno=396957
-10                                 http://kpenews.com/View.aspx?No=3220350
-11                https://www.cooknchefnews.com/news/view/1065594646252469
-12             http://www.jeonmin.co.kr/news/articleView.html?idxno=396923
-13           https://n.news.naver.com/mnews/article/009/0005298594?sid=106
-14           https://n.news.naver.com/mnews/article/005/0001693673?sid=100
-15        http://news.lghellovision.net/news/articleView.html?idxno=465236
-16           https://n.news.naver.com/mnews/article/052/0002031545?sid=102
-17          http://www.newsworker.co.kr/news/articleView.html?idxno=330301
-18            https://kizmom.hankyung.com/news/view.html?aid=202405057572o
-19           https://n.news.naver.com/mnews/article/088/0000876289?sid=102
-20                 http://www.m-economynews.com/news/article.html?no=43234
-21           https://n.news.naver.com/mnews/article/047/0002432606?sid=100
-22                            http://www.kbsm.net/news/view.php?idx=432238
-23               http://www.gjdream.com/news/articleView.html?idxno=643188
-24           https://n.news.naver.com/mnews/article/032/0003294430?sid=102
-25              http://www.jejusori.net/news/articleView.html?idxno=426460
-26                                        http://www.breaknews.com/1030675
-27                                        http://www.breaknews.com/1030678
-28           https://n.news.naver.com/mnews/article/003/0012529251?sid=102
-29           https://n.news.naver.com/mnews/article/009/0005298476?sid=104
-30           https://n.news.naver.com/mnews/article/081/0003448776?sid=100
-31           https://n.news.naver.com/mnews/article/656/0000089059?sid=102
-32           https://n.news.naver.com/mnews/article/005/0001693613?sid=102
-33       https://www.pinpointnews.co.kr/news/articleView.html?idxno=263670
-34           https://n.news.naver.com/mnews/article/014/0005180790?sid=102
-35            https://www.kfenews.co.kr/news/articleView.html?idxno=622449
-36           https://n.news.naver.com/mnews/article/055/0001152566?sid=101
-37            https://www.getnews.co.kr/news/articleView.html?idxno=672848
-38           https://n.news.naver.com/mnews/article/057/0001815967?sid=101
-39                                 http://kpenews.com/View.aspx?No=3220235
-40             https://www.viva100.com/main/view.php?key=20240505010001236
-41           https://n.news.naver.com/mnews/article/654/0000073721?sid=102
-42           https://n.news.naver.com/mnews/article/079/0003892193?sid=102
-43           https://n.news.naver.com/mnews/article/020/0003562912?sid=101
-44                        https://www.newspim.com/news/view/20240503000891
-45       https://www.newsfreezone.co.kr/news/articleView.html?idxno=566597
-46                 http://www.jbsori.com/news/articleView.html?idxno=13653
-47           https://n.news.naver.com/mnews/article/421/0007521564?sid=102
-48           https://n.news.naver.com/mnews/article/001/0014669636?sid=102
-49           https://n.news.naver.com/mnews/article/001/0014669605?sid=102
-50           http://www.kyongbuk.co.kr/news/articleView.html?idxno=4008149
-51           https://n.news.naver.com/mnews/article/056/0011715036?sid=101
-52           https://www.gukjenews.com/news/articleView.html?idxno=2986228
-53                          http://www.tjb.co.kr/news05/bodo/view/id/68673
-54                              http://www.mdilbo.com/detail/GQFJv6/719453
-55             http://www.seoulwire.com/news/articleView.html?idxno=608284
-56  https://tk.newdaily.co.kr/site/data/html/2024/05/04/2024050400025.html
-57  https://tk.newdaily.co.kr/site/data/html/2024/05/04/2024050400022.html
-58           https://n.news.naver.com/mnews/article/002/0002330412?sid=102
-59           https://n.news.naver.com/mnews/article/662/0000042925?sid=102
-60             https://www.viva100.com/main/view.php?key=20240504010001227
-61              https://www.newscj.com/news/articleView.html?idxno=3136319
-62       https://www.newsfreezone.co.kr/news/articleView.html?idxno=566538
-63           https://n.news.naver.com/mnews/article/079/0003892159?sid=101
-64           https://n.news.naver.com/mnews/article/468/0001057111?sid=102
-65                                        http://www.breaknews.com/1030622
-66                  https://www.smartfn.co.kr/article/view/sfn202405040004
-67            https://www.joongdo.co.kr/web/view.php?key=20240504010001069
-68         https://www.pointdaily.co.kr/news/articleView.html?idxno=200233
-69           http://www.weeklytoday.com/news/articleView.html?idxno=624157
-70                       http://www.betanews.net:8080/article/1465815.html
-71           http://www.kihoilbo.co.kr/news/articleView.html?idxno=1086658
-72            http://www.kwangju.co.kr/article.php?aid=1714784400767780007
-73             https://www.nbntv.co.kr/news/articleView.html?idxno=3016437
-74             https://www.viva100.com/main/view.php?key=20240504010001210
-75           https://n.news.naver.com/mnews/article/088/0000876179?sid=102
-76           https://n.news.naver.com/mnews/article/016/0002304431?sid=102
-77             https://www.viva100.com/main/view.php?key=20240504010001183
-78             https://www.viva100.com/main/view.php?key=20240504010001192
-79           https://n.news.naver.com/mnews/article/018/0005731000?sid=101
-80                     https://www.cnbnews.com/news/article.html?no=657877
-81                     https://www.cnbnews.com/news/article.html?no=657865
-82                          https://www.ajunews.com/view/20240502122350957
-83             http://www.bzeronews.com/news/articleView.html?idxno=658762
-84           https://n.news.naver.com/mnews/article/001/0014669131?sid=102
-85           https://n.news.naver.com/mnews/article/421/0007520971?sid=102
-86            http://www.economytalk.kr/news/articleView.html?idxno=255139
-87           https://n.news.naver.com/mnews/article/022/0003930007?sid=103
-88                   https://www.ekn.kr/web/view.php?key=20240504022570355
-89      https://www.dnews.co.kr/uhtml/view.jsp?idxno=202405040209432560677
-90           https://n.news.naver.com/mnews/article/020/0003562849?sid=101
-91              https://www.newscj.com/news/articleView.html?idxno=3136270
-92          http://www.newsworker.co.kr/news/articleView.html?idxno=330231
-93           https://n.news.naver.com/mnews/article/353/0000047913?sid=110
-94           https://www.gukjenews.com/news/articleView.html?idxno=2985952
-95         http://www.enewstoday.co.kr/news/articleView.html?idxno=2123484
-96     https://www.tbc.co.kr/news/view?pno=20240503161448AE02264&amp;id=186773
-97            https://www.psnews.co.kr/news/articleView.html?idxno=2054256
-98           https://n.news.naver.com/mnews/article/277/0005414211?sid=165
-99             http://www.bzeronews.com/news/articleView.html?idxno=658740
-100          https://n.news.naver.com/mnews/article/016/0002304360?sid=102
-                                                                                                                                                                                                                                   description
-1                               결국 수도권 쏠림으로 &lt;b&gt;지방소멸&lt;/b&gt;이 가속화되고, 집값 양극화로 부동산 가치는 더 하락할 것이라는 전망도 나옵니다. 가구가 정점을 찍는 2040년 이후 집값은 장기 하락 국면에 진입할 것이란 분석입니다. 문제는... 
-2                  한편 포천시는 2020년 한국고용정보원의 &lt;b&gt;지방소멸&lt;/b&gt; 위험지역으로 분류되고, 2022년 행정안전부의 인구감소 관심지역으로 지정된 바 있다. 인구수는 올해 4월말 기준 14만2545명으로 경기도 31개 시-군 중 25번째다. kkjoo0912... 
-3                     &lt;b&gt;지방소멸&lt;/b&gt;이라는 파격적인 표현에 담긴 메시지는 강렬했고, 10년이라는 시간 동안 이 화두는 뜨겁게 타올라 퍼져나갔다. 사람들은 각자 위치에 따라 제각기 다른 의미를 부여하며 이슈를 흡수하기에 바빴고, 무엇보다 이를... 
-4                       농식품신유통연구원(이사장 원철희)과 농촌살리기현장네트워크(이사장 이동필)는 지난달 26일 서울 양재동 aT센터에서 '&lt;b&gt;지방소멸&lt;/b&gt;시대 지역농협 역할과 과제' 토론회를 열었다. 지역소멸은 농협에게 특히 중요한 이슈다.... 
-5   4개 시군 자치단체장은 &amp;quot;지난 2월 대통령 주재 민생토론회에서 제도 개선안이 발표됐지만, 누적된 피해를 보듬고 &lt;b&gt;지방 소멸&lt;/b&gt;을 방지하기에는 미흡하다는 것이 지역민 의견&amp;quot;이라며 &amp;quot;개발제한구역 전면 해제를 건의한다&amp;quot;고... 
-6                      아동·청소년·장애인 등의 건전한 육성 및 지원, 근로자의 고용 촉진 및 생활 향상, 저출생·고령화 및 인구 감소·&lt;b&gt;지방소멸&lt;/b&gt; 대응, 지역사회와 공동체의 활성화, 이외 공익 목적 등이다. 또 매년 12월 두 번째 월요일을... 
-7                                                                       광양시는 전통시장의 기능 회복이지역경제활성화와 도시재생은 물론가장 확실한 &lt;b&gt;지방소멸&lt;/b&gt; 대응책이라고 보고행정력을 집중하고 있습니다. MBC뉴스 최우식입니다.◀ END ▶
-8          강성일 회장은 &amp;quot;이번 경남도청과의 친선 산행을 시작으로 앞으로 경북, 부산, 울산까지 확대하는 등 도청 산악회가 영호남 교류의 가교역할을 충실하겠다&amp;quot;며 &amp;quot;지방 최대 현안인 &lt;b&gt;지방소멸&lt;/b&gt; 위기 극복과 농수축산물 홍보... 
-9                      이와 함께 정착한 청년들을 위한 복지정책인 '생애주기별 행복한 완주살이'를 지원함으로써 청년 정주율을 높여 &lt;b&gt;지방소멸&lt;/b&gt;에 대응한다는 계획이다. 유희태 완주군수는 이날 오후 전북하이텍고를 방문해 학생들을 대상으로... 
-10                            확장 등의 사안에 관심을 가지고 적극 협력하겠다”고 말했다. 하승철 하동군수는 컴팩트 매력도시 조성과 &lt;b&gt;지방소멸&lt;/b&gt; 위기 극복, 정주 여건 개선을 위해 중앙부처의 지원을 받을 수 있도록 적극 노력할 의지를 밝혔다.
-11          지금은 국가적 당면 이슈가 되어 다양한 출산장려정책을 펼치고자 노력하고 있지만 수도권이 아닌 이곳 &lt;b&gt;지방&lt;/b&gt;은 학령인구 감소에 따른 지역&lt;b&gt;소멸&lt;/b&gt;의 위기가 날로 심각해져 가고 있다보니 &lt;b&gt;지방&lt;/b&gt;대학들도 초비상사태입니다.... 
-12             출범기념 포럼에서는 정현백 전 여성가족부 장관이 '&lt;b&gt;지방소멸&lt;/b&gt; 위기와 성평등'을 주제로 기조발제에 나서, &lt;b&gt;지방소멸&lt;/b&gt;을 막을 수 있는 것은 지역사회의 성평등이라고 강조했다. 이어 '전라·제주지역 &lt;b&gt;지방소멸&lt;/b&gt; 위기와... 
-13                    인구 감소는 &lt;b&gt;지방 소멸&lt;/b&gt;로 이어진다. 한국의 지방은 인구 유출까지 겹쳐 지역 소멸의 위기를 맞고 있다. 지난 15년간 정부에서 약 380조원을 쏟아부었지만 인구 위기는 비수도권을 넘어 경기도 북동부까지 빠르게 확산되고... 
-14                       &lt;b&gt;지방소멸&lt;/b&gt;·저출산·고령화 문제의 심각성도 뼛속 깊이 느끼게 됐다. 저는 대구에서 태어났지만 정치적 고향은 순천이다. 호남에 의미 있는 성과로 보답하고 싶은 마음이 크다.” -22대 국회의 최우선 정치개혁 과제는.... 
-15           지역 &lt;b&gt;소멸&lt;/b&gt;이나 이런 거로까지 지금 이거는 뭐 규제적인 측면으로 볼 게 아니라 이거는 좀 다른 관점에서 봐야... 그게 사실 제가 부산 &lt;b&gt;지방&lt;/b&gt;해양수산청장 시절에 영도에 들어와서 살까, 라는 생각을 했었어요. 그때 와이프가... 
-16                      사실 일반 국민들이 &lt;b&gt;지방소멸&lt;/b&gt;대응기금이라는 걸 잘 모르십니다. 그런데도 이런 얘기가 나왔다는 것은 나와 관련된 다른 예산들이 쓰여지는 것은 한편으로 우려하는 측면들이 뒤에 깔려 있는 거예요. 지금 최근에 저출산... 
-17         강성일 회장은 &amp;quot;이번 경남도청과의 친선 산행을 시작으로 앞으로 경북, 부산, 울산까지 확대하는 등 도청 산악회가 영호남 교류의 가교역할을 충실하겠다&amp;quot;며 &amp;quot;지방 최대 현안인 &lt;b&gt;지방소멸&lt;/b&gt; 위기 극복과 농수축산물 홍보... 
-18                 아동·청소년·장애인 등의 건전한 육성 및 지원, 근로자의 고용 촉진 및 생활 향상, 저출산·고령화 및 인구감소·&lt;b&gt;지방소멸&lt;/b&gt; 대응, 지역사회 및 공동체의 활성화, 이외 공익 목적 등이다. 행안부 관계자는 7월 안에 시행령이... 
-19                     박남서 영주시장은 &amp;quot;어려운 재정 여건 속에서도 가용 재원을 최대한 반영해 국가산단 조성, &lt;b&gt;지방소멸&lt;/b&gt; 대응, 생활 인프라 구축 등에 꼭 필요한 사업을 흔들림없이 추진할 수 있도록 예산을 편성했다&amp;quot;고 말했다.... 
-20                 정부는 철거하지 않고 활용이 가능한 빈집에 대해서는 &lt;b&gt;지방소멸&lt;/b&gt;대응기금을 활용해 주거, 관광, 문화자원 등으로 재 조성한다는 방침이다. 정부는 지난해 24곳 지자체에서 &lt;b&gt;지 방소멸&lt;/b&gt;대응기금을 활용해 빈집을 정비하고... 
-21  지역&lt;b&gt;소멸&lt;/b&gt; 대응 등에 대한 구체적인 해법을 묻고 들었습니다. &amp;lt;편집자말&amp;gt; ▲  서미화 더불어민주당 비례대표... 그래서 2010년 &lt;b&gt;지방&lt;/b&gt;선거를 앞두고 여러 단체들이 모여서 '차라리 우리가 후보를 내자'고 결정했다. 나도 그 중 한... 
-22                      이강덕 협의회장은 “경상북도 인구감소 장기화에 따라 &lt;b&gt;지방소멸&lt;/b&gt; 위기감이 크게 고조되고 있는 상황”이라며 “저출생 문제 해결을 위해 모두 함께 관심을 갖고 총력 대응해 나가자”고 당부했다. 한편 이번 협의회에서... 
-23  4개 시군 자치단체장은 &amp;quot;지난 2월 대통령 주재 민생토론회에서 제도 개선안이 발표됐지만, 누적된 피해를 보듬고 &lt;b&gt;지방 소멸&lt;/b&gt;을 방지하기에는 미흡하다는 것이 지역민 의견&amp;quot;이라며 &amp;quot;개발제한구역 전면 해제를 건의한다&amp;quot;고... 
-24                      아동·청소년·장애인 등의 건전한 육성 및 지원, 근로자의 고용 촉진 및 생활 향상, 저출생·고령화 및 인구감소·&lt;b&gt;지방소멸&lt;/b&gt; 대응, 지역사회와 공동체의 활성화, 이외 공익 목적 등이다. 또 매년 12월 두 번째 월요일을... 
-25                        '지역혁신플랫폼'은 인구감소, 고령화, 핵심산업 쇠락 등 지역&lt;b&gt;소멸&lt;/b&gt; 위기 문제를 해결키 위해 지자체와 대학... &lt;b&gt;지방&lt;/b&gt;자치단체와 대학 협력기반 지역혁신사업(RIS)을 추진하기 위해 설립된 제주지역혁신플랫폼은... 
-26                                                                              4개 시군 자치단체장은 “지난 2월 대통령 주재 민생토론회에서 제도 개선안이 발표됐지만, 누적된 피해를 보듬고 &lt;b&gt;지방 소멸&lt;/b&gt;을 방지하기에는 미흡하다는 것이... 
-27                                                                         박홍률 목포시장은 “도전과 혁신, 융합과 협업의 적극적인 자세와 정신으로 &lt;b&gt;지방 소멸&lt;/b&gt; 위기 극복과 지역 균형발전을 선도하고, 미래 세대가 풍요로운 삶을 살아갈... 
-28                    기부금품 모집 목적은 아동·청소년·장애인 등의 육성과 지원, 근로자의 고용 촉진 및 생활 향상, 저출생·고령화 및 인구감소·&lt;b&gt;지방소멸&lt;/b&gt; 대응, 지역사회 및 공동체의 활성화, 이외의 공익 목적 등으로 구체화했다. 기부... 
-29                      &lt;b&gt;지방소멸&lt;/b&gt;현상 대응 위해 2008년 부터 제도 도입 15년새 120배 넘게 급증 답례품 과열 현상도 나타나 일본판 ‘고향사랑 기부제’인 ‘후루사토(古里) 납세’ 기부액이 지난해 전국적으로 1조엔(약 9조원)을 넘을 것으로... 
-30                           4개 시군 자치단체장은 “지난 2월 대통령 주재 민생토론회에서 제도 개선안이 발표됐지만, 누적된 피해를 보듬고 &lt;b&gt;지방 소멸&lt;/b&gt;을 방지하기에는 미흡하다는 것이 지역민들의 의견이다”며 “개발제한구역 전면 해제를... 
-31                      개정령안은 아동·청소년·장애인 등의 건전한 육성 및 지원, 근로자의 고용 촉진 및 생활 향상, 저출생·고령화 및 인구감소·&lt;b&gt;지방소멸&lt;/b&gt; 대응, 지역사회 및 공동체의 활성화, 이외 공익 목적 등 '기부금품 모집 목적'도... 
-32                            강성일 전남도청 산악회 회장은 “이번 경남도청과의 친선 산행을 시작으로 앞으로 경북, 부산, 울산까지 확대하는 등 도청 산악회가 영호남 교류의 가교역할을 충실하겠다”며 “지방 최대 현안인 &lt;b&gt;지방소멸&lt;/b&gt; 위기... 
-33                  아동·청소년·장애인 등의 건전한 육성 및 지원, 근로자의 고용 촉진 및 생활 향상, 저출생·고령화 및 인구감소·&lt;b&gt;지방소멸&lt;/b&gt; 대응, 지역사회 및 공동체의 활성화, 이외 공익 목적 등이다. 행안부 관계자는 &amp;quot;7월말 전에... 
-34        강성일 전남도청 산악회장은 &amp;quot;이번 경남도청과의 친선 산행을 시작으로 앞으로 경북, 부산, 울산까지 확대하는 등 도청 산악회가 영호남 교류의 가교 역할을 충실하겠다&amp;quot;면서 &amp;quot;지방 최대 현안인 &lt;b&gt;지방 소멸&lt;/b&gt; 위기 극복과... 
-35                        김헌영 총장은 &amp;quot;학령인구 감소와 &lt;b&gt;지방소멸&lt;/b&gt; 위기, 그리고 최근 AI혁명에 이르기까지 매 순간 급변하는 시대에 발맞춰 대학은 스스로 끊임없이 혁신하고 사회는 대학의 혁신노력이 성공으로 이어질 수 있도록 적극... 
-36           그러면 그 &lt;b&gt;지방&lt;/b&gt;이 매력적인 도시가 되지는 않거든요. 그 세대가 끝나면 다시 또 &lt;b&gt;소멸&lt;/b&gt;의 위기가 오게 되고요. 조금 장기적인 호흡으로 다양한 기회들을 줄 수 있는 &lt;b&gt;지방&lt;/b&gt; 도시를 만드는 게 중요하지 않을까 생각하는데... 
-37         전남도청 산악회 강성일 회장은 &amp;quot;이번 경남도청과의 친선 산행을 시작으로 앞으로 경북, 부산, 울산까지 확대하는 등 도청 산악회가 영호남 교류의 가교역할을 충실하겠다&amp;quot;며 &amp;quot;지방 최대 현안인 &lt;b&gt;지방소멸&lt;/b&gt; 위기 극복과... 
-38              아동·청소년·장애인 등의 건전한 육성 및 지원, 근로자의 고용 촉진 및 생활 향상, 저출생·고령화 및 인구감소·&lt;b&gt;지방소멸&lt;/b&gt; 대응, 지역사회 및 공동체의 활성화, 이외 공익 목적 등입니다. 매년 12월 두 번째 월요일인 '기부의... 
-39                        강성일 전남도청 산악회장은 “이번 경남도청과의 친선 산행을 시작으로 앞으로 경북, 부산, 울산까지 확대하는 등 도청 산악회가 영호남 교류의 가교역할을 충실하겠다”며 “지방 최대 현안인 &lt;b&gt;지방소멸&lt;/b&gt; 위기 극복과... 
-40       또한 관내 학교 문제가 정리돼야 &lt;b&gt;지방&lt;/b&gt;의 &lt;b&gt;소멸&lt;/b&gt;을 막고 아이들이 꿈과 희망을 가지고 자라날 수 있다며 도교육청에서 의지를 가지고 적극적으로 문제해결에 임해줄 것을 당부했다. 안동=김종현 기자 gim1390@viva100.com 2024년도... 
-41               방영을 앞두고 김헌영 총장은 &amp;quot;학령인구 감소와 &lt;b&gt;지방소멸&lt;/b&gt; 위기, 그리고 최근 AI혁명에 이르기까지 매 순간 급변하는 시대에 발맞춰 대학은 스스로 끊임없이 혁신하고 사회는 대학의 혁신노력이 성공으로 이어질 수 있도록... 
-42         강성일 회장은 &amp;quot;이번 경남도청과의 친선 산행을 시작으로 앞으로 경북, 부산, 울산까지 확대하는 등 도청 산악회가 영호남 교류의 가교역할을 충실하겠다&amp;quot;며 &amp;quot;지방 최대 현안인 &lt;b&gt;지방소멸&lt;/b&gt; 위기 극복과 농수축산물 홍보... 
-43                정부와 &lt;b&gt;소멸&lt;/b&gt; 위기에 직면한 &lt;b&gt;지방&lt;/b&gt;자치단체 등도 마중물 확보 차원에서 관련 규제 완화나 시범사업 추진 등에 나서고 있습니다. 다만 여전히 보완할 과제가 적잖다는 지적도 끊이질 않습니다. 과연 우리는 목전에 다가선... 
-44                 또 &lt;b&gt;지방소멸&lt;/b&gt;, 정치개혁 키워드에 관심을 갖고 있다.&amp;quot; 개혁신당은 4·10 총선에서 3석을 확보하는 데 성공했다. 제3지대로서 원내 의원 숫자는 적지만 '미래세대'라는 키워드를 정면으로 내세우며 22대 국회 개원 전부터... 
-45                          인구 유출과 &lt;b&gt;지방 소멸&lt;/b&gt;의 위기를 절감하는 경남 군단위 지역이 급증함에 따라 '2024년 경남 작은 학교 살리기 공모 사업' 신청에 7개 시군에서 8개교가 신청을 하는 등 역대 가장 치열한 경쟁률을 보여주기도 했다.... 
-46                             지역 변호사 업계도 &lt;b&gt;지방소멸&lt;/b&gt;시대에 접어들고 있어 법률 서비스 질적 하락이 우려된다는 지적이 나왔다. 특히 지역 로스쿨을 졸업하고 변호사 자격증을 취득한 젊은 변호사들이 지방변호사회에 등록을 하지 않기... 
-47                                        도내 주요 시‧군의 인구정책 관계자들은 “&lt;b&gt;지방소멸&lt;/b&gt;을 막기 위해 당장 주민등록인구를 높일 수 있는 인구 유입 지원 대책도 중요하지만, 장기적인 관점에서 출생아 수와 어린이 수가 늘어야 한다”며... 
-48              이들 청년의 존재는 인구절벽으로 &lt;b&gt;소멸&lt;/b&gt; 위기에 처한 지역사회에도 큰 힘이 됩니다. 연합뉴스는 &lt;b&gt;지방&lt;/b&gt;에 살면서 자신의 삶을 개척해 나가는 청년들의 도전과 꿈을 매주 한 차례씩 소개합니다. (완도=연합뉴스) 형민우 기자... 
-49                아동·청소년·장애인 등의 건전한 육성 및 지원, 근로자의 고용 촉진 및 생활 향상, 저출생·고령화 및 인구감소·&lt;b&gt;지방소멸&lt;/b&gt; 대응, 지역사회 및 공동체의 활성화, 이외 공익 목적 등이다. 매년 12월 두 번째 월요일인 '기부의... 
-50      이강덕 협의회장은 &amp;quot;경상북도 인구감소 장기화에 따라 &lt;b&gt;지방소멸&lt;/b&gt; 위기감이 크게 고조되고 있는 상황&amp;quot;이라며 &amp;quot;저출생 문제 해결을 위해 모두 함께 관심을 갖고 총력 대응해 나가자&amp;quot;고 당부했다. 한편 이번 협의회에서... 
-51                 [앵커] 접경지역의 &lt;b&gt;지방소멸&lt;/b&gt; 위기가 해가 갈수록 심각해지고 있습니다. 특히, 청년층 인구 감소가 문제인데요. 그 해법으로 청년 창업 지원 사업이 추진되고 있습니다. 김영준 기자입니다. [리포트] 양구 중앙시장 초입에 새... 
-52              지역&lt;b&gt;소멸&lt;/b&gt; 위기 극복과 컴팩트 매력도시 하동 조성을 위한 주요 현안사업의 정부 지원을 요청했다. 하승철... 하동군이 &lt;b&gt;지방&lt;/b&gt;자치단체 최초로 농촌형 자율버스를 운행함에 따라 대중교통 통합환승 체계 구축을 위한 하동역... 
-53                             공무원 등 60명이 역시 세종시에 600만 원을 내놓았습니다. 세종시는 &lt;b&gt;지방소멸&lt;/b&gt; 위기에 처해 있는 청양군을 위해 힘을 보태는 차원에서 교차기부를 구상했다며 앞으로 더욱 교차기부를 더욱 확대하겠다고 밝혔습니다.
-54                      전남도와 전남도새마을회(회장 양재원)가 &lt;b&gt;지방소멸&lt;/b&gt; 위기 극복 등 지역 현안 해결에 공동 대응하기로 했다. 전남도는 3일 도청 김대중강당에서 개최된 제14회 새마을의 날 기념식에서 전남도새마을회와 지역 발전을 위한... 
-55      이강덕 협의회장은 &amp;quot;경상북도 인구감소 장기화에 따라 &lt;b&gt;지방소멸&lt;/b&gt; 위기감이 크게 고조되고 있는 상황&amp;quot;이라며 &amp;quot;저출생 문제 해결을 위해 모두 함께 관심을 갖고 총력 대응해 나가자&amp;quot;고 당부했다. 한편 이번 협의회에서... 
-56                     본 설명회는 2023년 착수하여 추진 중인 ‘고령군 2040 중장기 종합발전계획 수립’ 용역의 추진상황을 주민들과 공유하고, &lt;b&gt;지방소멸&lt;/b&gt;의 위기 속에서도 더욱 경쟁력 있는 지역으로 나아가기 위한 고령의 미래비전, 권역별... 
-57                              박남서 영주시장은 “어려운 재정 여건 속에서도 가용재원을 최대한 반영해 국가산단 조성, &lt;b&gt;지방소멸&lt;/b&gt; 대응, 생활 인프라 구축 등 꼭 필요한 사업들이 흔들림없이 추진될 수 있도록 예산을 편성했다”고 밝혔다.... 
-58                            12대 들어서는 제1기 예산결산특별위원회과 전반기 보건복지환경위원회 위원으로 지역 의료 공공성 강화와 저소득층 복지증진, 전남권 의대 설립, &lt;b&gt;지방소멸&lt;/b&gt; 대응, 영산강 수질개선 등 도민의 삶의 질 향상을 위한... 
-59                 &lt;b&gt;지방소멸&lt;/b&gt;을 극복하기 위해 투입하는 &lt;b&gt;지방소멸&lt;/b&gt;대응기금 배분체계가 종전 4단계에서 2단계로 개편된다. 지방자치단체 한곳에 지급하는 최대 금액은 144억에서 160억원으로 늘리고 사용처도 확대된다. 행정안전부는 최근... 
-60                                 또한 &lt;b&gt;지방소멸&lt;/b&gt;과 저출생 극복을 위해 △공공산후조리원 증축 4억 원 △체류형 귀농귀촌학교 조성 3억 원 △청년 신혼부부 월세 지원 3억 원 등을 편성했다. 이번 추경예산안은 오는 9일부터 21일까지 열리는... 
-61    호서대 박설호 국제협력처장 겸 부총장은 &amp;quot;&lt;b&gt;지방 소멸&lt;/b&gt;과 지방 노동력 문제 극복을 위해 외국인 유학생의 국내 취업 및 정주가 중요한 시점에서 이번 협약이 가지는 의미는 크다&amp;quot;며 &amp;quot;앞으로도 호서대는 우수한 외국인 인재의... 
-62                      설명회는 이장 및 주민대표 100여 명이 참석한 가운데 중장기 종합발전계획 수립 용역 추진상황 설명과 &lt;b&gt;지방소멸&lt;/b&gt;의 위기 속에서도 경쟁력 갖추는 고령 미래비전, 권역별 발전 구상 및 핵심과제 제시 등을 통해 각계각층... 
-63                 그걸 짓기 위해서 분양가는 계속 올라가서 청년들은 집을 갖기가 어렵고 &lt;b&gt;지방&lt;/b&gt;은 점점 텅텅 비는거죠. 1기... 주택정책 이전에 &lt;b&gt;지방&lt;/b&gt;분권에 대한 정책이 정치권에서 먼저 논의가 돼야 해요. 국민들이 원하잖아요. '빨리... 
-64                               4개 시군 자치단체장은 “지난 2월 대통령 주재 민생토론회에서 제도 개선안이 발표됐지만, 누적된 피해를 보듬고 &lt;b&gt;지방 소멸&lt;/b&gt;을 방지하기에는 미흡하다는 것이 지역민 의견”이라며 “개발제한구역 전면 해제를... 
-65                                                                                전남도와 전남도새마을회가 &lt;b&gt;지방소멸&lt;/b&gt; 위기 극복 등 지역 현안 해결에 공동 대응하기로 했다. 전남도는 3일 도청 김대중강당에서 개최된 제14회 새마을의 날... 
-66         국가&lt;b&gt;소멸&lt;/b&gt;의 위기를 초래할 수 있다&amp;quot;는 위기의식을 설명했다. 출산장려금 지원 과정에서 세제와 관련해... 이어 민 박사는 지역 인재 양성을 통한 &lt;b&gt;지방&lt;/b&gt; 저출산 문제 해결에 대한 정부와 기업의 적극적인 역할을 주문했다.... 
-67            세종시 농업정책과 최병인 팀장은 &amp;quot;세종시의 재정 확충은 물론 &lt;b&gt;지방소멸&lt;/b&gt; 위기에 처해 있는 고향 청양군을 위해 힘을 보태려는 마음에서 교차 기부를 구상했다&amp;quot;며 &amp;quot;앞으로도 세종시와 청양군 고향사랑기부제 기부자... 
-68  국가&lt;b&gt;소멸&lt;/b&gt;의 위기를 초래할 수 있다&amp;quot;는 위기의식을 설명했다. 이어 출산장려금 지원 과정에서 세제와 관련해... &amp;quot;고 말하며, 이 외에도 지역 인재 양성을 통한 &lt;b&gt;지방&lt;/b&gt; 저출산 문제 해결에 대한 정부와 기업의 역할에 대해서도... 
-69      이강덕 협의회장은 &amp;quot;경상북도 인구감소 장기화에 따라 &lt;b&gt;지방소멸&lt;/b&gt; 위기감이 크게 고조되고 있는 상황&amp;quot;이라며 &amp;quot;저출생 문제 해결을 위해 모두 함께 관심을 갖고 총력 대응해 나가자&amp;quot;고 당부했다. 한편 이번 협의회에서... 
-70                         4일 군에 따르면 올해 1월부터 4월 사이에만 행정안전부를 비롯한 중앙정부와 강원도 태백시, 전남 해남군, 전북 순창군 등 13개 지자체가 강진군을 방문해, &lt;b&gt;지방소멸&lt;/b&gt;위기 극복을 위해 군이 추진 중인 다양한 정책을... 
-71                포천시는 지난 2020년 한국고용정보원의 &lt;b&gt;지방소멸&lt;/b&gt; 위험지역으로 분류되고, 2022년 행정안전부의 인구감소 관심 지역으로 지정된 바 있으며, 인구수는 경기도 내 31개 시군 중 25번째로, 2024년 4월 말 기준 14만 2천545명으로... 
-72                     네트워크는 출범기념 포럼을 열고 정현백(전 여성가족부 장관)을 초청해 ‘&lt;b&gt;지방소멸&lt;/b&gt; 위기와 성평등’이라는 주제로 강연을 진행했다. 이어 ‘전라·제주지역의 &lt;b&gt;지방소멸&lt;/b&gt; 위기와 여성가족정책 진단’이라는 주제로... 
-73                        ◇포천시의 미래를 위한 도전 2020년 한국고용정보원에 의해 &lt;b&gt;지방소멸&lt;/b&gt; 위험지역으로 분류되었고, 2022년에는 행정안전부에 의해 인구감소 관심 지역으로 지정되었다. 최근 통계에 따르면, 포천시의 인구는 지속적으로... 
-74                       남해대학은 학령인구 감소와 &lt;b&gt;지방소멸&lt;/b&gt; 위기 극복을 위해 올해 첫 외국인 유학생을 신입생으로 유치했다. 현재 총 23명(인도네시아 교환학생 8명·베트남 유학생 15명)의 유학생이 전기·전자, 용접 전공 과정에 입학해... 
-75                             이 사업은 군비 200억원과 &lt;b&gt;지방소멸&lt;/b&gt;대응기금 50억원을 포함한 총 250억원을 투자해 6만1천994㎡를 개발할 계획이다. 이번에 착공한 기반시설 조성공사는 오는 2026년 4월 준공 예정이다. 이 곳에는 400여 가구의... 
-76                               4개 시군 자치단체장은 “지난 2월 대통령 주재 민생토론회에서 제도 개선안이 발표됐지만, 누적된 피해를 보듬고 &lt;b&gt;지방 소멸&lt;/b&gt;을 방지하기에는 미흡하다는 것이 지역민 의견”이라며 “개발제한구역 전면 해제를... 
-77                       하승철 군수는 “컴팩트 매력도시 조성과 &lt;b&gt;지방소멸&lt;/b&gt; 위기 극복, 정주 여건 개선을 위해 중앙부처의 지원을 받을 수 있도록 적극 노력하겠다”고 전했다. 경남=정도정 기자 sos6831@viva100.com 국토교통부 제2차관 만나... 
-78                     인구 유출 및 &lt;b&gt;지방 소멸&lt;/b&gt;의 위기를 절감하는 경남 군단위 지역이 급증함에 따라 ‘2024년 경남 작은 학교 살리기 공모 사업’ 신청에 7개 시·군에서 8개교가 신청을 하는 등 역대 가장 치열한 경쟁률을 보여주기도 했다.... 
-79                        납부시 &lt;b&gt;소멸&lt;/b&gt;된다. 소유자가 거주하고 있어 매각 시 인도부담이 적다. 시세는 10억원에서 11억원에 거래되고 있으며 전세가는 5억5000만원에서 6억5000만원 선이다. 매각일자는 5월 14일 서울북부&lt;b&gt;지방&lt;/b&gt;법원 경매... 
-80                   한국&lt;b&gt;지방&lt;/b&gt;행정연구 자치제도 연구실장과 함께 경기연구원이 참여해 정책 세미나와 정책 탐방을 진행했다. 정책 세미나는 ‘지역&lt;b&gt;소멸&lt;/b&gt;에 대응하는 문화도시 영월’을 주제로 영월문화관광재단 김경희 문화도시센터장이... 
-81                     (사진=태백시 제공) 태백시(시장 이상호)는 5월 3일부터 10일까지 8일간 &lt;b&gt;지방소멸&lt;/b&gt;에 대응하고 청년 및 신혼부부의 주거비 부담을 완화하기 위해 ‘2024 만 원 임대주택’ 입주자 모집 공고 및 접수를 실시한다고 밝혔다.... 
-82                 지역사회 역시 &lt;b&gt;지방소멸&lt;/b&gt;, 학령인구 감소의 위기를 극복하면서 미래를 설계하는 김천고의 유학생 유치가 단순한 학생수 늘리기를 넘어 한국의 ‘이튼스쿨’로 거듭나 &lt;b&gt;지방소멸&lt;/b&gt;을 막고 지역발전의 견인차 역할을 해주길... 
-83               특히 과거 세대에게는 당연하게 여겨졌던 '평생직장'이 &lt;b&gt;소멸&lt;/b&gt;하면서 길어진 인생은 기대보다는 살아남아야... 명실상부한 대한민국 최고의 자기계발 전문가로 삼성전자, 현대자동차, 서울대학병원, 대검찰청, &lt;b&gt;지방&lt;/b&gt;자치단... 
-84                   연합뉴스는 '&lt;b&gt;지방소멸&lt;/b&gt;' 위기 징후 현장과 이를 극복하기 위한 지자체 등의 고육책, 일부 부분적인 성과 등을 매주 한 차례씩 소개합니다. (영월·삼척=연합뉴스) 양지웅 기자 = 교육이, 학교가 지역사회를 살릴 수 있을까?... 
-85                 '실천하는 여권 재선 의원'을 앞세운 엄 당선인이 22대 국회에서 인구 &lt;b&gt;지방 소멸&lt;/b&gt; 위기에 처한 제천과 단양 발전을 위해 어떤 정치적 역량을 발휘할지 지역민의 관심이 쏠린다. 다음은 엄 의원과 일문일답. -여권 재선 의원에... 
-86                 닥터바리스타 방탄커피는 OOOO은 줄이고 건강한 &lt;b&gt;지방&lt;/b&gt;으로 채워 포만감을 가득 주면서도 건강한 식습관을... 캐시 &lt;b&gt;소멸&lt;/b&gt;이 임박했다면 저렴한 기프티콘이라도 사두는 것이 이득이다. 돈버는 퀴즈를 맞춰 캐시를 얻을 수... 
-87            사람들은 결혼하지 않고, 출산하지 않으며, &lt;b&gt;지방&lt;/b&gt;은 &lt;b&gt;소멸&lt;/b&gt;하고, 우리 모두 기형적인 고물가와 양극화된 사회체제 속에서 엄청난 경쟁 압력에 시달리고 있다. 일각에서는 이러한 이유로 한국인의 이기적인 품성을 꺼내 들거나... 
-88                       워크숍은 산업·관광·귀농귀촌 등 다양한 분야의 우수 정책들을 살펴보며 집행부와 의회가 긴밀하게 소통하고 &lt;b&gt;지방소멸&lt;/b&gt; 위기에 적극 대응할 수 있도록 정책역량을 강화하자는 취지로 마련됐다. 첫날인 2일에는 태안군... 
-89                       인구 유출 및 &lt;b&gt;지방 소멸&lt;/b&gt;의 위기를 절감하는 경남 군단위 지역이 급증함에 따라 ‘2024년 경남 작은 학교 살리기 공모 사업’ 신청에 7개 시군에서 8개교가 신청을 하는 등 역대 가장 치열한 경쟁률을 보여주기도 했다.... 
-90                    정부와 &lt;b&gt;소멸&lt;/b&gt; 위기에 직면한 &lt;b&gt;지방&lt;/b&gt;자치단체도 마중물 확보 차원에서 관련 규제 완화나 시범사업 추진에 나서고 있다. ● 건설업계, 실버타운에 주목 가장 적극적인 곳은 건설업계다. 주택 경기 침체로 새로운 수익원... 
-91  4개 시군 자치단체장은 &amp;quot;지난 2월 대통령 주재 민생토론회에서 제도 개선안이 발표됐지만, 누적된 피해를 보듬고 &lt;b&gt;지방 소멸&lt;/b&gt;을 방지하기에는 미흡하다는 것이 지역민 의견&amp;quot;이라며 &amp;quot;개발제한구역 전면 해제를 건의한다&amp;quot;고... 
-92                    전라남도와 전남도새마을회(회장 양재원)가 &lt;b&gt;지방소멸&lt;/b&gt; 위기 극복 등 지역 현안 해결에 공동 대응하기로 했다. 전남도는 3일 도청 김대중강당에서 개최된 제14회 새마을의 날 기념식에서 전남도새마을회와 지역 발전을 위한... 
-93                        전남 지역 자치단체들은 &lt;b&gt;지방소멸&lt;/b&gt;대응기금 등 2843억원을 투입해 2035년까지 인구감소지역 16개 군에 1000가구 공급을 목표하겠다는 계획이다. 그런데 서울 동작구 1만원 주택은 이러한 인구소멸지역의 사례와는 결이... 
-94                      박남서 영주시장은 &amp;quot;어려운 재정 여건 속에서도 가용재원을 최대한 반영해 국가산단 조성, &lt;b&gt;지방소멸&lt;/b&gt; 대응, 생활 인프라 구축 등 꼭 필요한 사업들이 흔들림없이 추진될 수 있도록 예산을 편성했다&amp;quot;고 말했다.... 
-95                   참고로 포천시는 2020년 한국고용정보원의 &lt;b&gt;지방소멸&lt;/b&gt; 위험지역으로 분류되고, 2022년 행정안전부의 인구감소 관심 지역으로 지정된 바 있다. 인구수는 경기도 내 31개 시군 중 25번째로, 2024년 4월말 기준 14만 2545명으로... 
-96                       대구.경북 지역의 유권자분들에게 제가 도움이 되고 보탬이 되는 의정 활동을 할 계획입니다.” 제3지대 지역 출신 당선인들은 &lt;b&gt;지방소멸&lt;/b&gt; 문제가 시급한 현안이라는 데 인식을 같이 하면서 22대 국회에서 거대 양당과는... 
-97        최병인 농업정책과 팀장은 &amp;quot;세종시의 재정 확충은 물론 &lt;b&gt;지방소멸&lt;/b&gt; 위기에 처해 있는 고향 청양군을 위해 힘을 보태고자 하는 마음에서 교차 기부를 구상했다&amp;quot;며 &amp;quot;앞으로도 세종시와 충남 청양 간 고향사랑기부제 기부자... 
-98                       한편, 곡성군은 지난해에 1조 4천억 원 규모의 양수발전소를 유치하여 안정적인 일자리를 창출하고, 겸면 제2농공단지 조성사업을 통해 지속 가능한 성장 기반을 마련했으며 &lt;b&gt;지방 소멸&lt;/b&gt; 위기에 적극 대응하기 위해 생활... 
-99        최병인 농업정책과 팀장은 &amp;quot;세종시의 재정 확충은 물론 &lt;b&gt;지방소멸&lt;/b&gt; 위기에 처해 있는 고향 청양군을 위해 힘을 보태고자 하는 마음에서 교차 기부를 구상했다&amp;quot;며 &amp;quot;앞으로도 세종시와 충남 청양 간 고향사랑기부제 기부자... 
-100                       이강덕 협의회장은 “경상북도 인구감소 장기화에 따라 &lt;b&gt;지방소멸&lt;/b&gt; 위기감이 크게 고조되고 있는 상황”이라며 “저출생 문제 해결을 위해 모두 함께 관심을 갖고 총력 대응해 나가자”고 강조했다. 한편 경상북도 시장... 
+<pre><code>                                                                                       title
+1        “&lt;b&gt;지방&lt;/b&gt; 근무요? 2년 버텼더니 할만해요”...이런 청년 늘리려 지원금 3배 올린...
+2                                               '튼튼먹거리 어사간식 만들기 교실'수료식 개최
+3                                          [기고] 포천시를 교육발전특구로 지정해야 하는 이유
+4               함안군의회, “칠원~소계(천주산터널) 도로의 지선국도 노선 지정 및 제6차 국...
+5               한국마사회, 국민권익위원회 등 '복지 사각지대 발굴·지원 사업' 업무협약 체...
+6                                                 [기고] 포천은 교육발전특구 지정이 절실하다
+7                                              [기고문] 포천은 교육발전특구 지정이 절실하다!
+8                                                 [기고]포천은 교육발전특구 지정이 절실하다!
+9                                                                   주말에도 30-80mm 많은 비
+10                                                               희망의 도시, 더 잘사는 동구
+11              한국마사회, 국민권익위원회 등과 「복지 사각지대 발굴·지원 사업」업무협약...
+12               경북도, K-MEDI 전통의학 실크로드 프로젝트 중소기업 지원 협력 업무협약 체...
+13         [인터뷰] 황침현 당진시 신임부시장 &amp;quot;기업이 투자할 수 있는 여건 만들겠다&amp;quot;
+14                                          숨겨진 곳을 핫플레이스로...'숨핫' 본편 19일 공개
+15                                           충주시, 근로활동 참여 대학생 대상 인구교육 진행
+16                                             한국마사회, 국민권익위원회 등과 업무협약 체결
+17                                       마사회, 국민권익위원회 등과 복지 사각지대 발굴 나서
+18                                           [특별기고] 포천은 교육발전특구 지정이 절실하다!
+19               한국마사회, 국민권익위원회 등과 '복지 사각지대 발굴·지원 사업' 업무협약...
+20              한국마사회, 국민권익위원회 등과 「복지 사각지대 발굴·지원 사업」업무협약...
+21                                      춘해보건대 삼산노인복지센터 구강위생관리 서비스 실시
+22                              &amp;quot;순창형 보편적 복지, 청년 마음도 움직였다&amp;quot; 호응 UP
+23                                                          정부도 청년 장기근속 당근책 골몰
+24          구복규 화순군수, &amp;quot;민선 8기 후반기, 주거·일자리·출산 인구정책 최우선&amp;quot;
+25                                            경북도, K-MEDI 전통의학 실크로드 프로젝트 추진
+26                         대구한의대, 글로컬대학 본 지정 위한 대학-지자체 간 업무 협약 체결
+27                              농업투자 혁신을 말하다...&amp;quot;농수산 K푸드는 미래자원&amp;quot;
+28                                                출생아수 2배 증가한 강진군, 성과와 과제는?
+29                             &lt;b&gt;지방소멸&lt;/b&gt;대응기금 44억 투입 고창 꽃정원 '물웅덩이 가득'
+30                             청주시, 미래 100만 자족도시 조성방안 연구용역 최종보고회 개최
+31                                          함안군의회, 천주산터널 도로공사 촉구 결의안 채택
+32                                              학교 통폐합나선 충남교육청, 곳곳서 반발 기류
+33                                          함안군의회, 천주산터널 도로공사 촉구 결의안 채택
+34                                         ‘100만 자족도시 청주시’ 3대 목표·6대 전략 도출
+35          [주간서머리] 경제·산업계 &amp;quot;우리투자증권 합병안 통과...삼성전자, 2분기 스...
+36                               野 이언주 &amp;quot;대구서 한동훈보다 내가 인기 많을 수도&amp;quot;
+37                                      청주시, 미래 100만 자족도시 연구용역 최종보고회 개최
+38                               경북도, K-MEDI 전통의학 실크로드 프로젝트 중소기업 지원 MOU
+39              경북도, ‘K-MEDI 전통의학 실크로드 프로젝트 중소기업 지원 협력’ 업무협약...
+40                        &amp;quot;천주산터널 국토부 계획 반영해야&amp;quot; 함안군의회 건의안 채택
+41                                   춘해보건대, 삼산노인복지센터서 구강위생관리 서비스 실시
+42                     K-MEDI 전통 의학 실크로드 프로젝트, 중소기업 지원 협력 업무 협약 체결
+43                               전남대 글로컬 전략(G), 세계 64개국 608개 대학과 전략적 협업
+44                                      경북도, 'K-MEDI' 전통의학 기술로 또 다른 한류 이끈다
+45                                   '탄소중립 흙 살리기' 운동본부, 흙의 정치인·활동가 위촉
+46                                   함안군의회, '천주산 터널 도로' 지선 국도 노선 지정 촉구
+47                        &lt;b&gt;지방소멸&lt;/b&gt; 대안 귀농 1인 가구…경농업 외 축산 진입장벽 낮춰야
+48       &amp;quot;&lt;b&gt;지방&lt;/b&gt;정부의 ESG 평가 기준은 기업 평가와는 다른 시각과 접근이 필요&amp;quot;
+49                               청주시, 100만 자족도시 조성 밑그림…3대 목표·6대 전략 도출
+50                         경북도·대구한의대 등, 실크로드 통한 전통의학 세계화·산업화 추진
+51                     경북도, K-MEDI 전통의학 실크로드 프로젝트 중소기업 지원 협력 MOU 체결
+52                   尹 &amp;quot;발전 잠재력 큰 '전북'…'첨단·생명·문화' 비전 갖고 있어&amp;quot;
+53                             춘해보건대학교, 삼산노인복지센터에서 구강위생관리 서비스 실시
+54                             임호선 의원, &amp;quot;음성 화훼산업진흥지역 최종 선정 쾌거&amp;quot;
+55                                      충주시, 대학생 대상으로 저출생·고령화 인구교육 실시
+56                                              고향주부모임 전북도지회, 고향사랑기부제 앞장
+57                                 경북도, 케이-메디(K-MEDI) 전통의학 실크로드 프로젝트 박차
+58                         경북도, K-MEDI 전통의학 실크로드 프로젝트 중소기업 지원 협력 체결
+59                            경북도, 'K-MEDI 전통의학 실크로드 프로젝트' 지원 4개 기관 협약
+60                                  [KR 기고] 영광은 왜 기본소득제를 해야 하고 할 수 있는가?
+61                       함안군의회 &amp;quot;천주산터널, 국토부 계획 반영해야&amp;quot; 결의안 채택
+62       중원대 5개 지역과 지역기업 발전/&lt;b&gt;지방&lt;/b&gt;대학 특성화 추진 산학협력 네트워크 구...
+63                                   기대 모았던 尹 '전북 민생토론회'…'팥소 없는 찐빵' 뒷말
+64                          대구한의대 글로컬대학 본 지정 위한 대학-지자체 간 업무 협약 체결
+65                             [취재파일] 어렵게 시작한 난임 시술…중도포기 하지 않게 하려면
+66                                          중원대 충주시기업인협회와 산학협력 업무협약 체결
+67                                      충주시, 대학생 대상으로 저출생·고령화 인구교육 실시
+68                            내년부터 강화·옹진군 등 인구감소지역 지자체에 '폐교 무상양여'
+69             경상북도↔대구·경북&lt;b&gt;지방&lt;/b&gt;중소벤처기업청↔대구한의대학교↔iM뱅크 간 협력
+70          이승기 &amp;quot;20년간 정산 제대로 안돼&amp;quot;vs후크 &amp;quot;콘서트는 별개&amp;quot;[종합]
+71                           인하대, 보은군 관광두레와 관광 활성화 위한 교류·협력 증진 협약
+72                          경북도, K-MEDI 전통의학 실크로드 프로젝트 중소기업 지원 업무협약
+73              [위클리오늘] 최영일 순창군수, 청년들과 격의 없는 소통시간 마련..진솔한 대...
+74                 보령시의 적극행정이 인구&lt;b&gt;소멸&lt;/b&gt; 대응 위한 신호탄 골드시티 쏘아 올리다
+75                     대구한의대, K-MEDI 실크로드 개척을 위해 대학과 &lt;b&gt;지방&lt;/b&gt;정부 손잡다
+76                             대구한의대, 'K-MEDI 실크로드' 개척 위해 경북도 등과 업무 협약
+77                                           최영일 순창군수, 청년정책 의견 반영 소통 간담회
+78                                      순창군 최영일 군수, 청년들과 격의 없는 소통시간 마련
+79                       최영일 순창군수, 청년들과 격의 없는 소통시간 마련..진솔한 대화 나눠
+80          제9대 후반기 김경도 안동시의회 의장, &amp;quot;시민·현장중심 의정활동 펼칠 것&amp;quot;
+81                      구미도시공사, 지역&lt;b&gt;소멸&lt;/b&gt; 및 저출생 극복 위해 유관기관 협업 강화
+82                                                 고령교육지원청, '고령교육행정협의회' 개최
+83  [인터뷰 ①] 최응천 청장 &amp;quot;국가유산 활용, 인구감소·&lt;b&gt;지방소멸&lt;/b&gt; 극복 정책 추진...
+84                                        최영일 순창군수, 청년들과 소통…청년정책 방향 설명
+85                                                       교육감協 부회장에 윤건영 충북교육감
+86                             &lt;b&gt;지방소멸&lt;/b&gt; 막는다…정부, 인구감소지역 대응책 연이어 발표
+87                         [민생을 부탁해]이상민 행안부장관 “&lt;b&gt;지방소멸&lt;/b&gt;대응기금 지원”
+88                [대구한의대 소식] 대구한의대, 글로컬대학 본 지정 위한 대학 ∙ 지자체 간 ...
+89                     김경도 안동시의회 의장 &amp;quot;시민중심, 현장중심 의정활동 최우선&amp;quot;
+90                                        횡성군, ‘튼튼먹거리 어사간식 만들기 교실’ 수료식
+91                                  완주군, 행안부 '지자체 적극 행정 종합평가' 장관표창 수상
+92                                        기부자주식취득은 합병 “유상증자 아냐, 과세 부당”
+93                                       전국시도교육감협의회, 울산에서 ‘제98회 총회’ 개최
+94                                   강승규 의원, 기재부서 내년 예산‧홍성 국비 확보 ‘총력’
+95                                 [공기업 줌인] 코레일, 관광·지역상생 '두마리 토끼' 잡는다
+96                       [국회는 지금]&amp;quot;&lt;b&gt;지방소멸&lt;/b&gt; 막는다&amp;quot;, 각종 토론회 이어져
+97                                  정재욱 경남도의원, 공공기관 금고 지역 금융기관 지정 촉구
+98             [2024년 창간 특집] 출산율 0.6 임박, &amp;quot;옷 만들 사람도 살 사람도 없다&amp;quot;
+99                                    순천시, 응급환자 전원율 전국 최고...공공의료 완성 주력
+100                              중원대-충주시기업인협회, &lt;b&gt;지방&lt;/b&gt;대학 특성화 추진 '맞손'
+                                                                                                originallink
+1                                                                      https://www.mk.co.kr/article/11072027
+2                                                http://www.bzeronews.com/news/articleView.html?idxno=669754
+3             https://www.pressian.com/pages/articles/2024071918254154074?utm_source=naver&amp;utm_medium=search
+4                                         https://www.dnews.co.kr/uhtml/view.jsp?idxno=202407192132245650642
+5                                              http://www.womentimes.co.kr/news/articleView.html?idxno=77486
+6                                            http://www.enewstoday.co.kr/news/articleView.html?idxno=2154695
+7                                                http://www.tournews21.com/news/articleView.html?idxno=75107
+8                                         https://www.dnews.co.kr/uhtml/view.jsp?idxno=202407192041499350624
+9                                                                    https://mpmbc.co.kr/NewsArticle/1414774
+10                                                                   http://web.ubc.co.kr/wp/archives/114839
+11                                             https://www.gukjenews.com/news/articleView.html?idxno=3048039
+12                                                https://www.newscj.com/news/articleView.html?idxno=3161123
+13                                               http://www.djtimes.co.kr/news/articleView.html?idxno=104957
+14                                              https://www.itbiznews.com/news/articleView.html?idxno=140299
+15                                                                          http://www.breaknews.com/1045138
+16                                        https://www.businesskorea.co.kr/news/articleView.html?idxno=221590
+17                                         https://www.insightkorea.co.kr/news/articleView.html?idxno=205461
+18                                                 https://www.ngonews.kr/news/articleView.html?idxno=153924
+19                                             http://www.nextdaily.co.kr/news/articleView.html?idxno=230285
+20                                     http://www.maniareport.com/view.php?ud=2024071918233330948439a4874_19
+21                                               http://www.veritas-a.com/news/articleView.html?idxno=513362
+22                                                       https://www.newsis.com/view/NISX20240719_0002818664
+23                                                                     https://www.mk.co.kr/article/11071679
+24  https://www.nocutnews.co.kr/news/6181209?utm_source=naver&amp;utm_medium=article&amp;utm_campaign=20240719054827
+25                                               https://news.bbsi.co.kr/news/articleView.html?idxno=3163268
+26                                    https://tk.newdaily.co.kr/site/data/html/2024/07/19/2024071900330.html
+27                                                  https://www.m-economynews.com/news/article.html?no=44774
+28                                          http://news.lghellovision.net/news/articleView.html?idxno=474930
+29                                          http://news.lghellovision.net/news/articleView.html?idxno=474938
+30                                               http://www.bzeronews.com/news/articleView.html?idxno=669699
+31                                           http://www.enewstoday.co.kr/news/articleView.html?idxno=2154567
+32                                             https://www.cctoday.co.kr/news/articleView.html?idxno=2198508
+33                                            https://www.meconomynews.com/news/articleView.html?idxno=97067
+34                                                                       http://www.inews24.com/view/1744023
+35                                                 http://www.asiaa.co.kr/news/articleView.html?idxno=179335
+36                                               https://www.idaegu.co.kr/news/articleView.html?idxno=468708
+37                                           http://www.enewstoday.co.kr/news/articleView.html?idxno=2154551
+38                                                       https://ilyo.co.kr/?ac=article_view&amp;entry_id=475876
+39                                                       https://www.nspna.com/news/?mode=view&amp;newsid=709117
+40  https://www.nocutnews.co.kr/news/6181111?utm_source=naver&amp;utm_medium=article&amp;utm_campaign=20240719043427
+41                                                       https://www.cnbnews.com/news/article.html?no=671870
+42                                                            https://www.ajunews.com/view/20240719161805476
+43                                            https://daily.hankooki.com/news/articleView.html?idxno=1108099
+44                                               http://www.seoulwire.com/news/articleView.html?idxno=616084
+45                                                  https://www.m-economynews.com/news/article.html?no=44772
+46                                                        https://www.news1.kr/local/busan-gyeongnam/5485151
+47                                            http://www.1conomynews.co.kr/news/articleView.html?idxno=30347
+48                                                 https://www.lifein.news/news/articleView.html?idxno=17565
+49                                                       https://www.newsis.com/view/NISX20240719_0002818450
+50                                                 https://www.idaegu.com/news/articleView.html?idxno=609700
+51                                                                          http://www.breaknews.com/1045112
+52                                                    http://www.newsprime.co.kr/news/article.html?no=647081
+53                                        https://www.busan.com/view/busan/view.php?code=2024071915520966415
+54                                                 http://www.jbnews.com/news/articleView.html?idxno=1444789
+55                                           https://www.thefairnews.co.kr/news/articleView.html?idxno=30144
+56                                              http://www.jeollailbo.com/news/articleView.html?idxno=738714
+57                                               https://www.yeongnam.com/web/view.php?key=20240719010002836
+58                                                     https://www.ekn.kr/web/view.php?key=20240719027349387
+59                                                    http://news.mt.co.kr/mtview.php?no=2024071915003222258
+60                                            http://www.koreareport.co.kr/news/articleView.html?idxno=23799
+61                                               https://www.yna.co.kr/view/AKR20240719104800052?input=1195m
+62                                               http://www.veritas-a.com/news/articleView.html?idxno=513289
+63                                            https://www.sisajournal.com/news/articleView.html?idxno=303597
+64                                               http://www.veritas-a.com/news/articleView.html?idxno=513290
+65                         https://news.sbs.co.kr/news/endPage.do?news_id=N1007729138&amp;plink=ORI&amp;cooper=NAVER
+66                                               http://www.veritas-a.com/news/articleView.html?idxno=513293
+67                                                 http://www.newstnt.com/news/articleView.html?idxno=393105
+68                                            http://www.incheontoday.com/news/articleView.html?idxno=250404
+69                                      https://www.siminilbo.co.kr/news/newsview.php?ncode=1160271616653781
+70                                           https://www.starnewskorea.com/stview.php?no=2024071907585974925
+71                                      https://www.siminilbo.co.kr/news/newsview.php?ncode=1160294285966258
+72                                                http://www.kbmaeil.com/news/articleView.html?idxno=1004568
+73                                             http://www.weeklytoday.com/news/articleView.html?idxno=639957
+74                                             https://www.cctoday.co.kr/news/articleView.html?idxno=2198481
+75                                                   http://www.kyosu.net/news/articleView.html?idxno=122466
+76                                               https://www.yeongnam.com/web/view.php?key=20240719010002828
+77                                              https://www.joongdo.co.kr/web/view.php?key=20240719010006132
+78                                                        http://www.metroseoul.co.kr/article/20240719500093
+79                                              http://www.jeollailbo.com/news/articleView.html?idxno=738681
+80                                               http://www.seoulwire.com/news/articleView.html?idxno=616059
+81                                         https://www.startuptoday.co.kr/news/articleView.html?idxno=319674
+82                                         https://www.newsfreezone.co.kr/news/articleView.html?idxno=581593
+83                                                          https://www.newspim.com/news/view/20240719000511
+84                                                            http://news.tf.co.kr/read/national/2117321.htm
+85                                                 http://www.fsnews.co.kr/news/articleView.html?idxno=53633
+86                         https://www.korea.kr/news/policyNewsView.do?newsId=148931642&amp;call_from=naver_news
+87                             https://www.ichannela.com/news/main/news_detailPage.do?publishId=000000422121
+88                                             http://www.ilyoseoul.co.kr/news/articleView.html?idxno=490706
+89                                                    http://news.mt.co.kr/mtview.php?no=2024071911504619067
+90                                                   https://www.sportsseoul.com/news/read/1447174?ref=naver
+91                                                                https://www.news1.kr/local/jeonbuk/5484879
+92                                                          https://www.naeil.com/news/read/517395?ref=naver
+93                                                                          http://www.breaknews.com/1045038
+94                                    https://cc.newdaily.co.kr/site/data/html/2024/07/19/2024071900151.html
+95                                            http://www.wikileaks-kr.org/news/articleView.html?idxno=155893
+96                                          http://news.lghellovision.net/news/articleView.html?idxno=474926
+97                                           http://www.enewstoday.co.kr/news/articleView.html?idxno=2154259
+98                                                  http://www.ktnews.com/news/articleView.html?idxno=134160
+99                                             http://www.newsmaker.or.kr/news/articleView.html?idxno=154037
+100                                                   http://news.mt.co.kr/mtview.php?no=2024071911295727669
+                                                                                 link
+1                       https://n.news.naver.com/mnews/article/009/0005337609?sid=101
+2                         http://www.bzeronews.com/news/articleView.html?idxno=669754
+3                       https://n.news.naver.com/mnews/article/002/0002342114?sid=102
+4                  https://www.dnews.co.kr/uhtml/view.jsp?idxno=202407192132245650642
+5                       http://www.womentimes.co.kr/news/articleView.html?idxno=77486
+6                     http://www.enewstoday.co.kr/news/articleView.html?idxno=2154695
+7                         http://www.tournews21.com/news/articleView.html?idxno=75107
+8                  https://www.dnews.co.kr/uhtml/view.jsp?idxno=202407192041499350624
+9                                             https://mpmbc.co.kr/NewsArticle/1414774
+10                                            http://web.ubc.co.kr/wp/archives/114839
+11                      https://www.gukjenews.com/news/articleView.html?idxno=3048039
+12                         https://www.newscj.com/news/articleView.html?idxno=3161123
+13                        http://www.djtimes.co.kr/news/articleView.html?idxno=104957
+14                       https://www.itbiznews.com/news/articleView.html?idxno=140299
+15                                                   http://www.breaknews.com/1045138
+16                 https://www.businesskorea.co.kr/news/articleView.html?idxno=221590
+17                  https://www.insightkorea.co.kr/news/articleView.html?idxno=205461
+18                          https://www.ngonews.kr/news/articleView.html?idxno=153924
+19                      http://www.nextdaily.co.kr/news/articleView.html?idxno=230285
+20                          https://m.sports.naver.com/general/article/425/0000151850
+21                        http://www.veritas-a.com/news/articleView.html?idxno=513362
+22                      https://n.news.naver.com/mnews/article/003/0012677594?sid=102
+23                      https://n.news.naver.com/mnews/article/009/0005337431?sid=102
+24                      https://n.news.naver.com/mnews/article/079/0003918239?sid=102
+25                        https://news.bbsi.co.kr/news/articleView.html?idxno=3163268
+26             https://tk.newdaily.co.kr/site/data/html/2024/07/19/2024071900330.html
+27                           https://www.m-economynews.com/news/article.html?no=44774
+28                   http://news.lghellovision.net/news/articleView.html?idxno=474930
+29                   http://news.lghellovision.net/news/articleView.html?idxno=474938
+30                        http://www.bzeronews.com/news/articleView.html?idxno=669699
+31                    http://www.enewstoday.co.kr/news/articleView.html?idxno=2154567
+32                      https://www.cctoday.co.kr/news/articleView.html?idxno=2198508
+33                     https://www.meconomynews.com/news/articleView.html?idxno=97067
+34                      https://n.news.naver.com/mnews/article/031/0000854907?sid=102
+35                          http://www.asiaa.co.kr/news/articleView.html?idxno=179335
+36                        https://www.idaegu.co.kr/news/articleView.html?idxno=468708
+37                    http://www.enewstoday.co.kr/news/articleView.html?idxno=2154551
+38                                https://ilyo.co.kr/?ac=article_view&amp;entry_id=475876
+39                                https://www.nspna.com/news/?mode=view&amp;newsid=709117
+40                      https://n.news.naver.com/mnews/article/079/0003918200?sid=102
+41                                https://www.cnbnews.com/news/article.html?no=671870
+42                                     https://www.ajunews.com/view/20240719161805476
+43                     https://daily.hankooki.com/news/articleView.html?idxno=1108099
+44                        http://www.seoulwire.com/news/articleView.html?idxno=616084
+45                           https://www.m-economynews.com/news/article.html?no=44772
+46                      https://n.news.naver.com/mnews/article/421/0007674686?sid=102
+47                     http://www.1conomynews.co.kr/news/articleView.html?idxno=30347
+48                          https://www.lifein.news/news/articleView.html?idxno=17565
+49                      https://n.news.naver.com/mnews/article/003/0012677430?sid=102
+50                          https://www.idaegu.com/news/articleView.html?idxno=609700
+51                                                   http://www.breaknews.com/1045112
+52                             http://www.newsprime.co.kr/news/article.html?no=647081
+53                      https://n.news.naver.com/mnews/article/082/0001280163?sid=102
+54                          http://www.jbnews.com/news/articleView.html?idxno=1444789
+55                    https://www.thefairnews.co.kr/news/articleView.html?idxno=30144
+56                       http://www.jeollailbo.com/news/articleView.html?idxno=738714
+57                        https://www.yeongnam.com/web/view.php?key=20240719010002836
+58                              https://www.ekn.kr/web/view.php?key=20240719027349387
+59                      https://n.news.naver.com/mnews/article/008/0005066166?sid=102
+60                     http://www.koreareport.co.kr/news/articleView.html?idxno=23799
+61                      https://n.news.naver.com/mnews/article/001/0014817527?sid=102
+62                        http://www.veritas-a.com/news/articleView.html?idxno=513289
+63                      https://n.news.naver.com/mnews/article/586/0000083162?sid=102
+64                        http://www.veritas-a.com/news/articleView.html?idxno=513290
+65                      https://n.news.naver.com/mnews/article/055/0001173600?sid=102
+66                        http://www.veritas-a.com/news/articleView.html?idxno=513293
+67                          http://www.newstnt.com/news/articleView.html?idxno=393105
+68                     http://www.incheontoday.com/news/articleView.html?idxno=250404
+69               https://www.siminilbo.co.kr/news/newsview.php?ncode=1160271616653781
+70                               https://m.entertain.naver.com/article/108/0003251654
+71               https://www.siminilbo.co.kr/news/newsview.php?ncode=1160294285966258
+72                         http://www.kbmaeil.com/news/articleView.html?idxno=1004568
+73                      http://www.weeklytoday.com/news/articleView.html?idxno=639957
+74                      https://www.cctoday.co.kr/news/articleView.html?idxno=2198481
+75                            http://www.kyosu.net/news/articleView.html?idxno=122466
+76                        https://www.yeongnam.com/web/view.php?key=20240719010002828
+77                       https://www.joongdo.co.kr/web/view.php?key=20240719010006132
+78                                 http://www.metroseoul.co.kr/article/20240719500093
+79                       http://www.jeollailbo.com/news/articleView.html?idxno=738681
+80                        http://www.seoulwire.com/news/articleView.html?idxno=616059
+81                  https://www.startuptoday.co.kr/news/articleView.html?idxno=319674
+82                  https://www.newsfreezone.co.kr/news/articleView.html?idxno=581593
+83                                   https://www.newspim.com/news/view/20240719000511
+84                      https://n.news.naver.com/mnews/article/629/0000305967?sid=102
+85                          http://www.fsnews.co.kr/news/articleView.html?idxno=53633
+86  https://www.korea.kr/news/policyNewsView.do?newsId=148931642&amp;call_from=naver_news
+87                      https://n.news.naver.com/mnews/article/449/0000280348?sid=115
+88                      http://www.ilyoseoul.co.kr/news/articleView.html?idxno=490706
+89                      https://n.news.naver.com/mnews/article/008/0005066107?sid=102
+90                      https://n.news.naver.com/mnews/article/468/0001078512?sid=102
+91                      https://n.news.naver.com/mnews/article/421/0007674127?sid=102
+92                                   https://www.naeil.com/news/read/517395?ref=naver
+93                                                   http://www.breaknews.com/1045038
+94             https://cc.newdaily.co.kr/site/data/html/2024/07/19/2024071900151.html
+95                     http://www.wikileaks-kr.org/news/articleView.html?idxno=155893
+96                   http://news.lghellovision.net/news/articleView.html?idxno=474926
+97                    http://www.enewstoday.co.kr/news/articleView.html?idxno=2154259
+98                           http://www.ktnews.com/news/articleView.html?idxno=134160
+99                      http://www.newsmaker.or.kr/news/articleView.html?idxno=154037
+100                     https://n.news.naver.com/mnews/article/008/0005066071?sid=102
+                                                                                                                                                                                                                                                 description
+1                                        인구 감소로 &lt;b&gt;지방소멸&lt;/b&gt; 위기감이 커지는 가운데 지방 일손 확보 효과가 확인된 것이다. 무엇보다 청년지원금 참여자들의 퇴사율은 1.2%에 불과하다. 미참여자들의 퇴사율이 20.6%에 달한 것과 비교하면 청년 취업자의... 
+2                                    횡성군이 &lt;b&gt;지방소멸&lt;/b&gt; 대응사업으로 추진해 온'튼튼먹거리 어사간식 만들기 교실'수료식이 19일 11시 마을교육공동체 공근사랑방에서 개최됐다. 이날 수료식에는 김명기 횡성군수, 심영택 횡성교육지원청 교육장이 참석하여... 
+3                                   저출생과 초고령화 등 인구구조의 변화로 인해 &lt;b&gt;지방 소멸&lt;/b&gt; 위기가 코앞으로 다가왔다. 우리는 지금 무엇을 해야 할까? 이를 해결할 첫 번째 열쇠로 ‘교육 발전’을 떠올렸다. 최근 조직개편을 통해 인구성장국을 신설하고... 
+4                                  좋은 &lt;b&gt;지방&lt;/b&gt; 시대’를 만들기 위한 필수조건임을 강조했다. 이에 함안군의회는 ‘칠원~소계(천주산 터널)... 국지도 건설계획에 반영할 것 △함안군 지역경제 활성화와 지역&lt;b&gt;소멸&lt;/b&gt; 위기 극복을 위해 반드시 추진할 것을... 
+5                         한국마사회 정기환 회장은 &amp;quot;저출생·고령화 및 &lt;b&gt;지방소멸&lt;/b&gt; 시대에 농어촌의 미래세대인 아동·청소년이 건강한 성인으로 자라고, 위기가정의 긴급한 위기 극복에 힘을 보태는 일에 지속적인 관심과 지원을 아끼지 않겠다&amp;quot;고... 
+6                                     저출생과 초고령화 등 인구구조의 변화로 인해 &lt;b&gt;지방 소멸&lt;/b&gt; 위기가 코앞으로 다가왔다. 우리는 지금 무엇을 해야 할까? 이를 해결할 첫 번째 열쇠로 '교육 발전'을 떠올렸다. 최근 조직개편을 통해 인구성장국을 신설하고... 
+7                                     저출생과 초고령화 등 인구구조의 변화로 인해 &lt;b&gt;지방 소멸&lt;/b&gt; 위기가 코앞으로 다가왔다. 우리는 지금 무엇을 해야 할까? 이를 해결할 첫 번째 열쇠로 '교육 발전'을 떠올렸다. 최근 조직개편을 통해 인구성장국을 신설하고... 
+8                                   저출생과 초고령화 등 인구구조의 변화로 인해 &lt;b&gt;지방 소멸&lt;/b&gt; 위기가 코앞으로 다가왔다. 우리는 지금 무엇을 해야 할까? 이를 해결할 첫 번째 열쇠로 ‘교육 발전’을 떠올렸다. 최근 조직개편을 통해 인구성장국을 신설하고... 
+9                         중규모 저기압의 특성상 수시로 발생과 &lt;b&gt;소멸&lt;/b&gt;을 반복하다보니 예측이 쉽지 않습니다. ◀ INT ▶기혜진 광주&lt;b&gt;지방&lt;/b&gt;기상청 예보관 &amp;quot;(저기압이) 그 크기가 작기 때문에 수치모델에서 예측 성능이 떨어지고 변동성이 많습니다.... 
+10                                   전국적인 &lt;b&gt;지방소멸&lt;/b&gt;, 인구감소 추세 속에서 사람들을 우리 지역에 머물게 하기 위해서는 청년과 어린이에 대한 과감한 투자가 필요합니다. 교육의 당사자인 학생과 학부모, 교사의 의견을 듣고 동구의 교육 정책에 수시로... 
+11                        한국마사회 정기환 회장은 &amp;quot;저출생·고령화 및 &lt;b&gt;지방소멸&lt;/b&gt; 시대에 농어촌의 미래세대인 아동·청소년이 건강한 성인으로 자라고, 위기가정의 긴급한 위기 극복에 힘을 보태는 일에 지속적인 관심과 지원을 아끼지 않겠다&amp;quot;고... 
+12                                    K-MEDI 전통 의학 실크로드 프로젝트는 경상북도에서 &lt;b&gt;지방소멸&lt;/b&gt; 극복 시범 마을 조성을 위해 의성군에 이웃사촌시범마을(2022~2026, 4년간) 조성 사업을 토대로 영덕군 영해면 일원에 추진하는 이웃사촌마을확산사업에서... 
+13                                 현재 전국의 기초지방자치단체 대부분이 인구감소와 &lt;b&gt;지방소멸&lt;/b&gt;의 위기에 처해 있다. 충남만 해도 청양 3만 명, 금산 5만 명의 인구가 감소되는 등 9개 시군이 행정안정부 지정 인구감소지역이다. 그러나 당진은 민간 투자와... 
+14                                 '숨-핫'은 &lt;b&gt;지방소멸&lt;/b&gt; 위기를 겪고 있는 인구감소지역을 대상으로 '숨겨진 곳을 핫플레이스로 만들자'는 캠페인성 관광콘텐츠로, 협회 소속 연기자들과 함께 지역 관광자원을 다양한 영상콘텐츠로 제작·홍보함으로써 관광객... 
+15                                                                                     시 관계자는“사회 구성원의 노령화와 &lt;b&gt;지방&lt;/b&gt;인구&lt;b&gt;소멸&lt;/b&gt; 등 인구문제가 사회적으로 중요한 이슈로 대두되고 있는 만큼, 많은 학생들이 인구 문제에 대해 적극적인... 
+16                        한국마사회 정기환 회장은 &amp;quot;저출생·고령화 및 &lt;b&gt;지방소멸&lt;/b&gt; 시대에 농어촌의 미래세대인 아동·청소년이 건강한 성인으로 자라고, 위기가정의 긴급한 위기 극복에 힘을 보태는 일에 지속적인 관심과 지원을 아끼지 않겠다&amp;quot;고... 
+17                            정기환 마사회 회장은 &amp;quot;저출생·고령화 및 &lt;b&gt;지방소멸&lt;/b&gt; 시대에 농어촌의 미래세대인 아동·청소년이 건강한 성인으로 자라고, 위기가정의 긴급한 위기 극복에 힘을 보태는 일에 지속적인 관심과 지원을 아끼지 않겠다&amp;quot;고... 
+18                                    저출생과 초고령화 등 인구구조의 변화로 인해 &lt;b&gt;지방 소멸&lt;/b&gt; 위기가 코앞으로 다가왔다. 우리는 지금 무엇을 해야 할까? 이를 해결할 첫 번째 열쇠로 '교육 발전'을 떠올렸다. 최근 조직개편을 통해 인구성장국을 신설하고... 
+19                        한국마사회 정기환 회장은 &amp;quot;저출생·고령화 및 &lt;b&gt;지방소멸&lt;/b&gt; 시대에 농어촌의 미래세대인 아동·청소년이 건강한 성인으로 자라고, 위기가정의 긴급한 위기 극복에 힘을 보태는 일에 지속적인 관심과 지원을 아끼지 않겠다&amp;quot;고... 
+20                                  한국마사회 정기환 회장은 “저출생·고령화 및 &lt;b&gt;지방소멸&lt;/b&gt; 시대에 농어촌의 미래세대인 아동·청소년이 건강한 성인으로 자라고, 위기가정의 긴급한 위기 극복에 힘을 보태는 일에 지속적인 관심과 지원을 아끼지 않겠다”... 
+21                                      고등직업교육거점지구(HiVE-하이브) 사업은 인구감소, &lt;b&gt;지방 소멸&lt;/b&gt; 대응을 위해 춘해보건대, 울산과학대, 울산 남구청이 컨소시엄을 구성해 지역-대학 상생발전 강화, 울산 남구 개방형 평생학습관 제공, 지역 특화산업... 
+22                               그러면서 정부의 &lt;b&gt;지방소멸&lt;/b&gt;대응기금이 현금성 수혜사업에는 활용하기 어렵다는 점, 복지부와의 사회보장제도 협의에서도 어려움이 많았지만 굳센 의지로 헤쳐나갔다는 점 등을 설명했다. 최영일 군수는 &amp;quot;인구가 감소하는... 
+23                                      인구 감소로 &lt;b&gt;지방 소멸&lt;/b&gt; 위기감이 커지는 가운데 지방 일손 확보 효과가 확인된 것이다. 무엇보다 청년지원금 참여자들의 퇴사율은 1.2%에 불과하다. 미참여자들의 퇴사율이 20.6%에 달한 것과 비교하면 청년 취업자의... 
+24                           올해 들어서도 행정안전부 주관 「2023년 &lt;b&gt;지방&lt;/b&gt;자치단체 혁신평가」에서 역대 최초로 전국 82개 군(郡) 중... 청년이 결혼하고 아이를 낳아야 인구감소와 지역&lt;b&gt;소멸&lt;/b&gt; 위기를 극복할 수 있습니다. 이를 위해 우리 군은 청년이... 
+25                                         K-MEDI 전통의학 실크로드 프로젝트는 경북도가 &lt;b&gt;지방소멸&lt;/b&gt; 극복 시범마을 조성을 위해 의성군에 이웃사촌시범마을 조성을 토대로 영덕군 영해면 일원에 추진하는 이웃사촌마을 확산사업에서 비롯됐습니다. 경북도와... 
+26                                이번 협약은 글로컬대학 추진을 위한 대구한의대와 &lt;b&gt;지방&lt;/b&gt;정부 간 네트위크 구축 및 긴밀한 지원·협업체계... 지역&lt;b&gt;소멸&lt;/b&gt; 위기를 극복하고, 신성장동력 발굴을 통한 지역경제 활성화를 견인하는 것을 목표로 하고 있다.... 
+27                                인한 &lt;b&gt;지방 소멸&lt;/b&gt;, 식량 안보 달성 등의 중요한 문제를 해결할 수 있는 대안이 푸드테크”라고 설명했다. 한상우 신우회계법인 대표는 농식품 분야 경영체(농가) 투자대상 선별에 대해 “업무집행조합원(GP) 요건과 참여 운영... 
+28                                      [유천/목포대학교 무역학과 교수:&amp;quot;결국은 이제 국가가 국가 균형 발전 차원에서 어떻게 기반 시설을 갖추고 이 지역을 (&lt;b&gt;지방소멸&lt;/b&gt;에) 지연할 것인가에 대한 정책 수립이 우선시 되고, 또 이제 가볍게는 사실 이제... 
+29                              지자체가 중앙정부로부터 받은 &lt;b&gt;지방소멸&lt;/b&gt;대응기금 제대로 쓰고 있는지 점검하는 기획보돕니다. 고창군이  조성하는 노동골 꽃정원 문제 앞서 몇 차례 보도해드렸는데요, 여기에도 &lt;b&gt;지방소멸&lt;/b&gt;대응기금이 투입됐습니만 지난... 
+30                       시 관계자는 &amp;quot;올해는 청주, 청원이 통합한 지 10년이 되는 아주 의미 있는 해&amp;quot;라며 &amp;quot;인구 감소와 &lt;b&gt;지방소멸&lt;/b&gt; 등의 어려운 여건 속에서 인구 증가와 재정규모 확대는 물론 우리나라의 핵심 전략 산업인 바이오, 이차전지... 
+31                             &lt;b&gt;지방&lt;/b&gt; 시대'를 만들기 위한 필수조건임을 강조했다. 이에 함안군의회는 '칠원~소계(천주산 터널) 도로' 노선을 △지선 국도로 지정할 것 △제6차 국도․국지도 건설계획에 반영할 것 △함안군 지역경제 활성화와 지역&lt;b&gt;소멸&lt;/b&gt;... 
+32                                       일부에서 '&lt;b&gt;지방소멸&lt;/b&gt;을 부추길 수 있다'며 반발하고 있어 귀추가 주목된다.19일 충남교육청에 따르면 '2024 적정규모 학교육성 추진계획'(이하 추진계획)이 이달 중 행정예고된다.앞서 도교육청은 지난 5월 도내 학교... 
+33                           좋은 &lt;b&gt;지방&lt;/b&gt; 시대'를 만들기 위한 필수조건임을 강조했다. 함안군의회는 '칠원~소계(천주산 터널) 도로' 노선을 지선 국도로 지정할 것, 제6차 국도·국지도 건설계획에 반영할 것, 함안군 지역경제 활성화와 지역&lt;b&gt;소멸&lt;/b&gt; 위기... 
+34                                       임은수 상생소통담당관은 “올해는 청주·청원이 통합된 지 10년이 되는 의미 있는 해”라며 “통합청주시는 &lt;b&gt;지방소멸&lt;/b&gt; 위기 등 어려운 여건 속에서도 인구 증가와 재정 규모 확대, 바이오·이차전지·반도체 등 핵심... 
+35                            이에 포스증권을 존속회사로, 우리종금을 &lt;b&gt;소멸&lt;/b&gt;회사로 하는 합병을 추진한 바 있다. [사진=한국거래소]... &lt;b&gt;지방&lt;/b&gt; 은행인 부산·경남·광주은행, iM뱅크도 주요 예적금 금리를 0.04~0.25%포인트 인하했다. 이에 대해 금융권... 
+36                     젊은 층이 많을수록 야당 지지율이 높아지듯 &lt;b&gt;지방&lt;/b&gt;인구 &lt;b&gt;소멸&lt;/b&gt;이 정치적 기반과도 연결이 된다는 설명이다. 경제인 출신으로 먹사니즘(먹고사는 문제)을 내세우며 제3의 산업화로 경제 생태계를 갖추는 것 또한 &lt;b&gt;지방&lt;/b&gt;의 중요... 
+37                       시 관계자는 &amp;quot;올해는 청주, 청원이 통합한 지 10년이 되는 아주 의미 있는 해&amp;quot;라며 &amp;quot;인구 감소와 &lt;b&gt;지방소멸&lt;/b&gt; 등의 어려운 여건 속에서 인구 증가와 재정규모 확대는 물론 우리나라의 핵심 전략 산업인 바이오, 이차전지... 
+38                                      K-MEDI 전통 의학 실크로드 프로젝트는 경북도에서 &lt;b&gt;지방소멸&lt;/b&gt; 극복 시범 마을 조성을 위해 의성군에 이웃사촌시범마을(2022~2026, 4년간) 조성 사업을 토대로 영덕군 영해면 일원에 추진하는 이웃사촌마을확산사업에서... 
+39                                    K-MEDI 전통 의학 실크로드 프로젝트는 경상북도에서 &lt;b&gt;지방소멸&lt;/b&gt; 극복 시범 마을 조성을 위해 의성군에 이웃사촌시범마을(2022~2026, 4년간) 조성 사업을 토대로 영덕군 영해면 일원에 추진하는 이웃사촌마을확산사업에서... 
+40                               좋은 &lt;b&gt;지방&lt;/b&gt; 시대'를 만들기 위한 필수조건임을 강조했다. 군의회는 칠원~소계(천주산 터널) 도로」 노선을 지선 국도로 지정할 것과 제6차 국도․국지도 건설계획에 반영할 것, 함안군 지역경제 활성화와 지역&lt;b&gt;소멸&lt;/b&gt; 위기... 
+41                                      고등직업교육거점지구(HiVE-하이브) 사업은 인구감소, &lt;b&gt;지방 소멸&lt;/b&gt; 대응을 위해 춘해보건대, 울산과학대, 울산 남구청이 컨소시엄을 구성해 지역-대학 상생발전 강화, 울산 남구 개방형 평생학습관 제공, 지역 특화산업... 
+42                                  K-MEDI 전통 의학 실크로드 프로젝트는 경상북도에서 &lt;b&gt;지방 소멸&lt;/b&gt; 극복 시범 마을 조성을 위해 의성군에 이웃사촌시범마을(2022~2026, 4년 간) 조성 사업을 토대로 영덕군 영해면 일원에 추진하는 이웃사촌마을확산사업에서... 
+43                                      이와함께 전남대는 광주시와 여수시 구도심의 노후화된 빈집을 개보수해, 우수 외국인 유학생들에게 제공함으로써 &lt;b&gt;지방소멸&lt;/b&gt;에 대응함과 동시에 구도심을 활성화하는 'Residence(레지던스) 3000' 프로젝트도 내놓았다.... 
+44                                      K-MEDI 전통 의학 실크로드 프로젝트는 경북도에서 &lt;b&gt;지방소멸&lt;/b&gt; 극복 시범 마을 조성을 위해 의성군에 이웃사촌시범마을(2022~2026, 4년간) 조성 사업을 토대로 영덕군 영해면 일원에 추진하는 이웃사촌마을확산사업에서... 
+45                                          이 단체의 설립배경은 인공 화학비료와 살충제로 죽어가는 흙을 살리고 건강한 흙을 통해서 건강한 농산물을 생산함으로써 농가 소득을 올리며 농가 소득 증대를 통해 인구감소와 &lt;b&gt;지방소멸&lt;/b&gt;을 막아보자는 취지에서... 
+46                                 좋은 &lt;b&gt;지방&lt;/b&gt; 시대’를 만들기 위한 필수조건이라는 것이다. 군 의회는 지역경제 활성화와 지역&lt;b&gt;소멸&lt;/b&gt; 위기 극복을 위해 이번 결의안 추진을 국토교통부에 강력히 촉구할 예정이다. 결의문은 대통령, 국무총리, 국회의장... 
+47                               청년농업인이나 귀농귀촌 희망자들을 대상으로 사업을 확대해 &lt;b&gt;지방소멸&lt;/b&gt;위기를 막는 것이 중요하다는 설명이다. 40대 귀농 1인 가구 손지완 씨는 &amp;quot;귀농하면서 축산은 생각도 못 했다. 정보도 적어 기회가 없었다&amp;quot;며... 
+48                                    체계 ▲&lt;b&gt;지방&lt;/b&gt;자치단체 ESG경영 평가 결과와 시사점 등에 관해 소개하고 ▲서울시의 ESG 경영 평가 결과와 개선방안을 공유했다. 손 대표는 지자체 ESG 경영의 필요성으로 △지자체의 존재 의의 △지역&lt;b&gt;소멸&lt;/b&gt;의 위협... 
+49                  시 관계자는 &amp;quot;올해는 청주, 청원이 통합된 지 10년이 되는 의미 있는 해&amp;quot;라며 &amp;quot;&lt;b&gt;지방 소멸&lt;/b&gt; 위기 등 어려운 여건 속에서도 인구 증가와 재정규모 확대, 바이오·이차전지·반도체 등 핵심 전략산업으로 성장 기반을 다져왔다... 
+50                                        해당 프로젝트는 경북도가 의성군에 &lt;b&gt;지방소멸&lt;/b&gt; 극복을 위해 추진한 이웃사촌시범마을(2022~2024년) 조성사업을 토대로 영덕군 영해면 일원에 추진하는 확산사업에서 시작됐다. 올해 몽골 후렐바타르 롭상 모노스그룹... 
+51                                                                                    K-MEDI 전통 의학 실크로드 프로젝트는 경상북도에서 &lt;b&gt;지방소멸&lt;/b&gt; 극복 시범 마을 조성을 위해 의성군에 이웃사촌시범마을(2022~2026, 4년간) 조성 사업을 토대로 영덕군... 
+52                                    마지막으로 윤 대통령은 &amp;quot;지난해 12월 제정된 '전북특별자치도법'이 내실 있게 운영되도록 법안 개정을 추진해 '생명 경제도시' 전북을 이루는 데 필요한 재정 지원을 확대하고 &lt;b&gt;지방소멸&lt;/b&gt;에 대응하기 위한 과제들을... 
+53                                       고등직업교육거점지구(HiVE-하이브) 사업은 인구감소, &lt;b&gt;지방 소멸&lt;/b&gt; 대응을 위해 춘해보건대학교, 울산과학대학교, 울산 남구청이 컨소시엄을 구성해 지역-대학 상생발전 강화, 울산 남구 개방형 평생학습관 제공, 지역... 
+54                                  아울러 수도권과 인접한 중부권 유일 음성화훼유통센터의 중요성이 커짐에 따라 음성군 화훼산업의 경쟁력을 높이고 &lt;b&gt;지방소멸&lt;/b&gt;에 대응하는 계기가 될 것으로 기대된다. 임 의원은 &amp;quot;지난해부터 음성군과 함께 농림부를... 
+55                                              시 관계자는&amp;quot;사회 구성원의 노령화와 &lt;b&gt;지방&lt;/b&gt;인구&lt;b&gt;소멸&lt;/b&gt; 등 인구문제가 사회적으로 중요한 이슈로 대두되고 있는 만큼, 많은 학생들이 인구 문제에 대해 적극적인 관심을 가져주길 바란다&amp;quot;고 밝혔다.
+56                       김영일 본부장은 &amp;quot;&lt;b&gt;지방소멸&lt;/b&gt; 위기에 빠진 농촌발전을 위해 고향사랑기부제에 참여해준 고향주부모임 전북도지회와 부산시지회에 감사드린다&amp;quot;며 &amp;quot;이번 상호기부가 도농상생발전과 농산물 소비촉진에 도움이 되길 바란다... 
+57                                      이 프로젝트는 &lt;b&gt;지방소멸&lt;/b&gt; 극복 시범 사업인 의성군에 이웃사촌시범마을(2022~2026, 4년간)과 영덕군 이웃사촌마을 확산사업에서 비롯됐다.앞서 경북도와 영덕군, 대구한의대는 지난 4월 몽골 교육과학부, 기업, 대학과... 
+58                                        이번 협약은 &lt;b&gt;지방소멸&lt;/b&gt; 극복을 목표로 한 경상북도의 이웃사촌마을확산사업에서 비롯됐으며, 몽골과의 국제협력 MOU를 통해 중앙아시아로의 확장을 목표로 하고 있다. 이철우 경상북도지사는 “이번 협력체계를 통해... 
+59                                      K-MEDI 전통 의학 실크로드 프로젝트는 경북도에서 &lt;b&gt;지방소멸&lt;/b&gt; 극복 시범 마을 조성을 위해 의성군 이웃사촌시범마을(2022~2026년, 4년간) 조성 사업을 토대로 영덕군 영해면 일원에 추진하는 이웃사촌마을확산사업에서... 
+60                        둘째, &lt;b&gt;지방&lt;/b&gt;보조금사업비를 조정하여 재정지출 구조를 바로 잡아야 한다. &lt;b&gt;지방&lt;/b&gt;보조금은 자치단체가 민간... 우리 영광군은 원자력 발전소라는 군민 공동의 위헙요소, 풍력 관련 주민 갈등, 인구 &lt;b&gt;소멸&lt;/b&gt; 예정지역, 방만한... 
+61  황 의원은 &amp;quot;천주산 터널은 &lt;b&gt;소멸&lt;/b&gt; 위기에 처해 있는 함안군이 위기를 타개할 중요한 발판&amp;quot;이라며 &amp;quot;정부 6대 국정 목표 중 하나인 &lt;b&gt;지방&lt;/b&gt;시대를 만들기 위한 필수조건이다&amp;quot;고 밝혔다. 이어 &amp;quot;함안과 창원지역 산업단지 활성화와... 
+62                       지역 &lt;b&gt;소멸&lt;/b&gt; 위기, 지역대학 위기를 함께 극복하는데 큰 구심점이 될 것으로 생각한다.&amp;quot;라고 했다. 중원대는 18일 지역기업 발전, &lt;b&gt;지방&lt;/b&gt;대학 특성화 추진 산학협력 네트워크 구축을 위해 대학 소재 5개 시군 (충주시/괴산군... 
+63                       그러면서 &amp;quot;생명 경제도시 전북을 이루는 데 필요한 재정 지원을 확대하고 &lt;b&gt;지방 소멸&lt;/b&gt;에 대응하기 위한 체류형 생활인구 특례지원 사업과 같은 과제들을 특별법에 반영시키겠다&amp;quot;고 약속했다. 윤 대통령은 약 1시간 40분 가량... 
+64                            이번 협약은 글로컬대학 추진을 위한 대구한의대와 &lt;b&gt;지방&lt;/b&gt;정부 간 네트위크 구축 및 긴밀한 지원/협업체계... 지역&lt;b&gt;소멸&lt;/b&gt; 위기를 극복하고, 신성장동력 발굴을 통한 지역경제 활성화를 견인하는 것을 목표로 하고 있다. 이날... 
+65                          대한민국이 &lt;b&gt;소멸&lt;/b&gt;할 판이라고 하니, 정부도 '아기를 낳기만 하면 뭐든 해 주겠다'고 할 만큼 절박합니다. 특히... 나머지 30%에 해당하는 90만여 원의 본인부담금과 그 외 비급여 약값을 일부 합해 &lt;b&gt;지방&lt;/b&gt;자치단체가 총 110만... 
+66                           중원대는18일 지역기업 발전/&lt;b&gt;지방&lt;/b&gt;대학 특성화 추진 산학협력 네트워크 구축을 위해 충주시기업인협회와... 지역&lt;b&gt;소멸&lt;/b&gt; 및 지역대학 위기를 극복하는 데 이바지하고자 추진한다. 중원대 황윤원 총장은 &amp;quot;중원대가 2024년... 
+67                                            시 관계자는 &amp;quot;사회 구성원의 노령화와 &lt;b&gt;지방&lt;/b&gt;인구&lt;b&gt;소멸&lt;/b&gt; 등 인구문제가 사회적으로 중요한 이슈로 대두되고 있는 만큼, 많은 학생들이 인구 문제에 대해 적극적인 관심을 가져주길 바란다.&amp;quot;고 밝혔다.
+68                                           인천투데이=이재희·인투아이(INTO-AI) 기자│내년부터 인천 강화군과 옹진군 등 인구감소 지역에 해당하는 지방자치단체가 교육청으로부터 폐교를 무상으로 양여받아 &lt;b&gt;지방소멸&lt;/b&gt; 대응에 활용할 수 있을 전망이다.... 
+69                                    K-MEDI 전통 의학 실크로드 프로젝트는 경상북도에서 &lt;b&gt;지방소멸&lt;/b&gt; 극복 시범 마을 조성을 위해 의성군에 이웃사촌시범마을(2022~2026, 4년간) 조성 사업을 토대로 영덕군 영해면 일원에 추진하는 이웃사촌마을확산사업에서... 
+70                                서울중앙&lt;b&gt;지방&lt;/b&gt;법원 제20민사부(합의)(다)는 19일 후크엔터테인먼트(후크)가 이승기를 상대로 제기한... 이후 후크 측 변호인이 특정 시점 이전의 자료에 대해 &lt;b&gt;소멸&lt;/b&gt; 시효가 지났으며 보유하지 않고 있다고 주장한 것에... 
+71                              전보강 인하대 소상공인 경제생태계 연구센터장은 “&lt;b&gt;지방&lt;/b&gt;의 소상공인이 직면한 가장 큰 문제는 지역&lt;b&gt;소멸&lt;/b&gt;로, 문제를 해결하는 돌파구는 관광 콘텐츠 개발”이라며 “지역 경제·관광 활성화를 위해 학계에서 할 수 있는... 
+72                                         K-MEDI 전통 의학 실크로드 프로젝트는 경북도에서 &lt;b&gt;지방소멸&lt;/b&gt; 극복 시범 마을 조성을 위해 의성군에 이웃사촌시범마을(2022년~2026년) 조성 사업을 토대로 영덕군 영해면 일원에 추진하는 이웃사촌마을확산사업에서... 
+73                                          또한 최 군수는 아동행복수당이나 종자통장 지원 등 보편적 복지혜택인 현금성 수혜사업 필요성을 강조함과 동시에 정부의 &lt;b&gt;지방소멸&lt;/b&gt;대응기금이 현금성 수혜사업에는 활용하기 어려운 점, 복지부와의 사회보장제도... 
+74                           이어 &amp;quot;이 사업은 보령의 새로운 성장동력으로 &lt;b&gt;지방소멸&lt;/b&gt; 위기 극복의 터닝포인트가 될 것이며 속도감 있는 사업진행을 위해 총력 대응하고 의료,문화 인프라 등 정주여건 개선에 최선을 다 할것이다&amp;quot;고 덧붙였다.참으로... 
+75                                이번 협약은 글로컬대학 추진을 위한 대구한의대와 &lt;b&gt;지방&lt;/b&gt;정부 간 네트위크 구축 및 긴밀한 지원·협업체계... 지역&lt;b&gt;소멸&lt;/b&gt; 위기를 극복하고, 신성장동력 발굴을 통한 지역경제 활성화를 견인하는 것을 목표로 하고 있다.... 
+76                                  이번 협약은 글로컬대학 본지정에 도전하는 대구한의대와 &lt;b&gt;지방&lt;/b&gt;정부 간 네트위크 구축 및 긴밀한 지원... 지역정주인구 확대를 통해 지역&lt;b&gt;소멸&lt;/b&gt; 위기를 극복하고, 신성장동력 발굴을 통한 지역경제 활성화를 견인하는... 
+77                                          또한 최 군수는 아동행복수당이나 종자통장 지원 등 보편적 복지혜택인 현금성 수혜사업 필요성을 강조함과 동시에 정부의 &lt;b&gt;지방소멸&lt;/b&gt;대응기금이 현금성 수혜사업에는 활용하기 어려운 점, 복지부와의 사회보장제도... 
+78                                          또한 최 군수는 아동행복수당이나 종자통장 지원 등 보편적 복지혜택인 현금성 수혜사업 필요성을 강조함과 동시에 정부의 &lt;b&gt;지방소멸&lt;/b&gt;대응기금이 현금성 수혜사업에는 활용하기 어려운 점, 복지부와의 사회보장제도... 
+79                                          또한 최 군수는 아동행복수당이나 종자통장 지원 등 보편적 복지혜택인 현금성 수혜사업 필요성을 강조함과 동시에 정부의 &lt;b&gt;지방소멸&lt;/b&gt;대응기금이 현금성 수혜사업에는 활용하기 어려운 점, 복지부와의 사회보장제도... 
+80                                  안동시의 가장 큰 현안 사업으로는 저출산 고령화로 인한 &lt;b&gt;지방소멸&lt;/b&gt; 위기를 언급했다. 지금의 위기를 타개하기 위한 실효성 있는 정책추진을 강조하며, 지난 5분 발언을 통해 청년일자리 정책과 정주 여건개선을 위한 현안... 
+81                                 구미시 혼인 건수는 지난 10년간 3017건에서 1514건으로 절반으로 줄어 출생아 감소에 큰 영향을 받았고 &lt;b&gt;지방소멸&lt;/b&gt;지수가 1.374로 소멸예방지역 경계에 걸쳐있다. 고령화가 가속되는 지금 인구구성의 체질을 개선해 '아이와... 
+82                                   특히 이번 협의회에서는 고령군 교육발전특구 시범지역 지정 추진 협조, 관내 초등학교 통학버스 연장 운행 검토, '아이 키우기 좋은 고령'을 위한 통학차량 지원, &lt;b&gt;지방소멸&lt;/b&gt;대응기금과 연계한 대응사업 추진 등 총 7건의... 
+83                                   이영태 선임기자 = 최응천 국가유산청장은 &amp;quot;국가차원에서 인구감소 및 &lt;b&gt;지방소멸&lt;/b&gt;이 최대 화두로 대두되고 있는 상황에서 지역의 국가유산을 활용해 지역의 매력과 활력을 높이는 사업과 이를 통한 적극적인 국가유산... 
+84                                           또한 최 군수는 아동행복수당이나 종자통장 지원 등 보편적 복지혜택인 현금성 수혜 사업의 필요성을 강조하면서 정부의 &lt;b&gt;지방소멸&lt;/b&gt;대응기금이 현금성 수혜 사업에는 활용하기 어려운 점, 복지부와의 사회보장제도... 
+85                   윤 교육감은 &amp;quot;전국 시․도교육감과 함께 &lt;b&gt;지방&lt;/b&gt;교육자치를 강화하고, 학령인구 감소, 지역&lt;b&gt;소멸&lt;/b&gt; 및 기후 위기 대응 등 교육 현안을 해결하기 위해 최선을 다하겠다&amp;quot;고 밝혔다. 한편, 윤 교육감은 2024년 7월부터 충북, 충남... 
+86                                              정부가 &lt;b&gt;지방소멸&lt;/b&gt; 위기를 극복하기 위해 지역경제 활성화와 생활인구 유입 관련한 정책을 연이어 내놓고 있다. 그만큼 인구감소지역 붕괴가 그 지역의 문제만이 아니라 국가균형발전 차원에서도 시급한 정책적... 
+87                                               인구감소와 &lt;b&gt;지방소멸&lt;/b&gt;이 날로 심화되고 있습니다. 이에 행안부에서도 ‘인구감소지역’을 지정해 관련 정책을 시행 중이라고요? 2. 인구감소지역 지원 특별법 시행되고 있다, 말씀 주셨는데. 어제 정부에서는... 
+88                                이번 협약은 글로컬대학 추진을 위한 대구한의대와 &lt;b&gt;지방&lt;/b&gt;정부 간 네트위크 구축 및 긴밀한 지원·협업체계... 지역&lt;b&gt;소멸&lt;/b&gt; 위기를 극복하고, 신성장동력 발굴을 통한 지역경제 활성화를 견인하는 것을 목표로 하고 있다.... 
+89                                     안동시의 가장 큰 현안 사업으로 저출산 고령화로 인한 &lt;b&gt;지방소멸&lt;/b&gt; 위기를 언급하며 실효성 있는 정책추진으로 청년일자리 정책과 정주 여건개선을 위한 현안 사업, 무너진 도심상권 회복과 전통시장 활성화 등 구체적인... 
+90                                                  사진|횡성군청 횡성군이 &lt;b&gt;지방소멸&lt;/b&gt; 대응사업으로 추진해 온 ‘튼튼먹거리 어사간식 만들기 교실’ 수료식이 19일 11시 마을교육공동체 공근사랑방에서 개최됐다. 이날 수료식에는 김명기 횡성군수, 심영택... 
+91                          전북자치도 완주군이 행정안전부의 '&lt;b&gt;지방&lt;/b&gt;자치단체 평가'에서 2년 연속 우수기관으로 선정됐다. 완주군은... 이외에도 인구&lt;b&gt;소멸&lt;/b&gt; 위기 극복을 위한 '귀농·귀촌 원스톱 서비스', '임시 거주시설 확대 운영' 사례 등도 호평을... 
+92                                그러자 서울&lt;b&gt;지방&lt;/b&gt;국세청은 성동세무서에 대한 종합감사를 실시하고, 아쇼카한국의 자산 취득가액은 해당... 재판부는 “A씨는 &lt;b&gt;소멸&lt;/b&gt;회사(합병 전 B사)의 주주로서 존속회사(C사)로부터 합병대가로 이 사건 주식을 배당... 
+93                                                                                     △ 장학사업 활성화를 위한‘조세특례제한법’개정 요구 저출산.고령화와 수도권 집중화로 &lt;b&gt;지방소멸&lt;/b&gt;이 우려되고 있어 정부에서는 이를 극복하기 위해 지역 우수 인재... 
+94                                    이는 &lt;b&gt;지방소멸&lt;/b&gt;에 대한 대안을 문화를 통해 풀어나가려는 강 의원의 대표 브랜드 중 하나다. 한편, 강 의원은 산자중기위 위원으로서 신재생 에너지를 활용한 예산지역 에너지자립농장 육성에도 큰 관심을 두고 있다. 강... 
+95                               지역경제 활성화와 &lt;b&gt;지방소멸&lt;/b&gt; 위기 대응을 위해 철도 관광객 유치에 도움을 주고자 이번 패키지 개발에 참가했다는 코레일 설명이다. 코레일 관계자는 &amp;quot;인구감소지역 활성화 철도여행상품에 동참하게 돼 뜻깊게 생각한다... 
+96                                      이번주 우리지역 국회의원들은 &lt;b&gt;지방소멸&lt;/b&gt;을 막기 위한 다양한 정책 포럼들을 개최했는데요. 다양한 해법들이 모색됐습니다. 먼저 지난 18일 국회에서 진행된 &lt;b&gt;지방소멸&lt;/b&gt; 대응 골드시티 정책 포럼이 대표적인데요.... 
+97                         비해 &lt;b&gt;지방&lt;/b&gt;의 금융 사정은 열악해지고 있다. 이를 상쇄할 방안으로 공공기관 금고의 지역 금융기관 지정이... 끝으로, 정재욱 경남도의원은 &amp;quot;지역&lt;b&gt;소멸&lt;/b&gt;의 문제 해결에 전 국가적 명운이 걸려 있다. 공공기관 금고의 지역... 
+98                                                  노동력 부족과 부양 부담 상승, &lt;b&gt;지방소멸&lt;/b&gt;과 경제 활력 감소는 코앞에 닥친 현실이다. 특히 여성고용비율이 높고 기존 인력의 고령화가 빠르게 진행 중인 섬유패션업계로서는 출산·양육지원환경을 만들고... 
+99                            의대설립만 기다리며 손 놓고 있을 수는 없는 노릇.&amp;quot;이라면서 &amp;quot;현재 상황에서 가장 효율적인 공공의료체계를 구축해 적어도 길 위에서 돌아가시는 분이 없도록 하되, &lt;b&gt;지방소멸&lt;/b&gt; 대응의 관건이 될 의대 유치에도 사활을... 
+100                     중원대학교가 지난 18일 충주시기업인협회와 지역기업 발전 및 &lt;b&gt;지방&lt;/b&gt;대학 특성화 추진을 위한 업무협약을... 산학협력 대표자 협의회를 구성하고, 지역&lt;b&gt;소멸&lt;/b&gt; 및 지역대학 위기를 극복하기 위해 최선을 다할 것&amp;quot;이라고 강조했다.
                             pubDate
-1   Mon, 06 May 2024 00:06:00 +0900
-2   Sun, 05 May 2024 22:38:00 +0900
-3   Sun, 05 May 2024 21:32:00 +0900
-4   Sun, 05 May 2024 21:30:00 +0900
-5   Sun, 05 May 2024 21:24:00 +0900
-6   Sun, 05 May 2024 21:06:00 +0900
-7   Sun, 05 May 2024 20:42:00 +0900
-8   Sun, 05 May 2024 19:16:00 +0900
-9   Sun, 05 May 2024 18:30:00 +0900
-10  Sun, 05 May 2024 18:16:00 +0900
-11  Sun, 05 May 2024 17:48:00 +0900
-12  Sun, 05 May 2024 17:18:00 +0900
-13  Sun, 05 May 2024 17:16:00 +0900
-14  Sun, 05 May 2024 17:04:00 +0900
-15  Sun, 05 May 2024 17:02:00 +0900
-16  Sun, 05 May 2024 16:38:00 +0900
-17  Sun, 05 May 2024 16:22:00 +0900
-18  Sun, 05 May 2024 15:32:00 +0900
-19  Sun, 05 May 2024 15:20:00 +0900
-20  Sun, 05 May 2024 15:20:00 +0900
-21  Sun, 05 May 2024 14:46:00 +0900
-22  Sun, 05 May 2024 14:38:00 +0900
-23  Sun, 05 May 2024 14:22:00 +0900
-24  Sun, 05 May 2024 13:52:00 +0900
-25  Sun, 05 May 2024 13:44:00 +0900
-26  Sun, 05 May 2024 13:18:00 +0900
-27  Sun, 05 May 2024 13:18:00 +0900
-28  Sun, 05 May 2024 11:58:00 +0900
-29  Sun, 05 May 2024 11:52:00 +0900
-30  Sun, 05 May 2024 10:44:00 +0900
-31  Sun, 05 May 2024 10:40:00 +0900
-32  Sun, 05 May 2024 10:38:00 +0900
-33  Sun, 05 May 2024 10:36:00 +0900
-34  Sun, 05 May 2024 10:29:00 +0900
-35  Sun, 05 May 2024 10:10:00 +0900
-36  Sun, 05 May 2024 10:00:00 +0900
-37  Sun, 05 May 2024 09:56:00 +0900
-38  Sun, 05 May 2024 09:51:00 +0900
-39  Sun, 05 May 2024 09:38:00 +0900
-40  Sun, 05 May 2024 09:18:00 +0900
-41  Sun, 05 May 2024 09:10:00 +0900
-42  Sun, 05 May 2024 09:02:00 +0900
-43  Sun, 05 May 2024 09:01:00 +0900
-44  Sun, 05 May 2024 08:00:00 +0900
-45  Sun, 05 May 2024 07:50:00 +0900
-46  Sun, 05 May 2024 07:10:00 +0900
-47  Sun, 05 May 2024 07:10:00 +0900
-48  Sun, 05 May 2024 07:01:00 +0900
-49  Sun, 05 May 2024 06:15:00 +0900
-50  Sat, 04 May 2024 23:30:00 +0900
-51  Sat, 04 May 2024 21:26:00 +0900
-52  Sat, 04 May 2024 20:54:00 +0900
-53  Sat, 04 May 2024 20:36:00 +0900
-54  Sat, 04 May 2024 19:58:00 +0900
-55  Sat, 04 May 2024 18:42:00 +0900
-56  Sat, 04 May 2024 16:28:00 +0900
-57  Sat, 04 May 2024 16:04:00 +0900
-58  Sat, 04 May 2024 15:55:00 +0900
-59  Sat, 04 May 2024 15:31:00 +0900
-60  Sat, 04 May 2024 15:18:00 +0900
-61  Sat, 04 May 2024 14:52:00 +0900
-62  Sat, 04 May 2024 13:36:00 +0900
-63  Sat, 04 May 2024 13:32:00 +0900
-64  Sat, 04 May 2024 12:36:00 +0900
-65  Sat, 04 May 2024 12:18:00 +0900
-66  Sat, 04 May 2024 10:52:00 +0900
-67  Sat, 04 May 2024 10:44:00 +0900
-68  Sat, 04 May 2024 10:42:00 +0900
-69  Sat, 04 May 2024 10:36:00 +0900
-70  Sat, 04 May 2024 10:22:00 +0900
-71  Sat, 04 May 2024 10:14:00 +0900
-72  Sat, 04 May 2024 10:02:00 +0900
-73  Sat, 04 May 2024 09:58:00 +0900
-74  Sat, 04 May 2024 09:48:00 +0900
-75  Sat, 04 May 2024 09:46:00 +0900
-76  Sat, 04 May 2024 09:24:00 +0900
-77  Sat, 04 May 2024 09:06:00 +0900
-78  Sat, 04 May 2024 09:06:00 +0900
-79  Sat, 04 May 2024 09:01:00 +0900
-80  Sat, 04 May 2024 08:24:00 +0900
-81  Sat, 04 May 2024 08:24:00 +0900
-82  Sat, 04 May 2024 08:02:00 +0900
-83  Sat, 04 May 2024 07:50:00 +0900
-84  Sat, 04 May 2024 07:01:00 +0900
-85  Sat, 04 May 2024 07:00:00 +0900
-86  Sat, 04 May 2024 06:18:00 +0900
-87  Sat, 04 May 2024 06:02:00 +0900
-88  Sat, 04 May 2024 04:24:00 +0900
-89  Sat, 04 May 2024 02:22:00 +0900
-90  Sat, 04 May 2024 01:41:00 +0900
-91  Sat, 04 May 2024 01:08:00 +0900
-92  Sat, 04 May 2024 00:56:00 +0900
-93  Sat, 04 May 2024 00:11:00 +0900
-94  Fri, 03 May 2024 23:38:00 +0900
-95  Fri, 03 May 2024 21:49:00 +0900
-96  Fri, 03 May 2024 21:30:00 +0900
-97  Fri, 03 May 2024 21:20:00 +0900
-98  Fri, 03 May 2024 21:09:00 +0900
-99  Fri, 03 May 2024 20:46:00 +0900
-100 Fri, 03 May 2024 20:42:00 +0900</code></pre>
+1   Fri, 19 Jul 2024 22:15:00 +0900
+2   Fri, 19 Jul 2024 21:58:00 +0900
+3   Fri, 19 Jul 2024 21:53:00 +0900
+4   Fri, 19 Jul 2024 21:40:00 +0900
+5   Fri, 19 Jul 2024 21:18:00 +0900
+6   Fri, 19 Jul 2024 21:18:00 +0900
+7   Fri, 19 Jul 2024 21:08:00 +0900
+8   Fri, 19 Jul 2024 21:00:00 +0900
+9   Fri, 19 Jul 2024 21:00:00 +0900
+10  Fri, 19 Jul 2024 20:54:00 +0900
+11  Fri, 19 Jul 2024 19:32:00 +0900
+12  Fri, 19 Jul 2024 19:24:00 +0900
+13  Fri, 19 Jul 2024 19:18:00 +0900
+14  Fri, 19 Jul 2024 19:00:00 +0900
+15  Fri, 19 Jul 2024 18:44:00 +0900
+16  Fri, 19 Jul 2024 18:36:00 +0900
+17  Fri, 19 Jul 2024 18:34:00 +0900
+18  Fri, 19 Jul 2024 18:30:00 +0900
+19  Fri, 19 Jul 2024 18:28:00 +0900
+20  Fri, 19 Jul 2024 18:25:00 +0900
+21  Fri, 19 Jul 2024 18:08:00 +0900
+22  Fri, 19 Jul 2024 18:04:00 +0900
+23  Fri, 19 Jul 2024 17:52:00 +0900
+24  Fri, 19 Jul 2024 17:49:00 +0900
+25  Fri, 19 Jul 2024 17:48:00 +0900
+26  Fri, 19 Jul 2024 17:44:00 +0900
+27  Fri, 19 Jul 2024 17:42:00 +0900
+28  Fri, 19 Jul 2024 17:30:00 +0900
+29  Fri, 19 Jul 2024 17:30:00 +0900
+30  Fri, 19 Jul 2024 17:20:00 +0900
+31  Fri, 19 Jul 2024 17:15:00 +0900
+32  Fri, 19 Jul 2024 17:08:00 +0900
+33  Fri, 19 Jul 2024 17:00:00 +0900
+34  Fri, 19 Jul 2024 17:00:00 +0900
+35  Fri, 19 Jul 2024 17:00:00 +0900
+36  Fri, 19 Jul 2024 16:56:00 +0900
+37  Fri, 19 Jul 2024 16:41:00 +0900
+38  Fri, 19 Jul 2024 16:40:00 +0900
+39  Fri, 19 Jul 2024 16:40:00 +0900
+40  Fri, 19 Jul 2024 16:35:00 +0900
+41  Fri, 19 Jul 2024 16:34:00 +0900
+42  Fri, 19 Jul 2024 16:32:00 +0900
+43  Fri, 19 Jul 2024 16:32:00 +0900
+44  Fri, 19 Jul 2024 16:28:00 +0900
+45  Fri, 19 Jul 2024 16:24:00 +0900
+46  Fri, 19 Jul 2024 16:19:00 +0900
+47  Fri, 19 Jul 2024 16:16:00 +0900
+48  Fri, 19 Jul 2024 16:02:00 +0900
+49  Fri, 19 Jul 2024 16:00:00 +0900
+50  Fri, 19 Jul 2024 16:00:00 +0900
+51  Fri, 19 Jul 2024 15:58:00 +0900
+52  Fri, 19 Jul 2024 15:54:00 +0900
+53  Fri, 19 Jul 2024 15:53:00 +0900
+54  Fri, 19 Jul 2024 15:52:00 +0900
+55  Fri, 19 Jul 2024 15:46:00 +0900
+56  Fri, 19 Jul 2024 15:42:00 +0900
+57  Fri, 19 Jul 2024 15:32:00 +0900
+58  Fri, 19 Jul 2024 15:30:00 +0900
+59  Fri, 19 Jul 2024 15:26:00 +0900
+60  Fri, 19 Jul 2024 15:12:00 +0900
+61  Fri, 19 Jul 2024 15:10:00 +0900
+62  Fri, 19 Jul 2024 15:06:00 +0900
+63  Fri, 19 Jul 2024 15:03:00 +0900
+64  Fri, 19 Jul 2024 15:02:00 +0900
+65  Fri, 19 Jul 2024 15:01:00 +0900
+66  Fri, 19 Jul 2024 15:00:00 +0900
+67  Fri, 19 Jul 2024 14:56:00 +0900
+68  Fri, 19 Jul 2024 14:52:00 +0900
+69  Fri, 19 Jul 2024 14:52:00 +0900
+70  Fri, 19 Jul 2024 14:51:00 +0900
+71  Fri, 19 Jul 2024 14:50:00 +0900
+72  Fri, 19 Jul 2024 14:50:00 +0900
+73  Fri, 19 Jul 2024 14:34:00 +0900
+74  Fri, 19 Jul 2024 14:32:00 +0900
+75  Fri, 19 Jul 2024 14:30:00 +0900
+76  Fri, 19 Jul 2024 14:28:00 +0900
+77  Fri, 19 Jul 2024 14:26:00 +0900
+78  Fri, 19 Jul 2024 14:20:00 +0900
+79  Fri, 19 Jul 2024 14:20:00 +0900
+80  Fri, 19 Jul 2024 14:16:00 +0900
+81  Fri, 19 Jul 2024 14:02:00 +0900
+82  Fri, 19 Jul 2024 14:00:00 +0900
+83  Fri, 19 Jul 2024 14:00:00 +0900
+84  Fri, 19 Jul 2024 13:52:00 +0900
+85  Fri, 19 Jul 2024 13:40:00 +0900
+86  Fri, 19 Jul 2024 13:36:00 +0900
+87  Fri, 19 Jul 2024 13:36:00 +0900
+88  Fri, 19 Jul 2024 13:34:00 +0900
+89  Fri, 19 Jul 2024 13:31:00 +0900
+90  Fri, 19 Jul 2024 13:30:00 +0900
+91  Fri, 19 Jul 2024 13:21:00 +0900
+92  Fri, 19 Jul 2024 13:06:00 +0900
+93  Fri, 19 Jul 2024 13:06:00 +0900
+94  Fri, 19 Jul 2024 13:02:00 +0900
+95  Fri, 19 Jul 2024 12:56:00 +0900
+96  Fri, 19 Jul 2024 12:50:00 +0900
+97  Fri, 19 Jul 2024 12:20:00 +0900
+98  Fri, 19 Jul 2024 11:54:00 +0900
+99  Fri, 19 Jul 2024 11:48:00 +0900
+100 Fri, 19 Jul 2024 11:43:00 +0900</code></pre>
 </div>
 </div>
 </div>
 <div id="tabset-7-3">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>all_news <span class="ot">&lt;-</span> <span class="fu">data.frame</span>()</span>
-<span id="cb23-2"><a></a>search <span class="ot">&lt;-</span> <span class="st">"지방소멸"</span></span>
-<span id="cb23-3"><a></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
-<span id="cb23-4"><a></a>  news <span class="ot">&lt;-</span> <span class="fu">request</span>(your_url) <span class="sc">|&gt;</span> </span>
-<span id="cb23-5"><a></a>    <span class="fu">req_headers</span>(</span>
-<span id="cb23-6"><a></a>      <span class="st">"X-Naver-Client-ID"</span> <span class="ot">=</span> your_ClientID,</span>
-<span id="cb23-7"><a></a>      <span class="st">"X-Naver-Client-Secret"</span> <span class="ot">=</span> your_Client_Secret</span>
-<span id="cb23-8"><a></a>    ) <span class="sc">|&gt;</span> </span>
-<span id="cb23-9"><a></a>    <span class="fu">req_url_query</span>(</span>
-<span id="cb23-10"><a></a>      <span class="at">query =</span> search,</span>
-<span id="cb23-11"><a></a>      <span class="at">display =</span> <span class="dv">100</span>,</span>
-<span id="cb23-12"><a></a>      <span class="at">start =</span> i,</span>
-<span id="cb23-13"><a></a>      <span class="at">sort =</span> <span class="st">"date"</span></span>
-<span id="cb23-14"><a></a>    ) <span class="sc">|&gt;</span> </span>
-<span id="cb23-15"><a></a>    <span class="fu">req_perform</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb23-16"><a></a>    <span class="fu">resp_body_json</span>()</span>
-<span id="cb23-17"><a></a>  body <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">t</span>(<span class="fu">sapply</span>(news<span class="sc">$</span>item, data.frame)))</span>
-<span id="cb23-18"><a></a>  all_news <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(all_news, body)</span>
-<span id="cb23-19"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>all_news <span class="ot">&lt;-</span> <span class="fu">data.frame</span>()</span>
+<span id="cb16-2"><a></a>search <span class="ot">&lt;-</span> <span class="st">"지방소멸"</span></span>
+<span id="cb16-3"><a></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb16-4"><a></a>  news <span class="ot">&lt;-</span> <span class="fu">request</span>(your_url) <span class="sc">|&gt;</span> </span>
+<span id="cb16-5"><a></a>    <span class="fu">req_headers</span>(</span>
+<span id="cb16-6"><a></a>      <span class="st">"X-Naver-Client-ID"</span> <span class="ot">=</span> your_ClientID,</span>
+<span id="cb16-7"><a></a>      <span class="st">"X-Naver-Client-Secret"</span> <span class="ot">=</span> your_Client_Secret</span>
+<span id="cb16-8"><a></a>    ) <span class="sc">|&gt;</span> </span>
+<span id="cb16-9"><a></a>    <span class="fu">req_url_query</span>(</span>
+<span id="cb16-10"><a></a>      <span class="at">query =</span> search,</span>
+<span id="cb16-11"><a></a>      <span class="at">display =</span> <span class="dv">100</span>,</span>
+<span id="cb16-12"><a></a>      <span class="at">start =</span> i,</span>
+<span id="cb16-13"><a></a>      <span class="at">sort =</span> <span class="st">"date"</span></span>
+<span id="cb16-14"><a></a>    ) <span class="sc">|&gt;</span> </span>
+<span id="cb16-15"><a></a>    <span class="fu">req_perform</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb16-16"><a></a>    <span class="fu">resp_body_json</span>()</span>
+<span id="cb16-17"><a></a>  body <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">t</span>(<span class="fu">sapply</span>(news<span class="sc">$</span>item, data.frame)))</span>
+<span id="cb16-18"><a></a>  all_news <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(all_news, body)</span>
+<span id="cb16-19"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1327,10 +1269,27 @@ Sang-Il Lee
 </div>
 </div>
 </section></section>
-</div>
+    </div>
   </div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script><script src="site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="site_libs/revealjs/plugin/notes/notes.js"></script><script src="site_libs/revealjs/plugin/search/search.js"></script><script src="site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
@@ -1521,7 +1480,46 @@ Sang-Il Lee
           RevealZoom
         ]
       });
-    </script><script id="quarto-html-after-body" type="application/javascript">
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
         const mode = bsSheetEl.getAttribute("data-mode");
@@ -1675,6 +1673,6 @@ Sang-Il Lee
       }
     });
     </script>
-
+    
 
 </body></html>

@@ -7,17 +7,17 @@
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
-<meta name="author" content="Sang-Il Lee">
-<title>Data Science - Data Exploration</title>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-<link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
-<link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
-<style>
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.4.549">
+
+  <meta name="author" content="Sang-Il Lee">
+  <title>Data Science - Data Exploration</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -95,13 +95,13 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-<link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
-<link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-<link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-<link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-<link href="site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
-<link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-<style type="text/css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
 
   .callout {
     margin-top: 1em;
@@ -299,7 +299,7 @@
   }
 
   </style>
-<style type="text/css">
+  <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -391,7 +391,8 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-image="R_6.gif" data-background-opacity="1e" data-background-position="85% 5%" data-background-size="10%" class="quarto-title-block center"><h1 class="title">Data Exploration</h1>
+<section id="title-slide" data-background-image="R_6.gif" data-background-opacity="1e" data-background-position="85% 5%" data-background-size="10%" class="quarto-title-block center">
+  <h1 class="title">Data Exploration</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -401,27 +402,42 @@ Sang-Il Lee
 </div>
 </div>
 
-</section><section><section id="basic-concepts" class="title-slide slide level1 center"><h1>Basic Concepts</h1>
+</section>
+<section>
+<section id="basic-concepts" class="title-slide slide level1 center">
+<h1>Basic Concepts</h1>
 
-</section><section id="exploration-in-a-data-science-process" class="slide level2"><h2>Exploration in a data science process</h2>
+</section>
+<section id="exploration-in-a-data-science-process" class="slide level2">
+<h2>Exploration in a data science process</h2>
 
-<img data-src="images/clipboard-4075247197.png" class="r-stretch"></section><section id="exploration-in-a-data-science-process-1" class="slide level2"><h2>Exploration in a data science process</h2>
+<img data-src="images/clipboard-4075247197.png" class="r-stretch"></section>
+<section id="exploration-in-a-data-science-process-1" class="slide level2">
+<h2>Exploration in a data science process</h2>
 <ul>
 <li>Data exploration is a process of interacting with data to answer questions.</li>
 <li>A sequential process from data transformation and data visualization is central to data exploration.</li>
 <li>Data transformation is often a necessary prerequisite for data visualization.</li>
-</ul></section><section id="데이터-탐색의-절차" class="slide level2"><h2>데이터 탐색의 절차</h2>
+</ul>
+</section>
+<section id="데이터-탐색의-절차" class="slide level2">
+<h2>데이터 탐색의 절차</h2>
 <ul>
 <li><p>질문에 답할 수 있는 그래픽(플롯, 지도 등)을 구상한다.</p></li>
 <li><p>구상한 그래픽에 부합하도록 데이터를 변형한다.</p></li>
 <li><p>변형한 데이터를 구상한 그래픽으로 시각화한다.</p></li>
 <li><p>그래픽으로부터 질문의 답을 구하고, 더 나아가 지식, 이해, 통찰을 이끌어낸다.</p></li>
-</ul></section></section><section><section id="three-examples" class="title-slide slide level1 center"><h1>Three Examples</h1>
+</ul>
+</section></section>
+<section>
+<section id="three-examples" class="title-slide slide level1 center">
+<h1>Three Examples</h1>
 
-</section><section id="data" class="slide level2"><h2>Data</h2>
+</section>
+<section id="data" class="slide level2">
+<h2>Data</h2>
 <ul>
-<li>
-<p><code>gapminder</code> data set</p>
+<li><p><code>gapminder</code> data set</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a></a><span class="fu">library</span>(gapminder)</span>
@@ -442,16 +458,17 @@ Sang-Il Lee
 10 Afghanistan Asia       1997    41.8 22227415      635.
 # ℹ 1,694 more rows</code></pre>
 </div>
-</div>
-</li>
-</ul></section><section id="question-1" class="slide level2"><h2>Question 1</h2>
-<p>아시아의 1957년과 2007년의 1인당 GDP는 얼마이며 순위는 어떠한가? 1인당 GDP의 순위가 상승하였는가?</p>
-</section><section id="question-1-1" class="slide level2"><h2>Question 1</h2>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-1-1">Result</a></li>
-<li><a href="#tabset-1-2">Code</a></li>
+</div></li>
 </ul>
+</section>
+<section id="question-1" class="slide level2">
+<h2>Question 1</h2>
+<p>아시아의 1957년과 2007년의 1인당 GDP는 얼마이며 순위는 어떠한가? 1인당 GDP의 순위가 상승하였는가?</p>
+</section>
+<section id="question-1-1" class="slide level2">
+<h2>Question 1</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Result</a></li><li><a href="#tabset-1-2">Code</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="cell">
@@ -488,22 +505,22 @@ Sang-Il Lee
 </div>
 </div>
 </div>
-</section><section id="question-2" class="slide level2"><h2>Question 2</h2>
+</section>
+<section id="question-2" class="slide level2">
+<h2>Question 2</h2>
 <p>대륙별 최대국(인구가 가장 많은 나라)이 소속 대륙 전체에서 차지하는 비중(%)이 어느 정도이고 대륙별로 어느 정도의 차이가 있는지, 그리고 대륙별 최대국의 비중이 시간이 지남에 따라 어떠한 변화 양상을 보이고, 그러한 양상에 대륙별 차이가 있는지를 탐색</p>
-</section><section id="question-2-1" class="slide level2"><h2>Question 2</h2>
+</section>
+<section id="question-2-1" class="slide level2">
+<h2>Question 2</h2>
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-2-1">Graph 1</a></li>
-<li><a href="#tabset-2-2">Code 1</a></li>
-<li><a href="#tabset-2-3">Code 2</a></li>
-<li><a href="#tabset-2-4">Graph 2</a></li>
-</ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Graph 1</a></li><li><a href="#tabset-2-2">Code 1</a></li><li><a href="#tabset-2-3">Code 2</a></li><li><a href="#tabset-2-4">Graph 2</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="R_lec_06_files/figure-html/unnamed-chunk-4-1.png" width="672"></p>
+<figure>
+<p><img data-src="R_lec_06_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -541,7 +558,8 @@ Sang-Il Lee
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="R_lec_06_files/figure-html/unnamed-chunk-7-1.png" width="672"></p>
+<figure>
+<p><img data-src="R_lec_06_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -549,7 +567,9 @@ Sang-Il Lee
 </div>
 </div>
 </div>
-</section><section id="question-3" class="slide level2"><h2>Question 3</h2>
+</section>
+<section id="question-3" class="slide level2">
+<h2>Question 3</h2>
 <ul>
 <li><p>1952~2007년간의 연평균 인구성장률의 대륙간 차이와 대륙 내 국가간 편차를 동시에 탐색</p></li>
 <li><p>연평균 인구성장률(%)은 다음의 공식에 의거해 산출</p></li>
@@ -557,20 +577,18 @@ Sang-Il Lee
 <p><span class="math display">\[
 r=\frac{1}{n}\times\ln(\frac{P_n}{P_0})\times100
 \]</span></p>
-</section><section id="question-3-1" class="slide level2"><h2>Question 3</h2>
+</section>
+<section id="question-3-1" class="slide level2">
+<h2>Question 3</h2>
 <div class="panel-tabset">
-<ul id="tabset-3" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-3-1">Graph 1</a></li>
-<li><a href="#tabset-3-2">Code 1</a></li>
-<li><a href="#tabset-3-3">Code 2</a></li>
-<li><a href="#tabset-3-4">Graph 2</a></li>
-</ul>
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Graph 1</a></li><li><a href="#tabset-3-2">Code 1</a></li><li><a href="#tabset-3-3">Code 2</a></li><li><a href="#tabset-3-4">Graph 2</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1">
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="R_lec_06_files/figure-html/unnamed-chunk-8-1.png" width="672"></p>
+<figure>
+<p><img data-src="R_lec_06_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -611,7 +629,8 @@ r=\frac{1}{n}\times\ln(\frac{P_n}{P_0})\times100
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure><p><img data-src="R_lec_06_files/figure-html/unnamed-chunk-11-1.png" width="672"></p>
+<figure>
+<p><img data-src="R_lec_06_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -626,10 +645,27 @@ r=\frac{1}{n}\times\ln(\frac{P_n}{P_0})\times100
 </div>
 </div>
 </section></section>
-</div>
+    </div>
   </div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script><script src="site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="site_libs/revealjs/plugin/notes/notes.js"></script><script src="site_libs/revealjs/plugin/search/search.js"></script><script src="site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
@@ -820,7 +856,46 @@ r=\frac{1}{n}\times\ln(\frac{P_n}{P_0})\times100
           RevealZoom
         ]
       });
-    </script><script id="quarto-html-after-body" type="application/javascript">
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
         const mode = bsSheetEl.getAttribute("data-mode");
@@ -974,6 +1049,6 @@ r=\frac{1}{n}\times\ln(\frac{P_n}{P_0})\times100
       }
     });
     </script>
-
+    
 
 </body></html>
