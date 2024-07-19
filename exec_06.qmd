@@ -20,11 +20,11 @@ bibliography: references.bib
 
 이 실습은 데이터사이언스의 꽃이라고 할 수 있는 데이터 탐색(exploration)을 다룬다. 데이터 탐색하기는 데이터 변형하기와 데이터 시각화하기를 합친 것으로 이해할 수 있다. 다음의 사항을 이해하고 있는 것이 매우 중요하다.
 
--   데이터 탐색은 데이터와의 끝임없는 상호작용을 의미한다. 데이터 과학이 데이터로부터 이해, 지식, 통찰력을 획득하는 과정이라고 했을 때, 데이터 탐색은 데이터사이언스의 심장이라 해도 과언이 아니다. 상호작용은 데이터와의 질의응답의 연쇄과정을 의미한다. 의미있는 질문에 답을 얻기 위해서는 거의 반드시 데이터를 변형하거나 시각화해야만 한다.
+-   데이터 탐색은 데이터와의 끝임없는 상호작용을 의미한다. 데이터사이언스가 데이터로부터 이해, 지식, 통찰력을 획득하는 과정이라고 했을 때, 데이터 탐색은 데이터사이언스의 심장이라 해도 과언이 아니다. 상호작용은 데이터와의 질의응답의 연쇄과정을 의미한다. 의미있는 질문에 답을 얻기 위해서는 거의 반드시 데이터를 변형하거나 시각화해야만 한다.
 
--   데이터 변형과 데이터 시각화는 개별적으로 데이터 탐색을 가능케 한다. 데이터 변형은 데이터를 다른 각도로 바라볼 수 있게 해주고 다양한 요약 통계값을 산출해 준다. 데이터 시각화는 데이터에 차원을 부가함으로써 시각화 되지 않았다면 발견할 수 없었던 것을 발견하게 해준다.
+-   데이터 변형과 데이터 시각화는 개별적으로 데이터 탐색을 가능케 한다. 데이터 변형은 데이터를 다른 각도로 바라볼 수 있게 해주고 다양한 요약 통계값을 산출해 준다. 데이터 시각화는 데이터에 차원을 부가함으로써 시각화 되지 않았다면 발견할 수 없었던 것을 발견할 수 있게 해준다.
 
--   데이터 변형에서 데이터 시각화로 이어지는 시퀀스가 데이터 탐색의 핵심적인 방법론이다. 데이터 변형의 궁극적인 목적은 바로 데이터 시각화를 위한 준비이다. 특정한 형태의 시각화를 이해서는 특정한 형태의 데이터가 필수적이고, 그것이 이해, 지식, 통찰력의 획득으로 나아가게 해주는 주된 경로이다.
+-   데이터 변형에서 데이터 시각화로 이어지는 시퀀스가 데이터 탐색의 핵심적인 방법론이다. 데이터 변형의 궁극적인 목적은 바로 데이터 시각화를 위한 준비이다. 특정한 형태의 시각화를 위해서는 특정한 형태의 데이터가 필수적이고, 그것이 이해, 지식, 통찰력의 획득으로 나아가게 해주는 주된 경로이다.
 
 -   데이터 시각화의 두 가지 목적은 탐색과 커뮤니케이션이다. 우리가 데이터 시각화를 하는 첫번째 목적은 데이터에 대한 질문에 답을 찾기 위해서이다. 우리가 데이터를 시각화하는 두 번째 목적은 우리가 발견한 것을 다른 사람들과 '잘' 커뮤니케이션하기 위해서 이다.
 
@@ -107,7 +107,7 @@ gapminder |>
   geom_histogram()
 ```
 
-아주 높은 값을 보이는 국가들을 확인하기 위해 데이터 변형을 한다.
+아주 높은 값을 보이는 국가들을 확인하기 위해 특정한 데이터 변형을 실행한다.
 
 ```{r}
 gapminder |> 
@@ -151,7 +151,7 @@ gapminder |>
 
 #### 두 범주형 변수
 
-수치형 변수인 일인당 GDP를 동일 간격의 5개 그룹으로 나눈 새로운 범주형 변수를 생성하고, 그것과 또 다른 범주 변수인 대륙과의 관련성을 탐색한다. `geom_count()` 기하 함수가 역할을 한다.
+수치형 변수인 일인당 GDP를 동일 간격의 5개 그룹으로 나눈 새로운 범주형 변수를 생성하고, 그것과 또 다른 범주 변수인 대륙과의 관련성을 탐색한다. `geom_count()` 기하 함수가 중요한 역할을 한다.
 
 ```{r}
 #| label: fig-count-1
@@ -159,13 +159,23 @@ gapminder |>
 gapminder |> 
   filter(year == 2007) |> 
   mutate(
-    gdp_class = cut_interval(gdpPercap, n =5, labels = c("very low", "low", "middle", "high", "very high"))
+    gdp_class = cut_interval(gdpPercap, n = 5, labels = c("very low", "low", "middle", "high", "very high"))
   ) |> 
   ggplot(aes(x = continent, y = gdp_class)) +
   geom_count()
 ```
 
-또 다른 방법은 데이터 변형을 위한 `count()` 함수와 시각화 함수인 `geom_title()` 기하 함수를 결합하는 것이다.
+::: callout-note
+위의 예에서 `cut_interval()`는 계급구분 혹은 분류를 위해 ggplot2 패키지가 제공하는 세 가지 보조 함수 중 하나이다.
+
+-   `cut_interval()`: 등간격분류법(equal interval)을 구현하는 것으로, 최대값, 최소값, 계급의 수를 통해 산출된 동일한 급폭을 모든 계급에 적용하는 것이다.
+
+-   `cut_number()`: 등개수분류법(quantile)을 구현하는 것으로, 모든 계급에 대해 계급에 포함되는 갯수를 동일하게 하는 것이다.
+
+-   `cut_width()`: 주어진 임의의 급폭(bin width)에 의거해 계급을 구분하는 것이다.
+:::
+
+또 다른 방법은 데이터 변형을 위한 `count()` 함수와 시각화 함수인 `geom_tile()` 기하 함수를 결합하는 것이다.
 
 ```{r}
 #| label: fig-tile-1
@@ -173,7 +183,7 @@ gapminder |>
 gapminder |> 
   filter(year == 2007) |> 
   mutate(
-    gdp_class = cut_interval(gdpPercap, n =5, labels = c("very low", "low", "middle", "high", "very high"))
+    gdp_class = cut_interval(gdpPercap, n = 5, labels = c("very low", "low", "middle", "high", "very high"))
   ) |> 
   count(continent, gdp_class) |> 
   ggplot(aes(x = continent, y = gdp_class)) +
@@ -194,7 +204,7 @@ gapminder |>
   geom_smooth()
 ```
 
-일인당 GDP를 여러 급간으로 쪼개서 박스플롯을 적용하는 것도 하나의 대안일 수 있다.
+일인당 GDP를 여러 급간으로 쪼개서 박스플롯을 적용하는 것도 하나의 대안일 수 있다. 앞에서 언급한 `cut_width()` 보조 함수의 유용성을 확인할 수 있다.
 
 ```{r}
 #| label: fig-boxplot-2
@@ -210,6 +220,8 @@ gapminder |>
 @fig-scatterplot-1 에 또 하나의 수치형 변수(인구 규모)를 결합할 수 있다. 두 축에 로그를 적용하니 두 변수의 관련성이 선형에 가까워 졌다.
 
 ```{r}
+#| label: fig-3variables
+#| fig-cap: "세 수치형 변수: 산포도"
 gapminder |> 
   filter(year == 2007) |> 
   ggplot(aes(x = log(gdpPercap), y = log(lifeExp))) +
@@ -220,6 +232,8 @@ gapminder |>
 @fig-scatterplot-1 에 또 하나의 범주형 변수(대륙)를 결합할 수 있다.
 
 ```{r}
+#| label: fig-4variables
+#| fig-cap: "세 수치형 변수 + 한 범주형 변수: 패싯"
 gapminder |> 
   filter(year == 2007) |> 
   ggplot(aes(x = log(gdpPercap), y = log(lifeExp))) +
@@ -228,9 +242,12 @@ gapminder |>
   facet_wrap(~continent)
 ```
 
-전세계 인구의 변화 양상과 대륙별 구성을 함께 탐색할 수 있게 해주는 그래프를 제작해 본다. `fct_reorder2()` 함수와 세개의 `scale_ ()` 함수의 기능을 확인한다.
+전세계 인구의 변화 양상과 대륙별 구성을 함께 탐색할 수 있게 해주는 그래프를 제작해 본다. `fct_reorder2()` 함수와 세개의 `scale_()` 함수의 기능을 확인한다. 보다 체계적인 축의 분할과 라벨 표기를 도와주는 `scales` 패키지를 활용한다. `label_number()`과 `label_comma()`가 많이 활용된다.
 
 ```{r}
+#| label: fig-multi-variables
+#| fig-cap: "복잡한 그래프"
+library(scales)
 gapminder |> 
   group_by(year, continent) |> 
   mutate(
@@ -240,7 +257,7 @@ gapminder |>
   geom_area(aes(fill = fct_reorder2(continent, year, sum_pop))) +
   scale_x_continuous(breaks = seq(1952, 2007, 5), labels = seq(1952, 2007, 5)) +
   scale_y_continuous(breaks = seq(0, 7000000000, 1000000000), 
-                     labels = format(seq(0, 7000000000, 1000000000), big.mark = ",", scientific = FALSE)) +
+                     labels = label_number(scale = 0.00000001, suffix = "억")) +
   scale_fill_brewer(palette = "Set3") + 
   labs(x = "Year", y = "Population", fill = "Continent")
 ```

@@ -88,7 +88,7 @@ glimpse(penguins)
 ::: {.callout-tip collapse="true"}
 ## 데이터 내 속성들에 대한 정보가 궁금할 때
 
-`penguins` 데이터 내 속성들에 대한 설명을 보고싶다면 `help(penguins)` 또는 `?penguins`를 입력한 뒤 실행한다. ![penguins 데이터에 대한 설명](image/help.png)
+`penguins` 데이터 내 속성들에 대한 설명을 보고싶다면 `help(penguins)` 또는 `?penguins`를 입력한 뒤 실행한다.
 :::
 
 ### 그래프 만들기
