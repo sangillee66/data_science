@@ -431,21 +431,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>프로젝트와 스크립트 개념 이해하기</p></li>
 </ol>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Warning
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>R은 실행과정에서 폴더 경로에 한글이 포함된 경우 오류가 자주 발생한다. 따라서 사용자 계정 이름이 한국어로 설정되어 있지 않은지 반드시 확인해야 하며, 앞으로 만들 프로젝트 폴더 등도 이름을 모두 영어로 설정하는 것이 좋다.</p>
 <p>Windows: [설정] -&gt; [계정] -&gt; [사용자 정보]로 들어가 볼드체로 된 사용자 계정 이름이 영어인지 확인하기. 사용자 계정이 한국어로 설정되어 있다면 영어로 된 새로운 윈도우 사용자 계정을 만들어야 한다.</p>
 <p>Mac: 프로젝트 폴더 이름 설정만 잘 신경쓰면 된다.</p>
-</div>
 </div>
 </div>
 </section>
@@ -467,19 +464,16 @@ Figure&nbsp;1: 다운로드 화면
 <h3 class="anchored" data-anchor-id="r의-설치">R의 설치</h3>
 <p>왼쪽의 다운로드 바를 클릭하면 <a href="https://cran.rstudio.com/">CRAN(The Comprehensive R Archive Network)</a>으로 이동한다. 조교의 도움을 받아 자신의 운영체계에 맞는 R의 최신 버전을 다운로드하고 자신의 디바이스에 설치한다. 이 다큐먼트 작성 시점 기준으로 R의 최신 버전은 4.4.1이다.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Note
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>CRAN은 R의 핵심 소프트웨어 저장소(software repository)이다. R 프로그램 자체의 과거와 현재의 버전들 뿐만 아니라 수많은 R 패키지(package)(현재 대략 20,000개)가 모여 있는 곳이다. 1997년 Kurt Hornik와 Friedrich Leisch에 의해 처음 만들어졌으며, 현재에도 Hornik와 많은 자원봉사자들에 의해 운영되고 있다. 자세한 사항은 <a href="https://en.wikipedia.org/wiki/R_package#Comprehensive_R_Archive_Network_(CRAN)">Wikipedia</a>를 참조할 수 있다.</p>
-</div>
 </div>
 </div>
 </section>
@@ -506,19 +500,16 @@ Figure&nbsp;2: 세 개의 창
 </div>
 <p>왼편에 가장 크게 나타나 있는 것을 Console 창(pane)이라고 부르고, 우하의 창은 Output 창 혹은 File 창이라고 부른다. 우상에도 또 다른 창이 하나 보이는데 보통 Environment 창이라고 부른다.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Note
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>개별 창은 여러 개의 탭(tab)으로 구성되어 있는데, 탭의 기능이 매우 다양하기 때문에 소속 탭의 모든 기능을 포괄하는 일관성 있는 창 이름을 붙이는 것이 매우 어렵다. 예를 들어 Output 창의 경우 Plots와 Viewer 탭은 결과물을 보여주는 것이라 할 수 있지만 나머지 탭은 꼭 그렇지도 않다.</p>
-</div>
 </div>
 </div>
 </section>
@@ -555,19 +546,16 @@ Note
 </div>
 <p>우상의 Environment 창을 보면 뭔가 생성된 것을 확인할 수 있을 것이다. a라는 객체가 생성되었으며 그것은 1이라는 값을 품고 있다는 의미이다. 이제 a는 알파벳 소문자가 아니라 1이라는 숫자와 필연적으로 결합해 있는 객체이다. 다음을 샐행하면 이러한 사실을 보다 명확히 확인할 수 있다.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Note
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>할당 연산자의 단축키는 Alt + _ 이다. 가장 많이 사용하게 될 단축키 중의 하나이다. d이 단축키를 사용하면 좋은 점 중의 하나는 전후에 빈 공간이 자동적으로 생성된다는 점이다. 따라서 객체 이름 다음에 할당 연산자를 사용하기 위해 스페이스바를 사용할 필요가 없다.</p>
-</div>
 </div>
 </div>
 <div class="cell">
@@ -763,10 +751,10 @@ Figure&nbsp;4: 옵션의 변경
 <div id="fig-four-panes" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-four-panes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html"><img src="https://docs.posit.co/ide/user/ide/guide/ui/images/rstudio-panes-labeled.jpeg" class="img-fluid figure-img"></a>
+<img src="https://docs.posit.co/ide/user/ide/guide/ui/images/rstudio-panes-labeled.jpeg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-four-panes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: 네 개의 창 (https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html)
+Figure&nbsp;5: 네 개의 창(https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html)
 </figcaption>
 </figure>
 </div>

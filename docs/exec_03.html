@@ -1253,7 +1253,7 @@ Figure&nbsp;2: <code>nycflights13</code> 데이터(<a href="https://github.com/t
 # ℹ 4 more variables: alt &lt;dbl&gt;, tz &lt;dbl&gt;, dst &lt;chr&gt;, tzone &lt;chr&gt;</code></pre>
 </div>
 </div>
-<p><code>airports</code>의 경우만 왜 <code>join_by()</code>라는 아규먼트가 필요한지 생각해 본다.</p>
+<p><code>airports</code>의 경우만 왜 <code>join_by()</code>라는 아규먼트가 사용되었는데, 이 경우에는 공통키의 이름이 동일하지 않기 때문이다. 즉, <code>flights2</code> 데이터의 origin 컬럼과 <code>airports</code> 데이터의 faa가 공통키임을 지정해 주어야 하는 것이다.</p>
 
 
 </section>
