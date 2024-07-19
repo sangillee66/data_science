@@ -20,7 +20,7 @@ editor_options:
 
 ## 실습 개요 {.unnumbered}
 
-이 실습은 R로 데이터를 수집하는 과정을 다루다. R을 활용한 데이터 수집은 다양한 방법으로 진행될 수 있지만 여기서는 웹상의 데이터 파일 불러오기, 웹 스크레이핑, API를 이용하는 방식에 집중한다. 실습의 시작은 [`tidyverse`](https://www.tidyverse.org/) 패키지를 불러오는 것이다.
+이 실습은 R로 데이터를 수집하는 과정을 다루다. R을 활용한 데이터 수집은 다양한 방법으로 진행될 수 있지만 여기서는 웹상의 데이터 파일 불러오기, 웹 스크레이핑, API를 이용하는 방식에 집중한다. 우선 [`tidyverse`](https://www.tidyverse.org/) 패키지를 불러온다.
 
 ```{r}
 library(tidyverse)
@@ -35,7 +35,7 @@ students <- read_csv("https://pos.it/r4ds-students-csv")
 students
 ```
 
-그런데 엑셀 형식의 파일은 [`readxl`](https://readxl.tidyverse.org/) 패키지가 제공하는 `read_excel()` 함수를 이용해 막바로 데이터를 불러오는 것이 불가능하다.
+그런데 엑셀 형식의 파일은 [`readxl`](https://readxl.tidyverse.org/) 패키지가 제공하는 `read_excel()` 함수를 이용해서 막바로 불러올 수는 없다.
 
 ```{r}
 #| error: true
@@ -53,7 +53,7 @@ xlsx_data
 
 ## 웹스크레이핑
 
-웹스크레이핑(web scraping)이란 웹페이지로부터 특정한 데이터를 추출하는 것을 의미한다. R에서 웹스크레이핑은 rvest 패키지가 답당하는데, reaxl 패키지와 마찬가지로 tidyverse의 핵심 패키지는 아니기 때문에 따로 불러와야 한다.
+웹스크레이핑(web scraping)이란 웹페이지로부터 특정한 데이터를 추출하는 것을 의미한다. R에서 웹스크레이핑은 `rvest` 패키지가 답당하는데, `reaxl` 패키지와 마찬가지로 `tidyverse`의 핵심 패키지는 아니기 때문에 따로 불러와야 한다.
 
 ```{r}
 library(tidyverse)
@@ -66,7 +66,7 @@ library(rvest)
 
 -   웹페이지는 태그(tag)로 이루어져 있다. 각 태그는 시작 테그와 종료(끝) 태그로 구성되며, 둘 사이에 콘텐츠가 놓인다. 태그를 중심으로 개별 단위를 엘리먼트(element)라고 부르기도 한다.
 
--   태그의 종류는 다양하다. 태그는 크게 세 가지로 구분되는데, 최상위인 html 태그, 웹페이지의 전반적인 구조를 결정하는 블록(block) 태그(예: hi, section, p, ol 태그 등), 블록 태그 내부의 특정 부분에만 적용되는 인라인(inline) 태그(예: b, i, a 태그 등)가 있다. 태그는 모두 100개 이상이 존재한다고 하는데, 그 중 많이 사용되는 것들은 다음과 같다.
+-   태그의 종류는 다양하다. 태그는 크게 세 가지로 구분되는데, 최상위인 html 태그, 웹페이지의 전반적인 구조를 결정하는 블록(block) 태그(예: hi, section, p, ol 태그 등), 블록 태그 내부의 특정 부분에만 적용되는 인라인(inline) 태그(예: b, i, a 태그 등)가 있다. 태그는 100종 이상이 존재한다고 하는데, 그 중 많이 사용되는 것으로 다음과 같은 것들이 있다.
 
     -   html 태그: 모든 웹페이지에 존재하는 최상위 태그로, 그 하위에 head 태그와 body 태그를 가져야함.
 
@@ -82,19 +82,19 @@ library(rvest)
 
     -   script 태그: 외부 js 파일을 연결하거나 javascript 코드를 입력
 
-    -   div 태그: 상자 영역을 만듦
+    -   div 태그: 상자 영역을 생성
 
-    -   span 태그: 요소 일부분만 변경하고자 할 때 사용하는 것으로 인라인(inline tag)의 대표
+    -   span 태그: 요소 일부분만 변경하고자 할 때 사용하는 것으로 대표적인 인라인 태그
 
-    -   img 태그: 이미지를 가져옴
+    -   img 태그: 이미지 태그
 
-    -   h 태그: 제목 태그
+    -   h 태그: 제목 생성
 
         -   h1, h2, h3, h4, h5, h6
 
-    -   table 태그: 표를 나타냄
+    -   table 태그: 표 생성
 
-    -   p 태그: 문단을 표현
+    -   p 태그: 문단 생성
 
     -   ul 태그: 번호가 없는 리스트
 
@@ -120,7 +120,7 @@ library(rvest)
 
 -   다양한 태그들이 복잡한 다단계 위계 구조를 이룬다.
 
-[![HTML의 위계 구조 (\<https://odinuv.cz/articles/html/\>)](https://odinuv.cz/common/css/html.svg){#fig-html-hier}](https://odinuv.cz/articles/html/)
+[![HTML의 위계 구조 (https://odinuv.cz/articles/html/)](https://odinuv.cz/common/css/html.svg){#fig-html-hier}](https://odinuv.cz/articles/html/)
 
 -   태그는 속성(attribute)을 가질 수 있다.
 
@@ -138,15 +138,15 @@ HTML 요소란 태그와 속성으로 확정가능한 HTML의 특정 부분을 �
 
 #### 단일 수준에서의 요소 선택
 
-선택 대상을 효과적으로 규정하기 위해 사용되는 것이 CSS(cascading style sheet) 선택자(selector)이다. CSS는 HTML의 시각적 구성을 통제하는 툴인데, html의 특정 부분을 지칭하는 작은 언어(miniature language)를 가지고 있고, CSS 선택자라 부른다.
+선택 대상을 효과적으로 규정하기 위해 사용되는 것이 CSS(cascading style sheet) 선택자(selector)이다. CSS는 HTML의 시각적 구성을 통제하는 툴인데, html의 특정 부분을 지목할 수 있는 작은 언어(miniature language)를 가지고 있고, 그것을 CSS 선택자라 부르는 것이다.
 
-| 선택 대상              | 선택자(selector) | 결과                                                                                      |
-|------------------------|------------------|-------------------------------------------------------------------------------------------|
-| 태그(tag)              | table            | 모든 table 요소를 선택                                                                    |
-| 클래스(class)          | .className       | "className"이라는 class 속성을 갖는 모든 요소                                             |
-| 아이디(id)             | #idName          | "idName"이라는 id 속성을 갖는 모든 요소                                                   |
-| tag과 class의 결합     | tag.class        | "tag"이라는 tag의 "class"라는 class 속성을 가진 모든 요소                                 |
-| class1와 class2의 결합 | .class1.class2   | "class1"이라는 이름의 class 속성과 "class2"라는 이름의 class 속성을 동시에 갖는 모든 요소 |
+| 선택 대상              | CSS 선택자     | 결과                                                                                      |
+|------------------------|----------------|-------------------------------------------------------------------------------------------|
+| 태그(tag)              | tag1           | "tag1"이라는 이름의 모든 tag                                                              |
+| 클래스(class)          | .class1        | "class1"이라는 class 속성을 갖는 모든 요소                                                |
+| 아이디(id)             | #id1           | "id1"이라는 id 속성을 갖는 모든 요소                                                      |
+| tag과 class의 결합     | tag1.class1    | "tag1"이라는 tag의 "class1"이라는 class 속성을 가진 모든 요소                             |
+| class1와 class2의 결합 | .class1.class2 | "class1"이라는 이름의 class 속성과 "class2"라는 이름의 class 속성을 동시에 갖는 모든 요소 |
 
 #### 하위 요소의 선택
 
@@ -154,9 +154,13 @@ HTML 요소란 태그와 속성으로 확정가능한 HTML의 특정 부분을 �
 
 #### 정확한 선택자의 확인
 
-정확한 선택자를 확인하는 것이 웹스크레이핑의 관건이다. 보통 해당 웹페이지에서 오른쪽 마우스 버튼을 누른 뒤 "검사"를 선택하여 이리저리 살펴보아야 한다. [SelectorGadget](https://rvest.tidyverse.org/articles/selectorgadget.html)과 같은 브라우저 확장 프로그램이 도움이 될 수 있다. 링크로 들어가면 간단한 사용 방법을 살펴볼 수 있다.
+정확한 선택자를 확인하는 것이 성공적인 웹스크레이핑을 위한 관건이다. 보통 해당 웹페이지에서 오른쪽 마우스 버튼을 누른 뒤 "검사"를 선택하여 이리저리 살펴보아야 한다. [SelectorGadget](https://rvest.tidyverse.org/articles/selectorgadget.html)과 같은 브라우저 확장 프로그램이 도움이 될 수 있다. 링크로 들어가면 간단한 사용 방법을 살펴볼 수 있다.
 
-### 웹스크레이핑 단계와 rvest 함수
+::: callout-tip
+다양한 웹브라우저가 있지만 웹스크레이핑에서 가장 권장되는 것은 구글(Google)의 크롬(Chrome)이다.
+:::
+
+### 웹스크레이핑 단계와 `rvest` 함수
 
 1단계는 웹페이지 읽기 단계이다.
 
