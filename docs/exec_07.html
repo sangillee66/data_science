@@ -98,6 +98,9 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -573,7 +576,7 @@ div.csl-indent {
 <div id="fig-html-hier" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-html-hier-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="https://odinuv.cz/articles/html/"><img src="https://odinuv.cz/common/css/html.svg" class="img-fluid figure-img"></a>
+<a href="https://odinuv.cz/articles/html/"><span class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1"><img src="https://odinuv.cz/common/css/html.svg" class="img-fluid figure-img"></span></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-html-hier-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: HTML의 위계 구조 (https://odinuv.cz/articles/html/)
@@ -600,7 +603,7 @@ Figure&nbsp;1: HTML의 위계 구조 (https://odinuv.cz/articles/html/)
 <colgroup>
 <col style="width: 25%">
 <col style="width: 25%">
-<col style="width: 50%">
+<col style="width: 49%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1240,7 +1243,7 @@ Note
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="exec_07_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
+<p><a href="exec_07_files/figure-html/unnamed-chunk-25-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="exec_07_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -1327,7 +1330,7 @@ Tip
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="exec_07_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></p>
+<p><a href="exec_07_files/figure-html/unnamed-chunk-28-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="exec_07_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -1457,11 +1460,11 @@ Tip
 <pre><code># A tibble: 5 × 5
   title                                   originallink link  description pubDate
   &lt;chr&gt;                                   &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;  
-1 숨겨진 곳을 핫플레이스로...'숨핫' 본편… https://www… http… "'숨-핫'은… Fri, 1…
-2 충주시, 근로활동 참여 대학생 대상 인구… http://www.… http… "시 관계자… Fri, 1…
-3 한국마사회, 국민권익위원회 등과 업무협… https://www… http… "한국마사…  Fri, 1…
-4 마사회, 국민권익위원회 등과 복지 사각…  https://www… http… "정기환 마… Fri, 1…
-5 [특별기고] 포천은 교육발전특구 지정이 … https://www… http… "저출생과 … Fri, 1…</code></pre>
+1 경북도, K-MEDI 전통의학 실크로드 프로…  https://www… http… "K-MEDI 전… Fri, 1…
+2 [인터뷰] 황침현 당진시 신임부시장 &amp;quo… http://www.… http… "현재 전국… Fri, 1…
+3 숨겨진 곳을 핫플레이스로...'숨핫' 본편… https://www… http… "'숨-핫'은… Fri, 1…
+4 충주시, 근로활동 참여 대학생 대상 인구… http://www.… http… "시 관계자… Fri, 1…
+5 한국마사회, 국민권익위원회 등과 업무협… https://www… http… "한국마사…  Fri, 1…</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1550,6 +1553,9 @@ Tip
 </div>
 
 
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-1">Figure&nbsp;1: HTML의 위계 구조 (https://odinuv.cz/articles/html/)</span>
+</div>
 
 </section>
 </section>
@@ -2136,6 +2142,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","loop":false,"descPosition":"bottom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 
