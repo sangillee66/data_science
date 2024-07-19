@@ -1081,12 +1081,9 @@ Warning
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kosis.setKey</span>(<span class="at">apikey =</span> <span class="st">"Your Key Here"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="데이터-추출-방식-1" class="level4" data-number="3.3.3">
-<h4 data-number="3.3.3" class="anchored" data-anchor-id="데이터-추출-방식-1"><span class="header-section-number">3.3.3</span> 데이터 추출: 방식 1</h4>
-</section>
-<section id="데이터-추출-방식-2" class="level4" data-number="3.3.4">
-<h4 data-number="3.3.4" class="anchored" data-anchor-id="데이터-추출-방식-2"><span class="header-section-number">3.3.4</span> 데이터 추출: 방식 2</h4>
-<p>두 번째 방식은 <code>kosis</code> 패키지의 <code>getStatDataFromURL()</code> 함수를 활용하는 것이다. KOSIS의 데이터 서비스 구조를 감안할 때 이 것이 좀 더 용이한 방식일 수 있다. 데이터 추출은 다음과 같이 두 단계의 과정을 거친다.</p>
+<section id="데이터-추출" class="level4" data-number="3.3.3">
+<h4 data-number="3.3.3" class="anchored" data-anchor-id="데이터-추출"><span class="header-section-number">3.3.3</span> 데이터 추출</h4>
+<p>가장 유용한 방식은 <code>kosis</code> 패키지의 <code>getStatDataFromURL()</code> 함수를 활용하는 것이다. KOSIS의 데이터 서비스 구조를 감안할 때 이 것이 좀 더 용이한 방식일 수 있다. 데이터 추출은 다음과 같이 두 단계의 과정을 거친다.</p>
 <ul>
 <li><p>KOSIS에서 필요한 데이터의 위치에 대한 URL 정보를 획득한다.</p></li>
 <li><p><code>getStatDataFromURL()</code> 함수를 활용하여 데이터를 추출한다.</p></li>
@@ -1143,8 +1140,8 @@ Warning
 </div>
 </div>
 </section>
-<section id="데이터-정리-및-변형" class="level4" data-number="3.3.5">
-<h4 data-number="3.3.5" class="anchored" data-anchor-id="데이터-정리-및-변형"><span class="header-section-number">3.3.5</span> 데이터 정리 및 변형</h4>
+<section id="데이터-정리-및-변형" class="level4" data-number="3.3.4">
+<h4 data-number="3.3.4" class="anchored" data-anchor-id="데이터-정리-및-변형"><span class="header-section-number">3.3.4</span> 데이터 정리 및 변형</h4>
 <p>아래와 같이 데이터를 정리한다. 최종적으로 지역별 지역소멸위험지수를 산출한다.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data_api <span class="sc">|&gt;</span> </span>
@@ -1209,8 +1206,8 @@ Note
 </div>
 </div>
 </section>
-<section id="그래프-작성" class="level4" data-number="3.3.6">
-<h4 data-number="3.3.6" class="anchored" data-anchor-id="그래프-작성"><span class="header-section-number">3.3.6</span> 그래프 작성</h4>
+<section id="그래프-작성" class="level4" data-number="3.3.5">
+<h4 data-number="3.3.5" class="anchored" data-anchor-id="그래프-작성"><span class="header-section-number">3.3.5</span> 그래프 작성</h4>
 <p>그래프 작성의 코드가 다소 복잡해 보인다. 이렇게 된 것은 인구소멸위험지수 연구에서 주로 사용되는 5개의 위험도 클래스의 구분법을 적용하고, 위험도 클래스별로 특정한 색상을 적용하고, 그래프의 범례에 5개의 클래스가 모두 나타나게 하려했기 때문이다.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>data_sido_new <span class="ot">&lt;-</span> data_sido <span class="sc">|&gt;</span> </span>
@@ -1262,6 +1259,146 @@ Note
 </div>
 </div>
 </section>
+<section id="또-다른-방식" class="level4" data-number="3.3.6">
+<h4 data-number="3.3.6" class="anchored" data-anchor-id="또-다른-방식"><span class="header-section-number">3.3.6</span> 또 다른 방식</h4>
+<p>또 다른 방식은 <code>kosis</code> 패키지의 <code>getStatData()</code> 함수를 활용하는 것이다. 해당 함수에 기관명(101)과 데이터 코드(DT_1IN503)을 아규먼트에 입력하면 데이터를 불러올 수 있다. 위의 방식의 한 연도의 모든 지역에 대한 데이터를 얻기에 용이하다면, 이 방식은 하나의 지역에 대한 시계열 데이터를 수집하는데 유용하다. 아래의 코드를 통해 서울시 종로구(코드: 11010)의 2015~2022년 데이터를 획득할 수 있다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>region_code <span class="ot">&lt;-</span> <span class="st">"11010"</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>data_api <span class="ot">&lt;-</span> <span class="fu">getStatData</span>(</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">orgId =</span> <span class="dv">101</span>, </span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">tblId =</span> <span class="st">"DT_1IN1503"</span>, </span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">prdSe =</span> <span class="st">"Y"</span>,</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">startPrdDe =</span> <span class="st">"2015"</span>, </span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">endPrdDe =</span> <span class="st">"2022"</span>, </span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">objL1 =</span> region_code, </span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">objL2 =</span> <span class="st">"ALL"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_length</span>(C2) <span class="sc">==</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>region_code &lt;- “11010”+“11020”과 같은 식으로 설정하면 두 개 이상의 지역에 대한 데이터를 한꺼번에 구할 수도 있다.</p>
+</div>
+</div>
+<p>아래와 같은 데이터 정리 및 변형 과정이 필요하다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data_api <span class="sc">|&gt;</span> </span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(C1, C1_NM, C2, C2_NM, ITM_ID, ITM_NM, DT, PRD_DE) <span class="sc">|&gt;</span> </span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ITM_ID <span class="sc">==</span> <span class="st">"T00"</span> <span class="sc">|</span> ITM_ID <span class="sc">==</span> <span class="st">"T01"</span> <span class="sc">|</span> ITM_ID <span class="sc">==</span> <span class="st">"T02"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="fu">c</span>(C1, DT), as.numeric),</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">ITM_ID =</span> <span class="fu">case_match</span>(</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>    ITM_ID, </span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"T00"</span> <span class="sc">~</span> <span class="st">"T"</span>,</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"T01"</span> <span class="sc">~</span> <span class="st">"M"</span>,</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"T02"</span> <span class="sc">~</span> <span class="st">"F"</span>),</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unite</span>(<span class="st">"gender_age"</span>, ITM_ID, C2_NM, <span class="at">sep =</span> <span class="st">"_"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">id_cols =</span> <span class="fu">c</span>(C1, C1_NM, PRD_DE),</span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> gender_age,</span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> DT</span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">index =</span> (<span class="st">`</span><span class="at">F_20~24세</span><span class="st">`</span> <span class="sc">+</span> <span class="st">`</span><span class="at">F_25~29세</span><span class="st">`</span> <span class="sc">+</span> <span class="st">`</span><span class="at">F_30~34세</span><span class="st">`</span> <span class="sc">+</span> <span class="st">`</span><span class="at">F_35~39세</span><span class="st">`</span>) <span class="sc">/</span> <span class="st">`</span><span class="at">T_65세이상</span><span class="st">`</span></span>
+<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a>    C1, C1_NM, index, PRD_DE</span>
+<span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>이 데이터를 바탕으로 종로구의 인구소멸위험지수의 변화 추이를 관찰할 수 있다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>region <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span> <span class="fu">distinct</span>(C1_NM) <span class="sc">|&gt;</span> <span class="fu">pull</span>()</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span> </span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> PRD_DE, <span class="at">y =</span> index)) <span class="sc">+</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">group =</span> <span class="dv">1</span>, <span class="at">linewidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(region, <span class="st">" 인구소멸위험지수 추이"</span>)) <span class="sc">+</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="at">label =</span> <span class="st">"연도"</span>) <span class="sc">+</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="at">label =</span> <span class="st">"인구소멸위험지수"</span>) <span class="sc">+</span></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>, <span class="at">hjust=</span><span class="fl">0.5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="exec_07_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>이 모든 과정을 함수로 만들고, Base R의 <code>read_line()</code> 함수를 활용하면 초보적인 상호작용형 도구를 만들 수 있다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>exInd <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Library</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(tidyverse)</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(kosis)</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(DT)</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(openxlsx)</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Table for Searching Region Code</span></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>  region_table <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">"https://github.com/Sechang-Kim/gis-lab/raw/download/korea-sigungu-code(2022).xlsx"</span>)</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">datatable</span>(region_table))</span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Input Arguments</span></span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>  aoi_code <span class="ot">&lt;-</span> <span class="fu">readline</span>(<span class="st">'지역 코드를 입력하세요: '</span>)</span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a>  start <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">readline</span>(<span class="st">'시작 연도를 입력하세요: '</span>))</span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a>  end <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">readline</span>(<span class="st">'종료 연도를 입력하세요: '</span>))</span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Data Request</span></span>
+<span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a>  aoi <span class="ot">&lt;-</span> <span class="fu">getStatData</span>(<span class="at">orgId =</span> <span class="dv">101</span>, <span class="at">tblId =</span> <span class="st">"DT_1IN1503"</span>, <span class="at">prdSe =</span> <span class="st">"Y"</span>,</span>
+<span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a>                     <span class="at">startPrdDe =</span> start, <span class="at">endPrdDe =</span> end,</span>
+<span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a>                     <span class="at">objL1 =</span> aoi_code, <span class="at">objL2 =</span> <span class="st">"ALL"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="fu">nchar</span>(C2) <span class="sc">==</span> <span class="dv">3</span>) <span class="co"># Delete 1-age interval(Only 5-age interval)</span></span>
+<span id="cb42-22"><a href="#cb42-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb42-23"><a href="#cb42-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Data Cleansing</span></span>
+<span id="cb42-24"><a href="#cb42-24" aria-hidden="true" tabindex="-1"></a>  aoi <span class="ot">&lt;-</span> aoi <span class="sc">|&gt;</span> </span>
+<span id="cb42-25"><a href="#cb42-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(C1, C1_NM, C2, C2_NM, ITM_ID, ITM_NM, DT, PRD_DE) <span class="sc">|&gt;</span> </span>
+<span id="cb42-26"><a href="#cb42-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(ITM_ID <span class="sc">==</span> <span class="st">"T00"</span> <span class="sc">|</span> ITM_ID <span class="sc">==</span> <span class="st">"T01"</span> <span class="sc">|</span> ITM_ID <span class="sc">==</span> <span class="st">"T02"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb42-27"><a href="#cb42-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb42-28"><a href="#cb42-28" aria-hidden="true" tabindex="-1"></a>      <span class="fu">across</span>(<span class="fu">c</span>(C1, DT), as.numeric),</span>
+<span id="cb42-29"><a href="#cb42-29" aria-hidden="true" tabindex="-1"></a>      <span class="at">ITM_ID =</span> <span class="fu">case_match</span>(</span>
+<span id="cb42-30"><a href="#cb42-30" aria-hidden="true" tabindex="-1"></a>        ITM_ID, <span class="st">"T00"</span> <span class="sc">~</span> <span class="st">"T"</span>,</span>
+<span id="cb42-31"><a href="#cb42-31" aria-hidden="true" tabindex="-1"></a>        <span class="st">"T01"</span> <span class="sc">~</span> <span class="st">"M"</span>,</span>
+<span id="cb42-32"><a href="#cb42-32" aria-hidden="true" tabindex="-1"></a>        <span class="st">"T02"</span> <span class="sc">~</span> <span class="st">"F"</span>),</span>
+<span id="cb42-33"><a href="#cb42-33" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span> </span>
+<span id="cb42-34"><a href="#cb42-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unite</span>(<span class="st">"gender_age"</span>, ITM_ID, C2_NM, <span class="at">sep =</span> <span class="st">"_"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb42-35"><a href="#cb42-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_wider</span>(</span>
+<span id="cb42-36"><a href="#cb42-36" aria-hidden="true" tabindex="-1"></a>      <span class="at">id_cols =</span> <span class="fu">c</span>(C1, C1_NM, PRD_DE),</span>
+<span id="cb42-37"><a href="#cb42-37" aria-hidden="true" tabindex="-1"></a>      <span class="at">names_from =</span> gender_age,</span>
+<span id="cb42-38"><a href="#cb42-38" aria-hidden="true" tabindex="-1"></a>      <span class="at">values_from =</span> DT</span>
+<span id="cb42-39"><a href="#cb42-39" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span> </span>
+<span id="cb42-40"><a href="#cb42-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb42-41"><a href="#cb42-41" aria-hidden="true" tabindex="-1"></a>      <span class="at">index =</span> (<span class="st">`</span><span class="at">F_20~24세</span><span class="st">`</span> <span class="sc">+</span> <span class="st">`</span><span class="at">F_25~29세</span><span class="st">`</span> <span class="sc">+</span> <span class="st">`</span><span class="at">F_30~34세</span><span class="st">`</span> <span class="sc">+</span> <span class="st">`</span><span class="at">F_35~39세</span><span class="st">`</span>) <span class="sc">/</span> <span class="st">`</span><span class="at">T_65세이상</span><span class="st">`</span></span>
+<span id="cb42-42"><a href="#cb42-42" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span> </span>
+<span id="cb42-43"><a href="#cb42-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(</span>
+<span id="cb42-44"><a href="#cb42-44" aria-hidden="true" tabindex="-1"></a>      C1, C1_NM, index, PRD_DE</span>
+<span id="cb42-45"><a href="#cb42-45" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb42-46"><a href="#cb42-46" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb42-47"><a href="#cb42-47" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Visualization</span></span>
+<span id="cb42-48"><a href="#cb42-48" aria-hidden="true" tabindex="-1"></a>  region <span class="ot">&lt;-</span> aoi<span class="sc">$</span>C1_NM[<span class="dv">1</span>] <span class="co"># For Auto-Plot Title</span></span>
+<span id="cb42-49"><a href="#cb42-49" aria-hidden="true" tabindex="-1"></a>  vis <span class="ot">&lt;-</span> aoi <span class="sc">|&gt;</span> </span>
+<span id="cb42-50"><a href="#cb42-50" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>PRD_DE, <span class="at">y=</span>index)) <span class="sc">+</span></span>
+<span id="cb42-51"><a href="#cb42-51" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb42-52"><a href="#cb42-52" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="at">group =</span> <span class="dv">1</span>, <span class="at">linewidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb42-53"><a href="#cb42-53" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(region, <span class="st">" 인구소멸위험지수 추이"</span>)) <span class="sc">+</span></span>
+<span id="cb42-54"><a href="#cb42-54" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="at">label =</span> <span class="st">"연도"</span>) <span class="sc">+</span></span>
+<span id="cb42-55"><a href="#cb42-55" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="at">label =</span> <span class="st">"인구소멸위험지수"</span>) <span class="sc">+</span></span>
+<span id="cb42-56"><a href="#cb42-56" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>, <span class="at">hjust=</span><span class="fl">0.5</span>))</span>
+<span id="cb42-57"><a href="#cb42-57" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb42-58"><a href="#cb42-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(vis)</span>
+<span id="cb42-59"><a href="#cb42-59" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>함수를 실행해 보자.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">exInd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 </section>
 <section id="api를-활용한-naver-뉴스-데이터의-수집" class="level3" data-number="3.4">
 <h3 data-number="3.4" class="anchored" data-anchor-id="api를-활용한-naver-뉴스-데이터의-수집"><span class="header-section-number">3.4</span> API를 활용한 NAVER 뉴스 데이터의 수집</h3>
@@ -1288,43 +1425,43 @@ Note
 <h4 data-number="3.4.2" class="anchored" data-anchor-id="httr2-패키지-활용-처음-100개-검색-결과-추출"><span class="header-section-number">3.4.2</span> <code>httr2</code> 패키지 활용: 처음 100개 검색 결과 추출</h4>
 <p>패키지를 불러온다.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(httr2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(httr2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>’지방소멸’을 검색어로 하여 최초의 100개 검색 결과에 대한 데이터(특히, 제목과 내용)를 수집한다.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(httr2)</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>search <span class="ot">&lt;-</span> <span class="st">"지방소멸"</span></span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>your_url <span class="ot">&lt;-</span> <span class="st">"https://openapi.naver.com/v1/search/news.json"</span></span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>result_naver <span class="ot">&lt;-</span> <span class="fu">request</span>(your_url) <span class="sc">|&gt;</span> </span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">req_headers</span>(</span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"X-Naver-Client-ID"</span> <span class="ot">=</span> your_ClientID,</span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"X-Naver-Client-Secret"</span> <span class="ot">=</span> your_Client_Secret</span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">req_url_query</span>(</span>
-<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">query =</span> search,</span>
-<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">display =</span> <span class="dv">100</span>,</span>
-<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">start =</span> <span class="dv">1</span>,</span>
-<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">sort =</span> <span class="st">"date"</span></span>
-<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">req_perform</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">resp_body_json</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(httr2)</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>search <span class="ot">&lt;-</span> <span class="st">"지방소멸"</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>your_url <span class="ot">&lt;-</span> <span class="st">"https://openapi.naver.com/v1/search/news.json"</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>result_naver <span class="ot">&lt;-</span> <span class="fu">request</span>(your_url) <span class="sc">|&gt;</span> </span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">req_headers</span>(</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"X-Naver-Client-ID"</span> <span class="ot">=</span> your_ClientID,</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"X-Naver-Client-Secret"</span> <span class="ot">=</span> your_Client_Secret</span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">req_url_query</span>(</span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">query =</span> search,</span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">display =</span> <span class="dv">100</span>,</span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">start =</span> <span class="dv">1</span>,</span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">sort =</span> <span class="st">"date"</span></span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">req_perform</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">resp_body_json</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>View</code>(result_naver)을 샐행해 보면 결과 데이터가 복잡한 위계 구조를 가지고 있는 리스트(list) 형식의 데이터라는 것을 알 수 있다. 다섯 개의 하위 요소들 중 items가 또 다른 리스트이며, 그 리스트의 아래에 100개의 또 다른 하위 리스트가 있으며, 그 100개의 하위 리스트 각각에 우리가 원하는 정보가 다섯개의 속성(title, originallink, link, description, pubData)의 속성으로 나뉘어 존재한다는 것을 알 수 있다.</p>
 <p>다음과 같은 방식으로 복잡한 위계 구조를 가진 리스트로부터 우리가 원하는 다섯 개의 속성을 추출할 수 있다. 우선 해당 리스트를 tibble 데이터 형식으로 바꾼다. 이것은 리스트를 tibble의 리스트 컬럼(list column)으로 바꾸는 것이다. 이렇게 하면 리스트를 훨씬 더 손쉽게 다룰 수 있게 된다. 이러한 과정에 리스트 중 원하는 데이터가 포함되어 있는 부분(여기서는 items)만 추출한다. 그리고 나서 <code>tidyr</code> 패키지가 제공하는 함수(이 경우는 <code>unnest_wider()</code> 함수)를 활용하여 우리가 원하는 정보를 정돈된 데이터 형식으로 추출한다.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>naver_tb <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">naver =</span> result_naver<span class="sc">$</span>items)</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>naver_res <span class="ot">&lt;-</span> naver_tb <span class="sc">|&gt;</span> </span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_wider</span>(naver)</span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>naver_res <span class="sc">|&gt;</span> <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>naver_tb <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">naver =</span> result_naver<span class="sc">$</span>items)</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>naver_res <span class="ot">&lt;-</span> naver_tb <span class="sc">|&gt;</span> </span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_wider</span>(naver)</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>naver_res <span class="sc">|&gt;</span> <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 5
-  title                                  originallink  link  description pubDate
-  &lt;chr&gt;                                  &lt;chr&gt;         &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;  
-1 청주시, 미래 100만 자족도시 조성방안 … http://www.b… http… "시 관계자… Fri, 1…
-2 함안군의회, 천주산터널 도로공사 촉구 … http://www.e… http… "&lt;b&gt;지방&lt;/… Fri, 1…
-3 학교 통폐합나선 충남교육청, 곳곳서 반… https://www.… http… "일부에서 … Fri, 1…
-4 ‘100만 자족도시 청주시’ 3대 목표·6…    http://www.i… http… "임은수 상… Fri, 1…
-5 함안군의회, 천주산터널 도로공사 촉구 … https://www.… http… "좋은 &lt;b&gt;…  Fri, 1…</code></pre>
+  title                                   originallink link  description pubDate
+  &lt;chr&gt;                                   &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;  
+1 숨겨진 곳을 핫플레이스로...'숨핫' 본편… https://www… http… "'숨-핫'은… Fri, 1…
+2 충주시, 근로활동 참여 대학생 대상 인구… http://www.… http… "시 관계자… Fri, 1…
+3 한국마사회, 국민권익위원회 등과 업무협… https://www… http… "한국마사…  Fri, 1…
+4 마사회, 국민권익위원회 등과 복지 사각…  https://www… http… "정기환 마… Fri, 1…
+5 [특별기고] 포천은 교육발전특구 지정이 … https://www… http… "저출생과 … Fri, 1…</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1345,58 +1482,58 @@ Note
 <h4 data-number="3.4.3" class="anchored" data-anchor-id="httr2-패키지-활용-for-함수를-이용하여-1000개-검색-결과-추출"><span class="header-section-number">3.4.3</span> <code>httr2</code> 패키지 활용: <code>for</code> 함수를 이용하여 1,000개 검색 결과 추출</h4>
 <p>반복 과정을 통해 1,000개까지 데이터를 추출해 본다. 여기서는 for 문을 활용하지만</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>all_news <span class="ot">&lt;-</span> <span class="fu">data.frame</span>()</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>search <span class="ot">&lt;-</span> <span class="st">"지방소멸"</span></span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>  news <span class="ot">&lt;-</span> <span class="fu">request</span>(your_url) <span class="sc">|&gt;</span> </span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">req_headers</span>(</span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>      <span class="st">"X-Naver-Client-ID"</span> <span class="ot">=</span> your_ClientID,</span>
-<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>      <span class="st">"X-Naver-Client-Secret"</span> <span class="ot">=</span> your_Client_Secret</span>
-<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span> </span>
-<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">req_url_query</span>(</span>
-<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">query =</span> search,</span>
-<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">display =</span> <span class="dv">100</span>,</span>
-<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">start =</span> i,</span>
-<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">sort =</span> <span class="st">"date"</span></span>
-<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span> </span>
-<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">req_perform</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">resp_body_json</span>()</span>
-<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># body &lt;- data.frame(t(sapply(news$item, data.frame)))</span></span>
-<span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a>  news_tb <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">naver =</span> news<span class="sc">$</span>items)</span>
-<span id="cb43-19"><a href="#cb43-19" aria-hidden="true" tabindex="-1"></a>  news_res <span class="ot">&lt;-</span> news_tb <span class="sc">|&gt;</span> <span class="fu">unnest_wider</span>(naver)</span>
-<span id="cb43-20"><a href="#cb43-20" aria-hidden="true" tabindex="-1"></a>  all_news <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(all_news, news_res)</span>
-<span id="cb43-21"><a href="#cb43-21" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>all_news <span class="ot">&lt;-</span> <span class="fu">data.frame</span>()</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>search <span class="ot">&lt;-</span> <span class="st">"지방소멸"</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>  news <span class="ot">&lt;-</span> <span class="fu">request</span>(your_url) <span class="sc">|&gt;</span> </span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">req_headers</span>(</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>      <span class="st">"X-Naver-Client-ID"</span> <span class="ot">=</span> your_ClientID,</span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>      <span class="st">"X-Naver-Client-Secret"</span> <span class="ot">=</span> your_Client_Secret</span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span> </span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">req_url_query</span>(</span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">query =</span> search,</span>
+<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">display =</span> <span class="dv">100</span>,</span>
+<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">start =</span> i,</span>
+<span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">sort =</span> <span class="st">"date"</span></span>
+<span id="cb48-14"><a href="#cb48-14" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span> </span>
+<span id="cb48-15"><a href="#cb48-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">req_perform</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb48-16"><a href="#cb48-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">resp_body_json</span>()</span>
+<span id="cb48-17"><a href="#cb48-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># body &lt;- data.frame(t(sapply(news$item, data.frame)))</span></span>
+<span id="cb48-18"><a href="#cb48-18" aria-hidden="true" tabindex="-1"></a>  news_tb <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">naver =</span> news<span class="sc">$</span>items)</span>
+<span id="cb48-19"><a href="#cb48-19" aria-hidden="true" tabindex="-1"></a>  news_res <span class="ot">&lt;-</span> news_tb <span class="sc">|&gt;</span> <span class="fu">unnest_wider</span>(naver)</span>
+<span id="cb48-20"><a href="#cb48-20" aria-hidden="true" tabindex="-1"></a>  all_news <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(all_news, news_res)</span>
+<span id="cb48-21"><a href="#cb48-21" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>이 모든 과정을 자동화하기 위해 함수를 만들어 본다. <code>naver_extractor()</code> 함수는 네이버 뉴스에서 특정한 검색어를 통해 기사를 추출할 수 있게 해주는 것이다.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>naver_extractor <span class="ot">&lt;-</span> <span class="cf">function</span>(a_url, search_item, <span class="at">n_start =</span> <span class="dv">1</span>, <span class="at">n_display =</span> <span class="dv">100</span>){</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  news <span class="ot">&lt;-</span> <span class="fu">request</span>(a_url) <span class="sc">|&gt;</span> </span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">req_headers</span>(</span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"X-Naver-Client-ID"</span> <span class="ot">=</span> your_ClientID,</span>
-<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"X-Naver-Client-Secret"</span> <span class="ot">=</span> your_Client_Secret</span>
-<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">req_url_query</span>(</span>
-<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">query =</span> search_item,</span>
-<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">display =</span> n_display,</span>
-<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">start =</span> n_start,</span>
-<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">sort =</span> <span class="st">"date"</span></span>
-<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">req_perform</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">resp_body_json</span>()</span>
-<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a>  news_tb <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">naver =</span> news<span class="sc">$</span>items)</span>
-<span id="cb44-16"><a href="#cb44-16" aria-hidden="true" tabindex="-1"></a>  news_res <span class="ot">&lt;-</span> news_tb <span class="sc">|&gt;</span> <span class="fu">unnest_wider</span>(naver)</span>
-<span id="cb44-17"><a href="#cb44-17" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>naver_extractor <span class="ot">&lt;-</span> <span class="cf">function</span>(a_url, search_item, <span class="at">n_start =</span> <span class="dv">1</span>, <span class="at">n_display =</span> <span class="dv">100</span>){</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>  news <span class="ot">&lt;-</span> <span class="fu">request</span>(a_url) <span class="sc">|&gt;</span> </span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">req_headers</span>(</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"X-Naver-Client-ID"</span> <span class="ot">=</span> your_ClientID,</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"X-Naver-Client-Secret"</span> <span class="ot">=</span> your_Client_Secret</span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">req_url_query</span>(</span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">query =</span> search_item,</span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">display =</span> n_display,</span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">start =</span> n_start,</span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">sort =</span> <span class="st">"date"</span></span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">req_perform</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">resp_body_json</span>()</span>
+<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a>  news_tb <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">naver =</span> news<span class="sc">$</span>items)</span>
+<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a>  news_res <span class="ot">&lt;-</span> news_tb <span class="sc">|&gt;</span> <span class="fu">unnest_wider</span>(naver)</span>
+<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>이 함수를 이용해 데이터를 추출해 본다.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>res_1 <span class="ot">&lt;-</span> <span class="fu">naver_extractor</span>(<span class="at">a_url =</span> your_url, <span class="at">search_item =</span> <span class="st">"지방소멸"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>res_1 <span class="ot">&lt;-</span> <span class="fu">naver_extractor</span>(<span class="at">a_url =</span> your_url, <span class="at">search_item =</span> <span class="st">"지방소멸"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>res_2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>()</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(n_start <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>  news_res <span class="ot">&lt;-</span> <span class="fu">naver_extractor</span>(<span class="at">a_url =</span> your_url, <span class="at">search_item =</span> <span class="st">"지방소멸"</span>, <span class="at">n_start =</span> n_start)</span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>  res_2 <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(res_2, news_res)</span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>} </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>res_2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>()</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(n_start <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>  news_res <span class="ot">&lt;-</span> <span class="fu">naver_extractor</span>(<span class="at">a_url =</span> your_url, <span class="at">search_item =</span> <span class="st">"지방소멸"</span>, <span class="at">n_start =</span> n_start)</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>  res_2 <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(res_2, news_res)</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>} </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">

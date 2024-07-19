@@ -455,11 +455,9 @@ kosis.setKey(apikey = "Your Key Here")
 kosis.setKey(apiKey = "MTc5NDRlYzQzZWY0ZjhkYTQxZmJmZDM0MDBhNGNiMjQ=")
 ```
 
-#### 데이터 추출: 방식 1
+#### 데이터 추출
 
-#### 데이터 추출: 방식 2
-
-두 번째 방식은 `kosis` 패키지의 `getStatDataFromURL()` 함수를 활용하는 것이다. KOSIS의 데이터 서비스 구조를 감안할 때 이 것이 좀 더 용이한 방식일 수 있다. 데이터 추출은 다음과 같이 두 단계의 과정을 거친다.
+가장 유용한 방식은 `kosis` 패키지의 `getStatDataFromURL()` 함수를 활용하는 것이다. KOSIS의 데이터 서비스 구조를 감안할 때 이 것이 좀 더 용이한 방식일 수 있다. 데이터 추출은 다음과 같이 두 단계의 과정을 거친다.
 
 -   KOSIS에서 필요한 데이터의 위치에 대한 URL 정보를 획득한다.
 
@@ -489,7 +487,6 @@ kosis.setKey(apiKey = "MTc5NDRlYzQzZWY0ZjhkYTQxZmJmZDM0MDBhNGNiMjQ=")
 
 ```{r}
 #| eval: false
-
 your_url <- "Your URL"
 data_api <- getStatDataFromURL(url = your_url)
 data_api |> 
@@ -585,6 +582,140 @@ data_sido_new |>
 ::: callout-note
 우선 `tidyverse`에서 문자열에 특화된 핵심 패키지인 `forcat`의 두 함수에 대해 언급하고자 한다. `fct()`는 가장 기본이 되는 함수로 일반 문자형 컬럼을 팩터형(factor) 컬럼으로 전환해주는 함수이다. 동시에 레벨을 지정할 수 있다. `fct_reorder()` 함수는 팩터 벡터의 기존 레벨의 순서를 바꾸어주는 여러 함수들 중 하나이다. `fct_reorder()`는 특정 변수의 레벨 순서를 다른 변수의 값의 순서에 의거해 바꾸어준다. 비슷한 함수에 `fct_reorder2()`가 있는데, 이것은 특정 변수의 레벨 순서를 다른 변수의 값의 순서에 의거하여 바꾸되 그 다른 변수의 값을 또 다른 변수를 통해 규정하고자 할 때 사용할 수 있다. 위의 예를 든다면, 시도의 순서를 인구소멸위험지수의 크기에 따라 배열하되, 만약 여러 연도에 걸쳐 인구소멸위험지수가 계산되었을 경우, 특정 연도(주로 가장 큰 연도)의 값에 의거해 배열하는 것이다. 이외에 레벨의 순서를 메뉴얼하게 바꿀 수 있는 `fct_relevel()` 함수, 레벨의 순서를 역방향으로 바꿀 수 있는 `fct_rev()` 함수가 빈번하게 사용된다. ggplot2 패키지의 `scale_fill_manual()` 함수 역시 매우 중요한 역할을 한다. 이것은 막대 그래프를 채울 컬러의 스케일링을 사용자가 메뉴얼하게 할 수 있게 해주는데, 컬러 팔레트(class_color), 범례의 표제와 라벨을 메뉴얼하게 적용할 수 있다. 마지막에 있는 `drop = FALSE` 아규먼트가 매우 중요한 역할을 한다. 그래프를 보면 시도 수준의 인구소멸위험지수는 양 극단의 두 계급에 케이스를 갖지 않는다. 전체 계급을 보여주는 것이 의미있다고 판단한다면, `drop = FALSE` 아규먼트를 통해 모든 계급이 범례에 드러나게 할 수 있다.
 :::
+
+#### 또 다른 방식
+
+또 다른 방식은 `kosis` 패키지의 `getStatData()` 함수를 활용하는 것이다. 해당 함수에 기관명(101)과 데이터 코드(DT_1IN503)을 아규먼트에 입력하면 데이터를 불러올 수 있다. 위의 방식의 한 연도의 모든 지역에 대한 데이터를 얻기에 용이하다면, 이 방식은 하나의 지역에 대한 시계열 데이터를 수집하는데 유용하다. 아래의 코드를 통해 서울시 종로구(코드: 11010)의 2015\~2022년 데이터를 획득할 수 있다.
+
+```{r}
+region_code <- "11010"
+data_api <- getStatData(
+  orgId = 101, 
+  tblId = "DT_1IN1503", 
+  prdSe = "Y",
+  startPrdDe = "2015", 
+  endPrdDe = "2022", 
+  objL1 = region_code, 
+  objL2 = "ALL") |> 
+  filter(str_length(C2) == 3)
+```
+
+::: callout-tip
+region_code \<- "11010"+"11020"과 같은 식으로 설정하면 두 개 이상의 지역에 대한 데이터를 한꺼번에 구할 수도 있다.
+:::
+
+아래와 같은 데이터 정리 및 변형 과정이 필요하다.
+
+```{r}
+data <- data_api |> 
+  select(C1, C1_NM, C2, C2_NM, ITM_ID, ITM_NM, DT, PRD_DE) |> 
+  filter(ITM_ID == "T00" | ITM_ID == "T01" | ITM_ID == "T02") |> 
+  mutate(
+    across(c(C1, DT), as.numeric),
+    ITM_ID = case_match(
+    ITM_ID, 
+    "T00" ~ "T",
+    "T01" ~ "M",
+    "T02" ~ "F"),
+  ) |>
+  unite("gender_age", ITM_ID, C2_NM, sep = "_") |> 
+  pivot_wider(
+    id_cols = c(C1, C1_NM, PRD_DE),
+    names_from = gender_age,
+    values_from = DT
+  ) |> 
+  mutate(
+    index = (`F_20~24세` + `F_25~29세` + `F_30~34세` + `F_35~39세`) / `T_65세이상`
+  ) |> 
+  select(
+    C1, C1_NM, index, PRD_DE
+  ) 
+```
+
+이 데이터를 바탕으로 종로구의 인구소멸위험지수의 변화 추이를 관찰할 수 있다.
+
+```{r}
+region <- data |> distinct(C1_NM) |> pull()
+data |> 
+  ggplot(aes(x = PRD_DE, y = index)) +
+  geom_point() +
+  geom_line(group = 1, linewidth = 0.5) +
+  ggtitle(paste0(region, " 인구소멸위험지수 추이")) +
+  xlab(label = "연도") +
+  ylab(label = "인구소멸위험지수") +
+  theme(plot.title = element_text(size = 18, hjust=0.5))
+```
+
+이 모든 과정을 함수로 만들고, Base R의 `read_line()` 함수를 활용하면 초보적인 상호작용형 도구를 만들 수 있다.
+
+```{r}
+exInd <- function(){
+  # Library
+  library(tidyverse)
+  library(kosis)
+  library(DT)
+  library(openxlsx)
+  
+  # Table for Searching Region Code
+  region_table <- read.xlsx("https://github.com/Sechang-Kim/gis-lab/raw/download/korea-sigungu-code(2022).xlsx")
+  print(datatable(region_table))
+  
+  # Input Arguments
+  aoi_code <- readline('지역 코드를 입력하세요: ')
+  start <- as.numeric(readline('시작 연도를 입력하세요: '))
+  end <- as.numeric(readline('종료 연도를 입력하세요: '))
+  
+  # Data Request
+  aoi <- getStatData(orgId = 101, tblId = "DT_1IN1503", prdSe = "Y",
+                     startPrdDe = start, endPrdDe = end,
+                     objL1 = aoi_code, objL2 = "ALL") |> 
+    filter(nchar(C2) == 3) # Delete 1-age interval(Only 5-age interval)
+  
+  # Data Cleansing
+  aoi <- aoi |> 
+    select(C1, C1_NM, C2, C2_NM, ITM_ID, ITM_NM, DT, PRD_DE) |> 
+    filter(ITM_ID == "T00" | ITM_ID == "T01" | ITM_ID == "T02") |> 
+    mutate(
+      across(c(C1, DT), as.numeric),
+      ITM_ID = case_match(
+        ITM_ID, "T00" ~ "T",
+        "T01" ~ "M",
+        "T02" ~ "F"),
+    ) |> 
+    unite("gender_age", ITM_ID, C2_NM, sep = "_") |> 
+    pivot_wider(
+      id_cols = c(C1, C1_NM, PRD_DE),
+      names_from = gender_age,
+      values_from = DT
+    ) |> 
+    mutate(
+      index = (`F_20~24세` + `F_25~29세` + `F_30~34세` + `F_35~39세`) / `T_65세이상`
+    ) |> 
+    select(
+      C1, C1_NM, index, PRD_DE
+    )
+  
+  ## Visualization
+  region <- aoi$C1_NM[1] # For Auto-Plot Title
+  vis <- aoi |> 
+    ggplot(aes(x=PRD_DE, y=index)) +
+    geom_point() +
+    geom_line(group = 1, linewidth = 0.5) +
+    ggtitle(paste0(region, " 인구소멸위험지수 추이")) +
+    xlab(label = "연도") +
+    ylab(label = "인구소멸위험지수") +
+    theme(plot.title = element_text(size = 18, hjust=0.5))
+  
+  return(vis)
+}
+```
+
+함수를 실행해 보자.
+
+```{r}
+#| eval: false
+exInd()
+```
 
 ### API를 활용한 NAVER 뉴스 데이터의 수집
 
