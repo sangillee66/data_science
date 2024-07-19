@@ -669,6 +669,7 @@ naver_res |> slice_head(n = 5)
 반복 과정을 통해 1,000개까지 데이터를 추출해 본다. 여기서는 for 문을 활용하지만
 
 ```{r}
+#| eval: false
 all_news <- data.frame()
 search <- "지방소멸"
 for(i in 1:10){
@@ -717,10 +718,12 @@ naver_extractor <- function(a_url, search_item, n_start = 1, n_display = 100){
 이 함수를 이용해 데이터를 추출해 본다.
 
 ```{r}
+#| eval: false
 res_1 <- naver_extractor(a_url = your_url, search_item = "지방소멸")
 ```
 
 ```{r}
+#| eval: false
 res_2 <- data.frame()
 for(n_start in 1:10){
   news_res <- naver_extractor(a_url = your_url, search_item = "지방소멸", n_start = n_start)
@@ -729,5 +732,5 @@ for(n_start in 1:10){
 ```
 
 ::: callout-tip
-이렇게 수집된 문자열 데이터는 텍스트 마이닝(text mining)을 위한 중요한 원천이 되는데, 분석을 위해서는 데이터 정처리 과정이 필수적이다. 다음의 링크를 참고할 수 있다. <https://r2bit.com/book_tm/> 또한 다음의 책을 참고할 수 있다([@gimyeongu2021])
+이렇게 수집된 문자열 데이터는 텍스트 마이닝(text mining)을 위한 중요한 원천이 되는데, 분석을 위해서는 데이터 정처리 과정이 필수적이다. 다음의 링크(<https://r2bit.com/book_tm/>)를 참고할 수 있다. 또한 다음의 책을 참고할 수 있다[@gimyeongu2021].
 :::
