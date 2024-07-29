@@ -41,13 +41,9 @@ library(gapminder)
 통계청의 통계놀이터(<https://kosis.kr/edu/>)는 비주얼 통계에서 "우리나라 출생아 수와 합계 출산율 변화"를 검색하면 동적, 반응형 시각화가 구현된 웹페이지(<https://kosis.kr/edu/visualStats/detail.do>)로 연결된다. 이것을 아래와 같이 코딩하면 임베딩할 수 있다. 다른 것들은 가만 둔 상태에서 `src=""` 부분만 교체하면 대부분의 웹사이트를 임베딩할 수 있다. 단, 광고가 많이 붙어 있는 웹사이트는 잘 안된다. `style=""` 부분을 적절히 수정하면 임베딩된 웹사이트의 외견을 바꿔볼 수 있다.
 
 ```         
-::: {.card title="KOSIS 통계놀이터"}
 <iframe src="https://kosis.kr/edu/share.do?shareID=S0500_16" 
 loading="lazy" style="width: 100%; height: 600px; border: 
-0px none;" allow="web-share; clipboard-write">
-
-</iframe>
-:::
+0px none;" allow="web-share; clipboard-write"></iframe>
 ```
 
 ::: {.card title="KOSIS 통계놀이터"}
