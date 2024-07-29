@@ -122,7 +122,8 @@ div.csl-indent {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><link rel="stylesheet" href="styles.css">
+}</script><link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><script src="site_libs/echarts4r-4.8.0/echarts-en.min.js"></script><script src="site_libs/echarts4r-4.8.0/ecStat.min.js"></script><script src="site_libs/echarts4r-4.8.0/dataTool.min.js"></script><script src="site_libs/echarts4r-binding-0.4.5/echarts4r.js"></script><link rel="stylesheet" href="styles.css">
 </head>
 <body class="nav-sidebar floating">
 
@@ -448,7 +449,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 25, 2024</p>
+      <p class="date-modified">July 28, 2024</p>
     </div>
   </div>
     
@@ -556,7 +557,7 @@ div.csl-indent {
 </ul>
 <div id="fig-html-hier" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-html-hier-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="https://odinuv.cz/articles/html/"><span class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1"><img src="https://odinuv.cz/common/css/html.svg" class="img-fluid figure-img"></span></a>
+<a href="https://odinuv.cz/articles/html/"><span class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1"><img src="https://odinuv.cz/common/css/html.svg" class="img-fluid figure-img"></span></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-html-hier-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: HTML의 위계 구조 (https://odinuv.cz/articles/html/)
@@ -580,9 +581,9 @@ Figure&nbsp;1: HTML의 위계 구조 (https://odinuv.cz/articles/html/)
 <p>선택 대상을 효과적으로 규정하기 위해 사용되는 것이 CSS(cascading style sheet) 선택자(selector)이다. CSS는 HTML의 시각적 구성을 통제하는 툴인데, html의 특정 부분을 지목할 수 있는 작은 언어(miniature language)를 가지고 있고, 그것을 CSS 선택자라 부르는 것이다.</p>
 <table class="table">
 <colgroup>
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 61%">
+<col style="width: 18%">
+<col style="width: 12%">
+<col style="width: 69%">
 </colgroup>
 <thead><tr class="header">
 <th>선택 대상</th>
@@ -767,7 +768,7 @@ Note
 <pre><code># A tibble: 241 × 7
    ``      Location    Population `% ofworld` Date  Source (official or …¹ ``   
    &lt;chr&gt;   &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;                  &lt;chr&gt;
- 1 –       World       8,120,184… 100%        24 J… UN projection[3]       ""   
+ 1 –       World       8,120,793… 100%        27 J… UN projection[3]       ""   
  2 1/2 [b] China       1,409,670… 17.4%       31 D… Official estimate[5]   "[c]"
  3 1/2 [b] India       1,404,910… 17.3%       1 Ju… Official projection[6] "[d]"
  4 3       United Sta… 335,893,2… 4.1%        1 Ja… Official estimate[7]   "[e]"
@@ -804,7 +805,7 @@ Note
 <pre><code># A tibble: 241 × 5
    location      population pop_pct date       source                       
    &lt;chr&gt;              &lt;dbl&gt;   &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;                        
- 1 World         8120184000   100   2024-07-24 UN projection[3]             
+ 1 World         8120793000   100   2024-07-27 UN projection[3]             
  2 China         1409670000    17.4 2023-12-31 Official estimate[5]         
  3 India         1404910000    17.3 2024-07-01 Official projection[6]       
  4 United States  335893238     4.1 2024-01-01 Official estimate[7]         
@@ -854,15 +855,15 @@ Note
        N 종목명  현재가 전일비 등락률 거래량 거래대금 매수호가 매도호가 시가총액
    &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;   
  1    NA ""      ""     ""     ""     ""     ""       ""       ""       ""      
- 2     1 "KODEX… "2,02… "상승… "+4.2… "201,… "404,24… "2,005"  "2,010"  "15,772"
- 3     2 "KODEX… "3,68… "상승… "+2.2… "38,8… "142,62… "3,670"  "3,675"  "3,239" 
- 4     3 "삼부…  "1,65… "상승… "+2.5… "34,5… "59,581" "1,690"  "1,691"  "3,509" 
- 5     4 "KODEX… "9,92… "하락… "-4.2… "26,4… "264,14… "9,990"  "9,995"  "11,596"
- 6     5 "KODEX… "19,4… "하락… "-4.1… "24,5… "481,20… "19,560" "19,565" "20,542"
+ 2     1 "KODEX… "1,93… "하락… "-2.3… "145,… "282,37… "1,939"  "1,940"  "14,901"
+ 3     2 "동양…  "1,07… "상승… "+9.7… "40,7… "43,581" "1,071"  "1,072"  "1,565" 
+ 4     3 "갤럭…  "2,98… "상승… "+4.3… "22,8… "70,083" "2,985"  "2,990"  "822"   
+ 5     4 "KODEX… "10,1… "상승… "+2.6… "18,8… "189,49… "10,170" "10,175" "11,868"
+ 6     5 "KODEX… "3,63… "하락… "-1.6… "17,2… "63,093" "3,630"  "3,635"  "3,554" 
  7    NA ""      ""     ""     ""     ""     ""       ""       ""       ""      
  8    NA ""      ""     ""     ""     ""     ""       ""       ""       ""      
  9    NA ""      ""     ""     ""     ""     ""       ""       ""       ""      
-10     6 "동방"  "3,06… "하락… "-3.3… "18,8… "60,494" "3,075"  "3,080"  "1,470" 
+10     6 "산일…  "50,2… "상승… "+43.… "17,0… "761,35… "50,200" "50,300" "15,283"
 # ℹ 151 more rows
 # ℹ 2 more variables: PER &lt;chr&gt;, ROE &lt;chr&gt;</code></pre>
 </div>
@@ -878,11 +879,11 @@ Note
 <pre><code># A tibble: 5 × 12
       N 종목명   현재가 전일비 등락률 거래량 거래대금 매수호가 매도호가 시가총액
   &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;   
-1     1 KODEX 2… 2,020  "상승… +4.28% 201,7… 404,240  2,005    2,010    15,772  
-2     2 KODEX …  3,685  "상승… +2.22% 38,82… 142,629  3,670    3,675    3,239   
-3     3 삼부토건 1,655  "상승… +2.54% 34,56… 59,581   1,690    1,691    3,509   
-4     4 KODEX …  9,920  "하락… -4.25% 26,44… 264,141  9,990    9,995    11,596  
-5     5 KODEX …  19,480 "하락… -4.16% 24,54… 481,203  19,560   19,565   20,542  
+1     1 KODEX 2… 1,939  "하락… -2.32% 145,4… 282,378  1,939    1,940    14,901  
+2     2 동양철관 1,072  "상승… +9.72% 40,76… 43,581   1,071    1,072    1,565   
+3     3 갤럭시…  2,985  "상승… +4.37% 22,81… 70,083   2,985    2,990    822     
+4     4 KODEX …  10,170 "상승… +2.62% 18,85… 189,493  10,170   10,175   11,868  
+5     5 KODEX …  3,630  "하락… -1.63% 17,24… 63,093   3,630    3,635    3,554   
 # ℹ 2 more variables: PER &lt;chr&gt;, ROE &lt;chr&gt;</code></pre>
 </div>
 </div>
@@ -1084,30 +1085,24 @@ Warning
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>  ORG_ID     TBL_ID
-1    101 DT_1IN1503
-2    101 DT_1IN1503
-3    101 DT_1IN1503
-4    101 DT_1IN1503
-5    101 DT_1IN1503
-                                                          TBL_NM C1 C1_NM
-1 연령 및 성별 인구 – 읍면동(연도 끝자리 0 5) 시군구(그 외 연도) 00  전국
-2 연령 및 성별 인구 – 읍면동(연도 끝자리 0 5) 시군구(그 외 연도) 00  전국
-3 연령 및 성별 인구 – 읍면동(연도 끝자리 0 5) 시군구(그 외 연도) 00  전국
-4 연령 및 성별 인구 – 읍면동(연도 끝자리 0 5) 시군구(그 외 연도) 00  전국
-5 연령 및 성별 인구 – 읍면동(연도 끝자리 0 5) 시군구(그 외 연도) 00  전국
-           C1_OBJ_NM  C2 C2_NM C2_OBJ_NM ITM_ID          ITM_NM
-1 행정구역별(읍면동) 000  합계    연령별    T00      총인구(명)
-2 행정구역별(읍면동) 000  합계    연령별    T01 총인구_남자(명)
-3 행정구역별(읍면동) 000  합계    연령별    T02 총인구_여자(명)
-4 행정구역별(읍면동) 005 0~4세    연령별    T00      총인구(명)
-5 행정구역별(읍면동) 005 0~4세    연령별    T01 총인구_남자(명)
-         ITM_NM_ENG PRD_SE PRD_DE       DT
-1        Population      A   2022 51692272
-2   Population_Male      A   2022 25835298
-3 Population_Female      A   2022 25856974
-4        Population      A   2022  1459301
-5   Population_Male      A   2022   748056</code></pre>
+<pre><code>  ORG_ID     TBL_ID                     TBL_NM C1 C1_NM          C1_OBJ_NM  C2
+1    101 DT_1IN1503 연령 및 성별 인구 – 읍면동 00  전국 행정구역별(읍면동) 000
+2    101 DT_1IN1503 연령 및 성별 인구 – 읍면동 00  전국 행정구역별(읍면동) 000
+3    101 DT_1IN1503 연령 및 성별 인구 – 읍면동 00  전국 행정구역별(읍면동) 000
+4    101 DT_1IN1503 연령 및 성별 인구 – 읍면동 00  전국 행정구역별(읍면동) 005
+5    101 DT_1IN1503 연령 및 성별 인구 – 읍면동 00  전국 행정구역별(읍면동) 005
+  C2_NM C2_OBJ_NM ITM_ID          ITM_NM        ITM_NM_ENG PRD_SE PRD_DE
+1  합계    연령별    T00      총인구(명)        Population      A   2022
+2  합계    연령별    T01 총인구_남자(명)   Population_Male      A   2022
+3  합계    연령별    T02 총인구_여자(명) Population_Female      A   2022
+4 0~4세    연령별    T00      총인구(명)        Population      A   2022
+5 0~4세    연령별    T01 총인구_남자(명)   Population_Male      A   2022
+        DT
+1 51692272
+2 25835298
+3 25856974
+4  1459301
+5   748056</code></pre>
 </div>
 </div>
 </section><section id="데이터-정리-및-변형" class="level4" data-number="3.3.4"><h4 data-number="3.3.4" class="anchored" data-anchor-id="데이터-정리-및-변형">
@@ -1160,7 +1155,7 @@ Note
 <span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_rds.html">write_rds</a></span><span class="op">(</span><span class="va">data_sigungu</span>, <span class="st">"data_sigungu.rds"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_rds.html">read_rds</a></span><span class="op">(</span><span class="st">"data_sigungu.rds"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 229 × 3
+<pre><code># A tibble: 147 × 3
       C1 C1_NM    index
    &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;
  1 11010 종로구   0.965
@@ -1173,7 +1168,7 @@ Note
  8 11080 성북구   0.929
  9 11090 강북구   0.589
 10 11100 도봉구   0.578
-# ℹ 219 more rows</code></pre>
+# ℹ 137 more rows</code></pre>
 </div>
 </div>
 </section><section id="그래프-작성" class="level4" data-number="3.3.5"><h4 data-number="3.3.5" class="anchored" data-anchor-id="그래프-작성">
@@ -1252,7 +1247,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>region_code &lt;- “11010”+“11020”과 같은 식으로 설정하면 두 개 이상의 지역에 대한 데이터를 한꺼번에 구할 수도 있다.</p>
+<p>region_code &lt;- “11010+11020”과 같은 식으로 설정하면 두 개 이상의 지역에 대한 데이터를 한꺼번에 구할 수도 있다.</p>
 </div>
 </div>
 <p>아래와 같은 데이터 정리 및 변형 과정이 필요하다.</p>
@@ -1285,9 +1280,9 @@ Tip
 <div class="cell">
 <div class="sourceCode" id="cb41"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">region</span> <span class="op">&lt;-</span> <span class="va">data</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">C1_NM</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">data</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">PRD_DE</span>, y <span class="op">=</span> <span class="va">index</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">PRD_DE</span>, y <span class="op">=</span> <span class="va">index</span>, group <span class="op">=</span> <span class="va">C1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span>group <span class="op">=</span> <span class="fl">1</span>, linewidth <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span>, linewidth <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">region</span>, <span class="st">" 인구소멸위험지수 추이"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span>label <span class="op">=</span> <span class="st">"연도"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span>label <span class="op">=</span> <span class="st">"인구소멸위험지수"</span><span class="op">)</span> <span class="op">+</span></span>
@@ -1299,9 +1294,22 @@ Tip
 </div>
 </div>
 </div>
+<p>echarts를 이용한 그래프를 제작해 본다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://echarts4r.john-coene.com/">echarts4r</a></span><span class="op">)</span></span>
+<span><span class="va">data</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">C1_NM</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="http://echarts4r.john-coene.com/reference/init.html">e_charts</a></span><span class="op">(</span><span class="va">PRD_DE</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="http://echarts4r.john-coene.com/reference/e_line.html">e_line</a></span><span class="op">(</span><span class="va">index</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="http://echarts4r.john-coene.com/reference/e-tooltip.html">e_tooltip</a></span><span class="op">(</span>trigger <span class="op">=</span> <span class="st">"axis"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-d5ed4ce8de441cfc936c" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-d5ed4ce8de441cfc936c">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true}],"xAxis":[{"data":["2015","2016","2017","2018","2019","2020","2021","2022"],"type":"category","boundaryGap":true}],"legend":{"data":["종로구"]},"series":[{"data":[{"value":["2015","1.1114206"]},{"value":["2016","1.0766989"]},{"value":["2017","1.0761595"]},{"value":["2018","1.0902399"]},{"value":["2019","1.0563815"]},{"value":["2020","0.9858794"]},{"value":["2021","0.9728141"]},{"value":["2022","0.9651754"]}],"yAxisIndex":0,"xAxisIndex":0,"name":"종로구","type":"line","coordinateSystem":"cartesian2d"}],"tooltip":{"trigger":"axis"}},"dispose":true},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 <p>이 모든 과정을 함수로 만들고, Base R의 <code>read_line()</code> 함수를 활용하면 초보적인 상호작용형 도구를 만들 수 있다.</p>
 <div class="cell">
-<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">exInd</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span><span class="op">{</span></span>
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">exInd</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span><span class="op">{</span></span>
 <span>  <span class="co"># Library</span></span>
 <span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">kosis</span><span class="op">)</span></span>
@@ -1363,7 +1371,7 @@ Tip
 </div>
 <p>함수를 실행해 보자.</p>
 <div class="cell">
-<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">exInd</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">exInd</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section><section id="api를-활용한-naver-뉴스-데이터의-수집" class="level3" data-number="3.4"><h3 data-number="3.4" class="anchored" data-anchor-id="api를-활용한-naver-뉴스-데이터의-수집">
 <span class="header-section-number">3.4</span> API를 활용한 NAVER 뉴스 데이터의 수집</h3>
@@ -1388,11 +1396,11 @@ Tip
 <span class="header-section-number">3.4.2</span> <code>httr2</code> 패키지 활용: 처음 100개 검색 결과 추출</h4>
 <p>패키지를 불러온다.</p>
 <div class="cell">
-<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://httr2.r-lib.org">httr2</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://httr2.r-lib.org">httr2</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>’지방소멸’을 검색어로 하여 최초의 100개 검색 결과에 대한 데이터(특히, 제목과 내용)를 수집한다.</p>
 <div class="cell">
-<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://httr2.r-lib.org">httr2</a></span><span class="op">)</span></span>
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://httr2.r-lib.org">httr2</a></span><span class="op">)</span></span>
 <span><span class="va">search</span> <span class="op">&lt;-</span> <span class="st">"지방소멸"</span></span>
 <span><span class="va">your_url</span> <span class="op">&lt;-</span> <span class="st">"https://openapi.naver.com/v1/search/news.json"</span></span>
 <span><span class="va">result_naver</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://httr2.r-lib.org/reference/request.html">request</a></span><span class="op">(</span><span class="va">your_url</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
@@ -1412,19 +1420,19 @@ Tip
 <p><code>View</code>(result_naver)을 샐행해 보면 결과 데이터가 복잡한 위계 구조를 가지고 있는 리스트(list) 형식의 데이터라는 것을 알 수 있다. 다섯 개의 하위 요소들 중 items가 또 다른 리스트이며, 그 리스트의 아래에 100개의 또 다른 하위 리스트가 있으며, 그 100개의 하위 리스트 각각에 우리가 원하는 정보가 다섯개의 속성(title, originallink, link, description, pubData)의 속성으로 나뉘어 존재한다는 것을 알 수 있다.</p>
 <p>다음과 같은 방식으로 복잡한 위계 구조를 가진 리스트로부터 우리가 원하는 다섯 개의 속성을 추출할 수 있다. 우선 해당 리스트를 tibble 데이터 형식으로 바꾼다. 이것은 리스트를 tibble의 리스트 컬럼(list column)으로 바꾸는 것이다. 이렇게 하면 리스트를 훨씬 더 손쉽게 다룰 수 있게 된다. 이러한 과정에 리스트 중 원하는 데이터가 포함되어 있는 부분(여기서는 items)만 추출한다. 그리고 나서 <code>tidyr</code> 패키지가 제공하는 함수(이 경우는 <code><a href="https://tidyr.tidyverse.org/reference/unnest_wider.html">unnest_wider()</a></code> 함수)를 활용하여 우리가 원하는 정보를 정돈된 데이터 형식으로 추출한다.</p>
 <div class="cell">
-<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">naver_tb</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>naver <span class="op">=</span> <span class="va">result_naver</span><span class="op">$</span><span class="va">items</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">naver_tb</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>naver <span class="op">=</span> <span class="va">result_naver</span><span class="op">$</span><span class="va">items</span><span class="op">)</span></span>
 <span><span class="va">naver_res</span> <span class="op">&lt;-</span> <span class="va">naver_tb</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unnest_wider.html">unnest_wider</a></span><span class="op">(</span><span class="va">naver</span><span class="op">)</span></span>
 <span><span class="va">naver_res</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 5
-  title                                   originallink link  description pubDate
-  &lt;chr&gt;                                   &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;  
-1 예산군, '미래성장과' 신설로 지속 가능…  http://www.… http… "또한 농생… Thu, 2…
-2 연암대학교,·(사)스마트치유산업포럼 치…  https://www… http… "이번 업무… Thu, 2…
-3 2024년 창녕군지역사회보장협의체 역량강… https://www… http… "이번 교육… Thu, 2…
-4 [세컷뉴스] '디지털 관광주민증'으로 국…  http://www.… http… "시선뉴스=… Thu, 2…
-5 음성상의,'내 고장 음성愛 주소 갖기'범 … https://www… http… "내 고장 …  Thu, 2…</code></pre>
+  title                                  originallink  link  description pubDate
+  &lt;chr&gt;                                  &lt;chr&gt;         &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;  
+1 서삼석 “고향기부금…플랫폼 다양화‧법…   http://www.l… http… "서삼석 의… Mon, 2…
+2 독거노인 200만명 …&amp;quot;맞춤 일자리 …  https://www.… http… "청년인구…  Mon, 2…
+3 경남도의회, 농어업인수당 국비 지원 촉… https://www.… http… "우리나라 … Mon, 2…
+4 교육발전특구 근거 담은 '&lt;b&gt;지방&lt;/b&gt;분… http://www.k… http… "위한 &lt;b&gt;…  Mon, 2…
+5 &amp;quot;대구경북 통합, 경제적 효과보다 … https://www.… http… "이는 정치… Mon, 2…</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1444,7 +1452,7 @@ Note
 <span class="header-section-number">3.4.3</span> <code>httr2</code> 패키지 활용: <code>for</code> 함수를 이용하여 1,000개 검색 결과 추출</h4>
 <p>반복 과정을 통해 1,000개까지 데이터를 추출해 본다. 여기서는 for 문을 활용하지만</p>
 <div class="cell">
-<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">all_news</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">all_news</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">search</span> <span class="op">&lt;-</span> <span class="st">"지방소멸"</span></span>
 <span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span><span class="op">{</span></span>
 <span>  <span class="va">news</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://httr2.r-lib.org/reference/request.html">request</a></span><span class="op">(</span><span class="va">your_url</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
@@ -1468,7 +1476,7 @@ Note
 </div>
 <p>이 모든 과정을 자동화하기 위해 함수를 만들어 본다. <code>naver_extractor()</code> 함수는 네이버 뉴스에서 특정한 검색어를 통해 기사를 추출할 수 있게 해주는 것이다.</p>
 <div class="cell">
-<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">naver_extractor</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">a_url</span>, <span class="va">search_item</span>, <span class="va">n_start</span> <span class="op">=</span> <span class="fl">1</span>, <span class="va">n_display</span> <span class="op">=</span> <span class="fl">100</span><span class="op">)</span><span class="op">{</span></span>
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">naver_extractor</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">a_url</span>, <span class="va">search_item</span>, <span class="va">n_start</span> <span class="op">=</span> <span class="fl">1</span>, <span class="va">n_display</span> <span class="op">=</span> <span class="fl">100</span><span class="op">)</span><span class="op">{</span></span>
 <span>  <span class="va">news</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://httr2.r-lib.org/reference/request.html">request</a></span><span class="op">(</span><span class="va">a_url</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/req_headers.html">req_headers</a></span><span class="op">(</span></span>
 <span>    <span class="st">"X-Naver-Client-ID"</span> <span class="op">=</span> <span class="va">your_ClientID</span>,</span>
@@ -1488,10 +1496,10 @@ Note
 </div>
 <p>이 함수를 이용해 데이터를 추출해 본다.</p>
 <div class="cell">
-<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">res_1</span> <span class="op">&lt;-</span> <span class="fu">naver_extractor</span><span class="op">(</span>a_url <span class="op">=</span> <span class="va">your_url</span>, search_item <span class="op">=</span> <span class="st">"지방소멸"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">res_1</span> <span class="op">&lt;-</span> <span class="fu">naver_extractor</span><span class="op">(</span>a_url <span class="op">=</span> <span class="va">your_url</span>, search_item <span class="op">=</span> <span class="st">"지방소멸"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">res_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">res_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="kw">for</span><span class="op">(</span><span class="va">n_start</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span><span class="op">{</span></span>
 <span>  <span class="va">news_res</span> <span class="op">&lt;-</span> <span class="fu">naver_extractor</span><span class="op">(</span>a_url <span class="op">=</span> <span class="va">your_url</span>, search_item <span class="op">=</span> <span class="st">"지방소멸"</span>, n_start <span class="op">=</span> <span class="va">n_start</span><span class="op">)</span></span>
 <span>  <span class="va">res_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind_rows.html">bind_rows</a></span><span class="op">(</span><span class="va">res_2</span>, <span class="va">news_res</span><span class="op">)</span></span>
@@ -2092,7 +2100,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </ul>
 </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom"});
+</footer><script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","selector":".lightbox"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
