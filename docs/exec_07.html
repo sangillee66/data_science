@@ -581,9 +581,9 @@ Figure&nbsp;1: HTML의 위계 구조 (https://odinuv.cz/articles/html/)
 <p>선택 대상을 효과적으로 규정하기 위해 사용되는 것이 CSS(cascading style sheet) 선택자(selector)이다. CSS는 HTML의 시각적 구성을 통제하는 툴인데, html의 특정 부분을 지목할 수 있는 작은 언어(miniature language)를 가지고 있고, 그것을 CSS 선택자라 부르는 것이다.</p>
 <table class="table">
 <colgroup>
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 61%">
+<col style="width: 18%">
+<col style="width: 12%">
+<col style="width: 69%">
 </colgroup>
 <thead><tr class="header">
 <th>선택 대상</th>
@@ -855,15 +855,15 @@ Note
        N 종목명  현재가 전일비 등락률 거래량 거래대금 매수호가 매도호가 시가총액
    &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;   
  1    NA ""      ""     ""     ""     ""     ""       ""       ""       ""      
- 2     1 "KODEX… "2,03… "상승… "+6.1… "120,… "243,32… "2,035"  "2,040"  "13,785"
- 3     2 "흥아…  "2,79… "상승… "+5.4… "48,3… "138,83… "2,790"  "2,795"  "6,720" 
- 4     3 "한국A… "470"  "상승… "+6.8… "34,8… "16,887" "462"    "463"    "329"   
- 5     4 "삼성 … "93"   "상승… "+4.4… "18,9… "1,773"  "93"     "94"     "1,392" 
- 6     5 "KODEX… "3,68… "상승… "+2.7… "16,1… "59,474" "3,690"  "3,695"  "3,110" 
+ 2     1 "KODEX… "2,06… "상승… "+7.7… "161,… "327,07… "2,055"  "2,060"  "13,988"
+ 3     2 "흥아…  "2,82… "상승… "+6.4… "54,7… "156,83… "2,805"  "2,810"  "6,780" 
+ 4     3 "한국A… "465"  "상승… "+5.6… "38,7… "18,726" "467"    "468"    "326"   
+ 5     4 "KODEX… "3,71… "상승… "+3.6… "21,4… "78,816" "3,700"  "3,705"  "3,135" 
+ 6     5 "KODEX… "18,9… "하락… "-7.6… "21,3… "412,23… "19,015" "19,020" "21,031"
  7    NA ""      ""     ""     ""     ""     ""       ""       ""       ""      
  8    NA ""      ""     ""     ""     ""     ""       ""       ""       ""      
  9    NA ""      ""     ""     ""     ""     ""       ""       ""       ""      
-10     6 "KODEX… "19,2… "하락… "-6.0… "14,5… "281,87… "19,230" "19,235" "21,398"
+10     6 "삼성 … "94"   "상승… "+5.6… "19,2… "1,805"  "93"     "94"     "1,407" 
 # ℹ 151 more rows
 # ℹ 2 more variables: PER &lt;chr&gt;, ROE &lt;chr&gt;</code></pre>
 </div>
@@ -879,11 +879,11 @@ Note
 <pre><code># A tibble: 5 × 12
       N 종목명   현재가 전일비 등락률 거래량 거래대금 매수호가 매도호가 시가총액
   &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;   
-1     1 KODEX 2… 2,035  "상승… +6.16% 120,5… 243,324  2,035    2,040    13,785  
-2     2 흥아해운 2,795  "상승… +5.47% 48,34… 138,832  2,790    2,795    6,720   
-3     3 한국ANK… 470    "상승… +6.82% 34,82… 16,887   462      463      329     
-4     4 삼성 인… 93     "상승… +4.49% 18,94… 1,773    93       94       1,392   
-5     5 KODEX …  3,680  "상승… +2.79% 16,18… 59,474   3,690    3,695    3,110   
+1     1 KODEX 2… 2,065  "상승… +7.72% 161,4… 327,073  2,055    2,060    13,988  
+2     2 흥아해운 2,820  "상승… +6.42% 54,76… 156,839  2,805    2,810    6,780   
+3     3 한국ANK… 465    "상승… +5.68% 38,73… 18,726   467      468      326     
+4     4 KODEX …  3,710  "상승… +3.63% 21,42… 78,816   3,700    3,705    3,135   
+5     5 KODEX …  18,930 "하락… -7.61% 21,37… 412,234  19,015   19,020   21,031  
 # ℹ 2 more variables: PER &lt;chr&gt;, ROE &lt;chr&gt;</code></pre>
 </div>
 </div>
@@ -1303,8 +1303,8 @@ Tip
 <span>  <span class="fu"><a href="http://echarts4r.john-coene.com/reference/e_line.html">e_line</a></span><span class="op">(</span><span class="va">index</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="http://echarts4r.john-coene.com/reference/e-tooltip.html">e_tooltip</a></span><span class="op">(</span>trigger <span class="op">=</span> <span class="st">"axis"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="echarts4r html-widget html-fill-item" id="htmlwidget-4c15af2cae75567b132c" style="width:100%;height:500px;"></div>
-<script type="application/json" data-for="htmlwidget-4c15af2cae75567b132c">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true}],"xAxis":[{"data":["2015","2016","2017","2018","2019","2020","2021","2022"],"type":"category","boundaryGap":true}],"legend":{"data":["종로구"]},"series":[{"data":[{"value":["2015","1.1114206"]},{"value":["2016","1.0766989"]},{"value":["2017","1.0761595"]},{"value":["2018","1.0902399"]},{"value":["2019","1.0563815"]},{"value":["2020","0.9858794"]},{"value":["2021","0.9728141"]},{"value":["2022","0.9651754"]}],"yAxisIndex":0,"xAxisIndex":0,"name":"종로구","type":"line","coordinateSystem":"cartesian2d"}],"tooltip":{"trigger":"axis"}},"dispose":true},"evals":[],"jsHooks":[]}</script>
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-4abcd253203bf591d23b" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-4abcd253203bf591d23b">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true}],"xAxis":[{"data":["2015","2016","2017","2018","2019","2020","2021","2022"],"type":"category","boundaryGap":true}],"legend":{"data":["종로구"]},"series":[{"data":[{"value":["2015","1.1114206"]},{"value":["2016","1.0766989"]},{"value":["2017","1.0761595"]},{"value":["2018","1.0902399"]},{"value":["2019","1.0563815"]},{"value":["2020","0.9858794"]},{"value":["2021","0.9728141"]},{"value":["2022","0.9651754"]}],"yAxisIndex":0,"xAxisIndex":0,"name":"종로구","type":"line","coordinateSystem":"cartesian2d"}],"tooltip":{"trigger":"axis"}},"dispose":true},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>이 모든 과정을 함수로 만들고, Base R의 <code>read_line()</code> 함수를 활용하면 초보적인 상호작용형 도구를 만들 수 있다.</p>
@@ -1426,13 +1426,13 @@ Tip
 <span><span class="va">naver_res</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 5
-  title                                  originallink  link  description pubDate
-  &lt;chr&gt;                                  &lt;chr&gt;         &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;  
-1 안동시의회 농촌사랑연구회, '김창현 의… https://www.… http… "연구모임…  Fri, 0…
-2 농촌체류형 쉼터 12월부터 10평 이내 숙… http://www.i… http… "농림축산…  Fri, 0…
-3 인천시 강화군, ‘선원면 노을빛 가족음…  https://www.… http… "이번 음악… Fri, 0…
-4 영암 혁신리더들, &lt;b&gt;지방소멸&lt;/b&gt; 극복… https://www.… http… "이날 간담… Fri, 0…
-5 태안군, 상반기 '참 했어요' 행정 5선은? http://www.d… http… "35년 만에… Fri, 0…</code></pre>
+  title                                   originallink link  description pubDate
+  &lt;chr&gt;                                   &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;  
+1 이번엔 농식품부와…문체부, 지역문화·…    https://www… http… "문체부 유… Fri, 0…
+2 광주 찾은 이언주 &amp;quot;&lt;b&gt;지방소멸&lt;/b&gt;… https://www… http… "이 후보는… Fri, 0…
+3 태안군 '태안 오일장 부활' 등 적극행정 … http://www.… http… "35년 만에… Fri, 0…
+4 하동군, 매니페스토 우수사례 경진대회 …  https://pk.… http… "한국매니…  Fri, 0…
+5 '단양 8경 수몰 없다' 수자원공사, 충청…  https://www… http… "단양천댐 … Fri, 0…</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -2100,7 +2100,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </ul>
 </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":false,"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom"});
+</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
