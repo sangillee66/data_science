@@ -557,7 +557,7 @@ div.csl-indent {
 </ul>
 <div id="fig-html-hier" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-html-hier-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="https://odinuv.cz/articles/html/"><span class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1"><img src="https://odinuv.cz/common/css/html.svg" class="img-fluid figure-img"></span></a>
+<a href="https://odinuv.cz/articles/html/"><span class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1"><img src="https://odinuv.cz/common/css/html.svg" class="img-fluid figure-img"></span></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-html-hier-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: HTML의 위계 구조 (https://odinuv.cz/articles/html/)
@@ -768,7 +768,7 @@ Note
 <pre><code># A tibble: 241 × 7
    ``      Location    Population `% ofworld` Date  Source (official or …¹ Notes
    &lt;chr&gt;   &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;                  &lt;chr&gt;
- 1 –       World       8,121,381… 100%        30 J… UN projection[3]       ""   
+ 1 –       World       8,121,743… 100%        1 Au… UN projection[3]       ""   
  2 1/2 [b] China       1,409,670… 17.4%       31 D… Official estimate[5]   "[c]"
  3 1/2 [b] India       1,404,910… 17.3%       1 Ju… Official projection[6] "[d]"
  4 3       United Sta… 335,893,2… 4.1%        1 Ja… Official estimate[7]   "[e]"
@@ -805,7 +805,7 @@ Note
 <pre><code># A tibble: 241 × 5
    location      population pop_pct date       source                       
    &lt;chr&gt;              &lt;dbl&gt;   &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;                        
- 1 World         8121381000   100   2024-07-30 UN projection[3]             
+ 1 World         8121743000   100   2024-08-01 UN projection[3]             
  2 China         1409670000    17.4 2023-12-31 Official estimate[5]         
  3 India         1404910000    17.3 2024-07-01 Official projection[6]       
  4 United States  335893238     4.1 2024-01-01 Official estimate[7]         
@@ -855,15 +855,15 @@ Note
        N 종목명  현재가 전일비 등락률 거래량 거래대금 매수호가 매도호가 시가총액
    &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;   
  1    NA ""      ""     ""     ""     ""     ""       ""       ""       ""      
- 2     1 "KODEX… "1,91… "하락… "-0.3… "125,… "238,43… "1,917"  "1,918"  "13,329"
- 3     2 "흥아…  "2,65… "상승… "+9.7… "59,5… "155,74… "2,645"  "2,650"  "6,371" 
- 4     3 "삼성 … "89"   "하락… "-7.2… "40,3… "3,595"  "88"     "89"     "1,332" 
- 5     4 "KCTC"  "6,30… "상승… "+9.3… "26,9… "176,37… "6,300"  "6,310"  "1,890" 
- 6     5 "KODEX… "3,58… "하락… "-1.5… "25,7… "92,743" "3,580"  "3,585"  "3,165" 
+ 2     1 "KODEX… "2,03… "상승… "+6.1… "107,… "216,80… "2,030"  "2,035"  "13,785"
+ 3     2 "흥아…  "2,77… "상승… "+4.5… "42,9… "123,92… "2,845"  "2,850"  "6,660" 
+ 4     3 "한국A… "472"  "상승… "+7.2… "30,4… "14,857" "484"    "486"    "330"   
+ 5     4 "KODEX… "3,68… "상승… "+2.7… "11,7… "43,214" "3,685"  "3,690"  "3,110" 
+ 6     5 "KODEX… "19,2… "하락… "-6.0… "11,3… "220,38… "19,290" "19,295" "21,392"
  7    NA ""      ""     ""     ""     ""     ""       ""       ""       ""      
  8    NA ""      ""     ""     ""     ""     ""       ""       ""       ""      
  9    NA ""      ""     ""     ""     ""     ""       ""       ""       ""      
-10     6 "대원…  "3,44… "상승… "+8.3… "23,1… "82,353" "3,445"  "3,450"  "2,583" 
+10     6 "대한…  "2,16… "하락… "-4.2… "11,1… "25,227" "2,220"  "2,225"  "6,894" 
 # ℹ 151 more rows
 # ℹ 2 more variables: PER &lt;chr&gt;, ROE &lt;chr&gt;</code></pre>
 </div>
@@ -879,11 +879,11 @@ Note
 <pre><code># A tibble: 5 × 12
       N 종목명   현재가 전일비 등락률 거래량 거래대금 매수호가 매도호가 시가총액
   &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;   
-1     1 KODEX 2… 1,917  "하락… -0.36% 125,1… 238,434  1,917    1,918    13,329  
-2     2 흥아해운 2,650  "상승… +9.73% 59,50… 155,741  2,645    2,650    6,371   
-3     3 삼성 인… 89     "하락… -7.29% 40,35… 3,595    88       89       1,332   
-4     4 KCTC     6,300  "상승… +9.38% 26,93… 176,371  6,300    6,310    1,890   
-5     5 KODEX …  3,580  "하락… -1.51% 25,77… 92,743   3,580    3,585    3,165   
+1     1 KODEX 2… 2,035  "상승… +6.16% 107,5… 216,800  2,030    2,035    13,785  
+2     2 흥아해운 2,770  "상승… +4.53% 42,98… 123,922  2,845    2,850    6,660   
+3     3 한국ANK… 472    "상승… +7.27% 30,46… 14,857   484      486      330     
+4     4 KODEX …  3,680  "상승… +2.79% 11,77… 43,214   3,685    3,690    3,110   
+5     5 KODEX …  19,255 "하락… -6.03% 11,35… 220,388  19,290   19,295   21,392  
 # ℹ 2 more variables: PER &lt;chr&gt;, ROE &lt;chr&gt;</code></pre>
 </div>
 </div>
@@ -1073,7 +1073,7 @@ Warning
 </ul>
 <p>넷째, ‘조회설정’ 창을 없앤 후(조회창의 왼편 가운데의 화살표 클릭), 표의 오른편 상단에 있는 여러개 탭 중 ‘OPENAPI’ 탭을 클릭한다. 다음과 같이 선택한다.</p>
 <ul>
-<li><p>조회기간 설정: ‘기간설정’ 버턴을 누른 후, 기간설정이 2022~2022년인지 확인한다.</p></li>
+<li><p>조회기간 설정: ‘기간설정’ 버턴을 누른 후, 기간설정이 2023~2023년인지 확인한다.</p></li>
 <li><p>응답필드 설정: 하나씩 눌러 모두 선택한 후, ‘URL생성’ 탭을 클릭한다. 그리고 나서 ‘URL 복사’ 탭을 클릭한다. URL 속에 api key가 포함되어 있음을 확인한다.</p></li>
 </ul>
 <p>다섯째, 다음과 같이 실행한다. “Your URL” 자리에 복사한 URL를 붙여 넣는다.</p>
@@ -1092,17 +1092,17 @@ Warning
 4    101 DT_1IN1503 연령 및 성별 인구 – 읍면동 00  전국 행정구역별(읍면동) 005
 5    101 DT_1IN1503 연령 및 성별 인구 – 읍면동 00  전국 행정구역별(읍면동) 005
   C2_NM C2_OBJ_NM ITM_ID          ITM_NM        ITM_NM_ENG PRD_SE PRD_DE
-1  합계    연령별    T00      총인구(명)        Population      A   2022
-2  합계    연령별    T01 총인구_남자(명)   Population_Male      A   2022
-3  합계    연령별    T02 총인구_여자(명) Population_Female      A   2022
-4 0~4세    연령별    T00      총인구(명)        Population      A   2022
-5 0~4세    연령별    T01 총인구_남자(명)   Population_Male      A   2022
+1  합계    연령별    T00      총인구(명)        Population      A   2023
+2  합계    연령별    T01 총인구_남자(명)   Population_Male      A   2023
+3  합계    연령별    T02 총인구_여자(명) Population_Female      A   2023
+4 0~4세    연령별    T00      총인구(명)        Population      A   2023
+5 0~4세    연령별    T01 총인구_남자(명)   Population_Male      A   2023
         DT
-1 51692272
-2 25835298
-3 25856974
-4  1459301
-5   748056</code></pre>
+1 51774521
+2 25903852
+3 25870669
+4  1361737
+5   697702</code></pre>
 </div>
 </div>
 </section><section id="데이터-정리-및-변형" class="level4" data-number="3.3.4"><h4 data-number="3.3.4" class="anchored" data-anchor-id="데이터-정리-및-변형">
@@ -1158,16 +1158,16 @@ Note
 <pre><code># A tibble: 229 × 3
       C1 C1_NM    index
    &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;
- 1 11010 종로구   0.965
- 2 11020 중구     0.931
- 3 11030 용산구   1.02 
- 4 11040 성동구   1.00 
- 5 11050 광진구   1.20 
- 6 11060 동대문구 0.994
- 7 11070 중랑구   0.751
- 8 11080 성북구   0.929
- 9 11090 강북구   0.589
-10 11100 도봉구   0.578
+ 1 11010 종로구   0.932
+ 2 11020 중구     0.932
+ 3 11030 용산구   0.972
+ 4 11040 성동구   0.951
+ 5 11050 광진구   1.15 
+ 6 11060 동대문구 0.971
+ 7 11070 중랑구   0.706
+ 8 11080 성북구   0.884
+ 9 11090 강북구   0.561
+10 11100 도봉구   0.535
 # ℹ 219 more rows</code></pre>
 </div>
 </div>
@@ -1199,7 +1199,7 @@ Note
 <span>                    labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"&lt; 0.2"</span>, <span class="st">"0.2 ~ 0.5"</span>, <span class="st">"0.5 ~ 1.0"</span>, </span>
 <span>                               <span class="st">"1.0 ~ 1.5"</span>, <span class="st">"&gt;= 1.5"</span><span class="op">)</span>, </span>
 <span>                    values <span class="op">=</span> <span class="va">class_color</span>, drop <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"인구소멸위험지수, 2022년"</span>, </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"인구소멸위험지수, 2023년"</span>, </span>
 <span>       x <span class="op">=</span> <span class="st">"인구소멸위험지수"</span>, </span>
 <span>       y <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -1232,7 +1232,7 @@ Note
 <span>  tblId <span class="op">=</span> <span class="st">"DT_1IN1503"</span>, </span>
 <span>  prdSe <span class="op">=</span> <span class="st">"Y"</span>,</span>
 <span>  startPrdDe <span class="op">=</span> <span class="st">"2015"</span>, </span>
-<span>  endPrdDe <span class="op">=</span> <span class="st">"2022"</span>, </span>
+<span>  endPrdDe <span class="op">=</span> <span class="st">"20231101"</span>, </span>
 <span>  objL1 <span class="op">=</span> <span class="va">region_code</span>, </span>
 <span>  objL2 <span class="op">=</span> <span class="st">"ALL"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_length.html">str_length</a></span><span class="op">(</span><span class="va">C2</span><span class="op">)</span> <span class="op">==</span> <span class="fl">3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1303,8 +1303,8 @@ Tip
 <span>  <span class="fu"><a href="http://echarts4r.john-coene.com/reference/e_line.html">e_line</a></span><span class="op">(</span><span class="va">index</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="http://echarts4r.john-coene.com/reference/e-tooltip.html">e_tooltip</a></span><span class="op">(</span>trigger <span class="op">=</span> <span class="st">"axis"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="echarts4r html-widget html-fill-item" id="htmlwidget-686ad09245d99284f28c" style="width:100%;height:500px;"></div>
-<script type="application/json" data-for="htmlwidget-686ad09245d99284f28c">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true}],"xAxis":[{"data":["2015","2016","2017","2018","2019","2020","2021","2022"],"type":"category","boundaryGap":true}],"legend":{"data":["종로구"]},"series":[{"data":[{"value":["2015","1.1114206"]},{"value":["2016","1.0766989"]},{"value":["2017","1.0761595"]},{"value":["2018","1.0902399"]},{"value":["2019","1.0563815"]},{"value":["2020","0.9858794"]},{"value":["2021","0.9728141"]},{"value":["2022","0.9651754"]}],"yAxisIndex":0,"xAxisIndex":0,"name":"종로구","type":"line","coordinateSystem":"cartesian2d"}],"tooltip":{"trigger":"axis"}},"dispose":true},"evals":[],"jsHooks":[]}</script>
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-7bb2a1bd7e6d9248a572" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-7bb2a1bd7e6d9248a572">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true}],"xAxis":[{"data":["2015","2016","2017","2018","2019","2020","2021","2022","2023"],"type":"category","boundaryGap":true}],"legend":{"data":["종로구"]},"series":[{"data":[{"value":["2015","1.1114206"]},{"value":["2016","1.0766989"]},{"value":["2017","1.0761595"]},{"value":["2018","1.0902399"]},{"value":["2019","1.0563815"]},{"value":["2020","0.9858794"]},{"value":["2021","0.9728141"]},{"value":["2022","0.9651754"]},{"value":["2023","0.9324705"]}],"yAxisIndex":0,"xAxisIndex":0,"name":"종로구","type":"line","coordinateSystem":"cartesian2d"}],"tooltip":{"trigger":"axis"}},"dispose":true},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>이 모든 과정을 함수로 만들고, Base R의 <code>read_line()</code> 함수를 활용하면 초보적인 상호작용형 도구를 만들 수 있다.</p>
@@ -1428,11 +1428,11 @@ Tip
 <pre><code># A tibble: 5 × 5
   title                                   originallink link  description pubDate
   &lt;chr&gt;                                   &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;  
-1 12월부터 농지에 체류형 쉼터 설치 허용   https://www… http… "농촌 &lt;b&gt;…  Fri, 0…
-2 '행정통합' vs '자치권 강화' 강원자치도… https://www… http… "지역&lt;b&gt;소… Fri, 0…
-3 신안군 정원수협동조합 '매니페스토 경진… https://new… http… "협동조합…  Fri, 0…
-4 윤병태 나주시장, 이상민 행안부 장관과 … https://new… http… "그러면서 … Fri, 0…
-5 심재국 평창군수 세종청사서 지역현안 국… http://www.… http… "이 날 심 … Fri, 0…</code></pre>
+1 태안군, 상반기 '참 했어요' 행정 5선은?  http://www.… http… "35년 만에… Fri, 0…
+2 [강슐랭] 미식의 나라 일본에서 배운다 1… http://www.… http… "한양대 국… Fri, 0…
+3 '곡성형 교육생태계 구축'매니페스토 우…  http://www.… http… "아이부터 … Fri, 0…
+4 &amp;lt;김기록 법무사의 쉬운 경매&amp;gt; 소액… https://www… http… "그런데 을… Fri, 0…
+5 창녕군, 교육발전특구 시범지역 2차 공모… http://www.… http… "이번에 지… Fri, 0…</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -2100,7 +2100,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </ul>
 </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","selector":".lightbox","descPosition":"bottom","closeEffect":"zoom"});
+</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
