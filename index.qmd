@@ -40,7 +40,9 @@ bibliography: references.bib
 
 -   Irizarry, Rafael A. 2024. [*Introduction to Data Science: Statistics and Prediction Algorithms Through Case Studies*](https://rafalab.dfci.harvard.edu/dsbook-part-2/). Boca Raton: CRC Press.
 
--   Irizarry, Rafael A. 2020. [*Introduction to Data Science: Data Analysis and Prediction Algorithms with R*](https://rafalab.dfci.harvard.edu/dsbook/). Boca Raton: CRC Press, Taylor & Francis Group.
+-   Irizarry, Rafael A. 2020. [*Introduction to Data Science: Data Analysis and Prediction Algorithms with R*](https://rafalab.dfci.harvard.edu/dsbook/). Boca Raton: CRC Press.
+
+-   Alexander, R., 2023, [*Telling Stories with Data: With Applications in R*](https://tellingstorieswithdata.com/), Boca Raton: CRC Press.
 
 -   Grolemund, Garrett. 2014. [*Hands-On Programming with R: Write Your Own Functions and Simulations*](https://rstudio-education.github.io/hopr/index.html). O’Reilly Media, Inc..
 
