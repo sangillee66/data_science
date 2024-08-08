@@ -106,7 +106,7 @@ datatable(gapminder)
 `datatable` 함수의 `class` 아규먼트를 통해 테이블의 외관을 바꿀 수 있다. 다음과 같은 옵션이 가능하다.
 
 | Class name     | Description                                                          |
-|---------------------|---------------------------------------------------|
+|-----------------------|-------------------------------------------------|
 | `display`      | `stripe`, `hover`, `row-border`, `order-column`을 동시 적용한 디폴트 |
 | `cell-border`  | 모든 셀의 상하좌우에 경계선 표시                                     |
 | `compact`      | 여백 축소                                                            |
@@ -173,7 +173,7 @@ datatable(gapminder, filter = "top",
           options = list(
             pageLength = 5,
             autoWidth = TRUE,
-            dom = "Bftip",
+            dom = "Bfrtip",
             buttons = c("copy", "excel", "pdf", "print")
           ))
 ```
@@ -507,9 +507,7 @@ leaflet(world_data) |>
 우리나라 시군구 단위의 인구소멸위험지수에 대한 지도를 반응형으로 만들어 본다. 여기서는 `tmap`을 활용한다. 해당 시군구 위에 클릭하면 지역소멸위험지수가 나타난다.
 
 ```{r}
-class_color <- c("1" = "#d7191c", "2" = "#fdae61",
-                 "3" = "#ffffbf", "4" = "#a6d96a", 
-                 "5" = "#1a9641")
+class_color <- c("#d7191c", "#fdae61", "#ffffbf", "#a6d96a", "#1a9641")
 sigungu_data <- sigungu_data |> 
   mutate(
     index = as.numeric(index)
