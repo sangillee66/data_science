@@ -62,7 +62,7 @@ editor: visual
 ## Relational and logical operators {.scrollable .smaller}
 
 | Type          | Operator    | Condition                                       |
-|------------------|------------------|-------------------------------------|
+|---------------|-------------|-------------------------------------------------|
 | Relational    | `x < y`     | Where `x` less than `y`                         |
 |               | `x > y`     | Where `x` greater than `y`                      |
 |               | `x <= y`    | Where `x` less than or equal to `y`             |
