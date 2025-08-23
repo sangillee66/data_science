@@ -44,9 +44,11 @@ library(gapminder)
 gapminder
 ```
 
-## 행 함수
+## 단일 테이블 조작
 
-### `filter()` 함수
+### 행 함수
+
+#### `filter()` 함수
 
 특정 열(변수)과 관련된 조건을 만족하는 행을 선정한다. 행의 길이가 준다.
 
@@ -65,7 +67,7 @@ gapminder |>
   filter(year == 2007 & (lifeExp > 82 | gdpPercap > 40000))
 ```
 
-### `slice()` 함수
+#### `slice()` 함수
 
 `filter()` 함수와 마찬가지로 행의 숫자를 줄인다. `slice()` 함수 자체 보다는 `slice_head()`, `slice_tail()`, `slice_max()`, `slice_min()`과 같은 패밀리 함수가 더 널리 사용된다. 그런데 이 함수들은 작동 방식에 따라 두 가지로 구분된다.
 
@@ -114,7 +116,7 @@ gapminder |>
 `slice` 함수는 데이터 프레임이 적용되는 것으로 모두 데이터 프레임을 산출한다. 그런데 유사한 작업을 벡터에 적용하는 함수들이 존재한다. `slice_head()`, `slice_tail()`, `slice()`에 대응하는 `dplyr` 벡터 함수로 `first()`, `last()`, `nth()`가 있다. 그런데 후자의 함수를 벡터가 아닌 데이터 프레임이 적용하면 slice 함수와 동일한 결과가 산출된다.
 :::
 
-### `arrange()` 함수
+#### `arrange()` 함수
 
 특정 열(변수)과 관련된 조건에 의거해 행의 순서를 바꾼다. 행의 길이에는 변화가 없다.
 
@@ -130,7 +132,7 @@ gapminder |>
   arrange(lifeExp, desc(year))
 ```
 
-### `distinct()` 함수
+#### `distinct()` 함수
 
 특정 열(변수)에 의거해 중복이 없이 고유한 행만을 골라낸다. 행의 길이가 준다.
 
@@ -148,9 +150,9 @@ gapminder |>
   distinct(continent, .keep_all = TRUE)
 ```
 
-## 열 함수
+### 열 함수
 
-### `select()` 함수
+#### `select()` 함수
 
 열(변수)의 일부를 선택한다. 열의 길이가 준다.
 
@@ -173,7 +175,7 @@ gapminder |>
   select(starts_with("c"))
 ```
 
-### `mutate()` 함수
+#### `mutate()` 함수
 
 기존의 열(변수)에 기반하여 새로운 변수를 생성한다. 열의 길이가 늘어난다.
 
@@ -210,7 +212,7 @@ gapminder |>
 -   cumu_dist(): 백분위수(percentile)을 계산해 주는데, 해당 값보다 작거나 같은 값의 개수를 전체 개수로 나눈값을 산출한다.
 :::
 
-### `rename()` 함수
+#### `rename()` 함수
 
 변수의 이름을 바꾼다. 열의 길이에는 변화가 없다. `=` 부호의 왼쪽에 있는 것이 새로운 변수명이다.
 
@@ -231,7 +233,7 @@ gapminder |>
   )
 ```
 
-### `relocate()` 함수
+#### `relocate()` 함수
 
 변수의 위치를 바꾼다. 열의 길이에는 변화가 없다. 기입한 변수들이 맨 앞으로 이동한다.
 
@@ -247,9 +249,13 @@ gapminder |>
   relocate(pop, .before = lifeExp )
 ```
 
-## 그룹 함수
+#### `pull()` 함수
 
-### `group_by()` 함수
+데이터 프레임의 한 컬럼을 벡터로 추출한다.
+
+### 그룹 함수
+
+#### `group_by()` 함수
 
 특정 범주 열(변수)에 의거해 행을 분할한다. 행의 길이는 변하지 않는다.
 
@@ -267,7 +273,7 @@ gapminder |>
   group_by(year, continent)
 ```
 
-### `summarize()` 함수
+#### `summarize()` 함수
 
 주어진 열(변수)에 대한 통계 요약값을 계산하고 그것으로 이루어진 새로운 데이터 프레임을 생성한다. 엄밀히 말해 기존 열(변수)을 변형한다기 보다는 기존 데이터 프레임으로부터 새로운 데이터 프레임을 생성한다고 볼 수 있다. `summarize()` 함수는 대부분의 경우 `group_by()` 함수와 함께 사용된다. 다음의 둘을 비교해 보라.
 
@@ -338,7 +344,7 @@ gapminder |>
   )
 ```
 
-### `count()` 함수
+#### `count()` 함수
 
 특정 범주 열(변수)에 의거한 빈도를 빠르게 계산해 준다. 빈도는 자동적으로 `n`이라는 이럼의 컬럼에 저장된다.
 
@@ -365,7 +371,7 @@ gapminder |>
   )
 ```
 
-### `across()` 함수
+#### `across()` 함수
 
 다수의 열(변수)에 동일한 함수를 적용할 수 있다.
 
@@ -444,7 +450,7 @@ gapminder |>
 
 `across()` 함수의 파생 함수로 `if_any()`와 `if_all()`이 있다. 두 함수 모두 매우 유용하지만 여기서는 다루지 않는다.
 
-### `c_across()` 함수
+#### `c_across()` 함수
 
 `group_by()` 함수와 `across()` 함수가 결합하는 것과 정반대로, `rowwise()` 함수와 `c_across()` 함수를 결합하며, 행별 통계값을 산출할 수 있다. 물론 여기서 `each_sd` 값은 아무런 의미가 없다. 행별로 수치형 변수(year, lifeExp, pop, gdpPercap)의 표준편차를 구한 것이다.
 
@@ -455,3 +461,89 @@ gapminder |>
     each_sd = sd(c_across(where(is.numeric)))
   )
 ```
+
+## 데이터 결합하기
+
+### 테이블 조인
+
+여기서는 데이트 프레임을 결합하여 새로운 데이터 프레임을 생성하는 과정에 대해 살펴본다. `tidyverse` 패키지에 포함되어 있는 `dplyr` 패키지는 다양한 종류의 조인(join) 함수를 제공한다.
+
+-   `left_join()`: 첫 번째 변수는 그대로 둔 상태에서 두 번째 변수를 결합함으로써 두 번째 변수의 열을 가져옴
+
+-   `right_join()`: 두 번째 변수는 그대로 둔 상태에서 첫 번째 변수를 결합함으로써 첫 번째 변수의 열을 가져옴
+
+-   `inner_join()`: 두 변수 모두에 존재하는 열을 취함
+
+-   `full_join()`: 최소한 한 변수에 존재하는 열을 모두 취함
+
+-   `semi_join()`: 첫 번째 변수의 행 중 두 번째 변수에 대응하는 행이 있는 것만 취함
+
+-   `anti_join()`: 첫 번째 변수의 행 중 두 번째 변수에 대응하는 행이 없는 것만 취함
+
+이들 중 `left_join()`이 가장 많이 사용되기 때문에 그것에 집중한다.
+
+#### `left_join()` 함수의 활용
+
+실습을 위해 [`nycflights13`](https://github.com/tidyverse/nycflights13) 패키지의 데이터를 사용한다. 이 패키지에는 다섯 개의 데이터 프레임이 포함되어 있다. 지난 번에는 첫 번째 데이터만 사용했다.
+
+-   `flights`: 2013년 NYC를 출발한 모든 항공기
+
+-   `weather`: 공항별 시간별 기상 상황
+
+-   `planes`: 항공기별 건조 정보
+
+-   `airports`: 공항명과 위치
+
+-   `airlines`: 항공사
+
+그리고 이 6개의 데이터 프레임은 @fig-nycflights13-1 처럼 공통키(common key)를 통해 서로 연결되어 있다.
+
+![`nycflights13` 데이터(<https://github.com/tidyverse/nycflights13>)](https://r4ds.hadley.nz/diagrams/relational.png){#fig-nycflights13-1}
+
+`flights` 데이터의 변수가 너무 많기 때문에 조인을 위한 공통키를 중심으로 변수를 줄인다.
+
+```{r}
+library(nycflights13)
+```
+
+```{r}
+flights2 <- flights |> 
+  select(year, time_hour, origin, dest, tailnum, carrier)
+flights2
+```
+
+`flights2` 데이터를 중심으로 나머지 4개의 데이터와 조인한다.
+
+```{r}
+airlines
+flights2 |>
+  left_join(airlines)
+```
+
+```{r}
+weather
+flights2 |> 
+  left_join(weather |> select(origin, time_hour, temp, wind_speed))
+```
+
+```{r}
+planes
+flights2 |> 
+  left_join(planes |> select(tailnum, type, engines, seats))
+```
+
+```{r}
+airports
+flights2 |> 
+  left_join(airports, join_by(origin == faa))
+```
+
+`airports`의 경우만 왜 `join_by()`라는 아규먼트가 사용되었는데, 이 경우에는 공통키의 이름이 동일하지 않기 때문이다. 즉, `flights2` 데이터의 origin 컬럼과 `airports` 데이터의 faa가 공통키임을 지정해 주어야 하는 것이다.
+
+### 테이블 결합
+
+여기에는 `bind_row()` 함수와 `bind_col()` 함수가 있다. 전자는 컬럼이 동일한 두 테이블을 상하로 연결하는 것이고, 후자는 행이 동일한 두 테이블을 좌우로 연결하는 것이다. `bind_row()`와 유사한 가능을 하는 파생 함수에 `intersect()`, `union()`, `setdiff()` 함수 등이 있다.
+
+#### `bind_row()` 함수
+
+#### `bind_col()` 함수

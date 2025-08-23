@@ -73,7 +73,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -382,31 +385,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
 <li><a href="#%EC%8B%A4%EC%8A%B5-%EA%B0%9C%EC%9A%94" id="toc-실습-개요" class="nav-link active" data-scroll-target="#%EC%8B%A4%EC%8A%B5-%EA%B0%9C%EC%9A%94">실습 개요</a></li>
   <li>
-<a href="#%ED%96%89-%ED%95%A8%EC%88%98" id="toc-행-함수" class="nav-link" data-scroll-target="#%ED%96%89-%ED%95%A8%EC%88%98"><span class="header-section-number">1</span> 행 함수</a>
+<a href="#%EB%8B%A8%EC%9D%BC-%ED%85%8C%EC%9D%B4%EB%B8%94-%EC%A1%B0%EC%9E%91" id="toc-단일-테이블-조작" class="nav-link" data-scroll-target="#%EB%8B%A8%EC%9D%BC-%ED%85%8C%EC%9D%B4%EB%B8%94-%EC%A1%B0%EC%9E%91"><span class="header-section-number">1</span> 단일 테이블 조작</a>
   <ul class="collapse">
-<li><a href="#filter-%ED%95%A8%EC%88%98" id="toc-filter-함수" class="nav-link" data-scroll-target="#filter-%ED%95%A8%EC%88%98"><span class="header-section-number">1.1</span> <code>filter()</code> 함수</a></li>
-  <li><a href="#slice-%ED%95%A8%EC%88%98" id="toc-slice-함수" class="nav-link" data-scroll-target="#slice-%ED%95%A8%EC%88%98"><span class="header-section-number">1.2</span> <code>slice()</code> 함수</a></li>
-  <li><a href="#arrange-%ED%95%A8%EC%88%98" id="toc-arrange-함수" class="nav-link" data-scroll-target="#arrange-%ED%95%A8%EC%88%98"><span class="header-section-number">1.3</span> <code>arrange()</code> 함수</a></li>
-  <li><a href="#distinct-%ED%95%A8%EC%88%98" id="toc-distinct-함수" class="nav-link" data-scroll-target="#distinct-%ED%95%A8%EC%88%98"><span class="header-section-number">1.4</span> <code>distinct()</code> 함수</a></li>
+<li><a href="#%ED%96%89-%ED%95%A8%EC%88%98" id="toc-행-함수" class="nav-link" data-scroll-target="#%ED%96%89-%ED%95%A8%EC%88%98"><span class="header-section-number">1.1</span> 행 함수</a></li>
+  <li><a href="#%EC%97%B4-%ED%95%A8%EC%88%98" id="toc-열-함수" class="nav-link" data-scroll-target="#%EC%97%B4-%ED%95%A8%EC%88%98"><span class="header-section-number">1.2</span> 열 함수</a></li>
+  <li><a href="#%EA%B7%B8%EB%A3%B9-%ED%95%A8%EC%88%98" id="toc-그룹-함수" class="nav-link" data-scroll-target="#%EA%B7%B8%EB%A3%B9-%ED%95%A8%EC%88%98"><span class="header-section-number">1.3</span> 그룹 함수</a></li>
   </ul>
 </li>
   <li>
-<a href="#%EC%97%B4-%ED%95%A8%EC%88%98" id="toc-열-함수" class="nav-link" data-scroll-target="#%EC%97%B4-%ED%95%A8%EC%88%98"><span class="header-section-number">2</span> 열 함수</a>
+<a href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B2%B0%ED%95%A9%ED%95%98%EA%B8%B0" id="toc-데이터-결합하기" class="nav-link" data-scroll-target="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B2%B0%ED%95%A9%ED%95%98%EA%B8%B0"><span class="header-section-number">2</span> 데이터 결합하기</a>
   <ul class="collapse">
-<li><a href="#select-%ED%95%A8%EC%88%98" id="toc-select-함수" class="nav-link" data-scroll-target="#select-%ED%95%A8%EC%88%98"><span class="header-section-number">2.1</span> <code>select()</code> 함수</a></li>
-  <li><a href="#mutate-%ED%95%A8%EC%88%98" id="toc-mutate-함수" class="nav-link" data-scroll-target="#mutate-%ED%95%A8%EC%88%98"><span class="header-section-number">2.2</span> <code>mutate()</code> 함수</a></li>
-  <li><a href="#rename-%ED%95%A8%EC%88%98" id="toc-rename-함수" class="nav-link" data-scroll-target="#rename-%ED%95%A8%EC%88%98"><span class="header-section-number">2.3</span> <code>rename()</code> 함수</a></li>
-  <li><a href="#relocate-%ED%95%A8%EC%88%98" id="toc-relocate-함수" class="nav-link" data-scroll-target="#relocate-%ED%95%A8%EC%88%98"><span class="header-section-number">2.4</span> <code>relocate()</code> 함수</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#%EA%B7%B8%EB%A3%B9-%ED%95%A8%EC%88%98" id="toc-그룹-함수" class="nav-link" data-scroll-target="#%EA%B7%B8%EB%A3%B9-%ED%95%A8%EC%88%98"><span class="header-section-number">3</span> 그룹 함수</a>
-  <ul class="collapse">
-<li><a href="#group_by-%ED%95%A8%EC%88%98" id="toc-group_by-함수" class="nav-link" data-scroll-target="#group_by-%ED%95%A8%EC%88%98"><span class="header-section-number">3.1</span> <code>group_by()</code> 함수</a></li>
-  <li><a href="#summarize-%ED%95%A8%EC%88%98" id="toc-summarize-함수" class="nav-link" data-scroll-target="#summarize-%ED%95%A8%EC%88%98"><span class="header-section-number">3.2</span> <code>summarize()</code> 함수</a></li>
-  <li><a href="#count-%ED%95%A8%EC%88%98" id="toc-count-함수" class="nav-link" data-scroll-target="#count-%ED%95%A8%EC%88%98"><span class="header-section-number">3.3</span> <code>count()</code> 함수</a></li>
-  <li><a href="#across-%ED%95%A8%EC%88%98" id="toc-across-함수" class="nav-link" data-scroll-target="#across-%ED%95%A8%EC%88%98"><span class="header-section-number">3.4</span> <code>across()</code> 함수</a></li>
-  <li><a href="#c_across-%ED%95%A8%EC%88%98" id="toc-c_across-함수" class="nav-link" data-scroll-target="#c_across-%ED%95%A8%EC%88%98"><span class="header-section-number">3.5</span> <code>c_across()</code> 함수</a></li>
+<li><a href="#%ED%85%8C%EC%9D%B4%EB%B8%94-%EC%A1%B0%EC%9D%B8" id="toc-테이블-조인" class="nav-link" data-scroll-target="#%ED%85%8C%EC%9D%B4%EB%B8%94-%EC%A1%B0%EC%9D%B8"><span class="header-section-number">2.1</span> 테이블 조인</a></li>
+  <li><a href="#%ED%85%8C%EC%9D%B4%EB%B8%94-%EA%B2%B0%ED%95%A9" id="toc-테이블-결합" class="nav-link" data-scroll-target="#%ED%85%8C%EC%9D%B4%EB%B8%94-%EA%B2%B0%ED%95%A9"><span class="header-section-number">2.2</span> 테이블 결합</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -431,7 +421,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 19, 2024</p>
+      <p class="date-modified">August 23, 2025</p>
     </div>
   </div>
     
@@ -472,10 +462,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 # ℹ 1,694 more rows</code></pre>
 </div>
 </div>
-</section><section id="행-함수" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="행-함수">
-<span class="header-section-number">1</span> 행 함수</h2>
-<section id="filter-함수" class="level3" data-number="1.1"><h3 data-number="1.1" class="anchored" data-anchor-id="filter-함수">
-<span class="header-section-number">1.1</span> <code>filter()</code> 함수</h3>
+</section><section id="단일-테이블-조작" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="단일-테이블-조작">
+<span class="header-section-number">1</span> 단일 테이블 조작</h2>
+<section id="행-함수" class="level3" data-number="1.1"><h3 data-number="1.1" class="anchored" data-anchor-id="행-함수">
+<span class="header-section-number">1.1</span> 행 함수</h3>
+<section id="filter-함수" class="level4" data-number="1.1.1"><h4 data-number="1.1.1" class="anchored" data-anchor-id="filter-함수">
+<span class="header-section-number">1.1.1</span> <code>filter()</code> 함수</h4>
 <p>특정 열(변수)과 관련된 조건을 만족하는 행을 선정한다. 행의 길이가 준다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
@@ -531,8 +523,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 7 United States    Americas   2007    78.2 301139947    42952.</code></pre>
 </div>
 </div>
-</section><section id="slice-함수" class="level3" data-number="1.2"><h3 data-number="1.2" class="anchored" data-anchor-id="slice-함수">
-<span class="header-section-number">1.2</span> <code>slice()</code> 함수</h3>
+</section><section id="slice-함수" class="level4" data-number="1.1.2"><h4 data-number="1.1.2" class="anchored" data-anchor-id="slice-함수">
+<span class="header-section-number">1.1.2</span> <code>slice()</code> 함수</h4>
 <p><code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> 함수와 마찬가지로 행의 숫자를 줄인다. <code><a href="https://dplyr.tidyverse.org/reference/slice.html">slice()</a></code> 함수 자체 보다는 <code><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head()</a></code>, <code><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_tail()</a></code>, <code><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_max()</a></code>, <code><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_min()</a></code>과 같은 패밀리 함수가 더 널리 사용된다. 그런데 이 함수들은 작동 방식에 따라 두 가지로 구분된다.</p>
 <ul>
 <li><p>특정 열(변수)과 관계 없이, 행의 위치에 의거해 행을 선정: <code><a href="https://dplyr.tidyverse.org/reference/slice.html">slice()</a></code>, <code><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head()</a></code>, <code><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_tail()</a></code></p></li>
@@ -626,8 +618,8 @@ Note
 <p><code>slice</code> 함수는 데이터 프레임이 적용되는 것으로 모두 데이터 프레임을 산출한다. 그런데 유사한 작업을 벡터에 적용하는 함수들이 존재한다. <code><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head()</a></code>, <code><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_tail()</a></code>, <code><a href="https://dplyr.tidyverse.org/reference/slice.html">slice()</a></code>에 대응하는 <code>dplyr</code> 벡터 함수로 <code><a href="https://dplyr.tidyverse.org/reference/nth.html">first()</a></code>, <code><a href="https://dplyr.tidyverse.org/reference/nth.html">last()</a></code>, <code><a href="https://dplyr.tidyverse.org/reference/nth.html">nth()</a></code>가 있다. 그런데 후자의 함수를 벡터가 아닌 데이터 프레임이 적용하면 slice 함수와 동일한 결과가 산출된다.</p>
 </div>
 </div>
-</section><section id="arrange-함수" class="level3" data-number="1.3"><h3 data-number="1.3" class="anchored" data-anchor-id="arrange-함수">
-<span class="header-section-number">1.3</span> <code>arrange()</code> 함수</h3>
+</section><section id="arrange-함수" class="level4" data-number="1.1.3"><h4 data-number="1.1.3" class="anchored" data-anchor-id="arrange-함수">
+<span class="header-section-number">1.1.3</span> <code>arrange()</code> 함수</h4>
 <p>특정 열(변수)과 관련된 조건에 의거해 행의 순서를 바꾼다. 행의 길이에는 변화가 없다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
@@ -670,8 +662,8 @@ Note
 # ℹ 1,694 more rows</code></pre>
 </div>
 </div>
-</section><section id="distinct-함수" class="level3" data-number="1.4"><h3 data-number="1.4" class="anchored" data-anchor-id="distinct-함수">
-<span class="header-section-number">1.4</span> <code>distinct()</code> 함수</h3>
+</section><section id="distinct-함수" class="level4" data-number="1.1.4"><h4 data-number="1.1.4" class="anchored" data-anchor-id="distinct-함수">
+<span class="header-section-number">1.1.4</span> <code>distinct()</code> 함수</h4>
 <p>특정 열(변수)에 의거해 중복이 없이 고유한 행만을 골라낸다. 행의 길이가 준다.</p>
 <p><code>gapminder</code> 데이터와 관련하여 다음의 코드는 어떤 정보를 우리에게 주는지 생각해 본다.</p>
 <div class="cell">
@@ -709,10 +701,10 @@ Note
 5 Australia   Oceania    1952    69.1  8691212    10040.</code></pre>
 </div>
 </div>
-</section></section><section id="열-함수" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="열-함수">
-<span class="header-section-number">2</span> 열 함수</h2>
-<section id="select-함수" class="level3" data-number="2.1"><h3 data-number="2.1" class="anchored" data-anchor-id="select-함수">
-<span class="header-section-number">2.1</span> <code>select()</code> 함수</h3>
+</section></section><section id="열-함수" class="level3" data-number="1.2"><h3 data-number="1.2" class="anchored" data-anchor-id="열-함수">
+<span class="header-section-number">1.2</span> 열 함수</h3>
+<section id="select-함수" class="level4" data-number="1.2.1"><h4 data-number="1.2.1" class="anchored" data-anchor-id="select-함수">
+<span class="header-section-number">1.2.1</span> <code>select()</code> 함수</h4>
 <p>열(변수)의 일부를 선택한다. 열의 길이가 준다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
@@ -776,8 +768,8 @@ Note
 # ℹ 1,694 more rows</code></pre>
 </div>
 </div>
-</section><section id="mutate-함수" class="level3" data-number="2.2"><h3 data-number="2.2" class="anchored" data-anchor-id="mutate-함수">
-<span class="header-section-number">2.2</span> <code>mutate()</code> 함수</h3>
+</section><section id="mutate-함수" class="level4" data-number="1.2.2"><h4 data-number="1.2.2" class="anchored" data-anchor-id="mutate-함수">
+<span class="header-section-number">1.2.2</span> <code>mutate()</code> 함수</h4>
 <p>기존의 열(변수)에 기반하여 새로운 변수를 생성한다. 열의 길이가 늘어난다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
@@ -847,8 +839,8 @@ Note
 </ul>
 </div>
 </div>
-</section><section id="rename-함수" class="level3" data-number="2.3"><h3 data-number="2.3" class="anchored" data-anchor-id="rename-함수">
-<span class="header-section-number">2.3</span> <code>rename()</code> 함수</h3>
+</section><section id="rename-함수" class="level4" data-number="1.2.3"><h4 data-number="1.2.3" class="anchored" data-anchor-id="rename-함수">
+<span class="header-section-number">1.2.3</span> <code>rename()</code> 함수</h4>
 <p>변수의 이름을 바꾼다. 열의 길이에는 변화가 없다. <code>=</code> 부호의 왼쪽에 있는 것이 새로운 변수명이다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb38"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
@@ -896,8 +888,8 @@ Note
 # ℹ 1,694 more rows</code></pre>
 </div>
 </div>
-</section><section id="relocate-함수" class="level3" data-number="2.4"><h3 data-number="2.4" class="anchored" data-anchor-id="relocate-함수">
-<span class="header-section-number">2.4</span> <code>relocate()</code> 함수</h3>
+</section><section id="relocate-함수" class="level4" data-number="1.2.4"><h4 data-number="1.2.4" class="anchored" data-anchor-id="relocate-함수">
+<span class="header-section-number">1.2.4</span> <code>relocate()</code> 함수</h4>
 <p>변수의 위치를 바꾼다. 열의 길이에는 변화가 없다. 기입한 변수들이 맨 앞으로 이동한다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb42"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
@@ -940,10 +932,13 @@ Note
 # ℹ 1,694 more rows</code></pre>
 </div>
 </div>
-</section></section><section id="그룹-함수" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="그룹-함수">
-<span class="header-section-number">3</span> 그룹 함수</h2>
-<section id="group_by-함수" class="level3" data-number="3.1"><h3 data-number="3.1" class="anchored" data-anchor-id="group_by-함수">
-<span class="header-section-number">3.1</span> <code>group_by()</code> 함수</h3>
+</section><section id="pull-함수" class="level4" data-number="1.2.5"><h4 data-number="1.2.5" class="anchored" data-anchor-id="pull-함수">
+<span class="header-section-number">1.2.5</span> <code>pull()</code> 함수</h4>
+<p>데이터 프레임의 한 컬럼을 벡터로 추출한다.</p>
+</section></section><section id="그룹-함수" class="level3" data-number="1.3"><h3 data-number="1.3" class="anchored" data-anchor-id="그룹-함수">
+<span class="header-section-number">1.3</span> 그룹 함수</h3>
+<section id="group_by-함수" class="level4" data-number="1.3.1"><h4 data-number="1.3.1" class="anchored" data-anchor-id="group_by-함수">
+<span class="header-section-number">1.3.1</span> <code>group_by()</code> 함수</h4>
 <p>특정 범주 열(변수)에 의거해 행을 분할한다. 행의 길이는 변하지 않는다.</p>
 <p>우선 하나의 범주 변수에 의거해 그룹화한다. 산출물을 보면 <code>year</code>에 의거해 행이 12개의 그룹으로 나누어졌음을 알 수 있다(두 번째 줄: Group: year [12]).</p>
 <div class="cell">
@@ -989,8 +984,8 @@ Note
 # ℹ 1,694 more rows</code></pre>
 </div>
 </div>
-</section><section id="summarize-함수" class="level3" data-number="3.2"><h3 data-number="3.2" class="anchored" data-anchor-id="summarize-함수">
-<span class="header-section-number">3.2</span> <code>summarize()</code> 함수</h3>
+</section><section id="summarize-함수" class="level4" data-number="1.3.2"><h4 data-number="1.3.2" class="anchored" data-anchor-id="summarize-함수">
+<span class="header-section-number">1.3.2</span> <code>summarize()</code> 함수</h4>
 <p>주어진 열(변수)에 대한 통계 요약값을 계산하고 그것으로 이루어진 새로운 데이터 프레임을 생성한다. 엄밀히 말해 기존 열(변수)을 변형한다기 보다는 기존 데이터 프레임으로부터 새로운 데이터 프레임을 생성한다고 볼 수 있다. <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize()</a></code> 함수는 대부분의 경우 <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> 함수와 함께 사용된다. 다음의 둘을 비교해 보라.</p>
 <div class="cell">
 <div class="sourceCode" id="cb50"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
@@ -1142,8 +1137,8 @@ Note
 # ℹ 50 more rows</code></pre>
 </div>
 </div>
-</section><section id="count-함수" class="level3" data-number="3.3"><h3 data-number="3.3" class="anchored" data-anchor-id="count-함수">
-<span class="header-section-number">3.3</span> <code>count()</code> 함수</h3>
+</section><section id="count-함수" class="level4" data-number="1.3.3"><h4 data-number="1.3.3" class="anchored" data-anchor-id="count-함수">
+<span class="header-section-number">1.3.3</span> <code>count()</code> 함수</h4>
 <p>특정 범주 열(변수)에 의거한 빈도를 빠르게 계산해 준다. 빈도는 자동적으로 <code>n</code>이라는 이럼의 컬럼에 저장된다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb63"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
@@ -1212,8 +1207,8 @@ Note
 # ℹ 50 more rows</code></pre>
 </div>
 </div>
-</section><section id="across-함수" class="level3" data-number="3.4"><h3 data-number="3.4" class="anchored" data-anchor-id="across-함수">
-<span class="header-section-number">3.4</span> <code>across()</code> 함수</h3>
+</section><section id="across-함수" class="level4" data-number="1.3.4"><h4 data-number="1.3.4" class="anchored" data-anchor-id="across-함수">
+<span class="header-section-number">1.3.4</span> <code>across()</code> 함수</h4>
 <p>다수의 열(변수)에 동일한 함수를 적용할 수 있다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb69"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
@@ -1378,8 +1373,8 @@ Note
 </div>
 </div>
 <p><code><a href="https://dplyr.tidyverse.org/reference/across.html">across()</a></code> 함수의 파생 함수로 <code><a href="https://dplyr.tidyverse.org/reference/across.html">if_any()</a></code>와 <code><a href="https://dplyr.tidyverse.org/reference/across.html">if_all()</a></code>이 있다. 두 함수 모두 매우 유용하지만 여기서는 다루지 않는다.</p>
-</section><section id="c_across-함수" class="level3" data-number="3.5"><h3 data-number="3.5" class="anchored" data-anchor-id="c_across-함수">
-<span class="header-section-number">3.5</span> <code>c_across()</code> 함수</h3>
+</section><section id="c_across-함수" class="level4" data-number="1.3.5"><h4 data-number="1.3.5" class="anchored" data-anchor-id="c_across-함수">
+<span class="header-section-number">1.3.5</span> <code>c_across()</code> 함수</h4>
 <p><code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> 함수와 <code><a href="https://dplyr.tidyverse.org/reference/across.html">across()</a></code> 함수가 결합하는 것과 정반대로, <code><a href="https://dplyr.tidyverse.org/reference/rowwise.html">rowwise()</a></code> 함수와 <code><a href="https://dplyr.tidyverse.org/reference/c_across.html">c_across()</a></code> 함수를 결합하며, 행별 통계값을 산출할 수 있다. 물론 여기서 <code>each_sd</code> 값은 아무런 의미가 없다. 행별로 수치형 변수(year, lifeExp, pop, gdpPercap)의 표준편차를 구한 것이다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb81"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
@@ -1405,9 +1400,235 @@ Note
 # ℹ 1,694 more rows</code></pre>
 </div>
 </div>
+</section></section></section><section id="데이터-결합하기" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="데이터-결합하기">
+<span class="header-section-number">2</span> 데이터 결합하기</h2>
+<section id="테이블-조인" class="level3" data-number="2.1"><h3 data-number="2.1" class="anchored" data-anchor-id="테이블-조인">
+<span class="header-section-number">2.1</span> 테이블 조인</h3>
+<p>여기서는 데이트 프레임을 결합하여 새로운 데이터 프레임을 생성하는 과정에 대해 살펴본다. <code>tidyverse</code> 패키지에 포함되어 있는 <code>dplyr</code> 패키지는 다양한 종류의 조인(join) 함수를 제공한다.</p>
+<ul>
+<li><p><code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join()</a></code>: 첫 번째 변수는 그대로 둔 상태에서 두 번째 변수를 결합함으로써 두 번째 변수의 열을 가져옴</p></li>
+<li><p><code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">right_join()</a></code>: 두 번째 변수는 그대로 둔 상태에서 첫 번째 변수를 결합함으로써 첫 번째 변수의 열을 가져옴</p></li>
+<li><p><code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join()</a></code>: 두 변수 모두에 존재하는 열을 취함</p></li>
+<li><p><code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">full_join()</a></code>: 최소한 한 변수에 존재하는 열을 모두 취함</p></li>
+<li><p><code><a href="https://dplyr.tidyverse.org/reference/filter-joins.html">semi_join()</a></code>: 첫 번째 변수의 행 중 두 번째 변수에 대응하는 행이 있는 것만 취함</p></li>
+<li><p><code><a href="https://dplyr.tidyverse.org/reference/filter-joins.html">anti_join()</a></code>: 첫 번째 변수의 행 중 두 번째 변수에 대응하는 행이 없는 것만 취함</p></li>
+</ul>
+<p>이들 중 <code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join()</a></code>이 가장 많이 사용되기 때문에 그것에 집중한다.</p>
+<section id="left_join-함수의-활용" class="level4" data-number="2.1.1"><h4 data-number="2.1.1" class="anchored" data-anchor-id="left_join-함수의-활용">
+<span class="header-section-number">2.1.1</span> <code>left_join()</code> 함수의 활용</h4>
+<p>실습을 위해 <a href="https://github.com/tidyverse/nycflights13"><code>nycflights13</code></a> 패키지의 데이터를 사용한다. 이 패키지에는 다섯 개의 데이터 프레임이 포함되어 있다. 지난 번에는 첫 번째 데이터만 사용했다.</p>
+<ul>
+<li><p><code>flights</code>: 2013년 NYC를 출발한 모든 항공기</p></li>
+<li><p><code>weather</code>: 공항별 시간별 기상 상황</p></li>
+<li><p><code>planes</code>: 항공기별 건조 정보</p></li>
+<li><p><code>airports</code>: 공항명과 위치</p></li>
+<li><p><code>airlines</code>: 항공사</p></li>
+</ul>
+<p>그리고 이 6개의 데이터 프레임은 <a href="#fig-nycflights13-1" class="quarto-xref">Figure&nbsp;1</a> 처럼 공통키(common key)를 통해 서로 연결되어 있다.</p>
+<div id="fig-nycflights13-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-nycflights13-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://r4ds.hadley.nz/diagrams/relational.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1"><img src="https://r4ds.hadley.nz/diagrams/relational.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nycflights13-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: <code>nycflights13</code> 데이터(<a href="https://github.com/tidyverse/nycflights13" class="uri">https://github.com/tidyverse/nycflights13</a>)
+</figcaption></figure>
+</div>
+<p><code>flights</code> 데이터의 변수가 너무 많기 때문에 조인을 위한 공통키를 중심으로 변수를 줄인다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb83"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/hadley/nycflights13">nycflights13</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb84"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">flights2</span> <span class="op">&lt;-</span> <span class="va">flights</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">time_hour</span>, <span class="va">origin</span>, <span class="va">dest</span>, <span class="va">tailnum</span>, <span class="va">carrier</span><span class="op">)</span></span>
+<span><span class="va">flights2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 336,776 × 6
+    year time_hour           origin dest  tailnum carrier
+   &lt;int&gt; &lt;dttm&gt;              &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  
+ 1  2013 2013-01-01 05:00:00 EWR    IAH   N14228  UA     
+ 2  2013 2013-01-01 05:00:00 LGA    IAH   N24211  UA     
+ 3  2013 2013-01-01 05:00:00 JFK    MIA   N619AA  AA     
+ 4  2013 2013-01-01 05:00:00 JFK    BQN   N804JB  B6     
+ 5  2013 2013-01-01 06:00:00 LGA    ATL   N668DN  DL     
+ 6  2013 2013-01-01 05:00:00 EWR    ORD   N39463  UA     
+ 7  2013 2013-01-01 06:00:00 EWR    FLL   N516JB  B6     
+ 8  2013 2013-01-01 06:00:00 LGA    IAD   N829AS  EV     
+ 9  2013 2013-01-01 06:00:00 JFK    MCO   N593JB  B6     
+10  2013 2013-01-01 06:00:00 LGA    ORD   N3ALAA  AA     
+# ℹ 336,766 more rows</code></pre>
+</div>
+</div>
+<p><code>flights2</code> 데이터를 중심으로 나머지 4개의 데이터와 조인한다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb86"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">airlines</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 16 × 2
+   carrier name                       
+   &lt;chr&gt;   &lt;chr&gt;                      
+ 1 9E      Endeavor Air Inc.          
+ 2 AA      American Airlines Inc.     
+ 3 AS      Alaska Airlines Inc.       
+ 4 B6      JetBlue Airways            
+ 5 DL      Delta Air Lines Inc.       
+ 6 EV      ExpressJet Airlines Inc.   
+ 7 F9      Frontier Airlines Inc.     
+ 8 FL      AirTran Airways Corporation
+ 9 HA      Hawaiian Airlines Inc.     
+10 MQ      Envoy Air                  
+11 OO      SkyWest Airlines Inc.      
+12 UA      United Air Lines Inc.      
+13 US      US Airways Inc.            
+14 VX      Virgin America             
+15 WN      Southwest Airlines Co.     
+16 YV      Mesa Airlines Inc.         </code></pre>
+</div>
+<div class="sourceCode" id="cb88"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">flights2</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">airlines</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 336,776 × 7
+    year time_hour           origin dest  tailnum carrier name                  
+   &lt;int&gt; &lt;dttm&gt;              &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;                 
+ 1  2013 2013-01-01 05:00:00 EWR    IAH   N14228  UA      United Air Lines Inc. 
+ 2  2013 2013-01-01 05:00:00 LGA    IAH   N24211  UA      United Air Lines Inc. 
+ 3  2013 2013-01-01 05:00:00 JFK    MIA   N619AA  AA      American Airlines Inc.
+ 4  2013 2013-01-01 05:00:00 JFK    BQN   N804JB  B6      JetBlue Airways       
+ 5  2013 2013-01-01 06:00:00 LGA    ATL   N668DN  DL      Delta Air Lines Inc.  
+ 6  2013 2013-01-01 05:00:00 EWR    ORD   N39463  UA      United Air Lines Inc. 
+ 7  2013 2013-01-01 06:00:00 EWR    FLL   N516JB  B6      JetBlue Airways       
+ 8  2013 2013-01-01 06:00:00 LGA    IAD   N829AS  EV      ExpressJet Airlines I…
+ 9  2013 2013-01-01 06:00:00 JFK    MCO   N593JB  B6      JetBlue Airways       
+10  2013 2013-01-01 06:00:00 LGA    ORD   N3ALAA  AA      American Airlines Inc.
+# ℹ 336,766 more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb90"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">weather</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 26,115 × 15
+   origin  year month   day  hour  temp  dewp humid wind_dir wind_speed
+   &lt;chr&gt;  &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;
+ 1 EWR     2013     1     1     1  39.0  26.1  59.4      270      10.4 
+ 2 EWR     2013     1     1     2  39.0  27.0  61.6      250       8.06
+ 3 EWR     2013     1     1     3  39.0  28.0  64.4      240      11.5 
+ 4 EWR     2013     1     1     4  39.9  28.0  62.2      250      12.7 
+ 5 EWR     2013     1     1     5  39.0  28.0  64.4      260      12.7 
+ 6 EWR     2013     1     1     6  37.9  28.0  67.2      240      11.5 
+ 7 EWR     2013     1     1     7  39.0  28.0  64.4      240      15.0 
+ 8 EWR     2013     1     1     8  39.9  28.0  62.2      250      10.4 
+ 9 EWR     2013     1     1     9  39.9  28.0  62.2      260      15.0 
+10 EWR     2013     1     1    10  41    28.0  59.6      260      13.8 
+# ℹ 26,105 more rows
+# ℹ 5 more variables: wind_gust &lt;dbl&gt;, precip &lt;dbl&gt;, pressure &lt;dbl&gt;,
+#   visib &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
+</div>
+<div class="sourceCode" id="cb92"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">flights2</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">weather</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">origin</span>, <span class="va">time_hour</span>, <span class="va">temp</span>, <span class="va">wind_speed</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 336,776 × 8
+    year time_hour           origin dest  tailnum carrier  temp wind_speed
+   &lt;int&gt; &lt;dttm&gt;              &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;dbl&gt;      &lt;dbl&gt;
+ 1  2013 2013-01-01 05:00:00 EWR    IAH   N14228  UA       39.0       12.7
+ 2  2013 2013-01-01 05:00:00 LGA    IAH   N24211  UA       39.9       15.0
+ 3  2013 2013-01-01 05:00:00 JFK    MIA   N619AA  AA       39.0       15.0
+ 4  2013 2013-01-01 05:00:00 JFK    BQN   N804JB  B6       39.0       15.0
+ 5  2013 2013-01-01 06:00:00 LGA    ATL   N668DN  DL       39.9       16.1
+ 6  2013 2013-01-01 05:00:00 EWR    ORD   N39463  UA       39.0       12.7
+ 7  2013 2013-01-01 06:00:00 EWR    FLL   N516JB  B6       37.9       11.5
+ 8  2013 2013-01-01 06:00:00 LGA    IAD   N829AS  EV       39.9       16.1
+ 9  2013 2013-01-01 06:00:00 JFK    MCO   N593JB  B6       37.9       13.8
+10  2013 2013-01-01 06:00:00 LGA    ORD   N3ALAA  AA       39.9       16.1
+# ℹ 336,766 more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb94"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">planes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3,322 × 9
+   tailnum  year type              manufacturer model engines seats speed engine
+   &lt;chr&gt;   &lt;int&gt; &lt;chr&gt;             &lt;chr&gt;        &lt;chr&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; 
+ 1 N10156   2004 Fixed wing multi… EMBRAER      EMB-…       2    55    NA Turbo…
+ 2 N102UW   1998 Fixed wing multi… AIRBUS INDU… A320…       2   182    NA Turbo…
+ 3 N103US   1999 Fixed wing multi… AIRBUS INDU… A320…       2   182    NA Turbo…
+ 4 N104UW   1999 Fixed wing multi… AIRBUS INDU… A320…       2   182    NA Turbo…
+ 5 N10575   2002 Fixed wing multi… EMBRAER      EMB-…       2    55    NA Turbo…
+ 6 N105UW   1999 Fixed wing multi… AIRBUS INDU… A320…       2   182    NA Turbo…
+ 7 N107US   1999 Fixed wing multi… AIRBUS INDU… A320…       2   182    NA Turbo…
+ 8 N108UW   1999 Fixed wing multi… AIRBUS INDU… A320…       2   182    NA Turbo…
+ 9 N109UW   1999 Fixed wing multi… AIRBUS INDU… A320…       2   182    NA Turbo…
+10 N110UW   1999 Fixed wing multi… AIRBUS INDU… A320…       2   182    NA Turbo…
+# ℹ 3,312 more rows</code></pre>
+</div>
+<div class="sourceCode" id="cb96"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">flights2</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">planes</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">tailnum</span>, <span class="va">type</span>, <span class="va">engines</span>, <span class="va">seats</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 336,776 × 9
+    year time_hour           origin dest  tailnum carrier type     engines seats
+   &lt;int&gt; &lt;dttm&gt;              &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;      &lt;int&gt; &lt;int&gt;
+ 1  2013 2013-01-01 05:00:00 EWR    IAH   N14228  UA      Fixed w…       2   149
+ 2  2013 2013-01-01 05:00:00 LGA    IAH   N24211  UA      Fixed w…       2   149
+ 3  2013 2013-01-01 05:00:00 JFK    MIA   N619AA  AA      Fixed w…       2   178
+ 4  2013 2013-01-01 05:00:00 JFK    BQN   N804JB  B6      Fixed w…       2   200
+ 5  2013 2013-01-01 06:00:00 LGA    ATL   N668DN  DL      Fixed w…       2   178
+ 6  2013 2013-01-01 05:00:00 EWR    ORD   N39463  UA      Fixed w…       2   191
+ 7  2013 2013-01-01 06:00:00 EWR    FLL   N516JB  B6      Fixed w…       2   200
+ 8  2013 2013-01-01 06:00:00 LGA    IAD   N829AS  EV      Fixed w…       2    55
+ 9  2013 2013-01-01 06:00:00 JFK    MCO   N593JB  B6      Fixed w…       2   200
+10  2013 2013-01-01 06:00:00 LGA    ORD   N3ALAA  AA      &lt;NA&gt;          NA    NA
+# ℹ 336,766 more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb98"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">airports</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,458 × 8
+   faa   name                             lat    lon   alt    tz dst   tzone    
+   &lt;chr&gt; &lt;chr&gt;                          &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;    
+ 1 04G   Lansdowne Airport               41.1  -80.6  1044    -5 A     America/…
+ 2 06A   Moton Field Municipal Airport   32.5  -85.7   264    -6 A     America/…
+ 3 06C   Schaumburg Regional             42.0  -88.1   801    -6 A     America/…
+ 4 06N   Randall Airport                 41.4  -74.4   523    -5 A     America/…
+ 5 09J   Jekyll Island Airport           31.1  -81.4    11    -5 A     America/…
+ 6 0A9   Elizabethton Municipal Airport  36.4  -82.2  1593    -5 A     America/…
+ 7 0G6   Williams County Airport         41.5  -84.5   730    -5 A     America/…
+ 8 0G7   Finger Lakes Regional Airport   42.9  -76.8   492    -5 A     America/…
+ 9 0P2   Shoestring Aviation Airfield    39.8  -76.6  1000    -5 U     America/…
+10 0S9   Jefferson County Intl           48.1 -123.    108    -8 A     America/…
+# ℹ 1,448 more rows</code></pre>
+</div>
+<div class="sourceCode" id="cb100"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">flights2</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">airports</span>, <span class="fu"><a href="https://dplyr.tidyverse.org/reference/join_by.html">join_by</a></span><span class="op">(</span><span class="va">origin</span> <span class="op">==</span> <span class="va">faa</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 336,776 × 13
+    year time_hour           origin dest  tailnum carrier name         lat   lon
+   &lt;int&gt; &lt;dttm&gt;              &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
+ 1  2013 2013-01-01 05:00:00 EWR    IAH   N14228  UA      Newark Li…  40.7 -74.2
+ 2  2013 2013-01-01 05:00:00 LGA    IAH   N24211  UA      La Guardia  40.8 -73.9
+ 3  2013 2013-01-01 05:00:00 JFK    MIA   N619AA  AA      John F Ke…  40.6 -73.8
+ 4  2013 2013-01-01 05:00:00 JFK    BQN   N804JB  B6      John F Ke…  40.6 -73.8
+ 5  2013 2013-01-01 06:00:00 LGA    ATL   N668DN  DL      La Guardia  40.8 -73.9
+ 6  2013 2013-01-01 05:00:00 EWR    ORD   N39463  UA      Newark Li…  40.7 -74.2
+ 7  2013 2013-01-01 06:00:00 EWR    FLL   N516JB  B6      Newark Li…  40.7 -74.2
+ 8  2013 2013-01-01 06:00:00 LGA    IAD   N829AS  EV      La Guardia  40.8 -73.9
+ 9  2013 2013-01-01 06:00:00 JFK    MCO   N593JB  B6      John F Ke…  40.6 -73.8
+10  2013 2013-01-01 06:00:00 LGA    ORD   N3ALAA  AA      La Guardia  40.8 -73.9
+# ℹ 336,766 more rows
+# ℹ 4 more variables: alt &lt;dbl&gt;, tz &lt;dbl&gt;, dst &lt;chr&gt;, tzone &lt;chr&gt;</code></pre>
+</div>
+</div>
+<p><code>airports</code>의 경우만 왜 <code><a href="https://dplyr.tidyverse.org/reference/join_by.html">join_by()</a></code>라는 아규먼트가 사용되었는데, 이 경우에는 공통키의 이름이 동일하지 않기 때문이다. 즉, <code>flights2</code> 데이터의 origin 컬럼과 <code>airports</code> 데이터의 faa가 공통키임을 지정해 주어야 하는 것이다.</p>
+</section></section><section id="테이블-결합" class="level3" data-number="2.2"><h3 data-number="2.2" class="anchored" data-anchor-id="테이블-결합">
+<span class="header-section-number">2.2</span> 테이블 결합</h3>
+<p>여기에는 <code>bind_row()</code> 함수와 <code>bind_col()</code> 함수가 있다. 전자는 컬럼이 동일한 두 테이블을 상하로 연결하는 것이고, 후자는 행이 동일한 두 테이블을 좌우로 연결하는 것이다. <code>bind_row()</code>와 유사한 가능을 하는 파생 함수에 <code><a href="https://generics.r-lib.org/reference/setops.html">intersect()</a></code>, <code><a href="https://generics.r-lib.org/reference/setops.html">union()</a></code>, <code><a href="https://generics.r-lib.org/reference/setops.html">setdiff()</a></code> 함수 등이 있다.</p>
+<section id="bind_row-함수" class="level4" data-number="2.2.1"><h4 data-number="2.2.1" class="anchored" data-anchor-id="bind_row-함수">
+<span class="header-section-number">2.2.1</span> <code>bind_row()</code> 함수</h4>
+</section><section id="bind_col-함수" class="level4" data-number="2.2.2"><h4 data-number="2.2.2" class="anchored" data-anchor-id="bind_col-함수">
+<span class="header-section-number">2.2.2</span> <code>bind_col()</code> 함수</h4>
 
 
-</section></section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-1">Figure&nbsp;1: <code>nycflights13</code> 데이터(<a href="https://github.com/tidyverse/nycflights13" class="uri">https://github.com/tidyverse/nycflights13</a>)</span>
+</div>
+</section></section></section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1979,7 +2200,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </ul>
 </div>
   </div>
-</footer>
+</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false,"closeEffect":"zoom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 </body></html>

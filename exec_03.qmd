@@ -327,6 +327,23 @@ write_rds(wpp_2022, "wpp_2022.rds")
 read_rds("wpp_2022.rds")
 ```
 
+### 컬럼 파싱 함수들
+
+컬럼의 내용 중 특정한 유형의 정보만 추출하는 것을 파싱(parsing)이라고 그것을 행하는 것을 파서(parser)라고 한다. 기존의 벡터를 파싱하는 경우와 데이터를 읽어들이는 과정에서 파싱을 하는 두 경우에 대해 쌍둥이 함수가 존재한다.
+
+| 기존 벡터           | 새로운 벡터       |
+|---------------------|-------------------|
+| `parse_logical()`   | `col_logical()`   |
+| `parse_integer()`   | `col_integer()`   |
+| `parse_double()`    | `col_double()`    |
+| `parse_character()` | `col_character()` |
+| `parse_datetime()`  | `col_datetime()`  |
+| `parse_date()`      | `col_date()`      |
+| `parse_time()`      | `col_time()`      |
+| `parse_factor()`    | `col_factor()`    |
+| `parse_guess()`     | `col_guess()`     |
+| `parse_number()`    | `col_number()`    |
+
 ## 데이터 정리하기
 
 데이터 정리하기는 지저분한 데이터(messy data)를 정돈된 데이터(tidy data)로 만드는 과정을 의미한다. 정돈된 데이터는 다음의 세 가지 속성을 갖는다.
@@ -578,81 +595,3 @@ e_tibble |> complete(x1, x2, fill = list(x3 = 0))
 ```{r}
 e_tibble |> expand(x1, x2)
 ```
-
-### 데이터 결합하기
-
-#### 조인(join)의 종류
-
-여기서는 데이트 프레임을 결합하여 새로운 데이터 프레임을 생성하는 과정에 대해 살펴본다. `tidyverse` 패키지에 포함되어 있는 `dplyr` 패키지는 다양한 종류의 조인(join) 함수를 제공한다.
-
--   `left_join()`: 첫 번째 변수는 그대로 둔 상태에서 두 번째 변수를 결합함으로써 두 번째 변수의 열을 가져옴
-
--   `right_join()`: 두 번째 변수는 그대로 둔 상태에서 첫 번째 변수를 결합함으로써 첫 번째 변수의 열을 가져옴
-
--   `inner_join()`: 두 변수 모두에 존재하는 열을 취함
-
--   `full_join()`: 최소한 한 변수에 존재하는 열을 모두 취함
-
--   `semi_join()`: 첫 번째 변수의 행 중 두 번째 변수에 대응하는 행이 있는 것만 취함
-
--   `anti_join()`: 첫 번째 변수의 행 중 두 번째 변수에 대응하는 행이 없는 것만 취함
-
-이들 중 `left_join()`이 가장 많이 사용되기 때문에 그것에 집중한다.
-
-#### `left_join()` 함수의 활용
-
-실습을 위해 [`nycflights13`](https://github.com/tidyverse/nycflights13) 패키지의 데이터를 사용한다. 이 패키지에는 다섯 개의 데이터 프레임이 포함되어 있다. 지난 번에는 첫 번째 데이터만 사용했다.
-
--   `flights`: 2013년 NYC를 출발한 모든 항공기
-
--   `weather`: 공항별 시간별 기상 상황
-
--   `planes`: 항공기별 건조 정보
-
--   `airports`: 공항명과 위치
-
--   `airlines`: 항공사
-
-그리고 이 6개의 데이터 프레임은 @fig-nycflights13-1 처럼 공통키(common key)를 통해 서로 연결되어 있다.
-
-![`nycflights13` 데이터(<https://github.com/tidyverse/nycflights13>)](https://r4ds.hadley.nz/diagrams/relational.png){#fig-nycflights13-1}
-
-`flights` 데이터의 변수가 너무 많기 때문에 조인을 위한 공통키를 중심으로 변수를 줄인다.
-
-```{r}
-library(nycflights13)
-```
-
-```{r}
-flights2 <- flights |> 
-  select(year, time_hour, origin, dest, tailnum, carrier)
-flights2
-```
-
-`flights2` 데이터를 중심으로 나머지 4개의 데이터와 조인한다.
-
-```{r}
-airlines
-flights2 |>
-  left_join(airlines)
-```
-
-```{r}
-weather
-flights2 |> 
-  left_join(weather |> select(origin, time_hour, temp, wind_speed))
-```
-
-```{r}
-planes
-flights2 |> 
-  left_join(planes |> select(tailnum, type, engines, seats))
-```
-
-```{r}
-airports
-flights2 |> 
-  left_join(airports, join_by(origin == faa))
-```
-
-`airports`의 경우만 왜 `join_by()`라는 아규먼트가 사용되었는데, 이 경우에는 공통키의 이름이 동일하지 않기 때문이다. 즉, `flights2` 데이터의 origin 컬럼과 `airports` 데이터의 faa가 공통키임을 지정해 주어야 하는 것이다.
