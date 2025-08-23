@@ -8,17 +8,18 @@ bibliography: references.bib
 
 ## 웹사이트의 목적
 
--   이 웹사이트는 데이터사이언스( Data Science)를 위한 개인 공부방으로 디자인되었다 .
+-   이 웹사이트는 데이터사이언스(Data Science)를 위한 개인 공부방으로 디자인되었다 .
 
--   하지만 서울대학교에서 내가 개설한 데이터 사인언스 관련 교과목의 보충 웹사이트로 활용될 수도 있다.
+-   하지만 서울대학교에서 내가 개설한 데이터사인언스 관련 교과목의 보충 웹사이트로 활용될 수도 있다.
 
-    -   2024/1 M3450.001400 [**AI 융합교육을 위한 인문사회 컨텐츠 설계**](https://sangillee.snu.ac.kr/classes/2024_1_AI_Edu.html) (Designing Human and Social Education Contents for AI Convergence Education)
+    -   2025/2 M3449.000300 [AI 융합교육을 위한 인문사회 콘텐츠 설계](https://sangillee.snu.ac.kr/lectures.html) (Designing Human and Social Education Contents for AI Convergence Education)
+    -   2024/1 M3450.001400 [AI 융합교육을 위한 인문사회 컨텐츠 설계](https://sangillee.snu.ac.kr/classes/2024_1_AI_Edu.html) (Designing Human and Social Education Contents for AI Convergence Education)
 
 ## 웹사이트의 구조
 
 -   데이터 사이언스 관련 내용을 모두 10개의 하위 섹션으로 나누었다.
 
--   각 하위 섹션은 세 개의 컨텐츠를 갖는다.
+-   각 하위 섹션은 세 개의 콘텐츠를 갖는다.
 
     -   내용 강의
 
@@ -32,7 +33,7 @@ bibliography: references.bib
 
     -   이 사이트의 내용은 위의 책에 많은 토대를 두고 있다.
 
--   Wickham, Hadley, and Garrett Grolemund. 2016. [*R for Data Science: Import, Tidy, Transform, Visualize, and Model Data*](https://r4ds.had.co.nz/index.html). 1st edition. Sebastopol, CA: O’Reilly. (김설기ㆍ최혜민 옮김, 2019, [R을 활용한 데이터 과학: 데이터 불러오기, 정리하기, 변형하기, 시각화하기, 모델링하기](https://www.yes24.com/Product/Goods/67856488), 1판, 서울: 인사이트.)
+-   Wickham, Hadley, and Garrett Grolemund. 2016. [*R for Data Science: Import, Tidy, Transform, Visualize, and Model Data*](https://r4ds.had.co.nz/). 1st edition. Sebastopol, CA: O’Reilly. (김설기ㆍ최혜민 옮김, 2019, [R을 활용한 데이터 과학: 데이터 불러오기, 정리하기, 변형하기, 시각화하기, 모델링하기](https://www.yes24.com/Product/Goods/67856488), 1판, 서울: 인사이트.)
 
 -   Bonnell, Jerry, and Mitsunori Ogihara. 2023. [*Exploring Data Science with R and the Tidyverse*](https://ds4world.cs.miami.edu/). 1st edition. Chapman; Hall/CRC.
 
@@ -44,13 +45,13 @@ bibliography: references.bib
 
 -   Alexander, R., 2023, [*Telling Stories with Data: With Applications in R*](https://tellingstorieswithdata.com/), Boca Raton: CRC Press.
 
--   Grolemund, Garrett. 2014. [*Hands-On Programming with R: Write Your Own Functions and Simulations*](https://rstudio-education.github.io/hopr/index.html). O’Reilly Media, Inc..
+-   Grolemund, Garrett. 2014. [*Hands-On Programming with R: Write Your Own Functions and Simulations*](https://rstudio-education.github.io/hopr/). O’Reilly Media, Inc..
 
--   Stauffer, R., Chimiak-Opoka, Joanna, Rodríguez-R, Luis Miguel, Simon, Thorsten, Zeileis, Achim, 2024, [*Introduction to Programming with R*](https://discdown.org/rprogramming/index.html), 웹북
+-   Stauffer, R., Chimiak-Opoka, Joanna, Rodríguez-R, Luis Miguel, Simon, Thorsten, Zeileis, Achim, 2024, [*Introduction to Programming with R*](https://discdown.org/rprogramming/), 웹북
 
 -   Douglas, Alex, Roos, Deon, Mancini, Francesca, Couto Ana, Lusseau, David, 2024, [*An Introduction to R*](https://intro2r.com/), 웹북
 
--   Batra, Neale, ed., 2024, [*The Epidemiologist R Handbook*](https://epirhandbook.com/en/index.html), 웹북
+-   Batra, Neale, ed., 2024, [*The Epidemiologist R Handbook*](https://epirhandbook.com/en/), 웹북
 
 -   Doser, Jeffrey W., Finley, Andrew O., Melfi, Vince, 2022, [*R Programming for Data Sciences*](https://www.jeffdoser.com/files/for875/_book/), 웹북
 
@@ -64,13 +65,13 @@ bibliography: references.bib
 
 -   [*Introduction to R*](https://r-unimelb.gitbook.io/rbook), 웹북
 
--   [*Data Analysis and Visualization in R for Ecologists*](https://datacarpentry.org/R-ecology-lesson/index.html), 웹북
+-   [*Data Analysis and Visualization in R for Ecologists*](https://datacarpentry.org/R-ecology-lesson/), 웹북
 
 -   [*R for Epidemiology*](https://www.r4epi.com/), 웹북
 
 -   RStudio IDE User Guide (<https://docs.posit.co/ide/user/>)
 
--   한국알사용자회, [데이터 과학을 지탱하는 기본기](https://r2bit.com/book_analytics/index.html), 웹북
+-   한국알사용자회, [데이터 과학을 지탱하는 기본기](https://r2bit.com/book_analytics/), 웹북
 
 -   한국알사용자회, [데이터 시각화](https://r2bit.com/book_viz/), 웹북
 

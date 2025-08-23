@@ -71,8 +71,8 @@ website:
 format:
   html:
     theme: 
-      light: flatly
-      dark: darkly
+      light: [flatly, custom_basic_pretendard.scss]
+      dark: [darkly, custom_basic_pretendard.scss]
     css: styles.css
     toc: true
 #    embed-resources: true
