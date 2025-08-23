@@ -331,18 +331,22 @@ read_rds("wpp_2022.rds")
 
 컬럼의 내용 중 특정한 유형의 정보만 추출하는 것을 파싱(parsing)이라고 그것을 행하는 것을 파서(parser)라고 한다. 기존의 벡터를 파싱하는 경우와 데이터를 읽어들이는 과정에서 파싱을 하는 두 경우에 대해 쌍둥이 함수가 존재한다.
 
-| 기존 벡터           | 새로운 벡터       |
-|---------------------|-------------------|
-| `parse_logical()`   | `col_logical()`   |
-| `parse_integer()`   | `col_integer()`   |
-| `parse_double()`    | `col_double()`    |
-| `parse_character()` | `col_character()` |
-| `parse_datetime()`  | `col_datetime()`  |
-| `parse_date()`      | `col_date()`      |
-| `parse_time()`      | `col_time()`      |
-| `parse_factor()`    | `col_factor()`    |
-| `parse_guess()`     | `col_guess()`     |
-| `parse_number()`    | `col_number()`    |
+| 데이터 유형       | 기존 벡터           | 새로운 벡터       |
+|-------------------|---------------------|-------------------|
+| 논리형(logical)   | `parse_logical()`   | `col_logical()`   |
+| 정수형(integer)   | `parse_integer()`   | `col_integer()`   |
+| 실수형(double)    | `parse_double()`    | `col_double()`    |
+| 문자형(character) | `parse_character()` | `col_character()` |
+| 일시형(datetime)  | `parse_datetime()`  | `col_datetime()`  |
+| 날짜형(date)      | `parse_date()`      | `col_date()`      |
+| 시간형(time)      | `parse_time()`      | `col_time()`      |
+| 범주형(factor)    | `parse_factor()`    | `col_factor()`    |
+| 추측형(guess)     | `parse_guess()`     | `col_guess()`     |
+| 수치형(number)    | `parse_number()`    | `col_number()`    |
+
+## 데이터 쓰기
+
+**readr** 패키지는 `write_csv()`, `write_delim()`와 같은 함수를 제공한다. 엑셀 파일을 저장하기 위해서는 [**writexl**](https://github.com/ropensci/writexl) 패키지의 `write_xlsx()` 함수를 사용한다. 혹은 [**openxlsx**](https://ycphs.github.io/openxlsx/) 패키지의 `write.xlsx()` 함수를 사용할 수도 있다.
 
 ## 데이터 정리하기
 
