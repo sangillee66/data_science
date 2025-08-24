@@ -21,9 +21,25 @@ editor_options:
 
 ## 실습 개요 {.unnumbered}
 
-이 실습은 R로 데이터사이언스를 하는 과정 중 데이터 변형하기(transforming)를 다룬다. 데이터 변형하기와 관련된 대부분의 함수는 [`tidyverse`](https://www.tidyverse.org/)의 핵심 패키지 중의 하나인 [`dplyr`](https://dplyr.tidyverse.org/) 에서 제공된다. 데이터 변형하기와 관련된 함수는 크게 네 개로 범주화된다.
+이 실습은 R로 데이터사이언스를 하는 과정 중 데이터 변형하기(transformation)를 다룬다. 데이터 변형하기와 관련된 대부분의 함수는 [**tidyverse**](https://www.tidyverse.org/)의 핵심 패키지 중의 하나인 [**dplyr**](https://dplyr.tidyverse.org/) 에서 제공된다. 데이터 변형하기는 크게 다음의 두 가지 범주로 나뉜다.
 
--   행 함수: 행(관측개체)에 작동하는 함수, 즉 행의 변화를 야기하는 함수
+-   단일 테이블 조작: 데이터 변형하기의 핵심 부분으로, 한 데이터 프레임의 데이터 구조를 조작한다.
+
+-   다중 테이블 결합: 두 개 이상의 데이터 프레임을 결합하는 방식을 다룬다.
+
+두 가지 모두 데이터 테이블이 입력되고, 데이터 테이블이 출력된다.
+
+모든 실습의 시작은 [**tidyverse**](https://www.tidyverse.org/) 패키지를 불러오는 것이다.
+
+```{r}
+library(tidyverse)
+```
+
+## 단일 테이블 조작
+
+단일 테이블 조작과 관련된 함수는 다시 네 가지로 범주화된다.
+
+-   행 함수: 행(관측 개체)에 작동하는 함수, 즉 행의 변화를 야기하는 함수
 
 -   열 함수: 열(변수)에 작동하는 함수, 즉 열의 변화를 야기하는 함수
 
@@ -31,20 +47,12 @@ editor_options:
 
 -   데이터 프레임 함수: 데이터 프레임 전체에 작동하는 함수
 
-이번 실습에서는 행 함수, 열 함수, 그룹 함수에 집중한다. 모든 실습의 시작은 [`tidyverse`](https://www.tidyverse.org/) 패키지를 불러오는 것이다.
-
-```{r}
-library(tidyverse)
-```
-
-사용할 데이터는 World Bank가 [gapmider.org](https://www.gapminder.org/)를 통해 무료로 배포하는 것으로 [`gapmider`](https://cran.r-project.org/web/packages/gapminder/readme/README.html) 패키지에 포함되어 있다. [`gapmider`](https://cran.r-project.org/web/packages/gapminder/readme/README.html) 패키지를 인스톨하고 불러온다. 데이터가 어떻게 구성되어 있는지 살펴본다.
+이번 실습에서는 행 함수, 열 함수, 그룹 함수에 집중한다. 사용할 데이터는 World Bank가 [gapmider.org](https://www.gapminder.org/)를 통해 무료로 배포하는 것으로 [`gapmider`](https://cran.r-project.org/web/packages/gapminder/readme/README.html) 패키지에 포함되어 있다. [`gapmider`](https://cran.r-project.org/web/packages/gapminder/readme/README.html) 패키지를 인스톨하고 불러온다. 데이터가 어떻게 구성되어 있는지 살펴본다.
 
 ```{r}
 library(gapminder)
 gapminder
 ```
-
-## 단일 테이블 조작
 
 ### 행 함수
 
@@ -199,17 +207,7 @@ gapminder |>
 ```
 
 ::: callout-note
-`dplyr` 패키지는 데이터에 순위를 부여하는 다섯 가지 서로 다른 방식을 제공한다.
-
--   `row_number()`: 동일값이라 하더라도 값의 등장 순서에 따라 서로 다른 순위를 부여한다. 이런 이유로 일련번호로 새로운 컬럼(변수)을 만들 때 사용되기도 한다.
-
--   `min_rank()`: 동일값에 동순위를 부여하고, 그 다음 값에는 동순위 갯수를 감안한 그 다음 순위를 부여한다. 예를 들어, 두 번째로 작은 값이 두개인 경우 결과는 1, 2, 2, 4, 5
-
--   `dense_rank()`: 동일값에 동순위를 부여하고, 그 다음 값에는 동순위 갯수에 상관없이 바로 그 다음 순위를 부여한다 예를 들어, 두 번째로 작은 값이 두개인 경우 결과는 1, 2, 2, 3, 4
-
--   `percent_rank()`: 백분위수(percentile)을 계산해 주는데, 해당 값보다 작은 값의 개수를 전체 개수에서 1을 뺀 값으로 나눈값을 산출한다.
-
--   cumu_dist(): 백분위수(percentile)을 계산해 주는데, 해당 값보다 작거나 같은 값의 개수를 전체 개수로 나눈값을 산출한다.
+`dplyr` 패키지는 데이터에 순위를 부여하는 여러 가지 방식을 제공하는데, `row_number()`, `min_rank()`, `dense_rank()`, `percent_rank()`, `cumu_dist()` 등이 있다. 자세한 사항은 맨 아래에 있는 기타 벡터 함수를 참고하면 된다.
 :::
 
 #### `rename()` 함수
@@ -462,11 +460,11 @@ gapminder |>
   )
 ```
 
-## 데이터 결합하기
+## 다중 테이블 결합
 
 ### 테이블 조인
 
-여기서는 데이트 프레임을 결합하여 새로운 데이터 프레임을 생성하는 과정에 대해 살펴본다. `tidyverse` 패키지에 포함되어 있는 `dplyr` 패키지는 다양한 종류의 조인(join) 함수를 제공한다.
+테이블 조인(join)은 두 개 데이터 프레임을 공통키(common key)를 이용해 결합함으로써 하나의 데이터 프레임을 생성하는 것을 의미한다. 서로 상이한 방식의 조인이 가능하면, [**dplyr**](https://dplyr.tidyverse.org/) 패키지는 다양한 종류의 조인 함수를 제공한다.
 
 -   `left_join()`: 첫 번째 변수는 그대로 둔 상태에서 두 번째 변수를 결합함으로써 두 번째 변수의 열을 가져옴
 
@@ -482,7 +480,7 @@ gapminder |>
 
 이들 중 `left_join()`이 가장 많이 사용되기 때문에 그것에 집중한다.
 
-#### `left_join()` 함수의 활용
+#### `left_join()` 함수
 
 실습을 위해 [`nycflights13`](https://github.com/tidyverse/nycflights13) 패키지의 데이터를 사용한다. 이 패키지에는 다섯 개의 데이터 프레임이 포함되어 있다. 지난 번에는 첫 번째 데이터만 사용했다.
 
@@ -540,10 +538,288 @@ flights2 |>
 
 `airports`의 경우만 왜 `join_by()`라는 아규먼트가 사용되었는데, 이 경우에는 공통키의 이름이 동일하지 않기 때문이다. 즉, `flights2` 데이터의 origin 컬럼과 `airports` 데이터의 faa가 공통키임을 지정해 주어야 하는 것이다.
 
-### 테이블 결합
+### 테이블 병합
 
-여기에는 `bind_row()` 함수와 `bind_col()` 함수가 있다. 전자는 컬럼이 동일한 두 테이블을 상하로 연결하는 것이고, 후자는 행이 동일한 두 테이블을 좌우로 연결하는 것이다. `bind_row()`와 유사한 가능을 하는 파생 함수에 `intersect()`, `union()`, `setdiff()` 함수 등이 있다.
+테이블 병합(merge)은 두 데이터 프레임을 결합해 새로운 단일한 데이터 프레임을 생성한다는 의미에서는 테이블 조인과 동일하지만, 공통키가 없으며, 행과 열 중 하나는 만드시 동일해야 한다. 가장 널리 사용되는 함수에 `bind_row()` 함수와 `bind_col()` 함수가 있다. 전자는 컬럼이 동일한 두 테이블을 상하로 연결하는 것이고, 후자는 행이 동일한 두 테이블을 좌우로 연결하는 것이다.
 
-#### `bind_row()` 함수
+#### `bind_row()` 와 `bind_col()` 함수
 
-#### `bind_col()` 함수
+`gapminder` 데이터를 25년 간격으로 세 개의 연도(1957, 1982, 2007년)로 분할한다.
+
+```{r}
+gap_1957 <- gapminder |> filter(year == 1957)
+gap_1982 <- gapminder |> filter(year == 1982)
+gap_2007 <- gapminder |> filter(year == 2007)
+```
+
+이 세개의 데이터 프레임은 동일한 열 구조(동일한 변수)를 가지고 있지만, 행이 다르다. 이런 경우 `bind_row()` 함수를 사용하여 하나의 데이터 프레임으로 결합할 수 있다.
+
+```{r}
+gapminder_merge_row <- bind_rows(
+  gap_1957, gap_1982, gap_2007
+)
+gapminder_merge_row
+```
+
+이제 gapminder 데이터 프레임을 변수 세 개씩 묶어 두 개의 데이터 프레임으로 분할한다.
+
+```{r}
+gap_var1 <- gapminder |> select(country, continent, year)
+gap_var2 <- gapminder |> select(lifeExp, pop, gdpPercap)
+```
+
+이 두개의 데이터 프레임은 동일한 행 구조(동일한 관측 개체)를 가지고 있지만, 열이 다르다. 이런 경우 `bind_col()` 함수를 사용하여 하나의 데이터 프레임으로 결합할 수 있다.
+
+```{r}
+gapminder_merge_col <- bind_cols(gap_var1, gap_var2)
+gapminder_merge_col
+```
+
+#### 기타 집합 연산 함수
+
+집합 연산(set operation) 함수란 두 데이터 프레임을 수학적 집합 연산(합집합, 교집합, 차집합, 동등성 검사)을 적용하여 새로운 데이터 프레임을 산출하는 함수를 말한다. 두 데이터 프레임은 동일한 열 구조를 가져야 하며, 행 전체를 하나의 원소로 취급한다. 여기에 해당하는 함수로, `intersect()`, `union()`, `setdiff()` 함수 등이 있다.
+
+## 기타 벡터 함수
+
+타이디버스 함수의 기본 작동 방식은 데이터 프레임을 입력으로 받아 데이터 프레임을 출력하는 것이다. 이에 반해 Base R은 기본적으로 벡터에 대한 연산에 기반하고 있다. 타이디버스의 이러한 측면은 주로 장점으로 작용한다고 볼 수 있지만, 단점으로 작용하는 경우도 적지 않다. 이를 극복하기 위해 [**dplyr**](https://dplyr.tidyverse.org/) 패키지는 몇 가지 유용한 벡터 함수를 제공하고 있다. 이러한 함수는 주로 단일 테이블 조작 함수의 내부에서 작동한다.
+
+| 범주 | 함수 | 설명 |
+|------------------------|------------------------|------------------------|
+| 값 추출 | `first()` | 첫 번째 값 |
+|  | `last()` | 마지막 값 |
+|  | `nth()` | n-번째 값 |
+| 값 변경 | `if_else()` | 단일 벡터에 대해, 이진 조건식을 통해 재코드화 |
+|  | `case_match()` | 단일 벡터에 대해, 조건식을 통해 재코드화 |
+|  | `case_when()` | 다중 벡터에 대해, 조건식을 통해 재코드화 |
+| 순위 부여 | `row_number()` | 일련번호 부여 |
+|  | `min_rank()` | 동일값에 동순위를 부여하고, 그 다음 값에는 동순위 갯수를 감안한 그 다음 순위를 부여 |
+|  | `dense_rank()` | 동일값에 동순위를 부여하고, 그 다음 값에는 동순위 갯수에 상관없이 바로 그 다음 순위를 부여 |
+|  | `percent_rank()` | 백분위수(percentile)을 계산해 주는데, 해당 값보다 작은 값의 개수를 전체 개수에서 1을 뺀 값으로 나눈값을 산출 |
+|  | `cume_dist()` | 백분위수(percentile)을 계산해 주는데, 해당 값보다 작거나 같은 값의 개수를 전체 개수로 나눈값을 산출 |
+|  | `ntile()` | 값의 크기에 따라 몇 개의 그룹으로 나누고, 그룹 순위를 부여 |
+|  | `consecutive_id()` | 동일한 값에는 동일한 일련번호를, 새로운 값이 나타날 때에는 그 다음 일련번호를 부여 |
+| 값 순서 변경 | `desc()` | 내림차순으로 정렬 |
+|  | `lag()` | 뒤로 밀어 이전 값을 가져옴. 첫번째 값이 NA |
+|  | `lead()` | 앞으로 당겨서 이후 값을 가져옴. 마지막 값이 NA |
+| 결측치 처리 | `coalesce()` | NA에 특정한 값을 부여 |
+|  | `na_if()` | 특정한 값에 NA를 부여 |
+| 논리형 벡터 생성 | `between()` | 특정한 값이 두 값 사이에 존재하는 지의 여부 검토 |
+|  | `near()` | 두 값이 충분히 가까운지의 여부 검토 |
+
+### 값 추출 함수
+
+`first()` 함수는 해당 벡터의 첫 번째 셀 값을 반환한다. `last()` 함수는 해당 벡터의 마지막 셀 값을 반환한다. `nth()` 함수는 해당 벡터의 n-번째 셀 값을 반환한다. 주로 `summarize()` 함수와 함께 사용된다. 아래의 사례는 대륙별로 1인당 GDP가 가장 큰 국가와 가장 작은 국가를 추출한 것이다.
+
+```{r}
+gapminder |> 
+  filter(year == 2007) |> 
+  group_by(continent) |> 
+  arrange(desc(gdpPercap)) |> 
+  summarize(
+    country_first = first(country),
+    country_last = last(country)
+  ) |> 
+  ungroup()
+```
+
+유사한 기능을 하는 데이터 프레임 함수로 `slice_head()`, `slice_tail()`, `slice()` 함수가 있다. 궁극적인 차이점은 이 함수들은 특정한 행(들)으로 구성된 데이터 프레임을 반환한다는 것이다.
+
+### 값 변경 함수
+
+`if_else()` 함수는 값 변경 함수 중 가장 빈번하게 사용되는 것으로, 주로 단일 벡터에 대해, 이진 조건식을 통해 해당 변수의 값을 변경하는 것이다.
+
+```{r}
+gapminder |> 
+  filter(year == 2007) |> 
+  mutate(
+    gdp_status = if_else(gdpPercap >= 20000, "high", "low")
+  ) |> 
+  count(gdp_status)
+```
+
+위의 사례는 수치형 변수를 범주형 변수로 바꾸는 것으로 보통 재코드화(recode)라고 불리는 연산이다. 두 개 이상의 범주로 분할하는 경우에도 `if_else()` 함수를 사용할 수 있지만, 이 경우는 `case_when()` 함수가 더 유용하다.
+
+```{r}
+gapminder |> 
+  filter(year == 2007) |> 
+  mutate(
+    gdp_status = case_when(
+      gdpPercap < 3000 ~ "Low", 
+      gdpPercap >= 3000 & gdpPercap < 20000 ~ "Medium",
+      gdpPercap >= 20000 ~ "High"
+    )
+  ) |> 
+  count(gdp_status)
+```
+
+`case_when()` 함수는 조건식에 두 개 이상의 변수를 포함할 수 있다.
+
+```{r}
+gapminder |> 
+  filter(year == 2007) |> 
+  mutate(
+    overall_status = case_when(
+      gdpPercap < 3000 & lifeExp < 50 ~ "Really Bad",
+      gdpPercap >= 20000 & lifeExp > 80  ~ "Really Good",
+      .default = "Medium"
+    )
+  ) |> 
+  count(overall_status)
+```
+
+`case_match()` 함수는 범주의 개수를 줄이는데 유용하게 사용될 수 있다. `.default` 인수를 통해 부여된 조건식에 해당하지 않는 나머지 모든 케이스에 대해 어떤 값을 부여할지를 결정할 수 있다. 이와 동일한 것을 `case_when()` 함수로도 가능하기 때문에 모든 경우에 대해 `case_when()` 함수를 활용하면 된다.
+
+```{r}
+gapminder |> 
+  filter(year == 2007) |> 
+  mutate(
+    gdp_status = case_when(
+      gdpPercap < 3000 ~ "Low", 
+      gdpPercap >= 3000 & gdpPercap < 20000 ~ "Medium",
+      gdpPercap >= 20000 ~ "High"
+    )
+  ) |> 
+  mutate(
+    gdp_status = case_match(
+      gdp_status, 
+      c("Low", "Medium") ~ 1,
+      "High" ~ 2
+    )
+  ) |> 
+  count(gdp_status)
+```
+
+### 순위 부여 함수
+
+특정 벡터의 값을 기준으로 순위를 부여하고, 그 순위값으로 구성된 새로운 벡터를 생성하는 함수에 기본적으로 다음의 세 가지 방식이 있다.
+
+-   `row_number()` 함수는 동일값이라 하더라도 값의 등장 순서에 따라 서로 다른 순위를 부여한다. 예를 들어, 다섯개의 숫자가 있고 두 번째 순위 값이 두 개라고 했을 때, 1\~5의 모든 순위가 존재한다.
+
+-   `min_rank()` 함수는 동일값에 동순위를 부여하고, 그 다음 값에는 동순위 갯수를 감안한 그 다음 순위를 부여한다. 예를 들어, 다섯개의 숫자가 있고 두 번째 순위 값이 두 개라고 했을 때, 3은 없다.
+
+-   `dense_rank()` 함수는 동일값에 동순위를 부여하고, 그 다음 값에는 동순위 갯수에 상관없이 바로 그 다음 순위를 부여한다 예를 들어, 다섯개의 숫자가 있고 두 번째 순위 값이 두 개라고 했을 때, 5는 없다.
+
+```{r}
+tbl_rank <- tibble(x = c(10, 20, 20, 30, 40))
+tbl_rank |> 
+  mutate(
+    row_number = row_number(x),
+    min_rank = min_rank(x),
+    dense_rank = dense_rank(x)
+  )
+```
+
+이 외에 두 개의 부가적인 함수가 존재하는데, 백분위수(percentile)를 계산한다는 의미에서는 동일하지만 계산 방식이 조금 다르다.
+
+-   `percent_rank()` 함수: 백분위수을 계산해 주는데, 해당 값보다 작은 값의 개수를 전체 개수에서 1을 뺀 값으로 나눈값을 산출한다.
+
+-   `cume_dist()` 함수: 백분위수를 계산해 주는데, 해당 값보다 작거나 같은 값의 개수를 전체 개수로 나눈값을 산출한다.
+
+```{r}
+tbl_rank <- tibble(x = c(10, 20, 20, 30, 40))
+tbl_rank |> 
+  mutate(
+    percent_rank = percent_rank(x),
+    cume_dist = cume_dist(x)
+  )
+```
+
+### 값 순서 변경 함수
+
+값 순서 변경 함수 중 가장 빈번하게 사용되는 것이 `desc()` 함수이다. 데이터 프레임 함수인 `arrange()`가 기본적으로 오름차순으로 정렬하는데, `desc()` 함수를 쓰면 내림차순으로 정렬할 수 있다.
+
+```{r}
+tbl_rank <- tibble(x = c(10, 20, 20, 30, 40))
+tbl_rank |> 
+  arrange(desc(x))
+```
+
+`lag()`과 `lead()` 함수는 주어진 벡터를 행방향으로 한칸 이동한 새로운 벡터를 생성하는데 사용된다. `lag()` 함수는 뒤로 한칸 밀어 이전 값을 가져와서 새로운 벡터를 생성하는데, 새로 만들어진 벡터의 첫 번째 셀 값은 NA가 된다. 이에 반해 `lead()` 함수는 앞으로 한칸 당겨 이후 값을 가져와서 새로운 벡터를 생성하는데, 새로 만들어진 벡터의 마지막 셀 값은 NA가 된다.
+
+```{r}
+tbl_rank <- tibble(x = c(10, 20, 20, 30, 40))
+tbl_rank |>
+  mutate(
+    x_lag = lag(x), 
+    x_lead = lead(x) 
+  )
+```
+
+`default` 인자를 활용하면 NA의 생성을 막을 수 있다.
+
+```{r}
+tbl_rank <- tibble(x = c(10, 20, 20, 30, 40))
+tbl_rank |>
+  mutate(
+    x_lag = lag(x, default = first(x)), 
+    x_lead = lead(x, default = last(x)) 
+  )
+```
+
+### 결측치 처리 함수
+
+결측치 처리 함수는 벡터의 NA값과 관련된 함수이다. `coalesce()` 함수는 NA에 특정한 값을 부여하는데 반해, `na_if()` 함수는 특정한 값에 NA를 부여하는 함수이다.
+
+```{r}
+tbl_na <- tibble(x = c(1, 2, NA, 4, NA, 7))
+tbl_na |> 
+  mutate(
+    x_coalesce = coalesce(x, 0), 
+    x_na_if = na_if(x, 7)
+  )
+```
+
+### 논리형 벡터 생성 함수
+
+논리형 벡터 생성 함수는 조건의 부합 여부에 따라 TRUE와 FALSU로 구성된 새로운 벡터를 생성하는 함수를 의미한다. Base R에는 다음과 같은 논리형 벡터 생성 함수가 빈번하게 사용된다.
+
+-   `is.na()`: 결측치 여부
+
+-   `is.numeric()`: 수치형 여부
+
+-   `is.integer()`: 정수형 여부
+
+-   `is.character()`: 문자형 여부
+
+-   `is.logical()`: 논리형 여부
+
+-   `is.factor()`: 팩터 여부
+
+여기에 덧붙여 [**dplyr**](https://dplyr.tidyverse.org/)은 흥미로운 논리형 벡터 생성 함수를 제공한다.
+
+-   `between()`: 특정한 값이 주어진 두 값 사이에 위치하는 지의 여부 검토
+
+-   `near()`: 특정한 값이 기준이 되는 값과 충분이 유사한지의 여부 검토
+
+```{r}
+gapminder |> 
+  filter(
+    year == 2007, 
+    between(gdpPercap, 20000, 30000)
+  )
+```
+
+`near()` 함수는 많이 사용되지는 않지만, 부등소수점 수(floating point number)의 정확도로 인해 발생하는 상동성 평가의 문제점을 극복하기 위한 함수이다. 아래의 예시를 보자. 두 값은 명백히 1과 2이다.
+
+```{r}
+x <- c(1 / 49 * 49, sqrt(2) ^ 2)
+x
+```
+
+그러나 다음의 상동성 평가 문제가 발생한다.
+
+```{r}
+x == c(1, 2)
+```
+
+이것은 부등소수점 수의 정확도로 발생하는 문제이다.
+
+```{r}
+print(x, digits = 16)
+```
+
+`near()` 함수는 이러한 미세한 차이를 무시할 수 있게 해주어 상동성 평가 문제를 해결한다.
+
+```{r}
+near(x, c(1, 2))
+```

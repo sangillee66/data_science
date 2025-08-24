@@ -21,9 +21,9 @@ editor_options:
 
 ## 실습 개요 {.unnumbered}
 
-이 실습은 R로 데이터사이언스를 하는 과정 중 데이터 불러오기(importing)와 데이터 정리하기(tidying)에 집중한다. 본격적으로 해당 주제를 다루기 전에 `tidyverse`의 공식 데이터 프레임 형식인 티블(tibble)에 대해 간단히 배운다.
+이 실습은 R로 데이터사이언스를 하는 과정 중 데이터 불러오기(importing)와 데이터 정리하기(tidying)에 집중한다. 본격적으로 해당 주제를 다루기 전에 [**tidyverse**](https://www.tidyverse.org/)의 공식 데이터 프레임 형식인 티블(tibble)에 대해 간단히 배운다.
 
-모든 실습의 시작은 `tidyverse` 패키지를 불러오는 것이다.
+모든 실습의 시작은 [**tidyverse**](https://www.tidyverse.org/) 패키지를 불러오는 것이다.
 
 ```{r}
 library(tidyverse)
@@ -33,7 +33,29 @@ library(tidyverse)
 
 ### 왜 티블인가?
 
-데이터 프레임은 가장 널리 사용되는 데이터 형식이고, 일반적인 상황이라면 거의 대부분 데이터 프레임을 가지고 데이터사이언스를 한다. Base R은 전통적으로 `data.frame` 객체를 통해 데이터 프레임을 관리해왔다. `tibble`은 이러한 `data.frame`의 현대적 개량 버전으로 이해하면 되고, 조금의 차이는 있지만 대동소이하다. 이 새로운 데이터 프레임 형식은 `tidyverse` 패키지의 핵심 패키지 중 하나인 [`tibble`](https://tibble.tidyverse.org/) 패키지에서 지원된다.
+데이터 프레임은 가장 널리 사용되는 데이터 형식이고, 일반적인 상황이라면 거의 대부분 데이터 프레임을 가지고 데이터사이언스를 한다. Base R은 전통적으로 `data.frame` 객체를 통해 데이터 프레임을 관리해왔다. `tibble`은 이러한 `data.frame`의 현대적 개량 버전으로 이해하면 되고, 조금의 차이는 있지만 대동소이하다. 이 새로운 데이터 프레임 형식은 `tidyverse` 패키지의 핵심 패키지 중 하나인 [**tibble**](https://tibble.tidyverse.org/) 패키지에서 지원된다.
+
+### 티블 컬럼 유형
+
+한 개의 원소 이상의 어레이를 벡터라고 한다. 여기서 각 벡터가 가진 데이터의 성격을 벡터 유형(type)이라고 하고, 컬럼 유형(type) 혹은 데이터 유형이라고도 한다. 앞에서 살펴본 것처럼, 벡터는 숫자형일 수도 있고, 문자형일 수도 있다. 그러나 이러한 컬럼 유형은 훨씬 다양할 수 있다. 여기서는 [**tibble**](https://tibble.tidyverse.org/) 패키지가 규정하는 컬럼 유형에 대해 살펴본다. 자세한 내용은 [여기](https://tibble.tidyverse.org/articles/types.html)를 참조할 수 있다.
+
+| 클래스 | 데이터 유형 | 예시 | 기호 |
+|------------------|------------------|------------------|------------------|
+| 원자(atomic) 벡터 | 논리형(logical) | `TRUE` | lgl |
+|  | 정수형(integer) | `1L` | int |
+|  | 실수형(double) | `1.5` | dbl |
+|  | 문자형(character) | `"A"` | chr |
+|  | 복소수형(complex) | `0+1i` | cpl |
+|  | 원시형(raw) | `as.raw(1)` | raw |
+| 리스트(list) 벡터 | 리스트(list) | `list(1)` | list |
+|  | 명명 리스트(named list) | `list(a = 1)` | named list |
+| 빌트인 객체 | 범주형(factor) | `factor("A")` | fct |
+|  | 순서형(ordered) | `ordered("a")` | ord |
+|  | 날짜형(Date) | `Sys.Date()` | date |
+|  | 날짜시간형(POSIXt) | `Sys.time()` | dttm |
+|  | 시간차이형(difftime) | `vctrs::new_duration(1)` | drtn |
+| 데이터 프레임 | 데이터 프레임(data.frame) | `data.frame(a = 1)` | df\[,1\] |
+|  | 티블(tbl_df) | `tibble(a = 1)` | tibble\[,1\] |
 
 ### 티블 생성하기
 
@@ -54,6 +76,14 @@ iris_tbl <- iris |>
   as_tibble() 
 class(iris_tbl)
 ```
+
+아래와 같이 데이터를 열어보면, `data.frame` 객체에서는 볼 수 없는 정보가 나타난다.
+
+```{r}
+iris_tbl
+```
+
+행이 150개이고 열이 5개라는 사실이 가장 위에 나타나 있고, 앞의 네개 컬럼의 데이터 유형은 실수형(dbl)이고 마지막 컬럼은 범주형(fct)라는 것을 알 수 있다.
 
 #### 티블 객체를 직접 생성하기
 
@@ -84,12 +114,12 @@ tribble(
 
 #### 행이름 관련 함수
 
-사실 [**tibble**](https://tibble.tidyverse.org/) 패키지는 행이름 지정을 권장하지 않고, 행이름을 지정하는 간단한 함수도 제공하지 않는다. 사실 data.frame 객체의 row.names라는 속성은 하나의 숨겨진 속성처럼 취급된다. 타이디버스 철학에서는 이런 형식이 아니라 행이름이 하나의 명시적인 컬럼에 두는 것이 더 낳다는 관점이다. 그러나 [**tibble**](https://tibble.tidyverse.org/) 패키지는 row.names를 가진 data.frame 객체에 적용할 수 있는 몇 가지 행이름 관련 함수를 제공한다.
+행이름(row name)은 개별 행에 고유한 이름이 부여된 것으로, Base R의 `data.frame` 객체는 행이름으로 `row.names`라는 속성을 갖는다. 비롯 이것이 속성이긴 하지만 다른 컬럼 속성과는 구별되며 하나의 숨겨진 속성처럼 취급된다. 그런데 [**tibble**](https://tibble.tidyverse.org/) 패키지는 행이름 지정을 권장하지 않고, 행이름을 지정하는 간단한 함수도 제공하지 않는다. 타이디버스 철학은 행이름을 숨겨진 속성처럼 취급하기 보다는 하나의 명시적인 컬럼으로 취급하는 것이 더 낳다는 관점에 기반한다. 그러나 [**tibble**](https://tibble.tidyverse.org/) 패키지는 `row.names`를 가진 `data.frame` 객체에 적용할 수 있는 몇 가지 행이름 관련 함수를 제공한다.
 
 위에서와 동일하게 단순한 티블 객체를 생성한다.
 
 ```{r}
-a_tibble <- tibble(
+tbl_1 <- tibble(
   x = c(1, 2, 5), 
   y = c("h", "m", "g"),
   z = c(0.08, 0.83, 0.60)
@@ -99,27 +129,27 @@ a_tibble <- tibble(
 행이름(row.name)를 지정한다. `tibble` 객체를 `data.frame` 객체로 전환해 베이스 R의 함수인 `row.names()`를 이용해 행이름을 지정한다.
 
 ```{r}
-a_df <- as.data.frame(a_tibble)
-row.names(a_df) <- c("A", "B", "C")
-a_df
+df_1 <- as.data.frame(tbl_1)
+row.names(df_1) <- c("A", "B", "C")
+df_1
 ```
 
 `remove_rownames()` 함수를 이용해 행이름을 제거할 수 있다.
 
 ```{r}
-a_df |> remove_rownames()
+df_1 |> remove_rownames()
 ```
 
 `rownames_to_column()` 함수를 이용해 행이름을 또 다른 컬럼으로 전환할 수 있다.
 
 ```{r}
-a_df |> rownames_to_column("name")
+df_1 |> rownames_to_column("name")
 ```
 
 `column_to_rownames()` 함수를 이용해 특정 컬럼을 행이름으로 전환할 수 있다.
 
 ```{r}
-a_df |> rownames_to_column("name") |> 
+df_1 |> rownames_to_column("name") |> 
   column_to_rownames("name")
 ```
 
@@ -128,36 +158,36 @@ a_df |> rownames_to_column("name") |>
 다음과 같이 한 행을 삽입한다.
 
 ```{r}
-a_tibble |> add_row(x = 10, y = "u", z = 0.75)
+tbl_1 |> add_row(x = 10, y = "u", z = 0.75)
 ```
 
 다음과 같은 방식으로 여러 행을 삽입할 수 있다.
 
 ```{r}
-a_tibble |> 
+tbl_1 |> 
   add_row(x = c(10, 15), y = c("u", "x"), z = c(0.75, 1.10))
 ```
 
 다음과 같이 한 열을 삽입한다.
 
 ```{r}
-a_tibble |> add_column(p = c("TRUE", "TRUE", "FALSE"))
+tbl_1 |> add_column(p = c("TRUE", "TRUE", "FALSE"))
 ```
 
 다음과 같은 방식으로 여러 열을 삽입할 수 있다.
 
 ```{r}
-a_tibble |> 
+tbl_1 |> 
   add_column(p = c("TRUE", "TRUE", "FALSE"), q = c(1L, 2L, 3L))
 ```
 
 ## 데이터 불러오기
 
-### `readr` 패키지
+### **readr** 패키지
 
 #### 파일 형식
 
-[`readr`](https://readr.tidyverse.org/) 패키지는 다양한 함수를 이용해 다양한 형식의 데이터를 불러올 수 있게 도와준다.
+[**readr**](https://readr.tidyverse.org/) 패키지는 다양한 함수를 이용해 다양한 형식의 데이터를 불러올 수 있게 도와준다.
 
 -   `read_csv()`: 콤마분리(comma-separated values, CSV) 형식의 파일
 
@@ -173,6 +203,36 @@ a_tibble |>
 
 -   `read_log()`: 아파치 형식(Apache-style)의 로그 파일
 
+#### 컬럼 파싱 함수들
+
+컬럼의 내용 중 특정한 유형의 정보만 추출하는 것을 파싱(parsing)이라고 한다. 이러한 파싱은 새로운 데이터를 읽어들이는 과정에서 파싱을 하는 경우와 기존의 벡터에서 특정 유형을 값을 추출하기 위해 파싱하는 경우의 두 가지로 나뉠 수 있는데, 데이터 유형별로 쌍둥이 함수가 존재한다.
+
+| 데이터 유형       | 새로운 벡터 불러들이기 | 기존 벡터에 적용하기 |
+|-------------------|------------------------|----------------------|
+| 논리형(logical)   | `col_logical()`        | `parse_logical()`    |
+| 정수형(integer)   | `col_integer()`        | `parse_integer()`    |
+| 실수형(double)    | `col_double()`         | `parse_double()`     |
+| 문자형(character) | `col_character()`      | `parse_character()`  |
+| 일시형(datetime)  | `col_datetime()`       | `parse_datetime()`   |
+| 날짜형(date)      | `col_date()`           | `parse_date()`       |
+| 시간형(time)      | `col_time()`           | `parse_time()`       |
+| 범주형(factor)    | `col_factor()`         | `parse_factor()`     |
+| 추측형(guess)     | `col_guess()`          | `parse_guess()`      |
+| 수치형(number)    | `col_number()`         | `parse_number()`     |
+
+새로운 벡터를 위한 파싱은 데이터를 불러들이는 과정에서 컬럼 별로 미리 데이터 유형을 지정하면 여러가지로 이점이 있기 때문에 중요하다. 간단한 사례를 살펴보자.
+
+```{r}
+read_csv("
+  logical,numeric,date,string
+  TRUE,1,2021-01-15,abc
+  false,4.5,2021-02-15,def
+  T,Inf,2021-02-16,ghi
+")
+```
+
+데이터가 깔끔하게 주어진다면 데이터를 불러드리는 과정에 개별 컬럼의 유형을 지정할 필요가 없다. 그러나 현실이 이렇게 간단하지 않을 수 있고, 좀 더 복잡한 예제는 다음에서 다루도록 한다.
+
 #### `read_csv()` 함수의 활용
 
 지난번 실습에서 사용한 데이터를 면밀히 살펴본다.
@@ -184,13 +244,13 @@ students
 
 다음의 몇 가지 점이 불만족스럽다.
 
--   변수명: 특히 `Student ID`와 `Full Name` 변수명은 규칙에 어긋난다. 변수명 속에 공란이 있으면 좋지 않다. 이런 이름을 비구문명(non-syntactic name)이라고 하고, \` \`로 둘러싸여 표시된다. 나중에 문제를 일으킬 수 있다.
+-   변수명: 특히 `Student ID`와 `Full Name` 변수명은 규칙에 어긋난다. 변수명 속에 공란이 있으면 좋지 않다. 이런 이름을 비구문명(non-syntactic name)이라고 하고, 백틱(\` \`)으로 둘러싸여 표시된다. 나중에 문제를 일으킬 수 있다.
 
--   변수 형식: `mealPlan`은 문자형(chr)이 아니라 팩트형(fct)이, `AGE`는 문자형(chr)이 아니라 수치형(dbl)이 적절하다.
+-   변수 형식: `mealPlan`은 문자형(chr)이 아니라 팩트형(fct)이며, `AGE`는 문자형(chr)이 아니라 수치형(dbl)이 적절하다.
 
 -   결측치(NA): `favourite.food`의 'N/A'는 형식에 맞지 않아 결측치가 아니라 문자로 취급된다. 따라서 'N/A'가 결측치임을 알려주어야 한다.
 
-아래의 코드는 이러한 점을 반영하여 csv 파일을 다시 불러오기 한 것이다. 조교의 도움을 받아 각 아규먼트(`skip`, `col_names`, `col_types`, `na`)가 어떤 역할을 했는지 생각해 본다.
+이러한 점을 반영하여 csv 파일을 다시 불러오기한다. 여기서 여러 인수의 기능을 이해하는 것이 중요하다. `skip` 인수는 몇번 째 행까지를 읽지 않을 것인가를 지정한다. `col_names` 인수는 컬럼 이름을 지정한다. `col_types` 인수는 컬럼의 유형을 미리 설정하는데, 여기에 위에서 언급한 파싱 함수가 사용된다. `na` 인수는 어떤 셀 값(여기서는 "N/A")을 결측치(NA)로 취급할 것인가를 지정한다.
 
 ```{r}
 students <- read_csv(
@@ -207,9 +267,9 @@ students
 
 ### 엑셀 파일
 
-#### `readxl` 패키지
+#### readxl 패키지
 
-가장 널리 사용되는 스프레드시트(spreadsheet) 형식인 엑셀 파일을 불러들이기 위해서는 [`readxl`](https://readxl.tidyverse.org/)이라는 패키지가 필요하다. `tidyverse`의 핵심 패키지는 아니지만 일종의 친척 패키지라 할 수는 있다. `tidyverse`에 포함되어 있지 않기 때문에 따로 인스톨하고 `library()` 함수를 통해 불러와야 한다.
+가장 널리 사용되는 스프레드시트(spreadsheet) 형식인 엑셀 파일을 불러들이기 위해서는 [**readxl**](https://readxl.tidyverse.org/)이라는 패키지가 필요하다. [**tidyverse**](https://www.tidyverse.org/)의 핵심 패키지는 아니지만 일종의 친척 패키지라 할 수는 있다. [**tidyverse**](https://www.tidyverse.org/)에 포함되어 있지 않기 때문에 따로 인스톨하고 `library()` 함수를 통해 불러와야 한다.
 
 ```{r}
 library(readxl)
@@ -225,19 +285,19 @@ library(readxl)
 
 #### `read_excel()` 함수의 활용
 
-`World Population Prospects 2022` 데이터를 직접 다운받아 실습을 진행하고자 한다. 이 데이터셋은 매우 중요하다. 다음의 절차에 따라 해당 엑셀 파일을 다운로드한다.
+`World Population Prospects 2024` 데이터를 직접 다운받아 실습을 진행하고자 한다. 이 데이터셋은 매우 중요하다. 다음의 절차에 따라 해당 엑셀 파일을 다운로드한다.
 
 -   WPP 웹사이트(<https://population.un.org/wpp/>)에 접속한다.
 
 -   Download Data Files를 클릭한다.
 
-![WPP 데이터 홈페이지](images/clipboard-698029418.png){#fig-wpp-1}
+![WPP 데이터 홈페이지(<https://population.un.org/wpp/>)](images/wpp2024.PNG){#fig-wpp-1 fig-align="center"}
 
--   다음의 파일을 클릭한다: Compact (most used: estimates and medium projections) (XLSX, 24.07 MB)
+-   다음의 파일을 클릭한다: Compact (most used: estimates and medium projections) (XLSX)
 
-![WPP 데이터 선택](images/clipboard-2503548496.png)
+![WPP 데이터 선택](images/wpp2024_file.PNG){fig-align="center"}
 
--   엑셀 파일(WPP2022_GEN_F01_DEMOGRAPHIC_INDICATORS_COMPACT_REV1)을 다운로드하여 자신의 프로젝트 폴더에 저장한다.
+-   엑셀 파일(WPP2024_GEN_F01_DEMOGRAPHIC_INDICATORS_COMPACT.xlsx)을 다운로드하여 자신의 프로젝트 폴더에 저장한다.
 
 R 바깥에서 다운로드한 파일을 열어 어떠한 정보가 어떠한 방식으로 수록되어 있는지 살펴본다. 데이터 불러오기를 위해 다음의 네 가지 사항에 유의해야 함을 이해한다.
 
@@ -247,104 +307,100 @@ R 바깥에서 다운로드한 파일을 열어 어떠한 정보가 어떠한 �
 
 -   결측치는 공란이거나 '...' 기호로 표시되어 있다.
 
--   첫 번째 워킹시트(Estimates)에는 1950\~2021의 데이터가, 두 번째 워킹시트(Medium variant)에는 2022\~2100년의 데이터가 수록되어 있다. 나중에 결합해야한다.
+-   첫 번째 워킹시트(Estimates)에는 1950\~2023의 데이터가, 두 번째 워킹시트(Medium variant)에는 2024\~2100년의 데이터가 수록되어 있다. 나중에 결합해야한다.
 
 우선 엑셀 파일을 그대로 불러와 본다.
 
 ```{r}
 read_excel(
-  "WPP2022_GEN_F01_DEMOGRAPHIC_INDICATORS_COMPACT_REV1.xlsx", 
+  "WPP2024_GEN_F01_DEMOGRAPHIC_INDICATORS_COMPACT.xlsx", 
   sheet = "Estimates" 
   )
 ```
 
-끔찍할 것이다. 위의 네 가지 사항을 감안하여 다음과 같은 코드를 실행한다.
+끔찍하다. 위의 네 가지 사항을 감안하여 다음과 같은 코드를 실행한다.
 
 ```{r}
+
 new_names <- c("index", "variant", "region_name", "notes", "location_code", 
-                "ISO3", "ISO2", "SDMX", "type", "parent_code", "year", "pop_jan_total", 
-                "pop_jul_total", "pop_jul_male", "pop_jul_female", "pop_den", "sex_ratio", 
-                "median_age", "natural_change", "RNC", "pop_change", "PGR", 
-                "dubling_time", "births", "births_by_f1519", "CBR", "TFR", "NRR", 
-                "mean_age_childbearing", "sex_ratio_birth", "deaths_total", 
-                "deaths_male", "deaths_female", "CDR", "life_exp_total", 
-                "life_exp_male", "life_exp_female", "life_exp_15_total", 
-                "life_exp_15_male", "life_exp_15_female", "life_exp_65_total", 
-                "life_exp_65_male", "life_exp_65_female", "life_exp_80_total", 
-                "life_exp_80_male", "life_exp_80_female", "infant_deaths", 
-                "IMR", "live_births", "under_five_deaths", "mort_under_five", 
-                "mort_bf_40_total", "mort_bf_40_male", "mort_bf_40_female", "mort_bf_60_total", 
-                "mort_bf_60_male", "mort_bf_60_female", "mort_bt_1550_total", 
-                "mort_bt_1550_male", "mort_bt_1550_female", "mort_bt_1560_total", 
-                "mort_bt_1560_male", "mort_bt_1560_female", "net_migrants", "NMR")
-wpp_2022_estimates <- read_excel(
-  "WPP2022_GEN_F01_DEMOGRAPHIC_INDICATORS_COMPACT_REV1.xlsx",
+               "ISO3", "ISO2", "SDMX", "type", "parent_code", "year", "pop_jan_total", 
+               "pop_jul_total", "pop_jul_total_male", "pop_jul_total_female", "pop_den", "sex_ratio", 
+               "median_age", "natural_change", "RNC", "pop_change", "PGR", 
+               "doubling_time", "births", "births_by_f1519", "CBR", "TFR", "NRR", 
+               "mean_age_childbearing", "sex_ratio_birth", "deaths_total", 
+               "deaths_male", "deaths_female", "CDR", "life_exp_total", 
+               "life_exp_male", "life_exp_female", "life_exp_15_total", 
+               "life_exp_15_male", "life_exp_15_female", "life_exp_65_total", 
+               "life_exp_65_male", "life_exp_65_female", "life_exp_80_total", 
+               "life_exp_80_male", "life_exp_80_female", "infant_deaths", 
+               "IMR", "live_births", "under_five_deaths", "mort_under_five", 
+               "mort_bf_40_total", "mort_bf_40_male", "mort_bf_40_female", "mort_bf_60_total", 
+               "mort_bf_60_male", "mort_bf_60_female", "mort_bt_1550_total", 
+               "mort_bt_1550_male", "mort_bt_1550_female", "mort_bt_1560_total", 
+               "mort_bt_1560_male", "mort_bt_1560_female", "net_migrants", "NMR")
+
+wpp_2024_estimates <- read_excel(
+  "D:/My R/Population Geography/WPP2024_GEN_F01_DEMOGRAPHIC_INDICATORS_COMPACT.xlsx",
   sheet = "Estimates",
   skip = 17, 
   col_names = new_names,
   col_types = c(rep("guess", 3), "text", "guess", rep("text", 2), rep("guess", 58)),
   na = c("...", "")
-  )
-wpp_2022_future <- read_excel(
-  "WPP2022_GEN_F01_DEMOGRAPHIC_INDICATORS_COMPACT_REV1.xlsx",
+)
+
+wpp_2024_future <- read_excel(
+  "D:/My R/Population Geography/WPP2024_GEN_F01_DEMOGRAPHIC_INDICATORS_COMPACT.xlsx",
   sheet = "Medium variant",
   skip = 17, 
   col_names = new_names,
   col_types = c(rep("guess", 3), "text", "guess", rep("text", 2), rep("guess", 58)),
   na = c("...", "")
 )
-wpp_2022 <- bind_rows(wpp_2022_estimates, wpp_2022_future)
-View(wpp_2022)
+
+wpp_2024 <- bind_rows(wpp_2024_estimates, wpp_2024_future)
+
+wpp_2024 <- wpp_2024 |> 
+  filter(
+    type != "Label/Separator"
+  ) |> 
+  mutate(
+    across(
+      c(pop_jan_total, pop_jul_total, pop_jul_total_male, pop_jul_total_female, 
+        natural_change, pop_change, births, deaths_total, 
+        deaths_male, deaths_female, net_migrants), \(x) x * 1000
+    )
+  )
+
+view(wpp_2024)
 ```
 
-조교의 도움을 받아 코드의 어떤 부분이 어떤 동작을 한 것인지 따져본다.
+위의 코드는 다음의 단계로 진행된 것이다.
 
-그런데, 해야할 일이 한가지 더 남아있다. 많은 변수 중에 데이터 탐색이라는 측면에서 가장 중요한 것은 `type`이다. 다음을 통해 `type` 변수에 어떤 내용이 담겨 있는지 확인한다.
+-   변수명을 새로 지정해 둔다.
 
-```{r}
-wpp_2022 |>    
-  distinct(type)
-```
+-   `read_excel()` 함수를 이용하여 시트명이 "Estimates"(1950-2023)인 것을 불러들인다. `sheet`, `skip`, `col_names`, `col_types`, `na`과 같은 인수가 사용된다. `sheet` 인수는 엑셀 시트의 이름을 지정하고, `skip` 인수는 몇번 째 행까지를 읽지 않을 것인가를 지정한다. `col_names` 인수는 컬럼 이름을 지정하는데, 미리 만들어 둔 `new_names` 객체가 지정된 것을 볼 수 있다. `col_types` 인수는 컬럼의 유형을 미리 설정하는데, "skip", "guess", "logical", "numeric", "date", "text", "list" 중 선택을 할 수 있다. 불러들인 후 다시 지정할 수도 있지만 미리 해두면 불러 들이는 시간을 좀 더 단축할 수 있다.
 
-이 변수를 통해 세계 전체(World), 국가군(SDG region, Region 등), 국가별(Country/Area)로 데이터를 활용할 수 있다는 것을 인지한다. 그런데, "Label/Separator"는 엑셀 내에서 분할선 역할만 하는 것으로 무의미하다. 이를 제거한다.
+-   동일한 방식으로 시트명이 "Medium variant"(2024-2100)인 것을 불러들인다. 동일한 인수가 사용된다.
 
-```{r}
-wpp_2022 <- wpp_2022 |>    
-  filter(type != "Label/Separator")
-```
+-   `bind_rows()` 함수를 이용하여 두 객체를 결합한다.
 
-이제 모든 과정이 끝났다. 나중에 사용하기 위해, `writexl` 패키지의 `write_xlsx()` 함수를 이용하여 엑셀 파일로 저장해 본다.
+-   불필요한 행(`type` 컬럼이 "Label/Separator"로 되어 있는 경우)을 제거하고, 단위가 1,000으로 설정되어 있는 변수들을 원 변수값으로 되돌린다.
+
+나중에 사용하기 위해, [**writexl**](https://github.com/ropensci/writexl) 패키지의 `write_xlsx()` 함수를 이용하여 엑셀 파일로 저장한다.
 
 ```{r}
 library(writexl)
-write_xlsx(wpp_2022, "wpp_2022.xlsx")
+write_xlsx(wpp_2024, "wpp_2024.xlsx")
 ```
 
-그런데, 저장된 파일을 `read_excel()` 함수로 다시 불러 들이면 컬럼 형식에 대한 정보가 사라져 버리는 등의 에러가 발생한다. 이런 점 때문에 다음과 같은 대안이 존재한다. [`readr`](https://readr.tidyverse.org/) 패키지의 `write_rds()` 함수로 저장하고, 다시 `read_rds()` 함수로 불러들이면 정확히 동일한 것을 얻을 수 있다. RDS는 R에서만 사용되는 데이터 이진 포맷(binary format)이다.
+그런데, 저장된 파일을 `read_excel()` 함수로 다시 불러 들이면 컬럼 형식에 대한 정보가 사라져 버리는 등의 에러가 발생한다. 이런 점 때문에 다음과 같은 대안이 존재한다. [**readr**](https://readr.tidyverse.org/) 패키지의 `write_rds()` 함수로 저장하고, 다시 `read_rds()` 함수로 불러들이면 정확히 동일한 것을 얻을 수 있다. RDS는 R에서만 사용되는 데이터 이진 포맷(binary format)이다.
 
 ```{r}
-write_rds(wpp_2022, "wpp_2022.rds")
-read_rds("wpp_2022.rds")
+write_rds(wpp_2024, "wpp_2024.rds")
+read_rds("wpp_2024.rds")
 ```
 
-### 컬럼 파싱 함수들
-
-컬럼의 내용 중 특정한 유형의 정보만 추출하는 것을 파싱(parsing)이라고 그것을 행하는 것을 파서(parser)라고 한다. 기존의 벡터를 파싱하는 경우와 데이터를 읽어들이는 과정에서 파싱을 하는 두 경우에 대해 쌍둥이 함수가 존재한다.
-
-| 데이터 유형       | 기존 벡터           | 새로운 벡터       |
-|-------------------|---------------------|-------------------|
-| 논리형(logical)   | `parse_logical()`   | `col_logical()`   |
-| 정수형(integer)   | `parse_integer()`   | `col_integer()`   |
-| 실수형(double)    | `parse_double()`    | `col_double()`    |
-| 문자형(character) | `parse_character()` | `col_character()` |
-| 일시형(datetime)  | `parse_datetime()`  | `col_datetime()`  |
-| 날짜형(date)      | `parse_date()`      | `col_date()`      |
-| 시간형(time)      | `parse_time()`      | `col_time()`      |
-| 범주형(factor)    | `parse_factor()`    | `col_factor()`    |
-| 추측형(guess)     | `parse_guess()`     | `col_guess()`     |
-| 수치형(number)    | `parse_number()`    | `col_number()`    |
-
-## 데이터 쓰기
+### 데이터 쓰기
 
 **readr** 패키지는 `write_csv()`, `write_delim()`와 같은 함수를 제공한다. 엑셀 파일을 저장하기 위해서는 [**writexl**](https://github.com/ropensci/writexl) 패키지의 `write_xlsx()` 함수를 사용한다. 혹은 [**openxlsx**](https://ycphs.github.io/openxlsx/) 패키지의 `write.xlsx()` 함수를 사용할 수도 있다.
 
@@ -358,15 +414,23 @@ read_rds("wpp_2022.rds")
 
 -   개별 값(value)은 하나의 셀(cell)을 차지한다. 즉, 개별 셀에는 하나의 값이 위치한다.
 
-이 세가지 속성 중 하나라도 위배하는 데이터는 정돈된 데이터가 아니다. 어떤 데이터이건 그것이 정돈된 데이터이기만 하다면, 표준적인 툴을 통해 해당 데이터를 다른 데이터와 동일한 방식으로 다룰 수 있다. 데이터 정리하기에 특화된 패키지가 타이디버스의 핵심 패키지 중의 하나인 [**tidyr**](https://tidyr.tidyverse.org/) 패키지이다.
+이 세가지 속성 중 하나라도 위배하는 데이터는 정돈된 데이터가 아니다. 어떤 데이터이건 그것이 정돈된 데이터이기만 하다면, 표준적인 툴을 통해 해당 데이터를 다른 데이터와 동일한 방식으로 다룰 수 있다. 데이터 정리하기에 특화된 패키지가 [**tidyverse**](https://www.tidyverse.org/) 패키지의 핵심 패키지 중의 하나인 [**tidyr**](https://tidyr.tidyverse.org/) 패키지이다.
 
-### 데이터 구조 변형하기
+데이터 정리하기는 다음의 세 가지 범주로 나뉜다.
 
-여기서는 데이터 늘이기(lengthening data), 데이터 넓히기(widening data), 데이터 결합하기(joining data)를 다룬다.
+-   데이터 구조 변형: 가장 중요한 오퍼레이션으로 데이터 늘이기와 데이터 넓히기기가 포함된다.
+
+-   컬럼의 결합 및 분할: 두 개 이상의 컬럼을 하나의 컬럼으로 결합하거나 한 컬럼을 두 개 이상의 컬럼으로 분할한다.
+
+-   결측치 처리: 결측치가 포함된 행을 다양한 방식으로 처리한다.
+
+### 데이터 구조 변형
+
+여기서는 데이터 늘이기(lengthening data)와 데이터 넓히기(widening data)에 집중한다. 데이터 늘이기는 행을 늘이는 방식으로 데이터 구조를 변형하는 것이고, 데이터 넓히기는 컬럼의 숫자를 늘이는 방식으로 데이터 구조를 변형하는 것이다.
 
 #### 데이터 늘이기
 
-실습을 위해 `tidyverse` 패키지에 포함되어 있는 `billboard` 데이터를 사용한다. 이 데이터셋에는 2000년 한해 동안 노래의 주별 순위 정보가 포함되어 있다.
+실습을 위해 [**tidyverse**](https://www.tidyverse.org/) 패키지에 포함되어 있는 `billboard` 데이터를 사용한다. 이 데이터셋에는 2000년 한해 동안 노래의 주별 순위 정보가 포함되어 있다.
 
 ```{r}
 billboard
@@ -383,9 +447,9 @@ billboard |>
   )
 ```
 
-`cols`는 새로 생성될 변수의 변수값이 되어야할 현 데이터셋의 변수들을 지정한다. `names_to`는 `cols`를 통해 지정된 변수명이 변수값으로 들어갈 새로 운 변수의 이름을 지정한다. `values_to`는 `cols` 변수들의 변수값들이 들어갈 새로운 변수의 이름을 지정한다.
+`cols`는 새로 생성될 변수의 변수값이 되어야 할 현 데이터셋의 변수들을 지정한다. `names_to`는 `cols`를 통해 지정된 변수명이 변수값으로 들어갈 새로 운 변수의 이름을 지정한다. `values_to`는 `cols` 변수들의 변수값들이 들어갈 새로운 변수의 이름을 지정한다.
 
-그런데, 좀 더 복잡한 데이터 늘이기의 상황이 있을 수 있다. `tidyverse` 패키지에 포함되어 있는 `who2` 데이터를 사용한다. 이것은 WHO(world Health Organization, 세계보건기구)에서 제공한 데이터로서 1980\~2013년 전세계 209개국의 결핵 환자수에 대한 데이터이다.
+그런데, 좀 더 복잡한 데이터 늘이기의 상황이 있을 수 있다. [**tidyverse**](https://www.tidyverse.org/) 패키지에 포함되어 있는 `who2` 데이터를 사용한다. 이것은 WHO(world Health Organization, 세계보건기구)에서 제공한 데이터로서 1980\~2013년 전세계 209개국의 결핵 환자수에 대한 데이터이다.
 
 ```{r}
 glimpse(who2)
@@ -403,7 +467,7 @@ who2 |>
   )
 ```
 
-조교의 도움을 받아 각 아규먼트가 어떤 역할을 하는지 이해한다. 그리고 정돈된 데이터를 만들기 위해 왜 데이터 '늘이기'를 해야하는지 생각해 본다.
+각 인수의 역할에 대해 이해하는 것이 중요하다. 그리고 정돈된 데이터를 만들기 위해 왜 데이터 '늘이기'를 해야하는지 생각해 본다.
 
 이것보다 좀 더 복잡한 데이터 늘이기의 상황이 있을 수 있다. 간단한 예시인 `household` 데이터를 살펴보자.
 
@@ -427,7 +491,7 @@ household |>
 
 #### 데이터 넓히기
 
-실습을 위해 `tidyverse` 패키지에 포함되어 있는 `cms_patient_experience` 데이터를 사용한다. 이것은 미국의 [Centers of Medicare and Meicaid Services](https://www.cms.gov/)가 제공한 데이터이다.
+실습을 위해 [**tidyverse**](https://www.tidyverse.org/) 패키지에 포함되어 있는 `cms_patient_experience` 데이터를 사용한다. 이것은 미국의 [Centers of Medicare and Meicaid Services](https://www.cms.gov/)가 제공한 데이터이다.
 
 ```{r}
 cms_patient_experience
@@ -510,7 +574,7 @@ c_tibble |> separate_longer_delim(
 
 ### 결측치(NA) 처리
 
-해당 셀에 데이터가 존재하지 않는 경우 그것을 결측치(missing value)라 하고, R에서는 보통 NA(Not Available)이라고 한다. **tidyr** 패키지는 이러한 결측치를 다루기 위한 몇 가지 유용한 함수를 제공한다. 우선 간단한 예제 티블 객체를 생성한다.
+해당 셀에 데이터가 존재하지 않는 경우 그것을 결측치(missing value)라 하고, R에서는 보통 NA(Not Available)이라고 한다. [**tidyr**](https://tidyr.tidyverse.org/) 패키지는 이러한 결측치를 다루기 위한 몇 가지 유용한 함수를 제공한다. 우선 간단한 예제 티블 객체를 생성한다.
 
 ```{r}
 d_tibble <- tibble(

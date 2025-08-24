@@ -41,13 +41,13 @@ Mac: 프로젝트 폴더 이름 설정만 잘 신경쓰면 된다.
 
 프로그램을 다운로드하기 위해 다음의 [웹사이트](https://posit.co/download/rstudio-desktop/)로 이동한다. 여기는 RStudio를 만든 [posit](https://posit.co/)(과거에는 회사명 자체도 RStudio였음)이라는 회사가 관리하는 RStudio Desktop 다운로드 페이지이다.
 
-그러면 @fig-install-rstudio 와 같이 R과 RStudio를 설치할 수 있는 화면이 나타날 것이다.
+그러면 @fig-install-rstudio 과 같이 R과 RStudio를 설치할 수 있는 화면이 나타날 것이다.
 
-![다운로드 화면](images/clipboard-607613883.png){#fig-install-rstudio}
+![다운로드 화면](images/R_RStudio_Install.PNG){#fig-install-rstudio fig-align="center"}
 
 ### R의 설치
 
-왼쪽의 다운로드 바를 클릭하면 [CRAN(The Comprehensive R Archive Network)](https://cran.rstudio.com/)으로 이동한다. 조교의 도움을 받아 자신의 운영체계에 맞는 R의 최신 버전을 다운로드하고 자신의 디바이스에 설치한다. 이 다큐먼트 작성 시점 기준으로 R의 최신 버전은 4.4.1이다.
+왼쪽의 다운로드 바를 클릭하면 [CRAN(The Comprehensive R Archive Network)](https://cran.rstudio.com/)으로 이동한다. 자신의 운영체계에 맞는 R의 최신 버전을 다운로드하고 자신의 디바이스에 설치한다. 이 다큐먼트 작성 시점 기준으로 R의 최신 버전은 4.5.1이다.
 
 ::: callout-note
 CRAN은 R의 핵심 소프트웨어 저장소(software repository)이다. R 프로그램 자체의 과거와 현재의 버전들 뿐만 아니라 수많은 R 패키지(package)(현재 대략 20,000개)가 모여 있는 곳이다. 1997년 Kurt Hornik와 Friedrich Leisch에 의해 처음 만들어졌으며, 현재에도 Hornik와 많은 자원봉사자들에 의해 운영되고 있다. 자세한 사항은 [Wikipedia](https://en.wikipedia.org/wiki/R_package#Comprehensive_R_Archive_Network_(CRAN))를 참조할 수 있다.
@@ -55,15 +55,17 @@ CRAN은 R의 핵심 소프트웨어 저장소(software repository)이다. R 프�
 
 ### RStudio의 설치
 
-R의 지배적인 IDE(Integrated Development Environment, 통합개발환경)인 RStudio를 설치한다. 다시 원래의 다운로드 페이지로 돌아와, 오른편의 다운로드 바를 클릭하면 윈도우즈용 RStudio의 파일을 다운로드할 수 있다. 스크롤 다운하면 다른 운영체계를 위한 RStudio를 다운로드할 수 있다. 조교의 도움을 받아 자신의 디바이스에 설치한다. 이 다큐먼트 작성 시점 기준으로 RStudio의 최신 버전은 2024년 6월 10일에 발표된 2024.4.2+764이다. RStudio는 R만을 위한 IDE인데, posit은 최근 R과 python 모두에 적용할 수 있는 범용 IDE인 [Positron](https://github.com/posit-dev/positron)을 개발 중에 있고 현재 베타 버전의 사용이 가능하다. 향상된 기능성과 외견이 기대된다. 아래의 동영상이 도움이 될 것이다.
+R의 지배적인 IDE(Integrated Development Environment, 통합개발환경)인 RStudio를 설치한다. 다시 원래의 다운로드 페이지로 돌아와, 오른편의 다운로드 바를 클릭하면 윈도우즈용 RStudio의 파일을 다운로드할 수 있다. 스크롤 다운하면 다른 운영체계를 위한 RStudio를 다운로드할 수 있다. 다운받은 RStudio를 자신의 디바이스에 설치한다. 이 다큐먼트 작성 시점 기준으로 RStudio의 최신 버전은 2025년 5월 1일에 발표된 2025.05.1+513이다.
 
-{{< video https://www.youtube.com/watch?v=-jhTjOK4vQ8 >}}
+RStudio는 R만을 위한 IDE인데, [posit](https://posit.co/)은 최근 R과 Python 모두를 사용할 수 있는 범용 IDE인 [Positron](https://positron.posit.co/)을 개발하였다. 2025년 7월 3일에 베타 버전을 끝내고 정식 출시했으며, 현재는 2025년 8월 14일에 출시된 2025.08.0-130이 최신 버전이다. Positron은 RStudio와 Python에서 많이 사용되는 [VS Code](https://code.visualstudio.com/)를 결합한 것으로, 향상된 기능과 외견이 기대된다. 2026년부터는 RStudio에서 Positron으로의 이동이 본격화될 것이다. Positron을 살펴보는데 아래의 동영상이 도움이 될 것이다.
+
+{{< video https://www.youtube.com/watch?v=4Ir_HX4riHw >}}
 
 ## RStudio 둘러보기
 
 ### 창(pane, 패인)
 
-Studio를 실행하면 아마도 대부분의 경우 @fig-3-panes 와 같은 화면을 보게 될 것이다. 크게 세 개의 창으로 구성되어 있음을 알 수 있다.
+RStudio를 실행하면 아마도 대부분의 경우 @fig-3-panes 와 같은 화면을 보게 될 것이다. 크게 세 개의 창으로 구성되어 있음을 알 수 있다.
 
 ![세 개의 창](https://r4ds.hadley.nz/diagrams/rstudio/console.png){#fig-3-panes}
 
@@ -109,10 +111,10 @@ Studio를 실행하면 아마도 대부분의 경우 @fig-3-panes 와 같은 화
 a <- 1
 ```
 
-우상의 Environment 창을 보면 뭔가 생성된 것을 확인할 수 있을 것이다. a라는 객체가 생성되었으며 그것은 1이라는 값을 품고 있다는 의미이다. 이제 a는 알파벳 소문자가 아니라 1이라는 숫자와 필연적으로 결합해 있는 객체이다. 다음을 샐행하면 이러한 사실을 보다 명확히 확인할 수 있다.
+우상의 Environment 창을 보면 뭔가 생성된 것을 확인할 수 있을 것이다. `a`라는 객체가 생성되었으며 그것은 1이라는 값을 품고 있다는 의미이다. 이제 `a`는 알파벳 소문자가 아니라 1이라는 숫자와 필연적으로 결합해 있는 객체이다. 다음을 샐행하면 이러한 사실을 보다 명확히 확인할 수 있다.
 
 ::: callout-note
-할당 연산자의 단축키는 **Alt + \_** 이다. 가장 많이 사용하게 될 단축키 중의 하나이다. d이 단축키를 사용하면 좋은 점 중의 하나는 전후에 빈 공간이 자동적으로 생성된다는 점이다. 따라서 객체 이름 다음에 할당 연산자를 사용하기 위해 스페이스바를 사용할 필요가 없다.
+할당 연산자의 단축키는 **Alt + \_** 이다. 가장 많이 사용하게 될 단축키 중의 하나이다. 이 단축키를 사용하면 좋은 점 중의 하나는 전후에 빈 공간이 자동적으로 생성된다는 점이다. 따라서 객체 이름 다음에 할당 연산자를 사용하기 위해 스페이스바를 사용할 필요가 없다.
 :::
 
 ```{r}
@@ -127,19 +129,44 @@ c <- a + b
 c
 ```
 
+Base R에는 할당 연사자 외에도 여러 연산자가 존재한다. 이를 정리하면 다음과 같다.
+
+| 범주 | 연산자 | 설명 | 예시 |
+|------------------|------------------|------------------|------------------|
+| 할당(assignment) 연산자 | `<-` 혹은 `->` | 데이터를 객체에 할당 | `a <- 5` |
+| 수리(arithmetic) 연산자 | `+` | 더하기(addition) | `5 + 5 = 10` |
+|  | `-` | 빼기(subtraction) | `5 - 5 = 0` |
+|  | `*` | 곱하기(multiplication) | `2 * 8 = 16` |
+|  | `/` | 나누기(division) | `100 / 10 = 10` |
+|  | `^` 혹은 `**` | 제곱(exponent/power) | `5^2 = 25` |
+|  | `%%` | 나머지(modulo) | `100 %% 15 = 10` |
+|  | `%/%` | 몫(integer division) | `100 %/% 15 = 6` |
+| 관계(relational) 연산자 | `x < y` | x가 y보다 작은 경우 | 3 \< 4 `TRUE` |
+|  | `x > y` | x가 y보다 큰 경우 | 3 \> 4 `FALSE` |
+|  | `x <= y` | x가 y보다 작거나 같은 경우 | 3 \<= 4 `TRUE` |
+|  | `x >= y` | x가 y보다 크거나 같은 경우 | 3 \>= 4 `FALSE` |
+|  | `x == y` | x와 y가 같은 경우 | 3 == 4 `FALSE` |
+|  | `x != y` | x와 y가 다른 경우 | 3 != 4 `TRUE` |
+| 논리(logical) 연산자 | `!` | 논리 부정(negation) |  |
+|  | `&` | 논리곱(logical "and") |  |
+|  | `|` | 논리합(logical "or") |  |
+|  | `xor` | 배타적 논리합(logical "exclusive or") |  |
+| 기타 연산자 | `x %in% y` | 원소 포함 | 벡터 x의 각 원소가 y 안에 존재하는지 확인 |
+|  | `!(x %in% y)` | 원소 비포함 | 벡터 x의 각 원소가 y 안에 존재하지 않는지 확인 |
+
 #### 함수
 
-`sum()` 함수를 사용하여 동일한 연산을 할 수 있다. `sum()` 은 R에 기본적으로 내장되어 있는 Base R 함수 중 하나이다.
+`sum()` 함수를 사용하여 동일한 연산을 할 수 있다. `sum()`은 R에 기본적으로 내장되어 있는 Base R 함수 중 하나이다.
 
 ```{r}
 sum(a, b)
 ```
 
 ::: callout-important
-지금부터 모든 함수명에는 항상 `()`를 연결하여 나타낼 것이다. 다른 객체명과의 혼동을 방지하기 위한 것도 있지만, 모든 함수는 `()` 속에 인풋(이것을 아규먼트(argument, 인자)라고 부른다)을 받아들이기 때문이다.
+지금부터 모든 함수명에는 항상 `()`를 연결하여 나타낼 것이다. 다른 객체명과의 혼동을 방지하기 위한 것도 있지만, 모든 함수는 `()` 속에 인풋(이것을 인자(argument)라고 부른다)을 받아들이기 때문이다.
 :::
 
-R에는 수 많은 내장 함수가 있다. 그 중 몇가지만 실행하면 다음과 같다. `sqrt()`는 제곱근을, `abs()`는 절대값을, `log10()`는 밑을 10으로 하는 로그값을 산출해준다.
+R에는 수많은 내장 함수가 있다. 그 중 몇가지만 실행하면 다음과 같다. `sqrt()`는 제곱근을, `abs()`는 절대값을, `log10()`는 밑을 10으로 하는 로그값을 산출해준다.
 
 ```{r}
 sqrt(2)
@@ -147,32 +174,72 @@ abs(-3)
 log10(100)
 ```
 
+Base R에서 사용되는 주요 내장 함수를 정리하면 다음과 같다.
+
+| 범주 | 구분 | 함수 |
+|-------------------|------------------|-----------------------------------|
+| 논리형 판별 함수 | 결측치 여부 | `is.na()`, `is.nan()`, `is.infinite()`, `is.finite()` |
+|  | 유형 확인 | `is.numeric()`, `is.integer()`, `is.character()`, `is.logical()`, `is.factor()` |
+|  | 구조 확인 | `is.data.frame()`, `is.matrix()`, `is.list()`, `is.vector()` |
+|  | 기타 | `is.null()`, `is.atomic()`, `is.element()` |
+| 위치 기반 추출 함수 | 첫 번째 원소 | `x[1]` |
+|  | 마지막 원소 | `x[length(x)]` |
+|  | n번째 원소 | `x[n]` |
+|  | 앞의 몇 개의 원소 | `head()` |
+|  | 뒤의 몇 개의 원소 | `tail()` |
+| 수학 함수 | 절댓값/부호 | `abs()`, `sign()` |
+|  | 제곱근/지수 | `sqrt()`, `exp()` |
+|  | 로그 | `log()`, `log10()`, `log2()` |
+|  | 삼각함수 | `sin()`, `cos()`, `tan()`, `asin()` |
+|  | 반올림 | `round()`, `floor()`, `ceiling()`, `trunc()` |
+|  | 요약 | `sum()`, `mean()`, `median()`, `var()`, `sd()`, `min()`, `max()`, `range()`, `summary()` |
+| 벡터 생성 함수 | 수열/반복 | `seq()`, `rep()` |
+|  | 특정 유형 | `numeric()`, `integer()`, `logical()`, `character()` |
+|  | 난수/표본 생성 | `sample()`, `rnorm()`, `runif()`, `rbinom()` |
+| 집합 연산 함수 | 합집합 | `union()` |
+|  | 교집합 | `intersect()` |
+|  | 차집합 | `setdiff()` |
+|  | 동일 여부 | `setequal()` |
+|  | 원소 포함 여부 | `is.element()` |
+| 변환 함수 | 유형 변환 | `as.numeric()`, `as.character()`, `as.factor()`, `as.data.frame()` |
+|  | 재코딩/재배열 | `cut()`, `relevel()`, `reorder()` |
+|  | 표준화 | `scale()` |
+| 기타 함수 | 길이 | `length()` |
+|  | 정렬 | `sort()`, `order()` |
+|  | 중복 처리 | `unique()`, `duplicated()` |
+|  | 결측치 처리 | `na.omit()` |
+
+::: callout-note
+최근 [**tidyverse**](https://www.tidyverse.org/) 패키지의 사용이 활발해 지면서 이러한 Base R 함수의 활용에 약간의 변동이 발생하고 있다. [**tidyverse**](https://www.tidyverse.org/) 패키지는 [타이디버스 디자인 원리](https://design.tidyverse.org/)에 의거해 새로운 함수를 디자인하여 제공하고 있다. 이러한 타이디버스 함수가 Base R 함수나 기존의 패키지의 함수를 대체해 나가고 있는 실정이다. 여전히 많은 사람이 여기에 열거되어 있는 Base R의 기본 함수를 사용하고, 그러한 문법에 따라 코드를 작성하고 있다. 나는 타이디버스가 R의 미래라고 확신하며 가능한 코드를 타이디버스 함수를 이용해 작성하도록 노력할 것이다. 여기서 Base R의 함수는 기본적으로 벡터에 적용되는 함수이고, 타이디버스 함수는 데이터 프레임에 적용되는 함수라는 점을 명확히 할 필요가 있다. 따라서 타이디버스에서 벡터 연산을 할 때는 위에서 열거한 많은 함수를 그대로 사용한다. 특히, 논리형 판별 함수와 수학 함수는 그대로 사용하고 있다. 집합 연산 함수는 이름은 동일하지만 사실 새롭게 디자인한 함수이다. 타이디버스는 새로운 데이터 프레임 기반 함수를 통해 기존의 벡터 기반 함수가 하는 일을 대체하고자 한다. 그렇지만 모든 코드를 데이터 프레임 함수로만 작성할 수 없고, Base R의 여러 벡터 함수는 여전히 유용하게 사용되고 있다. 타이디버스가 부가적으로 제공하는 벡터 함수에 대해서는 다른 장에서 다루도록 한다.
+:::
+
 #### 벡터와 데이터 프레임
 
 위에서 살펴본 숫자 하나하나는 큰 의미가 없다. 우리는 보통 숫자의 집합(array), 즉 벡터를 다룬다.
 
 ```{r}
 a <- c(58, 26, 24)
-b <- c("이상일", "김세창", "김우형")
+b <- c(58L, 26L, 24L)
 c <- c(TRUE, TRUE, FALSE)
+d <- c("이상일", "김세창", "김우형")
 ```
 
-a, b, c는 모두 벡터이다. 우상의 Environment 창에서도 이러한 사실을 확인할 수 있다. 그런데, 이 세가지 벡터는 데이터의 유형(type)이라는 측면에서 서로 다르다. a는 숫자형(numeric), b는 문자형(character), c는 논리형(logical)이다. Environment 창을 보면, a에 대해서는 `num`, b에 대해서는 `chr`, c에 대해서는 `logi`라는 축약어가 붙어 있음을 알 수 있는데, 이것이 바로 벡터의 유형을 나타내고 있는 것이다. 사실 R에서 다루는 벡터의 유형은 10가지가 넘는다.
+`a`, `b`, `c`, `d`는 모두 벡터이다. 우상의 Environment 창에서도 이러한 사실을 확인할 수 있다. 그런데, 이 세가지 벡터는 데이터의 유형(type)이라는 측면에서 서로 다르다. `a`는 숫자형(numeric), `b`는 정수형(integer), `c`는 논리형(logical), `d`는 문자형(character)이다. Environment 창을 보면, `a`에 대해서는 `num`, `b`에 대해서는 int, `c`에 대해서는 `logi`, `d`에 대해서는 `chr`이라는 축약어가 붙어 있음을 알 수 있는데, 이것이 바로 벡터의 유형을 나타내고 있는 것이다. 사실 R에서 다루는 벡터의 유형은 10가지가 넘는다.
 
 ::: callout-note
-R에서 사용되는 데이터 유형에 대해서는 다음의 웹사이트를 참고할 수 있다. <https://tibble.tidyverse.org/articles/types.html>
+[**tidyverse**](https://www.tidyverse.org/) 패키지의 핵심 패키지 중의 하나인 [**tibble**](https://tibble.tidyverse.org/) 패키지에서 규정된 데이터 유형에 대해서는 다음의 웹사이트를 참고할 수 있다. <https://tibble.tidyverse.org/articles/types.html>
 :::
 
 벡터를 `data.frame()`이라는 함수를 통해 결합하면 데이터 프레임을 만들 수 있다.
 
 ```{r}
-df <- data.frame(a, b, c)
+df <- data.frame(a, b, c, d)
 df
 ```
 
-우상의 Environment 창을 보면 뭔가 변화가 있음을 확인할 수 있을 것이다. Data가 생겼고 그 아래에 df가 생성되어 있을 것이다. "3 obs. of 3 variables"라는 말이 굉장히 중요하다. 이것은 df라는 데이터 프레임 객체가 3개의 관측개체(observations)와 3개의 변수(variables)로 구성되어 있다는 것을 의미한다. 데이터 프레임, 관측개체, 변수에 대해서는 강의에서 상세하게 다룬다.
+우상의 Environment 창을 보면 뭔가 변화가 있음을 확인할 수 있을 것이다. Data가 생겼고 그 아래에 `df`가 생성되어 있을 것이다. "3 obs. of 4 variables"라는 말이 굉장히 중요하다. 이것은 `df`라는 데이터 프레임 객체가 3개의 관측 개체(observations)와 4개의 변수(variables)로 구성되어 있다는 것을 의미한다. 데이터 프레임, 관측 개체, 변수에 대해서는 강의에서 상세하게 다룬다.
 
-Environment 창에서 df를 클릭해보라. 그러면 왼편에 또 하나의 창이 생기면서 마치 엑셀과 같은 형식으로 데이터가 나타날 것이다. `View()` 함수를 실행해도 동일한 결과를 얻을 수 있다.
+Environment 창에서 `df`를 클릭해보라. 그러면 왼편에 또 하나의 창이 생기면서 마치 엑셀과 같은 형식으로 데이터가 나타날 것이다. `View()` 함수를 실행해도 동일한 결과를 얻을 수 있다.
 
 ```{r}
 View(df)
@@ -194,7 +261,7 @@ RStudio의 프로젝트는 실질적으로 하나의 폴더를 의미한다. 하
 
 -   디바이스에 모든 R 프로젝트를 포괄하는 최상위 폴더를 만든다. 걸맞는 폴더명(예: R_Projects)을 부여한다. 이것은 R 외부에서 미리 해둔다. 물론 Output 창의 Files 탭을 이용하면 R 내부에서도 할 수 있다.
 
--   최상위 폴더 아래에 개별 R 프로젝트를 위한 폴더를 만든다. 과업에 걸맞는 폴더명(예: AI_Class_2024)을 부여한다. 이것을 R 외부에서 미리 해둘 수도 있고, R 내부에서 프로젝트를 생성할 때 할 수도 있다. 후자를 추천한다.
+-   최상위 폴더 아래에 개별 R 프로젝트를 위한 폴더를 만든다. 과업에 걸맞는 폴더명(예: AI_Class_2025)을 부여한다. 이것을 R 외부에서 미리 해둘 수도 있고, R 내부에서 프로젝트를 생성할 때 할 수도 있다. 후자를 추천한다.
 
 #### R 프로젝트 만들기
 
@@ -210,21 +277,21 @@ RStudio의 프로젝트는 실질적으로 하나의 폴더를 의미한다. 하
 
 -   2단계: New Project를 선택한다.
 
--   3단계: 'Directory name:'에 과제를 위한 폴더명을 타이핑한다(예: AI_Class_2024). 'Create project as subdirectory of:'에 최상위 폴더(예: R_Projects)를 선택한다.
+-   3단계: 'Directory name:'에 과제를 위한 폴더명을 타이핑한다(예: AI_Class_2025). 'Create project as subdirectory of:'에 최상위 폴더(예: R_Projects)를 선택한다.
 
 ![R 프로젝트의 생성 절차](https://r4ds.hadley.nz/diagrams/new-project.png){#fig-R-project}
 
 Output 창의 Files 탭을 누르면, 다양한 기본 파일들이 해당 폴드에 생성되었음을 확인할 수 있다. 가장 중요한 파일은 .RProj라는 확장자를 가진 파일이다. 나중에 R 외부에서 이 파일을 더블클릭하면 R 프로젝트를 열 수 있다.
 
-::: {.callout-tip collapse="true"}
+::: {.callout-tip collapse="false"}
 R 외부의 파일 관리 시스템(윈도우즈의 경우 파일 탐색기)를 사용하지 말고, Output 창의 Files 탭을 사용하는 것이 훨씬 유용하다. 파일 탐색기에서 제공하는 거의 대부분의 기능을 제공한다.
 :::
 
 #### 옵션의 변경
 
-Rstudio의 기본 세팅값을 바꿀 수 있는 다양한 옵션이 존재한다. Tools \> Global Options를 선택하면 @fig-global-options 과 같은 화면을 볼 수 있을 것이다. 다음의 두 가지를 해보라.
+RStudio의 기본 세팅값을 바꿀 수 있는 다양한 옵션이 존재한다. Tools \> Global Options를 선택하면 @fig-global-options 과 같은 화면을 볼 수 있을 것이다. 다음의 두 가지를 해보라.
 
--   자신이 좀 숙달된 R 사용자가 되었다고 판단되는 즈음에, 가운데 Workspace 부분을 그림과 동일하게 변경해보라. 디폴트는 체크가 되어 있는 것인데, 프로젝트를 다시 열었을 때 그 전에 만들어 둔 데이터나 객체가 모두 그대로 남아있게 한다. 초보자에게는 이것이 좋을 것이다. 그러나 새로운 세션을 시작할 때 마다 그 전의 흔적을 밀어버리고, 다시 모든 코드를 실행하여 결과를 새로인 얻는 것이, 프로그래밍 측면에서는 '완전한' 일이다.
+-   자신이 좀 숙달된 R 사용자가 되었다고 판단되는 즈음에, 가운데 Workspace 부분을 그림과 동일하게 변경해보라. 디폴트는 체크가 되어 있는 것인데, 프로젝트를 다시 열었을 때 그 전에 만들어 둔 데이터나 객체가 모두 그대로 남아있게 한다. 초보자에게는 이것이 좋을 것이다. 그러나 새로운 세션을 시작할 때 마다 그 전의 흔적을 밀어버리고, 다시 모든 코드를 실행하여 결과를 새로이 얻는 것이, 프로그래밍 측면에서는 '완전한' 일이다.
 
 -   왼쪽에서 Apearance를 선택한 후, 'Editor font size:'나 'Editor theme'을 변경하여 자신의 선호를 반영하라.
 
@@ -238,9 +305,9 @@ Console은 명령어를 입력하고 그 결과를 볼 수 있는 곳이다. 이
 
 -   다양하고 복잡한 R 명령어를 실행하고 그 결과를 보기에는 공간이 협소하다.
 
--   Console에서 행한 것은 저장되지 않는다. 보다 정확하게 말하면, 산출물은 저장될 수 있지만, 그러한 산출물을 얻는데 동원데 일련의 코드는 저장되지 않는다. RStudio를 나갔다가 다시 들어오면 객체, 플롯 등의 산출물은 그대로 남아 있지만 어떤 과정을 거쳐 그러한 결과물을 산출했는지에 대한 것을 남아 있지 않다. 이런 점은 상당한 기간이 지난 후에는 더 큰 문제로 다가온다.
+-   Console에서 행한 것은 저장되지 않는다. 보다 정확하게 말하면, 산출물은 저장될 수 있지만, 그러한 산출물을 얻는데 동원된 일련의 코드는 저장되지 않는다. RStudio를 나갔다가 다시 들어오면 객체, 플롯 등의 산출물은 그대로 남아 있지만 어떤 과정을 거쳐 그러한 결과물을 산출했는지에 대한 것을 남아 있지 않다. 이런 점은 상당한 기간이 지난 후에는 더 큰 문제로 다가온다.
 
-이러한 의미에서 R을 가지고 행한 것을 모두 저장하는, 일종의 연구노트와 같은 것이 필요하다. 이것을 R 스크립트(script)라고 부르는데, 좌상의 Editor 창에서 스크립트를 다루고, .R이라는 화장자를 가진 파일로 저장한다.
+이러한 의미에서 R을 가지고 행한 것을 모두 저장하는, 일종의 연구노트와 같은 것이 필요하다. 이것을 R 스크립트(script)라고 부르는데, 좌상의 Editor 창에서 스크립트를 다루고, `.R`이라는 확장자를 가진 파일로 저장한다.
 
 #### 스크립트 파일 생성하고 저장하기
 
@@ -250,11 +317,11 @@ Console은 명령어를 입력하고 그 결과를 볼 수 있는 곳이다. 이
 
 -   File 메뉴 바로 아래의 New File 아이콘을 누른 후 R Script 선택
 
--   단축키(Ctrl + Shift + N) 실행
+-   단축키(**Ctrl + Shift + N**) 실행
 
 이렇게 하면 @fig-four-panes 과 같이 좌상에 Editor 창이 생성된다. 그 안에서 그림에서 보는 바와 같이 코드를 작성하게 된다.
 
-![네 개의 창(https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html)](https://docs.posit.co/ide/user/ide/guide/ui/images/rstudio-panes-labeled.jpeg){#fig-four-panes}
+![네 개의 창(<https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html>)](https://docs.posit.co/ide/user/ide/guide/ui/images/rstudio-panes-labeled.jpeg){#fig-four-panes}
 
 스크립트 파일에 이름을 부여하고 저장한다.
 
@@ -266,7 +333,7 @@ Console은 명령어를 입력하고 그 결과를 볼 수 있는 곳이다. 이
 
 #### 스크립트 파일에서의 실행
 
-앞에서 Console에서 했던 모든 일을 동일하게 할 수 있다. 단 실행 방식이 조금 다르다. 앞에서 생성한 df 데이터 프레임의 a 벡터(변수)의 평균값을 구하기 위해 이전과 동일하게 입력한다. 그런데 프롬프트가 없고, \[enter\]를 눌러도 실행되지 않는다.
+앞에서 Console에서 했던 모든 일을 동일하게 할 수 있다. 단 실행 방식이 조금 다르다. 앞에서 생성한 `df` 데이터 프레임의 `a` 벡터(변수)의 평균값을 구하기 위해 이전과 동일하게 입력한다. 그런데 프롬프트가 없고, \[enter\]를 눌러도 실행되지 않는다.
 
 ```{r}
 #| eval: false
@@ -281,7 +348,7 @@ mean(df$a)
 
 영역이 지정되면 실행하면 되는데, 여기에도 두 가지 방법이 있다.
 
--   단축키(Ctrl + Enter) 실행
+-   단축키(**Ctrl + Enter**) 실행
 
 -   Editor 창의 우상에 있는 'Run the current line or selection' 아이콘을 클릭(@fig-run-script 참조)
 
@@ -289,13 +356,13 @@ mean(df$a)
 
 이전의 실행을 반복하고자 할 때는 다음과 같이 하면 된다.
 
--   단축키(Ctrl + Alt +P) 실행
+-   단축키(**Ctrl + Alt +P**) 실행
 
 -   Editor 창의 우상에 있는 'Re-run the previous code region' 아이콘을 클릭(@fig-run-script 참조)
 
 스크립트 파일 내 모든 코드를 실행하고자 할 때는 다음과 같이 하면 된다.
 
--   단축키(Crtl + Shift + S)
+-   단축키(**Crtl + Shift + S**)
 
 #### 코멘트
 
@@ -308,4 +375,6 @@ mean(df$a)
 mean(df$a) # 세 사람의 나이 평균을 구함. 첫 번째 사람 나이가 엄청나게 많음.
 ```
 
-둘째, 코드가 길어지면, 그것을 몇 개의 섹션으로 나누고 그것에 코멘트를 달아 줄 수 있다. 단축키(Crtl + Shift + R)를 실행하여 섹션 라벨(Section label)을 달 수 있고, Editor 창의 왼쪽 하단에 있는 작은 아이콘을 이용해 섹션을 빠르게 이동할 수 있다.
+둘째, 코드가 길어지면, 그것을 몇 개의 섹션으로 나누고 그것에 코멘트를 달아 줄 수 있다. 단축키(**Crtl + Shift + R**)를 실행하여 섹션 라벨(Section label)을 달 수 있고, Editor 창의 왼쪽 하단에 있는 작은 아이콘을 이용해 섹션을 빠르게 이동할 수 있다.
+
+![섹션 코멘트 달기(<https://r4ds.hadley.nz/workflow-style.html#sectioning-comments>)](https://r4ds.hadley.nz/screenshots/rstudio-nav.png){#fig-section-comment fig-align="center"}

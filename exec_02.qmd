@@ -55,29 +55,31 @@ editor_options:
 `install.packages()`함수에서는 반드시 패키지명을 쌍따옴표로 싸야하지만, `library()`함수에서는 그렇지 않다. 불러온 패키지는 R 세션이 유지되는 동안 내내 사용할 수 있지만, R 세션을 끝내고 다시 시작하면 다시 `library()`함수를 이용해 다시 불러와야 한다. 그래서 R 스크립트 파일의 시작 부분에는 패키지를 불러오는 코드를 위치시키고, 다시 스크립트 파일을 열 때마다 그 부분을 재실행하는 것이 좋은 습관이다.
 :::
 
-### `tidyverse` 패키지
+### **tidyverse** 패키지
 
-데이터사이언스 과정의 각 단계는 특징적인 과업으로 구성되어 있고, 거기에 맞춰 특징적인 함수들을 장착한 패키지들이 개발되어 왔다. 그런데 최근 RStudio는 데이터사이언스와 밀접히 관련된 패키지들을 모아 일종의 엄브렐러 패키지인 [`tidyverse`](https://www.tidyverse.org/)를 만들어 제공하고 있다. [`tidyverse`](https://www.tidyverse.org/) 패키지는 패키지의 패키지인데, 핵심적인 구성 패키지에 다음과 같은 것들이 있다.
+데이터사이언스 과정의 각 단계는 특징적인 과업으로 구성되어 있고, 거기에 맞춰 특징적인 함수들을 장착한 패키지들이 개발되어 왔다. 그런데 최근 RStudio는 데이터사이언스와 밀접히 관련된 패키지들을 모아 일종의 엄브렐러 패키지인 [**tidyverse**](https://www.tidyverse.org/)를 만들어 제공하고 있다. [**tidyverse**](https://www.tidyverse.org/) 패키지는 패키지의 패키지인데, 핵심적인 구성 패키지에 다음과 같은 것들이 있다.
 
--   [`ggplot2`](https://ggplot2.tidyverse.org/): 시각화하기
+-   [**ggplot2**](https://ggplot2.tidyverse.org/): 시각화하기
 
--   [`dplyr`](https://dplyr.tidyverse.org/): 변형하기
+-   [**dplyr**](https://dplyr.tidyverse.org/): 변형하기
 
--   [`tidyr`](https://tidyr.tidyverse.org/):정리하기
+-   [**tidyr**](https://tidyr.tidyverse.org/):정리하기
 
--   [`readr`](https://readr.tidyverse.org/): 불러오기
+-   [**readr**](https://readr.tidyverse.org/): 불러오기
 
--   [`tibble`](https://tibble.tidyverse.org/): 데이터 프레임 관련
+-   [**tibble**](https://tibble.tidyverse.org/): 데이터 프레임 관련
 
--   [`stringr`](https://stringr.tidyverse.org/): 문자열 처리 관련
+-   [**stringr**](https://stringr.tidyverse.org/): 문자열 처리 관련
 
--   [`forcats`](https://forcats.tidyverse.org/): 범주 변수(팩터) 처리 관련
+-   [**forcats**](https://forcats.tidyverse.org/): 범주 변수(팩터) 처리 관련
 
--   [`purrr`](https://purrr.tidyverse.org/): 함수형 프로그래밍(functional programming) 관련
+-   [**purrr**](https://purrr.tidyverse.org/): 함수형 프로그래밍(functional programming) 관련
 
-![tidyverse의 핵심 패키지(<https://www.tidyverse.org/packages/>)](images/clipboard-1805892802.png){#fig-tidyverse-packages}
+-   [**lubridate**](https://lubridate.tidyverse.org/): 일시 및 시간 처리 관련
 
-[`tidyverse`](https://www.tidyverse.org/) 패키지를 사용하는 것의 장점은 이 패키지만 불러오면 구성 패키지까지 한꺼번에 사용할 수 있게 된다는 점이다. 스크립트 내에서 다음과 같은 코드를 실행한다.
+![**tidyverse**의 핵심 패키지(<https://www.tidyverse.org/>)](images/tidyverse_9.PNG){#fig-tidyverse-packages fig-align="center"}
+
+[**tidyverse**](https://www.tidyverse.org/)패키지를 사용하는 것의 장점은 이 패키지만 불러오면 구성 패키지까지 한꺼번에 사용할 수 있게 된다는 점이다. 스크립트 내에서 다음과 같은 코드를 실행한다.
 
 ```{r}
 library(tidyverse)
@@ -101,13 +103,13 @@ penguins
 
 데이터를 자세히 살펴보면 몇 가지를 알 수 있다.
 
--   티블(`tibble`)이라는 형식의 데이터 프레임이다. 티블은 [`tidyverse`](https://www.tidyverse.org/)의 공식 데이터 프레임 포맷이다.
+-   티블(`tibble`)이라는 형식의 데이터 프레임이다. 티블은 [**tidyverse**](https://www.tidyverse.org/)의 공식 데이터 프레임 포맷이다.
 
 -   관측개체는 344개, 변수는 8개이다.
 
 -   `species`, `island`, `sex` 변수의 유형은 팩트형(`fctr`)이고, `bill_length_mm`, `bill_depth_mm`은 실수형(`dbl`)이고, 나머지는 정수형(`int`)이다.
 
-변수가 많아지면 전체 데이터를 조망하기 어렵기 때문에, 최초의 [`tidyverse`](https://www.tidyverse.org/) 함수인 `glimpse()`를 사용하여 데이터의 행과 열을 바꾸어 보자. 변수 위주로 데이터를 개관하고자 할 때 매우 유용하다.
+변수가 많아지면 전체 데이터를 조망하기 어렵기 때문에, 최초의 [**tidyverse**](https://www.tidyverse.org/) 함수인 `glimpse()`를 사용하여 데이터의 행과 열을 바꾸어 보자. 변수 위주로 데이터를 개관하고자 할 때 매우 유용하다.
 
 ```{r}
 glimpse(penguins)
@@ -119,7 +121,7 @@ glimpse(penguins)
 
 ### 그래프 만들기
 
-이 `penguins` 데이터와 `ggplot2()` 패키지를 이용하여 "펭귄의 날개 길이와 몸무게의 관계"를 표현하는 그래프를 작성해 보자. `ggplot2()`의 문법에 대한 사항은 따로 공부할 기회가 있으므로 여기서는 제작 과정을 한 번 따라가 본다.
+이 `penguins` 데이터와 [**ggplot2**](https://ggplot2.tidyverse.org/) 패키지를 이용하여 "펭귄의 날개 길이와 몸무게의 관계"를 표현하는 그래프를 작성해 보자. [**ggplot2**](https://ggplot2.tidyverse.org/)의 문법에 대한 사항은 따로 공부할 기회가 있으므로 여기서는 제작 과정을 한 번 따라가 본다.
 
 #### 플롯 객체의 지정
 
@@ -198,7 +200,7 @@ ggplot(
 
 ## 변형하기
 
-변형하기와 관련된 함수들은 대부분 [`dplyr`](https://dplyr.tidyverse.org/) 패키지에 포함되어 있다.
+변형하기와 관련된 함수들은 대부분 [**dplyr**](https://dplyr.tidyverse.org/) 패키지에 포함되어 있다.
 
 ### 데이터 살펴보기
 
@@ -277,7 +279,7 @@ summarize(by_day, delay = mean(dep_delay, na.rm = TRUE))
 
 ## 정리하기
 
-정리하기와 관련된 함수들은 대부분 [`tidyr`](https://tidyr.tidyverse.org/) 패키지에 포함되어 있다. 많은 함수가 있지만 가장 중요한 두 개의 함수에만 집중한다.
+정리하기와 관련된 함수들은 대부분 [**tidyr**](https://tidyr.tidyverse.org/) 패키지에 포함되어 있다. 많은 함수가 있지만 가장 중요한 두 개의 함수에만 집중한다.
 
 ### 데이터 살펴보기
 
@@ -322,7 +324,7 @@ pivot_wider(
 
 ## 불러오기
 
-불러오기와 관련된 함수들은 대부분 [`readr`](https://readr.tidyverse.org/) 패키지에 포함되어 있다. 여러 유형의 파일을 불러오기 위해 여러 함수가 존재하지만, 콤마분리값(comma-separated values, CSV) 형식의 데이터를 불러오는 함수(`read_csv()`)만 실습한다.
+불러오기와 관련된 함수들은 대부분 [**readr**](https://readr.tidyverse.org/) 패키지에 포함되어 있다. 여러 유형의 파일을 불러오기 위해 여러 함수가 존재하지만, 콤마분리값(comma-separated values, CSV) 형식의 데이터를 불러오는 함수(`read_csv()`)만 실습한다.
 
 ```{r}
 students <- read_csv("https://pos.it/r4ds-students-csv")
@@ -338,7 +340,7 @@ flights_day1 <- filter(flights, month == 1 & day == 1)
 glimpse(flights_day1)
 ```
 
-앞으로 할당 연산자보다 훨씬 더 빈번하게 사용하게 될 연산자를 소개하려고 한다. 그것은 파이프 연산자(pipe operator)라는 것으로, `%>%` 혹은 `|>`로 표시하는 것이다. 원래 이 연산자의 원리는 [`magrittr`](https://magrittr.tidyverse.org/) 패키지에서 처음 소개되었는데, 차츰 R 커뮤니티에 파급되더니 급기야는 대세로 자리잡았다. 그래서 특정 패키지를 깔지 않아도 파이프 연산자를 사용할 수 있게 하기 위해 Base R에 도입되었고(이것을 원파이프 연산자(native pipe operator)라고 부른다), 부호로 `%>%` 대신 `|>`를 사용한다. 둘 사이에 차이는 거의 없지만, 후자가 점점 표준이 되고 있기 때문에 본 수업에서는 그것을 사용한다. 다음의 두 가지에 유의한다.
+앞으로 할당 연산자보다 훨씬 더 빈번하게 사용하게 될 연산자를 소개하려고 한다. 그것은 파이프 연산자(pipe operator)라는 것으로, `%>%` 혹은 `|>`로 표시하는 것이다. 원래 이 연산자의 원리는 [**magrittr**](https://magrittr.tidyverse.org/) 패키지에서 처음 소개되었는데, 차츰 R 커뮤니티에 파급되더니 급기야는 대세로 자리잡았다. 그래서 특정 패키지를 깔지 않아도 파이프 연산자를 사용할 수 있게 하기 위해 Base R에 도입되었고(이것을 네이티브 파이프 연산자(native pipe operator)라고 부른다), 부호로 `%>%` 대신 `|>`를 사용한다. 둘 사이에 차이는 거의 없지만, 후자가 점점 표준이 되고 있기 때문에 본 수업에서는 그것을 사용한다. 다음의 두 가지에 유의한다.
 
 -   현재 RStudio의 디폴트는 `%>%`로 설정되어 있다. 이것을 Tools \> Global Options \> Code에 가서 'Use native pipe operator, \|\> (requires R 4.1+)'를 선택해 주어야 한다. 아래의 @fig-pipe-operator 를 참고하라.
 
@@ -346,7 +348,7 @@ glimpse(flights_day1)
 
 -   단축키는 **Crtl + Shift + M**이다. 다른 건 몰라도 이 단축키만은 반드시 기억해야 한다.
 
-다음의 세 코드를 비교해 보라. 우선 아래의 경우는 flights1과 flights2와 같은 중간 변수가 계속 생성되어 메모리를 차지하게 된다.
+다음의 세 코드를 비교해 보라. 우선 아래의 경우는 `flights1`과 `flights2`와 같은 중간 변수가 계속 생성되어 메모리를 차지하게 된다.
 
 ```{r}
 flights1 <- filter(flights, dest == "IAH")

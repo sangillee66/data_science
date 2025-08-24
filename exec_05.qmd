@@ -21,23 +21,23 @@ editor_options:
 
 ## 실습 개요 {.unnumbered}
 
-이 실습은 R로 데이터사이언스를 하는 과정 중 데이터 시각화하기(visualizing)를 다룬다. 데이터 시각화하기는 [`tidyverse`](https://www.tidyverse.org/)의 핵심 패키지 중의 하나인 [`ggplot2`](https://ggplot2.tidyverse.org/) 에서 제공된다.
+이 실습은 R로 데이터사이언스를 하는 과정 중 데이터 시각화하기(visualizing)를 다룬다. 데이터 시각화하기는 [**tidyverse**](https://www.tidyverse.org/)의 핵심 패키지 중의 하나인 [**ggplot2**](https://ggplot2.tidyverse.org/) 에서 제공된다.
 
-[`ggplot2`](https://ggplot2.tidyverse.org/)의 `gg`가 '그래프의 문법(grammar of graphic)'을 의미하는 것에서 알 수 있는 것처럼, [`ggplot2`](https://ggplot2.tidyverse.org/)는 그래프 제작의 일반 원리를 정교하게 구현하기 위해 만들어졌다. @fig-ggplot2-layers 에서 보는 것처럼, 모든 그래프는 8개의 주요 구성요소로 이루어져 있고, ggplot2는 각각의 구성요소를 마치 레이어(layer)를 쌓는 것과 같은 방식으로 구현한다(`+` 사인을 이용).
+[**ggplot2**](https://ggplot2.tidyverse.org/)의 `gg`가 '그래프의 문법(grammar of graphic)'을 의미하는 것에서 알 수 있는 것처럼, [**ggplot2**](https://ggplot2.tidyverse.org/)는 그래프 제작의 일반 원리를 정교하게 구현하기 위해 만들어졌다. @fig-ggplot2-layers 에서 보는 것처럼, 모든 그래프는 8개의 주요 구성 요소로 이루어져 있고, [**ggplot2**](https://ggplot2.tidyverse.org/)는 각각의 구성 요소를 마치 레이어(layer)를 쌓는 것과 같은 방식으로 구현한다(`+` 사인을 이용).
 
-![그래프의 8개 구성요소(<https://initiation.doana-r.com/06-ggplot2#1>)](images/clipboard-3014854163.png){#fig-ggplot2-layers}
+![그래프의 8개 구성 요소(<https://initiation.doana-r.com/06-ggplot2#1>)](images/clipboard-3014854163.png){#fig-ggplot2-layers}
 
-모든 실습의 시작은 [`tidyverse`](https://www.tidyverse.org/) 패키지를 불러오는 것이다.
+모든 실습의 시작은 [**tidyverse**](https://www.tidyverse.org/) 패키지를 불러오는 것이다.
 
 ```{r}
 library(tidyverse)
 ```
 
-실습을 위해 [`ggplot2`](https://ggplot2.tidyverse.org/) 패키지 속에 포함되어 있는 `mpg` 데이터와 `diamonds` 데이터를 사용한다. `mpg` 데이터의 11개 변수 중 다음의 세 가지 변수가 특히 중요한데, `displ`는 자동차의 엔진 크기이고, `hwy`는 고속도로 연비, `class`는 자동차의 유형이다. `diamond` 데이터는 총 54,000개의 다이아몬드에 대한 정보를 담고 있는데, 특히 가격(`price`) 캐럿(`carat`), 컬러(`color`), 투명도(`clarity`), 컷(`cut`)이 중요한 변수들이다.
+실습을 위해 [**ggplot2**](https://ggplot2.tidyverse.org/) 패키지 속에 포함되어 있는 `mpg` 데이터와 `diamonds` 데이터를 사용한다. `mpg` 데이터의 11개 변수 중 다음의 세 가지 변수가 특히 중요한데, `displ`는 자동차의 엔진 크기이고, `hwy`는 고속도로 연비, `class`는 자동차의 유형이다. `diamond` 데이터는 총 54,000개의 다이아몬드에 대한 정보를 담고 있는데, 특히 가격(`price`) 캐럿(`carat`), 컬러(`color`), 투명도(`clarity`), 컷(`cut`)이 중요한 변수들이다.
 
-## 핵심 레이어: 심미성과 기하
+## 핵심 구성 요소: 심미성과 기하
 
-이 8개 구성요소 중 가장 중요한 것은 '심미성(aesthetics)' 혹은 '심미성 매핑(aesthetic mapping)'과 '기하(geometries)' 혹은 '기하 객체(geometric objects)'이다. 기하가 그래프의 전체 구조 혹은 형식을 규정하는 것이라면, 심미성은 기하의 외견을 규정한다. 결국 기하는 그래프의 유형(예: 막대 그래프, 산포도 등)과 관련되고, 심미성은 그래프의 시각적 속성(예: 컬러, 크기, 모양 등)과 관련된다. 이 두 가지는 독립적인 요소이지만, 어느 정도는 관련되어 있기도 하다. 특정한 기하는 오로지 특정한 심미성과만 결합한다. 예를 들어 포인트 기하 객체(`geom_point()`)는 크기(`size`) 심미성과 관련되지만, 라인 기하 객체(`geom_line()`)는 크기 심미성과는 관련되지 않고 라인폭(`linewidth`) 심미성과만 관련되는 식이다.
+이 8개 구성 요소 중 가장 중요한 것은 '심미성(aesthetics)' 혹은 '심미성 매핑(aesthetic mapping)'과 '기하(geometries)' 혹은 '기하 객체(geometric objects)'이다. 기하가 그래프의 전체 구조 혹은 형식을 규정하는 것이라면, 심미성은 기하의 외견을 규정한다. 결국 기하는 그래프의 유형(예: 막대 그래프, 산포도 등)과 관련되고, 심미성은 그래프의 시각적 속성(예: 컬러, 크기, 모양 등)과 관련된다. 이 두 가지는 독립적인 요소이지만, 어느 정도는 관련되어 있기도 하다. 특정한 기하는 오로지 특정한 심미성과만 결합한다. 예를 들어 포인트 기하 객체(`geom_point()`)는 크기(`size`) 심미성과 관련되지만, 라인 기하 객체(`geom_line()`)는 크기 심미성과는 관련되지 않고 라인폭(`linewidth`) 심미성과만 관련되는 식이다.
 
 ### 심미성 매핑
 
@@ -138,7 +138,7 @@ ggplot(mpg, aes(x = hwy)) +
   geom_boxplot()
 ```
 
-## 다른 레이어
+## 여타 구성 요소
 
 ### 스케일
 
@@ -146,7 +146,7 @@ ggplot(mpg, aes(x = hwy)) +
 
 ```{r}
 #| label: fig-scale-1
-#| fig-cap: ""
+#| fig-cap: "스케일 설정: 기본값"
 ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
   geom_point() 
 ```
@@ -168,7 +168,7 @@ ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
 
 ```{r}
 #| label: fig-scale-3
-#| fig-cap: ""
+#| fig-cap: "스케일 설정: 수정"
 ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
   geom_point() +
   scale_x_continuous(labels = NULL) +
@@ -178,11 +178,13 @@ ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
 
 `scale_color_brewer()` 함수는 [ColorBrewer](https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3) 컬러 스케일을 사용한 것인데 익히고 있으면 많은 도움이 된다. 여기에는 다양한 색배열(color schemes)이 제시되어 있는데, 이것을 ggplot2 패키지에서는 팔레트(palette)라고 부른다. @fig-colorbrewer 에는 다양한 브루어 컬러 팔레트가 제시되어 있는 데 왼편의 문자가 팔레트의 이름이고(예: YlOrRd), `scale_color_brewer()` 함수 속에 막바로 사용가능하다. 첫번째 군은 정량적 팔레트 중 순차형(sequential) 팔레트들이고, 두번째 군은 정성적 혹은 범주형(categorical) 팔레트들이고, 세번째 군은 정량적 팔레트 중 분기형(diverging) 팔레트들이다. 변수의 성격에 가장 적절한 팔레트를 선택하는 것이 관건이다.
 
-[![ColorBrewer(http://colorbrewer2.org/)](images/clipboard-3192265517.png){#fig-colorbrewer}](http://colorbrewer2.org/)
+[![ColorBrewer(<http://colorbrewer2.org/>)](images/clipboard-3192265517.png){#fig-colorbrewer}](http://colorbrewer2.org/)
 
 자신만의 팔레트를 적용할 수도 있다. [`scale_color_brewer()`](https://ggplot2.tidyverse.org/reference/scale_brewer.html) 대신 [`scale_color_manual()`](https://ggplot2.tidyverse.org/reference/scale_manual.html) 함수를 사용하면 된다. 또한 RGB 색상에 대한 HTML 헥스 코드( html hex code)를 사용해도 되고, R에서 부여한 657개의 이름 중에서 골라 사용해도 된다. 색상 이름 및 헥스 코드는 [다음 사이트](https://rstudio-pubs-static.s3.amazonaws.com/3486_79191ad32cf74955b4502b8530aad627.html)를 참고하라.
 
 ```{r}
+#| label: fig-scale-4
+#| fig-cap: "스케일 설정: 색상 수정"
 ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
   geom_point() +
   scale_x_continuous(labels = NULL) +
@@ -225,11 +227,13 @@ ggplot(diamonds, aes(x = cut)) +
 
 @fig-stat-1 은 @fig-stat-2 에서 보는 바와 같이, 원데이터로부터 빈도를 계산(통계적 전환)하고 그것을 그래프로 전환한다.
 
-![통계적 변환 과정: geom_bar()의 경우(<https://r4ds.hadley.nz/layers>)](https://r4ds.hadley.nz/images/visualization-stat-bar.png){#fig-stat-2}
+![통계적 변환: geom_bar()의 경우(<https://r4ds.hadley.nz/layers>)](https://r4ds.hadley.nz/images/visualization-stat-bar.png){#fig-stat-2}
 
 모든 `geom`은 디폴트 `stat`을 가지고 있다. `geom_bar()`의 디폴트 `stat`은 `count`이다. 그런데 geom_bar()에 두 개의 변수가 심미성에 적용되는 경우, 적절한 통계적 전환으로 `count`가 아닌 `identity`를 적용해야만 한다.
 
 ```{r}
+#| label: fig-stat-3
+#| fig-cap: "통계적 변환: geom_bar()에 stat = identity 지정"
 diamonds |>
   count(cut) |> 
   ggplot(aes(x = cut, y = n)) +
@@ -239,6 +243,8 @@ diamonds |>
 그런데 `geom_bar()`와 유사한 `geom_col()`이라는 함수가 있는데, 이것을 사용해도 동일한 결과를 얻을 수 있다.
 
 ```{r}
+#| label: fig-stat-4
+#| fig-cap: "통계적 변환: geom_col()"
 diamonds |>
   count(cut) |> 
   ggplot(aes(x = cut, y = n)) +
@@ -248,8 +254,8 @@ diamonds |>
 `after_stat()`이라고 하는 보조 함수를 사용하면, 이 그래프를 절대 빈도가 아닌 상대 빈도 그래프로 변환할 수 있다. 이 역시 통계적 변환 과정이 이면에 숨어 있다. `group` 아규먼트가 매우 중요하다. 이것을 지정하지 않으면 개별 `cut`별로 계산하기 때문에 모든 막대가 1이 된다. `group = 1`로 지정했다는 것은 `cut`에 관계 없이 모두를 한 덩어리로 생각하고 비중을 구한다는 것을 의미한다. 사실 1이 아니라 어떤 다른 숫자여도 상관이 없다.
 
 ```{r}
-#| label: fig-stat-3
-#| fig-cap: "통계적 변환: geom_bar()"
+#| label: fig-stat-5
+#| fig-cap: "통계적 변환: geom_bar()에 after_stat() 지정"
 ggplot(diamonds, aes(x = cut, y = after_stat(prop), group = 1)) + 
   geom_bar()
 ```
@@ -308,24 +314,26 @@ ggplot(mpg, aes(cty, hwy)) +
 
 ### 테마
 
-테마(themes)는 그래프의 외양에 영향을 끼치는 또 다른 요소이다. 우선, 전체적인 외양을 한꺼번에 바꿀 수 있다. [`ggplot2`](https://ggplot2.tidyverse.org/)는 @fig-ggplot2-themes-1 에서 보는 처럼 모두 8가지 테마를 제공한다.
+테마(themes)는 그래프의 외양에 영향을 끼치는 또 다른 요소이다. 우선, 전체적인 외양을 한꺼번에 바꿀 수 있다. [**ggplot2**](https://ggplot2.tidyverse.org/)는 @fig-ggplot2-themes-1 에서 보는 처럼 모두 8가지 테마를 제공한다.
 
-![ggplot2가 제공하는 테마(<https://r4ds.hadley.nz/communication>)](https://r4ds.hadley.nz/images/visualization-themes.png){#fig-ggplot2-themes-1}
+![**ggplot2**가 제공하는 테마(<https://r4ds.hadley.nz/communication>)](https://r4ds.hadley.nz/images/visualization-themes.png){#fig-ggplot2-themes-1}
 
 디폴트인 회색빛 배경이 마음에 들지 않았다면 @fig-ggplot-themes-2 처럼 흑백 테마(`theme_bw()`)를 적용할 수도 있다. 다른 테마도 적용해 보고 그 차이를 알아본다.
 
 ```{r}
 #| label: fig-ggplot-themes-2
-#| fig-cap: ""
+#| fig-cap: "theme_bw() 테마의 지정"
 ggplot(mpg, aes(x = displ, y = hwy)) +
   geom_point(aes(color = class)) +
   geom_smooth(se = FALSE) +
   theme_bw()
 ```
 
-이렇게 한꺼번에 그래프의 외관을 바꿀 수도 있지만 `theme()` 함수를 통해 그래프의 개별 요소 하나씩을 모두 수정할 수 있다. 어떤 요소를 바꿀 수 있는지 다음을 참고한다.
+이렇게 한꺼번에 그래프의 외관을 바꿀 수도 있지만 `theme()` 함수를 통해 그래프의 개별 요소 하나씩을 모두 수정할 수 있다. 대략적인 그래픽 요소가 @fig-ggplot-theme 에 나타나 있다.
 
--   <https://ggplot2.tidyverse.org/reference/theme.html>
+![**ggplot2** 패키지의 테마 요소(<https://isabella-b.com/blog/ggplot2-theme-elements-reference/>)](images/ggplot_elements2.png){#fig-ggplot-theme}
+
+`theme()` 함수를 통해 수정 가능한 그래픽 요소는 @fig-ggplot-theme 에 나타나 있는 것보다 훨씬 더 많다. 보다 자세한 사항은 [**ggplot2**](https://ggplot2.tidyverse.org/) 패키지의 해당 [웹페이지](https://ggplot2.tidyverse.org/reference/theme.html)를 다음을 참고한다.
 
 @fig-ggplot-themes-3 는 몇 가지 요소를 수정한 사례이다.
 
@@ -370,9 +378,11 @@ ggplot(mpg, aes(x = displ, y = hwy)) +
   )
 ```
 
-기하 함수인 `geom_text()` 혹은 `geom_label()`를 통해 그래프 속에 텍스트를 삽입할 수 있다. 주석이 겹치는 것을 방지하기 위해 [`ggrepel`](https://ggrepel.slowkow.com/) 패키지가 유용하게 사용될 수 있다. 새로운 기하 객체인 `geom_label_repel()`이 사용되었는데, `label`이 하나의 심미성으로 사용되는 것으로 알 수 있다.
+기하 함수인 `geom_text()` 혹은 `geom_label()`를 통해 그래프 속에 텍스트를 삽입할 수 있다. 주석이 겹치는 것을 방지하기 위해 [**ggrepel**](https://ggrepel.slowkow.com/) 패키지가 유용하게 사용될 수 있다. 새로운 기하 객체인 `geom_label_repel()`이 사용되었는데, `label`이 하나의 심미성으로 사용되는 것으로 알 수 있다.
 
 ```{r}
+#| label: fig-ggplot-label-2
+#| fig-cap: "라벨링: ggrepel 패키지"
 library(ggrepel)
 ggplot(mpg, aes(displ, hwy)) + 
   geom_point(colour = "red") +
@@ -381,7 +391,7 @@ ggplot(mpg, aes(displ, hwy)) +
 
 ### 레이아웃
 
-레이아웃(layout)은 복수의 그래프를 적절히 배치하여 하나의 그래픽으로 융합하는 과정을 의미한다. 수 많은 [`ggplot2`](https://ggplot2.tidyverse.org/)의 [확장 패키지(ggplot2 extensions)](https://exts.ggplot2.tidyverse.org/) 중 하나인 [`patchwork`](https://patchwork.data-imaginist.com/) 패키지를 활용할 수 있다.
+레이아웃(layout)은 복수의 그래프를 적절히 배치하여 하나의 그래픽으로 융합하는 과정을 의미한다. 수 많은 [**ggplot2**](https://ggplot2.tidyverse.org/)의 [확장 패키지(ggplot2 extensions)](https://exts.ggplot2.tidyverse.org/) 중 하나인 [**patchwork**](https://patchwork.data-imaginist.com/) 패키지를 활용할 수 있다.
 
 ```{r}
 #| label: fig-ggplot-patchwork-1
@@ -402,7 +412,7 @@ p1 + p2
 
 첫 번째 방식은 Output 창의 Plots 탭에 있는 Export 버턴을 이용하는 것이다. 다양한 그래픽 포맷 뿐만 아니라 pdf 형식으로도 저장할 수 있다.
 
-두 번째 방식은 [`ggplot2`](https://ggplot2.tidyverse.org/) 의 `ggsave()` 함수를 이용하는 것이다. 결과물의 폰트 크기, 가로세로비(aspect ratio), 해상도 등을 종합적으로 고려하여 최적의 세팅값을 찾아야 한다. 자신의 디바이스에 따라 동일한 세팅값이 다른 결과를 산출할 수도 있다.
+두 번째 방식은 [**ggplot2**](https://ggplot2.tidyverse.org/) 의 `ggsave()` 함수를 이용하는 것이다. 결과물의 폰트 크기, 가로세로비(aspect ratio), 해상도 등을 종합적으로 고려하여 최적의 세팅값을 찾아야 한다. 자신의 디바이스에 따라 동일한 세팅값이 다른 결과를 산출할 수도 있다.
 
 ```{r}
 #| label: fig-ggplot-save-1
