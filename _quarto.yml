@@ -10,10 +10,10 @@ website:
     style: floating
     contents: 
       - index.qmd
-      - text: "---"    
-      - section: "데이터사이언스 강의"
-        contents:   
-          - lectures.qmd
+      # - text: "---"    
+      # - section: "데이터사이언스 강의"
+      #   contents:   
+      #     - lectures.qmd
       - text: "---"    
       - section: "R과 데이터사이언스"
         contents:   

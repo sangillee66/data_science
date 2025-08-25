@@ -178,7 +178,7 @@ ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
 
 `scale_color_brewer()` 함수는 [ColorBrewer](https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3) 컬러 스케일을 사용한 것인데 익히고 있으면 많은 도움이 된다. 여기에는 다양한 색배열(color schemes)이 제시되어 있는데, 이것을 ggplot2 패키지에서는 팔레트(palette)라고 부른다. @fig-colorbrewer 에는 다양한 브루어 컬러 팔레트가 제시되어 있는 데 왼편의 문자가 팔레트의 이름이고(예: YlOrRd), `scale_color_brewer()` 함수 속에 막바로 사용가능하다. 첫번째 군은 정량적 팔레트 중 순차형(sequential) 팔레트들이고, 두번째 군은 정성적 혹은 범주형(categorical) 팔레트들이고, 세번째 군은 정량적 팔레트 중 분기형(diverging) 팔레트들이다. 변수의 성격에 가장 적절한 팔레트를 선택하는 것이 관건이다.
 
-[![ColorBrewer(<http://colorbrewer2.org/>)](images/clipboard-3192265517.png){#fig-colorbrewer}](http://colorbrewer2.org/)
+[![ColorBrewer(\<http://colorbrewer2.org/\>)](images/clipboard-3192265517.png){#fig-colorbrewer}](http://colorbrewer2.org/)
 
 자신만의 팔레트를 적용할 수도 있다. [`scale_color_brewer()`](https://ggplot2.tidyverse.org/reference/scale_brewer.html) 대신 [`scale_color_manual()`](https://ggplot2.tidyverse.org/reference/scale_manual.html) 함수를 사용하면 된다. 또한 RGB 색상에 대한 HTML 헥스 코드( html hex code)를 사용해도 되고, R에서 부여한 657개의 이름 중에서 골라 사용해도 된다. 색상 이름 및 헥스 코드는 [다음 사이트](https://rstudio-pubs-static.s3.amazonaws.com/3486_79191ad32cf74955b4502b8530aad627.html)를 참고하라.
 
