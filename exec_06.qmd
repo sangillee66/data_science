@@ -23,15 +23,15 @@ editor_options:
 
 이 실습은 데이터사이언스의 꽃이라고 할 수 있는 데이터 탐색(exploration)을 다룬다. 데이터 탐색하기는 데이터 변형하기와 데이터 시각화하기를 합친 것으로 이해할 수 있다. 다음의 사항을 이해하고 있는 것이 매우 중요하다.
 
--   데이터 탐색은 데이터와의 끝임없는 상호작용을 의미한다. 데이터사이언스가 데이터로부터 이해, 지식, 통찰력을 획득하는 과정이라고 했을 때, 데이터 탐색은 데이터사이언스의 심장이라 해도 과언이 아니다. 상호작용은 데이터와의 질의응답의 연쇄과정을 의미한다. 의미있는 질문에 답을 얻기 위해서는 거의 반드시 데이터를 변형하거나 시각화해야만 한다.
+-   데이터 탐색은 데이터와의 끝임없는 상호작용을 의미한다. 데이터사이언스가 데이터로부터 이해, 지식, 통찰을 획득하는 과정이라고 했을 때, 데이터 탐색은 데이터사이언스의 심장이라 해도 과언이 아니다. 상호작용은 데이터와의 질의응답의 연쇄과정을 의미한다. 의미있는 질문에 답을 얻기 위해서는 거의 반드시 데이터를 변형하거나 시각화해야만 한다.
 
 -   데이터 변형과 데이터 시각화는 개별적으로 데이터 탐색을 가능케 한다. 데이터 변형은 데이터를 다른 각도로 바라볼 수 있게 해주고 다양한 요약 통계값을 산출해 준다. 데이터 시각화는 데이터에 차원을 부가함으로써 시각화 되지 않았다면 발견할 수 없었던 것을 발견할 수 있게 해준다.
 
--   데이터 변형에서 데이터 시각화로 이어지는 시퀀스가 데이터 탐색의 핵심적인 방법론이다. 데이터 변형의 궁극적인 목적은 바로 데이터 시각화를 위한 준비이다. 특정한 형태의 시각화를 위해서는 특정한 형태의 데이터가 필수적이고, 그것이 이해, 지식, 통찰력의 획득으로 나아가게 해주는 주된 경로이다.
+-   데이터 변형에서 데이터 시각화로 이어지는 시퀀스가 데이터 탐색의 핵심적인 방법론이다. 데이터 변형의 궁극적인 목적은 바로 데이터 시각화를 위한 준비이다. 특정한 형태의 시각화를 위해서는 특정한 형태의 데이터가 필수적이고, 그것이 이해, 지식, 통찰의 획득으로 나아가게 해주는 주된 경로이다.
 
--   데이터 시각화의 두 가지 목적은 탐색과 커뮤니케이션이다. 우리가 데이터 시각화를 하는 첫번째 목적은 데이터에 대한 질문에 답을 찾기 위해서이다. 우리가 데이터를 시각화하는 두 번째 목적은 우리가 발견한 것을 다른 사람들과 '잘' 커뮤니케이션하기 위해서 이다.
+-   데이터 시각화의 두 가지 목적은 탐색과 커뮤니케이션이다. 우리가 데이터 시각화를 하는 첫번째 목적은 데이터에 대한 질문에 답을 찾기 위해서이다. 우리가 데이터를 시각화하는 두 번째 목적은 우리가 발견한 것을 다른 사람들과 '잘' 커뮤니케이션하기 위해서이다.
 
-이번 실습에서는 데이터 변형하기에서 사용한 [`gapmider`](https://cran.r-project.org/web/packages/gapminder/readme/README.html) 데이터를 활용하여 데이터 변형과 데이터 시각화가 어떻게 데이터 탐색에 기여하는지를 알아볼 것이다. [`tidyverse`](https://www.tidyverse.org/) 패키지와 [`gapmider`](https://cran.r-project.org/web/packages/gapminder/readme/README.html) 패키지를 불러온다. [`gapmider`](https://cran.r-project.org/web/packages/gapminder/readme/README.html) 데이터를 다시 한번 살펴본다.
+이번 실습에서는 데이터 변형하기에서 사용한 [**gapmider**](https://cran.r-project.org/web/packages/gapminder/readme/README.html) 데이터를 활용하여 데이터 변형과 데이터 시각화가 어떻게 데이터 탐색에 기여하는지를 알아볼 것이다. [**tidyverse**](https://www.tidyverse.org/) 패키지와 [**gapmider**](https://cran.r-project.org/web/packages/gapminder/readme/README.html) 패키지를 불러온다. `gapmider` 데이터를 다시 한번 살펴본다.
 
 ```{r}
 library(tidyverse)
@@ -93,7 +93,7 @@ gapminder |>
 ```
 :::
 
-코드를 확인하고 자신의 코드와 비교해보라. 동일한 그래프에 이르는 조금 더 긴, 혹은 조금 더 짧은 코드가 가능할 것이다. 짧다고 좋은 것이 아니다. 자신이 이해하기 쉽고, 타인이 이해하기 쉬운 코드가 가장 좋은 코드이다. 중요한 것은, 데이터 탐색의 핵심이 데이터 변형과 데이터 시각화의 적절한 시퀀스라는 점을 이해하는 것이다. 위 코드는 [`dplyr`](https://dplyr.tidyverse.org/) 패키지와 [`ggplot2`](https://ggplot2.tidyverse.org/) 패키지를 연결하여 이 과업을 수행하는 과정을 잘 보여준다.
+코드를 확인하고 자신의 코드와 비교해보라. 동일한 그래프에 이르는 조금 더 긴, 혹은 조금 더 짧은 코드가 가능할 것이다. 짧다고 좋은 것이 아니다. 자신이 이해하기 쉽고, 타인이 이해하기 쉬운 코드가 가장 좋은 코드이다. 중요한 것은, 데이터 탐색의 핵심이 데이터 변형과 데이터 시각화의 적절한 시퀀스라는 점을 이해하는 것이다. 위 코드는 [**dplyr**](https://dplyr.tidyverse.org/) 패키지와 [**ggplot2**](https://ggplot2.tidyverse.org/) 패키지를 연결하여 이 과업을 수행하는 과정을 잘 보여준다.
 
 ## 탐색의 유형
 
@@ -141,7 +141,7 @@ gapminder |>
   geom_density(aes(color = continent, fill = continent), alpha = 0.25)
 ```
 
-일인당 GDP의 대륙간 차이를 박스플롯을 통해 탐색할 수도 있다. 여기서 `fct_reorder()` 는 데이터 시각화에서 매우 중요하다. 이것은 범주 변수의 범주 순서를 바꾸어 주는데, [`tidyverse`](https://www.tidyverse.org/)의 핵심 패키지인 [`forcats`](https://forcats.tidyverse.org/)의 한 함수이다. 이것을 적용하지 않으면 원래 지정된 순서인 알파벳 순서에 따라 박스플롯이 배열된다. 이것을 일인당 GDP의 중위수의 순서로 배열하게 한 것이다.
+일인당 GDP의 대륙간 차이를 박스플롯을 통해 탐색할 수도 있다. 여기서 `fct_reorder()` 는 데이터 시각화에서 매우 중요하다. 이것은 범주 변수의 범주 순서를 바꾸어 주는데, [**tidyverse**](https://www.tidyverse.org/)의 핵심 패키지인 [**forcats**](https://forcats.tidyverse.org/)의 한 함수이다. 이것을 적용하지 않으면 원래 지정된 순서인 알파벳 순서에 따라 박스플롯이 배열된다. 이것을 일인당 GDP의 중위수의 순서로 배열하게 한 것이다.
 
 ```{r}
 #| label: fig-boxplot-1
@@ -169,7 +169,7 @@ gapminder |>
 ```
 
 ::: callout-note
-위의 예에서 `cut_interval()`는 계급구분 혹은 분류를 위해 ggplot2 패키지가 제공하는 세 가지 보조 함수 중 하나이다.
+위의 예에서 `cut_interval()`는 계급구분 혹은 분류를 위해 [**ggplot2**](https://ggplot2.tidyverse.org/) 패키지가 제공하는 세 가지 보조 함수 중 하나이다.
 
 -   `cut_interval()`: 등간격분류법(equal interval)을 구현하는 것으로, 최대값, 최소값, 계급의 수를 통해 산출된 동일한 급폭을 모든 계급에 적용하는 것이다.
 
@@ -178,7 +178,7 @@ gapminder |>
 -   `cut_width()`: 주어진 임의의 급폭(bin width)에 의거해 계급을 구분하는 것이다.
 :::
 
-또 다른 방법은 데이터 변형을 위한 `count()` 함수와 시각화 함수인 `geom_tile()` 기하 함수를 결합하는 것이다.
+또 다른 방법은 데이터 변형을 위한 `count()` 함수와 시각화 함수인 `geom_tile()` 기하객체 함수를 결합하는 것이다.
 
 ```{r}
 #| label: fig-tile-1
@@ -220,16 +220,18 @@ gapminder |>
 
 #### 세 변수 이상
 
-@fig-scatterplot-1 에 또 하나의 수치형 변수(인구 규모)를 결합할 수 있다. 두 축에 로그를 적용하니 두 변수의 관련성이 선형에 가까워 졌다.
+@fig-scatterplot-1 에 또 하나의 수치형 변수(인구 규모)를 결합할 수 있다. 두 축에 `scale` 함수를 통해 로그를 적용하니 두 변수의 관련성이 선형에 가까워 졌다.
 
 ```{r}
 #| label: fig-3variables
 #| fig-cap: "세 수치형 변수: 산포도"
 gapminder |> 
   filter(year == 2007) |> 
-  ggplot(aes(x = log(gdpPercap), y = log(lifeExp))) +
+  ggplot(aes(x = gdpPercap, y = lifeExp)) +
   geom_point(aes(size = pop)) +
-  geom_smooth()
+  geom_smooth() +
+  scale_x_log10() +
+  scale_y_log10()
 ```
 
 @fig-scatterplot-1 에 또 하나의 범주형 변수(대륙)를 결합할 수 있다.
@@ -245,11 +247,19 @@ gapminder |>
   facet_wrap(~continent)
 ```
 
-전세계 인구의 변화 양상과 대륙별 구성을 함께 탐색할 수 있게 해주는 그래프를 제작해 본다. `fct_reorder2()` 함수와 세개의 `scale_()` 함수의 기능을 확인한다. 보다 체계적인 축의 분할과 라벨 표기를 도와주는 `scales` 패키지를 활용한다. `label_number()`과 `label_comma()`가 많이 활용된다.
+전세계 인구의 변화 양상과 대륙별 구성을 함께 탐색할 수 있게 해주는 그래프를 제작해 본다. `fct_reorder2()` 함수와 세개의 `scale_*()` 함수의 기능을 확인한다. 보다 체계적인 축의 분할과 라벨 표기를 도와주는 [**scales**](https://scales.r-lib.org/) 패키지를 활용한다. `label_number()`과 `label_comma()`함수가 많이 활용된다. 쓰임새를 정리하면 다음과 같다.
+
+-   `fct_reorder2()` 함수: 대륙(`continent`)의 순서를 인구 합계(`sum_pop`)에 의거해 정하되, 연도(`year`) 변수의 가장 큰 값, 즉 2007년을 기준으로 함.
+
+-   `scale_x_continuous()`와 `scale_y_continuous()` 함수: `breaks` 인수는 눈금을 지정하고, `label` 인수는 눈금에 부여될 라벨을 지정한다.
+
+-   `scale_fill_brewer()` 함수: 브루어의 `"Set3"` 팔레트를 지정한다.
+
+-   `label_number()` 함수: `scale` 인수는 실제값과 축에 나타나는 값 간의 관계를 지정하고, `suffix` 인수는 변형된 값 뒤에 붙는 문자를 지정한다.
 
 ```{r}
 #| label: fig-multi-variables
-#| fig-cap: "복잡한 그래프"
+#| fig-cap: "다양한 스케일이 적용된 그래프"
 library(scales)
 gapminder |> 
   group_by(year, continent) |> 
