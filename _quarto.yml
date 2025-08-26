@@ -41,7 +41,9 @@ website:
           - R_lec_09.qmd
           - R_lec_10.qmd
       - text: "---"    
-      - section: "R 실습"
+      - section: "R 실습: 2025년 2학기"
+      - text: "---"    
+      - section: "R 실습: 2024년 1학기"
         contents: 
           - lab_01.qmd
           - lab_02.qmd
