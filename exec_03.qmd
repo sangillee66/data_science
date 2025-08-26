@@ -1,5 +1,5 @@
 ---
-title: "소통하기: Quarto로 대시보드 제작"
+title: "소통하기: Quarto로 대시보드 만들기"
 author: 이상일(서울대학교 지리교육과)
 date-modified: last-modified
 number-sections: true
