@@ -1,5 +1,5 @@
 ---
-title: "데이터 시각화하기"
+title: "변형하기"
 author: 이상일(서울대학교 지리교육과)
 date-modified: last-modified
 number-sections: true
@@ -19,671 +19,807 @@ editor_options:
   chunk_output_type: console
 ---
 
-## 실습 개요 {.unnumbered}
+## 개요 {.unnumbered}
 
-이 실습은 R로 데이터사이언스를 하는 과정 중 데이터 시각화하기(visualizing)를 다룬다. 데이터 시각화하기는 [**tidyverse**](https://www.tidyverse.org/)의 핵심 패키지 중의 하나인 [**ggplot2**](https://ggplot2.tidyverse.org/) 에서 제공된다.
+여기서는 R로 데이터사이언스를 하는 과정 중 데이터 변형하기(transformation)를 다룬다. 데이터 변형하기와 관련된 대부분의 함수는 [**tidyverse**](https://www.tidyverse.org/)의 핵심 패키지 중의 하나인 [**dplyr**](https://dplyr.tidyverse.org/) 에서 제공된다. 데이터 변형하기는 크게 다음의 두 가지 범주로 나뉜다.
 
-[**ggplot2**](https://ggplot2.tidyverse.org/)의 `gg`가 '그래프의 문법(grammar of graphic)'을 의미하는 것에서 알 수 있는 것처럼, [**ggplot2**](https://ggplot2.tidyverse.org/)는 그래프 제작의 일반 원리를 정교하게 구현하기 위해 만들어졌다. @fig-ggplot2-layers 에서 보는 것처럼, 모든 그래프는 8개의 주요 구성 요소로 이루어져 있고, [**ggplot2**](https://ggplot2.tidyverse.org/)는 각각의 구성 요소를 마치 레이어(layer)를 쌓는 것과 같은 방식으로 구현한다(`+` 연산자, 즉 레이어 추가 연산자 사용).
+-   단일 테이블 조작: 데이터 변형하기의 핵심 부분으로, 한 데이터 프레임의 데이터 구조를 조작한다.
 
-![그래프의 8대 구성 요소(<https://initiation.doana-r.com/06-ggplot2#1>)](images/clipboard-3014854163.png){#fig-ggplot2-layers}
+-   다중 테이블 결합: 두 개 이상의 데이터 프레임을 결합하는 방식을 다룬다.
 
-모든 실습의 시작은 [**tidyverse**](https://www.tidyverse.org/) 패키지를 불러오는 것이다.
+두 가지 모두 데이터 테이블이 입력되고, 데이터 테이블이 출력된다.
+
+우선 [**tidyverse**](https://www.tidyverse.org/) 패키지를 불러온다.
 
 ```{r}
 library(tidyverse)
 ```
 
-실습을 위해 [**ggplot2**](https://ggplot2.tidyverse.org/) 패키지 속에 포함되어 있는 `mpg` 데이터와 `diamonds` 데이터를 사용한다. `mpg` 데이터의 11개 변수 중 다음의 세 가지 변수가 특히 중요한데, `displ`는 자동차의 엔진 크기이고, `hwy`는 고속도로 연비, `class`는 자동차의 유형이다. `diamond` 데이터는 총 54,000개의 다이아몬드에 대한 정보를 담고 있는데, 특히 가격(`price`) 캐럿(`carat`), 컬러(`color`), 투명도(`clarity`), 컷(`cut`)이 중요한 변수들이다.
+## 단일 테이블 조작
 
-## 핵심 구성 요소: 시각속성과 기하객체
+단일 테이블 조작과 관련된 함수는 다시 네 가지로 범주화된다.
 
-이 8개 구성 요소 중 가장 중요한 것은 '시각속성(aesthetics)'과 '기하객체(geometric objects)'이다. 기하객체가 그래프의 전체 구조 혹은 형식을 규정하는 것이라면, 시각속성은 기하객체의 외견을 규정한다. 결국 기하객체는 그래프의 유형(예: 막대 그래프, 산포도 등)과 관련되고, 시각속성은 플롯의 그래픽 속성(예: 컬러, 크기, 모양 등) 혹은 시각 변수(visual variable)과 관련된다. 이 두 가지는 독립적인 요소이지만, 어느 정도는 관련되어 있기도 하다. 특정한 기하객체는 오로지 특정한 시각속성과만 결합한다. 예를 들어 포인트 기하 객체(`geom_point()`)는 크기(`size`) 시각속성과 관련되지만, 라인 기하객체(`geom_line()`)는 크기 시각속성과는 관련되지 않고 라인폭(`linewidth`) 시각속성과만 관련되는 식이다.
+-   행 함수: 행(관측 개체)에 작동하는 함수, 즉 행의 변화를 야기하는 함수
 
-### 시각속성
+-   열 함수: 열(변수)에 작동하는 함수, 즉 열의 변화를 야기하는 함수
 
-시각속성 매핑(aesthetic mapping)이란 특정한 시각속성 혹은 시각변수를 특정한 변수에 부여하는 과정을 의미한다. 이것을 통해 해당 변수의 변동(값의 다양성)을 효과적으로 나타낼 수 있다. 변수는 다양한 값으로 구성되어 있고, 그 값들이 보여주는 다양성을 시각적으로 드러내야 한다. 정성적 변수인 경우는 범주적 차이를 표현해야 하고, 정량적 변수인 경우는 수치적 차이를 표현해야 한다. 여기서 중요한 것은 어떤 시각속성은 정성적 변수와 관련되고, 다른 시각속성은 정량적 변수와 관련된다는 점이다. 시각속성은 `aes()` 함수를 통해 나타내며, '시각속성 = 변수'의 형태로 지정된다. 당연히 여러 개의 시각속성이 동시에 사용될 수 있고, `aes()` 함수 내에서 콤마로 구분된다. `aes()`는 두 곳에 지정할 수 있는데, 최상위 함수인 `ggplot()` 속에 지정하면 '글로벌' 지정이, 특정한 `geom_*()` 속에 지정하면 '로컬' 지정이 된다. 둘의 차이는 뒤에서 살펴본다. [**ggplot2**](https://ggplot2.tidyverse.org/) 패키지가 제공하는 시각속성이 @tbl-aes 에 정리되어 있다.
+-   그룹 함수: 그룹에 작동하는 함수
 
-+----------------+---------------------+--------------------------------------+--------------+
-| 분류           | 시각속성            | 설명                                 | 성격         |
-+================+=====================+======================================+==============+
-| 컬러 관련      | `aes(color = )`     | 점/선의 컬러 지정                    | 정성 \> 정량 |
-+----------------+---------------------+--------------------------------------+--------------+
-|                | `aes(fill = )`      | 역/면의 필(컬러) 지정                | 정성 \> 정량 |
-+----------------+---------------------+--------------------------------------+--------------+
-|                | `aes(alpha = )`     | 점/선/역/면의 투명도 지정            | 정성 \< 정량 |
-+----------------+---------------------+--------------------------------------+--------------+
-| 차이 표현 관련 | `aes(size = )`      | 점의 크기 지정                       | 정량         |
-+----------------+---------------------+--------------------------------------+--------------+
-|                | `aes(shape = )`     | 점의 모양 지정                       | 정성         |
-+----------------+---------------------+--------------------------------------+--------------+
-|                | `aes(linetype = )`  | 선의 유형 지정                       | 정성         |
-+----------------+---------------------+--------------------------------------+--------------+
-|                | `aes(linewidth = )` | 선의 크기 지정                       | 정량         |
-+----------------+---------------------+--------------------------------------+--------------+
-| 위치 관련      | `aes(x = )`         | x축 지정                             | 정성/정량    |
-+----------------+---------------------+--------------------------------------+--------------+
-|                | `aes(y = )`         | y축 지정                             | 정성/정량    |
-+----------------+---------------------+--------------------------------------+--------------+
-| 그룹화 관련    | `aes(group = )`     | 데이터를 묶는 기준(그룹화 기준) 지정 | 정성         |
-+----------------+---------------------+--------------------------------------+--------------+
+-   데이터 프레임 함수: 데이터 프레임 전체에 작동하는 함수
 
-: 시각속성 유형 {#tbl-aes}
+이번 실습에서는 행 함수, 열 함수, 그룹 함수에 집중한다. 사용할 데이터는 World Bank가 [gapmider.org](https://www.gapminder.org/)를 통해 무료로 배포하는 것으로 [`gapmider`](https://cran.r-project.org/web/packages/gapminder/readme/README.html) 패키지에 포함되어 있다. [`gapmider`](https://cran.r-project.org/web/packages/gapminder/readme/README.html) 패키지를 인스톨하고 불러온다. 데이터가 어떻게 구성되어 있는지 살펴본다.
+
+```{r}
+library(gapminder)
+gapminder
+```
+
+### 행 함수
+
+#### `filter()` 함수
+
+특정 열(변수)과 관련된 조건을 만족하는 행을 선정한다. 행의 길이가 준다.
+
+```{r}
+gapminder |> 
+  filter(continent == "Europe")
+```
+
+```{r}
+gapminder |> 
+  filter(pop > 50000000 & gdpPercap > 30000)
+```
+
+```{r}
+gapminder |> 
+  filter(year == 2007 & (lifeExp > 82 | gdpPercap > 40000))
+```
+
+#### `slice()` 함수
+
+`filter()` 함수와 마찬가지로 행의 숫자를 줄인다. `slice()` 함수 자체 보다는 `slice_head()`, `slice_tail()`, `slice_max()`, `slice_min()`과 같은 패밀리 함수가 더 널리 사용된다. 그런데 이 함수들은 작동 방식에 따라 두 가지로 구분된다.
+
+-   특정 열(변수)과 관계 없이, 행의 위치에 의거해 행을 선정: `slice()`, `slice_head()`, `slice_tail()`
+
+-   특정 열(변수)에 따른, 행의 위치에 의거해 행을 선정: `slice_max()`, `slice_min()`
+
+몇 번째에서 몇 번째 사이의 행만을 골라낸다.
+
+```{r}
+gapminder |> 
+  slice(1:5)
+```
+
+가장 앞에 위치한 몇 개(`n`)의 행만을 골라낸다. 실질적으로 위와 동일하다.
+
+```{r}
+gapminder |> 
+  slice_head(n = 5)
+```
+
+가장 뒤에 위치한 몇 개(`n`)의 행만을 골라낸다.
+
+```{r}
+gapminder |> 
+  slice_tail(n = 5)
+```
+
+특정 열(변수)에 따라 값이 가장 큰 몇 개(`n`)의 행만을 골라낸다.
+
+```{r}
+gapminder |> 
+  filter(year == 2007) |> 
+  slice_max(gdpPercap, n = 5)
+```
+
+특정 열(변수)에 따라 값이 가장 작은 것들 중 주어진 비중(`prop`) 만큼의 행만을 골라낸다.
+
+```{r}
+gapminder |> 
+  filter(year == 2007 & continent == "Asia") |> 
+  slice_min(lifeExp, prop = 0.1)
+```
 
 ::: callout-note
-위치 관련 시각속성에 `xmin`, `ymin`, `xmax`, `ymax`, `xend`, `yend` 등도 있다. 그러나 이것은 변수와 관련되지 않고 도형의 위치나 크기를 정의하는 좌표 매핑용으로만 사용된다. `aes()` 속에서 정의되기 때문에 시각속성이라 할 수는 있으나, 엄밀한 의미에서는 일종의 매개변수에 해당한다.
+`slice` 함수는 데이터 프레임이 적용되는 것으로 모두 데이터 프레임을 산출한다. 그런데 유사한 작업을 벡터에 적용하는 함수들이 존재한다. `slice_head()`, `slice_tail()`, `slice()`에 대응하는 `dplyr` 벡터 함수로 `first()`, `last()`, `nth()`가 있다. 그런데 후자의 함수를 벡터가 아닌 데이터 프레임이 적용하면 slice 함수와 동일한 결과가 산출된다.
 :::
 
-동일한 기하객체의 시각화에서 시각속성의 선택이 어떤 영향을 미치는지를 살펴본다. 산점도 기하객체(`geom_point()`)를 통해 `displ`과 `hwy`의 관계가 `class`에 따라 어떻게 달라지는지를 시각화한다. 다음의 두 그래프를 비교해 본다.
+#### `arrange()` 함수
+
+특정 열(변수)과 관련된 조건에 의거해 행의 순서를 바꾼다. 행의 길이에는 변화가 없다.
 
 ```{r}
-#| label: fig-aesthetic-color
-#| fig-cap: "시각속성: 컬러"
-ggplot(mpg, aes(x = displ, y = hwy, color = class)) +
-  geom_point()
+gapminder |> 
+  arrange(lifeExp)
 ```
 
+`desc()` 보조 함수(helper function)는 내림차순으로 행을 배열한다.
+
 ```{r}
-#| label: fig-aesthetic-shape
-#| fig-cap: "시각속성: 형태"
-ggplot(mpg, aes(x = displ, y = hwy, shape = class)) +
-  geom_point()
+gapminder |> 
+  arrange(lifeExp, desc(year))
 ```
 
-@fig-aesthetic-color 과 @fig-aesthetic-shape 중 어느 것이 더 효과적이라고 판단하는가? 컬러(`color`)와 형태(`shape`)라는 시각속성 외에 크기(`size`)와 투명도(`alpha`) 속성을 동일한 데이터에 적용해 본다.
+#### `distinct()` 함수
+
+특정 열(변수)에 의거해 중복이 없이 고유한 행만을 골라낸다. 행의 길이가 준다.
+
+`gapminder` 데이터와 관련하여 다음의 코드는 어떤 정보를 우리에게 주는지 생각해 본다.
 
 ```{r}
-#| label: fig-aesthetic-size
-#| fig-cap: "심미성: 크기"
-ggplot(mpg, aes(x = displ, y = hwy, size = class)) +
-  geom_point()
+gapminder |> 
+  distinct(country)
 ```
 
+`.keep_all` 아규먼트를 이용하면 나머지 열도 함께 나타낼 수 있다. 나머지 열의 값이 무엇인지 생각해 본다.
+
 ```{r}
-#| label: fig-aesthetic-alpha
-#| fig-cap: "심미성: 투명도"
-ggplot(mpg, aes(x = displ, y = hwy, alpha = class)) +
-  geom_point()
+gapminder |> 
+  distinct(continent, .keep_all = TRUE)
 ```
 
-크기와 투명도는 정량적 차이를 나타내는데 적합한 시각속성이기 때문에 `class`라는 정성적 범주의 차이를 보여주는데는 적합하지 않다. 시각속성 부여에서 가장 중요한 것은 결국 해당 시각속성이 주어진 데이터에 얼마나 부합하느냐에 달려있다.
+### 열 함수
 
-### 기하객체
+#### `select()` 함수
 
-기하객체는 그래프의 전체 구조 혹은 형식을 규정하며, 일반적으로 그래프의 유형으로 이해할 수 있다. [**ggplot2**](https://ggplot2.tidyverse.org/) 패키지는 매우 다양한 형태의 기하객체를 제공하며, `geom_*()` 함수의 형태를 띤다. `geom_*()` 함수 속에 `aes()`를 지정할 수 있다(로컬 지정). [**ggplot2**](https://ggplot2.tidyverse.org/) 패키지가 제공하는 기하객체가 @tbl-geom 에 정리되어 있다. 가장 빈번하게 사용되는 기하객체에 `geom_point()`, `geom_line()`, `geom_bar()`, `geom_boxplot()`, `geom_histogram()`, `geom_smooth()`, `geom_text()`, `geom_abline()` 등이 있다.
-
-+-------------+-------------+----------------------------+---------------------------+
-| 구분        | 내용        | 기하객체                   | 이름                      |
-+=============+=============+============================+===========================+
-| 기본 플롯   | 점          | `geom_point()`             | 점플롯(산점도)            |
-|             |             |                            |                           |
-|             |             | `geom_jitter()`            | 지터플롯                  |
-|             |             |                            |                           |
-|             |             | `geom_count()`             | 카운트플롯                |
-+-------------+-------------+----------------------------+---------------------------+
-|             | 선          | `geom_line()`              | 선플롯(선그래프)          |
-|             |             |                            |                           |
-|             |             | `geom_path()`              | 경로플롯                  |
-|             |             |                            |                           |
-|             |             | `geom_step()`              | 계단플롯                  |
-+-------------+-------------+----------------------------+---------------------------+
-|             | 역          | `geom_area()`              | 면적플롯                  |
-|             |             |                            |                           |
-|             |             | `geom_ribbon()`            | 리본플롯                  |
-+-------------+-------------+----------------------------+---------------------------+
-|             | 막대        | `geom_bar()`               | 막대플롯                  |
-|             |             |                            |                           |
-|             |             | `geom_col()`               |                           |
-+-------------+-------------+----------------------------+---------------------------+
-| 통계 플롯   | 분포        | `geom_boxplot()`           | 박스플롯                  |
-|             |             |                            |                           |
-|             |             | `geom_density()`           | 밀도플롯                  |
-|             |             |                            |                           |
-|             |             | `geom_dotplot()`           | 도트플롯                  |
-|             |             |                            |                           |
-|             |             | `geom_histogram()`         | 히스토그램                |
-|             |             |                            |                           |
-|             |             | `geom_freqpoly()`          | 빈도다각선플롯            |
-|             |             |                            |                           |
-|             |             | `geom_violin()`            | 바이올린플롯              |
-|             |             |                            |                           |
-|             |             | `geom_rug()`               | 러그플롯                  |
-|             |             |                            |                           |
-|             |             | `geom_qq_line()`           | Q-Q선플롯                 |
-|             |             |                            |                           |
-|             |             | `geom_qq()`                | Q-Q선플롯                 |
-+-------------+-------------+----------------------------+---------------------------+
-|             | 불확실성    | `geom_crossbar()`          | 십자막대플롯              |
-|             |             |                            |                           |
-|             |             | `geom_errorbar()`          | 세로오차막대플롯          |
-|             |             |                            |                           |
-|             |             | `geom_errorbarh()`         | 가로오차막대플롯          |
-|             |             |                            |                           |
-|             |             | `geom_linerange()`         | 선구간플롯                |
-|             |             |                            |                           |
-|             |             | `geom_pointrange()`        | 점선구간플롯              |
-+-------------+-------------+----------------------------+---------------------------+
-|             | 추세선      | `geom_quantile()`          | 분위수회귀플롯            |
-|             |             |                            |                           |
-|             |             | `geom_smooth()`            | 평활곡선플롯              |
-+-------------+-------------+----------------------------+---------------------------+
-| 도형 표현   | 폴리곤      | `geom_polygon()`           | 다각형플롯                |
-+-------------+-------------+----------------------------+---------------------------+
-|             | 선          | `geom_segment()`           | 선분플롯                  |
-|             |             |                            |                           |
-|             |             | `geom_curve()`             | 곡선플롯                  |
-|             |             |                            |                           |
-|             |             | `geom_spoke()`             | 스포크플롯                |
-+-------------+-------------+----------------------------+---------------------------+
-| 2D 플롯     | 빈도        | `geom_bin_2d()`            | 2차원빈플롯               |
-+-------------+-------------+----------------------------+---------------------------+
-|             | 밀도        | `geom_density_2d()`        | 2차원밀도등고선플롯       |
-|             |             |                            |                           |
-|             |             | `geom_density_2d_filled()` | 채워진2차원밀도등고선플롯 |
-+-------------+-------------+----------------------------+---------------------------+
-|             | 등고선      | `geom_contour()`           | 등고선플롯                |
-|             |             |                            |                           |
-|             |             | `geom_contour_filled()`    | 채워진등고선플롯          |
-+-------------+-------------+----------------------------+---------------------------+
-|             | 직사각형    | `geom_raster()`            | 래스터플롯                |
-|             |             |                            |                           |
-|             |             | `geom_rect()`              | 직사각형플롯              |
-|             |             |                            |                           |
-|             |             | `geom_tile()`              | 타일플롯                  |
-+-------------+-------------+----------------------------+---------------------------+
-|             | 육각형      | `geom_hex()`               | 헥스빈플롯                |
-+-------------+-------------+----------------------------+---------------------------+
-| 기타        | 라벨링      | `geom_label()`             | 라벨플롯                  |
-|             |             |                            |                           |
-|             |             | `geom_text()`              | 텍스트플롯                |
-+-------------+-------------+----------------------------+---------------------------+
-|             | 참조선      | `geom_abline()`            | 직선플롯                  |
-|             |             |                            |                           |
-|             |             | `geom_hline()`             | 수평선플롯                |
-|             |             |                            |                           |
-|             |             | `geom_vline()`             | 수직선플롯                |
-+-------------+-------------+----------------------------+---------------------------+
-|             | 지도 제작   | `geom_map()`               | 지도플롯                  |
-|             |             |                            |                           |
-|             |             | `geom_sf()`                | sf플롯                    |
-|             |             |                            |                           |
-|             |             | `geom_sf_label()`          | sf라벨플롯                |
-|             |             |                            |                           |
-|             |             | `geom_sf_text()`           | sf텍스트플롯              |
-+-------------+-------------+----------------------------+---------------------------+
-
-: 기하객체 유형 {#tbl-geom}
-
-@fig-geometric-point 와 @fig-geometric-smooth 이 다르게 보이는 것은 기하객체가 하나는 포인트(`point`)이고 다른 하나는 완만한 선(`smooth`)이기 때문이다.
+열(변수)의 일부를 선택한다. 열의 길이가 준다.
 
 ```{r}
-#| label: fig-geometric-point
-#| fig-cap: "기하객체: geom_point()"
-ggplot(mpg, aes(x = displ, y = hwy)) + 
-  geom_point()
+gapminder |> 
+  select(year, country, gdpPercap)
 ```
 
+열(변수)의 일부를 선택하지 않는다. 역시 열의 길이가 준다. 실질적으로 위와 동일한 결과가 산출된다. `!` 부호 대신 `-` 부호를 사용할 수 있다. 전자가 선호된다.
+
 ```{r}
-#| label: fig-geometric-smooth
-#| fig-cap: "기하객체: geom_smooth()"
-ggplot(mpg, aes(x = displ, y = hwy)) + 
-  geom_smooth()
+gapminder |> 
+  select(!c(lifeExp, continent, pop))
 ```
 
-@fig-aesthetic-color 과 @fig-geometric-smooth 두 개를 결합해 본다.
+`starts_with()`, `ends_with()`, `contains()`와 같은 보조 함수를 잘 활용하면 효율적으로 필요한 변수만을 선정할 수 있다.
 
 ```{r}
-#| label: fig-geometric-point-smooth-1
-#| fig-cap: "기하객체: geom_point() + geom_smooth() 1"
-ggplot(mpg, aes(x = displ, y = hwy, color = class)) + 
-  geom_point() + 
-  geom_smooth()
+gapminder |> 
+  select(starts_with("c"))
 ```
 
-원하는 것이 아니다. 왜 이런 결과가 나왔으며, 어떻게 하면 원하는 것을 얻을 수 있을지 생각해 본다.
+#### `mutate()` 함수
+
+기존의 열(변수)에 기반하여 새로운 변수를 생성한다. 열의 길이가 늘어난다.
 
 ```{r}
-#| label: fig-geometric-point-smooth-2
-#| fig-cap: "기하객체: geom_point() + geom_smooth() 2"
-ggplot(mpg, aes(x = displ, y = hwy)) + 
-  geom_point(aes(color = class)) + 
-  geom_smooth()
-```
-
-두 결과의 차이는 `color` 시각속성을 글로벌하게 적용하느냐 로컬하게 적용하느냐(포인트 기하객체에만 적용)에 달린 것이다. 글로벌 시각속성은 `ggplot()`속에서 지정하고, 로컬 시각속성은 개별 기하객체(`geom_point()`) 속에서 지정한다.
-
-다양한 기하객체는 동일한 데이터를 다양한 방식으로 탐색할 수 있게 해준다. 다음의 세가지 기하객체는 탐색적 데이터 분석에서 널리 사용되는 것이다.
-
-```{r}
-#| label: fig-geometric-histogram-1
-#| fig-cap: "기하객체: geom_histogram()"
-ggplot(mpg, aes(x = hwy)) +
-  geom_histogram(binwidth = 2)
-```
-
-```{r}
-#| label: fig-geometric-density-1
-#| fig-cap: "기하객체: geom_density()"
-ggplot(mpg, aes(x = hwy)) +
-  geom_density()
-```
-
-```{r}
-#| label: fig-geometric-boxplot-1
-#| fig-cap: "기하객체: geom_boxplot()"
-ggplot(mpg, aes(x = hwy)) +
-  geom_boxplot()
-```
-
-## 여타 구성 요소
-
-### 데이터
-
-데이터는 시각화의 가장 기본적인 요소로, 주로 최상위 함수인 `ggplot()` 속에서 `data` 인수로 지정된다. 그러나 개별 기하객체 속에서도 `data` 인수로 지정될 수 있다. 보통의 경우라면, `ggplot()` 함수나 특정한 `geom_*()` 함수 속에서 단일한 데이터 프레임이 한 번 지정되지만, 두 함수에 서로 다른 데이터 프레임이 지정될 수 있고, 또 다른 기하객체 속에 또 다른 데이터 프레임이 지정될 수도 있다.
-
-### 스케일
-
-스케일(scales)은 시각속성 매핑이 구체적으로 어떻게 구현될지를 결정한다. 예를 들어 컬러 시각속성이 적용되었다 하더라도 어떤 컬러가 선정되어 어떻게 배열되는지에 따라 최종 그래프의 모습은 매우 달라질 수 있다. 그러므로 스케일은 시각속성과 불가분의 관계에 있다. [**ggplot2**](https://ggplot2.tidyverse.org/) 패키지가 제공하는 스케일이 @tbl-scale 에 정리되어 있다. 많이 사용되는 스케일에 `scale_color_brewer()`, `scale_color_viridis_c()`, `scale_x_continous()`, `scale_x_discrete()`, `scale_y_continous()`, `scale_y_discrete()` 등이 있다.
-
-+----------------+--------------------------+----------------------------------------------------------------+
-| 분류           | 시각속성                 | 스케일                                                         |
-+================+==========================+================================================================+
-| 컬러 관련      | `color` / `fill`         | `scale_color_identity()` / `scale_fill_identity()`             |
-|                |                          |                                                                |
-|                |                          | `scale_color_gradient()` / `scale_fill_gradient()`             |
-|                |                          |                                                                |
-|                |                          | `scale_color_gradient2()` / `scale_fill_gradient2()`           |
-|                |                          |                                                                |
-|                |                          | `scale_color_gradientn()` / `scale_fill_gradientn()`           |
-|                |                          |                                                                |
-|                |                          | `scale_color_brewer()` / `scale_fill_brewer()`                 |
-|                |                          |                                                                |
-|                |                          | `scale_color_distiller()` / `scale_fill_distiller()`           |
-|                |                          |                                                                |
-|                |                          | `scale_color_fermenter()` / `scale_fill_fermenter()`           |
-|                |                          |                                                                |
-|                |                          | `scale_color_viridis_d()` / `scale_fill_viridis_d()`           |
-|                |                          |                                                                |
-|                |                          | `scale_color_viridis_c()` / `scale_fill_viridis_c()`           |
-|                |                          |                                                                |
-|                |                          | `scale_color_viridis_b()` / `scale_fill_viridis_b()`           |
-|                |                          |                                                                |
-|                |                          | `scale_color_grey()` / `scale_fill_grey()`                     |
-|                |                          |                                                                |
-|                |                          | `scale_color_hue()` / `scale_fill_hue()`                       |
-|                |                          |                                                                |
-|                |                          | `scale_color_steps()` / `scale_fill_steps()`                   |
-|                |                          |                                                                |
-|                |                          | `scale_color_steps2()` / `scale_fill_steps2()`                 |
-|                |                          |                                                                |
-|                |                          | `scale_color_stepsn()` / `scale_fill_stepsn()`                 |
-|                |                          |                                                                |
-|                |                          | `scale_color_manual()` / `scale_fill_manual()`                 |
-+----------------+--------------------------+----------------------------------------------------------------+
-|                | `alpha`                  | `scale_alpha()`                                                |
-|                |                          |                                                                |
-|                |                          | `scale_alpha_continuous()`                                     |
-|                |                          |                                                                |
-|                |                          | `scale_alpha_discrete()`                                       |
-|                |                          |                                                                |
-|                |                          | `scale_alpha_binned()`                                         |
-|                |                          |                                                                |
-|                |                          | `scale_alpha_ordinal()`                                        |
-|                |                          |                                                                |
-|                |                          | `scale_alpha_manual()`                                         |
-+----------------+--------------------------+----------------------------------------------------------------+
-| 차이 표현 관련 | `size`                   | `scale_size()`                                                 |
-|                |                          |                                                                |
-|                |                          | `scale_size_area()`                                            |
-|                |                          |                                                                |
-|                |                          | `scale_size_binned()`                                          |
-|                |                          |                                                                |
-|                |                          | `scale_size_binned_area()`                                     |
-|                |                          |                                                                |
-|                |                          | `scale_radius()`                                               |
-|                |                          |                                                                |
-|                |                          | `scale_size_manual()`                                          |
-+----------------+--------------------------+----------------------------------------------------------------+
-|                | `shape`                  | `scale_shape()`                                                |
-|                |                          |                                                                |
-|                |                          | `scale_shape_binned()`                                         |
-|                |                          |                                                                |
-|                |                          | `scale_shape_manual()`                                         |
-+----------------+--------------------------+----------------------------------------------------------------+
-|                | `linetype` / `linewidth` | `scale_linetype()` / `scale_linewidth()`                       |
-|                |                          |                                                                |
-|                |                          | `scale_linetype_identity()` / `scale_linewidth_identity()`     |
-|                |                          |                                                                |
-|                |                          | `scale_linetype_continuous()` / `scale_linewidth_continuous()` |
-|                |                          |                                                                |
-|                |                          | `scale_linetype_discrete()` / `scale_linewidth_discrete()`     |
-|                |                          |                                                                |
-|                |                          | `scale_linetype_binned()` / `scale_linewidth_binned()`         |
-+----------------+--------------------------+----------------------------------------------------------------+
-| 위치 관련      | `x` / `y`                | `scale_x_continuous()` / `scale_y_continuous()`                |
-|                |                          |                                                                |
-|                |                          | `scale_x_discrete()` / `scale_y_discrete()`                    |
-|                |                          |                                                                |
-|                |                          | `scale_x_binned()` / `scale_y_binned()`                        |
-|                |                          |                                                                |
-|                |                          | `scale_x_log10()` / `scale_y_log10()`                          |
-|                |                          |                                                                |
-|                |                          | `scale_x_reverse()` / `scale_y_reverse()`                      |
-|                |                          |                                                                |
-|                |                          | `scale_x_sqrt()` / `scale_y_sqrt()`                            |
-|                |                          |                                                                |
-|                |                          | `scale_x_date()` / `scale_y_date()`                            |
-|                |                          |                                                                |
-|                |                          | `scale_x_datetime()` / `scale_y_datetime()`                    |
-+----------------+--------------------------+----------------------------------------------------------------+
-
-: 스케일 유형 {#tbl-scale tbl-colwidths="\[18, 15, 67\]"}
-
-그래프를 다시 살펴본다. 스케일이 어느 부분에 어떻게 적용되었는지 생각해 본다.
-
-```{r}
-#| label: fig-scale-1
-#| fig-cap: "스케일 설정: 기본값"
-ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
-  geom_point() 
-```
-
-@fig-scale-1 은 아래에서 보는 것처럼, `ggplot2`가 자동적으로 적용한 세 가지의 스케일 설정에 의거해 만들어진 것이다.
-
-```{r}
-#| label: fig-scale-2
-#| fig-cap: ""
-#| eval: false
-ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
-  geom_point() +
-  scale_x_continuous() +
-  scale_y_continuous() +
-  scale_color_discrete()
-```
-
-수정하여 다음과 같이 적용할 수 있다. `scale` 함수의 각 인수가 어떤 역할을 하는지 생각해 본다.
-
-```{r}
-#| label: fig-scale-3
-#| fig-cap: "스케일 설정: 수정"
-ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
-  geom_point() +
-  scale_x_continuous(labels = NULL) +
-  scale_y_continuous(breaks = seq(15, 40, by = 5)) +
-  scale_color_brewer(palette = "Set1", labels = c("4" = "4-wheel", "f" = "front", "r" = "rear"))
-```
-
-`scale_color_brewer()` 함수는 [ColorBrewer](https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3) 컬러 스케일을 사용한 것인데 익히고 있으면 많은 도움이 된다. 여기에는 다양한 색배열(color schemes)이 제시되어 있는데, 이것을 [**ggplot2**](https://ggplot2.tidyverse.org/) 패키지에서는 팔레트(palette)라고 부른다. @fig-colorbrewer 에는 다양한 브루어 컬러 팔레트가 제시되어 있는 데 왼편의 문자가 팔레트의 이름이고(예: YlOrRd), `scale_color_brewer()` 함수 속에 막바로 사용가능하다. 첫번째 군은 정량적 팔레트 중 순차형(sequential) 팔레트들이고, 두번째 군은 정성적 혹은 범주형(categorical) 팔레트들이고, 세번째 군은 정량적 팔레트 중 분기형(diverging) 팔레트들이다. 변수의 성격에 가장 적절한 팔레트를 선택하는 것이 관건이다.
-
-[![ColorBrewer(\<http://colorbrewer2.org/\>)](images/clipboard-3192265517.png){#fig-colorbrewer}](http://colorbrewer2.org/)
-
-자신만의 팔레트를 적용할 수도 있다. [`scale_color_brewer()`](https://ggplot2.tidyverse.org/reference/scale_brewer.html) 대신 [`scale_color_manual()`](https://ggplot2.tidyverse.org/reference/scale_manual.html) 함수를 사용하면 된다. 또한 RGB 색상에 대한 HTML 헥스 코드( html hex code)를 사용해도 되고, R에서 부여한 657개의 이름 중에서 골라 사용해도 된다. 색상 이름 및 헥스 코드는 [다음 사이트](https://rstudio-pubs-static.s3.amazonaws.com/3486_79191ad32cf74955b4502b8530aad627.html)를 참고하라.
-
-```{r}
-#| label: fig-scale-4
-#| fig-cap: "스케일 설정: 색상 수정"
-ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
-  geom_point() +
-  scale_x_continuous(labels = NULL) +
-  scale_y_continuous(breaks = seq(15, 40, by = 5)) +
-  scale_color_manual(values = c("sienna1", "slateblue4", "#698B22"))
-```
-
-### 패싯
-
-패싯(facets) 레이어는 다면생성(faceting) 과정을 통해 하나의 플롯을 여러개의 하위 플롯으로 쪼갬으로서 생성된다. `facet_wrap()` 함수가 핵심이다.
-
-```{r}
-#| label: fig-facet-1
-#| fig-cap: "패싯: facet_wrap()"
-ggplot(mpg, aes(x = displ, y = hwy)) + 
-  geom_point() + 
-  facet_wrap(~cyl)
-```
-
-두 개의 변수에 의거해 패싯을 생성할 수도 있다. `facet_wrap()` 함수 대신 `facet_grid()` 함수가 적용된다.
-
-```{r}
-#| label: fig-facet-2
-#| fig-cap: "패싯: facet_grid()"
-ggplot(mpg, aes(x = displ, y = hwy)) + 
-  geom_point() + 
-  facet_grid(drv ~ cyl)
-```
-
-### 통계적 변환
-
-어떤 시각화 과정은 필연적으로 통계적 변환(statistical transformation)을 수반한다.
-
-```{r}
-#| label: fig-stat-1
-#| fig-cap: "통계적 변환: geom_bar()"
-ggplot(diamonds, aes(x = cut)) + 
-  geom_bar()
-```
-
-@fig-stat-1 는 @fig-stat-2 에서 보는 바와 같이, 원데이터로부터 빈도를 계산(통계적 전환)하고 그것을 그래프로 변환한다.
-
-![통계적 변환: geom_bar()의 경우(<https://r4ds.hadley.nz/layers>)](https://r4ds.hadley.nz/images/visualization-stat-bar.png){#fig-stat-2}
-
-모든 `geom_*()`은 통계적 변환에 대한 인수인 `stat`에 대해 기본값을 가지고 있다. `geom_bar()`의 통계적 변환의 기본값은 `stat = count` 이다. 단일 변수에 대해 빈도 분포에 대한 막대 그래프를 작성할 때는 이 기본값이 잘 작동한다. 그런데, `geom_bar()`에 단일 변수가 아니라 두 개의 변수가 시각속성에 적용되는 경우(한 변수는 x축에 위치하는 범주 변수, 또 다른 변수는 해당 범주별 빈도값), 적절한 통계적 변환의 유형은 `count`가 아니라 `identity`이다. 따라서 이 경우에는 따라 `stat = "identity"`를 반드시 따로 지정해 주어야 한다. 그렇지 않으면 원하는 결과를 얻을 수 없다.
-
-```{r}
-#| label: fig-stat-3
-#| fig-cap: "통계적 변환: geom_bar()에 stat = identity 지정"
-diamonds |>
-  count(cut) |> 
-  ggplot(aes(x = cut, y = n)) +
-  geom_bar(stat = "identity")
-```
-
-그런데 `geom_bar()`와 유사한 `geom_col()`이라는 함수를 사용해도 동일한 결과를 얻을 수 있다. `geom_col()`에서는 통계적 변환의 기본값이 `count`가 아니라 `identity`이기 때문에 위와 달리 `stat = "identity"`를 따로 지정할 필요가 없다. 결국 단일 변수에 대한 빈도 분포를 나타내고 싶으면 `geom_bar()`를, 두 변수를 이용해 빈도 분포를 나타내고 싶으면 `geom_col()`을 사용하면 된다.
-
-```{r}
-#| label: fig-stat-4
-#| fig-cap: "통계적 변환: geom_col()"
-diamonds |>
-  count(cut) |> 
-  ggplot(aes(x = cut, y = n)) +
-  geom_col()
-```
-
-`after_stat()`이라고 하는 보조 함수를 사용하면, 이 그래프를 절대 빈도가 아닌 상대 빈도 그래프로 변환할 수 있다. 이 역시 통계적 변환 과정이 이면에 숨어 있다. `group` 인수가 매우 중요하다. 이것을 지정하지 않으면 개별 `cut`별로 계산하기 때문에 모든 막대가 1이 된다. `group = 1`로 지정했다는 것은 `cut`에 관계 없이 모두를 한 덩어리로 생각하고 비중을 구한다는 것을 의미한다. 사실 1이 아니라 어떤 다른 숫자여도 상관이 없다.
-
-```{r}
-#| label: fig-stat-5
-#| fig-cap: "통계적 변환: geom_bar()에 after_stat() 지정"
-ggplot(diamonds, aes(x = cut, y = after_stat(prop), group = 1)) + 
-  geom_bar()
-```
-
-막대 그래프에 시각속성을 가미하고, `position` 인수를 통한 위치 조정(position adjustment)을 시도한다.
-
-```{r}
-#| label: fig-bar-fill-1
-#| fig-cap: "position: stack"
-ggplot(mpg, aes(x = drv, fill = class)) + 
-  geom_bar()
-```
-
-기하객체에 색상을 지정하고 싶을 때, 0차원(`point`)과 1차원(`line`) 객체에는 `color`라는 시각속성을 적용하지만, 막대 그래프와 같은 2차원(`area`) 객체에는 `fill`이라는 시각속성을 적용한다. 자주 혼돈이 되는 부분이다.
-
-위치 조정을 위해 `position` 인수를 사용하는데, 네 가지 옵션이 있다.
-
--   `position = "stack"` : 누적 배치. 같은 x축 범주에 속한 여러 집단의 값을 위로 쌓아 올려 표현한다. 전체 합계와 그룹별 비중을 한눈에 보기 쉽다.
-
--   `position = "identity"`: 원자료 그대로 배치. 겹치면 그대로 덮어써서 보이게 된다. 투명도를 조정하지 않으면 겹침 현상 때문에 해석이 어렵다.
-
--   `position = "dodge"`: 옆으로 나란히 배치. 같은 x축 범주에 속한 여러 집단을 옆으로 나란히 분리하여 표현하는데, 그룹 간 비교에 적합하다.
-
--   `position = "fill"`: 누적 비율 배치. `"stack"`과 마찬가지로 쌓되, 전체 높이를 항상 1(100%)에 맞춰 상대적 비율만 보여준다. 전체 규모가 아니라 구성비(비율) 비교에 적합하다.
-
-@fig-bar-fill-1 에는 기본값으로 `position = "stack"`이 적용된 것이다. @fig-bar-fill-2 는 `position = "dodge"`를 적용한 것이다 .
-
-```{r}
-#| label: fig-bar-fill-2
-#| fig-cap: "position: identity"
-ggplot(mpg, aes(x = drv, fill = class)) + 
-  geom_bar(position = "identity", alpha = 0.5)
-```
-
-@fig-bar-fill-3 는 `position = "dodge"`를 적용한 것이다 .
-
-```{r}
-#| label: fig-bar-fill-3
-#| fig-cap: "position: dodge"
-ggplot(mpg, aes(x = drv, fill = class)) + 
-  geom_bar(position = "dodge")
-```
-
-@fig-bar-fill-4 는 `position = "fill"`을 적용한 것이다 .
-
-```{r}
-#| label: fig-bar-fill-4
-#| fig-cap: "position: fill"
-ggplot(mpg, aes(x = drv, fill = class)) + 
-  geom_bar(position = "fill")
-```
-
-### 좌표
-
-좌표(coordinates) 혹은 좌표계(coordinate systems)는 그래픽 요소들의 위치 결정에 기준이 되는 준거체계이다. 특히 두 가지가 함수가 유용하다. `coord_flip()` 함수는 축을 전환한다.
-
-```{r}
-#| label: fig-coordinates-1
-#| fig-cap: "coord_clip() 함수"
-ggplot(mpg, aes(x = drv, fill = class)) + 
-  geom_bar(position = "fill") +
-  coord_flip()
-```
-
-`coord_fixed()` 함수는 두 축의 스케일을 절대화하여 동일하게 적용한다. x-축의 10 간격이 y-축의 10 간격과 동일하다. 이것을 적용하지 않으면 x-축이 길어지기 때문에 절대적 비교를 할 수 없게 된다.
-
-```{r}
-#| label: fig-coordinates-2
-#| fig-cap: "coord_fixed() 함수"
-ggplot(mpg, aes(cty, hwy)) +
-  geom_point() +
-  coord_fixed()
-```
-
-### 테마
-
-테마(themes)는 그래프의 외양에 영향을 끼치는 또 다른 요소이다. 우선, 전체적인 외양을 한꺼번에 바꿀 수 있다. [**ggplot2**](https://ggplot2.tidyverse.org/)는 @fig-ggplot2-themes-1 에서 보는 처럼 모두 8가지 기본 테마를 제공한다.
-
-![**ggplot2**가 제공하는 테마(<https://r4ds.hadley.nz/communication>)](https://r4ds.hadley.nz/images/visualization-themes.png){#fig-ggplot2-themes-1}
-
-기본값인 회색빛 배경이 마음에 들지 않았다면 @fig-ggplot-themes-2 처럼 흑백 테마(`theme_bw()`)를 적용할 수도 있다. 다른 테마도 적용해 보고 그 차이를 알아본다.
-
-```{r}
-#| label: fig-ggplot-themes-2
-#| fig-cap: "theme_bw() 테마의 지정"
-ggplot(mpg, aes(x = displ, y = hwy)) +
-  geom_point(aes(color = class)) +
-  geom_smooth(se = FALSE) +
-  theme_bw()
-```
-
-이렇게 한꺼번에 그래프의 외관을 바꿀 수도 있지만 `theme()` 함수를 통해 그래프의 개별 요소 하나씩을 모두 조정할 수 있다. 중요한 그래픽 요소가 @fig-ggplot-theme 에 나타나 있다.
-
-![**ggplot2** 패키지의 테마 요소(<https://isabella-b.com/blog/ggplot2-theme-elements-reference/>)](images/ggplot_elements2.png){#fig-ggplot-theme}
-
-`theme()` 함수를 통해 수정 가능한 그래픽 요소는 @fig-ggplot-theme 에 나타나 있는 것보다 훨씬 더 많다. 자세한 사항은 [**ggplot2**](https://ggplot2.tidyverse.org/) 패키지의 해당 [웹페이지](https://ggplot2.tidyverse.org/reference/theme.html)를 참고한다.
-
-@fig-ggplot-themes-3 는 몇 가지 요소를 수정한 사례이다.
-
-```{r}
-#| label: fig-ggplot-themes-3
-#| fig-cap: "개별 요소의 수정: theme() 함수"
-ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
-  geom_point() +
-  labs(
-    title = "Larger engine sizes tend to have lower fuel economy",
-    caption = "Source: https://fueleconomy.gov."
-  ) +
-  theme(
-    legend.position = c(0.6, 0.7),
-    legend.direction = "horizontal",
-    plot.title = element_text(face = "bold"),
-    plot.title.position = "plot",
-    plot.caption.position = "plot",
-    plot.caption = element_text(hjust = 0)
+gapminder |> 
+  mutate(
+    gdp_billion = gdpPercap * pop / 10^9
   )
 ```
 
-## 기타 사항
-
-### 라벨과 주석
-
-`lab()` 함수를 활용하면 그래프의 다양한 종류의 라벨을 설정할 수 있다.
+여러개의 변수를 동시에 생성할 수 있다. `row_number()` 보조 함수는 값에 순위를 부여하는 것이고, `.keep = "used"`는 결과에 변수 생성에 동원된 변수만을 포함시키게 해 준다.\
 
 ```{r}
-#| label: fig-ggplot-label-1
-#| fig-cap: "라벨링"
-ggplot(mpg, aes(x = displ, y = hwy)) +
-  geom_point(aes(color = class)) +
-  geom_smooth(se = FALSE) +
-  labs(
-    x = "Engine displacement (L)",
-    y = "Highway fuel economy (mpg)",
-    color = "Car type",
-    title = "Fuel efficiency generally decreases with engine size",
-    subtitle = "Two seaters (sports cars) are an exception because of their light weight",
-    caption = "Data from fueleconomy.gov"
+gapminder |> 
+  filter(year == 2007) |> 
+  mutate(
+    gdpPercap_rank = row_number(gdpPercap),
+    lifeExp_highlow = lifeExp > 30000,
+    .keep = "used"
   )
 ```
 
-또 다른 기하객체인 `geom_text()` 혹은 `geom_label()`를 통해 그래프 속에 텍스트를 삽입할 수 있다. 주석이 겹치는 것을 방지하고자 싶다면 [**ggrepel**](https://ggrepel.slowkow.com/) 패키지를 사용하면 된다. 새로운 기하객체인 `geom_label_repel()` 함수가 사용되었는데, `label`이 하나의 시각속성으로 사용되는 것을 알 수 있다.
+::: callout-note
+`dplyr` 패키지는 데이터에 순위를 부여하는 여러 가지 방식을 제공하는데, `row_number()`, `min_rank()`, `dense_rank()`, `percent_rank()`, `cumu_dist()` 등이 있다. 자세한 사항은 맨 아래에 있는 기타 벡터 함수를 참고하면 된다.
+:::
+
+#### `rename()` 함수
+
+변수의 이름을 바꾼다. 열의 길이에는 변화가 없다. `=` 부호의 왼쪽에 있는 것이 새로운 변수명이다.
 
 ```{r}
-#| label: fig-ggplot-label-2
-#| fig-cap: "라벨링: ggrepel 패키지"
-library(ggrepel)
-ggplot(mpg, aes(displ, hwy)) + 
-  geom_point(colour = "red") +
-  geom_label_repel(data = mpg |> slice_sample(prop = 0.1), aes(label = class))
-```
-
-### 레이아웃
-
-레이아웃(layout)은 복수의 그래프를 적절히 배치하여 하나의 그래픽으로 융합하는 과정을 의미한다. 수 많은 [**ggplot2**](https://ggplot2.tidyverse.org/)의 [확장 패키지(ggplot2 extensions)](https://exts.ggplot2.tidyverse.org/) 중 하나인 [**patchwork**](https://patchwork.data-imaginist.com/) 패키지를 활용하여 자유롭게 레이아웃을 만들 수 있다.
-
-```{r}
-#| label: fig-ggplot-patchwork-1
-#| fig-cap: "레이아웃: patchwork 패키지"
-library(patchwork)
-p1 <- ggplot(mpg, aes(x = displ, y = hwy)) + 
-  geom_point() + 
-  labs(title = "Plot 1")
-p2 <- ggplot(mpg, aes(x = drv, y = hwy)) + 
-  geom_boxplot() + 
-  labs(title = "Plot 2")
-p1 + p2
-```
-
-### 그래프의 저장
-
-두 가지 방식이 있다.
-
-첫 번째 방식은 Output 창의 Plots 탭에 있는 Export 버턴을 이용하는 것이다. 다양한 그래픽 포맷 뿐만 아니라 pdf 형식으로도 저장할 수 있다.
-
-두 번째 방식은 [**ggplot2**](https://ggplot2.tidyverse.org/) 의 `ggsave()` 함수를 이용하는 것이다. 결과물의 폰트 크기, 가로세로비(aspect ratio), 해상도 등을 종합적으로 고려하여 최적의 세팅값을 찾아야 한다. 자신의 디바이스에 따라 동일한 세팅값이 다른 결과를 산출할 수도 있다.
-
-```{r}
-#| label: fig-ggplot-save-1
-#| fig-cap: "그래프의 저장: ggsave() 함수"
-my_plot <- ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
-  geom_point() +
-  labs(
-    title = "Larger engine sizes tend to have lower fuel economy",
-    caption = "Source: https://fueleconomy.gov."
-  ) +
-  theme(
-    legend.position = c(0.6, 0.7),
-    legend.direction = "horizontal",
-    plot.title = element_text(face = "bold"),
-    plot.title.position = "plot",
-    plot.caption.position = "plot",
-    plot.caption = element_text(hjust = 0)
+gapminder |> 
+  rename(
+    gdp_percap = gdpPercap,
+    left_exp = lifeExp
   )
-ggsave(filename = "my_plot.jpg", plot = my_plot, width = 8, height = 8 * 0.618, dpi = 600)
+```
+
+패밀리 함수인 `rename_with()`를 이용하면 다른 것도 가능하다. `tolower`은 변수명을 소문자로 바꾸는 보조 함수이고, `toupper`은 대문자로 바꾸는 보조 함수이다.
+
+```{r}
+gapminder |> 
+  rename_with(
+    tolower, starts_with("l")
+  )
+```
+
+#### `relocate()` 함수
+
+변수의 위치를 바꾼다. 열의 길이에는 변화가 없다. 기입한 변수들이 맨 앞으로 이동한다.
+
+```{r}
+gapminder |> 
+  relocate(year, continent)
+```
+
+`.before`나 `.after` 아규먼트를 사용하여 해당 변수를 어떤 변수의 앞이나 뒤로 보낼 수 있다.
+
+```{r}
+gapminder |> 
+  relocate(pop, .before = lifeExp )
+```
+
+#### `pull()` 함수
+
+데이터 프레임의 한 컬럼을 벡터로 추출한다.
+
+### 그룹 함수
+
+#### `group_by()` 함수
+
+특정 범주 열(변수)에 의거해 행을 분할한다. 행의 길이는 변하지 않는다.
+
+우선 하나의 범주 변수에 의거해 그룹화한다. 산출물을 보면 `year`에 의거해 행이 12개의 그룹으로 나누어졌음을 알 수 있다(두 번째 줄: Group: year \[12\]).
+
+```{r}
+gapminder |> 
+  group_by(year)
+```
+
+두 개 이상의 범주 변수에 의거해 그룹화할 수도 있다.
+
+```{r}
+gapminder |> 
+  group_by(year, continent)
+```
+
+#### `summarize()` 함수
+
+주어진 열(변수)에 대한 통계 요약값을 계산하고 그것으로 이루어진 새로운 데이터 프레임을 생성한다. 엄밀히 말해 기존 열(변수)을 변형한다기 보다는 기존 데이터 프레임으로부터 새로운 데이터 프레임을 생성한다고 볼 수 있다. `summarize()` 함수는 대부분의 경우 `group_by()` 함수와 함께 사용된다. 다음의 둘을 비교해 보라.
+
+```{r}
+gapminder |> 
+  filter(year == 2007) |> 
+  summarize(
+    mean_gdpPercap = mean(gdpPercap)
+  )
+```
+
+```{r}
+gapminder |> 
+  filter(year == 2007) |> 
+  group_by(continent) |> 
+  summarize(
+    mean_gdpPercap = mean(gdpPercap)
+  )
+```
+
+좀 더 복잡한 확장이 가능하다. 마지막의 `n()`은 특별한 요약 함수로, 어떤 아규먼트도 없이 단독으로 사용되며 "현재(current)" 그룹의 빈도값을 산출한다.
+
+```{r}
+gapminder |> 
+    group_by(continent, year) |> 
+    summarize(
+      mean_gdpPercap = mean(gdpPercap),
+      sd_gdpPercap = sd(gdpPercap),
+      mean_pop = mean(pop),
+      sd_pop = sd(pop),
+      n = n()
+    )
+```
+
+`group_by()`와 `arrange()`를 결합하는 경우, `.by_group = TRUE`를 하면 그룹별로 행을 배열할 수 있다(그렇지 않으면 그룹 설정을 무시한 채 행을 배열한다.)
+
+```{r}
+gapminder |> 
+  group_by(year, continent) |> 
+  arrange(desc(gdpPercap), .by_group = TRUE)
+```
+
+아래는 연도별/대륙별로 일인당 GDP가 가장 높은 국가를 추출한 것이다. 코드를 생각해 보라.
+
+```{r}
+#| echo: false
+gapminder |> 
+  group_by(year, continent) |> 
+  slice_max(gdpPercap)
+```
+
+`group_by()` 함수가 한 번 적용되면, 그 뒤의 모든 오퍼레이션에 그룹 분할이 적용되기 때문에 예기치 못한 일이 발생할 수 있다. 이것을 회피하기 위해 두 가지 옵션이 있다. 첫번째 방법은 마지막에 `upgroup()` 함수를 첨가하는 것이다. 아래에 위 질문에 대한 정답이 나타나 있다.
+
+```{r}
+gapminder |> 
+  group_by(year, continent) |> 
+  slice_max(gdpPercap) |> 
+  ungroup()
+```
+
+두 번째 방법은 `group_by()` 함수 대신 `by` 아규먼트를 사용하는 것이다. 결과가 달라보이겠지만 정렬의 차이일 뿐 동일하다.
+
+```{r}
+gapminder |> 
+  slice_max(
+    gdpPercap, 
+    by = c(year, continent)
+  )
+```
+
+#### `count()` 함수
+
+특정 범주 열(변수)에 의거한 빈도를 빠르게 계산해 준다. 빈도는 자동적으로 `n`이라는 이럼의 컬럼에 저장된다.
+
+```{r}
+gapminder |> 
+  count(year, continent)
+```
+
+`wt` 아규먼트를 사용하면 빈도가 아니라 범주별 특정 변수의 합산값을 구할 수 있다.
+
+```{r}
+gapminder |> 
+  count(year, continent, wt = pop)
+```
+
+위의 두 개는 사실 아래와 동일하다.
+
+```{r}
+gapminder |> 
+  group_by(year, continent) |> 
+  summarize(
+    n = n(),
+    sum_pop = sum(pop)
+  )
+```
+
+#### `across()` 함수
+
+다수의 열(변수)에 동일한 함수를 적용할 수 있다.
+
+```{r}
+gapminder |> 
+  mutate(
+    across(c(lifeExp, gdpPercap), round)
+  )
+```
+
+이것은 다음과 동일하다.
+
+```{r}
+gapminder |> 
+  mutate(
+    lifeExp = round(lifeExp),
+    gdpPercap = round(gdpPercap)
+  )
+```
+
+`summarize()` 함수와 결합하여 선택된 변수에 특정 함수를 적용하고 그 결과의 이름을 변수명과 함수명을 사용하여 부여할 수 있다.
+
+```{r}
+gapminder |> 
+  group_by(year, continent) |> 
+  summarize(
+    across(
+      c(lifeExp, gdpPercap), 
+      mean, 
+      .names = "mean_{.col}"
+    )
+  )
+```
+
+`across()` 함수에서 중요한 것은 함수 아규먼트에 함수명 그 자체만 쓸 수 있을 뿐(즉, `mean`), 함수명 뒤에 `()`가 붙을 수 없다. 예를 들어 mean() 함수의 매우 중요한 아규먼트인 na.rm을 사용할 수 없다. 위의 예에서 두 변수 중 어느 변수에라도 결측값이 포함되어 있었다면 에러가 발생했을 것이다. 이 문제는 다음과 같은 방식으로 해결할 수 있다.
+
+```{r}
+gapminder |> 
+  group_by(year, continent) |> 
+  summarize(
+    across(
+      c(lifeExp, gdpPercap), 
+      function(x) median(x, na.rm = TRUE)
+    )
+  )
+```
+
+혹은 보다 간단하게 `function()`을 `\()`로 대체할 수도 있다.
+
+```{r}
+gapminder |> 
+  group_by(year, continent) |> 
+  summarize(
+    across(
+      c(lifeExp, gdpPercap), 
+      \(x) median(x, na.rm = TRUE)
+    )
+  )
+```
+
+만일 `across()` 함수 속에서 두 개 이상의 함수를 적용한다면 `list()`를 활용해야 한다. 결과에 새로 생성된 변수명이 원변수명_함수명(`{.col}_{.fn}`)의 형태를 띠고 있음에 주목하라. 사실 이것은 across() 함수 속에 `.names = "{.col}_{.fn}"`라고 지정한 것과 동일한 것으로, 만일 `.names = "{.fn}_{.col}"` 이라고 지정하면 다른 결과가 나타날 것이다.
+
+```{r}
+gapminder |> 
+  group_by(year, continent) |> 
+  summarize(
+    across(
+      c(lifeExp, gdpPercap), 
+      list(
+        mean = \(x) mean(x, na.rm = TRUE),
+        median = \(x) median(x, na.rm = TRUE)
+      )
+    )
+  )
+```
+
+`across()` 함수의 파생 함수로 `if_any()`와 `if_all()`이 있다. 두 함수 모두 매우 유용하지만 여기서는 다루지 않는다.
+
+#### `c_across()` 함수
+
+`group_by()` 함수와 `across()` 함수가 결합하는 것과 정반대로, `rowwise()` 함수와 `c_across()` 함수를 결합하며, 행별 통계값을 산출할 수 있다. 물론 여기서 `each_sd` 값은 아무런 의미가 없다. 행별로 수치형 변수(year, lifeExp, pop, gdpPercap)의 표준편차를 구한 것이다.
+
+```{r}
+gapminder |> 
+  rowwise() |> 
+  mutate(
+    each_sd = sd(c_across(where(is.numeric)))
+  )
+```
+
+## 다중 테이블 결합
+
+### 테이블 조인
+
+테이블 조인(join)은 두 개 데이터 프레임을 공통키(common key)를 이용해 결합함으로써 하나의 데이터 프레임을 생성하는 것을 의미한다. 서로 상이한 방식의 조인이 가능하면, [**dplyr**](https://dplyr.tidyverse.org/) 패키지는 다양한 종류의 조인 함수를 제공한다.
+
+-   `left_join()`: 첫 번째 변수는 그대로 둔 상태에서 두 번째 변수를 결합함으로써 두 번째 변수의 열을 가져옴
+
+-   `right_join()`: 두 번째 변수는 그대로 둔 상태에서 첫 번째 변수를 결합함으로써 첫 번째 변수의 열을 가져옴
+
+-   `inner_join()`: 두 변수 모두에 존재하는 열을 취함
+
+-   `full_join()`: 최소한 한 변수에 존재하는 열을 모두 취함
+
+-   `semi_join()`: 첫 번째 변수의 행 중 두 번째 변수에 대응하는 행이 있는 것만 취함
+
+-   `anti_join()`: 첫 번째 변수의 행 중 두 번째 변수에 대응하는 행이 없는 것만 취함
+
+이들 중 `left_join()`이 가장 많이 사용되기 때문에 그것에 집중한다.
+
+#### `left_join()` 함수
+
+실습을 위해 [`nycflights13`](https://github.com/tidyverse/nycflights13) 패키지의 데이터를 사용한다. 이 패키지에는 다섯 개의 데이터 프레임이 포함되어 있다. 지난 번에는 첫 번째 데이터만 사용했다.
+
+-   `flights`: 2013년 NYC를 출발한 모든 항공기
+
+-   `weather`: 공항별 시간별 기상 상황
+
+-   `planes`: 항공기별 건조 정보
+
+-   `airports`: 공항명과 위치
+
+-   `airlines`: 항공사
+
+그리고 이 6개의 데이터 프레임은 @fig-nycflights13-1 처럼 공통키(common key)를 통해 서로 연결되어 있다.
+
+![`nycflights13` 데이터(<https://github.com/tidyverse/nycflights13>)](https://r4ds.hadley.nz/diagrams/relational.png){#fig-nycflights13-1}
+
+`flights` 데이터의 변수가 너무 많기 때문에 조인을 위한 공통키를 중심으로 변수를 줄인다.
+
+```{r}
+library(nycflights13)
+```
+
+```{r}
+flights2 <- flights |> 
+  select(year, time_hour, origin, dest, tailnum, carrier)
+flights2
+```
+
+`flights2` 데이터를 중심으로 나머지 4개의 데이터와 조인한다.
+
+```{r}
+airlines
+flights2 |>
+  left_join(airlines)
+```
+
+```{r}
+weather
+flights2 |> 
+  left_join(weather |> select(origin, time_hour, temp, wind_speed))
+```
+
+```{r}
+planes
+flights2 |> 
+  left_join(planes |> select(tailnum, type, engines, seats))
+```
+
+```{r}
+airports
+flights2 |> 
+  left_join(airports, join_by(origin == faa))
+```
+
+`airports`의 경우만 왜 `join_by()`라는 아규먼트가 사용되었는데, 이 경우에는 공통키의 이름이 동일하지 않기 때문이다. 즉, `flights2` 데이터의 origin 컬럼과 `airports` 데이터의 faa가 공통키임을 지정해 주어야 하는 것이다.
+
+### 테이블 병합
+
+테이블 병합(merge)은 두 데이터 프레임을 결합해 새로운 단일한 데이터 프레임을 생성한다는 의미에서는 테이블 조인과 동일하지만, 공통키가 없으며, 행과 열 중 하나는 만드시 동일해야 한다. 가장 널리 사용되는 함수에 `bind_row()` 함수와 `bind_col()` 함수가 있다. 전자는 컬럼이 동일한 두 테이블을 상하로 연결하는 것이고, 후자는 행이 동일한 두 테이블을 좌우로 연결하는 것이다.
+
+#### `bind_row()` 와 `bind_col()` 함수
+
+`gapminder` 데이터를 25년 간격으로 세 개의 연도(1957, 1982, 2007년)로 분할한다.
+
+```{r}
+gap_1957 <- gapminder |> filter(year == 1957)
+gap_1982 <- gapminder |> filter(year == 1982)
+gap_2007 <- gapminder |> filter(year == 2007)
+```
+
+이 세개의 데이터 프레임은 동일한 열 구조(동일한 변수)를 가지고 있지만, 행이 다르다. 이런 경우 `bind_row()` 함수를 사용하여 하나의 데이터 프레임으로 결합할 수 있다.
+
+```{r}
+gapminder_merge_row <- bind_rows(
+  gap_1957, gap_1982, gap_2007
+)
+gapminder_merge_row
+```
+
+이제 gapminder 데이터 프레임을 변수 세 개씩 묶어 두 개의 데이터 프레임으로 분할한다.
+
+```{r}
+gap_var1 <- gapminder |> select(country, continent, year)
+gap_var2 <- gapminder |> select(lifeExp, pop, gdpPercap)
+```
+
+이 두개의 데이터 프레임은 동일한 행 구조(동일한 관측 개체)를 가지고 있지만, 열이 다르다. 이런 경우 `bind_col()` 함수를 사용하여 하나의 데이터 프레임으로 결합할 수 있다.
+
+```{r}
+gapminder_merge_col <- bind_cols(gap_var1, gap_var2)
+gapminder_merge_col
+```
+
+#### 기타 집합 연산 함수
+
+집합 연산(set operation) 함수란 두 데이터 프레임을 수학적 집합 연산(합집합, 교집합, 차집합, 동등성 검사)을 적용하여 새로운 데이터 프레임을 산출하는 함수를 말한다. 두 데이터 프레임은 동일한 열 구조를 가져야 하며, 행 전체를 하나의 원소로 취급한다. 여기에 해당하는 함수로, `intersect()`, `union()`, `setdiff()` 함수 등이 있다.
+
+## 기타 벡터 함수
+
+타이디버스 함수의 기본 작동 방식은 데이터 프레임을 입력으로 받아 데이터 프레임을 출력하는 것이다. 이에 반해 Base R은 기본적으로 벡터에 대한 연산에 기반하고 있다. 타이디버스의 이러한 측면은 주로 장점으로 작용한다고 볼 수 있지만, 단점으로 작용하는 경우도 적지 않다. 이를 극복하기 위해 [**dplyr**](https://dplyr.tidyverse.org/) 패키지는 몇 가지 유용한 벡터 함수를 제공하고 있다. 이러한 함수는 주로 단일 테이블 조작 함수의 내부에서 작동한다.
+
+| 범주 | 함수 | 설명 |
+|----|----|----|
+| 값 추출 | `first()` | 첫 번째 값 |
+|  | `last()` | 마지막 값 |
+|  | `nth()` | n-번째 값 |
+| 값 변경 | `if_else()` | 단일 벡터에 대해, 이진 조건식을 통해 재코드화 |
+|  | `case_match()` | 단일 벡터에 대해, 조건식을 통해 재코드화 |
+|  | `case_when()` | 다중 벡터에 대해, 조건식을 통해 재코드화 |
+| 순위 부여 | `row_number()` | 일련번호 부여 |
+|  | `min_rank()` | 동일값에 동순위를 부여하고, 그 다음 값에는 동순위 갯수를 감안한 그 다음 순위를 부여 |
+|  | `dense_rank()` | 동일값에 동순위를 부여하고, 그 다음 값에는 동순위 갯수에 상관없이 바로 그 다음 순위를 부여 |
+|  | `percent_rank()` | 백분위수(percentile)을 계산해 주는데, 해당 값보다 작은 값의 개수를 전체 개수에서 1을 뺀 값으로 나눈값을 산출 |
+|  | `cume_dist()` | 백분위수(percentile)을 계산해 주는데, 해당 값보다 작거나 같은 값의 개수를 전체 개수로 나눈값을 산출 |
+|  | `ntile()` | 값의 크기에 따라 몇 개의 그룹으로 나누고, 그룹 순위를 부여 |
+|  | `consecutive_id()` | 동일한 값에는 동일한 일련번호를, 새로운 값이 나타날 때에는 그 다음 일련번호를 부여 |
+| 값 순서 변경 | `desc()` | 내림차순으로 정렬 |
+|  | `lag()` | 뒤로 밀어 이전 값을 가져옴. 첫번째 값이 NA |
+|  | `lead()` | 앞으로 당겨서 이후 값을 가져옴. 마지막 값이 NA |
+| 결측치 처리 | `coalesce()` | NA에 특정한 값을 부여 |
+|  | `na_if()` | 특정한 값에 NA를 부여 |
+| 논리형 벡터 생성 | `between()` | 특정한 값이 두 값 사이에 존재하는 지의 여부 검토 |
+|  | `near()` | 두 값이 충분히 가까운지의 여부 검토 |
+
+### 값 추출 함수
+
+`first()` 함수는 해당 벡터의 첫 번째 셀 값을 반환한다. `last()` 함수는 해당 벡터의 마지막 셀 값을 반환한다. `nth()` 함수는 해당 벡터의 n-번째 셀 값을 반환한다. 주로 `summarize()` 함수와 함께 사용된다. 아래의 사례는 대륙별로 1인당 GDP가 가장 큰 국가와 가장 작은 국가를 추출한 것이다.
+
+```{r}
+gapminder |> 
+  filter(year == 2007) |> 
+  group_by(continent) |> 
+  arrange(desc(gdpPercap)) |> 
+  summarize(
+    country_first = first(country),
+    country_last = last(country)
+  ) |> 
+  ungroup()
+```
+
+유사한 기능을 하는 데이터 프레임 함수로 `slice_head()`, `slice_tail()`, `slice()` 함수가 있다. 궁극적인 차이점은 이 함수들은 특정한 행(들)으로 구성된 데이터 프레임을 반환한다는 것이다.
+
+### 값 변경 함수
+
+`if_else()` 함수는 값 변경 함수 중 가장 빈번하게 사용되는 것으로, 주로 단일 벡터에 대해, 이진 조건식을 통해 해당 변수의 값을 변경하는 것이다.
+
+```{r}
+gapminder |> 
+  filter(year == 2007) |> 
+  mutate(
+    gdp_status = if_else(gdpPercap >= 20000, "high", "low")
+  ) |> 
+  count(gdp_status)
+```
+
+위의 사례는 수치형 변수를 범주형 변수로 바꾸는 것으로 보통 재코드화(recode)라고 불리는 연산이다. 두 개 이상의 범주로 분할하는 경우에도 `if_else()` 함수를 사용할 수 있지만, 이 경우는 `case_when()` 함수가 더 유용하다.
+
+```{r}
+gapminder |> 
+  filter(year == 2007) |> 
+  mutate(
+    gdp_status = case_when(
+      gdpPercap < 3000 ~ "Low", 
+      gdpPercap >= 3000 & gdpPercap < 20000 ~ "Medium",
+      gdpPercap >= 20000 ~ "High"
+    )
+  ) |> 
+  count(gdp_status)
+```
+
+`case_when()` 함수는 조건식에 두 개 이상의 변수를 포함할 수 있다.
+
+```{r}
+gapminder |> 
+  filter(year == 2007) |> 
+  mutate(
+    overall_status = case_when(
+      gdpPercap < 3000 & lifeExp < 50 ~ "Really Bad",
+      gdpPercap >= 20000 & lifeExp > 80  ~ "Really Good",
+      .default = "Medium"
+    )
+  ) |> 
+  count(overall_status)
+```
+
+`case_match()` 함수는 범주의 개수를 줄이는데 유용하게 사용될 수 있다. `.default` 인수를 통해 부여된 조건식에 해당하지 않는 나머지 모든 케이스에 대해 어떤 값을 부여할지를 결정할 수 있다. 이와 동일한 것을 `case_when()` 함수로도 가능하기 때문에 모든 경우에 대해 `case_when()` 함수를 활용하면 된다.
+
+```{r}
+gapminder |> 
+  filter(year == 2007) |> 
+  mutate(
+    gdp_status = case_when(
+      gdpPercap < 3000 ~ "Low", 
+      gdpPercap >= 3000 & gdpPercap < 20000 ~ "Medium",
+      gdpPercap >= 20000 ~ "High"
+    )
+  ) |> 
+  mutate(
+    gdp_status = case_match(
+      gdp_status, 
+      c("Low", "Medium") ~ 1,
+      "High" ~ 2
+    )
+  ) |> 
+  count(gdp_status)
+```
+
+### 순위 부여 함수
+
+특정 벡터의 값을 기준으로 순위를 부여하고, 그 순위값으로 구성된 새로운 벡터를 생성하는 함수에 기본적으로 다음의 세 가지 방식이 있다.
+
+-   `row_number()` 함수는 동일값이라 하더라도 값의 등장 순서에 따라 서로 다른 순위를 부여한다. 예를 들어, 다섯개의 숫자가 있고 두 번째 순위 값이 두 개라고 했을 때, 1\~5의 모든 순위가 존재한다.
+
+-   `min_rank()` 함수는 동일값에 동순위를 부여하고, 그 다음 값에는 동순위 갯수를 감안한 그 다음 순위를 부여한다. 예를 들어, 다섯개의 숫자가 있고 두 번째 순위 값이 두 개라고 했을 때, 3은 없다.
+
+-   `dense_rank()` 함수는 동일값에 동순위를 부여하고, 그 다음 값에는 동순위 갯수에 상관없이 바로 그 다음 순위를 부여한다 예를 들어, 다섯개의 숫자가 있고 두 번째 순위 값이 두 개라고 했을 때, 5는 없다.
+
+```{r}
+tbl_rank <- tibble(x = c(10, 20, 20, 30, 40))
+tbl_rank |> 
+  mutate(
+    row_number = row_number(x),
+    min_rank = min_rank(x),
+    dense_rank = dense_rank(x)
+  )
+```
+
+이 외에 두 개의 부가적인 함수가 존재하는데, 백분위수(percentile)를 계산한다는 의미에서는 동일하지만 계산 방식이 조금 다르다.
+
+-   `percent_rank()` 함수: 백분위수을 계산해 주는데, 해당 값보다 작은 값의 개수를 전체 개수에서 1을 뺀 값으로 나눈값을 산출한다.
+
+-   `cume_dist()` 함수: 백분위수를 계산해 주는데, 해당 값보다 작거나 같은 값의 개수를 전체 개수로 나눈값을 산출한다.
+
+```{r}
+tbl_rank <- tibble(x = c(10, 20, 20, 30, 40))
+tbl_rank |> 
+  mutate(
+    percent_rank = percent_rank(x),
+    cume_dist = cume_dist(x)
+  )
+```
+
+### 값 순서 변경 함수
+
+값 순서 변경 함수 중 가장 빈번하게 사용되는 것이 `desc()` 함수이다. 데이터 프레임 함수인 `arrange()`가 기본적으로 오름차순으로 정렬하는데, `desc()` 함수를 쓰면 내림차순으로 정렬할 수 있다.
+
+```{r}
+tbl_rank <- tibble(x = c(10, 20, 20, 30, 40))
+tbl_rank |> 
+  arrange(desc(x))
+```
+
+`lag()`과 `lead()` 함수는 주어진 벡터를 행방향으로 한칸 이동한 새로운 벡터를 생성하는데 사용된다. `lag()` 함수는 뒤로 한칸 밀어 이전 값을 가져와서 새로운 벡터를 생성하는데, 새로 만들어진 벡터의 첫 번째 셀 값은 NA가 된다. 이에 반해 `lead()` 함수는 앞으로 한칸 당겨 이후 값을 가져와서 새로운 벡터를 생성하는데, 새로 만들어진 벡터의 마지막 셀 값은 NA가 된다.
+
+```{r}
+tbl_rank <- tibble(x = c(10, 20, 20, 30, 40))
+tbl_rank |>
+  mutate(
+    x_lag = lag(x), 
+    x_lead = lead(x) 
+  )
+```
+
+`default` 인자를 활용하면 NA의 생성을 막을 수 있다.
+
+```{r}
+tbl_rank <- tibble(x = c(10, 20, 20, 30, 40))
+tbl_rank |>
+  mutate(
+    x_lag = lag(x, default = first(x)), 
+    x_lead = lead(x, default = last(x)) 
+  )
+```
+
+### 결측치 처리 함수
+
+결측치 처리 함수는 벡터의 NA값과 관련된 함수이다. `coalesce()` 함수는 NA에 특정한 값을 부여하는데 반해, `na_if()` 함수는 특정한 값에 NA를 부여하는 함수이다.
+
+```{r}
+tbl_na <- tibble(x = c(1, 2, NA, 4, NA, 7))
+tbl_na |> 
+  mutate(
+    x_coalesce = coalesce(x, 0), 
+    x_na_if = na_if(x, 7)
+  )
+```
+
+### 논리형 벡터 생성 함수
+
+논리형 벡터 생성 함수는 조건의 부합 여부에 따라 TRUE와 FALSU로 구성된 새로운 벡터를 생성하는 함수를 의미한다. Base R에는 다음과 같은 논리형 벡터 생성 함수가 빈번하게 사용된다.
+
+-   `is.na()`: 결측치 여부
+
+-   `is.numeric()`: 수치형 여부
+
+-   `is.integer()`: 정수형 여부
+
+-   `is.character()`: 문자형 여부
+
+-   `is.logical()`: 논리형 여부
+
+-   `is.factor()`: 팩터 여부
+
+여기에 덧붙여 [**dplyr**](https://dplyr.tidyverse.org/)은 흥미로운 논리형 벡터 생성 함수를 제공한다.
+
+-   `between()`: 특정한 값이 주어진 두 값 사이에 위치하는 지의 여부 검토
+
+-   `near()`: 특정한 값이 기준이 되는 값과 충분이 유사한지의 여부 검토
+
+```{r}
+gapminder |> 
+  filter(
+    year == 2007, 
+    between(gdpPercap, 20000, 30000)
+  )
+```
+
+`near()` 함수는 많이 사용되지는 않지만, 부등소수점 수(floating point number)의 정확도로 인해 발생하는 상동성 평가의 문제점을 극복하기 위한 함수이다. 아래의 예시를 보자. 두 값은 명백히 1과 2이다.
+
+```{r}
+x <- c(1 / 49 * 49, sqrt(2) ^ 2)
+x
+```
+
+그러나 다음의 상동성 평가 문제가 발생한다.
+
+```{r}
+x == c(1, 2)
+```
+
+이것은 부등소수점 수의 정확도로 발생하는 문제이다.
+
+```{r}
+print(x, digits = 16)
+```
+
+`near()` 함수는 이러한 미세한 차이를 무시할 수 있게 해주어 상동성 평가 문제를 해결한다.
+
+```{r}
+near(x, c(1, 2))
 ```

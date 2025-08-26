@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.4.549">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="이상일(서울대학교 지리교육과)">
-<title>Data Science - 데이터 탐색하기</title>
+<title>Data Science - 시각화하기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -112,7 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">데이터 탐색하기</h1>
+          <h1 class="quarto-secondary-nav-title">시각화하기</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -154,61 +154,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R과 RStudio 소개</span></a>
+ <span class="menu-text">R과 RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R과 데이터사이언스: 개요</span></a>
+ <span class="menu-text">R과 데이터사이언스 과정</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">데이터 불러오기와 정리하기</span></a>
+ <span class="menu-text">소통하기: Quarto로 대시보드 만들기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">데이터 변형하기</span></a>
+ <span class="menu-text">불러오기와 정리하기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">데이터 시각화하기</span></a>
+ <span class="menu-text">변형하기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_06.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">데이터 탐색하기</span></a>
+ <span class="menu-text">시각화하기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_07.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">데이터 수집하기</span></a>
+ <span class="menu-text">탐색하기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_08.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">데이터로 소통하기: Quarto 입문</span></a>
+ <span class="menu-text">수집하기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_09.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">데이터로 소통하기: 대시보드 만들기</span></a>
+ <span class="menu-text">소통하기: 인터랙티브 시각화</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">데이터로 소통하기: 동적, 반응형 시각화</span></a>
+ <span class="menu-text">소통하기: 인터랙티브 시각화</span></a>
   </div>
 </li>
       </ul>
@@ -365,20 +365,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">목차</h2>
    
   <ul>
-<li><a href="#%EC%8B%A4%EC%8A%B5-%EA%B0%9C%EC%9A%94" id="toc-실습-개요" class="nav-link active" data-scroll-target="#%EC%8B%A4%EC%8A%B5-%EA%B0%9C%EC%9A%94">실습 개요</a></li>
-  <li><a href="#%ED%83%90%EC%83%89-%EC%A7%88%EB%AC%B8%EC%97%90-%EB%8B%B5%EC%9D%84-%EC%B0%BE%EC%95%84%EA%B0%80%EB%8A%94-%EA%B3%BC%EC%A0%95" id="toc-탐색-질문에-답을-찾아가는-과정" class="nav-link" data-scroll-target="#%ED%83%90%EC%83%89-%EC%A7%88%EB%AC%B8%EC%97%90-%EB%8B%B5%EC%9D%84-%EC%B0%BE%EC%95%84%EA%B0%80%EB%8A%94-%EA%B3%BC%EC%A0%95"><span class="header-section-number">1</span> 탐색: 질문에 답을 찾아가는 과정</a></li>
+<li><a href="#%EA%B0%9C%EC%9A%94" id="toc-개요" class="nav-link active" data-scroll-target="#%EA%B0%9C%EC%9A%94">개요</a></li>
   <li>
-<a href="#%ED%83%90%EC%83%89%EC%9D%98-%EC%9C%A0%ED%98%95" id="toc-탐색의-유형" class="nav-link" data-scroll-target="#%ED%83%90%EC%83%89%EC%9D%98-%EC%9C%A0%ED%98%95"><span class="header-section-number">2</span> 탐색의 유형</a>
+<a href="#%ED%95%B5%EC%8B%AC-%EA%B5%AC%EC%84%B1-%EC%9A%94%EC%86%8C-%EC%8B%9C%EA%B0%81%EC%86%8D%EC%84%B1%EA%B3%BC-%EA%B8%B0%ED%95%98%EA%B0%9D%EC%B2%B4" id="toc-핵심-구성-요소-시각속성과-기하객체" class="nav-link" data-scroll-target="#%ED%95%B5%EC%8B%AC-%EA%B5%AC%EC%84%B1-%EC%9A%94%EC%86%8C-%EC%8B%9C%EA%B0%81%EC%86%8D%EC%84%B1%EA%B3%BC-%EA%B8%B0%ED%95%98%EA%B0%9D%EC%B2%B4"><span class="header-section-number">1</span> 핵심 구성 요소: 시각속성과 기하객체</a>
   <ul class="collapse">
-<li><a href="#%ED%95%9C-%EB%B3%80%EC%88%98%EC%9D%98-%EB%B3%80%EB%8F%99" id="toc-한-변수의-변동" class="nav-link" data-scroll-target="#%ED%95%9C-%EB%B3%80%EC%88%98%EC%9D%98-%EB%B3%80%EB%8F%99"><span class="header-section-number">2.1</span> 한 변수의 변동</a></li>
-  <li><a href="#%EB%91%90-%EB%B3%80%EC%88%98-%EA%B0%84%EC%9D%98-%EA%B3%B5%EB%B3%80%EB%8F%99" id="toc-두-변수-간의-공변동" class="nav-link" data-scroll-target="#%EB%91%90-%EB%B3%80%EC%88%98-%EA%B0%84%EC%9D%98-%EA%B3%B5%EB%B3%80%EB%8F%99"><span class="header-section-number">2.2</span> 두 변수 간의 공변동</a></li>
+<li><a href="#%EC%8B%9C%EA%B0%81%EC%86%8D%EC%84%B1" id="toc-시각속성" class="nav-link" data-scroll-target="#%EC%8B%9C%EA%B0%81%EC%86%8D%EC%84%B1"><span class="header-section-number">1.1</span> 시각속성</a></li>
+  <li><a href="#%EA%B8%B0%ED%95%98%EA%B0%9D%EC%B2%B4" id="toc-기하객체" class="nav-link" data-scroll-target="#%EA%B8%B0%ED%95%98%EA%B0%9D%EC%B2%B4"><span class="header-section-number">1.2</span> 기하객체</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%EC%97%AC%ED%83%80-%EA%B5%AC%EC%84%B1-%EC%9A%94%EC%86%8C" id="toc-여타-구성-요소" class="nav-link" data-scroll-target="#%EC%97%AC%ED%83%80-%EA%B5%AC%EC%84%B1-%EC%9A%94%EC%86%8C"><span class="header-section-number">2</span> 여타 구성 요소</a>
+  <ul class="collapse">
+<li><a href="#%EB%8D%B0%EC%9D%B4%ED%84%B0" id="toc-데이터" class="nav-link" data-scroll-target="#%EB%8D%B0%EC%9D%B4%ED%84%B0"><span class="header-section-number">2.1</span> 데이터</a></li>
+  <li><a href="#%EC%8A%A4%EC%BC%80%EC%9D%BC" id="toc-스케일" class="nav-link" data-scroll-target="#%EC%8A%A4%EC%BC%80%EC%9D%BC"><span class="header-section-number">2.2</span> 스케일</a></li>
+  <li><a href="#%ED%8C%A8%EC%8B%AF" id="toc-패싯" class="nav-link" data-scroll-target="#%ED%8C%A8%EC%8B%AF"><span class="header-section-number">2.3</span> 패싯</a></li>
+  <li><a href="#%ED%86%B5%EA%B3%84%EC%A0%81-%EB%B3%80%ED%99%98" id="toc-통계적-변환" class="nav-link" data-scroll-target="#%ED%86%B5%EA%B3%84%EC%A0%81-%EB%B3%80%ED%99%98"><span class="header-section-number">2.4</span> 통계적 변환</a></li>
+  <li><a href="#%EC%A2%8C%ED%91%9C" id="toc-좌표" class="nav-link" data-scroll-target="#%EC%A2%8C%ED%91%9C"><span class="header-section-number">2.5</span> 좌표</a></li>
+  <li><a href="#%ED%85%8C%EB%A7%88" id="toc-테마" class="nav-link" data-scroll-target="#%ED%85%8C%EB%A7%88"><span class="header-section-number">2.6</span> 테마</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%EA%B8%B0%ED%83%80-%EC%82%AC%ED%95%AD" id="toc-기타-사항" class="nav-link" data-scroll-target="#%EA%B8%B0%ED%83%80-%EC%82%AC%ED%95%AD"><span class="header-section-number">3</span> 기타 사항</a>
+  <ul class="collapse">
+<li><a href="#%EB%9D%BC%EB%B2%A8%EA%B3%BC-%EC%A3%BC%EC%84%9D" id="toc-라벨과-주석" class="nav-link" data-scroll-target="#%EB%9D%BC%EB%B2%A8%EA%B3%BC-%EC%A3%BC%EC%84%9D"><span class="header-section-number">3.1</span> 라벨과 주석</a></li>
+  <li><a href="#%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83" id="toc-레이아웃" class="nav-link" data-scroll-target="#%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83"><span class="header-section-number">3.2</span> 레이아웃</a></li>
+  <li><a href="#%EA%B7%B8%EB%9E%98%ED%94%84%EC%9D%98-%EC%A0%80%EC%9E%A5" id="toc-그래프의-저장" class="nav-link" data-scroll-target="#%EA%B7%B8%EB%9E%98%ED%94%84%EC%9D%98-%EC%A0%80%EC%9E%A5"><span class="header-section-number">3.3</span> 그래프의 저장</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>이슈 보고</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title d-none d-lg-block">데이터 탐색하기</h1>
+<h1 class="title d-none d-lg-block">시각화하기</h1>
 </div>
 
 
@@ -396,7 +414,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2025년 8월 25일</p>
+      <p class="date-modified">2025년 8월 26일</p>
     </div>
   </div>
     
@@ -404,176 +422,110 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><section id="실습-개요" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="실습-개요">실습 개요</h2>
-<p>이 실습은 데이터사이언스의 꽃이라고 할 수 있는 데이터 탐색(exploration)을 다룬다. 데이터 탐색하기는 데이터 변형하기와 데이터 시각화하기를 합친 것으로 이해할 수 있다. 다음의 사항을 이해하고 있는 것이 매우 중요하다.</p>
-<ul>
-<li><p>데이터 탐색은 데이터와의 끝임없는 상호작용을 의미한다. 데이터사이언스가 데이터로부터 이해, 지식, 통찰을 획득하는 과정이라고 했을 때, 데이터 탐색은 데이터사이언스의 심장이라 해도 과언이 아니다. 상호작용은 데이터와의 질의응답의 연쇄과정을 의미한다. 의미있는 질문에 답을 얻기 위해서는 거의 반드시 데이터를 변형하거나 시각화해야만 한다.</p></li>
-<li><p>데이터 변형과 데이터 시각화는 개별적으로 데이터 탐색을 가능케 한다. 데이터 변형은 데이터를 다른 각도로 바라볼 수 있게 해주고 다양한 요약 통계값을 산출해 준다. 데이터 시각화는 데이터에 차원을 부가함으로써 시각화 되지 않았다면 발견할 수 없었던 것을 발견할 수 있게 해준다.</p></li>
-<li><p>데이터 변형에서 데이터 시각화로 이어지는 시퀀스가 데이터 탐색의 핵심적인 방법론이다. 데이터 변형의 궁극적인 목적은 바로 데이터 시각화를 위한 준비이다. 특정한 형태의 시각화를 위해서는 특정한 형태의 데이터가 필수적이고, 그것이 이해, 지식, 통찰의 획득으로 나아가게 해주는 주된 경로이다.</p></li>
-<li><p>데이터 시각화의 두 가지 목적은 탐색과 커뮤니케이션이다. 우리가 데이터 시각화를 하는 첫번째 목적은 데이터에 대한 질문에 답을 찾기 위해서이다. 우리가 데이터를 시각화하는 두 번째 목적은 우리가 발견한 것을 다른 사람들과 ‘잘’ 커뮤니케이션하기 위해서이다.</p></li>
-</ul>
-<p>이번 실습에서는 데이터 변형하기에서 사용한 <a href="https://cran.r-project.org/web/packages/gapminder/readme/README.html"><strong>gapmider</strong></a> 데이터를 활용하여 데이터 변형과 데이터 시각화가 어떻게 데이터 탐색에 기여하는지를 알아볼 것이다. <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a> 패키지와 <a href="https://cran.r-project.org/web/packages/gapminder/readme/README.html"><strong>gapmider</strong></a> 패키지를 불러온다. <code>gapmider</code> 데이터를 다시 한번 살펴본다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jennybc/gapminder">gapminder</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html">View</a></span><span class="op">(</span><span class="va">gapminder</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</header><section id="개요" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="개요">개요</h2>
+<p>여기서는 R로 데이터사이언스를 하는 과정 중 데이터 시각화하기(visualizing)를 다룬다. 데이터 시각화하기는 <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a>의 핵심 패키지 중의 하나인 <a href="https://ggplot2.tidyverse.org/"><strong>ggplot2</strong></a> 에서 제공된다.</p>
+<p><a href="https://ggplot2.tidyverse.org/"><strong>ggplot2</strong></a>의 <code>gg</code>가 ’그래프의 문법(grammar of graphic)’을 의미하는 것에서 알 수 있는 것처럼, <a href="https://ggplot2.tidyverse.org/"><strong>ggplot2</strong></a>는 그래프 제작의 일반 원리를 정교하게 구현하기 위해 만들어졌다. <a href="#fig-ggplot2-layers" class="quarto-xref">그림&nbsp;1</a> 에서 보는 것처럼, 모든 그래프는 8개의 주요 구성 요소로 이루어져 있고, <a href="https://ggplot2.tidyverse.org/"><strong>ggplot2</strong></a>는 각각의 구성 요소를 마치 레이어(layer)를 쌓는 것과 같은 방식으로 구현한다(<code>+</code> 연산자, 즉 레이어 추가 연산자 사용).</p>
+<div id="fig-ggplot2-layers" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ggplot2-layers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/clipboard-3014854163.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1"><img src="images/clipboard-3014854163.png" class="img-fluid figure-img"></a>
 </div>
-</section><section id="탐색-질문에-답을-찾아가는-과정" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="탐색-질문에-답을-찾아가는-과정">
-<span class="header-section-number">1</span> 탐색: 질문에 답을 찾아가는 과정</h2>
-<p>탐색을 데이터 변형과 시각화의 연쇄 과정으로 보는 관점의 유용성을 매우 간단한 예를 통해 살펴보도록 한다.</p>
-<p>나의 질문은 이것이다.</p>
-<blockquote class="blockquote">
-<p>대륙별 최대국(인구가 가장 많은 나라)이 소속 대륙 전체에서 차지하는 비중이 어느 정도이고 대륙별로 어느 정도의 차이가 있는지, 그리고 대륙별 최대국의 비중이 시간이 지남에 따라 어떠한 변화 양상을 보여주고 있고, 그러한 양상에 대륙별 차이가 있는지의 여부이다.</p>
-</blockquote>
-<p><code>gapminder</code> 데이터를 살펴보라. 아무리 훑어 보아도 곧바로 이 질문에 답할 수는 없을 것이다. 이 질문에 답하기 위해 우리는 두 가지의 연쇄적인 과제를 수행해야 한다.</p>
-<ul>
-<li><p>질문에 답할 수 있는 형태로 데이터를 변형한다.</p></li>
-<li><p>변형한 데이터를 간명한 형태의 그래프로 시각화한다.</p></li>
-<li><p>이 두 가지 과제를 잘 연결한다.</p></li>
-</ul>
-<p>지금까지 배운 것을 총동원해, 코드를 어떻게 작성할 수 있을지 궁리해 본다.</p>
-<p>아래에 질문에 답이 될 수 있는 그래프가 있다. Code 탭을 누르면 정답이 보인다. 누르지 말고 최대한 이와 비슷한 그래프가 만들어 지는 코드를 한번 작성해 보라.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist">
-<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Graph</a></li>
-<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Code</a></li>
-</ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ggplot2-layers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;1: 그래프의 8대 구성 요소(<a href="https://initiation.doana-r.com/06-ggplot2#1" class="uri">https://initiation.doana-r.com/06-ggplot2#1</a>)
+</figcaption></figure>
+</div>
+<p>우선 <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a> 패키지를 불러온다.</p>
 <div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="exec_06_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="exec_06_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></a></p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>실습을 위해 <a href="https://ggplot2.tidyverse.org/"><strong>ggplot2</strong></a> 패키지 속에 포함되어 있는 <code>mpg</code> 데이터와 <code>diamonds</code> 데이터를 사용한다. <code>mpg</code> 데이터의 11개 변수 중 다음의 세 가지 변수가 특히 중요한데, <code>displ</code>는 자동차의 엔진 크기이고, <code>hwy</code>는 고속도로 연비, <code>class</code>는 자동차의 유형이다. <code>diamond</code> 데이터는 총 54,000개의 다이아몬드에 대한 정보를 담고 있는데, 특히 가격(<code>price</code>) 캐럿(<code>carat</code>), 컬러(<code>color</code>), 투명도(<code>clarity</code>), 컷(<code>cut</code>)이 중요한 변수들이다.</p>
+</section><section id="핵심-구성-요소-시각속성과-기하객체" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="핵심-구성-요소-시각속성과-기하객체">
+<span class="header-section-number">1</span> 핵심 구성 요소: 시각속성과 기하객체</h2>
+<p>이 8개 구성 요소 중 가장 중요한 것은 ’시각속성(aesthetics)’과 ’기하객체(geometric objects)’이다. 기하객체가 그래프의 전체 구조 혹은 형식을 규정하는 것이라면, 시각속성은 기하객체의 외견을 규정한다. 결국 기하객체는 그래프의 유형(예: 막대 그래프, 산포도 등)과 관련되고, 시각속성은 플롯의 그래픽 속성(예: 컬러, 크기, 모양 등) 혹은 시각 변수(visual variable)과 관련된다. 이 두 가지는 독립적인 요소이지만, 어느 정도는 관련되어 있기도 하다. 특정한 기하객체는 오로지 특정한 시각속성과만 결합한다. 예를 들어 포인트 기하 객체(<code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code>)는 크기(<code>size</code>) 시각속성과 관련되지만, 라인 기하객체(<code><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line()</a></code>)는 크기 시각속성과는 관련되지 않고 라인폭(<code>linewidth</code>) 시각속성과만 관련되는 식이다.</p>
+<section id="시각속성" class="level3" data-number="1.1"><h3 data-number="1.1" class="anchored" data-anchor-id="시각속성">
+<span class="header-section-number">1.1</span> 시각속성</h3>
+<p>시각속성 매핑(aesthetic mapping)이란 특정한 시각속성 혹은 시각변수를 특정한 변수에 부여하는 과정을 의미한다. 이것을 통해 해당 변수의 변동(값의 다양성)을 효과적으로 나타낼 수 있다. 변수는 다양한 값으로 구성되어 있고, 그 값들이 보여주는 다양성을 시각적으로 드러내야 한다. 정성적 변수인 경우는 범주적 차이를 표현해야 하고, 정량적 변수인 경우는 수치적 차이를 표현해야 한다. 여기서 중요한 것은 어떤 시각속성은 정성적 변수와 관련되고, 다른 시각속성은 정량적 변수와 관련된다는 점이다. 시각속성은 <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> 함수를 통해 나타내며, ‘시각속성 = 변수’의 형태로 지정된다. 당연히 여러 개의 시각속성이 동시에 사용될 수 있고, <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> 함수 내에서 콤마로 구분된다. <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code>는 두 곳에 지정할 수 있는데, 최상위 함수인 <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> 속에 지정하면 ’글로벌’ 지정이, 특정한 <code>geom_*()</code> 속에 지정하면 ‘로컬’ 지정이 된다. 둘의 차이는 뒤에서 살펴본다. <a href="https://ggplot2.tidyverse.org/"><strong>ggplot2</strong></a> 패키지가 제공하는 시각속성이 <a href="#tbl-aes" class="quarto-xref">표&nbsp;1</a> 에 정리되어 있다.</p>
+<div id="tbl-aes" class="quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-aes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+표&nbsp;1: 시각속성 유형
+</figcaption><div aria-describedby="tbl-aes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead><tr class="header">
+<th>분류</th>
+<th>시각속성</th>
+<th>설명</th>
+<th>성격</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>컬러 관련</td>
+<td><code>aes(color = )</code></td>
+<td>점/선의 컬러 지정</td>
+<td>정성 &gt; 정량</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>aes(fill = )</code></td>
+<td>역/면의 필(컬러) 지정</td>
+<td>정성 &gt; 정량</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>aes(alpha = )</code></td>
+<td>점/선/역/면의 투명도 지정</td>
+<td>정성 &lt; 정량</td>
+</tr>
+<tr class="even">
+<td>차이 표현 관련</td>
+<td><code>aes(size = )</code></td>
+<td>점의 크기 지정</td>
+<td>정량</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>aes(shape = )</code></td>
+<td>점의 모양 지정</td>
+<td>정성</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>aes(linetype = )</code></td>
+<td>선의 유형 지정</td>
+<td>정성</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>aes(linewidth = )</code></td>
+<td>선의 크기 지정</td>
+<td>정량</td>
+</tr>
+<tr class="even">
+<td>위치 관련</td>
+<td><code>aes(x = )</code></td>
+<td>x축 지정</td>
+<td>정성/정량</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>aes(y = )</code></td>
+<td>y축 지정</td>
+<td>정성/정량</td>
+</tr>
+<tr class="even">
+<td>그룹화 관련</td>
+<td><code>aes(group = )</code></td>
+<td>데이터를 묶는 기준(그룹화 기준) 지정</td>
+<td>정성</td>
+</tr>
+</tbody>
+</table>
+</div>
 </figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">continent</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
-<span>    sum_cont <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">pop</span><span class="op">)</span>,</span>
-<span>    country_prop <span class="op">=</span> <span class="va">pop</span> <span class="op">*</span> <span class="fl">100</span> <span class="op">/</span> <span class="va">sum_cont</span></span>
-<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_max</a></span><span class="op">(</span><span class="va">country_prop</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">country_prop</span>, color <span class="op">=</span> <span class="va">continent</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Year"</span>, y <span class="op">=</span> <span class="st">"% of Population"</span>, color <span class="op">=</span> <span class="st">"Continents"</span><span class="op">)</span> </span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-<p>코드를 확인하고 자신의 코드와 비교해보라. 동일한 그래프에 이르는 조금 더 긴, 혹은 조금 더 짧은 코드가 가능할 것이다. 짧다고 좋은 것이 아니다. 자신이 이해하기 쉽고, 타인이 이해하기 쉬운 코드가 가장 좋은 코드이다. 중요한 것은, 데이터 탐색의 핵심이 데이터 변형과 데이터 시각화의 적절한 시퀀스라는 점을 이해하는 것이다. 위 코드는 <a href="https://dplyr.tidyverse.org/"><strong>dplyr</strong></a> 패키지와 <a href="https://ggplot2.tidyverse.org/"><strong>ggplot2</strong></a> 패키지를 연결하여 이 과업을 수행하는 과정을 잘 보여준다.</p>
-</section><section id="탐색의-유형" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="탐색의-유형">
-<span class="header-section-number">2</span> 탐색의 유형</h2>
-<section id="한-변수의-변동" class="level3" data-number="2.1"><h3 data-number="2.1" class="anchored" data-anchor-id="한-변수의-변동">
-<span class="header-section-number">2.1</span> 한 변수의 변동</h3>
-<p>변동(variation)이란 한 변수값이 보여주는 다양성의 양태이다. 개별 변수에 대해 변동이 보여주는 특성을 파악하는 것은 데이터 탐색의 가장 초보적인 단계이다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div id="fig-histogram-1" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-histogram-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="exec_06_files/figure-html/fig-histogram-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2"><img src="exec_06_files/figure-html/fig-histogram-1-1.png" class="img-fluid figure-img" width="672"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histogram-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;1: 히스토그램
-</figcaption></figure>
-</div>
-</div>
-</div>
-<p>아주 높은 값을 보이는 국가들을 확인하기 위해 특정한 데이터 변형을 실행한다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">gdpPercap</span><span class="op">)</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 142 × 6
-   country          continent  year lifeExp       pop gdpPercap
-   &lt;fct&gt;            &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;     &lt;int&gt;     &lt;dbl&gt;
- 1 Norway           Europe     2007    80.2   4627926    49357.
- 2 Kuwait           Asia       2007    77.6   2505559    47307.
- 3 Singapore        Asia       2007    80.0   4553009    47143.
- 4 United States    Americas   2007    78.2 301139947    42952.
- 5 Ireland          Europe     2007    78.9   4109086    40676.
- 6 Hong Kong, China Asia       2007    82.2   6980412    39725.
- 7 Switzerland      Europe     2007    81.7   7554661    37506.
- 8 Netherlands      Europe     2007    79.8  16570613    36798.
- 9 Canada           Americas   2007    80.7  33390141    36319.
-10 Iceland          Europe     2007    81.8    301931    36181.
-# ℹ 132 more rows</code></pre>
-</div>
-</div>
-</section><section id="두-변수-간의-공변동" class="level3" data-number="2.2"><h3 data-number="2.2" class="anchored" data-anchor-id="두-변수-간의-공변동">
-<span class="header-section-number">2.2</span> 두 변수 간의 공변동</h3>
-<p>공변동(covariation)은 두 변수간의 관련성을 포괄적으로 부르는 통계학적인 용어이다. 어떤 두 변수가 개입되는냐에 따라 몇 가지 종류로 나누어 살펴본다.</p>
-<ul>
-<li><p>한 범주형 변수와 한 수치형 변수</p></li>
-<li><p>두 범주형 변수</p></li>
-<li><p>두 수치형 변수</p></li>
-</ul>
-<section id="한-범주형-변수와-한-수치형-변수" class="level4" data-number="2.2.1"><h4 data-number="2.2.1" class="anchored" data-anchor-id="한-범주형-변수와-한-수치형-변수">
-<span class="header-section-number">2.2.1</span> 한 범주형 변수와 한 수치형 변수</h4>
-<p>범주형 변수인 대륙에 의거해 수치형 변수인 일인당 GDP의 변동을 탐색한다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_density.html">geom_density</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">continent</span>, fill <span class="op">=</span> <span class="va">continent</span><span class="op">)</span>, alpha <span class="op">=</span> <span class="fl">0.25</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div id="fig-density-1" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-density-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="exec_06_files/figure-html/fig-density-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-glightbox="description: .lightbox-desc-3"><img src="exec_06_files/figure-html/fig-density-1-1.png" class="img-fluid figure-img" width="672"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-density-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;2: 한 범주형 변수와 한 수치형 변수: 밀도 분포
-</figcaption></figure>
-</div>
-</div>
-</div>
-<p>일인당 GDP의 대륙간 차이를 박스플롯을 통해 탐색할 수도 있다. 여기서 <code><a href="https://forcats.tidyverse.org/reference/fct_reorder.html">fct_reorder()</a></code> 는 데이터 시각화에서 매우 중요하다. 이것은 범주 변수의 범주 순서를 바꾸어 주는데, <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a>의 핵심 패키지인 <a href="https://forcats.tidyverse.org/"><strong>forcats</strong></a>의 한 함수이다. 이것을 적용하지 않으면 원래 지정된 순서인 알파벳 순서에 따라 박스플롯이 배열된다. 이것을 일인당 GDP의 중위수의 순서로 배열하게 한 것이다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span>, y <span class="op">=</span> <span class="fu"><a href="https://forcats.tidyverse.org/reference/fct_reorder.html">fct_reorder</a></span><span class="op">(</span><span class="va">continent</span>, <span class="va">gdpPercap</span>, <span class="va">median</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">continent</span><span class="op">)</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div id="fig-boxplot-1" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-boxplot-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="exec_06_files/figure-html/fig-boxplot-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" data-glightbox="description: .lightbox-desc-4"><img src="exec_06_files/figure-html/fig-boxplot-1-1.png" class="img-fluid figure-img" width="672"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boxplot-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;3: 한 범주형 변수와 한 수치형 변수: 박스틀롯
-</figcaption></figure>
-</div>
-</div>
-</div>
-</section><section id="두-범주형-변수" class="level4" data-number="2.2.2"><h4 data-number="2.2.2" class="anchored" data-anchor-id="두-범주형-변수">
-<span class="header-section-number">2.2.2</span> 두 범주형 변수</h4>
-<p>수치형 변수인 일인당 GDP를 동일 간격의 5개 그룹으로 나눈 새로운 범주형 변수를 생성하고, 그것과 또 다른 범주 변수인 대륙과의 관련성을 탐색한다. <code><a href="https://ggplot2.tidyverse.org/reference/geom_count.html">geom_count()</a></code> 기하 함수가 중요한 역할을 한다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
-<span>    gdp_class <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/cut_interval.html">cut_interval</a></span><span class="op">(</span><span class="va">gdpPercap</span>, n <span class="op">=</span> <span class="fl">5</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"very low"</span>, <span class="st">"low"</span>, <span class="st">"middle"</span>, <span class="st">"high"</span>, <span class="st">"very high"</span><span class="op">)</span><span class="op">)</span></span>
-<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">continent</span>, y <span class="op">=</span> <span class="va">gdp_class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_count.html">geom_count</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div id="fig-count-1" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-count-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="exec_06_files/figure-html/fig-count-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" data-glightbox="description: .lightbox-desc-5"><img src="exec_06_files/figure-html/fig-count-1-1.png" class="img-fluid figure-img" width="672"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-count-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;4: 두 범주형 변수: 카운트플롯
-</figcaption></figure>
-</div>
-</div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -585,160 +537,1006 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>위의 예에서 <code><a href="https://ggplot2.tidyverse.org/reference/cut_interval.html">cut_interval()</a></code>는 계급구분 혹은 분류를 위해 <a href="https://ggplot2.tidyverse.org/"><strong>ggplot2</strong></a> 패키지가 제공하는 세 가지 보조 함수 중 하나이다.</p>
-<ul>
-<li><p><code><a href="https://ggplot2.tidyverse.org/reference/cut_interval.html">cut_interval()</a></code>: 등간격분류법(equal interval)을 구현하는 것으로, 최대값, 최소값, 계급의 수를 통해 산출된 동일한 급폭을 모든 계급에 적용하는 것이다.</p></li>
-<li><p><code><a href="https://ggplot2.tidyverse.org/reference/cut_interval.html">cut_number()</a></code>: 등개수분류법(quantile)을 구현하는 것으로, 모든 계급에 대해 계급에 포함되는 갯수를 동일하게 하는 것이다.</p></li>
-<li><p><code><a href="https://ggplot2.tidyverse.org/reference/cut_interval.html">cut_width()</a></code>: 주어진 임의의 급폭(bin width)에 의거해 계급을 구분하는 것이다.</p></li>
-</ul>
+<p>위치 관련 시각속성에 <code>xmin</code>, <code>ymin</code>, <code>xmax</code>, <code>ymax</code>, <code>xend</code>, <code>yend</code> 등도 있다. 그러나 이것은 변수와 관련되지 않고 도형의 위치나 크기를 정의하는 좌표 매핑용으로만 사용된다. <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> 속에서 정의되기 때문에 시각속성이라 할 수는 있으나, 엄밀한 의미에서는 일종의 매개변수에 해당한다.</p>
 </div>
 </div>
-<p>또 다른 방법은 데이터 변형을 위한 <code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code> 함수와 시각화 함수인 <code><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html">geom_tile()</a></code> 기하객체 함수를 결합하는 것이다.</p>
+<p>동일한 기하객체의 시각화에서 시각속성의 선택이 어떤 영향을 미치는지를 살펴본다. 산점도 기하객체(<code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code>)를 통해 <code>displ</code>과 <code>hwy</code>의 관계가 <code>class</code>에 따라 어떻게 달라지는지를 시각화한다. 다음의 두 그래프를 비교해 본다.</p>
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
-<span>    gdp_class <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/cut_interval.html">cut_interval</a></span><span class="op">(</span><span class="va">gdpPercap</span>, n <span class="op">=</span> <span class="fl">5</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"very low"</span>, <span class="st">"low"</span>, <span class="st">"middle"</span>, <span class="st">"high"</span>, <span class="st">"very high"</span><span class="op">)</span><span class="op">)</span></span>
-<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">continent</span>, <span class="va">gdp_class</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">continent</span>, y <span class="op">=</span> <span class="va">gdp_class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html">geom_tile</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">n</span><span class="op">)</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span>, color <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-tile-1" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-tile-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="exec_06_files/figure-html/fig-tile-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" data-glightbox="description: .lightbox-desc-6"><img src="exec_06_files/figure-html/fig-tile-1-1.png" class="img-fluid figure-img" width="672"></a>
+<div id="fig-aesthetic-color" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-aesthetic-color-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-aesthetic-color-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2"><img src="exec_06_files/figure-html/fig-aesthetic-color-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tile-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;5: 두 범주형 변수: 타일플롯
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-aesthetic-color-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;2: 시각속성: 컬러
 </figcaption></figure>
 </div>
 </div>
 </div>
-</section><section id="두-수치형-변수" class="level4" data-number="2.2.3"><h4 data-number="2.2.3" class="anchored" data-anchor-id="두-수치형-변수">
-<span class="header-section-number">2.2.3</span> 두 수치형 변수</h4>
-<p>두 수치형 변수인 일인당 GDP와 기대수명의 공변동을 탐색하는 가장 기본적이고도 가장 좋은 방법은 산포도를 그리는 것이다.</p>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span>, shape <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-aesthetic-shape" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-aesthetic-shape-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-aesthetic-shape-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3"><img src="exec_06_files/figure-html/fig-aesthetic-shape-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-aesthetic-shape-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;3: 시각속성: 형태
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p><a href="#fig-aesthetic-color" class="quarto-xref">그림&nbsp;2</a> 과 <a href="#fig-aesthetic-shape" class="quarto-xref">그림&nbsp;3</a> 중 어느 것이 더 효과적이라고 판단하는가? 컬러(<code>color</code>)와 형태(<code>shape</code>)라는 시각속성 외에 크기(<code>size</code>)와 투명도(<code>alpha</code>) 속성을 동일한 데이터에 적용해 본다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span>, size <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-aesthetic-size" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-aesthetic-size-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-aesthetic-size-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-4" data-gallery="quarto-lightbox-gallery-4"><img src="exec_06_files/figure-html/fig-aesthetic-size-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-aesthetic-size-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;4: 심미성: 크기
+</figcaption></figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span>, alpha <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-aesthetic-alpha" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-aesthetic-alpha-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-aesthetic-alpha-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-5" data-gallery="quarto-lightbox-gallery-5"><img src="exec_06_files/figure-html/fig-aesthetic-alpha-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-aesthetic-alpha-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;5: 심미성: 투명도
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>크기와 투명도는 정량적 차이를 나타내는데 적합한 시각속성이기 때문에 <code>class</code>라는 정성적 범주의 차이를 보여주는데는 적합하지 않다. 시각속성 부여에서 가장 중요한 것은 결국 해당 시각속성이 주어진 데이터에 얼마나 부합하느냐에 달려있다.</p>
+</section><section id="기하객체" class="level3" data-number="1.2"><h3 data-number="1.2" class="anchored" data-anchor-id="기하객체">
+<span class="header-section-number">1.2</span> 기하객체</h3>
+<p>기하객체는 그래프의 전체 구조 혹은 형식을 규정하며, 일반적으로 그래프의 유형으로 이해할 수 있다. <a href="https://ggplot2.tidyverse.org/"><strong>ggplot2</strong></a> 패키지는 매우 다양한 형태의 기하객체를 제공하며, <code>geom_*()</code> 함수의 형태를 띤다. <code>geom_*()</code> 함수 속에 <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code>를 지정할 수 있다(로컬 지정). <a href="https://ggplot2.tidyverse.org/"><strong>ggplot2</strong></a> 패키지가 제공하는 기하객체가 <a href="#tbl-geom" class="quarto-xref">표&nbsp;2</a> 에 정리되어 있다. 가장 빈번하게 사용되는 기하객체에 <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code>, <code><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line()</a></code>, <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar()</a></code>, <code><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot()</a></code>, <code><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram()</a></code>, <code><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth()</a></code>, <code><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text()</a></code>, <code><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_abline()</a></code> 등이 있다.</p>
+<div id="tbl-geom" class="quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-geom-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+표&nbsp;2: 기하객체 유형
+</figcaption><div aria-describedby="tbl-geom-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 34%">
+<col style="width: 33%">
+</colgroup>
+<thead><tr class="header">
+<th>구분</th>
+<th>내용</th>
+<th>기하객체</th>
+<th>이름</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>기본 플롯</td>
+<td>점</td>
+<td>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_jitter.html">geom_jitter()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_count.html">geom_count()</a></code></p>
+</td>
+<td>
+<p>점플롯(산점도)</p>
+<p>지터플롯</p>
+<p>카운트플롯</p>
+</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>선</td>
+<td>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_path()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_step()</a></code></p>
+</td>
+<td>
+<p>선플롯(선그래프)</p>
+<p>경로플롯</p>
+<p>계단플롯</p>
+</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>역</td>
+<td>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_ribbon.html">geom_area()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_ribbon.html">geom_ribbon()</a></code></p>
+</td>
+<td>
+<p>면적플롯</p>
+<p>리본플롯</p>
+</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>막대</td>
+<td>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col()</a></code></p>
+</td>
+<td>막대플롯</td>
+</tr>
+<tr class="odd">
+<td>통계 플롯</td>
+<td>분포</td>
+<td>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_density.html">geom_density()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_dotplot.html">geom_dotplot()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_freqpoly()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_violin.html">geom_violin()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_rug.html">geom_rug()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_qq.html">geom_qq_line()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_qq.html">geom_qq()</a></code></p>
+</td>
+<td>
+<p>박스플롯</p>
+<p>밀도플롯</p>
+<p>도트플롯</p>
+<p>히스토그램</p>
+<p>빈도다각선플롯</p>
+<p>바이올린플롯</p>
+<p>러그플롯</p>
+<p>Q-Q선플롯</p>
+<p>Q-Q선플롯</p>
+</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>불확실성</td>
+<td>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_linerange.html">geom_crossbar()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_linerange.html">geom_errorbar()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_errorbarh.html">geom_errorbarh()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_linerange.html">geom_linerange()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_linerange.html">geom_pointrange()</a></code></p>
+</td>
+<td>
+<p>십자막대플롯</p>
+<p>세로오차막대플롯</p>
+<p>가로오차막대플롯</p>
+<p>선구간플롯</p>
+<p>점선구간플롯</p>
+</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>추세선</td>
+<td>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_quantile.html">geom_quantile()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth()</a></code></p>
+</td>
+<td>
+<p>분위수회귀플롯</p>
+<p>평활곡선플롯</p>
+</td>
+</tr>
+<tr class="even">
+<td>도형 표현</td>
+<td>폴리곤</td>
+<td><code><a href="https://ggplot2.tidyverse.org/reference/geom_polygon.html">geom_polygon()</a></code></td>
+<td>다각형플롯</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>선</td>
+<td>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_segment.html">geom_segment()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_segment.html">geom_curve()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_spoke.html">geom_spoke()</a></code></p>
+</td>
+<td>
+<p>선분플롯</p>
+<p>곡선플롯</p>
+<p>스포크플롯</p>
+</td>
+</tr>
+<tr class="even">
+<td>2D 플롯</td>
+<td>빈도</td>
+<td><code><a href="https://ggplot2.tidyverse.org/reference/geom_bin_2d.html">geom_bin_2d()</a></code></td>
+<td>2차원빈플롯</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>밀도</td>
+<td>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_density_2d.html">geom_density_2d()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_density_2d.html">geom_density_2d_filled()</a></code></p>
+</td>
+<td>
+<p>2차원밀도등고선플롯</p>
+<p>채워진2차원밀도등고선플롯</p>
+</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>등고선</td>
+<td>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_contour.html">geom_contour()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_contour.html">geom_contour_filled()</a></code></p>
+</td>
+<td>
+<p>등고선플롯</p>
+<p>채워진등고선플롯</p>
+</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>직사각형</td>
+<td>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html">geom_raster()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html">geom_rect()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html">geom_tile()</a></code></p>
+</td>
+<td>
+<p>래스터플롯</p>
+<p>직사각형플롯</p>
+<p>타일플롯</p>
+</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>육각형</td>
+<td><code><a href="https://ggplot2.tidyverse.org/reference/geom_hex.html">geom_hex()</a></code></td>
+<td>헥스빈플롯</td>
+</tr>
+<tr class="odd">
+<td>기타</td>
+<td>라벨링</td>
+<td>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_label()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text()</a></code></p>
+</td>
+<td>
+<p>라벨플롯</p>
+<p>텍스트플롯</p>
+</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>참조선</td>
+<td>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_abline()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_hline()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline()</a></code></p>
+</td>
+<td>
+<p>직선플롯</p>
+<p>수평선플롯</p>
+<p>수직선플롯</p>
+</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>지도 제작</td>
+<td>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/geom_map.html">geom_map()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf_label()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf_text()</a></code></p>
+</td>
+<td>
+<p>지도플롯</p>
+<p>sf플롯</p>
+<p>sf라벨플롯</p>
+<p>sf텍스트플롯</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><a href="#fig-geometric-point" class="quarto-xref">그림&nbsp;6</a> 와 <a href="#fig-geometric-smooth" class="quarto-xref">그림&nbsp;7</a> 이 다르게 보이는 것은 기하객체가 하나는 포인트(<code>point</code>)이고 다른 하나는 완만한 선(<code>smooth</code>)이기 때문이다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-geometric-point" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-geometric-point-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-geometric-point-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-6" data-gallery="quarto-lightbox-gallery-6"><img src="exec_06_files/figure-html/fig-geometric-point-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-geometric-point-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;6: 기하객체: geom_point()
+</figcaption></figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-scatterplot-1" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-scatterplot-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="exec_06_files/figure-html/fig-scatterplot-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" data-glightbox="description: .lightbox-desc-7"><img src="exec_06_files/figure-html/fig-scatterplot-1-1.png" class="img-fluid figure-img" width="672"></a>
+<div id="fig-geometric-smooth" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-geometric-smooth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-geometric-smooth-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-7" data-gallery="quarto-lightbox-gallery-7"><img src="exec_06_files/figure-html/fig-geometric-smooth-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scatterplot-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;6: 두 수치형 변수: 산포도
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-geometric-smooth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;7: 기하객체: geom_smooth()
 </figcaption></figure>
 </div>
 </div>
 </div>
-<p>일인당 GDP를 여러 급간으로 쪼개서 박스플롯을 적용하는 것도 하나의 대안일 수 있다. 앞에서 언급한 <code><a href="https://ggplot2.tidyverse.org/reference/cut_interval.html">cut_width()</a></code> 보조 함수의 유용성을 확인할 수 있다.</p>
+<p><a href="#fig-aesthetic-color" class="quarto-xref">그림&nbsp;2</a> 과 <a href="#fig-geometric-smooth" class="quarto-xref">그림&nbsp;7</a> 두 개를 결합해 본다.</p>
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>group <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/cut_interval.html">cut_width</a></span><span class="op">(</span><span class="va">gdpPercap</span>, <span class="fl">5000</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span>, color <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-boxplot-2" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-boxplot-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="exec_06_files/figure-html/fig-boxplot-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" data-glightbox="description: .lightbox-desc-8"><img src="exec_06_files/figure-html/fig-boxplot-2-1.png" class="img-fluid figure-img" width="672"></a>
+<div id="fig-geometric-point-smooth-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-geometric-point-smooth-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-geometric-point-smooth-1-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-8" data-gallery="quarto-lightbox-gallery-8"><img src="exec_06_files/figure-html/fig-geometric-point-smooth-1-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boxplot-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;7: 두 수치형 변수: 박스플롯
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-geometric-point-smooth-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;8: 기하객체: geom_point() + geom_smooth() 1
 </figcaption></figure>
 </div>
 </div>
 </div>
-</section><section id="세-변수-이상" class="level4" data-number="2.2.4"><h4 data-number="2.2.4" class="anchored" data-anchor-id="세-변수-이상">
-<span class="header-section-number">2.2.4</span> 세 변수 이상</h4>
-<p><a href="#fig-scatterplot-1" class="quarto-xref">그림&nbsp;6</a> 에 또 하나의 수치형 변수(인구 규모)를 결합할 수 있다. 두 축에 <code>scale</code> 함수를 통해 로그를 적용하니 두 변수의 관련성이 선형에 가까워 졌다.</p>
+<p>원하는 것이 아니다. 왜 이런 결과가 나왔으며, 어떻게 하면 원하는 것을 얻을 수 있을지 생각해 본다.</p>
 <div class="cell">
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>size <span class="op">=</span> <span class="va">pop</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_log10</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_log10</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-3variables" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-3variables-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="exec_06_files/figure-html/fig-3variables-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" data-glightbox="description: .lightbox-desc-9"><img src="exec_06_files/figure-html/fig-3variables-1.png" class="img-fluid figure-img" width="672"></a>
+<div id="fig-geometric-point-smooth-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-geometric-point-smooth-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-geometric-point-smooth-2-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-9" data-gallery="quarto-lightbox-gallery-9"><img src="exec_06_files/figure-html/fig-geometric-point-smooth-2-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-3variables-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;8: 세 수치형 변수: 산포도
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-geometric-point-smooth-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;9: 기하객체: geom_point() + geom_smooth() 2
 </figcaption></figure>
 </div>
 </div>
 </div>
-<p><a href="#fig-scatterplot-1" class="quarto-xref">그림&nbsp;6</a> 에 또 하나의 범주형 변수(대륙)를 결합할 수 있다.</p>
+<p>두 결과의 차이는 <code>color</code> 시각속성을 글로벌하게 적용하느냐 로컬하게 적용하느냐(포인트 기하객체에만 적용)에 달린 것이다. 글로벌 시각속성은 <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code>속에서 지정하고, 로컬 시각속성은 개별 기하객체(<code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code>) 속에서 지정한다.</p>
+<p>다양한 기하객체는 동일한 데이터를 다양한 방식으로 탐색할 수 있게 해준다. 다음의 세가지 기하객체는 탐색적 데이터 분석에서 널리 사용되는 것이다.</p>
 <div class="cell">
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">gdpPercap</span><span class="op">)</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>size <span class="op">=</span> <span class="va">pop</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">continent</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">hwy</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>binwidth <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-4variables" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-4variables-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="exec_06_files/figure-html/fig-4variables-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" data-glightbox="description: .lightbox-desc-10"><img src="exec_06_files/figure-html/fig-4variables-1.png" class="img-fluid figure-img" width="672"></a>
+<div id="fig-geometric-histogram-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-geometric-histogram-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-geometric-histogram-1-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-10" data-gallery="quarto-lightbox-gallery-10"><img src="exec_06_files/figure-html/fig-geometric-histogram-1-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-4variables-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;9: 세 수치형 변수 + 한 범주형 변수: 패싯
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-geometric-histogram-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;10: 기하객체: geom_histogram()
 </figcaption></figure>
 </div>
 </div>
 </div>
-<p>전세계 인구의 변화 양상과 대륙별 구성을 함께 탐색할 수 있게 해주는 그래프를 제작해 본다. <code><a href="https://forcats.tidyverse.org/reference/fct_reorder.html">fct_reorder2()</a></code> 함수와 세개의 <code>scale_*()</code> 함수의 기능을 확인한다. 보다 체계적인 축의 분할과 라벨 표기를 도와주는 <a href="https://scales.r-lib.org/"><strong>scales</strong></a> 패키지를 활용한다. <code><a href="https://scales.r-lib.org/reference/label_number.html">label_number()</a></code>과 <code><a href="https://scales.r-lib.org/reference/label_number.html">label_comma()</a></code>함수가 많이 활용된다. 쓰임새를 정리하면 다음과 같다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">hwy</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_density.html">geom_density</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-geometric-density-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-geometric-density-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-geometric-density-1-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-11" data-gallery="quarto-lightbox-gallery-11"><img src="exec_06_files/figure-html/fig-geometric-density-1-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-geometric-density-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;11: 기하객체: geom_density()
+</figcaption></figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">hwy</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-geometric-boxplot-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-geometric-boxplot-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-geometric-boxplot-1-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-12" data-gallery="quarto-lightbox-gallery-12"><img src="exec_06_files/figure-html/fig-geometric-boxplot-1-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-geometric-boxplot-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;12: 기하객체: geom_boxplot()
+</figcaption></figure>
+</div>
+</div>
+</div>
+</section></section><section id="여타-구성-요소" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="여타-구성-요소">
+<span class="header-section-number">2</span> 여타 구성 요소</h2>
+<section id="데이터" class="level3" data-number="2.1"><h3 data-number="2.1" class="anchored" data-anchor-id="데이터">
+<span class="header-section-number">2.1</span> 데이터</h3>
+<p>데이터는 시각화의 가장 기본적인 요소로, 주로 최상위 함수인 <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> 속에서 <code>data</code> 인수로 지정된다. 그러나 개별 기하객체 속에서도 <code>data</code> 인수로 지정될 수 있다. 보통의 경우라면, <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> 함수나 특정한 <code>geom_*()</code> 함수 속에서 단일한 데이터 프레임이 한 번 지정되지만, 두 함수에 서로 다른 데이터 프레임이 지정될 수 있고, 또 다른 기하객체 속에 또 다른 데이터 프레임이 지정될 수도 있다.</p>
+</section><section id="스케일" class="level3" data-number="2.2"><h3 data-number="2.2" class="anchored" data-anchor-id="스케일">
+<span class="header-section-number">2.2</span> 스케일</h3>
+<p>스케일(scales)은 시각속성 매핑이 구체적으로 어떻게 구현될지를 결정한다. 예를 들어 컬러 시각속성이 적용되었다 하더라도 어떤 컬러가 선정되어 어떻게 배열되는지에 따라 최종 그래프의 모습은 매우 달라질 수 있다. 그러므로 스케일은 시각속성과 불가분의 관계에 있다. <a href="https://ggplot2.tidyverse.org/"><strong>ggplot2</strong></a> 패키지가 제공하는 스케일이 <a href="#tbl-scale" class="quarto-xref">표&nbsp;3</a> 에 정리되어 있다. 많이 사용되는 스케일에 <code><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">scale_color_brewer()</a></code>, <code><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_color_viridis_c()</a></code>, <code>scale_x_continous()</code>, <code><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete()</a></code>, <code>scale_y_continous()</code>, <code><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_y_discrete()</a></code> 등이 있다.</p>
+<div id="tbl-scale" class="quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-scale-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+표&nbsp;3: 스케일 유형
+</figcaption><div aria-describedby="tbl-scale-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 15%">
+<col style="width: 67%">
+</colgroup>
+<thead><tr class="header">
+<th>분류</th>
+<th>시각속성</th>
+<th>스케일</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>컬러 관련</td>
+<td>
+<code>color</code> / <code>fill</code>
+</td>
+<td>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_identity.html">scale_color_identity()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_identity.html">scale_fill_identity()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_color_gradient()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradient()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_color_gradient2()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradient2()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_color_gradientn()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradientn()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">scale_color_brewer()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">scale_fill_brewer()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">scale_color_distiller()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">scale_fill_distiller()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">scale_color_fermenter()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">scale_fill_fermenter()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_color_viridis_d()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_fill_viridis_d()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_color_viridis_c()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_fill_viridis_c()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_color_viridis_b()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_fill_viridis_b()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_grey.html">scale_color_grey()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_grey.html">scale_fill_grey()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_hue.html">scale_color_hue()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_hue.html">scale_fill_hue()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_steps.html">scale_color_steps()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_steps.html">scale_fill_steps()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_steps.html">scale_color_steps2()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_steps.html">scale_fill_steps2()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_steps.html">scale_color_stepsn()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_steps.html">scale_fill_stepsn()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_color_manual()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual()</a></code></p>
+</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>alpha</code></td>
+<td>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_alpha.html">scale_alpha()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_alpha.html">scale_alpha_continuous()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_alpha.html">scale_alpha_discrete()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_alpha.html">scale_alpha_binned()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_alpha.html">scale_alpha_ordinal()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_alpha_manual()</a></code></p>
+</td>
+</tr>
+<tr class="odd">
+<td>차이 표현 관련</td>
+<td><code>size</code></td>
+<td>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_size.html">scale_size()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_size.html">scale_size_area()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_size.html">scale_size_binned()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_size.html">scale_size_binned_area()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_size.html">scale_radius()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_size_manual()</a></code></p>
+</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>shape</code></td>
+<td>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_shape.html">scale_shape()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_shape.html">scale_shape_binned()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_shape_manual()</a></code></p>
+</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>
+<code>linetype</code> / <code>linewidth</code>
+</td>
+<td>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_linetype.html">scale_linetype()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_linewidth.html">scale_linewidth()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_identity.html">scale_linetype_identity()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_identity.html">scale_linewidth_identity()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_linetype.html">scale_linetype_continuous()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_linewidth.html">scale_linewidth_continuous()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_linetype.html">scale_linetype_discrete()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_linewidth.html">scale_linewidth_discrete()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_linetype.html">scale_linetype_binned()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_linewidth.html">scale_linewidth_binned()</a></code></p>
+</td>
+</tr>
+<tr class="even">
+<td>위치 관련</td>
+<td>
+<code>x</code> / <code>y</code>
+</td>
+<td>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_y_discrete()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_binned.html">scale_x_binned()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_binned.html">scale_y_binned()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_log10()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_log10()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_reverse()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_reverse()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_sqrt()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_sqrt()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_date.html">scale_x_date()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_date.html">scale_y_date()</a></code></p>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_date.html">scale_x_datetime()</a></code> / <code><a href="https://ggplot2.tidyverse.org/reference/scale_date.html">scale_y_datetime()</a></code></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>그래프를 다시 살펴본다. 스케일이 어느 부분에 어떻게 적용되었는지 생각해 본다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span>, color <span class="op">=</span> <span class="va">drv</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> </span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-scale-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-scale-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-scale-1-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-13" data-gallery="quarto-lightbox-gallery-13"><img src="exec_06_files/figure-html/fig-scale-1-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scale-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;13: 스케일 설정: 기본값
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p><a href="#fig-scale-1" class="quarto-xref">그림&nbsp;13</a> 은 아래에서 보는 것처럼, <code>ggplot2</code>가 자동적으로 적용한 세 가지의 스케일 설정에 의거해 만들어진 것이다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span>, color <span class="op">=</span> <span class="va">drv</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_colour_discrete.html">scale_color_discrete</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>수정하여 다음과 같이 적용할 수 있다. <code>scale</code> 함수의 각 인수가 어떤 역할을 하는지 생각해 본다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span>, color <span class="op">=</span> <span class="va">drv</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">40</span>, by <span class="op">=</span> <span class="fl">5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">scale_color_brewer</a></span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"Set1"</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"4"</span> <span class="op">=</span> <span class="st">"4-wheel"</span>, <span class="st">"f"</span> <span class="op">=</span> <span class="st">"front"</span>, <span class="st">"r"</span> <span class="op">=</span> <span class="st">"rear"</span><span class="op">)</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-scale-3" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-scale-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-scale-3-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-14" data-gallery="quarto-lightbox-gallery-14"><img src="exec_06_files/figure-html/fig-scale-3-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scale-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;14: 스케일 설정: 수정
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">scale_color_brewer()</a></code> 함수는 <a href="https://colorbrewer2.org/#type=sequential&amp;scheme=BuGn&amp;n=3">ColorBrewer</a> 컬러 스케일을 사용한 것인데 익히고 있으면 많은 도움이 된다. 여기에는 다양한 색배열(color schemes)이 제시되어 있는데, 이것을 <a href="https://ggplot2.tidyverse.org/"><strong>ggplot2</strong></a> 패키지에서는 팔레트(palette)라고 부른다. <a href="#fig-colorbrewer" class="quarto-xref">그림&nbsp;15</a> 에는 다양한 브루어 컬러 팔레트가 제시되어 있는 데 왼편의 문자가 팔레트의 이름이고(예: YlOrRd), <code><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">scale_color_brewer()</a></code> 함수 속에 막바로 사용가능하다. 첫번째 군은 정량적 팔레트 중 순차형(sequential) 팔레트들이고, 두번째 군은 정성적 혹은 범주형(categorical) 팔레트들이고, 세번째 군은 정량적 팔레트 중 분기형(diverging) 팔레트들이다. 변수의 성격에 가장 적절한 팔레트를 선택하는 것이 관건이다.</p>
+<div id="fig-colorbrewer" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-colorbrewer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="http://colorbrewer2.org/"><span class="lightbox" data-glightbox="description: .lightbox-desc-15" data-gallery="quarto-lightbox-gallery-15"><img src="images/clipboard-3192265517.png" class="img-fluid figure-img"></span></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-colorbrewer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;15: ColorBrewer(&lt;http://colorbrewer2.org/&gt;)
+</figcaption></figure>
+</div>
+<p>자신만의 팔레트를 적용할 수도 있다. <a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html"><code>scale_color_brewer()</code></a>&nbsp;대신&nbsp;<a href="https://ggplot2.tidyverse.org/reference/scale_manual.html"><code>scale_color_manual()</code></a>&nbsp;함수를 사용하면 된다. 또한 RGB 색상에 대한 HTML 헥스 코드( html hex code)를 사용해도 되고, R에서 부여한 657개의 이름 중에서 골라 사용해도 된다. 색상 이름 및 헥스 코드는&nbsp;<a href="https://rstudio-pubs-static.s3.amazonaws.com/3486_79191ad32cf74955b4502b8530aad627.html">다음 사이트</a>를 참고하라.</p>
+<div class="cell">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span>, color <span class="op">=</span> <span class="va">drv</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">40</span>, by <span class="op">=</span> <span class="fl">5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_color_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"sienna1"</span>, <span class="st">"slateblue4"</span>, <span class="st">"#698B22"</span><span class="op">)</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-scale-4" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-scale-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-scale-4-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-16" data-gallery="quarto-lightbox-gallery-16"><img src="exec_06_files/figure-html/fig-scale-4-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scale-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;16: 스케일 설정: 색상 수정
+</figcaption></figure>
+</div>
+</div>
+</div>
+</section><section id="패싯" class="level3" data-number="2.3"><h3 data-number="2.3" class="anchored" data-anchor-id="패싯">
+<span class="header-section-number">2.3</span> 패싯</h3>
+<p>패싯(facets) 레이어는 다면생성(faceting) 과정을 통해 하나의 플롯을 여러개의 하위 플롯으로 쪼갬으로서 생성된다. <code><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap()</a></code> 함수가 핵심이다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">cyl</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-facet-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-facet-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-facet-1-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-17" data-gallery="quarto-lightbox-gallery-17"><img src="exec_06_files/figure-html/fig-facet-1-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-facet-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;17: 패싯: facet_wrap()
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>두 개의 변수에 의거해 패싯을 생성할 수도 있다. <code><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap()</a></code> 함수 대신 <code><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid()</a></code> 함수가 적용된다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span><span class="op">(</span><span class="va">drv</span> <span class="op">~</span> <span class="va">cyl</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-facet-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-facet-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-facet-2-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-18" data-gallery="quarto-lightbox-gallery-18"><img src="exec_06_files/figure-html/fig-facet-2-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-facet-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;18: 패싯: facet_grid()
+</figcaption></figure>
+</div>
+</div>
+</div>
+</section><section id="통계적-변환" class="level3" data-number="2.4"><h3 data-number="2.4" class="anchored" data-anchor-id="통계적-변환">
+<span class="header-section-number">2.4</span> 통계적 변환</h3>
+<p>어떤 시각화 과정은 필연적으로 통계적 변환(statistical transformation)을 수반한다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">diamonds</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">cut</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-stat-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-stat-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-stat-1-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-19" data-gallery="quarto-lightbox-gallery-19"><img src="exec_06_files/figure-html/fig-stat-1-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stat-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;19: 통계적 변환: geom_bar()
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p><a href="#fig-stat-1" class="quarto-xref">그림&nbsp;19</a> 는 <a href="#fig-stat-2" class="quarto-xref">그림&nbsp;20</a> 에서 보는 바와 같이, 원데이터로부터 빈도를 계산(통계적 전환)하고 그것을 그래프로 변환한다.</p>
+<div id="fig-stat-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-stat-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://r4ds.hadley.nz/images/visualization-stat-bar.png" class="lightbox" data-glightbox="description: .lightbox-desc-20" data-gallery="quarto-lightbox-gallery-20"><img src="https://r4ds.hadley.nz/images/visualization-stat-bar.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stat-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;20: 통계적 변환: geom_bar()의 경우(<a href="https://r4ds.hadley.nz/layers" class="uri">https://r4ds.hadley.nz/layers</a>)
+</figcaption></figure>
+</div>
+<p>모든 <code>geom_*()</code>은 통계적 변환에 대한 인수인 <code>stat</code>에 대해 기본값을 가지고 있다. <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar()</a></code>의 통계적 변환의 기본값은 <code>stat = count</code> 이다. 단일 변수에 대해 빈도 분포에 대한 막대 그래프를 작성할 때는 이 기본값이 잘 작동한다. 그런데, <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar()</a></code>에 단일 변수가 아니라 두 개의 변수가 시각속성에 적용되는 경우(한 변수는 x축에 위치하는 범주 변수, 또 다른 변수는 해당 범주별 빈도값), 적절한 통계적 변환의 유형은 <code>count</code>가 아니라 <code>identity</code>이다. 따라서 이 경우에는 따라 <code>stat = "identity"</code>를 반드시 따로 지정해 주어야 한다. 그렇지 않으면 원하는 결과를 얻을 수 없다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diamonds</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">cut</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">cut</span>, y <span class="op">=</span> <span class="va">n</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"identity"</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-stat-3" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-stat-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-stat-3-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-21" data-gallery="quarto-lightbox-gallery-21"><img src="exec_06_files/figure-html/fig-stat-3-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stat-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;21: 통계적 변환: geom_bar()에 stat = identity 지정
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>그런데 <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar()</a></code>와 유사한 <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col()</a></code>이라는 함수를 사용해도 동일한 결과를 얻을 수 있다. <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col()</a></code>에서는 통계적 변환의 기본값이 <code>count</code>가 아니라 <code>identity</code>이기 때문에 위와 달리 <code>stat = "identity"</code>를 따로 지정할 필요가 없다. 결국 단일 변수에 대한 빈도 분포를 나타내고 싶으면 <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar()</a></code>를, 두 변수를 이용해 빈도 분포를 나타내고 싶으면 <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col()</a></code>을 사용하면 된다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">diamonds</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">cut</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">cut</span>, y <span class="op">=</span> <span class="va">n</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-stat-4" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-stat-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-stat-4-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-22" data-gallery="quarto-lightbox-gallery-22"><img src="exec_06_files/figure-html/fig-stat-4-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stat-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;22: 통계적 변환: geom_col()
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/aes_eval.html">after_stat()</a></code>이라고 하는 보조 함수를 사용하면, 이 그래프를 절대 빈도가 아닌 상대 빈도 그래프로 변환할 수 있다. 이 역시 통계적 변환 과정이 이면에 숨어 있다. <code>group</code> 인수가 매우 중요하다. 이것을 지정하지 않으면 개별 <code>cut</code>별로 계산하기 때문에 모든 막대가 1이 된다. <code>group = 1</code>로 지정했다는 것은 <code>cut</code>에 관계 없이 모두를 한 덩어리로 생각하고 비중을 구한다는 것을 의미한다. 사실 1이 아니라 어떤 다른 숫자여도 상관이 없다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">diamonds</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">cut</span>, y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes_eval.html">after_stat</a></span><span class="op">(</span><span class="va">prop</span><span class="op">)</span>, group <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-stat-5" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-stat-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-stat-5-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-23" data-gallery="quarto-lightbox-gallery-23"><img src="exec_06_files/figure-html/fig-stat-5-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stat-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;23: 통계적 변환: geom_bar()에 after_stat() 지정
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>막대 그래프에 시각속성을 가미하고, <code>position</code> 인수를 통한 위치 조정(position adjustment)을 시도한다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">drv</span>, fill <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-bar-fill-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-bar-fill-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-bar-fill-1-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-24" data-gallery="quarto-lightbox-gallery-24"><img src="exec_06_files/figure-html/fig-bar-fill-1-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bar-fill-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;24: position: stack
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>기하객체에 색상을 지정하고 싶을 때, 0차원(<code>point</code>)과 1차원(<code>line</code>) 객체에는 <code>color</code>라는 시각속성을 적용하지만, 막대 그래프와 같은 2차원(<code>area</code>) 객체에는 <code>fill</code>이라는 시각속성을 적용한다. 자주 혼돈이 되는 부분이다.</p>
+<p>위치 조정을 위해 <code>position</code> 인수를 사용하는데, 네 가지 옵션이 있다.</p>
 <ul>
-<li><p><code><a href="https://forcats.tidyverse.org/reference/fct_reorder.html">fct_reorder2()</a></code> 함수: 대륙(<code>continent</code>)의 순서를 인구 합계(<code>sum_pop</code>)에 의거해 정하되, 연도(<code>year</code>) 변수의 가장 큰 값, 즉 2007년을 기준으로 함.</p></li>
-<li><p><code><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous()</a></code>와 <code><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous()</a></code> 함수: <code>breaks</code> 인수는 눈금을 지정하고, <code>label</code> 인수는 눈금에 부여될 라벨을 지정한다.</p></li>
-<li><p><code><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">scale_fill_brewer()</a></code> 함수: 브루어의 <code>"Set3"</code> 팔레트를 지정한다.</p></li>
-<li><p><code><a href="https://scales.r-lib.org/reference/label_number.html">label_number()</a></code> 함수: <code>scale</code> 인수는 실제값과 축에 나타나는 값 간의 관계를 지정하고, <code>suffix</code> 인수는 변형된 값 뒤에 붙는 문자를 지정한다.</p></li>
+<li><p><code>position = "stack"</code> : 누적 배치. 같은 x축 범주에 속한 여러 집단의 값을 위로 쌓아 올려 표현한다. 전체 합계와 그룹별 비중을 한눈에 보기 쉽다.</p></li>
+<li><p><code>position = "identity"</code>: 원자료 그대로 배치. 겹치면 그대로 덮어써서 보이게 된다. 투명도를 조정하지 않으면 겹침 현상 때문에 해석이 어렵다.</p></li>
+<li><p><code>position = "dodge"</code>: 옆으로 나란히 배치. 같은 x축 범주에 속한 여러 집단을 옆으로 나란히 분리하여 표현하는데, 그룹 간 비교에 적합하다.</p></li>
+<li><p><code>position = "fill"</code>: 누적 비율 배치. <code>"stack"</code>과 마찬가지로 쌓되, 전체 높이를 항상 1(100%)에 맞춰 상대적 비율만 보여준다. 전체 규모가 아니라 구성비(비율) 비교에 적합하다.</p></li>
 </ul>
+<p><a href="#fig-bar-fill-1" class="quarto-xref">그림&nbsp;24</a> 에는 기본값으로 <code>position = "stack"</code>이 적용된 것이다. <a href="#fig-bar-fill-2" class="quarto-xref">그림&nbsp;25</a> 는 <code>position = "dodge"</code>를 적용한 것이다 .</p>
 <div class="cell">
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://scales.r-lib.org">scales</a></span><span class="op">)</span></span>
-<span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">continent</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
-<span>    sum_pop <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">pop</span><span class="op">)</span></span>
-<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">sum_pop</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_ribbon.html">geom_area</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="fu"><a href="https://forcats.tidyverse.org/reference/fct_reorder.html">fct_reorder2</a></span><span class="op">(</span><span class="va">continent</span>, <span class="va">year</span>, <span class="va">sum_pop</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1952</span>, <span class="fl">2007</span>, <span class="fl">5</span><span class="op">)</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1952</span>, <span class="fl">2007</span>, <span class="fl">5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">7000000000</span>, <span class="fl">1000000000</span><span class="op">)</span>, </span>
-<span>                     labels <span class="op">=</span> <span class="fu"><a href="https://scales.r-lib.org/reference/label_number.html">label_number</a></span><span class="op">(</span>scale <span class="op">=</span> <span class="fl">0.00000001</span>, suffix <span class="op">=</span> <span class="st">"억"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">scale_fill_brewer</a></span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"Set3"</span><span class="op">)</span> <span class="op">+</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Year"</span>, y <span class="op">=</span> <span class="st">"Population"</span>, fill <span class="op">=</span> <span class="st">"Continent"</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">drv</span>, fill <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"identity"</span>, alpha <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-multi-variables" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-multi-variables-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="exec_06_files/figure-html/fig-multi-variables-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" data-glightbox="description: .lightbox-desc-11"><img src="exec_06_files/figure-html/fig-multi-variables-1.png" class="img-fluid figure-img" width="672"></a>
+<div id="fig-bar-fill-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-bar-fill-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-bar-fill-2-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-25" data-gallery="quarto-lightbox-gallery-25"><img src="exec_06_files/figure-html/fig-bar-fill-2-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multi-variables-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;10: 다양한 스케일이 적용된 그래프
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bar-fill-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;25: position: identity
 </figcaption></figure>
 </div>
 </div>
+</div>
+<p><a href="#fig-bar-fill-3" class="quarto-xref">그림&nbsp;26</a> 는 <code>position = "dodge"</code>를 적용한 것이다 .</p>
+<div class="cell">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">drv</span>, fill <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-bar-fill-3" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-bar-fill-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-bar-fill-3-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-26" data-gallery="quarto-lightbox-gallery-26"><img src="exec_06_files/figure-html/fig-bar-fill-3-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bar-fill-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;26: position: dodge
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p><a href="#fig-bar-fill-4" class="quarto-xref">그림&nbsp;27</a> 는 <code>position = "fill"</code>을 적용한 것이다 .</p>
+<div class="cell">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">drv</span>, fill <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"fill"</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-bar-fill-4" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-bar-fill-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-bar-fill-4-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-27" data-gallery="quarto-lightbox-gallery-27"><img src="exec_06_files/figure-html/fig-bar-fill-4-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bar-fill-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;27: position: fill
+</figcaption></figure>
+</div>
+</div>
+</div>
+</section><section id="좌표" class="level3" data-number="2.5"><h3 data-number="2.5" class="anchored" data-anchor-id="좌표">
+<span class="header-section-number">2.5</span> 좌표</h3>
+<p>좌표(coordinates) 혹은 좌표계(coordinate systems)는 그래픽 요소들의 위치 결정에 기준이 되는 준거체계이다. 특히 두 가지가 함수가 유용하다. <code><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip()</a></code> 함수는 축을 전환한다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">drv</span>, fill <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"fill"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-coordinates-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-coordinates-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-coordinates-1-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-28" data-gallery="quarto-lightbox-gallery-28"><img src="exec_06_files/figure-html/fig-coordinates-1-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coordinates-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;28: coord_clip() 함수
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/coord_fixed.html">coord_fixed()</a></code> 함수는 두 축의 스케일을 절대화하여 동일하게 적용한다. x-축의 10 간격이 y-축의 10 간격과 동일하다. 이것을 적용하지 않으면 x-축이 길어지기 때문에 절대적 비교를 할 수 없게 된다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">cty</span>, <span class="va">hwy</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_fixed.html">coord_fixed</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-coordinates-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-coordinates-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-coordinates-2-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-29" data-gallery="quarto-lightbox-gallery-29"><img src="exec_06_files/figure-html/fig-coordinates-2-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coordinates-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;29: coord_fixed() 함수
+</figcaption></figure>
+</div>
+</div>
+</div>
+</section><section id="테마" class="level3" data-number="2.6"><h3 data-number="2.6" class="anchored" data-anchor-id="테마">
+<span class="header-section-number">2.6</span> 테마</h3>
+<p>테마(themes)는 그래프의 외양에 영향을 끼치는 또 다른 요소이다. 우선, 전체적인 외양을 한꺼번에 바꿀 수 있다. <a href="https://ggplot2.tidyverse.org/"><strong>ggplot2</strong></a>는 <a href="#fig-ggplot2-themes-1" class="quarto-xref">그림&nbsp;30</a> 에서 보는 처럼 모두 8가지 기본 테마를 제공한다.</p>
+<div id="fig-ggplot2-themes-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ggplot2-themes-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://r4ds.hadley.nz/images/visualization-themes.png" class="lightbox" data-glightbox="description: .lightbox-desc-30" data-gallery="quarto-lightbox-gallery-30"><img src="https://r4ds.hadley.nz/images/visualization-themes.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ggplot2-themes-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;30: <strong>ggplot2</strong>가 제공하는 테마(<a href="https://r4ds.hadley.nz/communication" class="uri">https://r4ds.hadley.nz/communication</a>)
+</figcaption></figure>
+</div>
+<p>기본값인 회색빛 배경이 마음에 들지 않았다면 <a href="#fig-ggplot-themes-2" class="quarto-xref">그림&nbsp;31</a> 처럼 흑백 테마(<code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw()</a></code>)를 적용할 수도 있다. 다른 테마도 적용해 보고 그 차이를 알아본다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-ggplot-themes-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ggplot-themes-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-ggplot-themes-2-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-31" data-gallery="quarto-lightbox-gallery-31"><img src="exec_06_files/figure-html/fig-ggplot-themes-2-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ggplot-themes-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;31: theme_bw() 테마의 지정
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>이렇게 한꺼번에 그래프의 외관을 바꿀 수도 있지만 <code><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme()</a></code> 함수를 통해 그래프의 개별 요소 하나씩을 모두 조정할 수 있다. 중요한 그래픽 요소가 <a href="#fig-ggplot-theme" class="quarto-xref">그림&nbsp;32</a> 에 나타나 있다.</p>
+<div id="fig-ggplot-theme" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ggplot-theme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/ggplot_elements2.png" class="lightbox" data-glightbox="description: .lightbox-desc-32" data-gallery="quarto-lightbox-gallery-32"><img src="images/ggplot_elements2.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ggplot-theme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;32: <strong>ggplot2</strong> 패키지의 테마 요소(<a href="https://isabella-b.com/blog/ggplot2-theme-elements-reference/" class="uri">https://isabella-b.com/blog/ggplot2-theme-elements-reference/</a>)
+</figcaption></figure>
+</div>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme()</a></code> 함수를 통해 수정 가능한 그래픽 요소는 <a href="#fig-ggplot-theme" class="quarto-xref">그림&nbsp;32</a> 에 나타나 있는 것보다 훨씬 더 많다. 자세한 사항은 <a href="https://ggplot2.tidyverse.org/"><strong>ggplot2</strong></a> 패키지의 해당 <a href="https://ggplot2.tidyverse.org/reference/theme.html">웹페이지</a>를 참고한다.</p>
+<p><a href="#fig-ggplot-themes-3" class="quarto-xref">그림&nbsp;33</a> 는 몇 가지 요소를 수정한 사례이다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span>, color <span class="op">=</span> <span class="va">drv</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Larger engine sizes tend to have lower fuel economy"</span>,</span>
+<span>    caption <span class="op">=</span> <span class="st">"Source: https://fueleconomy.gov."</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span></span>
+<span>    legend.position <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.6</span>, <span class="fl">0.7</span><span class="op">)</span>,</span>
+<span>    legend.direction <span class="op">=</span> <span class="st">"horizontal"</span>,</span>
+<span>    plot.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>face <span class="op">=</span> <span class="st">"bold"</span><span class="op">)</span>,</span>
+<span>    plot.title.position <span class="op">=</span> <span class="st">"plot"</span>,</span>
+<span>    plot.caption.position <span class="op">=</span> <span class="st">"plot"</span>,</span>
+<span>    plot.caption <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>hjust <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-ggplot-themes-3" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ggplot-themes-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-ggplot-themes-3-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-33" data-gallery="quarto-lightbox-gallery-33"><img src="exec_06_files/figure-html/fig-ggplot-themes-3-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ggplot-themes-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;33: 개별 요소의 수정: theme() 함수
+</figcaption></figure>
+</div>
+</div>
+</div>
+</section></section><section id="기타-사항" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="기타-사항">
+<span class="header-section-number">3</span> 기타 사항</h2>
+<section id="라벨과-주석" class="level3" data-number="3.1"><h3 data-number="3.1" class="anchored" data-anchor-id="라벨과-주석">
+<span class="header-section-number">3.1</span> 라벨과 주석</h3>
+<p><code>lab()</code> 함수를 활용하면 그래프의 다양한 종류의 라벨을 설정할 수 있다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    x <span class="op">=</span> <span class="st">"Engine displacement (L)"</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Highway fuel economy (mpg)"</span>,</span>
+<span>    color <span class="op">=</span> <span class="st">"Car type"</span>,</span>
+<span>    title <span class="op">=</span> <span class="st">"Fuel efficiency generally decreases with engine size"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"Two seaters (sports cars) are an exception because of their light weight"</span>,</span>
+<span>    caption <span class="op">=</span> <span class="st">"Data from fueleconomy.gov"</span></span>
+<span>  <span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-ggplot-label-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ggplot-label-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-ggplot-label-1-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-34" data-gallery="quarto-lightbox-gallery-34"><img src="exec_06_files/figure-html/fig-ggplot-label-1-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ggplot-label-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;34: 라벨링
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>또 다른 기하객체인 <code><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text()</a></code> 혹은 <code><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_label()</a></code>를 통해 그래프 속에 텍스트를 삽입할 수 있다. 주석이 겹치는 것을 방지하고자 싶다면 <a href="https://ggrepel.slowkow.com/"><strong>ggrepel</strong></a> 패키지를 사용하면 된다. 새로운 기하객체인 <code><a href="https://ggrepel.slowkow.com/reference/geom_text_repel.html">geom_label_repel()</a></code> 함수가 사용되었는데, <code>label</code>이 하나의 시각속성으로 사용되는 것을 알 수 있다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggrepel.slowkow.com/">ggrepel</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">displ</span>, <span class="va">hwy</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggrepel.slowkow.com/reference/geom_text_repel.html">geom_label_repel</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">mpg</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_sample</a></span><span class="op">(</span>prop <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-ggplot-label-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ggplot-label-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-ggplot-label-2-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-35" data-gallery="quarto-lightbox-gallery-35"><img src="exec_06_files/figure-html/fig-ggplot-label-2-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ggplot-label-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;35: 라벨링: ggrepel 패키지
+</figcaption></figure>
+</div>
+</div>
+</div>
+</section><section id="레이아웃" class="level3" data-number="3.2"><h3 data-number="3.2" class="anchored" data-anchor-id="레이아웃">
+<span class="header-section-number">3.2</span> 레이아웃</h3>
+<p>레이아웃(layout)은 복수의 그래프를 적절히 배치하여 하나의 그래픽으로 융합하는 과정을 의미한다. 수 많은 <a href="https://ggplot2.tidyverse.org/"><strong>ggplot2</strong></a>의 <a href="https://exts.ggplot2.tidyverse.org/">확장 패키지(ggplot2 extensions)</a> 중 하나인 <a href="https://patchwork.data-imaginist.com/"><strong>patchwork</strong></a> 패키지를 활용하여 자유롭게 레이아웃을 만들 수 있다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://patchwork.data-imaginist.com">patchwork</a></span><span class="op">)</span></span>
+<span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Plot 1"</span><span class="op">)</span></span>
+<span><span class="va">p2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">drv</span>, y <span class="op">=</span> <span class="va">hwy</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Plot 2"</span><span class="op">)</span></span>
+<span><span class="va">p1</span> <span class="op">+</span> <span class="va">p2</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-ggplot-patchwork-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ggplot-patchwork-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_06_files/figure-html/fig-ggplot-patchwork-1-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-36" data-gallery="quarto-lightbox-gallery-36"><img src="exec_06_files/figure-html/fig-ggplot-patchwork-1-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ggplot-patchwork-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;36: 레이아웃: patchwork 패키지
+</figcaption></figure>
+</div>
+</div>
+</div>
+</section><section id="그래프의-저장" class="level3" data-number="3.3"><h3 data-number="3.3" class="anchored" data-anchor-id="그래프의-저장">
+<span class="header-section-number">3.3</span> 그래프의 저장</h3>
+<p>두 가지 방식이 있다.</p>
+<p>첫 번째 방식은 Output 창의 Plots 탭에 있는 Export 버턴을 이용하는 것이다. 다양한 그래픽 포맷 뿐만 아니라 pdf 형식으로도 저장할 수 있다.</p>
+<p>두 번째 방식은 <a href="https://ggplot2.tidyverse.org/"><strong>ggplot2</strong></a> 의 <code><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave()</a></code> 함수를 이용하는 것이다. 결과물의 폰트 크기, 가로세로비(aspect ratio), 해상도 등을 종합적으로 고려하여 최적의 세팅값을 찾아야 한다. 자신의 디바이스에 따라 동일한 세팅값이 다른 결과를 산출할 수도 있다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">my_plot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">displ</span>, y <span class="op">=</span> <span class="va">hwy</span>, color <span class="op">=</span> <span class="va">drv</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Larger engine sizes tend to have lower fuel economy"</span>,</span>
+<span>    caption <span class="op">=</span> <span class="st">"Source: https://fueleconomy.gov."</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span></span>
+<span>    legend.position <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.6</span>, <span class="fl">0.7</span><span class="op">)</span>,</span>
+<span>    legend.direction <span class="op">=</span> <span class="st">"horizontal"</span>,</span>
+<span>    plot.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>face <span class="op">=</span> <span class="st">"bold"</span><span class="op">)</span>,</span>
+<span>    plot.title.position <span class="op">=</span> <span class="st">"plot"</span>,</span>
+<span>    plot.caption.position <span class="op">=</span> <span class="st">"plot"</span>,</span>
+<span>    plot.caption <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>hjust <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op">(</span>filename <span class="op">=</span> <span class="st">"my_plot.jpg"</span>, plot <span class="op">=</span> <span class="va">my_plot</span>, width <span class="op">=</span> <span class="fl">8</span>, height <span class="op">=</span> <span class="fl">8</span> <span class="op">*</span> <span class="fl">0.618</span>, dpi <span class="op">=</span> <span class="fl">600</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
 <div class="hidden" aria-hidden="true">
-<span class="glightbox-desc lightbox-desc-2">그림&nbsp;1: 히스토그램</span>
-<span class="glightbox-desc lightbox-desc-3">그림&nbsp;2: 한 범주형 변수와 한 수치형 변수: 밀도 분포</span>
-<span class="glightbox-desc lightbox-desc-4">그림&nbsp;3: 한 범주형 변수와 한 수치형 변수: 박스틀롯</span>
-<span class="glightbox-desc lightbox-desc-5">그림&nbsp;4: 두 범주형 변수: 카운트플롯</span>
-<span class="glightbox-desc lightbox-desc-6">그림&nbsp;5: 두 범주형 변수: 타일플롯</span>
-<span class="glightbox-desc lightbox-desc-7">그림&nbsp;6: 두 수치형 변수: 산포도</span>
-<span class="glightbox-desc lightbox-desc-8">그림&nbsp;7: 두 수치형 변수: 박스플롯</span>
-<span class="glightbox-desc lightbox-desc-9">그림&nbsp;8: 세 수치형 변수: 산포도</span>
-<span class="glightbox-desc lightbox-desc-10">그림&nbsp;9: 세 수치형 변수 + 한 범주형 변수: 패싯</span>
-<span class="glightbox-desc lightbox-desc-11">그림&nbsp;10: 다양한 스케일이 적용된 그래프</span>
+<span class="glightbox-desc lightbox-desc-1">그림&nbsp;1: 그래프의 8대 구성 요소(<a href="https://initiation.doana-r.com/06-ggplot2#1" class="uri">https://initiation.doana-r.com/06-ggplot2#1</a>)</span>
+<span class="glightbox-desc lightbox-desc-2">그림&nbsp;2: 시각속성: 컬러</span>
+<span class="glightbox-desc lightbox-desc-3">그림&nbsp;3: 시각속성: 형태</span>
+<span class="glightbox-desc lightbox-desc-4">그림&nbsp;4: 심미성: 크기</span>
+<span class="glightbox-desc lightbox-desc-5">그림&nbsp;5: 심미성: 투명도</span>
+<span class="glightbox-desc lightbox-desc-6">그림&nbsp;6: 기하객체: geom_point()</span>
+<span class="glightbox-desc lightbox-desc-7">그림&nbsp;7: 기하객체: geom_smooth()</span>
+<span class="glightbox-desc lightbox-desc-8">그림&nbsp;8: 기하객체: geom_point() + geom_smooth() 1</span>
+<span class="glightbox-desc lightbox-desc-9">그림&nbsp;9: 기하객체: geom_point() + geom_smooth() 2</span>
+<span class="glightbox-desc lightbox-desc-10">그림&nbsp;10: 기하객체: geom_histogram()</span>
+<span class="glightbox-desc lightbox-desc-11">그림&nbsp;11: 기하객체: geom_density()</span>
+<span class="glightbox-desc lightbox-desc-12">그림&nbsp;12: 기하객체: geom_boxplot()</span>
+<span class="glightbox-desc lightbox-desc-13">그림&nbsp;13: 스케일 설정: 기본값</span>
+<span class="glightbox-desc lightbox-desc-14">그림&nbsp;14: 스케일 설정: 수정</span>
+<span class="glightbox-desc lightbox-desc-15">그림&nbsp;15: ColorBrewer(&lt;http://colorbrewer2.org/&gt;)</span>
+<span class="glightbox-desc lightbox-desc-16">그림&nbsp;16: 스케일 설정: 색상 수정</span>
+<span class="glightbox-desc lightbox-desc-17">그림&nbsp;17: 패싯: facet_wrap()</span>
+<span class="glightbox-desc lightbox-desc-18">그림&nbsp;18: 패싯: facet_grid()</span>
+<span class="glightbox-desc lightbox-desc-19">그림&nbsp;19: 통계적 변환: geom_bar()</span>
+<span class="glightbox-desc lightbox-desc-20">그림&nbsp;20: 통계적 변환: geom_bar()의 경우(<a href="https://r4ds.hadley.nz/layers" class="uri">https://r4ds.hadley.nz/layers</a>)</span>
+<span class="glightbox-desc lightbox-desc-21">그림&nbsp;21: 통계적 변환: geom_bar()에 stat = identity 지정</span>
+<span class="glightbox-desc lightbox-desc-22">그림&nbsp;22: 통계적 변환: geom_col()</span>
+<span class="glightbox-desc lightbox-desc-23">그림&nbsp;23: 통계적 변환: geom_bar()에 after_stat() 지정</span>
+<span class="glightbox-desc lightbox-desc-24">그림&nbsp;24: position: stack</span>
+<span class="glightbox-desc lightbox-desc-25">그림&nbsp;25: position: identity</span>
+<span class="glightbox-desc lightbox-desc-26">그림&nbsp;26: position: dodge</span>
+<span class="glightbox-desc lightbox-desc-27">그림&nbsp;27: position: fill</span>
+<span class="glightbox-desc lightbox-desc-28">그림&nbsp;28: coord_clip() 함수</span>
+<span class="glightbox-desc lightbox-desc-29">그림&nbsp;29: coord_fixed() 함수</span>
+<span class="glightbox-desc lightbox-desc-30">그림&nbsp;30: <strong>ggplot2</strong>가 제공하는 테마(<a href="https://r4ds.hadley.nz/communication" class="uri">https://r4ds.hadley.nz/communication</a>)</span>
+<span class="glightbox-desc lightbox-desc-31">그림&nbsp;31: theme_bw() 테마의 지정</span>
+<span class="glightbox-desc lightbox-desc-32">그림&nbsp;32: <strong>ggplot2</strong> 패키지의 테마 요소(<a href="https://isabella-b.com/blog/ggplot2-theme-elements-reference/" class="uri">https://isabella-b.com/blog/ggplot2-theme-elements-reference/</a>)</span>
+<span class="glightbox-desc lightbox-desc-33">그림&nbsp;33: 개별 요소의 수정: theme() 함수</span>
+<span class="glightbox-desc lightbox-desc-34">그림&nbsp;34: 라벨링</span>
+<span class="glightbox-desc lightbox-desc-35">그림&nbsp;35: 라벨링: ggrepel 패키지</span>
+<span class="glightbox-desc lightbox-desc-36">그림&nbsp;36: 레이아웃: patchwork 패키지</span>
 </div>
-</section></section></section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> 맨 위로</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> 맨 위로</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1270,12 +2068,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./exec_05.html" class="pagination-link  aria-label=">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">데이터 시각화하기</span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">변형하기</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./exec_07.html" class="pagination-link" aria-label="데이터 수집하기">
-        <span class="nav-page-text">데이터 수집하기</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./exec_07.html" class="pagination-link" aria-label="탐색하기">
+        <span class="nav-page-text">탐색하기</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1310,7 +2108,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </ul>
 </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":false,"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom"});
+</footer><script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

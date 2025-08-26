@@ -1,5 +1,5 @@
 ---
-title: "R과 RStudio 소개"
+title: "R과 RStudio"
 author: 이상일(서울대학교 지리교육과)
 date-modified: last-modified
 number-sections: true
@@ -19,9 +19,9 @@ editor_options:
   chunk_output_type: console
 ---
 
-## 실습 개요 {.unnumbered}
+## 개요 {.unnumbered}
 
-이 실습은 R과 RStudio의 기본기를 다지는 것이다. 이 실습을 통해 다음과 같은 과제를 수행할 것이다.
+여기서는 R과 RStudio의 기본기를 다진다. 다음과 같은 사항이 다루어진다.
 
 1.  R과 RStudio 설치
 

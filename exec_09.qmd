@@ -1,5 +1,5 @@
 ---
-title: "데이터로 소통하기: 대시보드 만들기"
+title: "소통하기: 인터랙티브 시각화"
 author: 이상일(서울대학교 지리교육과)
 date-modified: last-modified
 number-sections: true
@@ -19,494 +19,278 @@ editor_options:
   chunk_output_type: console
 ---
 
-## 실습 개요 {.unnumbered}
+## 개요 {.unnumbered}
 
-[**Quarto**](https://quarto.org/)를 이용해 데이터 대시보드(dashboard)를 만들어 본다. 대시보드는 단일한 주제에 대한 상호연관된 다양한 정보를 주로 그래픽 형태로 일관성 있게 제시한 것을 말한다.
+여기서는 대시보드의 구성 요소로 활용할 수 있는 다양한 시각화 기법을 익힌다. 우리는 지금까지 도표(차트, 플롯, 그래프, 테이블)를 중심으로 데이터 시각화 기법을 다루었다. 특히 [**ggplot2**](https://ggplot2.tidyverse.org/) 패키지는 이러한 과정에서 핵심적인 역할을 했다. 그런데 지금까지의 모든 도표는 정적(static) 이라는 특징이 있다. 많은 경우 도표는 정적으로 표현될 수 밖에 없으며, 또한 많은 경우 도표는 정적인 것으로 충분하며, 어떤 경우에는 동적인 것보다 더 낳다.
 
-## 대시보드의 기본 구조
+소통을 위한 시각화 재료로서 정적인 도표가 가지는 절대적인 중요성에도 불구하고, 상호작용성(interactivity)과 생동감(animatedness)이 부가된 도표는 어떤 상항에서는 소통의 본질적 가치를 고양하는데 많은 도움을 줄 수 있다.
 
-대시보드는 기본적으로 다섯 가지의 구성요소로 이루어진다. 각각은 메인 바디, 헤더, 내비게이터, 사이드바, 푸터이다.
+[**gapminder**](https://jennybc.github.io/gapminder/) 데이터를 실습의 여러 곳에서 활용할 것이다. 우선 [**tidyverse**](https://www.tidyverse.org/)와 [**gapminder**](https://jennybc.github.io/gapminder/)패키지를 불러온다.
 
-![대시보드의 기본 구조(<https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/#tabset>)](https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/layout.png){#fig-dashboard-1 fig-align="center"}
-
-첫째, 메인 바디(main body)는 대시보드의 핵심 요소이다. 메인 바디는 카드(card)라고 불리는 기본 단위들로 구성된다. 개별 카드는 다양한 내용 요소(텍스트, 그래프, 표, 지도, 밸류박스 등)를 가질 수 있다. 즉, 어떤 카드 속에는 그래프가 들어가며, 어떤 카드 속에는 지도가 들어간다. 이러한 카드들은 특정한 레이아웃 요소(페이지, 행, 열, 탭셋 등)를 통해 메인 바디에 배열된다. 페이지(page)는 대시보드 레이아웃 요소 중 최상위 레벨인데, 개별 페이지는 다수의 행(row) 혹은 열(column)로 구성된다. 행 혹은 열을 또다른 행 혹은 열이 아닌 탭 클릭 방식으로 분할하고 싶을 때 탭셋(tabset)이 사용된다.
-
-둘째, 헤더(header)는 대시보드의 가장 중요한 메타 정보(로고, 제목, 저자 등)를 포함한다.
-
-셋째, 내비게이터(navigator)는 최상위 레이아웃인 페이지간 이동을 통제한다.
-
-넷째, 사이드바(sidebar)는 주로 사용자의 인풋(input)을 받을 때 사용되는 것으로, 동적인 대시보드에서 주로 사용된다. Quarto는 사이드바 외에 툴바(toolbar)와 카드인풋(card input)과 같은 옵션을 제공한다.
-
-다섯째, 푸터(footer)는 헤더와 유사한 기능을 하는데, 주로 부차적인 매타 정도를 포함한다.
-
-다섯개의 구성 요소 중 가장 중요한 것은 메인 바디, 해더, 내비게이터이다. [**Quarto**](https://quarto.org/)는 헤더와 내비게이터를 통합한 내비게이션바(navigation bar)를 제공한다. 사이드바는 [**Shiny**](https://shiny.posit.co/) 패키지를 활용한 동적인 대시보드에서는 매우 중요하지만, 이번 실습에서는 사용하지 않는다. 푸터는 가장 지엽적인 요소이다.
-
-다음의 대시보드를 살펴보자.
-
-![대시보드의 사례(<https://quarto.org/docs/dashboards/>)](https://quarto.org/docs/dashboards/examples/thumbnails/customer-churn-dashboard.png){#fig-dashboard-2}
-
-이 대시보드는 크게 내비게이션바와 메인 바디로 구성되어 있다. 네비게이션바에는 다음의 내용이 포함되어 있다.
-
--   이 대시보드의 제목(title)은 '고객이탈(Customer Chrun)'이고 회사 이름은 DEMOCO(로고)이다.
-
--   이 대시보드는 모두 두 개의 페이지(page)로 구성되어 있다. 페이지의 이름은 각각 'Churn (Standard)'과 'Data'이다.
-
-메인 바디는 다음과 같은 레이아웃 요소들로 구성되어 있다.
-
--   첫 번째 페이지(Churn (Standard))는 세 개의 행(row)으로 구성되어 있다.
-
--   첫 번째 페이지의 첫 번째 행은 세 개의 카드(card)로 구성되어 있는데, 내용 요소는 모두 밸류박스(value box)이다.
-
--   첫 번째 페이지의 두 번째 행은 두 개의 열(즉, 카드)로 구성되어 있는데, 내용 요소는 모두 그래프(graph)이다.
-
--   첫 번째 페이지의 세 번째 행은 단일한 열(즉, 카드)로 구성되어 있는데, 내용 요소는 테이블(table)이다.
-
--   두 번째 페이지에도 다양한 사항이 포함되어 있을 것이다.
-
-## 레이아웃 설정
-
-### 행과 열의 설정
-
-행(row)과 열(column)은 가장 기본이 되는 레이아웃 요소이다. 기본 원칙은 다음과 같다.
-
--   헤더 2(header 2) 레벨이 행과 열의 구분을 일차적으로 결정한다.
-
--   헤더 3(header 3) 레벨이 하위 행과 열의 구분을 이차적으로 결정한다.
-
-``` r
-## Row {height=70%}
-
-Card 1
-
-## Row {height=30%}
-
-### Column {width=40%}
-
-Card 2-1 
-
-### Column {width=60%}
-
-Card 2-2 
-```
-
-위와 같이 설정하면 다음과 같은 결과를 얻을 수 있다. Row의 경우는 `{height}` 태그를 통해서, Column의 경우는 `{width}`태그를 통해 상대적인 크기를 설정할 수 있다.
-
-![대시보드의 행렬 구조(<https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/>)](https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card3.png){#fig-dashboard-3 fig-align="center"}
-
-### 탭셋의 설정
-
-탭셋(tabset)은 행(row)과 열(column)을 다른 하위 행과 열이 아닌 탭의 설정을 통해 분할하고자 할 때 사용된다.
-
-```         
-## Row {height=70%}
-
-Card 1
-
-## Row {height=30% .tabset}
-
-### Column
-
-Card 2-1 {width=50%}
-
-### Column
-
-Card 2-2 {width=50%}
-```
-
-위와 같이 설정하면 다음과 같은 결과를 얻을 수 있다. 탭셋의 설정을 위해 `{.tabset}` 태그가 사용된다는 점에 주의한다.
-
-::: {#fig-dashboard-4 layout-ncol="2"}
-![](https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/tabset1.png)
-
-![](https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/tabset2.png)
-
-대시보드의 탭셋 구조
-:::
-
-### 페이지의 설정
-
-페이지(page)는 최상위 레이아웃 요소이다. 기본 원칙은 다음과 같다.
-
--   헤더 1(header 1) 레벨이 페이지의 구분을 결정한다.
-
--   Quarto에서는 페이지가 내비게이션바에 나타난다.
-
-``` r
-# Page A
-
-## Row {height=70%}
-
-Card 1
-
-## Row {height=30%}
-
-### Column {width=40%}
-
-Card 2-1
-
-### Column {width=60%}
-
-Card 2-2
-
-# Page B
-
-Card 3
-```
-
-위와 같이 설정하면 다음과 같은 결과를 얻을 수 있다. 페이지가 내비게이션바에서 마치 탭셋처럼 존재하는 것에 주의한다.
-
-::: {#fig-dashboard-5 layout-ncol="2"}
-![](https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card4.png)
-
-![](https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card5.png)
-
-대시보드의 페이지 구조
-:::
-
-## 내비게이션바와 사이드바의 설정
-
-### 내비게이션바의 설정
-
-내비게이션바는 헤더와 내비게이터로 구성된다. 내비게이터는 페이지가 설정된 경우에만 나타나게 된다. 여기서는 헤더에 집중하고자 한다. 대시보드 헤더는 다른 Quarto 다큐먼트와 마찬가지로 YAML 헤더를 통해 통제된다. 다음과 같은 요소들이 중요하다.
-
--   제목(title): 대시보드 전체의 이름을 결정한다.
-
--   저자(author): 만든 사람이나 관리 회사의 이름이지만, 부제로 활용되기도 한다.
-
--   포맷(format): 기본 설정인 대시보드(dashboard) 하에 다양한 하위 설정이 가능하다.
-
-    -   logo: 로고 그림 파일을 지정하면 내비게이션바의 왼쪽 끝에 나타난다.
-
-    -   nav-buttons: github이나 이메일 연결을 설정할 수 있다.
-
-    -   scrolling: true 설정: 디폴트는 false인데, 레이아웃 요소들의 높이들의 합이 100%가 되도록 일괄적으로 조절된다. true로 지정하면, 개별 내용 요소의 원 크기를 그대로 살리면서 스크롤되게 디자인이 바뀐다. 둘 다를 실험해 보고 자신의 목적에 맞는 것을 고른다.
-
--   테마(theme): 대시보드의 외관을 한꺼번에 바꿀 수 있다. 모두 25개의 [부트스와치(bootswatch)](https://quarto.org/docs/dashboards/theming.html) 테마가 존재한다. 여러가지를 실험해 보고 자신의 취향에 맞는 것을 선정한다.
-
-### 사이드바의 설정
-
-사이드바(sidebar)는 `{.sidebar}` 태그를 통해 만들 수 있는데, 헤더 1(header 1) 레벨이므로 특정한 페이지에 종속되지 않는다. 사이드바는 주로 사용자의 투입을 받을 때 사용되기 때문에 동적인 대시보드에 주로 사용된다. 정적인 대시보드의 경우에는 텍스트를 통한 특정 정보의 제공에 사용될 수 있다.
-
-``` r
-# {.sidebar}
-Sidebar content
-```
-
-위와 같이 설정하면 다음과 같은 결과를 얻을 수 있다.
-
-![대시보드의 사이드바 구조(<https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/>)](https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/sidebar.png){#fig-dashbard-6 fig-align="center"}
-
-## 카드와 내용 요소
-
-카드(card)란 특정한 내용 요소(텍스트, 벨류박스, 테이블, 그래프, 지도 등)를 포함하고 있는, 대시보드의 가장 기본적인 단위이다. 다음의 두 가지 사항이 중요하다.
-
--   카드의 제목이 중요하다. 완성된 대시보드 상에 등장하기 때문에 이해하기 쉬운 제목이 부여되어야 한다.
-
--   내용 요소에 따라 카드를 작성하는 방법이 조금 다르다.
-
-내용 요소 제작의 세세한 사항은 아래의 "예시 대시보드 만들기"에서 확인한다.
-
-### 그래프
-
-Quarto는 그래프 하나를 만들어내는 코드 청크를 하나의 카드로 인식한다. 그래프 카드의 제목은 코드 청크 내의 `#| title:` 옵션을 통해 부여된다. `ggplot2`와 같은 정적인 플롯 도구 뿐만 아니라 `plotly`와 같은 반응형 플롯 도구를 사용하여 그래프 카드를 생성한다.
-
-### 테이블
-
-Quarto는 테이블 하나를 디스플레이하는 코드 청크를 하나의 카드로 인식한다. 테이블 카드의 제목은 코드 청크 내의 `#| title:` 옵션을 통해 부여된다. [`knitr` 패키지](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)의 `kable()` 함수, [gt 패키지](https://gt.rstudio.com/)의 `gt()` 함수, [`DT` 패키지](https://rstudio.github.io/DT/)의 `datatable()` 함수 등을 이용해 테이블 카드를 생성한다.
-
-### 지도
-
-Quarto는 지도 하나를 디스플레이하는 코드 청크를 하나의 카드로 인식한다. 지도 카드의 제목은 코드 청크 내의 `#| title:` 옵션을 통해 부여된다. `ggplot2`와 같은 정적인 지도 제작 도구 뿐만 아니라 [`leaflet`](https://leafletjs.com/)과 같은 반응형 지도 제작 도구를 사용하여 지도 카드를 생성한다.
-
-### 텍스트
-
-일종의 텍스트 박스도 하나의 카드로 간주된다. 그래프, 테이블, 지도가 하나의 코드 청크가 하나의 카드로 인식되는데 반해 텍스트 카드는 다른 형식을 취한다. `::: {.card}` div를 사용해야 하며 `#| title:` 옵션을 사용해 제목을 지정해야 한다.
-
-### 밸류박스
-
-요약적 수치를 큰 박스 속에 나타내는 것을 밸류박스(value box)라고 하는데, 코드 청크로 표현하지만 형식은 조금 다르다. `#| content: valuebox`라는 옵션이 반드시 포함되야 하며, 제목을 지정하기 위해 `#| title:` 옵션도 필요하다. 또한 리스트를 이용해 아이콘(icon), 컬러(color), 수치(value)를 지정해야 한다.
-
-아이콘은 [부트스트랩 아이콘(bootstrap icon)](https://icons.getbootstrap.com/)이 사용된다. 적절한 아이콘을 찾고 그 이름을 `icon =` 옵션을 통해 설정하는 것이 중요하다.
-
-모든 컬러가 다 사용가능한 것은 아니다. 아래의 표를 참조하여 컬러를 설정해야 한다.
-
-| Color Alias | Default Theme Color(s) |
-|-------------|------------------------|
-| `primary`   | Blue                   |
-| `secondary` | Gray                   |
-| `success`   | Green                  |
-| `info`      | Bright Blue            |
-| `warning`   | Yellow/Orange          |
-| `danger`    | Red                    |
-| `light`     | Light Gray             |
-| `dark`      | Black                  |
-
-: 밸류박스의 컬러 선택 {#tbl-value}
-
-## 예시 대시보드 만들기
-
-예시 대시보드(<https://sangillee.quarto.pub/my-first-dashboard/>)에 접속하여 구성을 살펴본다. 다음의 사항에 주목한다.
-
--   내비게이션바에 서울대학교 로고가 있고, 오른쪽 맨 끝애 github 및 이메일 아이콘이 위치해 있다.
-
--   대시보드가 네 개의 페이지(Intro, Graphs, Tables, Maps)로 나뉘어져 있고, 각 페이지마다 행, 열, 탭셋과 같은 레이아웃 요소들이 배치되어 있다.
-
-어떤 식으로 제작할 수 있을지 생각해 본다. 새로운 프로젝트를 생성하고 Quarto 다큐먼트를 생성한다. 아래는 해당 대시보드를 만들기 위해 사용된 코드이다. 참고하여 자신만의 대시보드를 만들어 본다.
-
-### YAML 해더
-
-특히, `nav-buttons:` 옵션의 지정 형식에 주의한다. `scrolling` 옵션과 다양한 `theme:` 옵션을 시험해 본다.
-
-``` r
----
-title: "My First Dashboard"
-author: Sang-Il Lee
-format: 
-  dashboard:
-    logo: snu_logo_2.png
-    nav-buttons: 
-      - icon: github
-        href: https://github.com/sangillee66
-        aria-label: GitHub
-      - icon: envelope
-        href: mailto:si_lee@snu.ac.kr
-        aria-label: Mail
-    # scrolling: true
-theme: default
-editor: visual
-editor_options: 
-  chunk_output_type: console
----
-```
-
-### Intro 페이지
-
-Intro라는 이름의 페이지를 설정한다.
-
-``` r
-# Intro
-```
-
-#### 첫번째 행: Text 카드
-
-행을 설정하고 행의 상대적인 높이(10%)를 지정한다.
-
-``` r
-## Row {height="10%"}
-```
-
-텍스트 카드를 생성한다. 텍스트 카드를 생성하기 위해 `{.card}` 태그가 사용되어야 하며, 텍스트 카드의 제목을 지정하기 위해 `title=` 옵션이 사용되어야 함에 주의한다.
-
-``` r
-::: {.card title="Text"}
-This is my first dashboard.
-:::
-```
-
-#### 두번째 행의 탭셋: Histogram of GDP per capita & Table of Mean Values
-
-행을 설정하고 행의 상대적인 높이(70%)를 지정한다. 탭셋을 생성하기 위해 `{.tabset}` 태그가 사용되어야 함에 주의한다.
-
-``` r
-## Row {.tabset height="70%"}
-```
-
-그래프 카드를 생성하기 위해 `ggplot2` 패키지를 활용한다. 그래프 카드의 제목을 지정하기 위해 `title=` 옵션이 사용되어야 함에 주의한다.
-
-``` r
-#| title: "Histogram of GDP per capita"
+```{r}
 library(tidyverse)
 library(gapminder)
-gapminder |> 
-  filter(year == 2007) |>
-  ggplot(aes(x = gdpPercap)) +
-  geom_histogram()
 ```
 
-테이블 카드를 생성하기 위해 `knitr` 패키지의 `kable()` 함수를 활용한다. 테이블 카드의 제목을 지정하기 위해 `title=` 옵션이 사용되어야 함에 주의한다.
+## 임베딩
 
-``` r
-#| title: "Table of Mean Values"
-library(knitr)
-gapminder |> 
-  filter(year == 2007) |> 
-  summarize(
-    GDP_percap = mean(gdpPercap),
-    Life_Exp = mean(lifeExp),
-    Population = mean(pop),
-    .by = continent
-  ) |> 
-  kable()
+동적, 반응형 시각화를 직접 제작하는 과정을 배우기 전에 대시보드에 동적, 반응형 시각화를 실현하는 가장 쉬운 방법은 동적, 반응형 시각화가 구현되어 있는 웹사이트를 대시보드에 불러오는 것일 것이다. 이것을 임베딩(embedding)이라고 하는데, HTML의 `iframe` 태그를 사용한다.
+
+통계청의 [통계놀이터](https://kosis.kr/edu/)는 다양한 주제에 대해 동적, 반응형 시각화를 제작하여 이용자들에게 제공하고 있다. 해당 홈페이지의 \[비주얼 통계\]에서 "우리나라 출생아 수와 합계 출산율의 변화"를 검색하면 동적, 반응형 시각화가 구현된 [웹페이지](https://kosis.kr/edu/share.do?shareID=S0500_16)를 볼 수 있다. \[공유\]를 눌러 URL을 복사하고, 아래와 같은 코드를 Quarto 문서에 삽입하면 해당 웹페이지를 임베딩할 수 있다. `src=""` 부분에 복사한 URL를 붙여 넣는다는 것을 쉽게 알 수 있을 것이다. 여기에 다른 URL을 교체해 넣으면 대부분의 웹사이트를 임베딩할 수 있는데, 임베딩이 불가능하게 막아 뒀거나 광고가 많이 붙어 있는 웹사이트는 잘 안된다. `style=""` 부분을 적절히 수정하면 임베딩된 웹사이트의 외견을 바꿔볼 수 있다.
+
+```         
+<iframe src="https://kosis.kr/edu/share.do?shareID=S0500_16" 
+loading="lazy" style="width: 100%; height: 600px; border: 
+0px none;" allow="web-share; clipboard-write"></iframe>
 ```
 
-#### 세번째 행의 3개의 밸류박스
+::: {.card title="KOSIS 통계놀이터"}
+<iframe src="https://kosis.kr/edu/share.do?shareID=S0500_16" loading="lazy" style="width: 100%; height: 600px; border: 0px none;" allow="web-share; clipboard-write">
 
-행을 설정하고 행의 상대적인 높이(20%)를 지정한다.
+</iframe>
+:::
 
-``` r
-## Row {height="20%"}
+[Our World in Data](https://ourworldindata.org/)는 아름다운 인터랙티브 시각화 자료를 제공하는 것으로 유명하다. 심지어 \[공유\] 버턴을 눌렀을 때 `</> Embed` 라는 옵션이 나타나는 데, 이것을 누르면 위와 같은 `iframe` 태그 내용이 그대로 나타나기 때문에 복사하여 붙이기만 하면 된다. `Chart` 탭 뿐만 아니라 `Table` 탭과 `Map` 탭도 있으니 눌러서 내용을 확인할 수 있다. 아마도 [ECharts](https://echarts.apache.org/) 자바스크립트 라이브러리를 사용한 것으로 보인다.
+
+```         
+<iframe src="https://ourworldindata.org/grapher/child-mortality?time=earliest..latest&tab=chart" 
+loading="lazy" style="width: 100%; height: 600px; border: 0px none;" allow="web-share; clipboard-write"></iframe>
 ```
 
-첫번째 밸류박스를 생성한다. `#| content: valuebox` 옵션과 `#| title:` 옵션이 사용됨에 주의한다.
+::: {#fig-OWD-1 .card title="Our World in Data"}
+<iframe src="https://ourworldindata.org/grapher/child-mortality?time=earliest..latest&amp;tab=chart" loading="lazy" style="width: 100%; height: 600px; border: 0px none;" allow="web-share; clipboard-write">
 
-``` r
-#| content: valuebox
-#| title: "Number of Countries"
-n_countries <- gapminder |> distinct(country) |> nrow()
-list(
-  icon = "asterisk",
-  color = "primary",
-  value = n_countries
-)
-```
+</iframe>
 
-두번째 밸류박스를 생성한다.
+임베딩 사례: [Our World in Data](https://ourworldindata.org/)
+:::
 
-``` r
-#| content: valuebox
-#| title: "First Year"
-first_year <- gapminder |> distinct(year) |> pull() |> first()
-list(
-  icon = "airplane",
-  color = "secondary",
-  value = first_year
-```
+[Our World in Data](https://ourworldindata.org/)에서 제공하는 다양한 인터랙티브 시각화 자료를 임베딩하는 절차를 요약하면 다음과 같다.
 
-세번째 밸류박스를 생성한다.
+-   [Our World in Data](https://ourworldindata.org/)에 접속한다.
 
-``` r
-#| content: valuebox
-#| title: "Last Year"
-last_year <- gapminder |> distinct(year) |> pull() |> last()
-list(
-  icon = "bank",
-  color = "success",
-  value = last_year
-)
-```
+-   첫 화면의 하단에 있는 'Data explorers'의 네 개 박스로 이동한다. 인구 관련 데이터에 관심이 있다면 'Population & Demography'를 선택한다.
 
-### Graphs 페이지
+-   'Population & Demography Data Explorer'에서 제공된 다양한 옵션을 이용해 원하는 인터랙티브 시각화 자료를 완성한다.
 
-Graphs라는 이름의 페이지를 설정한다.
+-   'Share'를 클릭하고 '\</\> Embed'를 선택한 후 URL을 복사한다. 흥미로운 점은 위에서 어떤 옵션을 어떻게 설정했느냐에 따라 URL이 달라진다는 사실이다.
 
-``` r
-# Graphs
-```
+-   `iframe` 태그의 "src="에 붙여 넣어 임베딩을 완수한다.
 
-#### 첫번째 행의 그래프 카드: GDP and Life Expectancy
+## 테이블
 
-행을 설정한다.
+우리는 지금까지 테이블(table)의 중요성에 대해 거의 다루지 않았다. 그러나 상호작용형 테이블 혹은 대화형 테이블이 되었을 때, 많은 경우, 테이블은 가장 효과적인 정보 전달 도구가 된다. 특히, 데이터 변형하기를 통해 새로운 요약 테이블을 생성하고, 그것을 대화형으로 제시하는 것은 매우 중요한 데이터사이언스의 과정이다. 여기서는 [**DT**](https://rstudio.github.io/DT/) 패키지를 활용하여 간단한 인터랙티브 테이블을 만들어 본다. 웹에서 인터렉티브 테이블을 생성할 수 있게 해주는 다양한 종류의 JavaScript 라이브러리가 존재한다. 예를 들어 [DataTables](https://datatables.net/), [FlexTable](https://www.flextable.org/), [React Table](https://github.com/tanstack/table/tree/v7) 등이 있는데, [**DT**](https://rstudio.github.io/DT/) 패키지는 [DataTables](https://datatables.net/)를 쓸 수 있게 해주는 래퍼 패키지이다.
 
-``` r
-## Row
-```
-
-`ggplot2` 패키지를 활용하여 그래프 카드를 생성한다.
-
-``` r
-#| title: GDP and Life Expectancy
-gapminder |> 
-  filter(year == 2007) |> 
-  ggplot(aes(x = log10(gdpPercap), y = lifeExp)) +
-  geom_point(aes(color = continent), show.legend = FALSE) +
-  geom_smooth() + 
-  facet_wrap(~continent, ncol = 5)
-```
-
-#### 두번째 행의 그래프 카드: Population & Life Expectancy
-
-첫번째 그래프(Population)를 위한 열을 설정한다.
-
-``` r
-### Column
-```
-
-그래프 카드를 생성한다.
-
-``` r
-#| title: Population
-gapminder |> 
-  summarize(
-    sum_pop = sum(pop),
-    .by = c(year, continent)
-  ) |> 
-  ggplot(aes(x = year, y = sum_pop)) +
-  geom_area(aes(fill = continent)) +
-  labs(x = "Year", y = "Population", fill = "Continents")
-```
-
-두번째 그래프(Life Expectancy)를 위한 열을 설정한다.
-
-``` r
-### Column
-```
-
-그래프 카드를 생성한다.
-
-``` r
-#| title: Life Expectancy
-gapminder |> 
-  ggplot(aes(x = year, y = lifeExp)) +
-  geom_line(aes(color = continent, group = country)) +
-  labs(x = "Year", y = "Life Expectancy", color = "Continents")
-```
-
-### Tables 페이지
-
-Tables라는 이름의 페이지를 설정한다.
-
-``` r
-# Tables
-```
-
-단일 행을 설정한다.
-
-``` r
-## Row
-```
-
-`DT` 패키지를 활용하여 테이블 카드를 생성한다.
-
-``` r
-#| title: Lookup Table
+```{r}
 library(DT)
-datatable(gapminder, filter = "top", 
+```
+
+그리고 [**gapminder**](https://jennybc.github.io/gapminder/) 데이터를 `datatable()` 함수를 통해 불러온다.
+
+```{r}
+datatable(gapminder)
+```
+
+</br>
+
+결과를 좀 더 크게 보기 위해, 'Render' 버튼 바로 오른편에 있는 아이콘을 클릭해 'Chunk Output in Console'를 선택할 수 있다. 결과 테이블을 이리저리 살펴본다. 언뚯 보면 View() 함수를 활용해 데이터프레임을 살펴보는 것과 유사한 것처럼 보이지만, 부가적인 기능이 제공된다.
+
+[**DT**](https://rstudio.github.io/DT/) 패키지는 테이블의 상호작용성과 관련하여 몇 가지 기능을 제공한다.
+
+-   Pagination: 페이지를 이동할 수 있는 기능
+
+-   Instant search: 즉각적인 찾기 기능(Search에 타이핑하기 시작하면 즉각적으로 검색 결과 보여줌)
+
+-   Multi-column ordering: 다중 컬럼 정렬 기능(컬럼 하나를 선택한 후 ctrl을 누른 상태에서 다른 컬럼을 선택)
+
+-   Filtering: 값을 정렬할 수 있는 기능
+
+-   Editable: 셀 값을 수정할 수 있는 기능
+
+-   Buttons: 셀 숨기기, CSV, PDF, XLSX 등의 확장자로 내보내기 등을 수행하는 버튼 생성 기능
+
+그 중 몇 가지 기능을 여기에서 살펴본다. 자세한 사항은 [**DT**](https://rstudio.github.io/DT/) 패키지 홈페이지에 잘 정리되어 있다.
+
+### 테이블 CSS 클래스
+
+`datatable()` 함수의 `class` 인수를 통해 테이블의 외관을 바꿀 수 있다. 다음과 같은 옵션이 가능하다.
+
+| Class name | Description |
+|-----------------|-------------------------------------------------------|
+| `display` | `stripe`, `hover`, `row-border`, `order-column`을 동시 적용한 디폴트 |
+| `cell-border` | 모든 셀의 상하좌우에 경계선 표시 |
+| `compact` | 여백 축소 |
+| `hover` | 마우스의 위치에 따라 점멸 효과 |
+| `nowrap` | 줄바꿈 없이 텍스트 표시 |
+| `order-column` | 정렬의 키가 되는 컬럼에 하이라이트 표시 |
+| `row-border` | 행별 경계선 표시 |
+| `stripe` | 행을 스트라이프로 표시 |
+
+아래와 같이 `cell-border`과 `compact`를 함께 실행해 보고 테이블의 변화를 확인한다.
+
+```{r}
+datatable(head(gapminder), class = "cell-border compact")
+```
+
+</br>
+
+또한 특정 컬럼의 정렬 방식(왼편, 오른편, 중앙)을 변경할 수 있다. 사용가능한 옵션은 다음과 같다.
+
+| Class name                | Description      |
+|---------------------------|------------------|
+| `dt[-head|-body]-left`    | 왼편 정렬        |
+| `dt[-head|-body]-center`  | 가운데 정렬      |
+| `dt[-head|-body]-right`   | 오른편 정렬      |
+| `dt[-head|-body]-justify` | 양쪽 맞춤        |
+| `dt[-head|-body]-nowrap`  | 줄바꿈 없는 맞춤 |
+
+아래는 첫 번째와 두 번째 컬럼(country, continent)의 내용(body)을 가운데 정렬로 나타낸다.
+
+```{r}
+datatable(head(gapminder),
           options = list(
-            pageLength = 5, autoWidth = TRUE
+            columnDefs = list(list(className = "dt-body-center", targets = 1:2))
           ))
 ```
 
-### Maps 페이지
+### 테이블 에디팅
 
-Maps라는 이름의 페이지를 설정한다.
+`editable` 인수를 통해 테이블의 값을 수정할 수 있게 만들 수 있다. 테이블의 특정 셀에 더블클릭하면 수정할 수 있다.
 
-``` r
-# Maps
+```{r}
+datatable(head(gapminder), editable = "cell")
 ```
 
-단일 행을 설정한다.
+### 컬럼 필터
 
-``` r
-## Row
+다음과 같은 방식으로 필터를 설정할 수 있다.
+
+```{r}
+datatable(gapminder, filter = "top", 
+          options = list(
+            pageLength = 5, 
+            autoWidth = TRUE
+          ))
 ```
 
-`leaflet` 패키지를 활용하여 지도 카드를 생성한다.
+### 버튼 기능
 
-``` r
-#| title: A Reference Map 
-library(leaflet) 
-leaflet() |>  
-  addTiles()
+`extenstion`에 Buttons, `dom`에 Bftip, `buttons`에 `c("copy", "excel", "pdf", "print")`를 입력하면 버튼 기능을 활성화할 수 있다. 각 인수가 무엇을 의미하는지는 다음의 [웹사이트](https://datatables.net/extensions/buttons/)를 참고할 수 있다.
+
+```{r}
+datatable(gapminder, filter = "top",
+          extensions = "Buttons",
+          options = list(
+            pageLength = 5,
+            autoWidth = TRUE,
+            dom = "Bfrtip",
+            buttons = c("copy", "excel", "pdf", "print")
+          ))
 ```
 
-## 대시보드를 웹상에 배포하기
+## 그래프
 
-블로그와 마찬가지로 다음의 절차에 따라 완성된 대시보드를 웹 상에 출판한다. 여기서는 [Posit](https://posit.co/)에서 제공하는 무료 출판 사이트인 [Quarto Pub](https://quartopub.com/)을 활용한다.
+### 인터랙티브 그래프
 
--   [Quarto Pub](https://quartopub.com/)에 접속하여 계정을 만든다.
+인터랙티브 시각화 도구로 최근 널리 각광을 받고 있는 [Plotly](https://plotly.com/graphing-libraries/)이다. [Plotly](https://plotly.com/graphing-libraries/)는 사실 캐나다 퀘백에 본사를 두고 있는 데이터 시각화 전문 회사 이름이다. 그러나 보통 데이터 시각화용 JavaScript 라이브러리를 일컽는다. 이 라이버러리는 다양한 오픈소스 프로그래밍 언어에서 사용가능하며[@igijun2023], R의 랩퍼 프로그램이 [**plotly**](https://plotly.com/r/) 패키지이다.
 
--   RStudio에서, 왼쪽 하단부의 Terminal 탭을 누른다.
+```{r}
+library(plotly)
+```
 
--   프롬프트에 다음과 같이 입력하고 실행한다: quarto publish quarto-pub
+[**gapminder**](https://jennybc.github.io/gapminder/) 데이터를 이용하여 간단한 그래프를 그려보자. 문법이 [**ggplot2**](https://ggplot2.tidyverse.org/)와 크게 다르지 않음을 알 수 있다.
 
--   나머지 사항에 대해서는 조교의 도움을 받는다.
+```{r}
+gapminder |> 
+  filter(year == 2007) |> 
+  plot_ly(x = ~gdpPercap, y = ~lifeExp, color = ~continent,
+          text = ~paste("Country: ", country, 
+                        "<br>GDP per capita: ", gdpPercap, 
+                        "$<br>Life Expectancy at Birth:", lifeExp))
+```
+
+</br>
+
+줌(zoom), 팬(pan), 박스 선택(box select), 라소 선택(Lasso select), 줌인(zome in), 줌 아웃(zoom out) 등과 같은 상호작용 기능을 확인할 수 있다. 또 그래프 상의 데이터 포인트 위에 마우스를 올리면 `text` 인수를 통해 설정한 내용을 볼 수 있다. 그리고 범례를 클릭하면 특정 `continent`의 국가를 나타나지 않게 할 수 있다.
+
+이와 같이 [**plotly**](https://plotly.com/r/) 패키지를 직접 사용하면 다양한 기능을 활용할 수 있겠지만, [**plotly**](https://plotly.com/r/) 패키지가 제공하는 `ggplotly()` 함수를 활용하면 [**ggplot2**](https://ggplot2.tidyverse.org/)로 만들어진 그래프를 단숨에 [**plotly**](https://plotly.com/r/) 그래프로 바꿀 수 있다. 물론 정확히 같지는 않다.
+
+```{r}
+P <- gapminder |> 
+  filter(year == 2007) |> 
+  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent)) +
+  geom_point() + 
+  scale_color_brewer(palette = "Set2") +
+  theme_minimal()
+ggplotly(P)
+```
+
+</br>
+
+다음 예제 역시 반응형이지만 바로 다음에서 다룰 동적인 특성도 동시에 가지고 있는 그래프를 만드는 것이다. 역시 [**plotly**](https://plotly.com/r/) 패키지를 이용한다.
+
+```{r}
+gapminder |> 
+  plot_ly(x = ~log10(gdpPercap), y = ~lifeExp,
+          text = ~paste("Country: ", country)) |> 
+  add_markers(color = ~continent, size = ~pop, frame = ~year, 
+              marker = list(sizeref = 0.2, sizemode = "area"))
+```
+
+</br>
+
+하단에 있는 'Play' 버튼을 누르면 연도에 따라 그래프가 바뀌면서 동적인 효과가 나타나게 된다.
+
+### 애니메이션 그래프
+
+이 실습에서는 [**gganimate**](https://gganimate.com/) 패키지를 활용하여, 움직이는 그래프를 만드는 방법을 익히도록 한다. 물론 움직인다고 해서 인터랙티브한 그래프인 것은 아니다. [**gganimate**](https://gganimate.com/) 패키지를 설치한 후 불러온다.
+
+```{r}
+library(gganimate)
+```
+
+우선 정적인 그래프를 그린다.
+
+```{r}
+P <- gapminder |> 
+  ggplot(aes(x = gdpPercap, y = lifeExp, size = pop, color = continent)) +
+  geom_point(show.legend = FALSE, alpha = 0.7) +
+  scale_x_log10() +
+  scale_size(range = c(2, 12))
+P
+```
+
+이 그래프는 두 변수 간에 양적인 관련성이 있다는 사실은 명백히 보여주지만, 데이터 변형의 측면에서는 잘못된 것이다. 모든 연도(1952\~2007년간 5년 단위)가 나타나 있어서 한 국가가 그래프에 12번 등장한다.
+
+이를 해결하기 위해 [**ggplot2**](https://ggplot2.tidyverse.org/) 패키지의 `facet_wrap()` 함수를 활용한다.
+
+```{r}
+P + facet_wrap(~year)
+```
+
+이 그래프는 두 변수간의 양적인 상관관계가 12개 모두의 연도에서 나타난다는 사실을 명확히 보여준다. 그러나 그래프를 세세히 살펴보면 알 수 있듯이, 두 변수의 관련성이라는 측면에서 개별 국가가 시간의 흐름에 따라 어떻게 변화해 나가는지에 대한 사항을 파악하기는 매우 어렵다.
+
+[**gganimate**](https://gganimate.com/) 패키지의 `transition_time()` 함수를 활용하여 동적인 그래프를 작성해 본다.
+
+```{r}
+P + transition_time(year) +
+  labs(title = "Year: {frame_time}")
+```
+
+대륙별로 분할하여 표현할 수도 있다.
+
+```{r}
+P + facet_wrap(~continent) +
+  transition_time(year) +
+  labs(title = "Year: {frame_time}")
+```
+
+움직임을 조금 더 역동적이게 만들어 볼 수 있다.
+
+```{r}
+P + transition_time(year) +
+  labs(title = "Year: {frame_time}") +
+  shadow_wake(wake_length = 0.1, alpha = FALSE)
+```
+
+그래프를 저장하고 싶으면 `anim_save()` 함수를 활용할 수 있다. `ggsave()` 함수와 동일한 문법을 갖는다.

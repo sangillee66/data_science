@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.4.549">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="이상일(서울대학교 지리교육과)">
-<title>Data Science - 데이터 수집하기</title>
+<title>Data Science - 탐색하기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -52,27 +52,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
@@ -122,8 +102,7 @@ div.csl-indent {
     "search-submit-button-title": "검색",
     "search-label": "검색"
   }
-}</script><link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
-<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><script src="site_libs/echarts4r-4.8.0/echarts-en.min.js"></script><script src="site_libs/echarts4r-4.8.0/ecStat.min.js"></script><script src="site_libs/echarts4r-4.8.0/dataTool.min.js"></script><script src="site_libs/echarts4r-binding-0.4.5/echarts4r.js"></script><link rel="stylesheet" href="styles.css">
+}</script><link rel="stylesheet" href="styles.css">
 </head>
 <body class="nav-sidebar floating">
 
@@ -133,7 +112,7 @@ div.csl-indent {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">데이터 수집하기</h1>
+          <h1 class="quarto-secondary-nav-title">탐색하기</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -175,61 +154,61 @@ div.csl-indent {
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R과 RStudio 소개</span></a>
+ <span class="menu-text">R과 RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R과 데이터사이언스: 개요</span></a>
+ <span class="menu-text">R과 데이터사이언스 과정</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">데이터 불러오기와 정리하기</span></a>
+ <span class="menu-text">소통하기: Quarto로 대시보드 만들기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">데이터 변형하기</span></a>
+ <span class="menu-text">불러오기와 정리하기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">데이터 시각화하기</span></a>
+ <span class="menu-text">변형하기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">데이터 탐색하기</span></a>
+ <span class="menu-text">시각화하기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_07.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">데이터 수집하기</span></a>
+ <span class="menu-text">탐색하기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_08.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">데이터로 소통하기: Quarto 입문</span></a>
+ <span class="menu-text">수집하기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_09.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">데이터로 소통하기: 대시보드 만들기</span></a>
+ <span class="menu-text">소통하기: 인터랙티브 시각화</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">데이터로 소통하기: 동적, 반응형 시각화</span></a>
+ <span class="menu-text">소통하기: 인터랙티브 시각화</span></a>
   </div>
 </li>
       </ul>
@@ -386,34 +365,20 @@ div.csl-indent {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">목차</h2>
    
   <ul>
-<li><a href="#%EC%8B%A4%EC%8A%B5-%EA%B0%9C%EC%9A%94" id="toc-실습-개요" class="nav-link active" data-scroll-target="#%EC%8B%A4%EC%8A%B5-%EA%B0%9C%EC%9A%94">실습 개요</a></li>
-  <li><a href="#%EC%9B%B9%EC%83%81%EC%9D%98-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%8C%8C%EC%9D%BC-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0" id="toc-웹상의-데이터-파일-불러오기" class="nav-link" data-scroll-target="#%EC%9B%B9%EC%83%81%EC%9D%98-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%8C%8C%EC%9D%BC-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0"><span class="header-section-number">1</span> 웹상의 데이터 파일 불러오기</a></li>
+<li><a href="#%EA%B0%9C%EC%9A%94" id="toc-개요" class="nav-link active" data-scroll-target="#%EA%B0%9C%EC%9A%94">개요</a></li>
+  <li><a href="#%ED%83%90%EC%83%89-%EC%A7%88%EB%AC%B8%EC%97%90-%EB%8B%B5%EC%9D%84-%EC%B0%BE%EC%95%84%EA%B0%80%EB%8A%94-%EA%B3%BC%EC%A0%95" id="toc-탐색-질문에-답을-찾아가는-과정" class="nav-link" data-scroll-target="#%ED%83%90%EC%83%89-%EC%A7%88%EB%AC%B8%EC%97%90-%EB%8B%B5%EC%9D%84-%EC%B0%BE%EC%95%84%EA%B0%80%EB%8A%94-%EA%B3%BC%EC%A0%95"><span class="header-section-number">1</span> 탐색: 질문에 답을 찾아가는 과정</a></li>
   <li>
-<a href="#%EC%9B%B9%EC%8A%A4%ED%81%AC%EB%A0%88%EC%9D%B4%ED%95%91" id="toc-웹스크레이핑" class="nav-link" data-scroll-target="#%EC%9B%B9%EC%8A%A4%ED%81%AC%EB%A0%88%EC%9D%B4%ED%95%91"><span class="header-section-number">2</span> 웹스크레이핑</a>
+<a href="#%ED%83%90%EC%83%89%EC%9D%98-%EC%9C%A0%ED%98%95" id="toc-탐색의-유형" class="nav-link" data-scroll-target="#%ED%83%90%EC%83%89%EC%9D%98-%EC%9C%A0%ED%98%95"><span class="header-section-number">2</span> 탐색의 유형</a>
   <ul class="collapse">
-<li><a href="#html-%EA%B8%B0%EC%B4%88" id="toc-html-기초" class="nav-link" data-scroll-target="#html-%EA%B8%B0%EC%B4%88"><span class="header-section-number">2.1</span> HTML 기초</a></li>
-  <li><a href="#html-%EC%9A%94%EC%86%8C%EC%9D%98-%EC%84%A0%ED%83%9D" id="toc-html-요소의-선택" class="nav-link" data-scroll-target="#html-%EC%9A%94%EC%86%8C%EC%9D%98-%EC%84%A0%ED%83%9D"><span class="header-section-number">2.2</span> HTML 요소의 선택</a></li>
-  <li><a href="#%EC%9B%B9%EC%8A%A4%ED%81%AC%EB%A0%88%EC%9D%B4%ED%95%91-%EB%8B%A8%EA%B3%84%EC%99%80-rvest-%ED%95%A8%EC%88%98" id="toc-웹스크레이핑-단계와-rvest-함수" class="nav-link" data-scroll-target="#%EC%9B%B9%EC%8A%A4%ED%81%AC%EB%A0%88%EC%9D%B4%ED%95%91-%EB%8B%A8%EA%B3%84%EC%99%80-rvest-%ED%95%A8%EC%88%98"><span class="header-section-number">2.3</span> 웹스크레이핑 단계와 <strong>rvest</strong> 함수</a></li>
-  <li><a href="#%EA%B0%84%EB%8B%A8%ED%95%9C-%EC%9B%B9%EC%8A%A4%ED%81%AC%EB%A0%88%EC%9D%B4%ED%95%91%EC%9D%98-%EC%98%88" id="toc-간단한-웹스크레이핑의-예" class="nav-link" data-scroll-target="#%EA%B0%84%EB%8B%A8%ED%95%9C-%EC%9B%B9%EC%8A%A4%ED%81%AC%EB%A0%88%EC%9D%B4%ED%95%91%EC%9D%98-%EC%98%88"><span class="header-section-number">2.4</span> 간단한 웹스크레이핑의 예</a></li>
-  <li><a href="#%EC%9B%B9%EC%8A%A4%ED%81%AC%EB%A0%88%EC%9D%B4%ED%95%91%EC%9D%98-%EC%8B%A4%EC%A0%9C-1-%ED%85%8C%EC%9D%B4%EB%B8%94%EC%9D%B4-%ED%95%98%EB%82%98-%EC%9E%88%EB%8A%94-%EA%B2%BD%EC%9A%B0" id="toc-웹스크레이핑의-실제-1-테이블이-하나-있는-경우" class="nav-link" data-scroll-target="#%EC%9B%B9%EC%8A%A4%ED%81%AC%EB%A0%88%EC%9D%B4%ED%95%91%EC%9D%98-%EC%8B%A4%EC%A0%9C-1-%ED%85%8C%EC%9D%B4%EB%B8%94%EC%9D%B4-%ED%95%98%EB%82%98-%EC%9E%88%EB%8A%94-%EA%B2%BD%EC%9A%B0"><span class="header-section-number">2.5</span> 웹스크레이핑의 실제 1: 테이블이 하나 있는 경우</a></li>
-  <li><a href="#%EC%9B%B9%EC%8A%A4%ED%81%AC%EB%A0%88%EC%9D%B4%ED%95%91%EC%9D%98-%EC%8B%A4%EC%A0%9C-2-%ED%85%8C%EC%9D%B4%EB%B8%94%EC%9D%B4-%EB%91%98-%EC%9D%B4%EC%83%81%EC%9D%B8-%EA%B2%BD%EC%9A%B0" id="toc-웹스크레이핑의-실제-2-테이블이-둘-이상인-경우" class="nav-link" data-scroll-target="#%EC%9B%B9%EC%8A%A4%ED%81%AC%EB%A0%88%EC%9D%B4%ED%95%91%EC%9D%98-%EC%8B%A4%EC%A0%9C-2-%ED%85%8C%EC%9D%B4%EB%B8%94%EC%9D%B4-%EB%91%98-%EC%9D%B4%EC%83%81%EC%9D%B8-%EA%B2%BD%EC%9A%B0"><span class="header-section-number">2.6</span> 웹스크레이핑의 실제 2: 테이블이 둘 이상인 경우</a></li>
-  <li><a href="#%EC%9B%B9%EC%8A%A4%ED%81%AC%EB%A0%88%EC%9D%B4%ED%95%91%EC%9D%98-%EC%8B%A4%EC%A0%9C-3-%EB%84%A4%EC%9D%B4%EB%B2%84-%EB%89%B4%EC%8A%A4-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%88%98%EC%A7%91%ED%95%98%EA%B8%B0" id="toc-웹스크레이핑의-실제-3-네이버-뉴스-데이터-수집하기" class="nav-link" data-scroll-target="#%EC%9B%B9%EC%8A%A4%ED%81%AC%EB%A0%88%EC%9D%B4%ED%95%91%EC%9D%98-%EC%8B%A4%EC%A0%9C-3-%EB%84%A4%EC%9D%B4%EB%B2%84-%EB%89%B4%EC%8A%A4-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%88%98%EC%A7%91%ED%95%98%EA%B8%B0"><span class="header-section-number">2.7</span> 웹스크레이핑의 실제 3: 네이버 뉴스 데이터 수집하기</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#api%EC%9D%98-%ED%99%9C%EC%9A%A9" id="toc-api의-활용" class="nav-link" data-scroll-target="#api%EC%9D%98-%ED%99%9C%EC%9A%A9"><span class="header-section-number">3</span> API의 활용</a>
-  <ul class="collapse">
-<li><a href="#%EC%A0%95%EC%9D%98" id="toc-정의" class="nav-link" data-scroll-target="#%EC%A0%95%EC%9D%98"><span class="header-section-number">3.1</span> 정의</a></li>
-  <li><a href="#r%EC%97%90%EC%84%9C-api%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%88%98%EC%A7%91" id="toc-r에서-api를-활용한-데이터-수집" class="nav-link" data-scroll-target="#r%EC%97%90%EC%84%9C-api%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%88%98%EC%A7%91"><span class="header-section-number">3.2</span> R에서 API를 활용한 데이터 수집</a></li>
-  <li><a href="#api%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-kosis-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98-%EC%88%98%EC%A7%91" id="toc-api를-활용한-kosis-데이터의-수집" class="nav-link" data-scroll-target="#api%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-kosis-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98-%EC%88%98%EC%A7%91"><span class="header-section-number">3.3</span> API를 활용한 KOSIS 데이터의 수집</a></li>
-  <li><a href="#api%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-naver-%EB%89%B4%EC%8A%A4-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98-%EC%88%98%EC%A7%91" id="toc-api를-활용한-naver-뉴스-데이터의-수집" class="nav-link" data-scroll-target="#api%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-naver-%EB%89%B4%EC%8A%A4-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98-%EC%88%98%EC%A7%91"><span class="header-section-number">3.4</span> API를 활용한 NAVER 뉴스 데이터의 수집</a></li>
+<li><a href="#%ED%95%9C-%EB%B3%80%EC%88%98%EC%9D%98-%EB%B3%80%EB%8F%99" id="toc-한-변수의-변동" class="nav-link" data-scroll-target="#%ED%95%9C-%EB%B3%80%EC%88%98%EC%9D%98-%EB%B3%80%EB%8F%99"><span class="header-section-number">2.1</span> 한 변수의 변동</a></li>
+  <li><a href="#%EB%91%90-%EB%B3%80%EC%88%98-%EA%B0%84%EC%9D%98-%EA%B3%B5%EB%B3%80%EB%8F%99" id="toc-두-변수-간의-공변동" class="nav-link" data-scroll-target="#%EB%91%90-%EB%B3%80%EC%88%98-%EA%B0%84%EC%9D%98-%EA%B3%B5%EB%B3%80%EB%8F%99"><span class="header-section-number">2.2</span> 두 변수 간의 공변동</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>이슈 보고</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title d-none d-lg-block">데이터 수집하기</h1>
+<h1 class="title d-none d-lg-block">탐색하기</h1>
 </div>
 
 
@@ -431,7 +396,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2025년 8월 25일</p>
+      <p class="date-modified">2025년 8월 26일</p>
     </div>
   </div>
     
@@ -439,781 +404,174 @@ div.csl-indent {
   
 
 
-</header><section id="실습-개요" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="실습-개요">실습 개요</h2>
-<p>이 실습은 R로 데이터를 수집하는 과정을 다루다. R을 활용한 데이터 수집은 다양한 방법으로 진행될 수 있지만 여기서는 웹상의 데이터 파일 불러오기, 웹 스크레이핑, API를 이용하는 방식에 집중한다. 우선 <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a> 패키지를 불러온다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="웹상의-데이터-파일-불러오기" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="웹상의-데이터-파일-불러오기">
-<span class="header-section-number">1</span> 웹상의 데이터 파일 불러오기</h2>
-<p>아마도 데이터를 수집하는 가장 단순한 방법은 웹상에 파일 형태로 존재하는 데이터를 R에서 불러오는 것일 것이다. <a href="https://readr.tidyverse.org/"><strong>readr</strong></a> 패키지에서 제공하는 다양한 데이터 불러오기 함수(예: <code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv()</a></code>)를 데이터의 URL에 적용하면 손쉽게 데이터를 획득할 수 있다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">students</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"https://pos.it/r4ds-students-csv"</span><span class="op">)</span></span>
-<span><span class="va">students</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 5
-  `Student ID` `Full Name`      favourite.food     mealPlan            AGE  
-         &lt;dbl&gt; &lt;chr&gt;            &lt;chr&gt;              &lt;chr&gt;               &lt;chr&gt;
-1            1 Sunil Huffmann   Strawberry yoghurt Lunch only          4    
-2            2 Barclay Lynn     French fries       Lunch only          5    
-3            3 Jayendra Lyne    N/A                Breakfast and lunch 7    
-4            4 Leon Rossini     Anchovies          Lunch only          &lt;NA&gt; 
-5            5 Chidiegwu Dunkel Pizza              Breakfast and lunch five 
-6            6 Güvenç Attila    Ice cream          Lunch only          6    </code></pre>
-</div>
-</div>
-<p>그런데 엑셀 형식의 파일은 <a href="https://readxl.tidyverse.org/"><strong>readxl</strong></a> 패키지가 제공하는 <code><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel()</a></code> 함수를 이용해서 막바로 불러올 수는 없다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"https://github.com/awalker89/openxlsx/raw/master/inst/readTest.xlsx"</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error: `path` does not exist: 'https://github.com/awalker89/openxlsx/raw/master/inst/readTest.xlsx'</code></pre>
-</div>
-</div>
-<p><a href="https://ycphs.github.io/openxlsx/index.html"><strong>openxlsx</strong></a> 패키지는 이러한 문제를 해결할 수 있게 해준다. 정말 다양한 함수를 제공하지만 <code><a href="https://rdrr.io/pkg/openxlsx/man/read.xlsx.html">read.xlsx()</a></code> 함수가 URL을 통해 엑셀 데이터를 불러오는데 사용된다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ycphs.github.io/openxlsx/index.html">openxlsx</a></span><span class="op">)</span></span>
-<span><span class="va">xlsx_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/openxlsx/man/read.xlsx.html">read.xlsx</a></span><span class="op">(</span><span class="st">"https://github.com/awalker89/openxlsx/raw/master/inst/readTest.xlsx"</span><span class="op">)</span></span>
-<span><span class="va">xlsx_data</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>    Var1 Var2   Var3 Var4  Var5         Var6 Var7
-1   TRUE    1   1.00    a 42042 3209324 This   NA
-2   TRUE   NA     NA    b 42041         &lt;NA&gt;   NA
-3   TRUE    2   1.34    c 42040         &lt;NA&gt;   NA
-4  FALSE    2     NA &lt;NA&gt;    NA         &lt;NA&gt;   NA
-5  FALSE    3   1.56    e    NA         &lt;NA&gt;   NA
-6  FALSE    1   1.70    f 42037         &lt;NA&gt;   NA
-7     NA   NA     NA &lt;NA&gt; 42036         &lt;NA&gt;   NA
-8  FALSE    2  23.00    h 42035         &lt;NA&gt;   NA
-9  FALSE    3  67.30    i 42034         &lt;NA&gt;   NA
-10    NA    1 123.00 &lt;NA&gt; 42033         &lt;NA&gt;   NA</code></pre>
-</div>
-</div>
-</section><section id="웹스크레이핑" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="웹스크레이핑">
-<span class="header-section-number">2</span> 웹스크레이핑</h2>
-<p>웹스크레이핑(web scraping)이란 웹페이지로부터 특정한 데이터를 추출하는 것을 의미한다. R에서 웹스크레이핑은 <a href="https://rvest.tidyverse.org/"><strong>rvest</strong></a> 패키지가 답당하는데, <a href="https://readxl.tidyverse.org/"><strong>readxl</strong></a> 패키지와 마찬가지로 <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a>의 핵심 패키지는 아니기 때문에 따로 불러와야 한다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rvest.tidyverse.org/">rvest</a></span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<section id="html-기초" class="level3" data-number="2.1"><h3 data-number="2.1" class="anchored" data-anchor-id="html-기초">
-<span class="header-section-number">2.1</span> HTML 기초</h3>
-<p>거의 모든 웹페이지는 HTML(HyperText Markup Language, 하이퍼텍스트 마크업 언어)로 만들어져 있다. HTML은 웹브라우저(web browser)를 통해 표출되는 사항(무엇이 어떻게)을 프로그래밍하는 마크업(markup) 언어이다. 웹스크레이핑 맥락에서 HTML에 대한 몇 가지 기초 사항은 숙지할 필요가 있다.</p>
-<p>첫째, 웹페이지는 태그(tag)로 이루어져 있다. 각 태그는 시작 태그와 종료(끝) 태그로 구성되며, 둘 사이에 콘텐츠가 놓인다. 태그를 중심으로 개별 단위를 요소(element)라고 부르기도 한다.</p>
-<p>둘째, 태그의 종류는 다양하다. 태그는 크게 세 가지로 구분되는데, 최상위인 html 태그, 웹페이지의 전반적인 구조를 결정하는 블록(block) 태그(예: hi, section, p, ol 태그 등), 블록 태그 내부의 특정 부분에만 적용되는 인라인(inline) 태그(예: b, i, a 태그 등)가 있다. 태그는 100종 이상이 존재한다고 하는데, 그 중 많이 사용되는 것으로 다음과 같은 것들이 있다.</p>
+</header><section id="개요" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="개요">개요</h2>
+<p>여기서는 데이터사이언스의 꽃이라고 할 수 있는 데이터 탐색(exploration)을 다룬다. 데이터 탐색하기는 데이터 변형하기와 데이터 시각화하기를 합친 것으로 이해할 수 있다. 다음의 사항을 이해하고 있는 것이 매우 중요하다.</p>
 <ul>
-<li><p><code>html</code> 태그: 모든 웹페이지에 존재하는 최상위 태그로, 그 하위에 head 태그와 body 태그를 가져야함.</p></li>
-<li><p><code>head</code> 태그: 웹페이지의 제목이나 머릿말과 같은 메타데이터로 구성</p></li>
-<li><p><code>body</code> 태그: 본문에 해당하는 부분</p></li>
-<li><p><code>title</code> 태그: 타이틀바에 입력될 텍스트 지정</p></li>
-<li><p><code>link</code> 태그: 외부 css 파일을 연결</p></li>
-<li><p><code>meta</code> 태그: 문서의 다양한 정보를 제공</p></li>
-<li><p><code>script</code> 태그: 외부 js 파일을 연결하거나 javascript 코드를 입력</p></li>
-<li><p><code>div</code> 태그: 상자 영역을 생성</p></li>
-<li><p><code>span</code> 태그: 요소 일부분만 변경하고자 할 때 사용하는 것으로 대표적인 인라인 태그</p></li>
-<li><p><code>img</code> 태그: 이미지 태그</p></li>
-<li>
-<p><code>h</code> 태그: 제목 생성</p>
-<ul>
-<li>
-<code>h1</code>, <code>h2</code>, <code>h3</code>, <code>h4</code>, <code>h5</code>, <code>h6</code>
-</li>
+<li><p>데이터 탐색은 데이터와의 끝임없는 상호작용을 의미한다. 데이터사이언스가 데이터로부터 이해, 지식, 통찰을 획득하는 과정이라고 했을 때, 데이터 탐색은 데이터사이언스의 심장이라 해도 과언이 아니다. 상호작용은 데이터와의 질의응답의 연쇄과정을 의미한다. 의미있는 질문에 답을 얻기 위해서는 거의 반드시 데이터를 변형하거나 시각화해야만 한다.</p></li>
+<li><p>데이터 변형과 데이터 시각화는 개별적으로 데이터 탐색을 가능케 한다. 데이터 변형은 데이터를 다른 각도로 바라볼 수 있게 해주고 다양한 요약 통계값을 산출해 준다. 데이터 시각화는 데이터에 차원을 부가함으로써 시각화 되지 않았다면 발견할 수 없었던 것을 발견할 수 있게 해준다.</p></li>
+<li><p>데이터 변형에서 데이터 시각화로 이어지는 시퀀스가 데이터 탐색의 핵심적인 방법론이다. 데이터 변형의 궁극적인 목적은 바로 데이터 시각화를 위한 준비이다. 특정한 형태의 시각화를 위해서는 특정한 형태의 데이터가 필수적이고, 그것이 이해, 지식, 통찰의 획득으로 나아가게 해주는 주된 경로이다.</p></li>
+<li><p>데이터 시각화의 두 가지 목적은 탐색과 커뮤니케이션이다. 우리가 데이터 시각화를 하는 첫번째 목적은 데이터에 대한 질문에 답을 찾기 위해서이다. 우리가 데이터를 시각화하는 두 번째 목적은 우리가 발견한 것을 다른 사람들과 ‘잘’ 커뮤니케이션하기 위해서이다.</p></li>
 </ul>
-</li>
-<li><p><code>table</code> 태그: 표 생성</p></li>
-<li><p><code>p</code> 태그: 문단 생성</p></li>
-<li><p><code>ul</code> 태그: 번호가 없는 리스트</p></li>
-<li><p><code>ol</code> 태그: 번호가 있는 리스트</p></li>
-<li><p><code>li</code> 태그: <code>ul</code> 태그나 <code>ol</code> 태그 내에서 사용</p></li>
-<li><p><code>br</code> 태그: 줄 바꿈 기능을 하는 단독 태그</p></li>
-<li><p><code>b</code> 태그: 굵은 글씨 지정</p></li>
-<li><p><code>i</code> 태그: 이탤릭체 글씨 지정</p></li>
-<li><p><code>a</code> 태그: 링크 이동</p></li>
-<li><p><code>input</code> 태그: 입력창을 생성</p></li>
-<li><p><code>button</code> 태그: 버튼을 생성</p></li>
-<li><p><code>select</code> 태그: 선택 박스 창을 생성</p></li>
-<li><p><code>form</code> 태그: 데이터 전송</p></li>
-</ul>
-<p>셋째, 다양한 태그들이 복잡한 다단계 위계 구조를 이룬다.</p>
-<div id="fig-html-hier" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-html-hier-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="https://odinuv.cz/articles/html/"><span class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1"><img src="https://odinuv.cz/common/css/html.svg" class="img-fluid figure-img"></span></a>
+<p>이번 실습에서는 데이터 변형하기에서 사용한 <a href="https://cran.r-project.org/web/packages/gapminder/readme/README.html"><strong>gapmider</strong></a> 데이터를 활용하여 데이터 변형과 데이터 시각화가 어떻게 데이터 탐색에 기여하는지를 알아볼 것이다. <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a> 패키지와 <a href="https://cran.r-project.org/web/packages/gapminder/readme/README.html"><strong>gapmider</strong></a> 패키지를 불러온다. <code>gapmider</code> 데이터를 다시 한번 살펴본다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jennybc/gapminder">gapminder</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/View.html">View</a></span><span class="op">(</span><span class="va">gapminder</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-html-hier-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;1: HTML의 위계 구조 (&lt;https://odinuv.cz/articles/html/&gt;)
+</section><section id="탐색-질문에-답을-찾아가는-과정" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="탐색-질문에-답을-찾아가는-과정">
+<span class="header-section-number">1</span> 탐색: 질문에 답을 찾아가는 과정</h2>
+<p>탐색을 데이터 변형과 시각화의 연쇄 과정으로 보는 관점의 유용성을 매우 간단한 예를 통해 살펴보도록 한다.</p>
+<p>나의 질문은 이것이다.</p>
+<blockquote class="blockquote">
+<p>대륙별 최대국(인구가 가장 많은 나라)이 소속 대륙 전체에서 차지하는 비중이 어느 정도이고 대륙별로 어느 정도의 차이가 있는지, 그리고 대륙별 최대국의 비중이 시간이 지남에 따라 어떠한 변화 양상을 보여주고 있고, 그러한 양상에 대륙별 차이가 있는지의 여부이다.</p>
+</blockquote>
+<p><code>gapminder</code> 데이터를 살펴보라. 아무리 훑어 보아도 곧바로 이 질문에 답할 수는 없을 것이다. 이 질문에 답하기 위해 우리는 두 가지의 연쇄적인 과제를 수행해야 한다.</p>
+<ul>
+<li><p>질문에 답할 수 있는 형태로 데이터를 변형한다.</p></li>
+<li><p>변형한 데이터를 간명한 형태의 그래프로 시각화한다.</p></li>
+<li><p>이 두 가지 과제를 잘 연결한다.</p></li>
+</ul>
+<p>지금까지 배운 것을 총동원해, 코드를 어떻게 작성할 수 있을지 궁리해 본다.</p>
+<p>아래에 질문에 답이 될 수 있는 그래프가 있다. Code 탭을 누르면 정답이 보인다. 누르지 말고 최대한 이와 비슷한 그래프가 만들어 지는 코드를 한번 작성해 보라.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Graph</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Code</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><a href="exec_07_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="exec_07_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">continent</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
+<span>    sum_cont <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">pop</span><span class="op">)</span>,</span>
+<span>    country_prop <span class="op">=</span> <span class="va">pop</span> <span class="op">*</span> <span class="fl">100</span> <span class="op">/</span> <span class="va">sum_cont</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_max</a></span><span class="op">(</span><span class="va">country_prop</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">country_prop</span>, color <span class="op">=</span> <span class="va">continent</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Year"</span>, y <span class="op">=</span> <span class="st">"% of Population"</span>, color <span class="op">=</span> <span class="st">"Continents"</span><span class="op">)</span> </span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>코드를 확인하고 자신의 코드와 비교해보라. 동일한 그래프에 이르는 조금 더 긴, 혹은 조금 더 짧은 코드가 가능할 것이다. 짧다고 좋은 것이 아니다. 자신이 이해하기 쉽고, 타인이 이해하기 쉬운 코드가 가장 좋은 코드이다. 중요한 것은, 데이터 탐색의 핵심이 데이터 변형과 데이터 시각화의 적절한 시퀀스라는 점을 이해하는 것이다. 위 코드는 <a href="https://dplyr.tidyverse.org/"><strong>dplyr</strong></a> 패키지와 <a href="https://ggplot2.tidyverse.org/"><strong>ggplot2</strong></a> 패키지를 연결하여 이 과업을 수행하는 과정을 잘 보여준다.</p>
+</section><section id="탐색의-유형" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="탐색의-유형">
+<span class="header-section-number">2</span> 탐색의 유형</h2>
+<section id="한-변수의-변동" class="level3" data-number="2.1"><h3 data-number="2.1" class="anchored" data-anchor-id="한-변수의-변동">
+<span class="header-section-number">2.1</span> 한 변수의 변동</h3>
+<p>변동(variation)이란 한 변수값이 보여주는 다양성의 양태이다. 개별 변수에 대해 변동이 보여주는 특성을 파악하는 것은 데이터 탐색의 가장 초보적인 단계이다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-histogram-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-histogram-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_07_files/figure-html/fig-histogram-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2"><img src="exec_07_files/figure-html/fig-histogram-1-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histogram-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;1: 히스토그램
 </figcaption></figure>
 </div>
-<p>넷째, 태그는 속성(attribute)을 가질 수 있다.</p>
-<ul>
-<li><p>특별히 중요한 속성: <code>class</code>, <code>identity</code></p></li>
-<li><p><code>p</code>나 <code>div</code> 태그와 같은 블록 태그: <code>height</code>, <code>width</code>, <code>margin</code>, <code>padding</code></p></li>
-<li><p><code>img</code> 태그: <code>src</code>, <code>alt</code>, <code>width</code>, <code>height</code></p></li>
-<li><p><code>a</code> 태그: <code>href</code></p></li>
-</ul></section><section id="html-요소의-선택" class="level3" data-number="2.2"><h3 data-number="2.2" class="anchored" data-anchor-id="html-요소의-선택">
-<span class="header-section-number">2.2</span> HTML 요소의 선택</h3>
-<p>HTML 요소란 태그와 속성으로 확정가능한 HTML의 특정 부분을 의미하는 것으로, 웹스크레이핑의 타깃의 주소와 같은 것이다.</p>
-<section id="단일-수준에서의-요소-선택" class="level4" data-number="2.2.1"><h4 data-number="2.2.1" class="anchored" data-anchor-id="단일-수준에서의-요소-선택">
-<span class="header-section-number">2.2.1</span> 단일 수준에서의 요소 선택</h4>
-<p>선택 대상을 효과적으로 규정하기 위해 사용되는 것이 ‘CSS(cascading style sheet) 선택자’(selector)이다. CSS는 HTML의 시각적 구성을 통제하는 툴인데, html의 특정 부분을 지목할 수 있는 작은 언어(miniature language)를 가지고 있고, 그것을 CSS 선택자라 부르는 것이다.</p>
-<table class="table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead><tr class="header">
-<th>선택 대상</th>
-<th>CSS 선택자</th>
-<th>결과</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>태그(<code>tag</code>)</td>
-<td><code>tag1</code></td>
-<td>
-<code>"tag1"</code>이라는 이름의 모든 <code>tag</code>
-</td>
-</tr>
-<tr class="even">
-<td>클래스(<code>class</code>)</td>
-<td><code>.class1</code></td>
-<td>
-<code>"class1"</code>이라는 <code>class</code> 속성을 갖는 모든 요소</td>
-</tr>
-<tr class="odd">
-<td>아이디(<code>id</code>)</td>
-<td><code>#id1</code></td>
-<td>
-<code>"id1"</code>이라는 <code>id</code> 속성을 갖는 모든 요소</td>
-</tr>
-<tr class="even">
-<td>태그와 클래스의 결합</td>
-<td><code>tag1.class1</code></td>
-<td>
-<code>"tag1"</code>이라는 <code>tag</code>의 <code>"class1"</code>이라는 <code>class</code> 속성을 가진 모든 요소</td>
-</tr>
-<tr class="odd">
-<td>두 클래스의 결합</td>
-<td><code>.class1.class2</code></td>
-<td>
-<code>"class1"</code>이라는 이름의 <code>class</code> 속성과 <code>"class2"</code>라는 이름의 <code>class</code> 속성을 동시에 갖는 모든 요소</td>
-</tr>
-</tbody>
-</table></section><section id="하위-요소의-선택" class="level4" data-number="2.2.2"><h4 data-number="2.2.2" class="anchored" data-anchor-id="하위-요소의-선택">
-<span class="header-section-number">2.2.2</span> 하위 요소의 선택</h4>
-<p>동일 수준에서 한 요소를 선택한 이후 그 하위에 있는 요소를 위계적으로 선정하는 과정이다. 만약 <code>div</code> 태그의 하위에 있는 <code>span</code> 태그의 하위에 있는 <code>a</code> 태그를 선택하고 싶다면 태그의 위계에 따라 요소를 나열하면 된다(<code>div span a</code>).</p>
-</section><section id="정확한-선택자의-확인" class="level4" data-number="2.2.3"><h4 data-number="2.2.3" class="anchored" data-anchor-id="정확한-선택자의-확인">
-<span class="header-section-number">2.2.3</span> 정확한 선택자의 확인</h4>
-<p>정확한 선택자를 확인하는 것이 성공적인 웹스크레이핑을 위한 관건이다. 보통 해당 웹페이지에서 오른쪽 마우스 버튼을 누른 뒤 “검사”를 선택하여 이리저리 살펴보아야 한다. <a href="https://rvest.tidyverse.org/articles/selectorgadget.html">SelectorGadget</a>과 같은 브라우저 확장 프로그램이 도움이 될 수 있다. 링크로 들어가면 간단한 사용 방법을 살펴볼 수 있다.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-힌트
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>다양한 웹브라우저가 있지만 웹스크레이핑에서 가장 권장되는 것은 구글(Google)의 크롬(Chrome)이다.</p>
-</div>
-</div>
-</section></section><section id="웹스크레이핑-단계와-rvest-함수" class="level3" data-number="2.3"><h3 data-number="2.3" class="anchored" data-anchor-id="웹스크레이핑-단계와-rvest-함수">
-<span class="header-section-number">2.3</span> 웹스크레이핑 단계와 <a href="https://rvest.tidyverse.org/"><strong>rvest</strong></a> 함수</h3>
-<p><strong>1단계</strong>는 웹페이지 읽기 단계이다.</p>
-<p><code><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html()</a></code> 함수를 이용해 웹페이지를 읽어 들인다.</p>
-<p><strong>2단계</strong>는 HTML 요소의 선택 단계이다.</p>
-<ul>
-<li>
-<p><code><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements()</a></code>함수</p>
-<ul>
-<li>
-<p>조건의 만족 여부에 따라, 인풋보다 더 많은 혹은 더 적은 갯수의 아웃풋을 산출할 수 있음</p>
-<ul>
-<li><p>html 전체에 적용했을 때: 조건을 만족하는 모든 케이스를 리턴</p></li>
-<li><p>하위 요소에 적용했을 때: 조건을 만족하지 않는 케이스는 누락</p></li>
-</ul>
-</li>
-<li><p>주로 관측개체를 추출할 때 사용</p></li>
-</ul>
-</li>
-<li>
-<p><code><a href="https://rvest.tidyverse.org/reference/html_element.html">html_element()</a></code>함수</p>
-<ul>
-<li>
-<p>조건의 만족 여부와 관계없이, 항상 인풋과 동일한 갯수의 아웃풋을 산출</p>
-<ul>
-<li><p>html 전체에 적용했을 때: 조건을 만족하는 것들 중 첫번째 케이스만 리턴</p></li>
-<li><p>하위 요소에 적용했을 때: 조건을 만족하지 않는 케이스도 NA의 형태로 잔존</p></li>
-</ul>
-</li>
-<li><p>주로 변수를 추출할 때 사용</p></li>
-</ul>
-</li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-노트
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements()</a></code>와 <code><a href="https://rvest.tidyverse.org/reference/html_element.html">html_element()</a></code>의 관계를 보다 명확히 할 필요가 있다. 우선 html 문서 전체에서 특정한 선택자를 만족하는 요소를 찾는 것이 목적이라면 <code><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements()</a></code>를 사용하는 것이 합리적인 선택이다. 해당 조건을 만족하는 것이 둘 이상일 가능성이 높기 때문이다. 오직 하나만 있다고 확신할 수 있는 경우는 <code><a href="https://rvest.tidyverse.org/reference/html_element.html">html_element()</a></code>를 사용해도 무방하다. 그런데 html 문서 전체에서 만족하는 요소가 없는 경우에는 둘의 차이가 극명하게 나타난다. <code><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements()</a></code>는 만족하는 요소가 없으므로 아무 것도 리턴하지 않는다(실질적으로 길이가 0인 벡터를 리턴). <code><a href="https://rvest.tidyverse.org/reference/html_element.html">html_element()</a></code>는 인풋이 전체 html 하나 였으므로 하나의 요소(NA 요소)를 리턴한다. 그런데 이러한 차이의 중요성은 계층 체계를 따라 보다 하위 요소를 선택하고자 할 때 더 크게 드러난다. <code><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements()</a></code>를 통해 다수의 케이스가 선택되었고 단계적으로 하위 요소들을 선택하고자 할 때 어떤 케이스는 모든 하위 요소를 가지고 있지만 어떤 케이스는 특정 하위 요소를 누락하고 있을 수 있다. 이런 경우 하위 요소의 선택을 위해 <code><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements()</a></code>를 적용하게 되면, 누락된 하위 요소를 가진 케이스는 아웃풋에서 삭제된다. 즉, 누락이 없는 하위 요소의 경우는 모든 케이스가 아웃풋에 나타나지만, 누락이 있는 하위 요소의 경우는 어떤 케이스는 아웃풋에 나타나지 않게 된다. 이에 반해 <code><a href="https://rvest.tidyverse.org/reference/html_element.html">html_element()</a></code>은 조건의 만족 여부에 관계 없이 항상 인풋과 동일한 갯수의 아웃풋을 산출하므로, 누락된 하위 요소를 가진 케이스인 경우도 NA값을 부여받고 아웃풋에 포함된다. 이런 이유로 <code><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements()</a></code>는 주로 관측 개체를 추출할 때 사용하고, <code><a href="https://rvest.tidyverse.org/reference/html_element.html">html_element()</a></code>는 주로 변수를 추출할 때 사용한다고 말하는 것이다.</p>
-</div>
-</div>
-<p><strong>3단계</strong>는 하위 요소의 선택 단계이다. 여기에는 두 가지 방식이 있다.</p>
-<ul>
-<li><p><code><a href="https://rvest.tidyverse.org/reference/html_element.html">html_element()</a></code>함수나 <code><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements()</a></code> 함수 속에 요소들을 위계에 따라 나열을 하되 요소 사이에 공란을 둔다.</p></li>
-<li><p>파이프 연사자(pipe operator)를 활용한다.</p></li>
-</ul>
-<p><strong>4단계</strong>는 요소로부터 데이터를 추출하는 단계이다. 다양한 함수를 적용할 수 있다.</p>
-<ul>
-<li><p><code><a href="https://rvest.tidyverse.org/reference/html_table.html">html_table()</a></code>: 테이블 데이터의 추출</p></li>
-<li><p><code><a href="https://rvest.tidyverse.org/reference/html_text.html">html_text()</a></code>: 텍스트 데이터의 추출</p></li>
-<li><p><code><a href="https://rvest.tidyverse.org/reference/html_text.html">html_text2()</a></code>: 불필요한 부호와 공란을 제거한 텍스트 데이터의 추출</p></li>
-<li><p><code><a href="https://rvest.tidyverse.org/reference/html_attr.html">html_attr()</a></code>과 <code><a href="https://rvest.tidyverse.org/reference/html_attr.html">html_attrs()</a></code>: 하위 속성 데이터의 추출</p></li>
-</ul></section><section id="간단한-웹스크레이핑의-예" class="level3" data-number="2.4"><h3 data-number="2.4" class="anchored" data-anchor-id="간단한-웹스크레이핑의-예">
-<span class="header-section-number">2.4</span> 간단한 웹스크레이핑의 예</h3>
-<section id="데이터" class="level4" data-number="2.4.1"><h4 data-number="2.4.1" class="anchored" data-anchor-id="데이터">
-<span class="header-section-number">2.4.1</span> 데이터</h4>
-<p><a href="https://rvest.tidyverse.org/"><strong>rvest</strong></a> 패키지에 내장되어 있는 예제(<a href="https://rvest.tidyverse.org/articles/starwars.html">starwars</a>)를 활용하여 실습을 진행한다. 웹페이지에 접속하여 어떤 내용으로 구성되어 있는지 확인한다. 앞에서 언급한 것처럼, 오른쪽 마우스 버튼을 누르고 “검사”를 선택하면 해당 패이지의 HTML 구조를 살펴볼 수 있다. 모든 영화가 다음과 같은 동일한 구조를 가지고 있음을 확인한다.</p>
+<p>아주 높은 값을 보이는 국가들을 확인하기 위해 특정한 데이터 변형을 실행한다.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&lt;</span>section<span class="sc">&gt;</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="er">&lt;</span>h2 data<span class="sc">-</span>id<span class="ot">=</span><span class="st">"1"</span><span class="sc">&gt;</span>The Phantom Menace<span class="sc">&lt;</span><span class="er">/</span>h2<span class="sc">&gt;</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="er">&lt;</span>p<span class="sc">&gt;</span>Released<span class="sc">:</span> <span class="dv">1999-05-19</span><span class="sc">&lt;</span><span class="er">/</span>p<span class="sc">&gt;</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="er">&lt;</span>p<span class="sc">&gt;</span>Director<span class="sc">:</span> <span class="er">&lt;</span>span class<span class="ot">=</span><span class="st">"director"</span><span class="sc">&gt;</span>George Lucas<span class="sc">&lt;</span><span class="er">/</span>span<span class="sc">&gt;</span><span class="er">&lt;/</span>p<span class="sc">&gt;</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="er">&lt;</span>div class<span class="ot">=</span><span class="st">"crawl"</span><span class="sc">&gt;</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="er">&lt;</span>p<span class="sc">&gt;</span>...<span class="sc">&lt;</span><span class="er">/</span>p<span class="sc">&gt;</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="er">&lt;</span>p<span class="sc">&gt;</span>...<span class="sc">&lt;</span><span class="er">/</span>p<span class="sc">&gt;</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="er">&lt;</span>p<span class="sc">&gt;</span>...<span class="sc">&lt;</span><span class="er">/</span>p<span class="sc">&gt;</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="er">&lt;/</span>div<span class="sc">&gt;</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;/</span>section<span class="sc">&gt;</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>우리의 웹스크레이핑 목적은 7개의 영화별로 제목(title), 연도(year), 감독(director), 요약(intro) 컬럼을 갖는 데이터 프레임을 생성하는 것이다.</p>
-</section><section id="웹스크레이핑의-과정" class="level4" data-number="2.4.2"><h4 data-number="2.4.2" class="anchored" data-anchor-id="웹스크레이핑의-과정">
-<span class="header-section-number">2.4.2</span> 웹스크레이핑의 과정</h4>
-<p><code><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html()</a></code> 함수를 이용하여 웹페이지를 읽어 들인다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://rvest.tidyverse.org/articles/starwars.html"</span></span>
-<span><span class="va">html</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html</a></span><span class="op">(</span><span class="va">url</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><code>"section"</code> 태그 요소를 선택한다. 조건을 만족하는 모든 케이스를 추출해야 하므로 <code><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements()</a></code> 함수를 사용한다. 관측 개체가 7개임을 확인한다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">section</span> <span class="op">&lt;-</span> <span class="va">html</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements</a></span><span class="op">(</span><span class="st">"section"</span><span class="op">)</span></span>
-<span><span class="va">section</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">gdpPercap</span><span class="op">)</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{xml_nodeset (7)}
-[1] &lt;section&gt;&lt;h2 data-id="1"&gt;\nThe Phantom Menace\n&lt;/h2&gt;\n&lt;p&gt;\nReleased: 1999 ...
-[2] &lt;section&gt;&lt;h2 data-id="2"&gt;\nAttack of the Clones\n&lt;/h2&gt;\n&lt;p&gt;\nReleased: 20 ...
-[3] &lt;section&gt;&lt;h2 data-id="3"&gt;\nRevenge of the Sith\n&lt;/h2&gt;\n&lt;p&gt;\nReleased: 200 ...
-[4] &lt;section&gt;&lt;h2 data-id="4"&gt;\nA New Hope\n&lt;/h2&gt;\n&lt;p&gt;\nReleased: 1977-05-25\n ...
-[5] &lt;section&gt;&lt;h2 data-id="5"&gt;\nThe Empire Strikes Back\n&lt;/h2&gt;\n&lt;p&gt;\nReleased: ...
-[6] &lt;section&gt;&lt;h2 data-id="6"&gt;\nReturn of the Jedi\n&lt;/h2&gt;\n&lt;p&gt;\nReleased: 1983 ...
-[7] &lt;section&gt;&lt;h2 data-id="7"&gt;\nThe Force Awakens\n&lt;/h2&gt;\n&lt;p&gt;\nReleased: 2015- ...</code></pre>
+<pre><code># A tibble: 142 × 6
+   country          continent  year lifeExp       pop gdpPercap
+   &lt;fct&gt;            &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;     &lt;int&gt;     &lt;dbl&gt;
+ 1 Norway           Europe     2007    80.2   4627926    49357.
+ 2 Kuwait           Asia       2007    77.6   2505559    47307.
+ 3 Singapore        Asia       2007    80.0   4553009    47143.
+ 4 United States    Americas   2007    78.2 301139947    42952.
+ 5 Ireland          Europe     2007    78.9   4109086    40676.
+ 6 Hong Kong, China Asia       2007    82.2   6980412    39725.
+ 7 Switzerland      Europe     2007    81.7   7554661    37506.
+ 8 Netherlands      Europe     2007    79.8  16570613    36798.
+ 9 Canada           Americas   2007    80.7  33390141    36319.
+10 Iceland          Europe     2007    81.8    301931    36181.
+# ℹ 132 more rows</code></pre>
 </div>
 </div>
-<p>제목과 감독명에 대한 선택자가 각각 <code>h2</code> 태그와 <code>director</code> 클래스에 들어가 있음을 알 수 있다. <code><a href="https://rvest.tidyverse.org/reference/html_element.html">html_element()</a></code>와 <code><a href="https://rvest.tidyverse.org/reference/html_text.html">html_text2()</a></code> 함수를 활용하여 데이터를 추출한다. 앞에서 언급한 것처럼 구체적인 변수를 생성하기 위한 작업에는 케이스의 누락을 방지하기 위해 <code><a href="https://rvest.tidyverse.org/reference/html_element.html">html_element()</a></code>를 사용한다. <code><a href="https://rvest.tidyverse.org/reference/html_text.html">html_text()</a></code> 함수도 존재하지만 더 좋은 결과물을 얻을 수 있는 <code><a href="https://rvest.tidyverse.org/reference/html_text.html">html_text2()</a></code> 함수를 항상 사용한다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">section</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_element</a></span><span class="op">(</span><span class="st">"h2"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_text.html">html_text2</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "The Phantom Menace"      "Attack of the Clones"   
-[3] "Revenge of the Sith"     "A New Hope"             
-[5] "The Empire Strikes Back" "Return of the Jedi"     
-[7] "The Force Awakens"      </code></pre>
-</div>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">section</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_element</a></span><span class="op">(</span><span class="st">".director"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_text.html">html_text2</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "George Lucas"     "George Lucas"     "George Lucas"     "George Lucas"    
-[5] "Irvin Kershner"   "Richard Marquand" "J. J. Abrams"    </code></pre>
-</div>
-</div>
-</section></section><section id="웹스크레이핑의-실제-1-테이블이-하나-있는-경우" class="level3" data-number="2.5"><h3 data-number="2.5" class="anchored" data-anchor-id="웹스크레이핑의-실제-1-테이블이-하나-있는-경우">
-<span class="header-section-number">2.5</span> 웹스크레이핑의 실제 1: 테이블이 하나 있는 경우</h3>
-<p>위키피디어의 전 세계 국가 관련 항목(List of countries and dependencies by population)에는 표가 하나 들어있는데, 해당 표의 데이터를 웹스크레이핑 기법을 활용해 수집해 보기로 한다. 테이블이 하나이므로 <code><a href="https://rvest.tidyverse.org/reference/html_element.html">html_element()</a></code> 함수를 사용하고, 데이터 형식이 테이블이므로 <code><a href="https://rvest.tidyverse.org/reference/html_table.html">html_table()</a></code> 함수를 적용한다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"</span></span>
-<span><span class="va">my_table</span> <span class="op">&lt;-</span> <span class="va">url</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_element</a></span><span class="op">(</span><span class="st">"table"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_table.html">html_table</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="va">my_table</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 242 × 6
-   Location      Population    `% ofworld` Date     Source (official or …¹ Notes
-   &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;                  &lt;chr&gt;
- 1 World         8,232,000,000 100%        13 Jun … UN projection[1][3]    ""   
- 2 India         1,417,492,000 17.3%       1 Jul 2… Official projection[4] "[b]"
- 3 China         1,408,280,000 17.2%       31 Dec … Official estimate[5]   "[c]"
- 4 United States 340,110,988   4.1%        1 Jul 2… Official estimate[6]   "[d]"
- 5 Indonesia     284,438,782   3.5%        30 Jun … National annual proje… ""   
- 6 Pakistan      241,499,431   2.9%        1 Mar 2… 2023 census result[8]  "[e]"
- 7 Nigeria       223,800,000   2.7%        1 Jul 2… Official projection[9] ""   
- 8 Brazil        212,583,750   2.6%        1 Jul 2… Official projection[1… ""   
- 9 Bangladesh    169,828,911   2.1%        14 Jun … 2022 census result[11] "[f]"
-10 Russia        146,028,325   1.8%        1 Jan 2… Official estimate[13]  "[g]"
-# ℹ 232 more rows
-# ℹ abbreviated name: ¹​`Source (official or fromthe United Nations)`</code></pre>
-</div>
-</div>
-<p>결과물이 정돈된 데이터가 아니다. 앞에서 배운 기법을 활용해 데이터를 정리한다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">my_table_new</span> <span class="op">&lt;-</span> <span class="va">my_table</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="fl">6</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span></span>
-<span>    location <span class="op">=</span> <span class="st">"Location"</span>,</span>
-<span>    population <span class="op">=</span> <span class="st">"Population"</span>,</span>
-<span>    pop_pct <span class="op">=</span> <span class="st">"% ofworld"</span>,</span>
-<span>    date <span class="op">=</span> <span class="st">"Date"</span>,</span>
-<span>    source <span class="op">=</span> <span class="st">"Source (official or fromthe United Nations)"</span></span>
-<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
-<span>    population <span class="op">=</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/parse_number.html">parse_number</a></span><span class="op">(</span><span class="va">population</span>, <span class="st">","</span><span class="op">)</span>,</span>
-<span>    population <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">population</span><span class="op">)</span>,</span>
-<span>    pop_pct <span class="op">=</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove_all</a></span><span class="op">(</span><span class="va">pop_pct</span>, <span class="st">"%"</span><span class="op">)</span>,</span>
-<span>    pop_pct <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">pop_pct</span><span class="op">)</span>,</span>
-<span>    date <span class="op">=</span> <span class="fu"><a href="https://lubridate.tidyverse.org/reference/ymd.html">dmy</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span></span>
-<span>  <span class="op">)</span></span>
-<span><span class="va">my_table_new</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 242 × 5
-   location      population pop_pct date       source                       
-   &lt;chr&gt;              &lt;dbl&gt;   &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;                        
- 1 World         8232000000   100   2025-06-13 UN projection[1][3]          
- 2 India         1417492000    17.3 2025-07-01 Official projection[4]       
- 3 China         1408280000    17.2 2024-12-31 Official estimate[5]         
- 4 United States  340110988     4.1 2024-07-01 Official estimate[6]         
- 5 Indonesia      284438782     3.5 2025-06-30 National annual projection[7]
- 6 Pakistan       241499431     2.9 2023-03-01 2023 census result[8]        
- 7 Nigeria        223800000     2.7 2023-07-01 Official projection[9]       
- 8 Brazil         212583750     2.6 2024-07-01 Official projection[10]      
- 9 Bangladesh     169828911     2.1 2022-06-14 2022 census result[11]       
-10 Russia         146028325     1.8 2025-01-01 Official estimate[13]        
-# ℹ 232 more rows</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-노트
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>코드에 포함된 <code><a href="https://readr.tidyverse.org/reference/parse_number.html">parse_number()</a></code>과 <code><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove_all()</a></code> 함수는 매우 유용한 함수이므로 잘 익혀 둘 필요가 있다. <code><a href="https://readr.tidyverse.org/reference/parse_number.html">parse_number()</a></code>함수는 <a href="https://readr.tidyverse.org/"><strong>readr</strong></a> 패키지에 포함되어 있는 것으로, 투입 벡터에서 오로지 숫자만 골라내 실수형 벡터를 생성해준다. 위의 예를 보자면, <code>my_table</code> 데이터 프레임의 <code>population</code> 컬럼은 인구수와 콤마가 결합된 문자형 벡터이므로 콤마를 제거하고 숫자만 추출할 필요가 있다. 유사한 함수에 <code><a href="https://readr.tidyverse.org/reference/parse_atomic.html">parse_logical()</a></code>, <code><a href="https://readr.tidyverse.org/reference/parse_atomic.html">parse_integer()</a></code>, <code><a href="https://readr.tidyverse.org/reference/parse_atomic.html">parse_double()</a></code>, <code><a href="https://readr.tidyverse.org/reference/parse_atomic.html">parse_character()</a></code>, <code><a href="https://readr.tidyverse.org/reference/parse_factor.html">parse_factor()</a></code> 등이 있다. <code><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove_all()</a></code> 함수는 <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a>의 핵심 패키지 중의 하나인 <a href="https://stringr.tidyverse.org/"><strong>stringr</strong></a> 패키지에 포함되어 있는 것으로, 투입 벡터에서 특정한 문자나 문자 패턴을 제거해 준다. 위의 예를 보자면, <code>my_table</code> 데이터 프레임의 <code>pop_pct</code> 컬럼에는 %라는 부호가 포함되어 있기 때문에 그것을 제거할 필요가 있다. 그러므로 <code><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove_all()</a></code> 함수는 셀에 포함되어 있는 특정 문자 모두를 제거할 때 사용할 수 있는 함수이다. 유사한 함수에 <code><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove()</a></code>도 있는데, 이것은 셀에 포함되어 있는 특정 문자 중 단지 첫 번째 것만 제거한다. 문자열을 잘 다루려면 정규표현식(regular expression)에 대한 상당한 이해가 있어야 한다. 다음의 링크가 도움이 될 수 있을 것이다. <a href="https://bookdown.org/ahn_media/bookdown-demo/cleantool.html#%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9Dregular-expressions" class="uri">https://bookdown.org/ahn_media/bookdown-demo/cleantool.html#%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9Dregular-expressions</a></p>
-</div>
-</div>
-<p>종종 웹스크레이핑으로 불러온 한글 데이터가 깨지는 경우가 있다. <code><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html()</a></code> 함수 속에 <code>encoding</code> 아규먼트에 <code>"EUC-KR"</code>이나 <code>"UTF-8"</code>을 지정하면 된다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">kospi</span> <span class="op">&lt;-</span> <span class="st">"https://finance.naver.com/sise/sise_quant.naver?sosok=0"</span></span>
-<span><span class="va">kospi_table</span> <span class="op">&lt;-</span> <span class="va">kospi</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html</a></span><span class="op">(</span>encoding <span class="op">=</span> <span class="st">"EUC-KR"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements</a></span><span class="op">(</span><span class="st">"table"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_table.html">html_table</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="va">kospi_table</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[[1]]
-# A tibble: 5 × 6
-  X1       X2           X3                 X4           X5               X6     
-  &lt;chr&gt;    &lt;chr&gt;        &lt;chr&gt;              &lt;chr&gt;        &lt;chr&gt;            &lt;chr&gt;  
-1 "거래량" "매수호가"   "거래대금(백만)"   시가총액(억) 영업이익(억)     PER(배)
-2 "시가"   "매도호가"   "전일거래량"       자산총계(억) 영업이익증가율   ROE(%) 
-3 "고가"   "매수총잔량" "외국인비율"       부채총계(억) 당기순이익(억)   ROA(%) 
-4 "저가"   "매도총잔량" "상장주식수(천주)" 매출액(억)   주당순이익(원)   PBR(배)
-5 ""       ""           ""                 매출액증가율 보통주배당금(원) 유보율(%)…
-
-[[2]]
-# A tibble: 161 × 12
-       N 종목명  현재가 전일비 등락률 거래량 거래대금 매수호가 매도호가 시가총액
-   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;   
- 1    NA ""      ""     ""     ""     ""     ""       ""       ""       ""      
- 2     1 "KODEX… "1,29… "하락\n… "-2.3… "320,… "416,65… "1,289"  "1,290"  "15,355"
- 3     2 "KODEX… "1,19… "상승\n… "+4.4… "24,3… "28,889" "1,196"  "1,197"  "3,499" 
- 4     3 "KODEX… "3,43… "하락\n… "-2.2… "22,5… "77,641" "3,430"  "3,435"  "2,404" 
- 5     4 "KODEX… "3,46… "하락\n… "-1.1… "22,3… "77,827" "3,465"  "3,470"  "7,474" 
- 6     5 "KODEX… "8,86… "상승\n… "+4.0… "18,9… "167,61… "8,865"  "8,870"  "17,898"
- 7    NA ""      ""     ""     ""     ""     ""       ""       ""       ""      
- 8    NA ""      ""     ""     ""     ""     ""       ""       ""       ""      
- 9    NA ""      ""     ""     ""     ""     ""       ""       ""       ""      
-10     6 "KODEX… "25,1… "상승\n… "+2.3… "15,6… "391,47… "25,115" "25,120" "26,798"
-# ℹ 151 more rows
-# ℹ 2 more variables: PER &lt;chr&gt;, ROE &lt;chr&gt;</code></pre>
-</div>
-</div>
-<p>여기서는 리스트(list)가 산출되었으므로 다음과 같은 방식으로 데이터 프레임을 생성한다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">kospi_res</span> <span class="op">&lt;-</span> <span class="va">kospi_table</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="va">_</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">kospi_res</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 12
-      N 종목명   현재가 전일비 등락률 거래량 거래대금 매수호가 매도호가 시가총액
-  &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;   
-1     1 KODEX 2… 1,290  "하락\n… -2.35% 320,6… 416,657  1,289    1,290    15,355  
-2     2 KODEX 2… 1,196  "상승\n… +4.45% 24,36… 28,889   1,196    1,197    3,499   
-3     3 KODEX 코… 3,430  "하락\n… -2.28% 22,56… 77,641   3,430    3,435    2,404   
-4     4 KODEX 인… 3,465  "하락\n… -1.14% 22,37… 77,827   3,465    3,470    7,474   
-5     5 KODEX 코… 8,865  "상승\n… +4.05% 18,99… 167,612  8,865    8,870    17,898  
-# ℹ 2 more variables: PER &lt;chr&gt;, ROE &lt;chr&gt;</code></pre>
-</div>
-</div>
-</section><section id="웹스크레이핑의-실제-2-테이블이-둘-이상인-경우" class="level3" data-number="2.6"><h3 data-number="2.6" class="anchored" data-anchor-id="웹스크레이핑의-실제-2-테이블이-둘-이상인-경우">
-<span class="header-section-number">2.6</span> 웹스크레이핑의 실제 2: 테이블이 둘 이상인 경우</h3>
-<p>위키피디어의 국가별 약어 관련 항목(List of FIPS country codes)에는 동일한 내용이 여러개로 표로 나뉘어 제시되어 있다. 개별 표의 데이터를 수집한 후 결합하여 단일한 데이터 프레임을 구성할 필요가 있다. 테이블이 여러개이므로 <code><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements()</a></code> 함수를 사용한다. <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a>의 핵심 패키지 중 하나이 <a href="https://dplyr.tidyverse.org/"><strong>dplyr</strong></a> 패키지의 <code><a href="https://dplyr.tidyverse.org/reference/bind_rows.html">bind_rows()</a></code> 함수를 활용하여 테이블들을 하나의 테이블로 만든다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://en.wikipedia.org/wiki/List_of_FIPS_country_codes"</span></span>
-<span><span class="va">my_tables</span> <span class="op">&lt;-</span> <span class="va">url</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements</a></span><span class="op">(</span><span class="st">"table"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_table.html">html_table</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind_rows.html">bind_rows</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="va">my_tables</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 284 × 10
-   Code    `Short-form name` .mw-parser-output .n…¹ .mw-parser-output .n…² ...3 
-   &lt;chr&gt;   &lt;chr&gt;             &lt;chr&gt;                  &lt;chr&gt;                  &lt;chr&gt;
- 1 .mw-pa… Aruba             &lt;NA&gt;                   &lt;NA&gt;                   &lt;NA&gt; 
- 2 AC      Antigua and Barb… &lt;NA&gt;                   &lt;NA&gt;                   &lt;NA&gt; 
- 3 AE      United Arab Emir… &lt;NA&gt;                   &lt;NA&gt;                   &lt;NA&gt; 
- 4 AF      Afghanistan       &lt;NA&gt;                   &lt;NA&gt;                   &lt;NA&gt; 
- 5 AG      Algeria           &lt;NA&gt;                   &lt;NA&gt;                   &lt;NA&gt; 
- 6 AJ      Azerbaijan        &lt;NA&gt;                   &lt;NA&gt;                   &lt;NA&gt; 
- 7 AL      Albania           &lt;NA&gt;                   &lt;NA&gt;                   &lt;NA&gt; 
- 8 AM      Armenia           &lt;NA&gt;                   &lt;NA&gt;                   &lt;NA&gt; 
- 9 AN      Andorra           &lt;NA&gt;                   &lt;NA&gt;                   &lt;NA&gt; 
-10 AO      Angola            &lt;NA&gt;                   &lt;NA&gt;                   &lt;NA&gt; 
-# ℹ 274 more rows
-# ℹ abbreviated names:
-#   ¹​`.mw-parser-output .navbar{display:inline;font-size:88%;font-weight:normal}.mw-parser-output .navbar-collapse{float:left;text-align:left}.mw-parser-output .navbar-boxtext{word-spacing:0}.mw-parser-output .navbar ul{display:inline-block;white-space:nowrap;line-height:inherit}.mw-parser-output .navbar-brackets::before{margin-right:-0.125em;content:"[ "}.mw-parser-output .navbar-brackets::after{margin-left:-0.125em;content:" ]"}.mw-parser-output .navbar li{word-spacing:-0.125em}.mw-parser-output .navbar a&gt;span,.mw-parser-output .navbar a&gt;abbr{text-decoration:inherit}.mw-parser-output .navbar-mini abbr{font-variant:small-caps;border-bottom:none;text-decoration:none;cursor:inherit}.mw-parser-output .navbar-ct-full{font-size:114%;margin:0 7em}.mw-parser-output .navbar-ct-mini{font-size:114%;margin:0 4em}html.skin-theme-clientpref-night .mw-parser-output .navbar li a abbr{color:var(--color-base)!important}@media(prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .navbar li a abbr{color:var(--color-base)!important}}@media print{.mw-parser-output .navbar{display:none!important}}vteGeocode systems...1`,
-#   ²​`.mw-parser-output .navbar{display:inline;font-size:88%;font-weight:normal}.mw-parser-output .navbar-collapse{float:left;text-align:left}.mw-parser-output .navbar-boxtext{word-spacing:0}.mw-parser-output .navbar ul{display:inline-block;white-space:nowrap;line-height:inherit}.mw-parser-output .navbar-brackets::before{margin-right:-0.125em;content:"[ "}.mw-parser-output .navbar-brackets::after{margin-left:-0.125em;content:" ]"}.mw-parser-output .navbar li{word-spacing:-0.125em}.mw-parser-output .navbar a&gt;span,.mw-parser-output .navbar a&gt;abbr{text-decoration:inherit}.mw-parser-output .navbar-mini abbr{font-variant:small-caps;border-bottom:none;text-decoration:none;cursor:inherit}.mw-parser-output .navbar-ct-full{font-size:114%;margin:0 7em}.mw-parser-output .navbar-ct-mini{font-size:114%;margin:0 4em}html.skin-theme-clientpref-night .mw-parser-output .navbar li a abbr{color:var(--color-base)!important}@media(prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .navbar li a abbr{color:var(--color-base)!important}}@media print{.mw-parser-output .navbar{display:none!important}}vteGeocode systems...2`
-# ℹ 5 more variables: ...4 &lt;chr&gt;, ...5 &lt;chr&gt;, ...6 &lt;chr&gt;, X1 &lt;chr&gt;, X2 &lt;chr&gt;</code></pre>
-</div>
-</div>
-<p>앞에서 배운 기법을 활용해 데이터를 정리한다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">my_tables_new</span> <span class="op">&lt;-</span> <span class="va">my_tables</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span></span>
-<span>    code <span class="op">=</span> <span class="st">"Code"</span>, </span>
-<span>    short_name <span class="op">=</span> <span class="st">"Short-form name"</span></span>
-<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
-<span>    code <span class="op">=</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_extract.html">str_extract</a></span><span class="op">(</span><span class="va">code</span>, <span class="st">"[A-Z][A-Z]"</span><span class="op">)</span></span>
-<span>  <span class="op">)</span></span>
-<span><span class="va">my_tables_new</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 284 × 2
-   code  short_name          
-   &lt;chr&gt; &lt;chr&gt;               
- 1 AA    Aruba               
- 2 AC    Antigua and Barbuda 
- 3 AE    United Arab Emirates
- 4 AF    Afghanistan         
- 5 AG    Algeria             
- 6 AJ    Azerbaijan          
- 7 AL    Albania             
- 8 AM    Armenia             
- 9 AN    Andorra             
-10 AO    Angola              
-# ℹ 274 more rows</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-노트
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code><a href="https://stringr.tidyverse.org/reference/str_extract.html">str_extract()</a></code> 함수는 <code><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove_all()</a></code> 함수와 마찬가지로 <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a>의 핵심 패키지 중의 하나인 <a href="https://stringr.tidyverse.org/"><strong>stringr</strong></a> 패키지에 포함되어 있는 것으로, 벡터에서 특정한 문자나 문자 패턴을 추출해 준다. 무슨 이유에선지 모르겠지만 웹스크레이핑 결과 도출된 <code>my_tables</code>의 <code>code</code> 컬럼의 첫 번째 행에는 <code>".mw-parser-output .monospaced{font-family:monospace,monospace}AA"</code>와 같은 이상한 정보가 포함되어 있다. 우리가 필요로 하는 것은 맨 끝에 있는 국가 약어인 AA이므로 그것만 추출해야 한다. <code><a href="https://stringr.tidyverse.org/reference/str_extract.html">str_extract()</a></code> 함수 속에 포함되어 있는 <code>"[A-Z][A-Z]"</code>는 문자 패턴을 나타내는 것으로 “알파벳 대문자 두개가 연결되어 있는 것”을 의미한다. 그러므로 <code>code</code> 컬럼의 다른 모든 행에는 알파벳 대문자가 두 개 연결된 형태로 되어 있으므로 첫 번째 열에서 <code>"AA"</code>를 추출해 최종적인 데이터를 산출한다.</p>
-</div>
-</div>
-</section><section id="웹스크레이핑의-실제-3-네이버-뉴스-데이터-수집하기" class="level3" data-number="2.7"><h3 data-number="2.7" class="anchored" data-anchor-id="웹스크레이핑의-실제-3-네이버-뉴스-데이터-수집하기">
-<span class="header-section-number">2.7</span> 웹스크레이핑의 실제 3: 네이버 뉴스 데이터 수집하기</h3>
-<section id="기간을-설정하지-않은-경우" class="level4" data-number="2.7.1"><h4 data-number="2.7.1" class="anchored" data-anchor-id="기간을-설정하지-않은-경우">
-<span class="header-section-number">2.7.1</span> 기간을 설정하지 않은 경우</h4>
-<p>네이버 신문(<a href="https://news.naver.com/" class="uri">https://news.naver.com/</a>)에 키워드(예: 지방소멸)로 검색한 기사를 제목과 내용으로 나누어 데이터를 수집한다. 위에서 익힌 <a href="https://rvest.tidyverse.org/"><strong>rvest</strong></a> 패키지의 함수들을 이용해 이 작업을 수행할 수 있다. 그런데 문제가 있는데, 실행을 해보면, 전혀 작동하지 않는다는 것을 알 수 있다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://search.naver.com/search.naver?where=news&amp;ie=utf8&amp;sm=nws_hty&amp;query=%EC%A7%80%EB%B0%A9%EC%86%8C%EB%A9%B8"</span></span>
-<span><span class="va">title</span> <span class="op">&lt;-</span> <span class="va">url</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements</a></span><span class="op">(</span><span class="st">".news_tit"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_text.html">html_text2</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="va">contents</span> <span class="op">&lt;-</span> <span class="va">url</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements</a></span><span class="op">(</span><span class="st">".dsc_txt_wrap"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_text.html">html_text2</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="va">my_news</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span><span class="va">title</span>, <span class="va">contents</span><span class="op">)</span></span>
-<span><span class="va">my_news</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="기간을-설정한-경우" class="level4" data-number="2.7.2"><h4 data-number="2.7.2" class="anchored" data-anchor-id="기간을-설정한-경우">
-<span class="header-section-number">2.7.2</span> 기간을 설정한 경우</h4>
-<p>동일한 방법을 활용해, 특정한 기간을 설정하여 데이터를 수집할 수 있다. 여기서는 2023년 1월 1일부터 2023년 12월 31일까지로 기간을 설정하여 데이터를 수집한다. 위의 경우와 마찬가지로 전혀 작동하지 않는다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">start.date</span> <span class="op">&lt;-</span> <span class="st">"2023.01.01"</span></span>
-<span><span class="va">end.date</span> <span class="op">&lt;-</span> <span class="st">"2023.12.31"</span></span>
-<span><span class="va">url</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_c.html">str_c</a></span><span class="op">(</span><span class="st">"https://search.naver.com/search.naver?where=news&amp;query=%EC%A7%80%EB%B0%A9%EC%86%8C%EB%A9%B8&amp;sm=tab_opt&amp;sort=0&amp;photo=0&amp;field=0&amp;pd=3&amp;ds="</span>, <span class="va">start.date</span>, <span class="st">"&amp;de="</span>, <span class="va">end.date</span>, <span class="st">"&amp;docid=&amp;related=0&amp;mynews=0&amp;office_type=0&amp;office_section_code=0&amp;news_office_checked=&amp;nso=so%3Ar%2Cp%3Afrom20230101to20231231&amp;is_sug_officeid=0&amp;office_category=0&amp;service_area=0"</span><span class="op">)</span></span>
-<span><span class="va">title</span> <span class="op">&lt;-</span> <span class="va">url</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements</a></span><span class="op">(</span><span class="st">".news_tit"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_text.html">html_text2</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="va">contents</span> <span class="op">&lt;-</span> <span class="va">url</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements</a></span><span class="op">(</span><span class="st">".dsc_txt_wrap"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_text.html">html_text2</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="va">my_news</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span><span class="va">title</span>, <span class="va">contents</span><span class="op">)</span></span>
-<span><span class="va">my_news</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-경고
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>종래에는 위와 같은 방식에 반복 프로그래밍을 결합하면 원하는 케이스만큼의 데이터를 구할 수 있었다. 많은 웹사이트들이 웹스크레이핑을 방지하는 장치들을 하고 있고, 그러한 조치의 영향이 아닌가 추측한다. 따라서 뒤에서 다루게될 API를 이용하는 방식으로 옮아갈 필요가 있다.</p>
-</div>
-</div>
-</section></section></section><section id="api의-활용" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="api의-활용">
-<span class="header-section-number">3</span> API의 활용</h2>
-<section id="정의" class="level3" data-number="3.1"><h3 data-number="3.1" class="anchored" data-anchor-id="정의">
-<span class="header-section-number">3.1</span> 정의</h3>
-<p>API(application programming interface)는 복수의 프로그램들이 서로 상호작용하는 방법을 정의하는 일련의 규칙을 의미한다. 다른 말로 하면 한 프로그램이 다른 프로그램의 기능들을 불러 사용할 수 있게 해주는 통로를 의미한다.</p>
-<p>이런 API 개념이 데이터 수집과 관련하여 중요한 의미를 가지는 것은 오픈 API(open API) 때문이다. 오픈 API는 데이터를 보유하고 있는 공적 기관이 데이터의 사용 권한을 사용자들에게 부여함으로써 데이터에 대한 접근 가능성을 높여주기 때문이다.</p>
-<p>만일 오픈 API가 존재하는 상황이라면 데이터사이언스의 가장 좋은 데이터 수집 방법은 오픈 API를 활용하는 것이다.</p>
-</section><section id="r에서-api를-활용한-데이터-수집" class="level3" data-number="3.2"><h3 data-number="3.2" class="anchored" data-anchor-id="r에서-api를-활용한-데이터-수집">
-<span class="header-section-number">3.2</span> R에서 API를 활용한 데이터 수집</h3>
-<p>최근까지 API를 활용한 데이터 수집에는 <a href="https://httr.r-lib.org/"><strong>httr</strong></a>과 <a href="https://jeroen.r-universe.dev/jsonlite"><strong>jsonlite</strong></a>라는 두 개의 패키지가 함께 사용되었다. 그런데 최근 <a href="https://httr.r-lib.org/"><strong>httr</strong></a>의 완전 업그레이드 버전인 <a href="https://httr2.r-lib.org/"><strong>httr2</strong></a>가 선을 보이면서 이 패키지를 단독으로 활용하는 방식이 주목 받고 있다. <a href="https://httr2.r-lib.org/"><strong>httr2</strong></a>는 R의 <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a> 운동을 이끌고 있는 해들리 위컴(Hadley Wickham)이 <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a>의 철학에 맞추어 <a href="https://httr.r-lib.org/"><strong>httr</strong></a> 패키지를 발전시킨 것이다. 이러한 R 패키지를 직접 활용하는 것이 가장 좋은 방법이겠지만, 초보자의 경우 다소간의 어려움을 겪을 수 있다. <a href="https://httr2.r-lib.org/"><strong>httr2</strong></a> 함수가 다른 패키지의 함수에 비해 개념적으로 이해하기 어려운 측면이 있기 때문이기도 하고, 데이터를 획득하는 구체적인 과정이 API 마다 조금씩 다르기 때문이기도 하다.</p>
-<p>이러한 어려움을 들어주기 위해 일종의 연결 패키지들이 개발되어 있는데, 이러한 패키지를 래퍼 패키지(wrapper package)라고 부른다. 래퍼 패키지들은 사용자와 API 수집용 패키지 사이에서 일종의 가교 역할을 하는 것으로, 사용자들이 사용하기 편한 함수를 제공함으로써 보다 손쉽게 오픈 API를 활용할 수 있게 도와준다. 예를 들어, 구글맵스플랫폼(Google Maps Platform)에 API로 접근해 다양한 기능을 활용할 수 있게 도와주는 <a href="https://cran.r-project.org/web/packages/googleway/vignettes/googleway-vignette.html"><strong>googleway</strong></a>와 같은 패키지가 좋은 예가 될 수 있다.</p>
-</section><section id="api를-활용한-kosis-데이터의-수집" class="level3" data-number="3.3"><h3 data-number="3.3" class="anchored" data-anchor-id="api를-활용한-kosis-데이터의-수집">
-<span class="header-section-number">3.3</span> API를 활용한 KOSIS 데이터의 수집</h3>
-<p>KOSIS를 포함한 많은 대한민국의 데이터 포털은 개방 API 서비스를 제공하고 있다. KOSIS는 공유서비스 <a href="https://kosis.kr/openapi/">홈페이지</a>를 통해 Open API를 통한 데이터 수집을 권장하고 있다. <a href="https://kosis.kr/openapi/devGuide/devGuide_0101List.do">개발 가이드</a>를 통해 R을 포함한 다양한 프로그래밍 언어에서 KOSIS의 개방 API 서비스를 활용하는 구체적인 코드를 제공하고 있기도 하다. 가이드 북을 읽어 보면, 앞에서 언급한 R의 <a href="https://httr.r-lib.org/"><strong>httr</strong></a>, <a href="https://jeroen.r-universe.dev/jsonlite"><strong>jsonlite</strong></a>, <a href="https://rvest.tidyverse.org/"><strong>rvest</strong></a>와 같은 패키지가 활용됨을 알 수 있다.</p>
-<p>앞에서 설명한 것처럼, API용 패키지를 직접 사용할 수도 있지만, 래퍼 패키지가 존재하기만 한다면 그것을 활용하는 것이 훨씬 손쉬운 옵션일 수 있다. 놀랍게도 한국의 주석훈(Seokhoon Joo)이라는 분이 그러한 기능을 하는 <a href="https://cran.r-project.org/web/packages/kosis/"><strong>kosis</strong></a>라는 패키지를 이미 개발해 두었고, 그것을 활용하고자 한다.</p>
-<p>실습 주제는 2023년 센서스 인구 기준으로 전국의 17개 시도별 ’지방소멸위험지수’를 계산하고 그래프의 형태로 표현하는 것이다.</p>
-<section id="kosis에서-api-key-받기" class="level4" data-number="3.3.1"><h4 data-number="3.3.1" class="anchored" data-anchor-id="kosis에서-api-key-받기">
-<span class="header-section-number">3.3.1</span> KOSIS에서 API KEY 받기</h4>
+</section><section id="두-변수-간의-공변동" class="level3" data-number="2.2"><h3 data-number="2.2" class="anchored" data-anchor-id="두-변수-간의-공변동">
+<span class="header-section-number">2.2</span> 두 변수 간의 공변동</h3>
+<p>공변동(covariation)은 두 변수간의 관련성을 포괄적으로 부르는 통계학적인 용어이다. 어떤 두 변수가 개입되는냐에 따라 몇 가지 종류로 나누어 살펴본다.</p>
 <ul>
-<li><p>KOSIS 공유서비스 웹페이지(<a href="https://kosis.kr/openapi/" class="uri">https://kosis.kr/openapi/</a>) 접속</p></li>
-<li>
-<p>상단의 [활용신청] 탭 클릭</p>
-<ul>
-<li>통계청의 ONE-ID로 통합로그인(없으면 회원가입 필수)</li>
+<li><p>한 범주형 변수와 한 수치형 변수</p></li>
+<li><p>두 범주형 변수</p></li>
+<li><p>두 수치형 변수</p></li>
 </ul>
-</li>
-<li>
-<p>활용신청하여 사용자 인증키 획득</p>
-<ul>
-<li>사용자 인증키는 마이페이지에서 언제든 확인 가능</li>
-</ul>
-</li>
-</ul></section><section id="패키지-설치-및-인증키-등록" class="level4" data-number="3.3.2"><h4 data-number="3.3.2" class="anchored" data-anchor-id="패키지-설치-및-인증키-등록">
-<span class="header-section-number">3.3.2</span> 패키지 설치 및 인증키 등록</h4>
-<p>우선 <a href="https://cran.r-project.org/web/packages/kosis/"><strong>kosis</strong></a> 패키지를 오른쪽 하단 윈도우의 Packages 탭을 활용하여 인스톨한다. 이후에 아래와 같이 <a href="https://cran.r-project.org/web/packages/kosis/"><strong>kosis</strong></a>와 <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a> 패키지를 불러온다.</p>
+<section id="한-범주형-변수와-한-수치형-변수" class="level4" data-number="2.2.1"><h4 data-number="2.2.1" class="anchored" data-anchor-id="한-범주형-변수와-한-수치형-변수">
+<span class="header-section-number">2.2.1</span> 한 범주형 변수와 한 수치형 변수</h4>
+<p>범주형 변수인 대륙에 의거해 수치형 변수인 일인당 GDP의 변동을 탐색한다.</p>
 <div class="cell">
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">kosis</span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><a href="https://cran.r-project.org/web/packages/kosis/"><strong>kosis</strong></a> 패키지의 <code><a href="https://rdrr.io/pkg/kosis/man/kosis.setKey.html">kosis.setKey()</a></code> 함수를 이용하여 인증키를 등록한다. Your Key Here 자리에 부여받은 인증키를 붙여 넣는다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/kosis/man/kosis.setKey.html">kosis.setKey</a></span><span class="op">(</span>apikey <span class="op">=</span> <span class="st">"Your Key Here"</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="데이터-추출" class="level4" data-number="3.3.3"><h4 data-number="3.3.3" class="anchored" data-anchor-id="데이터-추출">
-<span class="header-section-number">3.3.3</span> 데이터 추출</h4>
-<p>가장 유용한 방식은 <a href="https://cran.r-project.org/web/packages/kosis/"><strong>kosis</strong></a> 패키지의 <code><a href="https://rdrr.io/pkg/kosis/man/getStatDataFromURL.html">getStatDataFromURL()</a></code> 함수를 활용하는 것이다. KOSIS의 데이터 서비스 구조를 감안할 때 이 것이 좀 더 용이한 방식일 수 있다. 데이터 추출은 다음과 같이 두 단계의 과정을 거친다.</p>
-<ul>
-<li><p>KOSIS에서 필요한 데이터의 위치에 대한 URL 정보를 획득한다.</p></li>
-<li><p><code><a href="https://rdrr.io/pkg/kosis/man/getStatDataFromURL.html">getStatDataFromURL()</a></code> 함수를 활용하여 데이터를 추출한다.</p></li>
-</ul>
-<p>구체적인 수행 과정은 다음과 같다.</p>
-<p>첫째, <a href="https://kosis.kr/">KOSIS</a>에 로그인한다. 이것은 api key를 활용하기 위한 필수 조건이다.</p>
-<p>둘째, 인구 센서스 데이터를 바탕으로 시도별 지방소멸위험지수를 계산하고자 하기 때문에, 최신 인구 센서스의 지역별 20~39세의 여성 인구와 65세 이상의 전체 인구에 대한 데이터가 필요하다. KOSIS 홈페이지를 탐색하여 필요한 데이터가 있는 위치를 찾아간다.</p>
-<ul>
-<li>[국내통계]-[주제별 통계]-[인구]-[인구총조사]-[인구부문]-[총조사인구(2015년 이후)]-[전수부문 (등록센서스, 2015년 이후)]-[전수기본표]-[연령 및 성별 인구]</li>
-</ul>
-<p>셋째, ’조회설정’을 클릭하여 다음과 같이 선택한다.</p>
-<ul>
-<li><p>항목: ‘총인구(명)’, ‘총인구_남자(명)’, ’총인구_여자(명)’만 선택(더 많은 항목을 선택하면 데이터가 너무 커 에러가 발생)</p></li>
-<li><p>행정구역별(읍면동): ‘1 레벨’과 ’2 레벨’ 선택(’1 레벨’은 시도 수준, ’2 레벨’은 시군구 수준)</p></li>
-</ul>
-<p>넷째, ‘조회설정’ 창을 없앤 후(조회창의 왼편 가운데의 화살표 클릭), 표의 오른편 상단에 있는 여러개 탭 중 ‘OPENAPI’ 탭을 클릭한다. 다음과 같이 선택한다.</p>
-<ul>
-<li><p>조회기간 설정: ‘기간설정’ 버턴을 누른 후, 기간설정이 2023~2023년인지 확인한다.</p></li>
-<li><p>응답필드 설정: 하나씩 눌러 모두 선택한 후, ‘URL생성’ 탭을 클릭한다. 그리고 나서 ‘URL 복사’ 탭을 클릭한다. URL 속에 api key가 포함되어 있음을 확인한다.</p></li>
-</ul>
-<p>다섯째, 다음과 같이 실행한다. “Your URL” 자리에 복사한 URL를 붙여 넣는다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">your_url</span> <span class="op">&lt;-</span> <span class="st">"Your URL"</span></span>
-<span><span class="va">data_api</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/kosis/man/getStatDataFromURL.html">getStatDataFromURL</a></span><span class="op">(</span>url <span class="op">=</span> <span class="va">your_url</span><span class="op">)</span></span>
-<span><span class="va">data_api</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>  ORG_ID     TBL_ID                     TBL_NM C1 C1_NM          C1_OBJ_NM  C2
-1    101 DT_1IN1503 연령 및 성별 인구 – 읍면동 00  전국 행정구역별(읍면동) 000
-2    101 DT_1IN1503 연령 및 성별 인구 – 읍면동 00  전국 행정구역별(읍면동) 000
-3    101 DT_1IN1503 연령 및 성별 인구 – 읍면동 00  전국 행정구역별(읍면동) 000
-4    101 DT_1IN1503 연령 및 성별 인구 – 읍면동 00  전국 행정구역별(읍면동) 005
-5    101 DT_1IN1503 연령 및 성별 인구 – 읍면동 00  전국 행정구역별(읍면동) 005
-  C2_NM C2_OBJ_NM ITM_ID          ITM_NM        ITM_NM_ENG PRD_SE PRD_DE
-1  합계    연령별    T00      총인구(명)        Population      A   2023
-2  합계    연령별    T01 총인구_남자(명)   Population_Male      A   2023
-3  합계    연령별    T02 총인구_여자(명) Population_Female      A   2023
-4 0~4세    연령별    T00      총인구(명)        Population      A   2023
-5 0~4세    연령별    T01 총인구_남자(명)   Population_Male      A   2023
-        DT
-1 51774521
-2 25903852
-3 25870669
-4  1361737
-5   697702</code></pre>
-</div>
-</div>
-<p>동일한 과제를 <a href="https://httr2.r-lib.org/"><strong>httr2</strong></a> 패키지로 실행해 본다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://httr2.r-lib.org">httr2</a></span><span class="op">)</span></span>
-<span><span class="va">your_url</span> <span class="op">&lt;-</span> <span class="st">"Your URL"</span></span>
-<span><span class="va">data_api</span> <span class="op">&lt;-</span> <span class="va">your_url</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/request.html">request</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/req_perform.html">req_perform</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/resp_body_raw.html">resp_body_json</a></span><span class="op">(</span>check_type <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind_rows.html">bind_rows</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="va">data_api</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 20
-  C1_OBJ_NM    C2_NM DT    C2    C1    PRD_SE ITM_ID TBL_ID ITM_NM TBL_NM PRD_DE
-  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; 
-1 행정구역별(읍면동)…… 합계  5177… 000   00    A      T00    DT_1I… 총인구(명… 연령 및 … 2023  
-2 행정구역별(읍면동)…… 합계  2590… 000   00    A      T01    DT_1I… 총인구_남… 연령 및 … 2023  
-3 행정구역별(읍면동)…… 합계  2587… 000   00    A      T02    DT_1I… 총인구_여… 연령 및 … 2023  
-4 행정구역별(읍면동)…… 0~4세 1361… 005   00    A      T00    DT_1I… 총인구(명… 연령 및 … 2023  
-5 행정구역별(읍면동)…… 0~4세 6977… 005   00    A      T01    DT_1I… 총인구_남… 연령 및 … 2023  
-# ℹ 9 more variables: LST_CHN_DE &lt;chr&gt;, C1_NM_ENG &lt;chr&gt;, C1_NM &lt;chr&gt;,
-#   ITM_NM_ENG &lt;chr&gt;, C2_OBJ_NM_ENG &lt;chr&gt;, C2_NM_ENG &lt;chr&gt;, ORG_ID &lt;chr&gt;,
-#   C1_OBJ_NM_ENG &lt;chr&gt;, C2_OBJ_NM &lt;chr&gt;</code></pre>
-</div>
-</div>
-</section><section id="데이터-정리-및-변형" class="level4" data-number="3.3.4"><h4 data-number="3.3.4" class="anchored" data-anchor-id="데이터-정리-및-변형">
-<span class="header-section-number">3.3.4</span> 데이터 정리 및 변형</h4>
-<p>아래와 같이 데이터를 정리한다. 최종적으로 지역별 지역소멸위험지수를 산출한다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data</span> <span class="op">&lt;-</span> <span class="va">data_api</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">C1</span>, <span class="va">C1_NM</span>, <span class="va">C2</span>, <span class="va">C2_NM</span>, <span class="va">ITM_ID</span>, <span class="va">ITM_NM</span>, <span class="va">DT</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html">across</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">C1</span>, <span class="va">DT</span><span class="op">)</span>, <span class="va">as.numeric</span><span class="op">)</span>,</span>
-<span>    ITM_ID <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_match.html">case_match</a></span><span class="op">(</span></span>
-<span>    <span class="va">ITM_ID</span>, </span>
-<span>    <span class="st">"T00"</span> <span class="op">~</span> <span class="st">"T"</span>,</span>
-<span>    <span class="st">"T01"</span> <span class="op">~</span> <span class="st">"M"</span>,</span>
-<span>    <span class="st">"T02"</span> <span class="op">~</span> <span class="st">"F"</span><span class="op">)</span>,</span>
-<span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unite.html">unite</a></span><span class="op">(</span><span class="st">"gender_age"</span>, <span class="va">ITM_ID</span>, <span class="va">C2_NM</span>, sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider</a></span><span class="op">(</span></span>
-<span>    id_cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">C1</span>, <span class="va">C1_NM</span><span class="op">)</span>,</span>
-<span>    names_from <span class="op">=</span> <span class="va">gender_age</span>,</span>
-<span>    values_from <span class="op">=</span> <span class="va">DT</span></span>
-<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
-<span>    index <span class="op">=</span> <span class="op">(</span><span class="va">`F_20~24세`</span> <span class="op">+</span> <span class="va">`F_25~29세`</span> <span class="op">+</span> <span class="va">`F_30~34세`</span> <span class="op">+</span> <span class="va">`F_35~39세`</span><span class="op">)</span> <span class="op">/</span> <span class="va">`T_65세이상`</span></span>
-<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span></span>
-<span>    <span class="va">C1</span>, <span class="va">C1_NM</span>, <span class="va">index</span></span>
-<span>  <span class="op">)</span> </span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-노트
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>여기서는 <code><a href="https://dplyr.tidyverse.org/reference/case_match.html">case_match()</a></code> 함수에 주목할 필요가 있다. <code><a href="https://dplyr.tidyverse.org/reference/case_match.html">case_match()</a></code> 함수는 데이터 변형을 위한 <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a>의 핵심 패키지인 <a href="https://dplyr.tidyverse.org/"><strong>dplyr</strong></a>의 벡터 함수로서, 벡터의 각 요소에 조건 부합성을 검토하고 그것을 통해 새로운 값을 부여할 수 있게 해준다. 우선 변환을 위한 컬럼을 지정하고, <code>~</code> 기호를 중심으로 왼편에 현재의 값을, 오른편에 새로운 값을 놓으면 된다. 보통 여러 조건을 나열해 모든 케이스가 새로운 값을 갖게 하지만, 간혹 해당 되는 조건이 없는 케이스를 위해 <code>.default</code> 아규먼트를 사용한다. <a href="https://forcats.tidyverse.org/"><strong>forcats</strong></a> 패키지에서 문자형 벡터의 레벨(level)을 새로운 레벨로 교체하는데 사용되는 <code><a href="https://forcats.tidyverse.org/reference/fct_recode.html">fct_recode()</a></code> 함수와 유사하다. <code><a href="https://dplyr.tidyverse.org/reference/case_match.html">case_match()</a></code> 함수와 유사한 함수에 <code><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when()</a></code>가 있다. <code><a href="https://dplyr.tidyverse.org/reference/case_match.html">case_match()</a></code> 함수가 단일 컬럼의 개별 값을 전환할 때 사용되는 함수라면, <code><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when()</a></code>은 단일 컬럼에 다양한 조건을 설정하거나 두 개 이상의 컬럼이 개입되는 경우에 사용할 수 있는 함수이다. 따라서 <code><a href="https://dplyr.tidyverse.org/reference/case_match.html">case_match()</a></code> 함수의 경우는 컬럼명이 한 번만 등장하면 되지만, <code><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when()</a></code>에서는 개별 조건에 해당 컬럼명이 등장해야 한다. 아래의 그래프에 활용의 예가 나타나 있다.</p>
-</div>
-</div>
-<p>시도 데이터와 시군구 데이터를 분리하여 저장한다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data_sido</span> <span class="op">&lt;-</span> <span class="va">data</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nchar.html">nchar</a></span><span class="op">(</span><span class="va">C1</span><span class="op">)</span> <span class="op">==</span> <span class="fl">2</span><span class="op">)</span> </span>
-<span><span class="va">data_sigungu</span> <span class="op">&lt;-</span> <span class="va">data</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nchar.html">nchar</a></span><span class="op">(</span><span class="va">C1</span><span class="op">)</span> <span class="op">==</span> <span class="fl">5</span> <span class="op">&amp;</span> <span class="op">!</span><span class="va">C1_NM</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"동부"</span>, <span class="st">"면부"</span>, <span class="st">"읍부"</span><span class="op">)</span> <span class="op">&amp;</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_sub.html">str_sub</a></span><span class="op">(</span><span class="va">C1</span>, <span class="fl">5</span>, <span class="fl">5</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_rds.html">write_rds</a></span><span class="op">(</span><span class="va">data_sido</span>, <span class="st">"data_sido.rds"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_rds.html">write_rds</a></span><span class="op">(</span><span class="va">data_sigungu</span>, <span class="st">"data_sigungu.rds"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_rds.html">read_rds</a></span><span class="op">(</span><span class="st">"data_sigungu.rds"</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 229 × 3
-      C1 C1_NM    index
-   &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;
- 1 11010 종로구   0.932
- 2 11020 중구     0.932
- 3 11030 용산구   0.972
- 4 11040 성동구   0.951
- 5 11050 광진구   1.15 
- 6 11060 동대문구 0.971
- 7 11070 중랑구   0.706
- 8 11080 성북구   0.884
- 9 11090 강북구   0.561
-10 11100 도봉구   0.535
-# ℹ 219 more rows</code></pre>
-</div>
-</div>
-</section><section id="그래프-작성" class="level4" data-number="3.3.5"><h4 data-number="3.3.5" class="anchored" data-anchor-id="그래프-작성">
-<span class="header-section-number">3.3.5</span> 그래프 작성</h4>
-<p>그래프 작성의 코드가 다소 복잡해 보인다. 이렇게 된 것은 인구소멸위험지수 연구에서 주로 사용되는 5개의 위험도 클래스의 구분법을 적용하고, 위험도 클래스별로 특정한 색상을 적용하고, 그래프의 범례에 5개의 클래스가 모두 나타나게 하려했기 때문이다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data_sido_new</span> <span class="op">&lt;-</span> <span class="va">data_sido</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
-<span>    index_class <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span></span>
-<span>      <span class="va">index</span> <span class="op">&lt;</span> <span class="fl">0.2</span> <span class="op">~</span> <span class="st">"1"</span>,</span>
-<span>      <span class="va">index</span> <span class="op">&gt;=</span> <span class="fl">0.2</span> <span class="op">&amp;</span> <span class="va">index</span> <span class="op">&lt;</span> <span class="fl">0.5</span> <span class="op">~</span> <span class="st">"2"</span>,</span>
-<span>      <span class="va">index</span> <span class="op">&gt;=</span> <span class="fl">0.5</span> <span class="op">&amp;</span> <span class="va">index</span> <span class="op">&lt;</span> <span class="fl">1.0</span> <span class="op">~</span> <span class="st">"3"</span>,</span>
-<span>      <span class="va">index</span> <span class="op">&gt;=</span> <span class="fl">1.0</span> <span class="op">&amp;</span> <span class="va">index</span> <span class="op">&lt;</span> <span class="fl">1.5</span> <span class="op">~</span> <span class="st">"4"</span>,</span>
-<span>      <span class="va">index</span> <span class="op">&gt;=</span> <span class="fl">1.5</span> <span class="op">~</span> <span class="st">"5"</span></span>
-<span>    <span class="op">)</span>,</span>
-<span>    index_class <span class="op">=</span> <span class="fu"><a href="https://forcats.tidyverse.org/reference/fct.html">fct</a></span><span class="op">(</span><span class="va">index_class</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span><span class="op">)</span></span>
-<span>  <span class="op">)</span></span>
-<span></span>
-<span><span class="va">class_color</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"1"</span> <span class="op">=</span> <span class="st">"#d7191c"</span>, <span class="st">"2"</span> <span class="op">=</span> <span class="st">"#fdae61"</span>,</span>
-<span>                 <span class="st">"3"</span> <span class="op">=</span> <span class="st">"#ffffbf"</span>, <span class="st">"4"</span> <span class="op">=</span> <span class="st">"#a6d96a"</span>, </span>
-<span>                 <span class="st">"5"</span> <span class="op">=</span> <span class="st">"#1a9641"</span><span class="op">)</span></span>
-<span><span class="va">data_sido_new</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">index</span>, y <span class="op">=</span> <span class="fu"><a href="https://forcats.tidyverse.org/reference/fct_reorder.html">fct_reorder</a></span><span class="op">(</span><span class="va">C1_NM</span>, <span class="va">index</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">index_class</span><span class="op">)</span>, show.legend <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">index</span>, digits <span class="op">=</span> <span class="fl">3</span><span class="op">)</span><span class="op">)</span>, hjust <span class="op">=</span> <span class="op">-</span><span class="fl">0.1</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1.5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Classes"</span>, </span>
-<span>                    labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"&lt; 0.2"</span>, <span class="st">"0.2 ~ 0.5"</span>, <span class="st">"0.5 ~ 1.0"</span>, </span>
-<span>                               <span class="st">"1.0 ~ 1.5"</span>, <span class="st">"&gt;= 1.5"</span><span class="op">)</span>, </span>
-<span>                    values <span class="op">=</span> <span class="va">class_color</span>, drop <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"인구소멸위험지수, 2023년"</span>, </span>
-<span>       x <span class="op">=</span> <span class="st">"인구소멸위험지수"</span>, </span>
-<span>       y <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_density.html">geom_density</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">continent</span>, fill <span class="op">=</span> <span class="va">continent</span><span class="op">)</span>, alpha <span class="op">=</span> <span class="fl">0.25</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="exec_07_files/figure-html/unnamed-chunk-27-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="exec_07_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></a></p>
-</figure>
+<div id="fig-density-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-density-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_07_files/figure-html/fig-density-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-glightbox="description: .lightbox-desc-3"><img src="exec_07_files/figure-html/fig-density-1-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-density-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;2: 한 범주형 변수와 한 수치형 변수: 밀도 분포
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>일인당 GDP의 대륙간 차이를 박스플롯을 통해 탐색할 수도 있다. 여기서 <code><a href="https://forcats.tidyverse.org/reference/fct_reorder.html">fct_reorder()</a></code> 는 데이터 시각화에서 매우 중요하다. 이것은 범주 변수의 범주 순서를 바꾸어 주는데, <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a>의 핵심 패키지인 <a href="https://forcats.tidyverse.org/"><strong>forcats</strong></a>의 한 함수이다. 이것을 적용하지 않으면 원래 지정된 순서인 알파벳 순서에 따라 박스플롯이 배열된다. 이것을 일인당 GDP의 중위수의 순서로 배열하게 한 것이다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span>, y <span class="op">=</span> <span class="fu"><a href="https://forcats.tidyverse.org/reference/fct_reorder.html">fct_reorder</a></span><span class="op">(</span><span class="va">continent</span>, <span class="va">gdpPercap</span>, <span class="va">median</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">continent</span><span class="op">)</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-boxplot-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-boxplot-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_07_files/figure-html/fig-boxplot-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" data-glightbox="description: .lightbox-desc-4"><img src="exec_07_files/figure-html/fig-boxplot-1-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boxplot-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;3: 한 범주형 변수와 한 수치형 변수: 박스틀롯
+</figcaption></figure>
+</div>
+</div>
+</div>
+</section><section id="두-범주형-변수" class="level4" data-number="2.2.2"><h4 data-number="2.2.2" class="anchored" data-anchor-id="두-범주형-변수">
+<span class="header-section-number">2.2.2</span> 두 범주형 변수</h4>
+<p>수치형 변수인 일인당 GDP를 동일 간격의 5개 그룹으로 나눈 새로운 범주형 변수를 생성하고, 그것과 또 다른 범주 변수인 대륙과의 관련성을 탐색한다. <code><a href="https://ggplot2.tidyverse.org/reference/geom_count.html">geom_count()</a></code> 기하 함수가 중요한 역할을 한다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
+<span>    gdp_class <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/cut_interval.html">cut_interval</a></span><span class="op">(</span><span class="va">gdpPercap</span>, n <span class="op">=</span> <span class="fl">5</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"very low"</span>, <span class="st">"low"</span>, <span class="st">"middle"</span>, <span class="st">"high"</span>, <span class="st">"very high"</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">continent</span>, y <span class="op">=</span> <span class="va">gdp_class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_count.html">geom_count</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-count-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-count-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_07_files/figure-html/fig-count-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" data-glightbox="description: .lightbox-desc-5"><img src="exec_07_files/figure-html/fig-count-1-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-count-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;4: 두 범주형 변수: 카운트플롯
+</figcaption></figure>
 </div>
 </div>
 </div>
@@ -1227,365 +585,160 @@ div.csl-indent {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>우선 <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a>에서 문자열에 특화된 핵심 패키지인 <a href="https://forcats.tidyverse.org/"><strong>forcats</strong></a>의 두 함수에 대해 언급하고자 한다. <code><a href="https://forcats.tidyverse.org/reference/fct.html">fct()</a></code>는 가장 기본이 되는 함수로 일반 문자형 컬럼을 팩터형(factor) 컬럼으로 전환해주는 함수이다. 동시에 레벨을 지정할 수 있다. <code><a href="https://forcats.tidyverse.org/reference/fct_relevel.html">fct_relevel()</a></code> 함수는 팩터 벡터의 기존 레벨의 순서를 바꾸어주는 여러 함수들 중 하나이다. <code><a href="https://forcats.tidyverse.org/reference/fct_reorder.html">fct_reorder()</a></code>는 특정 변수의 레벨 순서를 다른 변수의 값의 순서에 의거해 바꾸어준다. 비슷한 함수에 <code><a href="https://forcats.tidyverse.org/reference/fct_reorder.html">fct_reorder2()</a></code>가 있는데, 이것은 특정 변수의 레벨 순서를 다른 변수의 값의 순서에 의거하여 바꾸되 그 다른 변수의 값을 또 다른 변수를 통해 규정하고자 할 때 사용할 수 있다. 위의 예를 든다면, 시도의 순서를 인구소멸위험지수의 크기에 따라 배열하되, 만약 여러 연도에 걸쳐 인구소멸위험지수가 계산되었을 경우, 특정 연도(주로 가장 큰 연도)의 값에 의거해 배열하는 것이다. 이외에 레벨의 순서를 역방향으로 바꿀 수 있는 <code><a href="https://forcats.tidyverse.org/reference/fct_rev.html">fct_rev()</a></code> 함수가 빈번하게 사용된다. <a href="https://stringr.tidyverse.org/"><strong>ggplot2</strong></a> 패키지의 <code><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual()</a></code> 함수 역시 매우 중요한 역할을 한다. 이것은 막대 그래프를 채울 컬러의 스케일링을 사용자가 메뉴얼하게 할 수 있게 해주는데, 컬러 팔레트(<code>class_color</code>), 범례의 표제와 라벨을 메뉴얼하게 적용할 수 있다. 마지막에 있는 <code>drop = FALSE</code> 인수가 매우 중요한 역할을 한다. 그래프를 보면 시도 수준의 인구소멸위험지수는 양 극단의 두 계급에 케이스를 갖지 않는다. 전체 계급을 보여주는 것이 의미있다고 판단한다면, <code>drop = FALSE</code> 아규먼트를 통해 모든 계급이 범례에 드러나게 할 수 있다.</p>
-</div>
-</div>
-</section><section id="또-다른-방식" class="level4" data-number="3.3.6"><h4 data-number="3.3.6" class="anchored" data-anchor-id="또-다른-방식">
-<span class="header-section-number">3.3.6</span> 또 다른 방식</h4>
-<p>또 다른 방식은 <a href="https://cran.r-project.org/web/packages/kosis/"><strong>kosis</strong></a> 패키지의 <code><a href="https://rdrr.io/pkg/kosis/man/getStatData.html">getStatData()</a></code> 함수를 활용하는 것이다. 해당 함수에 기관명(101)과 데이터 코드(DT_1IN503)을 아규먼트에 입력하면 데이터를 불러올 수 있다. 위의 방식의 한 연도의 모든 지역에 대한 데이터를 얻기에 용이하다면, 이 방식은 하나의 지역에 대한 시계열 데이터를 수집하는데 유용하다. 아래의 코드를 통해 서울시 종로구(코드: 11010)의 2015~2023년 데이터를 획득할 수 있다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">region_code</span> <span class="op">&lt;-</span> <span class="st">"11010"</span></span>
-<span><span class="va">data_api</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/kosis/man/getStatData.html">getStatData</a></span><span class="op">(</span></span>
-<span>  orgId <span class="op">=</span> <span class="fl">101</span>, </span>
-<span>  tblId <span class="op">=</span> <span class="st">"DT_1IN1503"</span>, </span>
-<span>  prdSe <span class="op">=</span> <span class="st">"Y"</span>,</span>
-<span>  startPrdDe <span class="op">=</span> <span class="st">"2015"</span>, </span>
-<span>  endPrdDe <span class="op">=</span> <span class="st">"20231101"</span>, </span>
-<span>  objL1 <span class="op">=</span> <span class="va">region_code</span>, </span>
-<span>  objL2 <span class="op">=</span> <span class="st">"ALL"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_length.html">str_length</a></span><span class="op">(</span><span class="va">C2</span><span class="op">)</span> <span class="op">==</span> <span class="fl">3</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-힌트
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code>region_code &lt;- "11010+11020"</code>과 같은 식으로 설정하면 두 개 이상의 지역에 대한 데이터를 한꺼번에 구할 수도 있다.</p>
-</div>
-</div>
-<p>동일한 과제를 <a href="https://httr2.r-lib.org/"><strong>httr2</strong></a> 패키지로 실행해 본다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://httr2.r-lib.org">httr2</a></span><span class="op">)</span></span>
-<span><span class="va">your_key</span> <span class="op">&lt;-</span> <span class="st">"your_key"</span></span>
-<span><span class="va">your_url</span> <span class="op">&lt;-</span> <span class="st">"https://kosis.kr/openapi/Param/statisticsParameterData.do"</span></span>
-<span><span class="va">region_code</span> <span class="op">&lt;-</span> <span class="st">"11010"</span></span>
-<span><span class="va">data_api</span> <span class="op">&lt;-</span> <span class="va">your_url</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/request.html">request</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/req_url.html">req_url_query</a></span><span class="op">(</span></span>
-<span>    method <span class="op">=</span> <span class="st">"getList"</span>,</span>
-<span>    apiKey <span class="op">=</span> <span class="va">your_key</span>,</span>
-<span>    format <span class="op">=</span> <span class="st">"json"</span>,</span>
-<span>    jsonVD <span class="op">=</span> <span class="st">"Y"</span>,</span>
-<span>    orgId <span class="op">=</span> <span class="st">"101"</span>,</span>
-<span>    tblId <span class="op">=</span> <span class="st">"DT_1IN1503"</span>,</span>
-<span>    prdSe <span class="op">=</span> <span class="st">"Y"</span>,</span>
-<span>    startPrdDe <span class="op">=</span> <span class="st">"2015"</span>,</span>
-<span>    endPrdDe <span class="op">=</span> <span class="st">"20231101"</span>,</span>
-<span>    objL1 <span class="op">=</span> <span class="va">region_code</span>,  </span>
-<span>    objL2 <span class="op">=</span> <span class="st">"ALL"</span>,</span>
-<span>    itmId <span class="op">=</span> <span class="st">"ALL"</span></span>
-<span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/req_perform.html">req_perform</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/resp_body_raw.html">resp_body_json</a></span><span class="op">(</span>check_type <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind_rows.html">bind_rows</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>아래와 같은 데이터 정리 및 변형 과정이 필요하다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data</span> <span class="op">&lt;-</span> <span class="va">data_api</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">C1</span>, <span class="va">C1_NM</span>, <span class="va">C2</span>, <span class="va">C2_NM</span>, <span class="va">ITM_ID</span>, <span class="va">ITM_NM</span>, <span class="va">DT</span>, <span class="va">PRD_DE</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">ITM_ID</span> <span class="op">==</span> <span class="st">"T00"</span> <span class="op">|</span> <span class="va">ITM_ID</span> <span class="op">==</span> <span class="st">"T01"</span> <span class="op">|</span> <span class="va">ITM_ID</span> <span class="op">==</span> <span class="st">"T02"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html">across</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">C1</span>, <span class="va">DT</span><span class="op">)</span>, <span class="va">as.numeric</span><span class="op">)</span>,</span>
-<span>    ITM_ID <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_match.html">case_match</a></span><span class="op">(</span></span>
-<span>    <span class="va">ITM_ID</span>, </span>
-<span>    <span class="st">"T00"</span> <span class="op">~</span> <span class="st">"T"</span>,</span>
-<span>    <span class="st">"T01"</span> <span class="op">~</span> <span class="st">"M"</span>,</span>
-<span>    <span class="st">"T02"</span> <span class="op">~</span> <span class="st">"F"</span><span class="op">)</span>,</span>
-<span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unite.html">unite</a></span><span class="op">(</span><span class="st">"gender_age"</span>, <span class="va">ITM_ID</span>, <span class="va">C2_NM</span>, sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider</a></span><span class="op">(</span></span>
-<span>    id_cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">C1</span>, <span class="va">C1_NM</span>, <span class="va">PRD_DE</span><span class="op">)</span>,</span>
-<span>    names_from <span class="op">=</span> <span class="va">gender_age</span>,</span>
-<span>    values_from <span class="op">=</span> <span class="va">DT</span></span>
-<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
-<span>    index <span class="op">=</span> <span class="op">(</span><span class="va">`F_20~24세`</span> <span class="op">+</span> <span class="va">`F_25~29세`</span> <span class="op">+</span> <span class="va">`F_30~34세`</span> <span class="op">+</span> <span class="va">`F_35~39세`</span><span class="op">)</span> <span class="op">/</span> <span class="va">`T_65세이상`</span></span>
-<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span></span>
-<span>    <span class="va">C1</span>, <span class="va">C1_NM</span>, <span class="va">index</span>, <span class="va">PRD_DE</span></span>
-<span>  <span class="op">)</span> </span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>이 데이터를 바탕으로 종로구의 인구소멸위험지수의 변화 추이를 관찰할 수 있다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">region</span> <span class="op">&lt;-</span> <span class="va">data</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">C1_NM</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="va">data</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">PRD_DE</span>, y <span class="op">=</span> <span class="va">index</span>, group <span class="op">=</span> <span class="va">C1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span>, linewidth <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">region</span>, <span class="st">" 인구소멸위험지수 추이"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span>label <span class="op">=</span> <span class="st">"연도"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span>label <span class="op">=</span> <span class="st">"인구소멸위험지수"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">18</span>, hjust<span class="op">=</span><span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="exec_07_files/figure-html/unnamed-chunk-32-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="exec_07_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid figure-img" width="672"></a></p>
-</figure>
-</div>
-</div>
-</div>
-<p><a href="https://echarts4r.john-coene.com/"><strong>echarts4r</strong></a> 패키지를 이용해 인터랙티브 플롯을 제작해 본다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://echarts4r.john-coene.com/">echarts4r</a></span><span class="op">)</span></span>
-<span><span class="va">data</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">C1_NM</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="http://echarts4r.john-coene.com/reference/init.html">e_charts</a></span><span class="op">(</span><span class="va">PRD_DE</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="http://echarts4r.john-coene.com/reference/e_line.html">e_line</a></span><span class="op">(</span><span class="va">index</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="http://echarts4r.john-coene.com/reference/e-tooltip.html">e_tooltip</a></span><span class="op">(</span>trigger <span class="op">=</span> <span class="st">"axis"</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div class="echarts4r html-widget html-fill-item" id="htmlwidget-bf53579de3f6ffe36867" style="width:100%;height:500px;"></div>
-<script type="application/json" data-for="htmlwidget-bf53579de3f6ffe36867">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true}],"xAxis":[{"data":["2015","2016","2017","2018","2019","2020","2021","2022","2023"],"type":"category","boundaryGap":true}],"legend":{"data":["종로구"]},"series":[{"data":[{"value":["2015","1.1114206"]},{"value":["2016","1.0766989"]},{"value":["2017","1.0761595"]},{"value":["2018","1.0902399"]},{"value":["2019","1.0563815"]},{"value":["2020","0.9858794"]},{"value":["2021","0.9728141"]},{"value":["2022","0.9651754"]},{"value":["2023","0.9324705"]}],"yAxisIndex":0,"xAxisIndex":0,"name":"종로구","type":"line","coordinateSystem":"cartesian2d"}],"tooltip":{"trigger":"axis"}},"dispose":true},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-<p>이 모든 과정을 함수로 만들고, Base R의 <code>read_line()</code> 함수를 활용하면 초보적인 상호작용형 도구를 만들 수 있다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">exInd</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span><span class="op">{</span></span>
-<span>  <span class="co"># Library</span></span>
-<span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
-<span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">kosis</span><span class="op">)</span></span>
-<span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/DT">DT</a></span><span class="op">)</span></span>
-<span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ycphs.github.io/openxlsx/index.html">openxlsx</a></span><span class="op">)</span></span>
-<span>  </span>
-<span>  <span class="co"># Table for Searching Region Code</span></span>
-<span>  <span class="va">region_table</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/openxlsx/man/read.xlsx.html">read.xlsx</a></span><span class="op">(</span><span class="st">"https://github.com/Sechang-Kim/gis-lab/raw/download/korea-sigungu-code(2022).xlsx"</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/DT/man/datatable.html">datatable</a></span><span class="op">(</span><span class="va">region_table</span><span class="op">)</span><span class="op">)</span></span>
-<span>  </span>
-<span>  <span class="co"># Input Arguments</span></span>
-<span>  <span class="va">aoi_code</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readline.html">readline</a></span><span class="op">(</span><span class="st">'지역 코드를 입력하세요: '</span><span class="op">)</span></span>
-<span>  <span class="va">start</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/readline.html">readline</a></span><span class="op">(</span><span class="st">'시작 연도를 입력하세요: '</span><span class="op">)</span><span class="op">)</span></span>
-<span>  <span class="va">end</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/readline.html">readline</a></span><span class="op">(</span><span class="st">'종료 연도를 입력하세요: '</span><span class="op">)</span><span class="op">)</span></span>
-<span>  </span>
-<span>  <span class="co"># Data Request</span></span>
-<span>  <span class="va">aoi</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/kosis/man/getStatData.html">getStatData</a></span><span class="op">(</span>orgId <span class="op">=</span> <span class="fl">101</span>, tblId <span class="op">=</span> <span class="st">"DT_1IN1503"</span>, prdSe <span class="op">=</span> <span class="st">"Y"</span>,</span>
-<span>                     startPrdDe <span class="op">=</span> <span class="va">start</span>, endPrdDe <span class="op">=</span> <span class="va">end</span>,</span>
-<span>                     objL1 <span class="op">=</span> <span class="va">aoi_code</span>, objL2 <span class="op">=</span> <span class="st">"ALL"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nchar.html">nchar</a></span><span class="op">(</span><span class="va">C2</span><span class="op">)</span> <span class="op">==</span> <span class="fl">3</span><span class="op">)</span> <span class="co"># Delete 1-age interval(Only 5-age interval)</span></span>
-<span>  </span>
-<span>  <span class="co"># Data Cleansing</span></span>
-<span>  <span class="va">aoi</span> <span class="op">&lt;-</span> <span class="va">aoi</span> <span class="op">|&gt;</span> </span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">C1</span>, <span class="va">C1_NM</span>, <span class="va">C2</span>, <span class="va">C2_NM</span>, <span class="va">ITM_ID</span>, <span class="va">ITM_NM</span>, <span class="va">DT</span>, <span class="va">PRD_DE</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">ITM_ID</span> <span class="op">==</span> <span class="st">"T00"</span> <span class="op">|</span> <span class="va">ITM_ID</span> <span class="op">==</span> <span class="st">"T01"</span> <span class="op">|</span> <span class="va">ITM_ID</span> <span class="op">==</span> <span class="st">"T02"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
-<span>      <span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html">across</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">C1</span>, <span class="va">DT</span><span class="op">)</span>, <span class="va">as.numeric</span><span class="op">)</span>,</span>
-<span>      ITM_ID <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_match.html">case_match</a></span><span class="op">(</span></span>
-<span>        <span class="va">ITM_ID</span>, <span class="st">"T00"</span> <span class="op">~</span> <span class="st">"T"</span>,</span>
-<span>        <span class="st">"T01"</span> <span class="op">~</span> <span class="st">"M"</span>,</span>
-<span>        <span class="st">"T02"</span> <span class="op">~</span> <span class="st">"F"</span><span class="op">)</span>,</span>
-<span>    <span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>    <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unite.html">unite</a></span><span class="op">(</span><span class="st">"gender_age"</span>, <span class="va">ITM_ID</span>, <span class="va">C2_NM</span>, sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>    <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider</a></span><span class="op">(</span></span>
-<span>      id_cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">C1</span>, <span class="va">C1_NM</span>, <span class="va">PRD_DE</span><span class="op">)</span>,</span>
-<span>      names_from <span class="op">=</span> <span class="va">gender_age</span>,</span>
-<span>      values_from <span class="op">=</span> <span class="va">DT</span></span>
-<span>    <span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
-<span>      index <span class="op">=</span> <span class="op">(</span><span class="va">`F_20~24세`</span> <span class="op">+</span> <span class="va">`F_25~29세`</span> <span class="op">+</span> <span class="va">`F_30~34세`</span> <span class="op">+</span> <span class="va">`F_35~39세`</span><span class="op">)</span> <span class="op">/</span> <span class="va">`T_65세이상`</span></span>
-<span>    <span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span></span>
-<span>      <span class="va">C1</span>, <span class="va">C1_NM</span>, <span class="va">index</span>, <span class="va">PRD_DE</span></span>
-<span>    <span class="op">)</span></span>
-<span>  </span>
-<span>  <span class="co">## Visualization</span></span>
-<span>  <span class="va">region</span> <span class="op">&lt;-</span> <span class="va">aoi</span><span class="op">$</span><span class="va">C1_NM</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span> <span class="co"># For Auto-Plot Title</span></span>
-<span>  <span class="va">vis</span> <span class="op">&lt;-</span> <span class="va">aoi</span> <span class="op">|&gt;</span> </span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">PRD_DE</span>, y<span class="op">=</span><span class="va">index</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span>group <span class="op">=</span> <span class="fl">1</span>, linewidth <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">region</span>, <span class="st">" 인구소멸위험지수 추이"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span>label <span class="op">=</span> <span class="st">"연도"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span>label <span class="op">=</span> <span class="st">"인구소멸위험지수"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">18</span>, hjust<span class="op">=</span><span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span>
-<span>  </span>
-<span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">vis</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>함수를 실행해 보자.</p>
-<div class="cell">
-<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">exInd</span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section></section><section id="api를-활용한-naver-뉴스-데이터의-수집" class="level3" data-number="3.4"><h3 data-number="3.4" class="anchored" data-anchor-id="api를-활용한-naver-뉴스-데이터의-수집">
-<span class="header-section-number">3.4</span> API를 활용한 NAVER 뉴스 데이터의 수집</h3>
-<section id="naver-developer" class="level4" data-number="3.4.1"><h4 data-number="3.4.1" class="anchored" data-anchor-id="naver-developer">
-<span class="header-section-number">3.4.1</span> NAVER Developer</h4>
-<p>네이버의 API를 활용하기 위해서는 네이버 <a href="https://developers.naver.com/main/">디벨로퍼</a>에서 오픈 API를 신청해야 한다. 절차를 정리하면 다음과 같다.</p>
-<p>첫째, [Documents]에서 ‘API 공통 가이드’를 살펴본다. 특히 비로그인 방식 오픈 API가 중요한데, 그 중에서 ’검색’ 카테고리에 해당하는 뉴스, 백과사전, 블로그 등 다양한 검색 서비스에 주목한다.</p>
-<p>둘째, [Products]-[서비스 API]-[검색](<a href="https://developers.naver.com/products/service-api/search/search.md" class="uri">https://developers.naver.com/products/service-api/search/search.md</a>)을 선택한다. 여기에는 ’오픈 API 이용 신청’과 ’개발 가이드 보기’가 있는데, 우선 ’개발 가이드 보기’를 숙지한 후 ’오픈 API 이용 신청’을 한다. ’개발 가이드 보기’에서 특히 다음의 몇 가지에 유의한다.</p>
+<p>위의 예에서 <code><a href="https://ggplot2.tidyverse.org/reference/cut_interval.html">cut_interval()</a></code>는 계급구분 혹은 분류를 위해 <a href="https://ggplot2.tidyverse.org/"><strong>ggplot2</strong></a> 패키지가 제공하는 세 가지 보조 함수 중 하나이다.</p>
 <ul>
-<li><p>오픈 API 이용 신청 절차</p></li>
-<li><p>ClientID와 Client Secret 개념</p></li>
-<li><p>요청 URL: https://openapi.naver.com/v1/search/news.json</p></li>
-<li><p>파라미터: query, display, start, sort</p></li>
+<li><p><code><a href="https://ggplot2.tidyverse.org/reference/cut_interval.html">cut_interval()</a></code>: 등간격분류법(equal interval)을 구현하는 것으로, 최대값, 최소값, 계급의 수를 통해 산출된 동일한 급폭을 모든 계급에 적용하는 것이다.</p></li>
+<li><p><code><a href="https://ggplot2.tidyverse.org/reference/cut_interval.html">cut_number()</a></code>: 등개수분류법(quantile)을 구현하는 것으로, 모든 계급에 대해 계급에 포함되는 갯수를 동일하게 하는 것이다.</p></li>
+<li><p><code><a href="https://ggplot2.tidyverse.org/reference/cut_interval.html">cut_width()</a></code>: 주어진 임의의 급폭(bin width)에 의거해 계급을 구분하는 것이다.</p></li>
 </ul>
-<p>셋째, ’오픈 API 이용 신청’을 한다. 다음의 몇 가지에 유의한다.</p>
+</div>
+</div>
+<p>또 다른 방법은 데이터 변형을 위한 <code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code> 함수와 시각화 함수인 <code><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html">geom_tile()</a></code> 기하객체 함수를 결합하는 것이다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
+<span>    gdp_class <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/cut_interval.html">cut_interval</a></span><span class="op">(</span><span class="va">gdpPercap</span>, n <span class="op">=</span> <span class="fl">5</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"very low"</span>, <span class="st">"low"</span>, <span class="st">"middle"</span>, <span class="st">"high"</span>, <span class="st">"very high"</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">continent</span>, <span class="va">gdp_class</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">continent</span>, y <span class="op">=</span> <span class="va">gdp_class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html">geom_tile</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">n</span><span class="op">)</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-tile-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-tile-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_07_files/figure-html/fig-tile-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" data-glightbox="description: .lightbox-desc-6"><img src="exec_07_files/figure-html/fig-tile-1-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tile-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;5: 두 범주형 변수: 타일플롯
+</figcaption></figure>
+</div>
+</div>
+</div>
+</section><section id="두-수치형-변수" class="level4" data-number="2.2.3"><h4 data-number="2.2.3" class="anchored" data-anchor-id="두-수치형-변수">
+<span class="header-section-number">2.2.3</span> 두 수치형 변수</h4>
+<p>두 수치형 변수인 일인당 GDP와 기대수명의 공변동을 탐색하는 가장 기본적이고도 가장 좋은 방법은 산포도를 그리는 것이다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-scatterplot-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-scatterplot-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_07_files/figure-html/fig-scatterplot-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" data-glightbox="description: .lightbox-desc-7"><img src="exec_07_files/figure-html/fig-scatterplot-1-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scatterplot-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;6: 두 수치형 변수: 산포도
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>일인당 GDP를 여러 급간으로 쪼개서 박스플롯을 적용하는 것도 하나의 대안일 수 있다. 앞에서 언급한 <code><a href="https://ggplot2.tidyverse.org/reference/cut_interval.html">cut_width()</a></code> 보조 함수의 유용성을 확인할 수 있다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>group <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/cut_interval.html">cut_width</a></span><span class="op">(</span><span class="va">gdpPercap</span>, <span class="fl">5000</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-boxplot-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-boxplot-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_07_files/figure-html/fig-boxplot-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" data-glightbox="description: .lightbox-desc-8"><img src="exec_07_files/figure-html/fig-boxplot-2-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boxplot-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;7: 두 수치형 변수: 박스플롯
+</figcaption></figure>
+</div>
+</div>
+</div>
+</section><section id="세-변수-이상" class="level4" data-number="2.2.4"><h4 data-number="2.2.4" class="anchored" data-anchor-id="세-변수-이상">
+<span class="header-section-number">2.2.4</span> 세 변수 이상</h4>
+<p><a href="#fig-scatterplot-1" class="quarto-xref">그림&nbsp;6</a> 에 또 하나의 수치형 변수(인구 규모)를 결합할 수 있다. 두 축에 <code>scale</code> 함수를 통해 로그를 적용하니 두 변수의 관련성이 선형에 가까워 졌다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>size <span class="op">=</span> <span class="va">pop</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_log10</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_log10</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-3variables" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-3variables-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_07_files/figure-html/fig-3variables-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" data-glightbox="description: .lightbox-desc-9"><img src="exec_07_files/figure-html/fig-3variables-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-3variables-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;8: 세 수치형 변수: 산포도
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p><a href="#fig-scatterplot-1" class="quarto-xref">그림&nbsp;6</a> 에 또 하나의 범주형 변수(대륙)를 결합할 수 있다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">gdpPercap</span><span class="op">)</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>size <span class="op">=</span> <span class="va">pop</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">continent</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-4variables" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-4variables-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_07_files/figure-html/fig-4variables-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" data-glightbox="description: .lightbox-desc-10"><img src="exec_07_files/figure-html/fig-4variables-1.png" class="img-fluid figure-img" width="672"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-4variables-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;9: 세 수치형 변수 + 한 범주형 변수: 패싯
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>전세계 인구의 변화 양상과 대륙별 구성을 함께 탐색할 수 있게 해주는 그래프를 제작해 본다. <code><a href="https://forcats.tidyverse.org/reference/fct_reorder.html">fct_reorder2()</a></code> 함수와 세개의 <code>scale_*()</code> 함수의 기능을 확인한다. 보다 체계적인 축의 분할과 라벨 표기를 도와주는 <a href="https://scales.r-lib.org/"><strong>scales</strong></a> 패키지를 활용한다. <code><a href="https://scales.r-lib.org/reference/label_number.html">label_number()</a></code>과 <code><a href="https://scales.r-lib.org/reference/label_number.html">label_comma()</a></code>함수가 많이 활용된다. 쓰임새를 정리하면 다음과 같다.</p>
 <ul>
-<li><p>애플리케이션 이름: 아무 이름이나 입력</p></li>
-<li><p>사용 API: ’검색’이 선택된 상태를 유지</p></li>
-<li><p>비로그인 오픈 API 서비스 환경: ’WEB 설정’을 선택</p></li>
-<li><p>웹 서비스 URL (최대 10개): ’http://localhost’를 입력(개인 PC를 이용하겠다는 것을 의미)</p></li>
-</ul></section><section id="httr2-패키지-활용-처음-100개-검색-결과-추출" class="level4" data-number="3.4.2"><h4 data-number="3.4.2" class="anchored" data-anchor-id="httr2-패키지-활용-처음-100개-검색-결과-추출">
-<span class="header-section-number">3.4.2</span> <a href="https://httr2.r-lib.org/"><strong>httr2</strong></a> 패키지 활용: 처음 100개 검색 결과 추출</h4>
-<p>패키지를 불러온다.</p>
+<li><p><code><a href="https://forcats.tidyverse.org/reference/fct_reorder.html">fct_reorder2()</a></code> 함수: 대륙(<code>continent</code>)의 순서를 인구 합계(<code>sum_pop</code>)에 의거해 정하되, 연도(<code>year</code>) 변수의 가장 큰 값, 즉 2007년을 기준으로 함.</p></li>
+<li><p><code><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous()</a></code>와 <code><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous()</a></code> 함수: <code>breaks</code> 인수는 눈금을 지정하고, <code>label</code> 인수는 눈금에 부여될 라벨을 지정한다.</p></li>
+<li><p><code><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">scale_fill_brewer()</a></code> 함수: 브루어의 <code>"Set3"</code> 팔레트를 지정한다.</p></li>
+<li><p><code><a href="https://scales.r-lib.org/reference/label_number.html">label_number()</a></code> 함수: <code>scale</code> 인수는 실제값과 축에 나타나는 값 간의 관계를 지정하고, <code>suffix</code> 인수는 변형된 값 뒤에 붙는 문자를 지정한다.</p></li>
+</ul>
 <div class="cell">
-<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://httr2.r-lib.org">httr2</a></span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>’지방소멸’을 검색어로 하여 최초의 100개 검색 결과에 대한 데이터(특히, 제목과 내용)를 수집한다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://httr2.r-lib.org">httr2</a></span><span class="op">)</span></span>
-<span><span class="va">search</span> <span class="op">&lt;-</span> <span class="st">"지방소멸"</span></span>
-<span><span class="va">your_url</span> <span class="op">&lt;-</span> <span class="st">"https://openapi.naver.com/v1/search/news.json"</span></span>
-<span><span class="va">result_naver</span> <span class="op">&lt;-</span> <span class="va">your_url</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/request.html">request</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/req_headers.html">req_headers</a></span><span class="op">(</span></span>
-<span>    <span class="st">"X-Naver-Client-ID"</span> <span class="op">=</span> <span class="va">your_ClientID</span>,</span>
-<span>    <span class="st">"X-Naver-Client-Secret"</span> <span class="op">=</span> <span class="va">your_Client_Secret</span></span>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://scales.r-lib.org">scales</a></span><span class="op">)</span></span>
+<span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">continent</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
+<span>    sum_pop <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">pop</span><span class="op">)</span></span>
 <span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/req_url.html">req_url_query</a></span><span class="op">(</span></span>
-<span>    query <span class="op">=</span> <span class="va">search</span>,</span>
-<span>    display <span class="op">=</span> <span class="fl">100</span>,</span>
-<span>    start <span class="op">=</span> <span class="fl">1</span>,</span>
-<span>    sort <span class="op">=</span> <span class="st">"date"</span></span>
-<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/req_perform.html">req_perform</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/resp_body_raw.html">resp_body_json</a></span><span class="op">(</span>check_type <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> </span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">sum_pop</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_ribbon.html">geom_area</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="fu"><a href="https://forcats.tidyverse.org/reference/fct_reorder.html">fct_reorder2</a></span><span class="op">(</span><span class="va">continent</span>, <span class="va">year</span>, <span class="va">sum_pop</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1952</span>, <span class="fl">2007</span>, <span class="fl">5</span><span class="op">)</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1952</span>, <span class="fl">2007</span>, <span class="fl">5</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">7000000000</span>, <span class="fl">1000000000</span><span class="op">)</span>, </span>
+<span>                     labels <span class="op">=</span> <span class="fu"><a href="https://scales.r-lib.org/reference/label_number.html">label_number</a></span><span class="op">(</span>scale <span class="op">=</span> <span class="fl">0.00000001</span>, suffix <span class="op">=</span> <span class="st">"억"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">scale_fill_brewer</a></span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"Set3"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Year"</span>, y <span class="op">=</span> <span class="st">"Population"</span>, fill <span class="op">=</span> <span class="st">"Continent"</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-multi-variables" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-multi-variables-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="exec_07_files/figure-html/fig-multi-variables-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" data-glightbox="description: .lightbox-desc-11"><img src="exec_07_files/figure-html/fig-multi-variables-1.png" class="img-fluid figure-img" width="672"></a>
 </div>
-<p><code>View(result_naver)</code>을 샐행해 보면 결과 데이터가 복잡한 위계 구조를 가지고 있는 리스트(list) 형식의 데이터라는 것을 알 수 있다. 다섯 개의 하위 요소들 중 <code>items</code>가 또 다른 리스트이며, 그 리스트의 아래에 100개의 또 다른 하위 리스트가 있으며, 그 100개의 하위 리스트 각각에 우리가 원하는 정보가 다섯개의 속성(<code>title</code>, <code>originallink</code>, <code>link</code>, <code>description</code>, <code>pubData</code>)의 속성으로 나뉘어 존재한다는 것을 알 수 있다.</p>
-<p>다음과 같은 방식으로 복잡한 위계 구조를 가진 리스트로부터 우리가 원하는 다섯 개의 속성을 추출할 수 있다. 우선 해당 리스트를 <a href="https://tibble.tidyverse.org/"><strong>tibble</strong></a> 패키지의 객체 형식으로 바꾼다. 이것은 리스트를 <code>tibble</code> 객체의 리스트 컬럼(list column)으로 바꾸는 것이다. 이렇게 하면 리스트를 훨씬 더 손쉽게 다룰 수 있게 된다. 이러한 과정에 리스트 중 원하는 데이터가 포함되어 있는 부분(여기서는 <code>items</code>)만 추출한다. 그리고 나서 <a href="https://tidyr.tidyverse.org/"><strong>tidyr</strong></a> 패키지가 제공하는 함수(이 경우는 <code><a href="https://tidyr.tidyverse.org/reference/unnest_wider.html">unnest_wider()</a></code> 함수)를 활용하여 우리가 원하는 정보를 정돈된 데이터 형식으로 추출한다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">naver_tb</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span>naver <span class="op">=</span> <span class="va">result_naver</span><span class="op">$</span><span class="va">items</span><span class="op">)</span></span>
-<span><span class="va">naver_res</span> <span class="op">&lt;-</span> <span class="va">naver_tb</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unnest_wider.html">unnest_wider</a></span><span class="op">(</span><span class="va">naver</span><span class="op">)</span></span>
-<span><span class="va">naver_res</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 5
-  title                                   originallink link  description pubDate
-  &lt;chr&gt;                                   &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;  
-1 논산시, 외국인 근로자 위한 '36인실 기숙사' 건립…… https://www… http… "총사업비 100억… Mon, 2…
-2 고흥군, '스마트 영농빌리지 조성 사업' 주민설명회 개최…… https://www… http… "이번 사업에는 &lt;… Mon, 2…
-3 의령 ‘100채 중 8채 빈집’ 전국 최다 비율 http://www.… http… "아울러 빈집 문제… Mon, 2…
-4 전남개발공사·한국중부발전, 전남 인재육성 장학금 기탁…… https://www… http… "특히 2020년부… Mon, 2…
-5 강명구 “인구감소지역 지정 읍ㆍ면까지 확대 법안 발의”…… https://www… http… "이를 통해 해당 … Mon, 2…</code></pre>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multi-variables-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;10: 다양한 스케일이 적용된 그래프
+</figcaption></figure>
 </div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-노트
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code><a href="https://tidyr.tidyverse.org/reference/unnest_wider.html">unnest_wider()</a></code>와 <code><a href="https://tidyr.tidyverse.org/reference/unnest_longer.html">unnest_longer()</a></code> 함수는 <a href="https://tidyr.tidyverse.org/"><strong>tidyr</strong></a> 패키지가 제공하는 것으로, 복잡한 위계 구조를 가진 리스트 데이터로부터 원하는 데이터 만들 추출해 정돈된 형식의 데이터 프레임을 만들 때 가장 많이 사용된다. 리스트 컬럼은 유명(named) 리스트 컬럼과 무명(unnamed) 리스트 컬럼으로 크게 대별된다. 유명 리스트 컬럼은 마치 변수명과 같은 이름이 리스트열에 부여되어 있고 모든 리스트열의 길이가 동일한 것이고, 무명 리스트 컬럼은 이름이 부여되어 있지 않고 길이도 서로 다른 경우가 많다. 따라서 유명 리스트 컬럼은 최종적으로 변수가 되고, 무명 리스트 컬럼은 최종적으로 행이 된다고 생각할 수 있다. 유명 리시트 컬럼에는 <code><a href="https://tidyr.tidyverse.org/reference/unnest_wider.html">unnest_wider()</a></code> 함수를, 무명 리스트 컬럼에는 <code><a href="https://tidyr.tidyverse.org/reference/unnest_longer.html">unnest_longer()</a></code> 함수를 적용하여 데이터를 추출해낸다.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-힌트
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a>의 핵심 패키지 중의 하나인 <a href="https://purrr.tidyverse.org/"><strong>purrr</strong></a> 패키지의 함수를 이용하면 보다 간단하게 처리할 수 있다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://purrr.tidyverse.org/">purrr</a></span><span class="op">)</span></span>
-<span><span class="va">naver_res</span> <span class="op">&lt;-</span> <span class="va">result_naver</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/pluck.html">pluck</a></span><span class="op">(</span><span class="st">"items"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind_rows.html">bind_rows</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section><section id="httr2-패키지-활용-for-함수를-이용하여-1000개-검색-결과-추출" class="level4" data-number="3.4.3"><h4 data-number="3.4.3" class="anchored" data-anchor-id="httr2-패키지-활용-for-함수를-이용하여-1000개-검색-결과-추출">
-<span class="header-section-number">3.4.3</span> <a href="https://httr2.r-lib.org/"><strong>httr2</strong></a> 패키지 활용: <code>for</code> 함수를 이용하여 1,000개 검색 결과 추출</h4>
-<p>반복 과정을 통해 1,000개까지 데이터를 추출해 본다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">search</span> <span class="op">&lt;-</span> <span class="st">"지방소멸"</span></span>
-<span><span class="va">rep</span> <span class="op">&lt;-</span> <span class="fl">10</span></span>
-<span><span class="va">start_idx</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="op">(</span><span class="va">rep</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">*</span> <span class="fl">100</span> <span class="op">+</span> <span class="fl">1</span></span>
-<span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="va">start_idx</span><span class="op">)</span><span class="op">{</span></span>
-<span>  <span class="va">news</span> <span class="op">&lt;-</span> <span class="va">your_url</span> <span class="op">|&gt;</span> </span>
-<span>    <span class="fu"><a href="https://httr2.r-lib.org/reference/request.html">request</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>    <span class="fu"><a href="https://httr2.r-lib.org/reference/req_headers.html">req_headers</a></span><span class="op">(</span></span>
-<span>      <span class="st">"X-Naver-Client-ID"</span> <span class="op">=</span> <span class="va">your_ClientID</span>,</span>
-<span>      <span class="st">"X-Naver-Client-Secret"</span> <span class="op">=</span> <span class="va">your_Client_Secret</span></span>
-<span>    <span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>    <span class="fu"><a href="https://httr2.r-lib.org/reference/req_url.html">req_url_query</a></span><span class="op">(</span></span>
-<span>      query <span class="op">=</span> <span class="va">search</span>,</span>
-<span>      display <span class="op">=</span> <span class="fl">100</span>,</span>
-<span>      start <span class="op">=</span> <span class="va">i</span>,</span>
-<span>      sort <span class="op">=</span> <span class="st">"date"</span></span>
-<span>    <span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>    <span class="fu"><a href="https://httr2.r-lib.org/reference/req_perform.html">req_perform</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>    <span class="fu"><a href="https://httr2.r-lib.org/reference/resp_body_raw.html">resp_body_json</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/pluck.html">pluck</a></span><span class="op">(</span><span class="st">"items"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind_rows.html">bind_rows</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>이 모든 과정을 자동화하기 위해 함수를 만들어 본다. <code>naver_extractor()</code> 함수는 네이버 뉴스에서 특정한 검색어를 통해 기사를 추출할 수 있게 해주는 것이다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">naver_extractor</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">a_url</span>, <span class="va">search_item</span>, <span class="va">n_start</span> <span class="op">=</span> <span class="fl">1</span>, <span class="va">n_display</span> <span class="op">=</span> <span class="fl">100</span><span class="op">)</span><span class="op">{</span></span>
-<span>  <span class="va">news</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://httr2.r-lib.org/reference/request.html">request</a></span><span class="op">(</span><span class="va">a_url</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/req_headers.html">req_headers</a></span><span class="op">(</span></span>
-<span>    <span class="st">"X-Naver-Client-ID"</span> <span class="op">=</span> <span class="va">your_ClientID</span>,</span>
-<span>    <span class="st">"X-Naver-Client-Secret"</span> <span class="op">=</span> <span class="va">your_Client_Secret</span></span>
-<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/req_url.html">req_url_query</a></span><span class="op">(</span></span>
-<span>    query <span class="op">=</span> <span class="va">search_item</span>,</span>
-<span>    display <span class="op">=</span> <span class="va">n_display</span>,</span>
-<span>    start <span class="op">=</span> <span class="va">n_start</span>,</span>
-<span>    sort <span class="op">=</span> <span class="st">"date"</span></span>
-<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/req_perform.html">req_perform</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/resp_body_raw.html">resp_body_json</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/pluck.html">pluck</a></span><span class="op">(</span><span class="st">"items"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind_rows.html">bind_rows</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>이 함수를 이용해 데이터를 추출해 본다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">res_1</span> <span class="op">&lt;-</span> <span class="fu">naver_extractor</span><span class="op">(</span>a_url <span class="op">=</span> <span class="va">your_url</span>, search_item <span class="op">=</span> <span class="st">"지방소멸"</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>여러번 반복을 위해 <a href="https://purrr.tidyverse.org/"><strong>purrr</strong></a> 패키지의 <code><a href="https://purrr.tidyverse.org/reference/map_dfr.html">map_dfr()</a></code> 함수를 활용한다. 네이버 API를 통한 정보 수집은 한 번에 최대 1,000건 정도이고, 하루 호출 한도는 25,000회이다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://purrr.tidyverse.org/">purrr</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">search</span> <span class="op">&lt;-</span> <span class="st">"지방소멸"</span></span>
-<span><span class="va">rep</span> <span class="op">&lt;-</span> <span class="fl">10</span></span>
-<span><span class="va">res_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/map_dfr.html">map_dfr</a></span><span class="op">(</span></span>
-<span>  <span class="va">start_idx</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="op">(</span><span class="va">rep</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">*</span> <span class="fl">100</span> <span class="op">+</span> <span class="fl">1</span>,</span>
-<span>  \<span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu">naver_extractor</span><span class="op">(</span></span>
-<span>    a_url       <span class="op">=</span> <span class="va">your_url</span>,</span>
-<span>    search_item <span class="op">=</span> <span class="va">search</span>,</span>
-<span>    n_start     <span class="op">=</span> <span class="va">x</span>,</span>
-<span>    n_display <span class="op">=</span> <span class="fl">100</span></span>
-<span>  <span class="op">)</span></span>
-<span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-힌트
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>이렇게 수집된 문자열 데이터는 텍스트 마이닝(text mining)을 위한 중요한 원천이 되는데, 분석을 위해서는 데이터 정처리 과정이 필수적이다. 다음의 링크(<a href="https://r2bit.com/book_tm/" class="uri">https://r2bit.com/book_tm/</a>)를 참고할 수 있다. 또한 다음의 책을 참고할 수 있다<span class="citation" data-cites="gimyeongu2021">(<a href="#ref-gimyeongu2021" role="doc-biblioref">김영우 2021</a>)</span>.</p>
 </div>
 </div>
 
 
 <div class="hidden" aria-hidden="true">
-<span class="glightbox-desc lightbox-desc-1">그림&nbsp;1: HTML의 위계 구조 (&lt;https://odinuv.cz/articles/html/&gt;)</span>
+<span class="glightbox-desc lightbox-desc-2">그림&nbsp;1: 히스토그램</span>
+<span class="glightbox-desc lightbox-desc-3">그림&nbsp;2: 한 범주형 변수와 한 수치형 변수: 밀도 분포</span>
+<span class="glightbox-desc lightbox-desc-4">그림&nbsp;3: 한 범주형 변수와 한 수치형 변수: 박스틀롯</span>
+<span class="glightbox-desc lightbox-desc-5">그림&nbsp;4: 두 범주형 변수: 카운트플롯</span>
+<span class="glightbox-desc lightbox-desc-6">그림&nbsp;5: 두 범주형 변수: 타일플롯</span>
+<span class="glightbox-desc lightbox-desc-7">그림&nbsp;6: 두 수치형 변수: 산포도</span>
+<span class="glightbox-desc lightbox-desc-8">그림&nbsp;7: 두 수치형 변수: 박스플롯</span>
+<span class="glightbox-desc lightbox-desc-9">그림&nbsp;8: 세 수치형 변수: 산포도</span>
+<span class="glightbox-desc lightbox-desc-10">그림&nbsp;9: 세 수치형 변수 + 한 범주형 변수: 패싯</span>
+<span class="glightbox-desc lightbox-desc-11">그림&nbsp;10: 다양한 스케일이 적용된 그래프</span>
 </div>
-
-</section></section></section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> 맨 위로</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">참고문헌</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-gimyeongu2021" class="csl-entry" role="listitem">
-김영우. 2021. <em>쉽게 배우는 R 텍스트 마이닝</em>. 서울: 이지스퍼블리싱.
-</div>
-</div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></section></section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> 맨 위로</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -2117,12 +1270,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./exec_06.html" class="pagination-link  aria-label=">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">데이터 탐색하기</span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">시각화하기</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./exec_08.html" class="pagination-link" aria-label="데이터로 소통하기: Quarto 입문">
-        <span class="nav-page-text">데이터로 소통하기: Quarto 입문</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./exec_08.html" class="pagination-link" aria-label="수집하기">
+        <span class="nav-page-text">수집하기</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -2157,7 +1310,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </ul>
 </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","loop":false});
+</footer><script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

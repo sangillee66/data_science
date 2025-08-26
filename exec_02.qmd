@@ -1,5 +1,5 @@
 ---
-title: "R과 데이터사이언스: 개요"
+title: "R과 데이터사이언스 과정"
 author: 이상일(서울대학교 지리교육과)
 date-modified: last-modified
 number-sections: true
@@ -19,9 +19,9 @@ editor_options:
   chunk_output_type: console
 ---
 
-## 실습 개요 {.unnumbered}
+## 개요 {.unnumbered}
 
-이 실습은 R로 데이터사이언스를 하는 과정을 개괄적으로 이해하기 위한 것이다. 특히 @fig-R_DS-process2 에 나타나 있는 데이터사이언스 과정 중 특히 네 부분, 데이터 불러오기(importing), 정리하기(tidying), 변형하기(transforming), 시각화하기(visualizing)에 초첨을 맞춘다. 보통 데이터 정리하기와 변형하기를 합쳐 데이터와 씨름하기(wrangling)이라고 부르고, 변형하기와 시각화하기를 합쳐 탐색하기(exploring)라고 한다. 데이터를 살펴보기 위해 모델링을 사용하는 경우, 일부 모델링하기도 탐색하기에 포함되는 것으로 볼 수도 있다.
+여기서는 R로 데이터사이언스를 하는 전 과정을 개괄적으로 이해하도록 한다. 특히 @fig-R_DS-process2 에 나타나 있는 데이터사이언스 과정 중 특히 네 부분, 데이터 불러오기(importing), 정리하기(tidying), 변형하기(transforming), 시각화하기(visualizing)에 초첨을 둔다. 보통 데이터 정리하기와 변형하기를 합쳐 '데이터와 씨름하기(data wrangling)'이라고 부르고, 변형하기와 시각화하기를 합쳐 '데이터 탐색하기(data exploration)'라고 한다. 데이터를 살펴보기 위해 모델링을 사용하는 경우, 일부 모델링하기도 탐색하기에 포함되는 것으로 볼 수도 있다.
 
 ![데이터사이언스의 과정(<https://r4ds.hadley.nz/whole-game>)](https://r4ds.hadley.nz/diagrams/data-science/whole-game.png){#fig-R_DS-process2}
 
@@ -77,7 +77,7 @@ editor_options:
 
 -   [**lubridate**](https://lubridate.tidyverse.org/): 일시 및 시간 처리 관련
 
-![**tidyverse**의 핵심 패키지(<https://www.tidyverse.org/>)](images/tidyverse_9.PNG){#fig-tidyverse-packages fig-align="center"}
+![**tidyverse**의 핵심 패키지(<https://www.tidyverse.org/>)](images/tidyverse_9.PNG){#fig-tidyverse-packages fig-align="center" width="700"}
 
 [**tidyverse**](https://www.tidyverse.org/)패키지를 사용하는 것의 장점은 이 패키지만 불러오면 구성 패키지까지 한꺼번에 사용할 수 있게 된다는 점이다. 스크립트 내에서 다음과 같은 코드를 실행한다.
 
@@ -283,7 +283,7 @@ summarize(by_day, delay = mean(dep_delay, na.rm = TRUE))
 
 ### 데이터 살펴보기
 
-이 실습에서는 `tidyverse`에 포함되어 있는 매우 단순한 데이터를 사용한다. 이 두 데이터는 정돈된 데이터(tidy data)가 아니다. 정돈된 데이터가 무엇인지에 대해서는 다음 장에서 다룬다. 여기서는 정돈되지 않은 데이터를 정돈된 데이터로 만드는 과정을 맛본다.
+이 실습에서는 [**tidyverse**](https://www.tidyverse.org/) 패키지에 포함되어 있는 매우 단순한 데이터를 사용한다. 이 두 데이터는 정돈된 데이터(tidy data)가 아니다. 정돈된 데이터가 무엇인지에 대해서는 다음 장에서 다룬다. 여기서는 정돈되지 않은 데이터를 정돈된 데이터로 만드는 과정을 맛본다.
 
 ```{r}
 table4a
@@ -296,8 +296,6 @@ table2
 ### 주요 함수
 
 #### `pivot_longer()` 함수
-
-`table4a`는
 
 `table4a`에서 1999과 2000은 변수명일 수 없다. `year`라는 변수의 속성이어야 한다.
 
