@@ -440,10 +440,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>여기서는 R로 데이터사이언스를 하는 전 과정을 개괄적으로 이해하도록 한다. 특히 <a href="#fig-R_DS-process2" class="quarto-xref">그림&nbsp;1</a> 에 나타나 있는 데이터사이언스 과정 중 특히 네 부분, 데이터 불러오기(importing), 정리하기(tidying), 변형하기(transforming), 시각화하기(visualizing)에 초첨을 둔다. 보통 데이터 정리하기와 변형하기를 합쳐 ’데이터와 씨름하기(data wrangling)’이라고 부르고, 변형하기와 시각화하기를 합쳐 ’데이터 탐색하기(data exploration)’라고 한다. 데이터를 살펴보기 위해 모델링을 사용하는 경우, 일부 모델링하기도 탐색하기에 포함되는 것으로 볼 수도 있다.</p>
 <div id="fig-R_DS-process2" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-R_DS-process2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="https://r4ds.hadley.nz/diagrams/data-science/whole-game.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1"><img src="https://r4ds.hadley.nz/diagrams/data-science/whole-game.png" class="img-fluid figure-img"></a>
+<a href="https://r4ds.hadley.nz/diagrams/data-science/base.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1"><img src="https://r4ds.hadley.nz/diagrams/data-science/base.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-R_DS-process2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;1: 데이터사이언스의 과정(<a href="https://r4ds.hadley.nz/whole-game" class="uri">https://r4ds.hadley.nz/whole-game</a>)
+그림&nbsp;1: 데이터사이언스의 과정(<a href="https://r4ds.hadley.nz/intro.html" class="uri">https://r4ds.hadley.nz/intro.html</a>)
 </figcaption></figure>
 </div>
 <p>데이터사이언스의 다양한 과업을 수행하기 위해 Base R의 함수들이 사용되고 있지만, 보통은 이와 함께 다양한 패키지(package)들이 널리 사용되고 있다. 따라서 본 실습에서는 우선 패키지의 사용과 관련된 부분을 다루고 뒤를 이어 데이터사이언스의 네 과제가 어떻게 이루어지는지 대략적으로 다룰 것이다.</p>
@@ -468,13 +468,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code><a href="https://rdrr.io/r/base/library.html">library(패키지명)</a></code></li>
 </ul>
 <p>괄호 속에 패키지명을 기입해야 한다.</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-중요
+노트
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -500,7 +500,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <div id="fig-tidyverse-packages" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-tidyverse-packages-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/tidyverse_9.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2"><img src="images/tidyverse_9.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" width="700"></a>
+<a href="images/tidyverse_9.PNG" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2"><img src="images/tidyverse_9.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img" width="700"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tidyverse-packages-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;2: <strong>tidyverse</strong>의 핵심 패키지(<a href="https://www.tidyverse.org/" class="uri">https://www.tidyverse.org/</a>)
@@ -1019,7 +1019,7 @@ $ time_hour      &lt;dttm&gt; 2013-01-01 05:00:00, 2013-01-01 05:00:00, 2013-01-
 </ul>
 <div id="fig-pipe-operator" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-pipe-operator-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="https://r4ds.hadley.nz/screenshots/rstudio-pipe-options.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" data-glightbox="description: .lightbox-desc-9"><img src="https://r4ds.hadley.nz/screenshots/rstudio-pipe-options.png" class="img-fluid figure-img"></a>
+<a href="https://r4ds.hadley.nz/screenshots/rstudio-pipe-options.png" class="lightbox" data-glightbox="description: .lightbox-desc-9" data-gallery="quarto-lightbox-gallery-9"><img src="https://r4ds.hadley.nz/screenshots/rstudio-pipe-options.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pipe-operator-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;3: 파이프 연산자(https://r4ds.hadley.nz/data-transform)
@@ -1110,7 +1110,7 @@ $ time_hour      &lt;dttm&gt; 2013-01-01 05:00:00, 2013-01-01 05:00:00, 2013-01-
 
 
 <div class="hidden" aria-hidden="true">
-<span class="glightbox-desc lightbox-desc-1">그림&nbsp;1: 데이터사이언스의 과정(<a href="https://r4ds.hadley.nz/whole-game" class="uri">https://r4ds.hadley.nz/whole-game</a>)</span>
+<span class="glightbox-desc lightbox-desc-1">그림&nbsp;1: 데이터사이언스의 과정(<a href="https://r4ds.hadley.nz/intro.html" class="uri">https://r4ds.hadley.nz/intro.html</a>)</span>
 <span class="glightbox-desc lightbox-desc-2">그림&nbsp;2: <strong>tidyverse</strong>의 핵심 패키지(<a href="https://www.tidyverse.org/" class="uri">https://www.tidyverse.org/</a>)</span>
 <span class="glightbox-desc lightbox-desc-9">그림&nbsp;3: 파이프 연산자(https://r4ds.hadley.nz/data-transform)</span>
 </div>
@@ -1686,7 +1686,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </ul>
 </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","loop":false,"selector":".lightbox"});
+</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","openEffect":"zoom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
