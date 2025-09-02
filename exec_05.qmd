@@ -252,9 +252,29 @@ gapminder |>
 데이터 프레임의 한 컬럼을 벡터로 추출한다.
 
 ```{r}
-gapminder |> 
-  pull(lifeExp) |> mean()
+gapminder |> pull(lifeExp) |> mean()
 ```
+
+::: callout-note
+Base R이 벡터 기반 연산에 강점이 있는 반면 [**tidyverse**](https://www.tidyverse.org/)는 데이터 프레임별 연산에 강점이 있다. 이렇다 보니 베이스 R의 많은 벡터 기반 함수를 [**tidyverse**](https://www.tidyverse.org/)에서 사용할 때 불편함을 느낄 수 있다. 이러한 문제점을 경감해 줄 수 있는 것이 `pull()` 함수이다. 예를 들어 위의 코드를 Base R에서 쓰면 다음과 같다.
+
+```{r}
+#| eval: false
+mean(gapminder$lifeExp)
+```
+
+동일한 것을 정규 [**tidyverse**](https://www.tidyverse.org/)문법에 맞추어 쓰면 다음과 같다.
+
+```{r}
+#| eval: false
+gapminder |> 
+  summarize(
+    mean_lifeExp = mean(lifeExp)
+  )
+```
+
+좀 성가시게 길어지는 측면이 있다. 이 때 `pull()` 함수는 유용하게 사용될 수 있고, [**tidyverse**](https://www.tidyverse.org/)문법을 지키면서도 코드를 좀 더 간명하게 표현할 수 있다.
+:::
 
 ### 그룹 함수
 
