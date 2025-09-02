@@ -428,7 +428,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2025년 8월 26일</p>
+      <p class="date-modified">2025년 9월 2일</p>
     </div>
   </div>
     
@@ -589,9 +589,9 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 </div>
 </div>
 </div>
-</section><section id="플롯의-심미성-지정" class="level4" data-number="2.2.2"><h4 data-number="2.2.2" class="anchored" data-anchor-id="플롯의-심미성-지정">
-<span class="header-section-number">2.2.2</span> 플롯의 심미성 지정</h4>
-<p>데이터가 어떤 시각적 속성으로 표현될 것인가를 지정한다. 여기서는 간단히 어떤 변수들이 x-축과 y-축에 나타나는지만 지정한다. <code>mapping = aes()</code> 아규먼트가 핵심이다. 보통 <code>mapping</code>은 생략하고 <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code>만 쓴다.</p>
+</section><section id="플롯의-시각속성-매핑" class="level4" data-number="2.2.2"><h4 data-number="2.2.2" class="anchored" data-anchor-id="플롯의-시각속성-매핑">
+<span class="header-section-number">2.2.2</span> 플롯의 시각속성 매핑</h4>
+<p>데이터가 어떤 시각속성(aesthetics)으로 표현될 것인가를 지정한다. 여기서는 간단히 어떤 변수들이 x-축과 y-축에 나타나는지만 지정한다. <code>mapping = aes()</code> 아규먼트가 핵심이다. 보통 <code>mapping</code>은 생략하고 <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code>만 쓴다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span></span>
 <span>  data <span class="op">=</span> <span class="va">penguins</span>,</span>
@@ -604,9 +604,9 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 </div>
 </div>
 </div>
-</section><section id="플롯의-기하-속성-지정" class="level4" data-number="2.2.3"><h4 data-number="2.2.3" class="anchored" data-anchor-id="플롯의-기하-속성-지정">
-<span class="header-section-number">2.2.3</span> 플롯의 기하 속성 지정</h4>
-<p>데이터가 어떤 기하학적 속성으로 표현될 것인가 혹은 어떤 그래프 유형으로 표현될 것이가를 지정한다. <code>geom</code> 아규먼트가 핵심인데, <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code>는 데이터를 포인트라고 하는 기하학적 속성으로 표현한다는 것을 지정한 것으로 결국 산포도(scatterplot)라는 그래프 유형을 산출하게 된다.</p>
+</section><section id="플롯의-기하객체-지정" class="level4" data-number="2.2.3"><h4 data-number="2.2.3" class="anchored" data-anchor-id="플롯의-기하객체-지정">
+<span class="header-section-number">2.2.3</span> 플롯의 기하객체 지정</h4>
+<p>데이터가 어떤 기하객체(geometric object)로 표현될 것인가 혹은 어떤 그래프 유형으로 표현될 것이가를 지정한다. <code>geom</code> 아규먼트가 핵심인데, <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code>는 데이터를 포인트라고 하는 기하객체로 표현한다는 것을 지정한 것으로 결국 산포도(scatterplot)라는 그래프 유형을 산출하게 된다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span></span>
 <span>  data <span class="op">=</span> <span class="va">penguins</span>,</span>
@@ -620,9 +620,9 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 </div>
 </div>
 </div>
-</section><section id="심미성의-첨가" class="level4" data-number="2.2.4"><h4 data-number="2.2.4" class="anchored" data-anchor-id="심미성의-첨가">
-<span class="header-section-number">2.2.4</span> 심미성의 첨가</h4>
-<p>이러한 관련성이 펭귄의 종족에 따라 다르게 나타나는지를 탐색하기 위해 <code>color</code> 라는 심미성을 <code>species</code>라는 변수에 적용한다.</p>
+</section><section id="시각속성의-첨가" class="level4" data-number="2.2.4"><h4 data-number="2.2.4" class="anchored" data-anchor-id="시각속성의-첨가">
+<span class="header-section-number">2.2.4</span> 시각속성의 첨가</h4>
+<p>이러한 관련성이 펭귄의 종족에 따라 다르게 나타나는지를 탐색하기 위해 <code>color</code> 라는 시각속성을 <code>species</code>라는 변수에 적용한다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span></span>
 <span>  data <span class="op">=</span> <span class="va">penguins</span>,</span>
@@ -636,9 +636,9 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 </div>
 </div>
 </div>
-</section><section id="기하-레이어의-첨가" class="level4" data-number="2.2.5"><h4 data-number="2.2.5" class="anchored" data-anchor-id="기하-레이어의-첨가">
-<span class="header-section-number">2.2.5</span> 기하 레이어의 첨가</h4>
-<p>두 변수의 관련성을 보여주는 선형 기하를 첨가한다. 여기서는 <code><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth()</a></code>를 이용하여 OLS 회귀선을 첨가한다.</p>
+</section><section id="기하객체-레이어의-첨가" class="level4" data-number="2.2.5"><h4 data-number="2.2.5" class="anchored" data-anchor-id="기하객체-레이어의-첨가">
+<span class="header-section-number">2.2.5</span> 기하객체 레이어의 첨가</h4>
+<p>두 변수의 관련성을 보여주는 선형 기하객체를 첨가한다. 여기서는 <code><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth()</a></code>를 이용하여 OLS 회귀선을 첨가한다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span></span>
 <span>  data <span class="op">=</span> <span class="va">penguins</span>,</span>
@@ -1686,7 +1686,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </ul>
 </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom"});
+</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","loop":false,"selector":".lightbox"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
