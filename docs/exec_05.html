@@ -953,7 +953,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Base R이 벡터 기반 연산에 강점이 있는 반면 <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a>는 데이터 프레임별 연산에 강점이 있다. 이렇다 보니 베이스 R의 많은 벡터 기반 함수를 <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a>에서 사용할 때 불편함을 느낄 수 있다. 이러한 문제점을 경감해 줄 수 있는 것이 <code><a href="https://dplyr.tidyverse.org/reference/pull.html">pull()</a></code> 함수이다. 예를 들어 위의 코드를 Base R에서 쓰면 다음과 같다.</p>
+<p>Base R이 벡터 기반 연산에 강점이 있는 반면 <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a>는 데이터 프레임별 연산에 강점이 있다. 이렇다 보니 Base R의 많은 벡터 기반 함수를 <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a>에서 사용할 때 불편함을 느낄 수 있다. 이러한 문제점을 경감해 줄 수 있는 것이 <code><a href="https://dplyr.tidyverse.org/reference/pull.html">pull()</a></code> 함수이다. 예를 들어 위의 코드를 Base R에서 쓰면 다음과 같다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb48"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">gapminder</span><span class="op">$</span><span class="va">lifeExp</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -2715,7 +2715,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </ul>
 </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","descPosition":"bottom","loop":false});
+</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false,"openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

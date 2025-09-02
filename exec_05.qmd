@@ -256,7 +256,7 @@ gapminder |> pull(lifeExp) |> mean()
 ```
 
 ::: callout-note
-Base R이 벡터 기반 연산에 강점이 있는 반면 [**tidyverse**](https://www.tidyverse.org/)는 데이터 프레임별 연산에 강점이 있다. 이렇다 보니 베이스 R의 많은 벡터 기반 함수를 [**tidyverse**](https://www.tidyverse.org/)에서 사용할 때 불편함을 느낄 수 있다. 이러한 문제점을 경감해 줄 수 있는 것이 `pull()` 함수이다. 예를 들어 위의 코드를 Base R에서 쓰면 다음과 같다.
+Base R이 벡터 기반 연산에 강점이 있는 반면 [**tidyverse**](https://www.tidyverse.org/)는 데이터 프레임별 연산에 강점이 있다. 이렇다 보니 Base R의 많은 벡터 기반 함수를 [**tidyverse**](https://www.tidyverse.org/)에서 사용할 때 불편함을 느낄 수 있다. 이러한 문제점을 경감해 줄 수 있는 것이 `pull()` 함수이다. 예를 들어 위의 코드를 Base R에서 쓰면 다음과 같다.
 
 ```{r}
 #| eval: false
