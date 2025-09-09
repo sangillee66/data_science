@@ -1,0 +1,1820 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.24">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="Sang-Il Lee ft. Ha-eun Lee">
+<title>R and RStudio – Data Science</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-9e227471bb36b425561843ed1c2ca3ae.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-1d1e30c4ff39a421c5d0be39657e8b6a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-9e227471bb36b425561843ed1c2ca3ae.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "일치 없음",
+    "search-matching-documents-text": "일치된 문서",
+    "search-copy-link-title": "검색 링크 복사",
+    "search-hide-matches-text": "추가 검색 결과 숨기기",
+    "search-more-match-text": "추가 검색결과",
+    "search-more-matches-text": "추가 검색결과",
+    "search-clear-button-title": "제거",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "취소",
+    "search-submit-button-title": "검색",
+    "search-label": "검색"
+  }
+}</script><link rel="stylesheet" href="styles.css">
+</head>
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">R and RStudio</h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="검색" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+      <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="다크 모드 전환"><i class="bi"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="검색"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">웹사이트 소개</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">R과 데이터사이언스</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exec_01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R과 RStudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exec_02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R과 데이터사이언스 과정</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exec_03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">소통하기: Quarto로 대시보드 만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exec_04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">불러오기와 정리하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exec_05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">변형하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exec_06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">시각화하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exec_07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">탐색하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exec_08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">수집하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exec_09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">소통하기: 인터랙티브 시각화</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exec_10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">소통하기: 지리공간적 시각화</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">R 프레젠테이션: 2025/2</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R_lec_01_2025.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">| <span style="color:coral;font-size:0.6em">R Lecture 1</span> | <span style="font-size:1em">R과 RStudio</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">R 프레젠테이션: 2024/1</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R_lec_01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R &amp; RStudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R_lec_02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R &amp; Data Science</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R_lec_03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Import and Tidying</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R_lec_04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Transformation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R_lec_05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Visualization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R_lec_06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Exploration</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R_lec_07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Collection</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R_lec_08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Communication with Data: Quarto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R_lec_09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Communication with Data: Dashboards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R_lec_10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Advanced R</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">R 실습: 2025/2</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab_01_2025.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">R and RStudio</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">R 실습: 2024/1</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab_01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab01: R과 RStudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab_02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab02: R과 데이터사이언스</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab_03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab03: 데이터 불러오기와 정리하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab_04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab04: 데이터 변형하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab_05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab05: 데이터 시각화하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab_06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab06: 데이터 탐색하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab_07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab07: 데이터 수집하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab_08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab08: 데이터로 소통하기: Quarto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab_09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab09: 데이터로 소통하기: 대시보드 만들기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab_10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab10: 데이터로 소통하기: 동적, 반응형 시각화</span></a>
+  </div>
+</li>
+      </ul>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">목차</h2>
+   
+  <ul>
+<li><a href="#%EA%B0%9C%EC%9A%94" id="toc-개요" class="nav-link active" data-scroll-target="#%EA%B0%9C%EC%9A%94">개요</a></li>
+  <li>
+<a href="#r%EA%B3%BC-rstudio-%EC%84%A4%EC%B9%98" id="toc-r과-rstudio-설치" class="nav-link" data-scroll-target="#r%EA%B3%BC-rstudio-%EC%84%A4%EC%B9%98"><span class="header-section-number">1</span> R과 RStudio 설치</a>
+  <ul class="collapse">
+<li><a href="#r%EC%9D%98-%EC%84%A4%EC%B9%98" id="toc-r의-설치" class="nav-link" data-scroll-target="#r%EC%9D%98-%EC%84%A4%EC%B9%98"><span class="header-section-number">1.1</span> R의 설치</a></li>
+  <li><a href="#rstudio%EC%9D%98-%EC%84%A4%EC%B9%98" id="toc-rstudio의-설치" class="nav-link" data-scroll-target="#rstudio%EC%9D%98-%EC%84%A4%EC%B9%98"><span class="header-section-number">1.2</span> RStudio의 설치</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#rstudio-%EB%91%98%EB%9F%AC%EB%B3%B4%EA%B8%B0" id="toc-rstudio-둘러보기" class="nav-link" data-scroll-target="#rstudio-%EB%91%98%EB%9F%AC%EB%B3%B4%EA%B8%B0"><span class="header-section-number">2</span> RStudio 둘러보기</a>
+  <ul class="collapse">
+<li><a href="#%EC%B0%BDpane-%ED%8C%A8%EC%9D%B8" id="toc-창pane-패인" class="nav-link" data-scroll-target="#%EC%B0%BDpane-%ED%8C%A8%EC%9D%B8"><span class="header-section-number">2.1</span> 창(pane, 패인)</a></li>
+  <li><a href="#console-%EC%B0%BD%EC%97%90%EC%84%9C-%EB%86%80%EC%95%84%EB%B3%B4%EA%B8%B0" id="toc-console-창에서-놀아보기" class="nav-link" data-scroll-target="#console-%EC%B0%BD%EC%97%90%EC%84%9C-%EB%86%80%EC%95%84%EB%B3%B4%EA%B8%B0"><span class="header-section-number">2.2</span> Console 창에서 놀아보기</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8project%EC%99%80-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8script" id="toc-프로젝트project와-스크립트script" class="nav-link" data-scroll-target="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8project%EC%99%80-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8script"><span class="header-section-number">3</span> 프로젝트(project)와 스크립트(script)</a>
+  <ul class="collapse">
+<li><a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0" id="toc-프로젝트-만들기" class="nav-link" data-scroll-target="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0"><span class="header-section-number">3.1</span> 프로젝트 만들기</a></li>
+  <li><a href="#%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0" id="toc-스크립트-만들기" class="nav-link" data-scroll-target="#%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0"><span class="header-section-number">3.2</span> 스크립트 만들기</a></li>
+  </ul>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>이슈 보고</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title d-none d-lg-block">R and RStudio</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">저자</div>
+    <div class="quarto-title-meta-contents">
+             <p>Sang-Il Lee ft. Ha-eun Lee </p>
+          </div>
+  </div>
+    
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">2025년 9월 9일</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+
+</header><section id="개요" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="개요">개요</h2>
+<p>여기서는 R과 RStudio의 기본기를 다진다. 다음과 같은 사항이 다루어진다.</p>
+<p>1. R과 RStudio 설치</p>
+<p>2. RStudio 둘러보기</p>
+<p>3. 프로젝트와 스크립트 개념 이해하기</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+경고
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>R은 실행과정에서 폴더 경로에 한글이 포함된 경우 오류가 자주 발생한다. 따라서 사용자 계정 이름이 한국어로 설정되어 있지 않은지 반드시 확인해야 하며, 앞으로 만들 프로젝트 폴더 등도 이름을 모두 영어로 설정하는 것이 좋다.</p>
+<p>Windows: [설정] -&gt; [계정] -&gt; [사용자 정보]로 들어가 볼드체로 된 사용자 계정 이름이 영어인지 확인하기. 사용자 계정이 한국어로 설정되어 있다면 영어로 된 새로운 윈도우 사용자 계정을 만들어야 한다.</p>
+<p>Mac: 프로젝트 폴더 이름 설정만 잘 신경쓰면 된다.</p>
+</div>
+</div>
+</section><section id="r과-rstudio-설치" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="r과-rstudio-설치">
+<span class="header-section-number">1</span> R과 RStudio 설치</h2>
+<p>프로그램을 다운로드하기 위해 다음의 <a href="https://posit.co/download/rstudio-desktop/">웹사이트</a>로 이동한다. 여기는 RStudio를 만든 <a href="https://posit.co/">posit</a>(과거에는 회사명 자체도 RStudio였음)이라는 회사가 관리하는 RStudio Desktop 다운로드 페이지이다.</p>
+<p>그러면 <a href="#fig-install-rstudio" class="quarto-xref">그림&nbsp;1</a> 과 같이 R과 RStudio를 설치할 수 있는 화면이 나타날 것이다.</p>
+<div id="fig-install-rstudio" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-install-rstudio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/R_RStudio_Install.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="그림&nbsp;1: 다운로드 화면"><img src="images/R_RStudio_Install.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-rstudio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;1: 다운로드 화면
+</figcaption></figure>
+</div>
+<section id="r의-설치" class="level3" data-number="1.1"><h3 data-number="1.1" class="anchored" data-anchor-id="r의-설치">
+<span class="header-section-number">1.1</span> R의 설치</h3>
+<p>왼쪽의 다운로드 바를 클릭하면 <a href="https://cran.rstudio.com/">CRAN(The Comprehensive R Archive Network)</a>으로 이동한다. 자신의 운영체계에 맞는 R의 최신 버전을 다운로드하고 자신의 디바이스에 설치한다. 이 다큐먼트 작성 시점 기준으로 R의 최신 버전은 4.5.1이다.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+노트
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>CRAN은 R의 핵심 소프트웨어 저장소(software repository)이다. R 프로그램 자체의 과거와 현재의 버전들 뿐만 아니라 수많은 R 패키지(package)(현재 대략 20,000개)가 모여 있는 곳이다. 1997년 Kurt Hornik와 Friedrich Leisch에 의해 처음 만들어졌으며, 현재에도 Hornik와 많은 자원봉사자들에 의해 운영되고 있다. 자세한 사항은 <a href="https://en.wikipedia.org/wiki/R_package#Comprehensive_R_Archive_Network_(CRAN)">Wikipedia</a>를 참조할 수 있다.</p>
+</div>
+</div>
+</section><section id="rstudio의-설치" class="level3" data-number="1.2"><h3 data-number="1.2" class="anchored" data-anchor-id="rstudio의-설치">
+<span class="header-section-number">1.2</span> RStudio의 설치</h3>
+<p>R의 지배적인 IDE(Integrated Development Environment, 통합개발환경)인 RStudio를 설치한다. 다시 원래의 다운로드 페이지로 돌아와, 오른편의 다운로드 바를 클릭하면 윈도우즈용 RStudio의 파일을 다운로드할 수 있다. 스크롤 다운하면 다른 운영체계를 위한 RStudio를 다운로드할 수 있다. 다운받은 RStudio를 자신의 디바이스에 설치한다. 이 다큐먼트 작성 시점 기준으로 RStudio의 최신 버전은 2025년 5월 1일에 발표된 2025.05.1+513이다.</p>
+<p>RStudio는 R만을 위한 IDE인데, <a href="https://posit.co/">posit</a>은 최근 R과 Python 모두를 사용할 수 있는 범용 IDE인 <a href="https://positron.posit.co/">Positron</a>을 개발하였다. 2025년 7월 3일에 베타 버전을 끝내고 정식 출시했으며, 현재는 2025년 8월 14일에 출시된 2025.08.0-130이 최신 버전이다. Positron은 RStudio와 Python에서 많이 사용되는 <a href="https://code.visualstudio.com/">VS Code</a>를 결합한 것으로, 향상된 기능과 외견이 기대된다. 2026년부터는 RStudio에서 Positron으로의 이동이 본격화될 것이다. Positron을 살펴보는데 아래의 동영상이 도움이 될 것이다.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/4Ir_HX4riHw" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section></section><section id="rstudio-둘러보기" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="rstudio-둘러보기">
+<span class="header-section-number">2</span> RStudio 둘러보기</h2>
+<section id="창pane-패인" class="level3" data-number="2.1"><h3 data-number="2.1" class="anchored" data-anchor-id="창pane-패인">
+<span class="header-section-number">2.1</span> 창(pane, 패인)</h3>
+<p>RStudio를 실행하면 아마도 대부분의 경우 <a href="#fig-3-panes" class="quarto-xref">그림&nbsp;2</a> 와 같은 화면을 보게 될 것이다. 크게 세 개의 창으로 구성되어 있음을 알 수 있다.</p>
+<div id="fig-3-panes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-3-panes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://r4ds.hadley.nz/diagrams/rstudio/console.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="그림&nbsp;2: 세 개의 창"><img src="https://r4ds.hadley.nz/diagrams/rstudio/console.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-3-panes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;2: 세 개의 창
+</figcaption></figure>
+</div>
+<p>왼편에 가장 크게 나타나 있는 것을 Console 창(pane)이라고 부르고, 우하의 창은 Output 창 혹은 File 창이라고 부른다. 우상에도 또 다른 창이 하나 보이는데 보통 Environment 창이라고 부른다.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+노트
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>개별 창은 여러 개의 탭(tab)으로 구성되어 있는데, 탭의 기능이 매우 다양하기 때문에 소속 탭의 모든 기능을 포괄하는 일관성 있는 창 이름을 붙이는 것이 매우 어렵다. 예를 들어 Output 창의 경우 Plots와 Viewer 탭은 결과물을 보여주는 것이라 할 수 있지만 나머지 탭은 꼭 그렇지도 않다.</p>
+</div>
+</div>
+</section><section id="console-창에서-놀아보기" class="level3" data-number="2.2"><h3 data-number="2.2" class="anchored" data-anchor-id="console-창에서-놀아보기">
+<span class="header-section-number">2.2</span> Console 창에서 놀아보기</h3>
+<p>여기서는 Console 창을 통해 R의 가장 기본적인 다음의 개념들에 대해 알아보고자 한다. Console 창은 R에서 CLI(command-line interface, 명령줄(어) 인터페이스) 역할을 하는 가장 핵심적인 부분이다. 사용자가 프로그램을 통해 컴퓨터와 상호작용하는 인터페이스이다.</p>
+<ul>
+<li><p>프롬프트(prompt): 명령 프롬프트(command prompt)라고도 불리는 것으로, CLI에서 명령어 대기 상태를 나타내는 일종의 부호이다. R에서는 <code>&gt;</code>를 사용한다.</p></li>
+<li><p>할당(assignment): 값을 식별자(identifier)를 가진 객체로 전환하는 과정을 의미한다. 프로그래밍 언어는 할당을 위한 고유한 연산자(operator)를 가지고 있는데, R은 <code>&lt;-</code>을 사용한다. <code>=</code>도 동일한 기능을 하는데, 권장하지는 않는다.</p></li>
+<li><p>객체(object): 값을 품고 있는, 식별자를 가진, 메모리 상의 기본 단위</p></li>
+<li><p>함수(function): 특정 동작을 수행하는 코드 블록을 의미한다. 인풋을 함수에 적용하면 함수의 고유한 동작을 통해 아웃풋이 산출된다.</p></li>
+<li><p>벡터(vector): 숫자의 일차원적 집합으로 보통 개별 행(row) 혹은 개별 열(column)을 의미한다.</p></li>
+<li><p>데이터 프레임(data frame): 하나 이상의 벡터를 모아 둔 숫자의 2차원적 집합으로, 다수의 행과 다수의 열로 이루어진 테이블을 의미한다. 이것이 보통 우리가 데이터셋이라고 부르는 것이다.</p></li>
+</ul>
+<section id="프롬프트-할당-객체" class="level4" data-number="2.2.1"><h4 data-number="2.2.1" class="anchored" data-anchor-id="프롬프트-할당-객체">
+<span class="header-section-number">2.2.1</span> 프롬프트, 할당, 객체</h4>
+<p>콘솔 창에 R 프롬프트인 <code>&gt;</code>가 나타나 있을 것이다. 아래와 같이 숫자 1을 타이핑하고 실행을 위해 [enter] 키를 누른다.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fl">1</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+<p>간단한 연산을 해본다. 사실 R은 기본적으로 계산기이다.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fl">1</span> <span class="op">+</span> <span class="fl">2</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+<p>이제 할당 연산자(<code>&lt;-</code>)를 활용하여 할당을 해보자.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fl">1</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>우상의 Environment 창을 보면 뭔가 생성된 것을 확인할 수 있을 것이다. <code>a</code>라는 객체가 생성되었으며 그것은 1이라는 값을 품고 있다는 의미이다. 이제 <code>a</code>는 알파벳 소문자가 아니라 1이라는 숫자와 필연적으로 결합해 있는 객체이다. 다음을 실행하면 이러한 사실을 보다 명확히 확인할 수 있다.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+노트
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>할당 연산자의 단축키는 <strong>Alt + _</strong> 이다. 가장 많이 사용하게 될 단축키 중의 하나이다. 이 단축키를 사용하면 좋은 점 중의 하나는 전후에 빈 공간이 자동적으로 생성된다는 점이다. 따라서 객체 이름 다음에 할당 연산자를 사용하기 위해 스페이스바를 사용할 필요가 없다.</p>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">a</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+<p>아래와 같이 하면 객체끼리의 연산이 가능하다.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">b</span> <span class="op">&lt;-</span> <span class="fl">2</span></span>
+<span><span class="va">c</span> <span class="op">&lt;-</span> <span class="va">a</span> <span class="op">+</span> <span class="va">b</span></span>
+<span><span class="va">c</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+<p>Base R에는 할당 연사자 외에도 여러 연산자가 존재한다. 이를 정리하면 다음과 같다.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 29%">
+</colgroup>
+<thead><tr class="header">
+<th>범주</th>
+<th>연산자</th>
+<th>설명</th>
+<th>예시</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>할당(assignment) 연산자</td>
+<td>
+<code>&lt;-</code> 혹은 <code>-&gt;</code>
+</td>
+<td>데이터를 객체에 할당</td>
+<td><code>a &lt;- 5</code></td>
+</tr>
+<tr class="even">
+<td>수리(arithmetic) 연산자</td>
+<td><code>+</code></td>
+<td>더하기(addition)</td>
+<td><code>5 + 5 = 10</code></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>-</code></td>
+<td>빼기(subtraction)</td>
+<td><code>5 - 5 = 0</code></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>*</code></td>
+<td>곱하기(multiplication)</td>
+<td><code>2 * 8 = 16</code></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>/</code></td>
+<td>나누기(division)</td>
+<td><code>100 / 10 = 10</code></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>
+<code>^</code> 혹은 <code>**</code>
+</td>
+<td>제곱(exponent/power)</td>
+<td><code>5^2 = 25</code></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>%%</code></td>
+<td>나머지(modulo)</td>
+<td><code>100 %% 15 = 10</code></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>%/%</code></td>
+<td>몫(integer division)</td>
+<td><code>100 %/% 15 = 6</code></td>
+</tr>
+<tr class="odd">
+<td>관계(relational) 연산자</td>
+<td><code>x &lt; y</code></td>
+<td>x가 y보다 작은 경우</td>
+<td>3 &lt; 4 <code>TRUE</code>
+</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>x &gt; y</code></td>
+<td>x가 y보다 큰 경우</td>
+<td>3 &gt; 4 <code>FALSE</code>
+</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>x &lt;= y</code></td>
+<td>x가 y보다 작거나 같은 경우</td>
+<td>3 &lt;= 4 <code>TRUE</code>
+</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>x &gt;= y</code></td>
+<td>x가 y보다 크거나 같은 경우</td>
+<td>3 &gt;= 4 <code>FALSE</code>
+</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>x == y</code></td>
+<td>x와 y가 같은 경우</td>
+<td>3 == 4 <code>FALSE</code>
+</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>x != y</code></td>
+<td>x와 y가 다른 경우</td>
+<td>3 != 4 <code>TRUE</code>
+</td>
+</tr>
+<tr class="odd">
+<td>논리(logical) 연산자</td>
+<td><code>!</code></td>
+<td>논리 부정(negation)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>&amp;</code></td>
+<td>논리곱(logical “and”)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>|</code></td>
+<td>논리합(logical “or”)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>xor</code></td>
+<td>배타적 논리합(logical “exclusive or”)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>기타 연산자</td>
+<td><code>x %in% y</code></td>
+<td>원소 포함</td>
+<td>벡터 x의 각 원소가 y 안에 존재하는지 확인</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>!(x %in% y)</code></td>
+<td>원소 비포함</td>
+<td>벡터 x의 각 원소가 y 안에 존재하지 않는지 확인</td>
+</tr>
+</tbody>
+</table></section><section id="함수" class="level4" data-number="2.2.2"><h4 data-number="2.2.2" class="anchored" data-anchor-id="함수">
+<span class="header-section-number">2.2.2</span> 함수</h4>
+<p><code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code> 함수를 사용하여 동일한 연산을 할 수 있다. <code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code>은 R에 기본적으로 내장되어 있는 Base R 함수 중 하나이다.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+중요
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>지금부터 모든 함수명에는 항상 <code>()</code>를 연결하여 나타낼 것이다. 다른 객체명과의 혼동을 방지하기 위한 것도 있지만, 모든 함수는 <code>()</code> 속에 인풋(이것을 인자(argument)라고 부른다)을 받아들이기 때문이다.</p>
+</div>
+</div>
+<p>R에는 수많은 내장 함수가 있다. 그 중 몇가지만 실행하면 다음과 같다. <code><a href="https://rdrr.io/r/base/MathFun.html">sqrt()</a></code>는 제곱근을, <code><a href="https://rdrr.io/r/base/MathFun.html">abs()</a></code>는 절대값을, <code><a href="https://rdrr.io/r/base/Log.html">log10()</a></code>는 밑을 10으로 하는 로그값을 산출해준다.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.414214</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="op">-</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log10</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+<p>Base R에서 사용되는 주요 내장 함수를 정리하면 다음과 같다.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 52%">
+</colgroup>
+<thead><tr class="header">
+<th>범주</th>
+<th>구분</th>
+<th>함수</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>논리형 판별 함수</td>
+<td>결측치 여부</td>
+<td>
+<code><a href="https://rdrr.io/r/base/NA.html">is.na()</a></code>, <code><a href="https://rdrr.io/r/base/is.finite.html">is.nan()</a></code>, <code><a href="https://rdrr.io/r/base/is.finite.html">is.infinite()</a></code>, <code><a href="https://rdrr.io/r/base/is.finite.html">is.finite()</a></code>
+</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>유형 확인</td>
+<td>
+<code><a href="https://rdrr.io/r/base/numeric.html">is.numeric()</a></code>, <code><a href="https://rdrr.io/r/base/integer.html">is.integer()</a></code>, <code><a href="https://rdrr.io/r/base/character.html">is.character()</a></code>, <code><a href="https://rdrr.io/r/base/logical.html">is.logical()</a></code>, <code><a href="https://rdrr.io/r/base/factor.html">is.factor()</a></code>
+</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>구조 확인</td>
+<td>
+<code><a href="https://rdrr.io/r/base/as.data.frame.html">is.data.frame()</a></code>, <code><a href="https://rdrr.io/r/base/matrix.html">is.matrix()</a></code>, <code><a href="https://rdrr.io/r/base/list.html">is.list()</a></code>, <code><a href="https://rdrr.io/r/base/vector.html">is.vector()</a></code>
+</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>기타</td>
+<td>
+<code><a href="https://rdrr.io/r/base/NULL.html">is.null()</a></code>, <code><a href="https://rdrr.io/r/base/is.recursive.html">is.atomic()</a></code>, <code><a href="https://rdrr.io/r/base/sets.html">is.element()</a></code>
+</td>
+</tr>
+<tr class="odd">
+<td>위치 기반 추출 함수</td>
+<td>첫 번째 원소</td>
+<td><code>x[1]</code></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>마지막 원소</td>
+<td><code>x[length(x)]</code></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>n번째 원소</td>
+<td><code>x[n]</code></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>앞의 몇 개의 원소</td>
+<td><code><a href="https://rdrr.io/r/utils/head.html">head()</a></code></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>뒤의 몇 개의 원소</td>
+<td><code><a href="https://rdrr.io/r/utils/head.html">tail()</a></code></td>
+</tr>
+<tr class="even">
+<td>수학 함수</td>
+<td>절댓값/부호</td>
+<td>
+<code><a href="https://rdrr.io/r/base/MathFun.html">abs()</a></code>, <code><a href="https://rdrr.io/r/base/sign.html">sign()</a></code>
+</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>제곱근/지수</td>
+<td>
+<code><a href="https://rdrr.io/r/base/MathFun.html">sqrt()</a></code>, <code><a href="https://rdrr.io/r/base/Log.html">exp()</a></code>
+</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>로그</td>
+<td>
+<code><a href="https://rdrr.io/r/base/Log.html">log()</a></code>, <code><a href="https://rdrr.io/r/base/Log.html">log10()</a></code>, <code><a href="https://rdrr.io/r/base/Log.html">log2()</a></code>
+</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>삼각함수</td>
+<td>
+<code><a href="https://rdrr.io/r/base/Trig.html">sin()</a></code>, <code><a href="https://rdrr.io/r/base/Trig.html">cos()</a></code>, <code><a href="https://rdrr.io/r/base/Trig.html">tan()</a></code>, <code><a href="https://rdrr.io/r/base/Trig.html">asin()</a></code>
+</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>반올림</td>
+<td>
+<code><a href="https://rdrr.io/r/base/Round.html">round()</a></code>, <code><a href="https://rdrr.io/r/base/Round.html">floor()</a></code>, <code><a href="https://rdrr.io/r/base/Round.html">ceiling()</a></code>, <code><a href="https://rdrr.io/r/base/Round.html">trunc()</a></code>
+</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>요약</td>
+<td>
+<code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code>, <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code>, <code><a href="https://rdrr.io/r/stats/median.html">median()</a></code>, <code><a href="https://rdrr.io/r/stats/cor.html">var()</a></code>, <code><a href="https://rdrr.io/r/stats/sd.html">sd()</a></code>, <code><a href="https://rdrr.io/r/base/Extremes.html">min()</a></code>, <code><a href="https://rdrr.io/r/base/Extremes.html">max()</a></code>, <code><a href="https://rdrr.io/r/base/range.html">range()</a></code>, <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code>
+</td>
+</tr>
+<tr class="even">
+<td>벡터 생성 함수</td>
+<td>수열/반복</td>
+<td>
+<code><a href="https://rdrr.io/r/base/seq.html">seq()</a></code>, <code><a href="https://rdrr.io/r/base/rep.html">rep()</a></code>
+</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>특정 유형</td>
+<td>
+<code><a href="https://rdrr.io/r/base/numeric.html">numeric()</a></code>, <code><a href="https://rdrr.io/r/base/integer.html">integer()</a></code>, <code><a href="https://rdrr.io/r/base/logical.html">logical()</a></code>, <code><a href="https://rdrr.io/r/base/character.html">character()</a></code>
+</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>난수/표본 생성</td>
+<td>
+<code><a href="https://rdrr.io/r/base/sample.html">sample()</a></code>, <code><a href="https://rdrr.io/r/stats/Normal.html">rnorm()</a></code>, <code><a href="https://rdrr.io/r/stats/Uniform.html">runif()</a></code>, <code><a href="https://rdrr.io/r/stats/Binomial.html">rbinom()</a></code>
+</td>
+</tr>
+<tr class="odd">
+<td>집합 연산 함수</td>
+<td>합집합</td>
+<td><code><a href="https://rdrr.io/r/base/sets.html">union()</a></code></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>교집합</td>
+<td><code><a href="https://rdrr.io/r/base/sets.html">intersect()</a></code></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>차집합</td>
+<td><code><a href="https://rdrr.io/r/base/sets.html">setdiff()</a></code></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>동일 여부</td>
+<td><code><a href="https://rdrr.io/r/base/sets.html">setequal()</a></code></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>원소 포함 여부</td>
+<td><code><a href="https://rdrr.io/r/base/sets.html">is.element()</a></code></td>
+</tr>
+<tr class="even">
+<td>변환 함수</td>
+<td>유형 변환</td>
+<td>
+<code><a href="https://rdrr.io/r/base/numeric.html">as.numeric()</a></code>, <code><a href="https://rdrr.io/r/base/character.html">as.character()</a></code>, <code><a href="https://rdrr.io/r/base/factor.html">as.factor()</a></code>, <code><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame()</a></code>
+</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>재코딩/재배열</td>
+<td>
+<code><a href="https://rdrr.io/r/base/cut.html">cut()</a></code>, <code><a href="https://rdrr.io/r/stats/relevel.html">relevel()</a></code>, <code><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder()</a></code>
+</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>표준화</td>
+<td><code><a href="https://rdrr.io/r/base/scale.html">scale()</a></code></td>
+</tr>
+<tr class="odd">
+<td>기타 함수</td>
+<td>길이</td>
+<td><code><a href="https://rdrr.io/r/base/length.html">length()</a></code></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>정렬</td>
+<td>
+<code><a href="https://rdrr.io/r/base/sort.html">sort()</a></code>, <code><a href="https://rdrr.io/r/base/order.html">order()</a></code>
+</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>중복 처리</td>
+<td>
+<code><a href="https://rdrr.io/r/base/unique.html">unique()</a></code>, <code><a href="https://rdrr.io/r/base/duplicated.html">duplicated()</a></code>
+</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>결측치 처리</td>
+<td><code><a href="https://rdrr.io/r/stats/na.fail.html">na.omit()</a></code></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+노트
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>최근 <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a> 패키지의 사용이 활발해 지면서 이러한 Base R 함수의 활용에 약간의 변동이 발생하고 있다. <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a> 패키지는 <a href="https://design.tidyverse.org/">타이디버스 디자인 원리</a>에 의거해 새로운 함수를 디자인하여 제공하고 있다. 이러한 타이디버스 함수가 Base R 함수나 기존의 패키지의 함수를 대체해 나가고 있는 실정이다. 여전히 많은 사람이 여기에 열거되어 있는 Base R의 기본 함수를 사용하고, 그러한 문법에 따라 코드를 작성하고 있다. 나는 타이디버스가 R의 미래라고 확신하며 가능한 코드를 타이디버스 함수를 이용해 작성하도록 노력할 것이다. 여기서 Base R의 함수는 기본적으로 벡터에 적용되는 함수이고, 타이디버스 함수는 데이터 프레임에 적용되는 함수라는 점을 명확히 할 필요가 있다. 따라서 타이디버스에서 벡터 연산을 할 때는 위에서 열거한 많은 함수를 그대로 사용한다. 특히, 논리형 판별 함수와 수학 함수는 그대로 사용하고 있다. 집합 연산 함수는 이름은 동일하지만 사실 새롭게 디자인한 함수이다. 타이디버스는 새로운 데이터 프레임 기반 함수를 통해 기존의 벡터 기반 함수가 하는 일을 대체하고자 한다. 그렇지만 모든 코드를 데이터 프레임 함수로만 작성할 수 없고, Base R의 여러 벡터 함수는 여전히 유용하게 사용되고 있다. 타이디버스가 부가적으로 제공하는 벡터 함수에 대해서는 다른 장에서 다루도록 한다.</p>
+</div>
+</div>
+</section><section id="벡터와-데이터-프레임" class="level4" data-number="2.2.3"><h4 data-number="2.2.3" class="anchored" data-anchor-id="벡터와-데이터-프레임">
+<span class="header-section-number">2.2.3</span> 벡터와 데이터 프레임</h4>
+<p>위에서 살펴본 숫자 하나하나는 큰 의미가 없다. 우리는 보통 숫자의 집합(array), 즉 벡터를 다룬다.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">29</span>, <span class="fl">27</span>, <span class="fl">23</span><span class="op">)</span></span>
+<span><span class="va">b</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">29L</span>, <span class="fl">27L</span>, <span class="fl">23L</span><span class="op">)</span></span>
+<span><span class="va">c</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="va">d</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"이하은"</span>, <span class="st">"김우형"</span>, <span class="st">"박서우"</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>는 모두 벡터이다. 우상의 Environment 창에서도 이러한 사실을 확인할 수 있다. 그런데, 이 세가지 벡터는 데이터의 유형(type)이라는 측면에서 서로 다르다. <code>a</code>는 숫자형(numeric), <code>b</code>는 정수형(integer), <code>c</code>는 논리형(logical), <code>d</code>는 문자형(character)이다. Environment 창을 보면, <code>a</code>에 대해서는 <code>num</code>, <code>b</code>에 대해서는 int, <code>c</code>에 대해서는 <code>logi</code>, <code>d</code>에 대해서는 <code>chr</code>이라는 축약어가 붙어 있음을 알 수 있는데, 이것이 바로 벡터의 유형을 나타내고 있는 것이다. 사실 R에서 다루는 벡터의 유형은 10가지가 넘는다.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+노트
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a> 패키지의 핵심 패키지 중의 하나인 <a href="https://tibble.tidyverse.org/"><strong>tibble</strong></a> 패키지에서 규정된 데이터 유형에 대해서는 다음의 웹사이트를 참고할 수 있다. <a href="https://tibble.tidyverse.org/articles/types.html" class="uri">https://tibble.tidyverse.org/articles/types.html</a></p>
+</div>
+</div>
+<p>벡터를 <code><a href="https://rdrr.io/r/base/data.frame.html">data.frame()</a></code>이라는 함수를 통해 결합하면 데이터 프레임을 만들 수 있다.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span>, <span class="va">c</span>, <span class="va">d</span><span class="op">)</span></span>
+<span><span class="va">df</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   a  b     c      d
+1 29 29  TRUE 이하은
+2 27 27  TRUE 김우형
+3 23 23 FALSE 박서우</code></pre>
+</div>
+</div>
+<p>우상의 Environment 창을 보면 뭔가 변화가 있음을 확인할 수 있을 것이다. Data가 생겼고 그 아래에 <code>df</code>가 생성되어 있을 것이다. “3 obs. of 4 variables”라는 말이 굉장히 중요하다. 이것은 <code>df</code>라는 데이터 프레임 객체가 3개의 관측 개체(observations)와 4개의 변수(variables)로 구성되어 있다는 것을 의미한다. 데이터 프레임, 관측 개체, 변수에 대해서는 강의에서 상세하게 다룬다.</p>
+<p>Environment 창에서 <code>df</code>를 클릭해보라. 그러면 왼편에 또 하나의 창이 생기면서 마치 엑셀과 같은 형식으로 데이터가 나타날 것이다. <code><a href="https://rdrr.io/r/utils/View.html">View()</a></code> 함수를 실행해도 동일한 결과를 얻을 수 있다.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/View.html">View</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>여기서 중요한 것은 새로 생긴 창이다. 이것을 보통 Editor 창이라고 부른다. 이제부터 Console은 부차적인 목적으로만 사용할 것이고 Editor 창이 주인공이 된다.</p>
+</section></section></section><section id="프로젝트project와-스크립트script" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="프로젝트project와-스크립트script">
+<span class="header-section-number">3</span> 프로젝트(project)와 스크립트(script)</h2>
+<section id="프로젝트-만들기" class="level3" data-number="3.1"><h3 data-number="3.1" class="anchored" data-anchor-id="프로젝트-만들기">
+<span class="header-section-number">3.1</span> 프로젝트 만들기</h3>
+<section id="r-프로젝트의-개념" class="level4" data-number="3.1.1"><h4 data-number="3.1.1" class="anchored" data-anchor-id="r-프로젝트의-개념">
+<span class="header-section-number">3.1.1</span> R 프로젝트의 개념</h4>
+<p>RStudio에서 프로젝트란 한 단위의 R 과업을 의미한다. 매우 단순한 과업도 있겠지만, 보통 데이터를 읽고, 정돈하고, 변형하고, 시각화하고, 모델링하는 등의 다양한 활동이 개입된다. 하나의 일관된 목적을 위해 이러한 다양한 일을 한다면, 이것들을 한데 모아 함께 관리하는 것이 좋을 것이다. 프로젝트는 하나의 과업을 위해 당신이 행한 모든 것이 체계적으로 정돈되어 있는 가상의 방이다. 좀 이질적인 과업을 하게 된다면 기존의 프로젝트 속에서 하기 보다는 또 다른 프로젝트를 만들어 그 속에서 하는 것이 효과적일 것이다.</p>
+<p>RStudio의 프로젝트는 실질적으로 하나의 폴더를 의미한다. 하나의 폴더 속에 모든 활동과 그것의 인풋 및 아웃풋이 모두 저장되고, RStudio는 그것을 체계적으로 관리할 수 있게 해주는 툴을 제공한다.</p>
+<p>다음과 같은 관행을 추천한다.</p>
+<ul>
+<li><p>디바이스에 모든 R 프로젝트를 포괄하는 최상위 폴더를 만든다. 걸맞는 폴더명(예: R_Projects)을 부여한다. 이것은 R 외부에서 미리 해둔다. 물론 Output 창의 Files 탭을 이용하면 R 내부에서도 할 수 있다.</p></li>
+<li><p>최상위 폴더 아래에 개별 R 프로젝트를 위한 폴더를 만든다. 과업에 걸맞는 폴더명(예: AI_Class_2025)을 부여한다. 이것을 R 외부에서 미리 해둘 수도 있고, R 내부에서 프로젝트를 생성할 때 할 수도 있다. 후자를 추천한다.</p></li>
+</ul></section><section id="r-프로젝트-만들기" class="level4" data-number="3.1.2"><h4 data-number="3.1.2" class="anchored" data-anchor-id="r-프로젝트-만들기">
+<span class="header-section-number">3.1.2</span> R 프로젝트 만들기</h4>
+<p>두 가지 방법이 있다.</p>
+<ul>
+<li><p>최상단 메뉴를 이용: File &gt; New Project</p></li>
+<li><p>상단 메뉴바 오른쪽 맨끝에 있는 작은 화살표 아이콘: New Project</p></li>
+</ul>
+<p><a href="#fig-R-project" class="quarto-xref">그림&nbsp;3</a> 에 나타나 있는 절차를 통해 프로젝트를 생성한다. 각각 다음의 단계를 거친다.</p>
+<ul>
+<li><p>1단계: 과제 폴더(디렉토리)를 미리 만들어 두지 않았다면, New Directory를 선택한다(추천). 그렇지 않았다면 Existing Directory를 선택한다.</p></li>
+<li><p>2단계: New Project를 선택한다.</p></li>
+<li><p>3단계: ’Directory name:’에 과제를 위한 폴더명을 타이핑한다(예: AI_Class_2025). ’Create project as subdirectory of:’에 최상위 폴더(예: R_Projects)를 선택한다.</p></li>
+</ul>
+<div id="fig-R-project" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-R-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://r4ds.hadley.nz/diagrams/new-project.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="그림&nbsp;3: R 프로젝트의 생성 절차"><img src="https://r4ds.hadley.nz/diagrams/new-project.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-R-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;3: R 프로젝트의 생성 절차
+</figcaption></figure>
+</div>
+<p>Output 창의 Files 탭을 누르면, 다양한 기본 파일들이 해당 폴드에 생성되었음을 확인할 수 있다. 가장 중요한 파일은 .RProj라는 확장자를 가진 파일이다. 나중에 R 외부에서 이 파일을 더블클릭하면 R 프로젝트를 열 수 있다.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+힌트
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>R 외부의 파일 관리 시스템(윈도우즈의 경우 파일 탐색기)를 사용하지 말고, Output 창의 Files 탭을 사용하는 것이 훨씬 유용하다. 파일 탐색기에서 제공하는 거의 대부분의 기능을 제공한다.</p>
+</div>
+</div>
+</div>
+</section><section id="옵션의-변경" class="level4" data-number="3.1.3"><h4 data-number="3.1.3" class="anchored" data-anchor-id="옵션의-변경">
+<span class="header-section-number">3.1.3</span> 옵션의 변경</h4>
+<p>RStudio의 기본 세팅값을 바꿀 수 있는 다양한 옵션이 존재한다. Tools &gt; Global Options를 선택하면 <a href="#fig-global-options" class="quarto-xref">그림&nbsp;4</a> 과 같은 화면을 볼 수 있을 것이다. 다음의 두 가지를 해보라.</p>
+<ul>
+<li><p>자신이 좀 숙달된 R 사용자가 되었다고 판단되는 즈음에, 가운데 Workspace 부분을 그림과 동일하게 변경해보라. 디폴트는 체크가 되어 있는 것인데, 프로젝트를 다시 열었을 때 그 전에 만들어 둔 데이터나 객체가 모두 그대로 남아있게 한다. 초보자에게는 이것이 좋을 것이다. 그러나 새로운 세션을 시작할 때 마다 그 전의 흔적을 밀어버리고, 다시 모든 코드를 실행하여 결과를 새로이 얻는 것이, 프로그래밍 측면에서는 ‘완전한’ 일이다.</p></li>
+<li><p>왼쪽에서 Apearance를 선택한 후, ’Editor font size:’나 ’Editor theme’을 변경하여 자신의 선호를 반영하라.</p></li>
+</ul>
+<div id="fig-global-options" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-global-options-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://r4ds.hadley.nz/diagrams/rstudio/clean-slate.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="그림&nbsp;4: 옵션의 변경"><img src="https://r4ds.hadley.nz/diagrams/rstudio/clean-slate.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-global-options-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;4: 옵션의 변경
+</figcaption></figure>
+</div>
+</section></section><section id="스크립트-만들기" class="level3" data-number="3.2"><h3 data-number="3.2" class="anchored" data-anchor-id="스크립트-만들기">
+<span class="header-section-number">3.2</span> 스크립트 만들기</h3>
+<section id="console에서-script-editor로" class="level4" data-number="3.2.1"><h4 data-number="3.2.1" class="anchored" data-anchor-id="console에서-script-editor로">
+<span class="header-section-number">3.2.1</span> Console에서 Script Editor로</h4>
+<p>Console은 명령어를 입력하고 그 결과를 볼 수 있는 곳이다. 이것은 Base R의 기본 기능을 RStudio가 충실하게 구현한 것이다. 그런데 제법 복잡한 R 프로젝트를 수행하고자 할 때 Console을 이용하는 방식은 제한점이 많다.</p>
+<ul>
+<li><p>다양하고 복잡한 R 명령어를 실행하고 그 결과를 보기에는 공간이 협소하다.</p></li>
+<li><p>Console에서 행한 것은 저장되지 않는다. 보다 정확하게 말하면, 산출물은 저장될 수 있지만, 그러한 산출물을 얻는데 동원된 일련의 코드는 저장되지 않는다. RStudio를 나갔다가 다시 들어오면 객체, 플롯 등의 산출물은 그대로 남아 있지만 어떤 과정을 거쳐 그러한 결과물을 산출했는지에 대한 것을 남아 있지 않다. 이런 점은 상당한 기간이 지난 후에는 더 큰 문제로 다가온다.</p></li>
+</ul>
+<p>이러한 의미에서 R을 가지고 행한 것을 모두 저장하는, 일종의 연구노트와 같은 것이 필요하다. 이것을 R 스크립트(script)라고 부르는데, 좌상의 Editor 창에서 스크립트를 다루고, <code>.R</code>이라는 확장자를 가진 파일로 저장한다.</p>
+</section><section id="스크립트-파일-생성하고-저장하기" class="level4" data-number="3.2.2"><h4 data-number="3.2.2" class="anchored" data-anchor-id="스크립트-파일-생성하고-저장하기">
+<span class="header-section-number">3.2.2</span> 스크립트 파일 생성하고 저장하기</h4>
+<p>스크립트 파일을 생성하는 세 가지 정도의 방법이 있다.</p>
+<ul>
+<li><p>File &gt; New File &gt; R Script 선택</p></li>
+<li><p>File 메뉴 바로 아래의 New File 아이콘을 누른 후 R Script 선택</p></li>
+<li><p>단축키(<strong>Ctrl + Shift + N</strong>) 실행</p></li>
+</ul>
+<p>이렇게 하면 <a href="#fig-four-panes" class="quarto-xref">그림&nbsp;5</a> 과 같이 좌상에 Editor 창이 생성된다. 그 안에서 그림에서 보는 바와 같이 코드를 작성하게 된다.</p>
+<div id="fig-four-panes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-four-panes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://docs.posit.co/ide/user/ide/guide/ui/images/rstudio-panes-labeled.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="그림&nbsp;5: 네 개의 창(https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html)"><img src="https://docs.posit.co/ide/user/ide/guide/ui/images/rstudio-panes-labeled.jpeg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-four-panes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;5: 네 개의 창(<a href="https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html" class="uri">https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html</a>)
+</figcaption></figure>
+</div>
+<p>스크립트 파일에 이름을 부여하고 저장한다.</p>
+<ul>
+<li><p>File &gt; Save 선택</p></li>
+<li><p>Save current document 아이콘 클릭</p></li>
+<li><p>단축키(Ctrl + S) 실행</p></li>
+</ul></section><section id="스크립트-파일에서의-실행" class="level4" data-number="3.2.3"><h4 data-number="3.2.3" class="anchored" data-anchor-id="스크립트-파일에서의-실행">
+<span class="header-section-number">3.2.3</span> 스크립트 파일에서의 실행</h4>
+<p>앞에서 Console에서 했던 모든 일을 동일하게 할 수 있다. 단 실행 방식이 조금 다르다. 앞에서 생성한 <code>df</code> 데이터 프레임의 <code>a</code> 벡터(변수)의 평균값을 구하기 위해 이전과 동일하게 입력한다. 그런데 프롬프트가 없고, [enter]를 눌러도 실행되지 않는다.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">a</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>우선 실행할 코드 라인 혹은 코드의 영역을 지정해야 한다. 두 가지 방법이 있다.</p>
+<ul>
+<li><p>실행할 코드 라인 혹은 코드 블록에 커서를 위치시킨다.</p></li>
+<li><p>왼쪽 마우스 버튼을 누른 상태에서 커서를 이동시켜 실행할 영역 전체를 선택한다.</p></li>
+</ul>
+<p>영역이 지정되면 실행하면 되는데, 여기에도 두 가지 방법이 있다.</p>
+<ul>
+<li><p>단축키(<strong>Ctrl + Enter</strong>) 실행</p></li>
+<li><p>Editor 창의 우상에 있는 ‘Run the current line or selection’ 아이콘을 클릭(<a href="#fig-run-script" class="quarto-xref">그림&nbsp;6</a> 참조)</p></li>
+</ul>
+<div id="fig-run-script" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-run-script-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://docs.posit.co/ide/user/ide/guide/code/images/run-current-line.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="그림&nbsp;6: 스크립트 파일에서의 실행(https://docs.posit.co/ide/user/ide/guide/code/execution.html)"><img src="https://docs.posit.co/ide/user/ide/guide/code/images/run-current-line.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-run-script-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;6: 스크립트 파일에서의 실행(<a href="https://docs.posit.co/ide/user/ide/guide/code/execution.html" class="uri">https://docs.posit.co/ide/user/ide/guide/code/execution.html</a>)
+</figcaption></figure>
+</div>
+<p>이전의 실행을 반복하고자 할 때는 다음과 같이 하면 된다.</p>
+<ul>
+<li><p>단축키(<strong>Ctrl + Alt +P</strong>) 실행</p></li>
+<li><p>Editor 창의 우상에 있는 ‘Re-run the previous code region’ 아이콘을 클릭(<a href="#fig-run-script" class="quarto-xref">그림&nbsp;6</a> 참조)</p></li>
+</ul>
+<p>스크립트 파일 내 모든 코드를 실행하고자 할 때는 다음과 같이 하면 된다.</p>
+<ul>
+<li>단축키(<strong>Crtl + Shift + S</strong>)</li>
+</ul></section><section id="코멘트" class="level4" data-number="3.2.4"><h4 data-number="3.2.4" class="anchored" data-anchor-id="코멘트">
+<span class="header-section-number">3.2.4</span> 코멘트</h4>
+<p>코드에 대한 코멘트를 스크립트 파일 곳곳에 남겨두면 나중에 코드 작성의 의도를 보다 쉽게 파악할 수 있다. 이와 관련하여 두 가지 사항을 알아두면 유용하다.</p>
+<p>첫째, # 표시 뒤의 것은 R이 실행하지 않기 때문에 중간중간에 # 표시를 하고 그 뒤에 자신의 코멘트를 남겨두는 것을 권한다.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">a</span><span class="op">)</span> <span class="co"># 세 사람의 나이 평균을 구함. 첫 번째 사람 나이가 엄청나게 많음.</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>둘째, 코드가 길어지면, 그것을 몇 개의 섹션으로 나누고 그것에 코멘트를 달아 줄 수 있다. 단축키(<strong>Crtl + Shift + R</strong>)를 실행하여 섹션 라벨(Section label)을 달 수 있고, Editor 창의 왼쪽 하단에 있는 작은 아이콘을 이용해 섹션을 빠르게 이동할 수 있다.</p>
+<div id="fig-section-comment" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-section-comment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://r4ds.hadley.nz/screenshots/rstudio-nav.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="그림&nbsp;7: 섹션 코멘트 달기(https://r4ds.hadley.nz/workflow-style.html#sectioning-comments)"><img src="https://r4ds.hadley.nz/screenshots/rstudio-nav.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-section-comment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;7: 섹션 코멘트 달기(<a href="https://r4ds.hadley.nz/workflow-style.html#sectioning-comments" class="uri">https://r4ds.hadley.nz/workflow-style.html#sectioning-comments</a>)
+</figcaption></figure>
+</div>
+
+
+</section></section></section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> 맨 위로</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "복사완료!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "복사완료!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2024, Sang-Il Lee</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>이슈 보고</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+<li class="nav-item compact">
+    <a class="nav-link" href="https://sangillee.snu.ac.kr/">
+      <i class="bi bi-house" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:si_lee@snu.ac.kr">
+      <i class="bi bi-envelope" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/sangillee66">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+</div>
+  </div>
+</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+</body></html>
