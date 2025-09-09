@@ -3,7 +3,7 @@ title: "R and RStudio"
 author: "Sang-Il Lee ft. Ha-eun Lee"
 date-modified: last-modified
 number-sections: true
-embed-resources: true
+embed-resources: false
 format: 
   html: 
     toc: true
@@ -132,7 +132,7 @@ c
 Base R에는 할당 연사자 외에도 여러 연산자가 존재한다. 이를 정리하면 다음과 같다.
 
 | 범주 | 연산자 | 설명 | 예시 |
-|----|----|----|----|
+|-----------------|-----------------|-----------------|---------------------|
 | 할당(assignment) 연산자 | `<-` 혹은 `->` | 데이터를 객체에 할당 | `a <- 5` |
 | 수리(arithmetic) 연산자 | `+` | 더하기(addition) | `5 + 5 = 10` |
 |  | `-` | 빼기(subtraction) | `5 - 5 = 0` |
@@ -177,7 +177,7 @@ log10(100)
 Base R에서 사용되는 주요 내장 함수를 정리하면 다음과 같다.
 
 | 범주 | 구분 | 함수 |
-|----|----|----|
+|-----------------|-----------------|--------------------------------------|
 | 논리형 판별 함수 | 결측치 여부 | `is.na()`, `is.nan()`, `is.infinite()`, `is.finite()` |
 |  | 유형 확인 | `is.numeric()`, `is.integer()`, `is.character()`, `is.logical()`, `is.factor()` |
 |  | 구조 확인 | `is.data.frame()`, `is.matrix()`, `is.list()`, `is.vector()` |
