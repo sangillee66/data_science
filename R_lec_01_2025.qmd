@@ -1,0 +1,336 @@
+---
+title: |
+  | [R Lecture 1]{style="color:coral;font-size:0.6em"}   
+  | [R과 RStudio]{style="font-size:1em"} 
+author: <br> 이상일(서울대학교 지리교육과 교수)
+date: 2025-09-09
+format: 
+  revealjs:
+    logo: snu_edu_1.png
+    footer: https://sangillee.snu.ac.kr/
+    transition: fade
+    transition-speed: fast
+    margin: 0.05
+    center: false
+    # smaller: false
+    # scrollable: false
+    code-link: true
+    code-copy: true
+    code-overflow: scroll
+    slide-number: true
+    width: 960 * 1.5
+    height: 700 * 1.5
+    lightbox: false
+    # min-scale: 1
+    # max-scale: 1
+    pointer:
+      pointerSize: 20
+      color: red
+    menu: true
+    embed-resources: false
+    theme: [default, custom_hq_pretendard_step.scss] # 슬라이드 본문 폰트 크기 조정
+    revealjs-plugins:
+      - pointer
+code-link: true
+execute: 
+  warning: false
+  error: false
+  freeze: auto  
+dpi: 600
+editor: visual
+webr: 
+  show-startup-message: false     
+  packages: []
+filters:
+  - webr
+# suppress-bibliography: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# [R의 역사]{style="color:coral"}
+
+## 주요 사건들
+
+![[https://www.mdpi.com/2075-1729/12/5/648](https://www.mdpi.com/2075-1729/12/5/648){style="font-size:1.25rem"}](images/clipboard-1001165257.png){fig-align="center"}
+
+## Bell Labs in 1975
+
+![[https://en.wikipedia.org/wiki/Bell_Labs](https://en.wikipedia.org/wiki/Bell_Labs){style="font-size:1.25rem"}](images/clipboard-3509501427.png){fig-align="center"}
+
+## S-Plus, 1997
+
+::: {layout="[55,45]" layout-valign="center"}
+![[https://knihobot.cz/g/485637](https://knihobot.cz/g/485637){style="font-size:1.25rem"}](images/clipboard-1588861203.png){width="581"}
+
+![[https://link.springer.com/book/10.1007/978-1-4615-7826-0](https://link.springer.com/book/10.1007/978-1-4615-7826-0){style="font-size:1.25rem"}](images/clipboard-520867837.png){width="384"}
+:::
+
+## Fathers of R, 1993
+
+::: {layout="[25,50,25]" layout-valign="center"}
+![[조지 로스 이하카 George Ross Ihaka](https://en.wikipedia.org/wiki/Ross_Ihaka){style="font-size:1.25rem"}](images/clipboard-4103752460.png)
+
+![[오클랜드 대학 University of Auckland](https://revolution-computing.typepad.com/.a/6a010534b1db25970b016766fdae38970b-popup){style="font-size:1.25rem"}](images/clipboard-3647657155.png)
+
+![[로버트 젠틀맨 Robert C. Gentleman](https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)){style="font-size:1.25rem"}](images/clipboard-3701321516.png)
+:::
+
+## Official Birth
+
+![[https://www.r-consortium.org/blog/2023/02/28/happy-23rd-birthday-r](https://www.r-consortium.org/blog/2023/02/28/happy-23rd-birthday-r){style="font-size:1.25rem"}](images/clipboard-692617930.png){width="1501"}
+
+## ggplot2, 2007
+
+::: {layout="[50,-10,40]" layout-valign="center"}
+![[https://ggplot2.tidyverse.org/](https://ggplot2.tidyverse.org/){style="font-size:1.25rem"}](images/clipboard-2318221644.png)
+
+![[해들리 위컴(Hadley Wickham), posit](https://hadley.nz/){style="font-size:1.25rem"}](images/clipboard-2910928344.png)
+:::
+
+## RStudio, 2011
+
+![[https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/){style="font-size:1.25rem"}](images/clipboard-93412336.png)
+
+## shiny, 2012
+
+::: {layout="[40,60]" layout-valign="center"}
+![](images/clipboard-4146211205.png)
+
+![[https://shiny.posit.co/](https://shiny.posit.co/){style="font-size:1.25rem"}](images/clipboard-2437889464.png)
+:::
+
+## tidyverse, 2016
+
+::: {layout="[45,-10,55]" layout-valign="center"}
+![[https://www.tidyverse.org/](https://www.tidyverse.org/){style="font-size:1.25rem"}](images/clipboard-4211850950.png)
+
+![[https://www.tidyverse.org/](https://www.tidyverse.org/){style="font-size:1.25rem"}](https://sangillee.snu.ac.kr/data_science/images/tidyverse_9.PNG)
+:::
+
+## posit, 2022
+
+![[https://posit.co/](https://posit.co/){style="font-size:1.25rem"}](images/clipboard-4259342209.png)
+
+## quarto, 2022
+
+::: {layout="[40,60]" layout-valign="center"}
+![[https://quarto.org/](https://quarto.org/){style="font-size:1.25rem"}](images/clipboard-138902577.png)
+
+![[https://rstudio.github.io/cheatsheets/html/quarto.html](https://rstudio.github.io/cheatsheets/html/quarto.html){style="font-size:1.25rem"}](images/clipboard-746810244.png)
+:::
+
+# [RStudio]{style="color:coral"}
+
+## IDE
+
+IDE(integrated development environment, 통합개발환경)
+
+::: {layout="[45,-5,55]" layout-valign="center"}
+![](images/clipboard-2963976366.png)
+
+![](images/clipboard-676249587.png)
+:::
+
+## IDE {visibility="hidden"}
+
+![[https://moderndive.com/1-getting-started.html#r-rstudio](https://moderndive.com/1-getting-started.html#r-rstudio){style="font-size:1.25rem"}](images/clipboard-1340309066.png)
+
+## IDE
+
+![[https://djangostars.com/blog/python-ide/](https://djangostars.com/blog/python-ide/){style="font-size:1.25rem"}](https://djangostars.com/blog/wp-content/uploads/2022/08/Best-Python-IDE-for-Development_1.2.png){fig-align="center"}
+
+## IDE
+
+![[https://posit.co/blog/positron-product-announcement-aug-2025/](https://posit.co/blog/positron-product-announcement-aug-2025/){style="font-size:1.25rem"}](https://posit.co/wp-content/uploads/2025/08/FEATURED-BLOG-IMAGE-POSITRON-GTM-BLOG-POST-ANNOUNCEMENT-1.jpg){fig-align="center"}
+
+## 4개의 창
+
+![](images/clipboard-2401742054.png){fig-align="center"}
+
+## R Project
+
+![](images/clipboard-3045448819.png){fig-align="center"}
+
+## R Project
+
+![[https://allisonhorst.com/allison-horst](https://allisonhorst.com/allison-horst){style="font-size:1.25rem"}](images/clipboard-983203921.png){fig-align="center"}
+
+## RStudio 가이드
+
+-   [RStudio IDE User Guide](https://docs.posit.co/ide/user/)
+
+-   [Posit Cheatsheets](https://posit.co/resources/cheatsheets/)
+
+# [Base R]{style="color:coral"}
+
+## 프로그래밍의 기본 개념
+
+-   객체(object): R 환경 안에 존재하는, 식별가능하고 조작 가능한 모든 엔터티
+
+    -   데이터 객체: 숫자/문자/논리값, 벡터, 데이터 프레임
+
+    -   비데이터 객체: 함수, 플롯, 모형 등
+
+-   할당(assignment): 데이터와 이름을 연결해 R 환경에 객체를 저장하는 프로그래밍 언어적 동작
+
+    -   특정한 할당 연산자 사용: `<-` 또는 `=`
+
+-   연산자(operator): 하나 이상의 객체(피연산자)에 적용되어, 객체의 상태를 바꾸거나 새로운 값을 만드는 프로그래밍 언어의 기본 요소
+
+-   함수(function): 특정 동작을 수행하는 코드 블록. 인풋을 함수에 적용하면 함수의 고유한 동작을 통해 아웃풋이 산출
+
+## 연산자 Operators
+
+![[https://learnetutorials.com/r-programming/operators-and-types](https://learnetutorials.com/r-programming/operators-and-types){style="font-size:1.25rem"}](images/clipboard-1399978816.png)
+
+## 할당 연산자
+
+::: {layout-ncol="2"}
+![](images/clipboard-911363916.png)
+
+![](images/clipboard-1290193573.png)
+:::
+
+## 산술 연산자
+
+|   Operator    |   Description    |   Example    |
+|:-------------:|:----------------:|:------------:|
+|      `+`      |     addition     |   `5+5=10`   |
+|      `-`      |   subtraction    |   `5-5=0`    |
+|      `*`      |  multiplication  |   `2*8=16`   |
+|      `/`      |     division     | `100/10=10`  |
+| `^` (or `**`) |  exponent/power  |   `5^2=25`   |
+|     `%%`      |      modulo      | `100%%15=10` |
+|     `%/%`     | integer division | `100%/%15=6` |
+
+## 관계, 논리, 기타 연산자 {.scrollable .smaller}
+
+| Type | Operator | Condition |
+|----|----|----|
+| 관계 Relational | `x < y` | Where `x` less than `y` |
+|  | `x > y` | Where `x` greater than `y` |
+|  | `x <= y` | Where `x` less than or equal to `y` |
+|  | `x >= y` | Where `x` greater than or equal to `y` |
+|  | `x == y` | Where `x` (exactly) equals `y` |
+|  | `x != y` | Where `x` is not equal to `y` |
+| 논리 Logical | `!` | Negation |
+|  | `&` | Logical "and" (`x >= 20 & x < 35`) |
+|  | `|` | Logical "or (`x == 20 | x > 45`) |
+|  | `xor` | Logical "exclusive or" (`xor(x == 20, x == 50`) |
+| 기타 Miscellaneous | `x %in% y` | Where `x` is in `y` |
+|  | `!x %in% y` | Where `x` is not in `y` |
+
+## webr 연습
+
+```{webr-r}
+
+```
+
+## 함수 functions
+
+```{r}
+#| echo: true
+#| eval: false
+seq(from = 2, to = 100, by = 2)
+```
+
+![[https://www.r4epi.com/speaking-rs-language](https://www.r4epi.com/speaking-rs-language){style="font-size:1.25rem"}](images/clipboard-1402738689.png)
+
+## 주요 산술 함수 {.scrollable .smaller}
+
+| 분류 | 함수 |
+|----|----|
+| 절대값/부호 | [`abs()`](https://rdrr.io/r/base/MathFun.html), [`sign()`](https://rdrr.io/r/base/sign.html) |
+| 제곱근/지수 | [`sqrt()`](https://rdrr.io/r/base/MathFun.html), [`exp()`](https://rdrr.io/r/base/Log.html) |
+| 로그 | [`log()`](https://rdrr.io/r/base/Log.html), [`log10()`](https://rdrr.io/r/base/Log.html), [`log2()`](https://rdrr.io/r/base/Log.html) |
+| 삼각함수 | [`sin()`](https://rdrr.io/r/base/Trig.html), [`cos()`](https://rdrr.io/r/base/Trig.html), [`tan()`](https://rdrr.io/r/base/Trig.html), [`asin()`](https://rdrr.io/r/base/Trig.html) |
+| 반올림 | [`round()`](https://rdrr.io/r/base/Round.html), [`floor()`](https://rdrr.io/r/base/Round.html), [`ceiling()`](https://rdrr.io/r/base/Round.html), [`trunc()`](https://rdrr.io/r/base/Round.html) |
+| 요약 | [`sum()`](https://rdrr.io/r/base/sum.html), [`mean()`](https://rdrr.io/r/base/mean.html), [`median()`](https://rdrr.io/r/stats/median.html), [`var()`](https://rdrr.io/r/stats/cor.html), [`sd()`](https://rdrr.io/r/stats/sd.html), [`min()`](https://rdrr.io/r/base/Extremes.html), [`max()`](https://rdrr.io/r/base/Extremes.html), [`range()`](https://rdrr.io/r/base/range.html), [`summary()`](https://rdrr.io/r/base/summary.html) |
+
+## 그 외 많이 쓰이는 함수 {.scrollable .smaller}
+
+| 분류           | 함수                                                     |
+|----------------|----------------------------------------------------------|
+| 논리형 판별    | `is.na()`, `is.numeric()`, `is.character()`, `is.null()` |
+| 수열/반복      | `seq()`, `rep()`                                         |
+| 난수/표본 생성 | `sample()`, `rnorm()`                                    |
+| 유형 변환      | `as.numeric()`, `as.character()`                         |
+| 표준화         | `scale()`                                                |
+| 길이           | `length()`                                               |
+| 정렬           | `sort()`, `order()`                                      |
+| 중복 처리      | `unique()`, `duplicated()`                               |
+
+## 데이터 객체: 데이터 유형
+
+![](images/clipboard-2205001184.png){fig-align="center" width="826"}
+
+## 벡터와 데이터 프레임
+
+::: panel-tabset
+## R 코드
+
+```{r}
+#| echo: true
+a <- c(58, 26, 24, 19)
+b <- c(58L, 26L, 24L, 32L)
+c <- c(TRUE, TRUE, FALSE, FALSE)
+d <- c("이상일", "김우형", "박서우", "이하은")
+df <- data.frame(a, b, c, d)
+df
+```
+
+## webr 연습
+
+```{webr-r}
+
+```
+:::
+
+# [R vs. Python]{style="color:coral"} {visibility="hidden"}
+
+## Differences {visibility="hidden"}
+
+![](images/clipboard-358948273.png){fig-align="center"}
+
+## Differences {visibility="hidden"}
+
+[![](images/clipboard-2470054351.png)](https://r-craft.org/the-3-reasons-you-should-learn-r-for-data-science/)
+
+## R for Open Science {visibility="hidden"}
+
+::: {layout="[45,55]" layout-valign="center"}
+![](images/clipboard-3188950491.png)
+
+![](images/clipboard-1041852686.png)
+:::
+
+## R for Reproducible Research {visibility="hidden"}
+
+::: {layout-ncol="3" layout-valign="center"}
+![](images/clipboard-182108294.png)
+
+![](images/clipboard-3965408841.png)
+
+![](images/clipboard-875106470.png)
+:::
+
+## R Communities {visibility="hidden"}
+
+![](images/clipboard-2625064294.png){fig-align="center"}
+
+## R Communities {visibility="hidden"}
+
+::: {layout="[45,55]" layout-valign="center"}
+![](images/clipboard-271459863.png)
+
+![](images/clipboard-1363032995.png)
+:::
+
+## R and Python in Harmony {visibility="hidden"}
+
+::: {layout="[45,55]" layout-valign="center"}
+![](images/clipboard-2653295805.png)
+
+![](images/clipboard-702669114.png)
+:::

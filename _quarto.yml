@@ -29,6 +29,8 @@ website:
           - exec_10.qmd
       - text: "---"    
       - section: "R 프레젠테이션: 2025/2"
+        contents: 
+          - R_lec_01_2025.qmd
       - text: "---"    
       - section: "R 프레젠테이션: 2024/1"
         contents: 
@@ -44,6 +46,8 @@ website:
           - R_lec_10.qmd
       - text: "---"    
       - section: "R 실습: 2025/2"
+        contents: 
+          - lab_01_2025.qmd
       - text: "---"    
       - section: "R 실습: 2024/1"
         contents: 
