@@ -5818,7 +5818,7 @@
     "href": "R_lec_02_2025.html#no-error-no-gain",
     "title": "\nR Lecture 2R과 데이터사이언스\n",
     "section": "No error, no gain!",
-    "text": "No error, no gain!\n\n\n\nhttps://allisonhorst.com/everything-else"
+    "text": "No error, no gain!\n\n\nhttps://allisonhorst.com/everything-else"
   },
   {
     "objectID": "R_lec_02_2025.html#패키지란",
@@ -5874,7 +5874,7 @@
     "href": "R_lec_02_2025.html#패키지-설치하기",
     "title": "\nR Lecture 2R과 데이터사이언스\n",
     "section": "패키지 설치하기",
-    "text": "패키지 설치하기\n\n\nCRAN 패키지인 경우\n\ninstall.packages(\"패키지명\")\n아웃풋(output) 창의 Packages 탭\n\n\n\n\n\n\n비 CRAN 패키지의 경우\n\nremotes::install_github(\"사용자명/저장소명\")"
+    "text": "패키지 설치하기\n\n\nCRAN 패키지인 경우\n\ninstall.packages(\"패키지명\")\n아웃풋(output) 창의 Packages 탭\n\n\n\n\n\n\n\n\n\n비 CRAN 패키지의 경우\n\nremotes::install_github(\"사용자명/저장소명\")"
   },
   {
     "objectID": "R_lec_02_2025.html#패키지-불러오기",
@@ -5923,14 +5923,14 @@
     "href": "R_lec_02_2025.html#타이디버스-철학",
     "title": "\nR Lecture 2R과 데이터사이언스\n",
     "section": "타이디버스 철학",
-    "text": "타이디버스 철학\n타이디버스 스타일 가이드\n\nhttps://allisonhorst.com/r-packages-functions"
+    "text": "타이디버스 철학\n타이디버스 스타일 가이드\n\n\nhttps://allisonhorst.com/r-packages-functions"
   },
   {
     "objectID": "R_lec_02_2025.html#타이디버스-철학-4대-원리",
     "href": "R_lec_02_2025.html#타이디버스-철학-4대-원리",
     "title": "\nR Lecture 2R과 데이터사이언스\n",
     "section": "타이디버스 철학: 4대 원리",
-    "text": "타이디버스 철학: 4대 원리\n타이디 디자인 원리(Tidy Design Principles)\n\n\n인간중심주의 Human-centeredness\n\nFor an end-user programmer\n\n\n\n일관성 Consistency\n\nThe smallest possible set of key ideas, used as comprehensively as possible\n\n\n\n조합성 Composability\n\nMany simple pieces, composed for a larger task using operators such as |&gt; and +\n\n\n\n포용성 Inclusiveness\n\nTowards a diverse, open, and friendly community"
+    "text": "타이디버스 철학: 4대 원리\n타이디 디자인 원리(Tidy Design Principles)\n\n\n인간중심성 Human-centeredness\n\nFor an end-user programmer\n\n\n\n일관성 Consistency\n\nThe smallest possible set of key ideas, used as comprehensively as possible\n\n\n\n조합성 Composability\n\nMany simple pieces, composed for a larger task using operators such as |&gt; and +\n\n\n\n포용성 Inclusiveness\n\nTowards a diverse, open, and friendly community"
   },
   {
     "objectID": "R_lec_02_2025.html#magrittr-패키지",
@@ -5965,7 +5965,7 @@
     "href": "R_lec_02_2025.html#데이터사이언스-프로세스와-파이프-연산자",
     "title": "\nR Lecture 2R과 데이터사이언스\n",
     "section": "데이터사이언스 프로세스와 파이프 연산자",
-    "text": "데이터사이언스 프로세스와 파이프 연산자\n\nhttps://www.rforecology.com/post/how-to-use-pipes/"
+    "text": "데이터사이언스 프로세스와 파이프 연산자\n\n\nhttps://www.rforecology.com/post/how-to-use-pipes/"
   },
   {
     "objectID": "R_lec_02_2025.html#기본-원리-2",
@@ -5978,21 +5978,224 @@
     "objectID": "R_lec_02_2025.html#데이터사이언스-프로세스와-r",
     "href": "R_lec_02_2025.html#데이터사이언스-프로세스와-r",
     "title": "\nR Lecture 2R과 데이터사이언스\n",
-    "section": "데이터사이언스 프로세스와 R",
-    "text": "데이터사이언스 프로세스와 R\n\nhttps://posit.co/blog/artist-in-residence/"
+    "section": "",
+    "text": "https://posit.co/blog/artist-in-residence/"
   },
   {
     "objectID": "R_lec_02_2025.html#데이터사이언스-프로세스와-r-1",
     "href": "R_lec_02_2025.html#데이터사이언스-프로세스와-r-1",
     "title": "\nR Lecture 2R과 데이터사이언스\n",
-    "section": "데이터사이언스 프로세스와 R",
-    "text": "데이터사이언스 프로세스와 R\n\nhttps://r4ds.hadley.nz/intro"
+    "section": "",
+    "text": "https://r4ds.hadley.nz/intro"
   },
   {
     "objectID": "R_lec_02_2025.html#바이블",
     "href": "R_lec_02_2025.html#바이블",
     "title": "\nR Lecture 2R과 데이터사이언스\n",
-    "section": "바이블",
-    "text": "바이블\n\nhttps://r4ds.hadley.nz/"
+    "section": "",
+    "text": "https://r4ds.hadley.nz/"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#packages",
+    "href": "R_lec_03_2025.html#packages",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "Packages",
+    "text": "Packages"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#thanks-to-quarto",
+    "href": "R_lec_03_2025.html#thanks-to-quarto",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "Thanks to Quarto",
+    "text": "Thanks to Quarto\n\n\n\n\n\nhttps://sangillee.snu.ac.kr/"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#quarto-definition",
+    "href": "R_lec_03_2025.html#quarto-definition",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "Quarto: Definition",
+    "text": "Quarto: Definition\n\n“과학적, 기술적 출판을 위한 오픈소스 시스템(an open-source scientific and technical publishing system)”\n\n오픈소스 저작 시스템\n\n다양한 형식의 저작물(노트, 연구 논문, 프레젠테이션, 대시보드, 웹사이트, 블로그, 서적 등)을 다양한 디지털 포맷(HTML, PDF, MS Word, ePub 등)으로 출판할 수 있게 해주는 도구\n적용 분야의 스케일\n\n개인 스케일: 노트, 레포트, 연구 논문, 프레젠테이션, 블로그 등의 작성 도구\n그룹 스케일: 프로젝트의 원할한 진행을 위한 협업 프레임워크\n사회 스케일: 과학 커뮤니티의 재현성(reproducibility) 고양"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#quarto-functions",
+    "href": "R_lec_03_2025.html#quarto-functions",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "Quarto: Functions",
+    "text": "Quarto: Functions\n\n\n\nhttps://rstudio.github.io/cheatsheets/html/quarto.html"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#quarto-syntax",
+    "href": "R_lec_03_2025.html#quarto-syntax",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "Quarto: Syntax",
+    "text": "Quarto: Syntax\n\n마크다운(markdown) 언어: 팬독(pandoc)\n\n마크업(markup) 언어: 다큐먼트의 구조와 포맷을 관장하는 텍스트-엔코딩 시스템\n사용자의 편의성을 크게 향상시킨 마크업 언어\n\nQuarto 다규먼트: .qmd\n\n프로그래밍 언어 + 워드프로세서"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#quarto-rendering",
+    "href": "R_lec_03_2025.html#quarto-rendering",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "Quarto: Rendering",
+    "text": "Quarto: Rendering\n\nknitr 패키지: .qmd를 .md로 전환\npandoc: .md를 다양한 디지털 포맷으로 전환\n\n\n\n\nhttps://r4ds.hadley.nz/quarto"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#quarto-documents-basic-structure",
+    "href": "R_lec_03_2025.html#quarto-documents-basic-structure",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "Quarto documents: Basic structure",
+    "text": "Quarto documents: Basic structure\n\nYAML 헤더(header)\n\n일종의 메타데이터\n다큐먼트의 전반적인 사항을 관장\n\n코드 청크(code chunk)\n\n프로그래밍 언어가 들어가는 부분\nR 스크립트 파일\n\n마크다운 텍스트(markdown text)\n\n워드프로세서처럼 텍스트를 작성(도표 포함)"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#section-1",
+    "href": "R_lec_03_2025.html#section-1",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "",
+    "text": "https://r4ds.hadley.nz/quarto"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#yaml-header",
+    "href": "R_lec_03_2025.html#yaml-header",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "YAML header",
+    "text": "YAML header\n\n\n\n\n\n\n\nkey\n설명\n\n\n\n\ntitle\n다큐먼트의 제목\n\n\ndate\n다큐먼트 작성 날짜\n\n\nauthor\n다큐먼트 저자 이름\n\n\nformat\n다양한 포맷 관련 사항의 지정\n\n\ntoc\n목차 삽입\n\n\nnumber-section\n섹션 제목에 자동 번호 부여 여부\n\n\nexecute: echo\n소스 코드의 포함 여부를 글로벌하게 설정, 보통 true\n\n\nexecute: warning\n경고 메시지를 산출물에 나타나게 할지를 글로벌하게 설정, 보통 false\n\n\neditor\n비주얼 에디터와 소스 에디터 중 선택, 보통 visual"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#code-chunck",
+    "href": "R_lec_03_2025.html#code-chunck",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "Code chunck",
+    "text": "Code chunck\n\n\n\n\n\n\n\n\n\n\n\n\nOption\nRun code\nShow code\nOutput\nPlots\nMessages\nWarnings\n\n\n\n\neval: false\nX\n\nX\nX\nX\nX\n\n\ninclude: false\n\nX\nX\nX\nX\nX\n\n\necho: false\n\nX\n\n\n\n\n\n\nresults: hide\n\n\nX\n\n\n\n\n\nfig-show: hide\n\n\n\nX\n\n\n\n\nmessage: false\n\n\n\n\nX\n\n\n\nwarning: false\n\n\n\n\n\nX"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#markdown-text",
+    "href": "R_lec_03_2025.html#markdown-text",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "Markdown text",
+    "text": "Markdown text\n\n비주얼 에디터(visual editor) vs. 소스 에디터(source editor)\n마크다운 언어의 사용자 편이성을 한 번 더 강화한 것"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#zotero",
+    "href": "R_lec_03_2025.html#zotero",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "Zotero",
+    "text": "Zotero\n\n\n\nhttps://quarto.org/docs/visual-editor/technical.html"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#web-publication",
+    "href": "R_lec_03_2025.html#web-publication",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "Web publication",
+    "text": "Web publication\n\nQuarto Pub(https://quartopub.com/)\nGitHub Pages(https://pages.github.com/)\nNetlify(https://www.netlify.com/)"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#quarto-pub",
+    "href": "R_lec_03_2025.html#quarto-pub",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "Quarto Pub",
+    "text": "Quarto Pub\n\n\n\nhttps://quarto.org/docs/publishing/quarto-pub.html"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#r-dashboard-tools-a-transition",
+    "href": "R_lec_03_2025.html#r-dashboard-tools-a-transition",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "R dashboard tools: A transition",
+    "text": "R dashboard tools: A transition"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#an-example",
+    "href": "R_lec_03_2025.html#an-example",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "An example",
+    "text": "An example"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#an-example-1",
+    "href": "R_lec_03_2025.html#an-example-1",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "An example",
+    "text": "An example\nhttps://sangillee.quarto.pub/my-first-dashboard/"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#layout-1-rows-and-columns",
+    "href": "R_lec_03_2025.html#layout-1-rows-and-columns",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "Layout 1: Rows and Columns",
+    "text": "Layout 1: Rows and Columns\n\nCodeResult\n\n\n## Row {height=70%}\n\nCard 1\n\n## Row {height=30%}\n\n### Column {width=40%}\n\nCard 2-1 \n\n### Column {width=60%}\n\nCard 2-2"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#layout-2-tabsets",
+    "href": "R_lec_03_2025.html#layout-2-tabsets",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "Layout 2: Tabsets",
+    "text": "Layout 2: Tabsets\n\nCodeResult\n\n\n## Row {height=70%}\n\nCard 1\n\n## Row {height=30% .tabset}\n\n### Column\n\nCard 2-1 {width=50%}\n\n### Column\n\nCard 2-2 {width=50%}"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#layout-pages",
+    "href": "R_lec_03_2025.html#layout-pages",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "Layout: Pages",
+    "text": "Layout: Pages\n\nCodeResult\n\n\n# Page A\n\n## Row {height=70%}\n\nCard 1\n\n## Row {height=30%}\n\n### Column {width=40%}\n\nCard 2-1\n\n### Column {width=60%}\n\nCard 2-2\n\n# Page B\n\nCard 3"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#navigation-bars-yaml-header",
+    "href": "R_lec_03_2025.html#navigation-bars-yaml-header",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "Navigation Bars: YAML header",
+    "text": "Navigation Bars: YAML header\n\n\n\n\n\n\ntitle\nauthor\nformat: dashboard\n\nlogo\nnav-buttons\nscrolling: true\n\ntheme: 25 bootswatch themes(https://quarto.org/docs/dashboards/theming.html)"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#sidebars",
+    "href": "R_lec_03_2025.html#sidebars",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "Sidebars",
+    "text": "Sidebars"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#cards-graphs",
+    "href": "R_lec_03_2025.html#cards-graphs",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "Cards: Graphs",
+    "text": "Cards: Graphs\n\n그래프 카드: 그래프 하나를 만들어내는 코드 청크\nggplot2 패키지, plotly 패키지\n\n#| title: \"Histogram of GDP per capita\"\nlibrary(tidyverse)\nlibrary(gapminder)\ngapminder |&gt; \n  filter(year == 2007) |&gt;\n  ggplot(aes(x = gdpPercap)) +\n  geom_histogram()"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#cards-tables",
+    "href": "R_lec_03_2025.html#cards-tables",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "Cards: Tables",
+    "text": "Cards: Tables\n\n테이블 카드: 테이블 하나를 만들어내는 코드 청크\nDT 패키지, knitr 패키지\n\n#| title: Lookup Table\nlibrary(DT)\ndatatable(gapminder, filter = \"top\", \n          options = list(\n            pageLength = 5, autoWidth = TRUE\n          ))"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#cards-maps",
+    "href": "R_lec_03_2025.html#cards-maps",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "Cards: Maps",
+    "text": "Cards: Maps\n\n지도 카드: 지도 하나를 만들어내는 코드 청크\nggplot2 패키지, leaflet 패키지\n\n#| title: A Reference Map \nlibrary(leaflet) \nleaflet() |&gt;  \n  addTiles()"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#cards-texts",
+    "href": "R_lec_03_2025.html#cards-texts",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "Cards: Texts",
+    "text": "Cards: Texts\n\n텍스트 카드: 텍스트 박스 하나를 만들어내는 div\n{.card} 탭과 title 속성\n\n::: {.card title=\"Text\"}\nThis is my first dashboard.\n:::"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#cards-valueboxes",
+    "href": "R_lec_03_2025.html#cards-valueboxes",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "Cards: Valueboxes",
+    "text": "Cards: Valueboxes\n\n밸류박스 카드: 밸류박스 하나를 만들어내는 코드 청크\n아이콘: bootstrap icon(https://icons.getbootstrap.com/)\n컬러: 8개(https://quarto.org/docs/dashboards/data-display.html)\n\n#| content: valuebox\n#| title: \"Number of Countries\"\nn_countries &lt;- gapminder |&gt; distinct(country) |&gt; nrow()\nlist(\n  icon = \"asterisk\",\n  color = \"primary\",\n  value = n_countries\n)"
+  },
+  {
+    "objectID": "R_lec_03_2025.html#web-publication-1",
+    "href": "R_lec_03_2025.html#web-publication-1",
+    "title": "R Lecture 3\nQuarto로 대시보드 만들기",
+    "section": "Web publication",
+    "text": "Web publication\n\nQuarto Pub(https://quartopub.com/)"
+  },
+  {
+    "objectID": "R_lec_02_2025.html",
+    "href": "R_lec_02_2025.html",
+    "title": "\nR Lecture 2R과 데이터사이언스\n",
+    "section": "",
+    "text": "https://r4ds.hadley.nz/\n\n\n\n\nhttps://posit.co/blog/artist-in-residence/\n\n\n\n\nhttps://r4ds.hadley.nz/intro"
   }
 ]
