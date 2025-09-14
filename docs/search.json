@@ -5721,5 +5721,278 @@
       "R 실습: 2025/2",
       "R and RStudio"
     ]
+  },
+  {
+    "objectID": "R_lec_02_2025.html#the-book",
+    "href": "R_lec_02_2025.html#the-book",
+    "title": "\nR Lecture 2R과 데이터사이언스\n",
+    "section": "The Book",
+    "text": "The Book\n\nhttps://r4ds.hadley.nz/"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#a-data-science-process-with-r",
+    "href": "R_lec_02_2025.html#a-data-science-process-with-r",
+    "title": "\nR Lecture 2R과 데이터사이언스\n",
+    "section": "A data science process with R",
+    "text": "A data science process with R\n\nhttps://posit.co/blog/artist-in-residence/"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#a-data-science-process-with-r-1",
+    "href": "R_lec_02_2025.html#a-data-science-process-with-r-1",
+    "title": "\nR Lecture 2R과 데이터사이언스\n",
+    "section": "A data science process with R",
+    "text": "A data science process with R\n\nhttps://r4ds.hadley.nz/intro"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#packages-what-are-they",
+    "href": "R_lec_02_2025.html#packages-what-are-they",
+    "title": "R Lecture 2\nR과 데이터사이언스",
+    "section": "Packages: what are they?",
+    "text": "Packages: what are they?"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#packages-how-to-install-them",
+    "href": "R_lec_02_2025.html#packages-how-to-install-them",
+    "title": "R Lecture 2\nR과 데이터사이언스",
+    "section": "Packages: how to install them",
+    "text": "Packages: how to install them"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#tidyverse-a-tidy-universe",
+    "href": "R_lec_02_2025.html#tidyverse-a-tidy-universe",
+    "title": "R Lecture 2\nR과 데이터사이언스",
+    "section": "Tidyverse: a tidy universe",
+    "text": "Tidyverse: a tidy universe"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#tidyverse-core-component-packages",
+    "href": "R_lec_02_2025.html#tidyverse-core-component-packages",
+    "title": "R Lecture 2\nR과 데이터사이언스",
+    "section": "Tidyverse: core component packages",
+    "text": "Tidyverse: core component packages"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#tidyverse-philosophy",
+    "href": "R_lec_02_2025.html#tidyverse-philosophy",
+    "title": "R Lecture 2\nR과 데이터사이언스",
+    "section": "Tidyverse: philosophy",
+    "text": "Tidyverse: philosophy\n\nHuman-centeredness\n\nFor an end-user programmer\n\nConsistency\n\nThe smallest possible set of key ideas, used as comprehensively as possible\n\nComposability\n\nMany simple pieces, composed for a larger task using operators such as |&gt; and +\n\nInclusiveness\n\nTowards a diverse, open, and friendly community\n\n\n(https://design.tidyverse.org/unifying.html)"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#magrittr",
+    "href": "R_lec_02_2025.html#magrittr",
+    "title": "R Lecture 2\nR과 데이터사이언스",
+    "section": "magrittr",
+    "text": "magrittr\n\n\n\n\n\n\nhttps://magrittr.tidyverse.org/"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#basic-principle",
+    "href": "R_lec_02_2025.html#basic-principle",
+    "title": "R Lecture 2\nR과 데이터사이언스",
+    "section": "Basic principle",
+    "text": "Basic principle"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#basic-principle-1",
+    "href": "R_lec_02_2025.html#basic-principle-1",
+    "title": "R Lecture 2\nR과 데이터사이언스",
+    "section": "Basic principle",
+    "text": "Basic principle"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#native-pipe-operator",
+    "href": "R_lec_02_2025.html#native-pipe-operator",
+    "title": "R Lecture 2\nR과 데이터사이언스",
+    "section": "Native pipe operator",
+    "text": "Native pipe operator"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#pipe-operator-for-eda",
+    "href": "R_lec_02_2025.html#pipe-operator-for-eda",
+    "title": "R Lecture 2\nR과 데이터사이언스",
+    "section": "Pipe operator for EDA",
+    "text": "Pipe operator for EDA"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#no-error-no-gain",
+    "href": "R_lec_02_2025.html#no-error-no-gain",
+    "title": "\nR Lecture 2R과 데이터사이언스\n",
+    "section": "No error, no gain!",
+    "text": "No error, no gain!\n\n\n\nhttps://allisonhorst.com/everything-else"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#패키지란",
+    "href": "R_lec_02_2025.html#패키지란",
+    "title": "\nR Lecture 2R과 데이터사이언스\n",
+    "section": "패키지란?",
+    "text": "패키지란?\n\n특정 기능을 손쉽게 사용할 수 있도록 함수, 데이터셋, 설명 문서 등을 하나로 묶어 배포하는 단위"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#패키지란-1",
+    "href": "R_lec_02_2025.html#패키지란-1",
+    "title": "R Lecture 2\nR과 데이터사이언스",
+    "section": "패키지란?",
+    "text": "패키지란?\n\nCRAN (The Comprehensive R Archive Network)\nCRAN Download Monitor"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#패키지-인스톨-방법",
+    "href": "R_lec_02_2025.html#패키지-인스톨-방법",
+    "title": "R Lecture 2\nR과 데이터사이언스",
+    "section": "패키지 인스톨 방법",
+    "text": "패키지 인스톨 방법"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#a-tidy-universe",
+    "href": "R_lec_02_2025.html#a-tidy-universe",
+    "title": "R Lecture 2\nR과 데이터사이언스",
+    "section": "A Tidy Universe",
+    "text": "A Tidy Universe"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#패키지의-종류",
+    "href": "R_lec_02_2025.html#패키지의-종류",
+    "title": "\nR Lecture 2R과 데이터사이언스\n",
+    "section": "패키지의 종류",
+    "text": "패키지의 종류\n\nCRAN (The Comprehensive R Archive Network)\nCRAN Download Monitor\n\n사례: ggplot2의 경우\n\n패키지 홈페이지\n익스텐션 패키지"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#패키지-만들기",
+    "href": "R_lec_02_2025.html#패키지-만들기",
+    "title": "\nR Lecture 2R과 데이터사이언스\n",
+    "section": "패키지 만들기",
+    "text": "패키지 만들기\n\n해들리 위컴의 책\n가이드 1\n가이드 2\n패키지 웹사이트\n헥사곤 로고\n헥사곤 로고 만들기 패키지"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#패키지-설치-및-불러오기",
+    "href": "R_lec_02_2025.html#패키지-설치-및-불러오기",
+    "title": "R Lecture 2\nR과 데이터사이언스",
+    "section": "패키지 설치 및 불러오기",
+    "text": "패키지 설치 및 불러오기\n\nCRAN 패키지인 경우\n\ninstall.packages(\"패키지명\") 함수\n아웃풋(output) 창의 Packages 탭\n\n\n\n\n비 CRAN 패키지의 경우\n\nremotes::install_github(\"사용자명/저장소명\")"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#패키지-설치하기",
+    "href": "R_lec_02_2025.html#패키지-설치하기",
+    "title": "\nR Lecture 2R과 데이터사이언스\n",
+    "section": "패키지 설치하기",
+    "text": "패키지 설치하기\n\n\nCRAN 패키지인 경우\n\ninstall.packages(\"패키지명\")\n아웃풋(output) 창의 Packages 탭\n\n\n\n\n\n\n비 CRAN 패키지의 경우\n\nremotes::install_github(\"사용자명/저장소명\")"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#패키지-불러오기",
+    "href": "R_lec_02_2025.html#패키지-불러오기",
+    "title": "\nR Lecture 2R과 데이터사이언스\n",
+    "section": "패키지 불러오기",
+    "text": "패키지 불러오기\n\n\n패키지의 네임스페이스(namespace)를 현재 R 세션에 로드하는 것\n\n패키지 안의 함수, 객체 등을 지금 세션에서 바로 사용할 수 있도록 연결\n\n\nlibrary(패키지명)\n새로운 R 세션이 시작되면 필요한 패키지를 다시 불어와야 함"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#tidy-universe",
+    "href": "R_lec_02_2025.html#tidy-universe",
+    "title": "\nR Lecture 2R과 데이터사이언스\n",
+    "section": "Tidy + Universe",
+    "text": "Tidy + Universe\n\n“정돈된 데이터(tidy data) 처리와 분석을 위한 하나의 우주적 생태계”\n\n데이터사이언스를 일관성 있게 수행하기 위한 패키지들의 패키지\n\nlibrary(tidyverse)\n\n\n\n\n\n\n\n\nhttps://tidyverse.tidyverse.org/\n\n\n\n\n\nhttps://www.tidyverse.org/"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#패키지들의-패키지",
+    "href": "R_lec_02_2025.html#패키지들의-패키지",
+    "title": "R Lecture 2\nR과 데이터사이언스",
+    "section": "패키지들의 패키지",
+    "text": "패키지들의 패키지"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#section",
+    "href": "R_lec_02_2025.html#section",
+    "title": "\nR Lecture 2R과 데이터사이언스\n",
+    "section": "",
+    "text": "https://allisonhorst.com/r-packages-functions"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#타이디버스와-데이터사이언스-프로세스",
+    "href": "R_lec_02_2025.html#타이디버스와-데이터사이언스-프로세스",
+    "title": "\nR Lecture 2R과 데이터사이언스\n",
+    "section": "타이디버스와 데이터사이언스 프로세스",
+    "text": "타이디버스와 데이터사이언스 프로세스"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#ㅇㄹㅇ",
+    "href": "R_lec_02_2025.html#ㅇㄹㅇ",
+    "title": "R Lecture 2\nR과 데이터사이언스",
+    "section": "ㅇㄹㅇ",
+    "text": "ㅇㄹㅇ"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#타이디버스-철학",
+    "href": "R_lec_02_2025.html#타이디버스-철학",
+    "title": "\nR Lecture 2R과 데이터사이언스\n",
+    "section": "타이디버스 철학",
+    "text": "타이디버스 철학\n타이디버스 스타일 가이드\n\nhttps://allisonhorst.com/r-packages-functions"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#타이디버스-철학-4대-원리",
+    "href": "R_lec_02_2025.html#타이디버스-철학-4대-원리",
+    "title": "\nR Lecture 2R과 데이터사이언스\n",
+    "section": "타이디버스 철학: 4대 원리",
+    "text": "타이디버스 철학: 4대 원리\n타이디 디자인 원리(Tidy Design Principles)\n\n\n인간중심주의 Human-centeredness\n\nFor an end-user programmer\n\n\n\n일관성 Consistency\n\nThe smallest possible set of key ideas, used as comprehensively as possible\n\n\n\n조합성 Composability\n\nMany simple pieces, composed for a larger task using operators such as |&gt; and +\n\n\n\n포용성 Inclusiveness\n\nTowards a diverse, open, and friendly community"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#magrittr-패키지",
+    "href": "R_lec_02_2025.html#magrittr-패키지",
+    "title": "\nR Lecture 2R과 데이터사이언스\n",
+    "section": "magrittr 패키지",
+    "text": "magrittr 패키지\n\n\n\n\n\nhttps://magrittr.tidyverse.org/"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#기본-원리",
+    "href": "R_lec_02_2025.html#기본-원리",
+    "title": "\nR Lecture 2R과 데이터사이언스\n",
+    "section": "기본 원리",
+    "text": "기본 원리"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#기본-원리-1",
+    "href": "R_lec_02_2025.html#기본-원리-1",
+    "title": "\nR Lecture 2R과 데이터사이언스\n",
+    "section": "기본 원리",
+    "text": "기본 원리"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#네이티브-파이프-연산자",
+    "href": "R_lec_02_2025.html#네이티브-파이프-연산자",
+    "title": "\nR Lecture 2R과 데이터사이언스\n",
+    "section": "네이티브 파이프 연산자",
+    "text": "네이티브 파이프 연산자"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#데이터사이언스-프로세스와-파이프-연산자",
+    "href": "R_lec_02_2025.html#데이터사이언스-프로세스와-파이프-연산자",
+    "title": "\nR Lecture 2R과 데이터사이언스\n",
+    "section": "데이터사이언스 프로세스와 파이프 연산자",
+    "text": "데이터사이언스 프로세스와 파이프 연산자\n\nhttps://www.rforecology.com/post/how-to-use-pipes/"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#기본-원리-2",
+    "href": "R_lec_02_2025.html#기본-원리-2",
+    "title": "\nR Lecture 2R과 데이터사이언스\n",
+    "section": "기본 원리",
+    "text": "기본 원리\n\n\nBase R 1\nBase R 2\n파이프 연산자\n\n\n\n\ningredients &lt;- tibble(우유, 계란, 밀가루)\nmix_result &lt;- mix(ingredients, 강도, 혼합시간, ...)\nbake_result &lt;- bake(mix_result, 온도, 굽기시간, ...)\ndecorate_result &lt;- decorate(bake_result, 장식1, 장식2, ...)\nslice_result &lt;- slice(decorate_result, 절단도구, 등분수, ...)\n\n\n\n\nslice_result &lt;- slice(\n  decorate(\n    bake(\n      mix(\n        tibble(\n          우유, 계란, 밀가루\n        ), 강도, 혼합시간, ...\n      ), 온도, 굽기시간, ...\n    ), 장식1, 장식2, ... \n  ), 절단도구, 등분수, ...\n) \n\n\n\n\ntibble(우유, 계란, 밀가루) |&gt; \n  mix(강도, 혼합시간) |&gt; \n  bake(온도, 굽기시간) |&gt; \n  decorate(장식1, 장식2, ...) |&gt; \n  slice(절단도구, 등분수) -&gt; slice_result"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#데이터사이언스-프로세스와-r",
+    "href": "R_lec_02_2025.html#데이터사이언스-프로세스와-r",
+    "title": "\nR Lecture 2R과 데이터사이언스\n",
+    "section": "데이터사이언스 프로세스와 R",
+    "text": "데이터사이언스 프로세스와 R\n\nhttps://posit.co/blog/artist-in-residence/"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#데이터사이언스-프로세스와-r-1",
+    "href": "R_lec_02_2025.html#데이터사이언스-프로세스와-r-1",
+    "title": "\nR Lecture 2R과 데이터사이언스\n",
+    "section": "데이터사이언스 프로세스와 R",
+    "text": "데이터사이언스 프로세스와 R\n\nhttps://r4ds.hadley.nz/intro"
+  },
+  {
+    "objectID": "R_lec_02_2025.html#바이블",
+    "href": "R_lec_02_2025.html#바이블",
+    "title": "\nR Lecture 2R과 데이터사이언스\n",
+    "section": "바이블",
+    "text": "바이블\n\nhttps://r4ds.hadley.nz/"
   }
 ]

@@ -1,0 +1,253 @@
+---
+title: |
+  | [R Lecture 2]{style="color:coral;font-size:0.6em"}   
+  | [R과 데이터사이언스]{style="font-size:1em"} 
+author: <br> 이상일(서울대학교 지리교육과 교수)
+date: 2025-8-5
+format: 
+  revealjs:
+    logo: snu_edu_1.png
+    footer: https://sangillee.snu.ac.kr/
+    transition: fade
+    transition-speed: fast
+    margin: 0.05
+    center: false
+    # smaller: false
+    # scrollable: false
+    code-link: true
+    code-copy: true
+    code-overflow: scroll
+    slide-number: true
+    width: 960 * 1.5
+    height: 700 * 1.5
+    lightbox: false
+    # min-scale: 1
+    # max-scale: 1
+    pointer:
+      pointerSize: 20
+      color: red
+    menu: true
+    embed-resources: false
+    theme: [default, custom_hq_pretendard_step.scss] # 슬라이드 본문 폰트 크기 조정
+    revealjs-plugins:
+      - pointer
+code-link: true
+execute: 
+  warning: false
+  error: false
+  freeze: auto  
+dpi: 600
+editor: visual
+webr: 
+  show-startup-message: false     
+  packages: []
+filters:
+  - webr
+# suppress-bibliography: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# [데이터사이언스를 위한 R]{style="color:coral"}
+
+## 바이블
+
+![[https://r4ds.hadley.nz/](https://r4ds.hadley.nz/){style="font-size:1.25rem"}](images/clipboard-4118011220.png){fig-align="center"}
+
+## 데이터사이언스 프로세스와 R
+
+![[https://posit.co/blog/artist-in-residence/](https://posit.co/blog/artist-in-residence/){style="font-size:1.25rem"}](images/clipboard-3326006124.png)
+
+## 데이터사이언스 프로세스와 R
+
+![[https://r4ds.hadley.nz/intro](https://r4ds.hadley.nz/intro){style="font-size:1.25rem"}](images/clipboard-411135231.png)
+
+# [패키지 Packages]{style="color:coral"}
+
+## 패키지란?
+
+-   특정 기능을 손쉽게 사용할 수 있도록 **함수**, 데이터셋, 설명 문서 등을 하나로 묶어 배포하는 단위
+
+![](images/clipboard-3555057991.png)
+
+## 패키지의 종류
+
+-   [CRAN (The Comprehensive R Archive Network)](https://cran.r-project.org/)
+
+-   [CRAN Download Monitor](https://gallery.shinyapps.io/cran-gauge/)
+
+-   사례: [ggplot2](https://ggplot2.tidyverse.org/)의 경우
+
+    -   [패키지 홈페이지](https://ggplot2.tidyverse.org/)
+
+    -   [익스텐션 패키지](https://exts.ggplot2.tidyverse.org/)
+
+![](images/clipboard-3146270133.png){.absolute top="250" right="100" width="550"}
+
+## 패키지 설치하기
+
+-   CRAN 패키지인 경우
+
+    -   `install.packages("패키지명")`
+
+    -   아웃풋(output) 창의 Packages 탭
+
+![](images/clipboard-1002522383.png){fig-align="center"}
+
+-   비 CRAN 패키지의 경우
+
+    -   `remotes::install_github("사용자명/저장소명")`
+
+## 패키지 불러오기
+
+-   패키지의 네임스페이스(namespace)를 현재 R 세션에 로드하는 것
+
+    -   패키지 안의 함수, 객체 등을 지금 세션에서 바로 사용할 수 있도록 연결
+
+-   `library(패키지명)`
+
+-   새로운 R 세션이 시작되면 필요한 패키지를 다시 불어와야 함
+
+## 패키지 만들기 {visibility="hidden"}
+
+-   [해들리 위컴의 책](https://r-pkgs.org/)
+
+-   [가이드 1](https://psyteachr.github.io/intro-r-pkgs/)
+
+-   [가이드 2](https://indrajeetpatil.github.io/awesome-r-pkgtools/)
+
+-   [패키지 웹사이트](https://pkgdown.r-lib.org/)
+
+-   [헥사곤 로고](https://github.com/rstudio/hex-stickers/?tab=readme-ov-file)
+
+-   [헥사곤 로고 만들기 패키지](https://github.com/GuangchuangYu/hexSticker?tab=readme-ov-file)
+
+# [타이디버스 Tidyverse]{style="color:coral"}
+
+## 
+
+![[https://allisonhorst.com/r-packages-functions](https://allisonhorst.com/r-packages-functions){style="font-size:1.25rem"}](images/clipboard-3736095484.png){fig-align="center"}
+
+## Tidy + Universe
+
+-   "정돈된 데이터(tidy data) 처리와 분석을 위한 하나의 우주적 생태계"
+
+-   데이터사이언스를 일관성 있게 수행하기 위한 패키지들의 패키지
+
+    -   `library(tidyverse)`
+
+::: {layout-ncol="2"}
+![[https://tidyverse.tidyverse.org/](https://tidyverse.tidyverse.org/){style="font-size:1.25rem"}](images/clipboard-2981827317.png){width="65%"}
+
+![[https://www.tidyverse.org/](https://www.tidyverse.org/){style="font-size:1.25rem"}](https://sangillee.snu.ac.kr/data_science/images/tidyverse_9.PNG){width="70%"}
+:::
+
+## 타이디버스와 데이터사이언스 프로세스
+
+![](images/tidyverse_process.png)
+
+## 타이디버스 철학: 4대 원리
+
+[타이디 디자인 원리(Tidy Design Principles)](https://design.tidyverse.org/)
+
+-   인간중심성 Human-centeredness
+
+    -   For an end-user programmer
+
+-   일관성 Consistency
+
+    -   The smallest possible set of key ideas, used as comprehensively as possible
+
+-   조합성 Composability
+
+    -   Many simple pieces, composed for a larger task using operators such as \|\> and +
+
+-   포용성 Inclusiveness
+
+    -   Towards a diverse, open, and friendly community
+
+## 타이디버스 철학
+
+[타이디버스 스타일 가이드](https://style.tidyverse.org/)
+
+![[https://allisonhorst.com/r-packages-functions](https://allisonhorst.com/r-packages-functions){style="font-size:1.25rem"}](images/clipboard-4104447783.png){fig-align="center"}
+
+# [파이프 연산자 Pipe Operator]{style="color:coral"}
+
+## magrittr 패키지
+
+::: {layout-ncol="2" layout-valign="center"}
+![[https://magrittr.tidyverse.org/](https://magrittr.tidyverse.org/){style="font-size:1.25rem"}](images/clipboard-30645075.png)
+
+![](images/clipboard-4078158871.png)
+:::
+
+## 기본 원리
+
+![](images/clipboard-3095511909.png){fig-align="center"}
+
+## 기본 원리
+
+![](images/piping%20in%20R%20is%20like%20baking.gif){fig-align="center"}
+
+## 기본 원리
+
+::: panel-tabset
+## Base R 1
+
+```{r}
+#| eval: false
+#| echo: true
+ingredients <- tibble(우유, 계란, 밀가루)
+mix_result <- mix(ingredients, 강도, 혼합시간, ...)
+bake_result <- bake(mix_result, 온도, 굽기시간, ...)
+decorate_result <- decorate(bake_result, 장식1, 장식2, ...)
+slice_result <- slice(decorate_result, 절단도구, 등분수, ...)
+```
+
+## Base R 2
+
+```{r}
+#| eval: false
+#| echo: true
+slice_result <- slice(
+  decorate(
+    bake(
+      mix(
+        tibble(
+          우유, 계란, 밀가루
+        ), 강도, 혼합시간, ...
+      ), 온도, 굽기시간, ...
+    ), 장식1, 장식2, ... 
+  ), 절단도구, 등분수, ...
+) 
+```
+
+## 파이프 연산자
+
+```{r}
+#| eval: false
+#| echo: true
+tibble(우유, 계란, 밀가루) |> 
+  mix(강도, 혼합시간) |> 
+  bake(온도, 굽기시간) |> 
+  decorate(장식1, 장식2, ...) |> 
+  slice(절단도구, 등분수) -> slice_result
+```
+:::
+
+## 네이티브 파이프 연산자
+
+::: {layout-ncol="2" layout-valign="center"}
+![](images/clipboard-2382832838.png)
+
+![](images/clipboard-39249103.png)
+:::
+
+## 데이터사이언스 프로세스와 파이프 연산자
+
+![[https://www.rforecology.com/post/how-to-use-pipes/](https://www.rforecology.com/post/how-to-use-pipes/){style="font-size:1.25rem"}](images/clipboard-174079750.png){fig-align="center"}
+
+## No error, no gain!
+
+![[https://allisonhorst.com/everything-else](https://allisonhorst.com/everything-else){style="font-size:1.25rem"}](images/clipboard-229605073.png){fig-align="center"}
