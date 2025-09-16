@@ -3,7 +3,7 @@ title: |
   | [R Lecture 2]{style="color:coral;font-size:0.6em"}   
   | [R과 데이터사이언스]{style="font-size:1em"} 
 author: <br> 이상일(서울대학교 지리교육과 교수)
-date: 2025-8-5
+date: 2025-9-16
 format: 
   revealjs:
     logo: snu_edu_1.png
