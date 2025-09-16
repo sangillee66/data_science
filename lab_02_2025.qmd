@@ -3,7 +3,7 @@ title: "R과 데이터사이언스 과정"
 author: "Sang-Il Lee ft. Ha-eun Lee"
 date-modified: last-modified
 number-sections: true
-embed-resources: true
+embed-resources: false
 format: 
   html: 
     toc: true
