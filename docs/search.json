@@ -1912,7 +1912,7 @@
     "section": "Operators",
     "text": "Operators",
     "crumbs": [
-      "R 프레젠테이션",
+      "R 프레젠테이션: 2024/1",
       "R & Data Science"
     ]
   },
@@ -1923,7 +1923,7 @@
     "section": "Arithmatic operators",
     "text": "Arithmatic operators\n\n\nOperator\nDescription\nExample\n\n\n\n+\naddition\n5+5=10\n\n\n-\nsubtraction\n5-5=0\n\n\n*\nmultiplication\n2*8=16\n\n\n/\ndivision\n100/10=10\n\n\n\n^ (or **)\nexponent/power\n5^2=25\n\n\n%%\nmodulo\n100%%15=10\n\n\n%/%\ninteger division\n100%/%15=6",
     "crumbs": [
-      "R 프레젠테이션",
+      "R 프레젠테이션: 2024/1",
       "R & Data Science"
     ]
   },
@@ -1934,7 +1934,7 @@
     "section": "Relational and logical operators",
     "text": "Relational and logical operators\n\n\n\n\n\n\n\nType\nOperator\nCondition\n\n\n\nRelational\nx &lt; y\nWhere x less than y\n\n\n\n\nx &gt; y\nWhere x greater than y\n\n\n\n\nx &lt;= y\nWhere x less than or equal to y\n\n\n\n\nx &gt;= y\nWhere x greater than or equal to y\n\n\n\n\nx == y\nWhere x (exactly) equals y\n\n\n\n\nx != y\nWhere x is not equal to y\n\n\n\nLogical\n!\nNegation\n\n\n\n&\nLogical “and” (x &gt;= 20 & x &lt; 35)\n\n\n\n|\nLogical “or (x == 20 | x &gt; 45)\n\n\n\nxor\nLogical “exclusive or” (xor(x == 20, x == 50)\n\n\nMiscellaneous\nx %in% y\nWhere x is in y\n\n\n\n\n!x %in% y\nWhere x is not in y",
     "crumbs": [
-      "R 프레젠테이션",
+      "R 프레젠테이션: 2024/1",
       "R & Data Science"
     ]
   },
@@ -1945,7 +1945,7 @@
     "section": "Assignment operators",
     "text": "Assignment operators",
     "crumbs": [
-      "R 프레젠테이션",
+      "R 프레젠테이션: 2024/1",
       "R & Data Science"
     ]
   },
@@ -1956,7 +1956,7 @@
     "section": "Functions",
     "text": "Functions\n\nseq(from = 2, to = 100, by = 2)",
     "crumbs": [
-      "R 프레젠테이션",
+      "R 프레젠테이션: 2024/1",
       "R & Data Science"
     ]
   },
@@ -1967,7 +1967,7 @@
     "section": "Some Base R vector functions",
     "text": "Some Base R vector functions\n\n\nFunction\nDescription\n\n\n\nround()\nRound number values\n\n\n\nmin(), max()\n\nMinimum and maximum\n\n\n\nmean(), median()\n\nArithmetic mean and median\n\n\nsum()\nSum\n\n\n\nsd(), var()\n\nStandard deviation and variance\n\n\nsqrt()\nSquare root\n\n\nsummary()\nNumerical summary\n\n\nstr()\nOverview of the object structure\n\n\n\nany(), all()\n\nTest vector elements\n\n\nall.equal()\nTest for near equality\n\n\nsort()\nSort a vector\n\n\norder()\nObtain ordering of a vector",
     "crumbs": [
-      "R 프레젠테이션",
+      "R 프레젠테이션: 2024/1",
       "R & Data Science"
     ]
   },
@@ -1978,7 +1978,7 @@
     "section": "Data types",
     "text": "Data types",
     "crumbs": [
-      "R 프레젠테이션",
+      "R 프레젠테이션: 2024/1",
       "R & Data Science"
     ]
   },
@@ -1989,7 +1989,7 @@
     "section": "Vectors & data frames",
     "text": "Vectors & data frames\n\nlibrary(tidyverse)\na &lt;- c(58, 26, 24)\nb &lt;- c(58L, 26L, 24L)\nc &lt;- c(TRUE, TRUE, FALSE)\nd &lt;- c(\"이상일\", \"김세창\", \"김우형\")\ndf &lt;- tibble(a, b, c, d)\ndf\n\n# A tibble: 3 × 4\n      a     b c     d     \n  &lt;dbl&gt; &lt;int&gt; &lt;lgl&gt; &lt;chr&gt; \n1    58    58 TRUE  이상일\n2    26    26 TRUE  김세창\n3    24    24 FALSE 김우형",
     "crumbs": [
-      "R 프레젠테이션",
+      "R 프레젠테이션: 2024/1",
       "R & Data Science"
     ]
   },
@@ -2000,7 +2000,7 @@
     "section": "Packages: what are they?",
     "text": "Packages: what are they?",
     "crumbs": [
-      "R 프레젠테이션",
+      "R 프레젠테이션: 2024/1",
       "R & Data Science"
     ]
   },
@@ -2011,7 +2011,7 @@
     "section": "Packages: how to install them",
     "text": "Packages: how to install them",
     "crumbs": [
-      "R 프레젠테이션",
+      "R 프레젠테이션: 2024/1",
       "R & Data Science"
     ]
   },
@@ -2022,7 +2022,7 @@
     "section": "Tidyverse: a tidy universe",
     "text": "Tidyverse: a tidy universe",
     "crumbs": [
-      "R 프레젠테이션",
+      "R 프레젠테이션: 2024/1",
       "R & Data Science"
     ]
   },
@@ -2033,7 +2033,7 @@
     "section": "Tidyverse: core component packages",
     "text": "Tidyverse: core component packages",
     "crumbs": [
-      "R 프레젠테이션",
+      "R 프레젠테이션: 2024/1",
       "R & Data Science"
     ]
   },
@@ -2044,7 +2044,7 @@
     "section": "Tidyverse: philosophy",
     "text": "Tidyverse: philosophy\n\n\nHuman-centeredness\n\nFor an end-user programmer\n\n\n\nConsistency\n\nThe smallest possible set of key ideas, used as comprehensively as possible\n\n\n\nComposability\n\nMany simple pieces, composed for a larger task using operators such as |&gt; and +\n\n\n\nInclusiveness\n\nTowards a diverse, open, and friendly community\n\n\n\n(https://design.tidyverse.org/unifying.html)",
     "crumbs": [
-      "R 프레젠테이션",
+      "R 프레젠테이션: 2024/1",
       "R & Data Science"
     ]
   },
@@ -2055,7 +2055,7 @@
     "section": "magrittr",
     "text": "magrittr",
     "crumbs": [
-      "R 프레젠테이션",
+      "R 프레젠테이션: 2024/1",
       "R & Data Science"
     ]
   },
@@ -2066,7 +2066,7 @@
     "section": "Basic principle",
     "text": "Basic principle",
     "crumbs": [
-      "R 프레젠테이션",
+      "R 프레젠테이션: 2024/1",
       "R & Data Science"
     ]
   },
@@ -2077,7 +2077,7 @@
     "section": "Basic principle",
     "text": "Basic principle",
     "crumbs": [
-      "R 프레젠테이션",
+      "R 프레젠테이션: 2024/1",
       "R & Data Science"
     ]
   },
@@ -2088,7 +2088,7 @@
     "section": "Native pipe operator",
     "text": "Native pipe operator",
     "crumbs": [
-      "R 프레젠테이션",
+      "R 프레젠테이션: 2024/1",
       "R & Data Science"
     ]
   },
@@ -2099,7 +2099,7 @@
     "section": "Pipe operator for EDA",
     "text": "Pipe operator for EDA",
     "crumbs": [
-      "R 프레젠테이션",
+      "R 프레젠테이션: 2024/1",
       "R & Data Science"
     ]
   },
@@ -2110,7 +2110,7 @@
     "section": "No error, no gain!",
     "text": "No error, no gain!",
     "crumbs": [
-      "R 프레젠테이션",
+      "R 프레젠테이션: 2024/1",
       "R & Data Science"
     ]
   },
@@ -2649,7 +2649,7 @@
     "section": "The Book",
     "text": "The Book",
     "crumbs": [
-      "R 프레젠테이션",
+      "R 프레젠테이션: 2024/1",
       "R & Data Science"
     ]
   },
@@ -2660,7 +2660,7 @@
     "section": "A data science process with R",
     "text": "A data science process with R",
     "crumbs": [
-      "R 프레젠테이션",
+      "R 프레젠테이션: 2024/1",
       "R & Data Science"
     ]
   },
@@ -2671,7 +2671,7 @@
     "section": "A data science process with R",
     "text": "A data science process with R",
     "crumbs": [
-      "R 프레젠테이션",
+      "R 프레젠테이션: 2024/1",
       "R & Data Science"
     ]
   },
