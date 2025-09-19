@@ -31,6 +31,7 @@ format:
     theme: [default, custom_hq_pretendard_step.scss] # 슬라이드 본문 폰트 크기 조정
     revealjs-plugins:
       - pointer
+    css: styles.css
 code-link: true
 execute: 
   warning: false
@@ -240,7 +241,7 @@ seq(from = 2, to = 100, by = 2)
 ## 주요 산술 함수 {.scrollable .smaller}
 
 | 분류 | 함수 |
-|----|----|
+|------------------------------------|------------------------------------|
 | 절대값/부호 | [`abs()`](https://rdrr.io/r/base/MathFun.html), [`sign()`](https://rdrr.io/r/base/sign.html) |
 | 제곱근/지수 | [`sqrt()`](https://rdrr.io/r/base/MathFun.html), [`exp()`](https://rdrr.io/r/base/Log.html) |
 | 로그 | [`log()`](https://rdrr.io/r/base/Log.html), [`log10()`](https://rdrr.io/r/base/Log.html), [`log2()`](https://rdrr.io/r/base/Log.html) |
@@ -251,7 +252,7 @@ seq(from = 2, to = 100, by = 2)
 ## 그 외 많이 쓰이는 함수 {.scrollable .smaller}
 
 | 분류           | 함수                                                     |
-|----------------|----------------------------------------------------------|
+|------------------|------------------------------------------------------|
 | 논리형 판별    | `is.na()`, `is.numeric()`, `is.character()`, `is.null()` |
 | 수열/반복      | `seq()`, `rep()`                                         |
 | 난수/표본 생성 | `sample()`, `rnorm()`                                    |

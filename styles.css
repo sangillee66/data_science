@@ -1,1 +1,5 @@
 /* css styles */
+
+.reveal pre code {
+  max-height: 80vh; /* 코드 블록의 최대 높이 제한 해제 */
+}

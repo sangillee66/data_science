@@ -1,0 +1,188 @@
+---
+title: |
+  | [R Lecture 10]{style="color:coral;font-size:0.6em"}   
+  | [지리공간적 시각화]{style="font-size:1em"} 
+author: <br> 이상일(서울대학교 지리교육과 교수)
+date: 2025-9-2
+format: 
+  revealjs:
+    logo: snu_edu_1.png
+    footer: https://sangillee.snu.ac.kr/
+    transition: fade
+    transition-speed: fast
+    margin: 0.05
+    center: false
+    # smaller: false
+    # scrollable: false
+    code-link: true
+    code-copy: true
+    code-overflow: scroll
+    slide-number: true
+    width: 960 * 1.5
+    height: 700 * 1.5
+    lightbox: false
+    # min-scale: 1
+    # max-scale: 1
+    pointer:
+      pointerSize: 20
+      color: red
+    menu: true
+    embed-resources: false
+    theme: [default, custom_hq_pretendard_step.scss] # 슬라이드 본문 폰트 크기 조정
+    revealjs-plugins:
+      - pointer
+code-link: true
+execute: 
+  warning: false
+  error: false
+  freeze: auto  
+dpi: 600
+editor: visual
+webr: 
+  show-startup-message: false     
+  packages: []
+filters:
+  - webr
+# suppress-bibliography: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# Geospatial Visualization
+
+## Maps: geometric data
+
+-   `sf` package (<https://r-spatial.github.io/sf/>)
+
+![](images/clipboard-3930476942.jpeg){fig-align="center"}
+
+## Maps: geometric data
+
+```{r}
+#| output: false
+library(sf)
+library(tmap)
+sigungu_shp <- st_read("sigungu.shp", options = "ENCODING=CP949")
+```
+
+```{r}
+qtm(sigungu_shp)
+```
+
+## Maps: static, a map as a graph
+
+-   `ggplot2` package (<https://ggplot2.tidyverse.org/>)
+
+    -   `geom_sf()`
+
+    -   `geom_sf_label()`
+
+    -   `geom_sf_text()`
+
+    -   `coord_sf()`
+
+    -   `stat_sf()`
+
+## Maps: static, a map as a map
+
+-   `tmap` package (<https://r-tmap.github.io/tmap/articles/tmap_vv.html>)
+
+![](images/clipboard-3147080854.png){fig-align="center"}
+
+## Maps: interactive, animated, 3D
+
+-   `Plotly` (<https://plotly.com/graphing-libraries/>)
+
+    -   R wrapper package: `plotly` package (<https://plotly.com/r/>)
+
+-   `Leaflet` (<https://leafletjs.com/>)
+
+    -   R wrapper packag: `leaflet` (<https://rstudio.github.io/leaflet/>)
+
+-   `rayshader` package (<https://www.rayshader.com/>)
+
+## Maps: `leaflet` example
+
+```{r}
+library(leaflet)
+leaflet() |> 
+  addTiles() |> 
+  # addProviderTiles('CartoDB.Positron') |> 
+  addPopups(126.955184, 37.460422, "Sang-Il's Office")
+```
+
+## Maps: `rayshader` example
+
+![<https://www.rayshader.com/>](images/clipboard-3713320529.png){fig-align="center"}
+
+## Maps: `rayshader` example
+
+![](https://wp.unil.ch/citadyne-news/files/2023/02/thworld.jpeg){fig-align="center"}
+
+## Maps: `rayshader` example {.smaller}
+
+{{< video seoul_ani.mp4 height = "600" >}}
+
+# More Advanced R
+
+## Advanced interactivity: Shiny
+
+![<https://shiny.posit.co/>](images/clipboard-3736716242.png){fig-align="center"}
+
+## Advanced interactivity: Shiny
+
+-   Web publication: <https://www.shinyapps.io/>
+
+![](images/clipboard-2928271543.png){fig-align="center"}
+
+## Advanced interactivity: Shiny
+
+-   My first Shiny app
+
+-   Spatial Kernel Density Estimation
+
+<https://sangillee.shinyapps.io/SpatialKernelDensityEstimation/>
+
+## Advanced modeling
+
+![<https://www.tidymodels.org/>](images/clipboard-3467293569.png){fig-align="center"}
+
+## Advanced programming
+
+![<https://purrr.tidyverse.org/>](images/clipboard-3235294248.png){fig-align="center"}
+
+## R and Generative AI: ChatGPT
+
+-   Automated code generation
+
+-   Learning programming concepts
+
+-   Creative writing and documentation
+
+-   Debugging assistance
+
+-   Improved Shiny app development
+
+-   Assistance with statistics and data science
+
+## R and Generative AI: ChatGPT
+
+-   Air (<https://github.com/soumyaray/air>)
+
+-   TheOpenAIR (<https://openair-lib.org/>)
+
+-   RTutor (<https://github.com/gexijin/RTutor>)
+
+-   askgpt (<https://github.com/JBGruber/askgpt>)
+
+-   gptstudio (<https://github.com/MichelNivard/gptstudio>)
+
+-   gpttools (<https://github.com/JamesHWade/gpttools>)
+
+-   gptchatteR (<https://github.com/isinaltinkaya/gptchatteR>)
+
+## R and Generative AI: General
+
+-   `GenAI` (<https://genai.gd.edu.kg/>)
+
+![](https://genai.gd.edu.kg/assets/img/overview.svg)

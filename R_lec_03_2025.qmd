@@ -1,9 +1,9 @@
 ---
 title: |
   | [R Lecture 3]{style="color:coral;font-size:0.6em"}   
-  | [Quarto로 대시보드 만들기]{style="font-size:1em"} 
+  | [소통하기: Quarto]{style="font-size:1em"} 
 author: <br> 이상일(서울대학교 지리교육과 교수)
-date: 2025-9-2
+date: 2025-9-23
 format: 
   revealjs:
     logo: snu_edu_1.png
@@ -31,6 +31,7 @@ format:
     theme: [default, custom_hq_pretendard_step.scss] # 슬라이드 본문 폰트 크기 조정
     revealjs-plugins:
       - pointer
+    css: styles.css
 code-link: true
 execute: 
   warning: false
@@ -48,25 +49,21 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Communication in a data science process
+# [Quarto 개요]{style="color:coral"}
 
-![](images/clipboard-1239646791.png)
+## 데이터사이언스 프로세스: 소통
 
-## Packages
+![[https://r4ds.hadley.nz/](https://r4ds.hadley.nz/){style="font-size:1.25rem"}](images/data_science_process_communicate-03.png)
 
-![](images/clipboard-1401588796.png)
+## 패키지
+
+![[https://r4ds.hadley.nz/](https://r4ds.hadley.nz/){style="font-size:1.25rem"}](images/data_science_process_packages-02.png)
 
 ## 
 
-![](images/clipboard-1590379712.png){fig-align="center"}
+![[https://quarto.org/](https://quarto.org/){style="font-size:1.25rem"}](images/hex_quarto.png){fig-align="center"}
 
-## Thanks to Quarto
-
-![](https://sangillee.snu.ac.kr/me.png){fig-align="center"}
-
-[https://sangillee.snu.ac.kr/](https://sangillee.snu.ac.kr/){.uri style="font-size:0.75rem"}
-
-## Quarto: Definition {.smaller}
+## 정의
 
 -   "과학적, 기술적 출판을 위한 오픈소스 시스템(an open-source scientific and technical publishing system)"
 
@@ -82,11 +79,27 @@ editor_options:
 
     -   사회 스케일: 과학 커뮤니티의 재현성(reproducibility) 고양
 
-## Quarto: Functions
+## 기능
 
-![[https://rstudio.github.io/cheatsheets/html/quarto.html](https://rstudio.github.io/cheatsheets/html/quarto.html){.uri style="font-size:0.75rem"}](https://rstudio.github.io/cheatsheets/html/images/quarto-illustration.png){fig-align="center"}
+![[https://allisonhorst.com/cetinkaya-rundel-lowndes-quarto-keynote](https://allisonhorst.com/cetinkaya-rundel-lowndes-quarto-keynote){style="font-size:1.25rem"}](images/quarto_illustration_2.png){fig-align="center"}
 
-## Quarto: Syntax
+## 기능
+
+![[https://quarto.org/](https://quarto.org/){style="font-size:1.25rem"}](images/quarto_types.png){fig-align="center"}
+
+## 결과물 예시
+
+-   개인 홈페이지 및 블로그: <https://sangillee.snu.ac.kr/>
+
+-   웹북: <https://r4ds.hadley.nz/>
+
+-   프레젠테이션: <https://sangillee.snu.ac.kr/2024_AIEDAP/lecture_3.html>
+
+-   대시보드: <https://sangillee.snu.ac.kr/dashboard_popgeo/>
+
+-   논문, 포스터, 소식지 등
+
+## 구문(syntax)
 
 -   마크다운(markdown) 언어: 팬독(pandoc)
 
@@ -98,15 +111,15 @@ editor_options:
 
     -   프로그래밍 언어 + 워드프로세서
 
-## Quarto: Rendering
+## 렌더링(rendering)
 
 -   `knitr` 패키지: `.qmd`를 `.md`로 전환
 
 -   `pandoc`: `.md`를 다양한 디지털 포맷으로 전환
 
-![[https://r4ds.hadley.nz/quarto](https://r4ds.hadley.nz/quarto){.uri style="font-size:0.75rem"}](https://quarto.org/docs/get-started/hello/images/rstudio-qmd-how-it-works.png)
+![[https://r4ds.hadley.nz/quarto](https://r4ds.hadley.nz/quarto){.uri style="font-size:1.25rem"}](https://quarto.org/docs/get-started/hello/images/rstudio-qmd-how-it-works.png)
 
-## Quarto documents: Basic structure
+## Quarto 다큐먼트의 기본 구조
 
 -   YAML 헤더(header)
 
@@ -124,12 +137,12 @@ editor_options:
 
 ## 
 
-![[https://r4](https://r4ds.hadley.nz/quarto){.uri}[d](https://r4ds.hadley.nz/quarto){.uri style="font-size:0.75rem"}[s.hadley.nz/quarto](https://r4ds.hadley.nz/quarto){.uri}](https://r4ds.hadley.nz/quarto/diamond-sizes-report.png){fig-align="center"}
+![[https://r4ds.hadley.nz/quarto](https://r4ds.hadley.nz/quarto){style="font-size:1.25rem"}](https://r4ds.hadley.nz/quarto/diamond-sizes-report.png){fig-align="center"}
 
-## YAML header {.smaller}
+## YAML 헤더 {.smaller}
 
-| key | 설명 |
-|----|----|
+| 키(key) | 설명 |
+|------------------------------------|------------------------------------|
 | title | 다큐먼트의 제목 |
 | date | 다큐먼트 작성 날짜 |
 | author | 다큐먼트 저자 이름 |
@@ -140,7 +153,7 @@ editor_options:
 | execute: warning | 경고 메시지를 산출물에 나타나게 할지를 글로벌하게 설정, 보통 false |
 | editor | 비주얼 에디터와 소스 에디터 중 선택, 보통 visual |
 
-## Code chunck {.smaller}
+## 코드 청크 {.smaller}
 
 | Option           | Run code | Show code | Output | Plots | Messages | Warnings |
 |------------------|:--------:|:---------:|:------:|:-----:|:--------:|:--------:|
@@ -152,9 +165,9 @@ editor_options:
 | `message: false` |          |           |        |       |    X     |          |
 | `warning: false` |          |           |        |       |          |    X     |
 
-## Markdown text
+## 마크다운 텍스트
 
--   비주얼 에디터(visual editor) vs. 소스 에디터(source editor)
+-   소스 에디터(source editor) vs. 비주얼 에디터(visual editor)
 
 -   마크다운 언어의 사용자 편이성을 한 번 더 강화한 것
 
@@ -176,9 +189,9 @@ editor_options:
 
 ## Zotero
 
-![[https://quarto.org/docs/visual-editor/technical.html](https://quarto.org/docs/visual-editor/technical.html){.uri style="font-size:0.75rem"}](https://quarto.org/docs/visual-editor/images/visual-editing-citation-search.png){fig-align="center"}
+![[https://quarto.org/docs/visual-editor/technical.html](https://quarto.org/docs/visual-editor/technical.html){.uri style="font-size:1.25rem"}](https://quarto.org/docs/visual-editor/images/visual-editing-citation-search.png){fig-align="center"}
 
-## Web publication
+## 웹 발행(publishing)과 호스팅(hosting) 서비스
 
 -   Quarto Pub(<https://quartopub.com/>)
 
@@ -188,30 +201,34 @@ editor_options:
 
 ## Quarto Pub
 
-![[https://quarto.org/docs/publishing/quarto-pub.html](https://quarto.org/docs/publishing/quarto-pub.html){.uri style="font-size:0.75rem"}](https://quarto.org/docs/publishing/images/quarto-pub-default-site.png){fig-align="center"}
+![[https://quarto.org/docs/publishing/quarto-pub.html](https://quarto.org/docs/publishing/quarto-pub.html){.uri style="font-size:1.25rem"}](https://quarto.org/docs/publishing/images/quarto-pub-default-site.png){fig-align="center"}
 
-## R dashboard tools: A transition
+# [Quarto로 대시보드 만들기]{style="color:coral"}
 
-::: {layout-ncol="2"}
-![](images/clipboard-371284902.png)
+## 데이터 대시보드
 
-![](images/clipboard-2426207477.png)
-:::
+-   레이아웃 요소: 대시보드의 기본 구조
 
-## An example
+    -   카드(행과 열)
 
-![](https://quarto.org/docs/dashboards/examples/thumbnails/customer-churn-dashboard.png){fig-align="center"}
+    -   페이지, 내비게이션 바, 사이드바, 툴바, 탭셋
 
-## An example
+-   내용 요소: 카드를 채우는 내용의 유형
+
+    -   텍스트, 표, 그래프, 동영상, 밸류박스, 지도, 챗봇 등
+
+-   작동 요소: 상호작용성의 형식과 정도
+
+## 예시
 
 <https://sangillee.quarto.pub/my-first-dashboard/>
 
-## Layout 1: Rows and Columns
+## 레이아웃 요소 1: 카드
 
 ::: panel-tabset
 ## Code
 
-``` r
+```         
 ## Row {height=70%}
 
 Card 1
@@ -232,12 +249,12 @@ Card 2-2
 ![](https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card3.png){fig-align="center" width="729"}
 :::
 
-## Layout 2: Tabsets
+## 레이아웃 요소 2: 탭셋
 
 ::: panel-tabset
 ## Code
 
-``` r
+```         
 ## Row {height=70%}
 
 Card 1
@@ -258,12 +275,12 @@ Card 2-2 {width=50%}
 ![](https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/tabset1.png){fig-align="center" width="733"}
 :::
 
-## Layout: Pages
+## 레이아웃 요소 3: 페이지
 
 ::: panel-tabset
 ## Code
 
-``` r
+```         
 # Page A
 
 ## Row {height=70%}
@@ -290,7 +307,7 @@ Card 3
 ![](https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card4.png){fig-align="center" width="726"}
 :::
 
-## Navigation Bars: YAML header
+## 레이아웃 요소 4: 내비게이션 바
 
 ![](https://quarto.org/docs/dashboards/images/navigation-toolbar.png){fig-align="center"}
 
@@ -308,11 +325,11 @@ Card 3
 
 -   theme: 25 bootswatch themes(<https://quarto.org/docs/dashboards/theming.html>)
 
-## Sidebars
+## 레이아웃 요소 5: 사이드바
 
 ![](https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/sidebar.png){fig-align="center"}
 
-## Cards: Graphs
+## 내용 요소 1: 그래프
 
 -   그래프 카드: 그래프 하나를 만들어내는 코드 청크
 
@@ -328,7 +345,7 @@ gapminder |>
   geom_histogram()
 ```
 
-## Cards: Tables
+## 내용 요소 2: 테이블
 
 -   테이블 카드: 테이블 하나를 만들어내는 코드 청크
 
@@ -343,7 +360,7 @@ datatable(gapminder, filter = "top",
           ))
 ```
 
-## Cards: Maps
+## 내용 요소 3: 지도
 
 -   지도 카드: 지도 하나를 만들어내는 코드 청크
 
@@ -356,7 +373,7 @@ leaflet() |>
   addTiles()
 ```
 
-## Cards: Texts
+## 내용 요소 4: 텍스트
 
 -   텍스트 카드: 텍스트 박스 하나를 만들어내는 div
 -   `{.card}` 탭과 `title` 속성
@@ -367,7 +384,7 @@ This is my first dashboard.
 :::
 ```
 
-## Cards: Valueboxes
+## 내용 요소 5: 밸류박스(valueboxe)
 
 -   밸류박스 카드: 밸류박스 하나를 만들어내는 코드 청크
 
@@ -386,6 +403,6 @@ list(
 )
 ```
 
-## Web publication
+## 웹 발행
 
 -   Quarto Pub(<https://quartopub.com/>)

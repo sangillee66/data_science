@@ -31,6 +31,7 @@ format:
     theme: [default, custom_hq_pretendard_step.scss] # 슬라이드 본문 폰트 크기 조정
     revealjs-plugins:
       - pointer
+    css: styles.css
 code-link: true
 execute: 
   warning: false
