@@ -51,6 +51,7 @@ website:
         contents: 
           - lab_01_2025.qmd
           - lab_02_2025.qmd
+          - lab_03_2025.qmd
       - text: "---"    
       - section: "R 실습: 2024/1"
         contents: 
