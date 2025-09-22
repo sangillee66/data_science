@@ -5352,8 +5352,8 @@
     "objectID": "R_lec_01_2025.html#주요-사건들",
     "href": "R_lec_01_2025.html#주요-사건들",
     "title": "\nR Lecture 1R과 RStudio\n",
-    "section": "",
-    "text": "https://www.mdpi.com/2075-1729/12/5/648",
+    "section": "주요 사건들",
+    "text": "주요 사건들\n\nhttps://www.mdpi.com/2075-1729/12/5/648",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5363,8 +5363,8 @@
     "objectID": "R_lec_01_2025.html#bell-labs-in-1975",
     "href": "R_lec_01_2025.html#bell-labs-in-1975",
     "title": "\nR Lecture 1R과 RStudio\n",
-    "section": "",
-    "text": "https://en.wikipedia.org/wiki/Bell_Labs",
+    "section": "Bell Labs in 1975",
+    "text": "Bell Labs in 1975\n\nhttps://en.wikipedia.org/wiki/Bell_Labs",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5374,8 +5374,8 @@
     "objectID": "R_lec_01_2025.html#s-plus-1997",
     "href": "R_lec_01_2025.html#s-plus-1997",
     "title": "\nR Lecture 1R과 RStudio\n",
-    "section": "",
-    "text": "https://knihobot.cz/g/485637\n\n\n\n\n\nhttps://link.springer.com/book/10.1007/978-1-4615-7826-0",
+    "section": "S-Plus, 1997",
+    "text": "S-Plus, 1997\n\n\n\n\n\nhttps://knihobot.cz/g/485637\n\n\n\n\n\nhttps://link.springer.com/book/10.1007/978-1-4615-7826-0",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5385,8 +5385,8 @@
     "objectID": "R_lec_01_2025.html#fathers-of-r-1993",
     "href": "R_lec_01_2025.html#fathers-of-r-1993",
     "title": "\nR Lecture 1R과 RStudio\n",
-    "section": "",
-    "text": "조지 로스 이하카 George Ross Ihaka\n\n\n\n\n\n오클랜드 대학 University of Auckland\n\n\n\n\n\n로버트 젠틀맨 Robert C. Gentleman",
+    "section": "Fathers of R, 1993",
+    "text": "Fathers of R, 1993\n\n\n\n\n\n조지 로스 이하카 George Ross Ihaka\n\n\n\n\n\n오클랜드 대학 University of Auckland\n\n\n\n\n\n로버트 젠틀맨 Robert C. Gentleman",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5396,8 +5396,8 @@
     "objectID": "R_lec_01_2025.html#official-birth",
     "href": "R_lec_01_2025.html#official-birth",
     "title": "\nR Lecture 1R과 RStudio\n",
-    "section": "",
-    "text": "https://www.r-consortium.org/blog/2023/02/28/happy-23rd-birthday-r",
+    "section": "Official Birth",
+    "text": "Official Birth\n\nhttps://www.r-consortium.org/blog/2023/02/28/happy-23rd-birthday-r",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5407,8 +5407,8 @@
     "objectID": "R_lec_01_2025.html#ggplot2-2007",
     "href": "R_lec_01_2025.html#ggplot2-2007",
     "title": "\nR Lecture 1R과 RStudio\n",
-    "section": "",
-    "text": "https://ggplot2.tidyverse.org/\n\n\n\n \n\n\n\n\n해들리 위컴(Hadley Wickham), posit",
+    "section": "ggplot2, 2007",
+    "text": "ggplot2, 2007\n\n\n\n\n\nhttps://ggplot2.tidyverse.org/\n\n\n\n \n\n\n\n\n해들리 위컴(Hadley Wickham), posit",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5418,8 +5418,8 @@
     "objectID": "R_lec_01_2025.html#rstudio-2011",
     "href": "R_lec_01_2025.html#rstudio-2011",
     "title": "\nR Lecture 1R과 RStudio\n",
-    "section": "",
-    "text": "https://posit.co/download/rstudio-desktop/",
+    "section": "RStudio, 2011",
+    "text": "RStudio, 2011\n\nhttps://posit.co/download/rstudio-desktop/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5429,8 +5429,8 @@
     "objectID": "R_lec_01_2025.html#shiny-2012",
     "href": "R_lec_01_2025.html#shiny-2012",
     "title": "\nR Lecture 1R과 RStudio\n",
-    "section": "",
-    "text": "https://shiny.posit.co/",
+    "section": "shiny, 2012",
+    "text": "shiny, 2012\n\n\n\n\n\n\n\n\nhttps://shiny.posit.co/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5440,8 +5440,8 @@
     "objectID": "R_lec_01_2025.html#tidyverse-2016",
     "href": "R_lec_01_2025.html#tidyverse-2016",
     "title": "\nR Lecture 1R과 RStudio\n",
-    "section": "",
-    "text": "https://www.tidyverse.org/\n\n\n\n \n\n\n\n\nhttps://www.tidyverse.org/",
+    "section": "tidyverse, 2016",
+    "text": "tidyverse, 2016\n\n\n\n\n\nhttps://www.tidyverse.org/\n\n\n\n \n\n\n\n\nhttps://www.tidyverse.org/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5451,8 +5451,8 @@
     "objectID": "R_lec_01_2025.html#posit-2022",
     "href": "R_lec_01_2025.html#posit-2022",
     "title": "\nR Lecture 1R과 RStudio\n",
-    "section": "",
-    "text": "https://posit.co/",
+    "section": "posit, 2022",
+    "text": "posit, 2022\n\nhttps://posit.co/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5462,8 +5462,8 @@
     "objectID": "R_lec_01_2025.html#quarto-2022",
     "href": "R_lec_01_2025.html#quarto-2022",
     "title": "\nR Lecture 1R과 RStudio\n",
-    "section": "",
-    "text": "https://quarto.org/\n\n\n\n\n\nhttps://rstudio.github.io/cheatsheets/html/quarto.html",
+    "section": "quarto, 2022",
+    "text": "quarto, 2022\n\n\n\n\n\nhttps://quarto.org/\n\n\n\n\n\nhttps://rstudio.github.io/cheatsheets/html/quarto.html",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5485,7 +5485,7 @@
     "href": "R_lec_01_2025.html#ide-2",
     "title": "\nR Lecture 1R과 RStudio\n",
     "section": "IDE",
-    "text": "IDE\n\n\nhttps://djangostars.com/blog/python-ide/",
+    "text": "IDE\n\nhttps://djangostars.com/blog/python-ide/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5496,7 +5496,7 @@
     "href": "R_lec_01_2025.html#ide-3",
     "title": "\nR Lecture 1R과 RStudio\n",
     "section": "IDE",
-    "text": "IDE\n\n\nhttps://posit.co/blog/positron-product-announcement-aug-2025/",
+    "text": "IDE\n\nhttps://posit.co/blog/positron-product-announcement-aug-2025/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5529,7 +5529,7 @@
     "href": "R_lec_01_2025.html#r-project-1",
     "title": "\nR Lecture 1R과 RStudio\n",
     "section": "R Project",
-    "text": "R Project\n\n\nhttps://allisonhorst.com/allison-horst",
+    "text": "R Project\n\nhttps://allisonhorst.com/allison-horst",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5562,7 +5562,7 @@
     "href": "R_lec_01_2025.html#연산자-operators",
     "title": "\nR Lecture 1R과 RStudio\n",
     "section": "연산자 Operators",
-    "text": "연산자 Operators\n\n\nhttps://learnetutorials.com/r-programming/operators-and-types",
+    "text": "연산자 Operators\n\nhttps://learnetutorials.com/r-programming/operators-and-types",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5617,7 +5617,7 @@
     "href": "R_lec_01_2025.html#함수-functions",
     "title": "\nR Lecture 1R과 RStudio\n",
     "section": "함수 functions",
-    "text": "함수 functions\n\nseq(from = 2, to = 100, by = 2)\n\n\n\nhttps://www.r4epi.com/speaking-rs-language",
+    "text": "함수 functions\n\nseq(from = 2, to = 100, by = 2)\n\n\nhttps://www.r4epi.com/speaking-rs-language",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5818,7 +5818,7 @@
     "href": "R_lec_02_2025.html#no-error-no-gain",
     "title": "\nR Lecture 2R과 데이터사이언스\n",
     "section": "No error, no gain!",
-    "text": "No error, no gain!\n\n\nhttps://allisonhorst.com/everything-else",
+    "text": "No error, no gain!\n\n\n\nhttps://allisonhorst.com/everything-else",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 2]{style=\"color:coral;font-size:0.6em\"}\n| [R과 데이터사이언스]{style=\"font-size:1em\"}"
@@ -5890,7 +5890,7 @@
     "href": "R_lec_02_2025.html#패키지-설치하기",
     "title": "\nR Lecture 2R과 데이터사이언스\n",
     "section": "패키지 설치하기",
-    "text": "패키지 설치하기\n\n\nCRAN 패키지인 경우\n\ninstall.packages(\"패키지명\")\n아웃풋(output) 창의 Packages 탭\n\n\n\n\n\n\n\n\n\n비 CRAN 패키지의 경우\n\nremotes::install_github(\"사용자명/저장소명\")",
+    "text": "패키지 설치하기\n\n\nCRAN 패키지인 경우\n\ninstall.packages(\"패키지명\")\n아웃풋(output) 창의 Packages 탭\n\n\n\n\n\n\n비 CRAN 패키지의 경우\n\nremotes::install_github(\"사용자명/저장소명\")",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 2]{style=\"color:coral;font-size:0.6em\"}\n| [R과 데이터사이언스]{style=\"font-size:1em\"}"
@@ -5959,7 +5959,7 @@
     "href": "R_lec_02_2025.html#타이디버스-철학",
     "title": "\nR Lecture 2R과 데이터사이언스\n",
     "section": "타이디버스 철학",
-    "text": "타이디버스 철학\n타이디버스 스타일 가이드\n\n\nhttps://allisonhorst.com/r-packages-functions",
+    "text": "타이디버스 철학\n타이디버스 스타일 가이드\n\nhttps://allisonhorst.com/r-packages-functions",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 2]{style=\"color:coral;font-size:0.6em\"}\n| [R과 데이터사이언스]{style=\"font-size:1em\"}"
@@ -6025,7 +6025,7 @@
     "href": "R_lec_02_2025.html#데이터사이언스-프로세스와-파이프-연산자",
     "title": "\nR Lecture 2R과 데이터사이언스\n",
     "section": "데이터사이언스 프로세스와 파이프 연산자",
-    "text": "데이터사이언스 프로세스와 파이프 연산자\n\n\nhttps://www.rforecology.com/post/how-to-use-pipes/",
+    "text": "데이터사이언스 프로세스와 파이프 연산자\n\nhttps://www.rforecology.com/post/how-to-use-pipes/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 2]{style=\"color:coral;font-size:0.6em\"}\n| [R과 데이터사이언스]{style=\"font-size:1em\"}"
@@ -6046,8 +6046,8 @@
     "objectID": "R_lec_02_2025.html#데이터사이언스-프로세스와-r",
     "href": "R_lec_02_2025.html#데이터사이언스-프로세스와-r",
     "title": "\nR Lecture 2R과 데이터사이언스\n",
-    "section": "",
-    "text": "https://posit.co/blog/artist-in-residence/",
+    "section": "데이터사이언스 프로세스와 R",
+    "text": "데이터사이언스 프로세스와 R\n\nhttps://posit.co/blog/artist-in-residence/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 2]{style=\"color:coral;font-size:0.6em\"}\n| [R과 데이터사이언스]{style=\"font-size:1em\"}"
@@ -6057,8 +6057,8 @@
     "objectID": "R_lec_02_2025.html#데이터사이언스-프로세스와-r-1",
     "href": "R_lec_02_2025.html#데이터사이언스-프로세스와-r-1",
     "title": "\nR Lecture 2R과 데이터사이언스\n",
-    "section": "",
-    "text": "https://r4ds.hadley.nz/intro",
+    "section": "데이터사이언스 프로세스와 R",
+    "text": "데이터사이언스 프로세스와 R\n\nhttps://r4ds.hadley.nz/intro",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 2]{style=\"color:coral;font-size:0.6em\"}\n| [R과 데이터사이언스]{style=\"font-size:1em\"}"
@@ -6068,8 +6068,8 @@
     "objectID": "R_lec_02_2025.html#바이블",
     "href": "R_lec_02_2025.html#바이블",
     "title": "\nR Lecture 2R과 데이터사이언스\n",
-    "section": "",
-    "text": "https://r4ds.hadley.nz/",
+    "section": "바이블",
+    "text": "바이블\n\nhttps://r4ds.hadley.nz/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 2]{style=\"color:coral;font-size:0.6em\"}\n| [R과 데이터사이언스]{style=\"font-size:1em\"}"
@@ -6127,7 +6127,7 @@
   {
     "objectID": "R_lec_03_2025.html#section-1",
     "href": "R_lec_03_2025.html#section-1",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "",
     "text": "https://r4ds.hadley.nz/quarto",
     "crumbs": [
@@ -6159,7 +6159,7 @@
   {
     "objectID": "R_lec_03_2025.html#zotero",
     "href": "R_lec_03_2025.html#zotero",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "Zotero",
     "text": "Zotero\n\nhttps://quarto.org/docs/visual-editor/technical.html",
     "crumbs": [
@@ -6177,7 +6177,7 @@
   {
     "objectID": "R_lec_03_2025.html#quarto-pub",
     "href": "R_lec_03_2025.html#quarto-pub",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "Quarto Pub",
     "text": "Quarto Pub\n\nhttps://quarto.org/docs/publishing/quarto-pub.html",
     "crumbs": [
@@ -6385,7 +6385,7 @@
   {
     "objectID": "R_lec_03_2025.html#데이터사이언스-프로세스-소통",
     "href": "R_lec_03_2025.html#데이터사이언스-프로세스-소통",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "데이터사이언스 프로세스: 소통",
     "text": "데이터사이언스 프로세스: 소통\n\nhttps://r4ds.hadley.nz/",
     "crumbs": [
@@ -6396,7 +6396,7 @@
   {
     "objectID": "R_lec_03_2025.html#패키지",
     "href": "R_lec_03_2025.html#패키지",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "패키지",
     "text": "패키지\n\nhttps://r4ds.hadley.nz/",
     "crumbs": [
@@ -6407,7 +6407,7 @@
   {
     "objectID": "R_lec_03_2025.html#section",
     "href": "R_lec_03_2025.html#section",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "",
     "text": "https://quarto.org/",
     "crumbs": [
@@ -6446,9 +6446,9 @@
   {
     "objectID": "R_lec_03_2025.html#정의",
     "href": "R_lec_03_2025.html#정의",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "정의",
-    "text": "정의\n\n“과학적, 기술적 출판을 위한 오픈소스 시스템(an open-source scientific and technical publishing system)”\n\n오픈소스 저작 시스템\n\n다양한 형식의 저작물(노트, 연구 논문, 프레젠테이션, 대시보드, 웹사이트, 블로그, 서적 등)을 다양한 디지털 포맷(HTML, PDF, MS Word, ePub 등)으로 출판할 수 있게 해주는 도구\n적용 분야의 스케일\n\n개인 스케일: 노트, 레포트, 연구 논문, 프레젠테이션, 블로그 등의 작성 도구\n그룹 스케일: 프로젝트의 원할한 진행을 위한 협업 프레임워크\n사회 스케일: 과학 커뮤니티의 재현성(reproducibility) 고양",
+    "text": "정의\n\n\n“과학적, 기술적 출판을 위한 오픈소스 시스템(an open-source scientific and technical publishing system)”\n\n오픈소스 저작 시스템\n\n\n다양한 형식의 저작물(노트, 연구 논문, 프레젠테이션, 대시보드, 웹사이트, 블로그, 서적 등)을 다양한 디지털 포맷(HTML, PDF, MS Word, ePub 등)으로 출판할 수 있게 해주는 도구\n\n적용 분야의 스케일\n\n개인 스케일: 노트, 레포트, 연구 논문, 프레젠테이션, 블로그 등의 작성 도구\n그룹 스케일: 프로젝트의 원할한 진행을 위한 협업 프레임워크\n사회 스케일: 과학 커뮤니티의 재현성(reproducibility) 고양",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6457,7 +6457,7 @@
   {
     "objectID": "R_lec_03_2025.html#기능",
     "href": "R_lec_03_2025.html#기능",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "기능",
     "text": "기능\n\nhttps://allisonhorst.com/cetinkaya-rundel-lowndes-quarto-keynote",
     "crumbs": [
@@ -6468,7 +6468,7 @@
   {
     "objectID": "R_lec_03_2025.html#기능-1",
     "href": "R_lec_03_2025.html#기능-1",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "기능",
     "text": "기능\n\nhttps://quarto.org/",
     "crumbs": [
@@ -6479,7 +6479,7 @@
   {
     "objectID": "R_lec_03_2025.html#결과물-예시",
     "href": "R_lec_03_2025.html#결과물-예시",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "결과물 예시",
     "text": "결과물 예시\n\n개인 홈페이지 및 블로그: https://sangillee.snu.ac.kr/\n웹북: https://r4ds.hadley.nz/\n프레젠테이션: https://sangillee.snu.ac.kr/2024_AIEDAP/lecture_3.html\n대시보드: https://sangillee.snu.ac.kr/dashboard_popgeo/\n논문, 포스터, 소식지 등",
     "crumbs": [
@@ -6490,9 +6490,9 @@
   {
     "objectID": "R_lec_03_2025.html#구문syntax",
     "href": "R_lec_03_2025.html#구문syntax",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "구문(syntax)",
-    "text": "구문(syntax)\n\n마크다운(markdown) 언어: 팬독(pandoc)\n\n마크업(markup) 언어: 다큐먼트의 구조와 포맷을 관장하는 텍스트-엔코딩 시스템\n사용자의 편의성을 크게 향상시킨 마크업 언어\n\nQuarto 다규먼트: .qmd\n\n프로그래밍 언어 + 워드프로세서",
+    "text": "구문(syntax)\n\n\n마크다운(markdown) 언어: 팬독(pandoc)\n\n마크업(markup) 언어: 다큐먼트의 구조와 포맷을 관장하는 텍스트-엔코딩 시스템\n사용자의 편의성을 크게 향상시킨 마크업 언어\n\n\n\nQuarto 다규먼트: .qmd\n\n프로그래밍 언어 + 워드프로세서",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6501,7 +6501,7 @@
   {
     "objectID": "R_lec_03_2025.html#렌더링rendering",
     "href": "R_lec_03_2025.html#렌더링rendering",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "렌더링(rendering)",
     "text": "렌더링(rendering)\n\nknitr 패키지: .qmd를 .md로 전환\npandoc: .md를 다양한 디지털 포맷으로 전환\n\n\nhttps://r4ds.hadley.nz/quarto",
     "crumbs": [
@@ -6512,9 +6512,9 @@
   {
     "objectID": "R_lec_03_2025.html#quarto-다큐먼트의-기본-구조",
     "href": "R_lec_03_2025.html#quarto-다큐먼트의-기본-구조",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "Quarto 다큐먼트의 기본 구조",
-    "text": "Quarto 다큐먼트의 기본 구조\n\nYAML 헤더(header)\n\n일종의 메타데이터\n다큐먼트의 전반적인 사항을 관장\n\n코드 청크(code chunk)\n\n프로그래밍 언어가 들어가는 부분\nR 스크립트 파일\n\n마크다운 텍스트(markdown text)\n\n워드프로세서처럼 텍스트를 작성(도표 포함)",
+    "text": "Quarto 다큐먼트의 기본 구조\n\n\nYAML 헤더(header)\n\n일종의 메타데이터\n다큐먼트의 전반적인 사항을 관장\n\n\n\n코드 청크(code chunk)\n\n프로그래밍 언어가 들어가는 부분\nR 스크립트 파일\n\n\n\n마크다운 텍스트(markdown text)\n\n워드프로세서처럼 텍스트를 작성(도표 포함)",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6537,7 +6537,7 @@
   {
     "objectID": "R_lec_03_2025.html#마크다운-텍스트",
     "href": "R_lec_03_2025.html#마크다운-텍스트",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "마크다운 텍스트",
     "text": "마크다운 텍스트\n\n소스 에디터(source editor) vs. 비주얼 에디터(visual editor)\n마크다운 언어의 사용자 편이성을 한 번 더 강화한 것",
     "crumbs": [
@@ -6576,9 +6576,9 @@
   {
     "objectID": "R_lec_03_2025.html#yaml-헤더",
     "href": "R_lec_03_2025.html#yaml-헤더",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "YAML 헤더",
-    "text": "YAML 헤더\n\n\n\n\n\n\n\n키(key)\n설명\n\n\n\n\ntitle\n다큐먼트의 제목\n\n\ndate\n다큐먼트 작성 날짜\n\n\nauthor\n다큐먼트 저자 이름\n\n\nformat\n다양한 포맷 관련 사항의 지정\n\n\ntoc\n목차 삽입\n\n\nnumber-section\n섹션 제목에 자동 번호 부여 여부\n\n\nexecute: echo\n소스 코드의 포함 여부를 글로벌하게 설정, 보통 true\n\n\nexecute: warning\n경고 메시지를 산출물에 나타나게 할지를 글로벌하게 설정, 보통 false\n\n\neditor\n비주얼 에디터와 소스 에디터 중 선택, 보통 visual",
+    "text": "YAML 헤더\n\n\n\n\n\n\n키(key)\n설명\n\n\n\ntitle\n다큐먼트의 제목\n\n\ndate\n다큐먼트 작성 날짜\n\n\nauthor\n다큐먼트 저자 이름\n\n\nformat\n다양한 포맷 관련 사항의 지정\n\n\ntoc\n목차 삽입\n\n\nnumber-section\n섹션 제목에 자동 번호 부여 여부\n\n\nexecute: echo\n소스 코드의 포함 여부를 글로벌하게 설정, 보통 true\n\n\nexecute: warning\n경고 메시지를 산출물에 나타나게 할지를 글로벌하게 설정, 보통 false\n\n\neditor\n비주얼 에디터와 소스 에디터 중 선택, 보통 visual",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6587,7 +6587,7 @@
   {
     "objectID": "R_lec_03_2025.html#웹-발행publishing과-호스팅hosting-서비스",
     "href": "R_lec_03_2025.html#웹-발행publishing과-호스팅hosting-서비스",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "웹 발행(publishing)과 호스팅(hosting) 서비스",
     "text": "웹 발행(publishing)과 호스팅(hosting) 서비스\n\nQuarto Pub(https://quartopub.com/)\nGitHub Pages(https://pages.github.com/)\nNetlify(https://www.netlify.com/)",
     "crumbs": [
@@ -6598,7 +6598,7 @@
   {
     "objectID": "R_lec_03_2025.html#예시",
     "href": "R_lec_03_2025.html#예시",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "예시",
     "text": "예시\nhttps://sangillee.quarto.pub/my-first-dashboard/",
     "crumbs": [
@@ -6645,9 +6645,9 @@
   {
     "objectID": "R_lec_03_2025.html#레이아웃-요소-4-내비게이션-바",
     "href": "R_lec_03_2025.html#레이아웃-요소-4-내비게이션-바",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "레이아웃 요소 4: 내비게이션 바",
-    "text": "레이아웃 요소 4: 내비게이션 바\n\n\ntitle\nauthor\nformat: dashboard\n\nlogo\nnav-buttons\nscrolling: true\n\ntheme: 25 bootswatch themes(https://quarto.org/docs/dashboards/theming.html)",
+    "text": "레이아웃 요소 4: 내비게이션 바\n\n\ntitle\nauthor\n\nformat: dashboard\n\nlogo\nnav-buttons\nscrolling: true\n\n\ntheme: 25 bootswatch themes(https://quarto.org/docs/dashboards/theming.html)",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6689,7 +6689,7 @@
   {
     "objectID": "R_lec_03_2025.html#내용-요소-1-그래프",
     "href": "R_lec_03_2025.html#내용-요소-1-그래프",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "내용 요소 1: 그래프",
     "text": "내용 요소 1: 그래프\n\n그래프 카드: 그래프 하나를 만들어내는 코드 청크\nggplot2 패키지, plotly 패키지\n\n#| title: \"Histogram of GDP per capita\"\nlibrary(tidyverse)\nlibrary(gapminder)\ngapminder |&gt; \n  filter(year == 2007) |&gt;\n  ggplot(aes(x = gdpPercap)) +\n  geom_histogram()",
     "crumbs": [
@@ -6700,7 +6700,7 @@
   {
     "objectID": "R_lec_03_2025.html#내용-요소-2-테이블",
     "href": "R_lec_03_2025.html#내용-요소-2-테이블",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "내용 요소 2: 테이블",
     "text": "내용 요소 2: 테이블\n\n테이블 카드: 테이블 하나를 만들어내는 코드 청크\nDT 패키지, knitr 패키지\n\n#| title: Lookup Table\nlibrary(DT)\ndatatable(gapminder, filter = \"top\", \n          options = list(\n            pageLength = 5, autoWidth = TRUE\n          ))",
     "crumbs": [
@@ -6711,7 +6711,7 @@
   {
     "objectID": "R_lec_03_2025.html#내용-요소-3-지도",
     "href": "R_lec_03_2025.html#내용-요소-3-지도",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "내용 요소 3: 지도",
     "text": "내용 요소 3: 지도\n\n지도 카드: 지도 하나를 만들어내는 코드 청크\nggplot2 패키지, leaflet 패키지\n\n#| title: A Reference Map \nlibrary(leaflet) \nleaflet() |&gt;  \n  addTiles()",
     "crumbs": [
@@ -6722,9 +6722,9 @@
   {
     "objectID": "R_lec_03_2025.html#내용-요소-4-텍스트",
     "href": "R_lec_03_2025.html#내용-요소-4-텍스트",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "내용 요소 4: 텍스트",
-    "text": "내용 요소 4: 텍스트\n\n텍스트 카드: 텍스트 박스 하나를 만들어내는 div\n{.card} 탭과 title 속성\n\n::: {.card title=\"Text\"}\nThis is my first dashboard.\n:::",
+    "text": "내용 요소 4: 텍스트\n\n텍스트 카드: 텍스트 박스 하나를 만들어내는 div\n\n{.card} 탭과 title 속성\n\n::: {.card title=\"Text\"}\nThis is my first dashboard.\n:::",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6733,7 +6733,7 @@
   {
     "objectID": "R_lec_03_2025.html#내용-요소-5-밸류박스valueboxe",
     "href": "R_lec_03_2025.html#내용-요소-5-밸류박스valueboxe",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "내용 요소 5: 밸류박스(valueboxe)",
     "text": "내용 요소 5: 밸류박스(valueboxe)\n\n밸류박스 카드: 밸류박스 하나를 만들어내는 코드 청크\n아이콘: bootstrap icon(https://icons.getbootstrap.com/)\n컬러: 8개(https://quarto.org/docs/dashboards/data-display.html)\n\n#| content: valuebox\n#| title: \"Number of Countries\"\nn_countries &lt;- gapminder |&gt; distinct(country) |&gt; nrow()\nlist(\n  icon = \"asterisk\",\n  color = \"primary\",\n  value = n_countries\n)",
     "crumbs": [
@@ -6744,9 +6744,9 @@
   {
     "objectID": "R_lec_03_2025.html#웹-발행",
     "href": "R_lec_03_2025.html#웹-발행",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "웹 발행",
-    "text": "웹 발행\n\nQuarto Pub(https://quartopub.com/)",
+    "text": "웹 발행\n\nQuarto Pub(https://quartopub.com/)\n\n\nn_countries &lt;- gapminder |&gt; distinct(country) |&gt; nrow()\nlist(\n  icon = \"asterisk\",\n  color = \"primary\",\n  value = n_countries\n)",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6755,9 +6755,9 @@
   {
     "objectID": "R_lec_03_2025.html#코드-청크",
     "href": "R_lec_03_2025.html#코드-청크",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "코드 청크",
-    "text": "코드 청크\n\n\n\n\n\n\n\n\n\n\n\n\nOption\nRun code\nShow code\nOutput\nPlots\nMessages\nWarnings\n\n\n\n\neval: false\nX\n\nX\nX\nX\nX\n\n\ninclude: false\n\nX\nX\nX\nX\nX\n\n\necho: false\n\nX\n\n\n\n\n\n\nresults: hide\n\n\nX\n\n\n\n\n\nfig-show: hide\n\n\n\nX\n\n\n\n\nmessage: false\n\n\n\n\nX\n\n\n\nwarning: false\n\n\n\n\n\nX",
+    "text": "코드 청크\n\n\n\n\n\n\n\n\n\n\n\nOption\nRun code\nShow code\nOutput\nPlots\nMessages\nWarnings\n\n\n\neval: false\nX\n\nX\nX\nX\nX\n\n\ninclude: false\n\nX\nX\nX\nX\nX\n\n\necho: false\n\nX\n\n\n\n\n\n\nresults: hide\n\n\nX\n\n\n\n\n\nfig-show: hide\n\n\n\nX\n\n\n\n\nmessage: false\n\n\n\n\nX\n\n\n\nwarning: false\n\n\n\n\n\nX",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -7606,9 +7606,9 @@
   {
     "objectID": "R_lec_03_2025.html#데이터-대시보드",
     "href": "R_lec_03_2025.html#데이터-대시보드",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "데이터 대시보드",
-    "text": "데이터 대시보드\n\n레이아웃 요소: 대시보드의 기본 구조\n\n카드(행과 열)\n페이지, 내비게이션 바, 사이드바, 툴바, 탭셋\n\n내용 요소: 카드를 채우는 내용의 유형\n\n텍스트, 표, 그래프, 동영상, 밸류박스, 지도, 챗봇 등\n\n작동 요소: 상호작용성의 형식과 정도",
+    "text": "데이터 대시보드\n\n\n레이아웃 요소: 대시보드의 기본 구조\n\n카드(행과 열)\n페이지, 내비게이션 바, 사이드바, 툴바, 탭셋\n\n\n\n내용 요소: 카드를 채우는 내용의 유형\n\n텍스트, 표, 그래프, 동영상, 밸류박스, 지도, 챗봇 등\n\n\n작동 요소: 상호작용성의 형식과 정도",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -7628,9 +7628,9 @@
   {
     "objectID": "R_lec_03_2025.html#레이아웃-요소-1-카드",
     "href": "R_lec_03_2025.html#레이아웃-요소-1-카드",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "레이아웃 요소 1: 카드",
-    "text": "레이아웃 요소 1: 카드\n\nCodeResult\n\n\n## Row {height=70%}\n\nCard 1\n\n## Row {height=30%}\n\n### Column {width=40%}\n\nCard 2-1 \n\n### Column {width=60%}\n\nCard 2-2",
+    "text": "레이아웃 요소 1: 카드\n\n\nCode\nResult\n\n\n\n## Row {height=70%}\n\nCard 1\n\n## Row {height=30%}\n\n### Column {width=40%}\n\nCard 2-1 \n\n### Column {width=60%}\n\nCard 2-2",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -7639,9 +7639,9 @@
   {
     "objectID": "R_lec_03_2025.html#레이아웃-요소-2-탭셋",
     "href": "R_lec_03_2025.html#레이아웃-요소-2-탭셋",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "레이아웃 요소 2: 탭셋",
-    "text": "레이아웃 요소 2: 탭셋\n\nCodeResult\n\n\n## Row {height=70%}\n\nCard 1\n\n## Row {height=30% .tabset}\n\n### Column\n\nCard 2-1 {width=50%}\n\n### Column\n\nCard 2-2 {width=50%}",
+    "text": "레이아웃 요소 2: 탭셋\n\n\nCode\nResult\n\n\n\n## Row {height=70%}\n\nCard 1\n\n## Row {height=30% .tabset}\n\n### Column\n\nCard 2-1 {width=50%}\n\n### Column\n\nCard 2-2 {width=50%}",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -7650,9 +7650,9 @@
   {
     "objectID": "R_lec_03_2025.html#레이아웃-요소-3-페이지",
     "href": "R_lec_03_2025.html#레이아웃-요소-3-페이지",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "레이아웃 요소 3: 페이지",
-    "text": "레이아웃 요소 3: 페이지\n\nCodeResult\n\n\n# Page A\n\n## Row {height=70%}\n\nCard 1\n\n## Row {height=30%}\n\n### Column {width=40%}\n\nCard 2-1\n\n### Column {width=60%}\n\nCard 2-2\n\n# Page B\n\nCard 3",
+    "text": "레이아웃 요소 3: 페이지\n\n\nCode\nResult\n\n\n\n# Page A\n\n## Row {height=70%}\n\nCard 1\n\n## Row {height=30%}\n\n### Column {width=40%}\n\nCard 2-1\n\n### Column {width=60%}\n\nCard 2-2\n\n# Page B\n\nCard 3",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -7661,7 +7661,7 @@
   {
     "objectID": "R_lec_03_2025.html#레이아웃-요소-5-사이드바",
     "href": "R_lec_03_2025.html#레이아웃-요소-5-사이드바",
-    "title": "R Lecture 3\n소통하기: Quarto",
+    "title": "\nR Lecture 3소통하기: Quarto\n",
     "section": "레이아웃 요소 5: 사이드바",
     "text": "레이아웃 요소 5: 사이드바",
     "crumbs": [

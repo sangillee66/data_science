@@ -1,680 +1,229 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.24">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="author" content="  이상일(서울대학교 지리교육과 교수)">
-<title>quarto-inputaad5cbd65318645e – Data Science</title>
-<style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-</style>
-
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<html lang="ko"><head>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./R_lec_01_2025.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b1ea10b977b5d0608b7f11732f9b146b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-d07cc0ff850f6621e1f6c1f3ad9c9934.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-b1ea10b977b5d0608b7f11732f9b146b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
-  "language": {
-    "search-no-results-text": "일치 없음",
-    "search-matching-documents-text": "일치된 문서",
-    "search-copy-link-title": "검색 링크 복사",
-    "search-hide-matches-text": "추가 검색 결과 숨기기",
-    "search-more-match-text": "추가 검색결과",
-    "search-more-matches-text": "추가 검색결과",
-    "search-clear-button-title": "제거",
-    "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "취소",
-    "search-submit-button-title": "검색",
-    "search-label": "검색"
-  }
-}</script><link rel="stylesheet" href="styles.css">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.24">
+<meta name="author" content="  이상일(서울대학교 지리교육과 교수)">
+<meta name="dcterms.date" content="2025-09-16">
+<title>Data Science – quarto-input49d0247eb01c7eb6</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+<link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+<link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+<style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+<link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-379ada49d402fbc145bbc15eac7d5a0e.css">
+<link rel="stylesheet" href="styles.css">
+<link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+<link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+<link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+<link href="site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
+<link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+<style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
 </head>
-<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
 
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title"><div class="line-block">
+<section id="title-slide" class="quarto-title-block center"><h1 class="title"><div class="line-block">
 <span style="color:coral;font-size:0.6em">R Lecture 2</span><br><span style="font-size:1em">R과 데이터사이언스</span>
 </div></h1>
-        </a>     
-      <button type="button" class="btn quarto-search-button" aria-label="검색" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
-      <div class="sidebar-tools-main">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="다크 모드 전환"><i class="bi"></i></a>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+<br> 이상일(서울대학교 지리교육과 교수) 
 </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="검색"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">웹사이트 소개</span></a>
-  </div>
-</li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">R과 데이터사이언스</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="토글 섹션">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./exec_01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R과 RStudio</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./exec_02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R과 데이터사이언스 과정</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./exec_03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">소통하기: Quarto로 대시보드 만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./exec_04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">불러오기와 정리하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./exec_05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">변형하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./exec_06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">시각화하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./exec_07.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">탐색하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./exec_08.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">수집하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./exec_09.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">소통하기: 인터랙티브 시각화</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./exec_10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">소통하기: 지리공간적 시각화</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">R 프레젠테이션: 2025/2</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="토글 섹션">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./R_lec_01_2025.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">| <span style="color:coral;font-size:0.6em">R Lecture 1</span> | <span style="font-size:1em">R과 RStudio</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./R_lec_02_2025.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">| <span style="color:coral;font-size:0.6em">R Lecture 2</span> | <span style="font-size:1em">R과 데이터사이언스</span></span></a>
-  </div>
-</li>
-      </ul>
-</li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">R 프레젠테이션: 2024/1</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="토글 섹션">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./R_lec_01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R &amp; RStudio</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./R_lec_02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R &amp; Data Science</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./R_lec_03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Import and Tidying</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./R_lec_04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Transformation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./R_lec_05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Visualization</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./R_lec_06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Exploration</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./R_lec_07.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Collection</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./R_lec_08.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Communication with Data: Quarto</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./R_lec_09.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Communication with Data: Dashboards</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./R_lec_10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Advanced R</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">R 실습: 2025/2</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="토글 섹션">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./lab_01_2025.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R and RStudio</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./lab_02_2025.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R과 데이터사이언스 과정</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
- <span class="menu-text">lab_03_2025.qmd</span>
-  </li>
-      </ul>
-</li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">R 실습: 2024/1</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="토글 섹션">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./lab_01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lab01: R과 RStudio</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./lab_02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lab02: R과 데이터사이언스</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./lab_03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lab03: 데이터 불러오기와 정리하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./lab_04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lab04: 데이터 변형하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./lab_05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lab05: 데이터 시각화하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./lab_06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lab06: 데이터 탐색하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./lab_07.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lab07: 데이터 수집하기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./lab_08.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lab08: 데이터로 소통하기: Quarto</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./lab_09.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lab09: 데이터로 소통하기: 대시보드 만들기</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./lab_10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lab10: 데이터로 소통하기: 동적, 반응형 시각화</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-    </ul>
 </div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">목차</h2>
-   
-  <ul>
-<li>
-<a href="#%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EB%A5%BC-%EC%9C%84%ED%95%9C-r" id="toc-데이터사이언스를-위한-r" class="nav-link active" data-scroll-target="#%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EB%A5%BC-%EC%9C%84%ED%95%9C-r"><span style="color:coral">데이터사이언스를 위한 R</span></a>
-  <ul class="collapse">
-<li><a href="#%EB%B0%94%EC%9D%B4%EB%B8%94" id="toc-바이블" class="nav-link" data-scroll-target="#%EB%B0%94%EC%9D%B4%EB%B8%94">바이블</a></li>
-  <li><a href="#%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80-r" id="toc-데이터사이언스-프로세스와-r" class="nav-link" data-scroll-target="#%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80-r">데이터사이언스 프로세스와 R</a></li>
-  <li><a href="#%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80-r-1" id="toc-데이터사이언스-프로세스와-r-1" class="nav-link" data-scroll-target="#%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80-r-1">데이터사이언스 프로세스와 R</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#%ED%8C%A8%ED%82%A4%EC%A7%80-packages" id="toc-패키지-packages" class="nav-link" data-scroll-target="#%ED%8C%A8%ED%82%A4%EC%A7%80-packages"><span style="color:coral">패키지 Packages</span></a>
-  <ul class="collapse">
-<li><a href="#%ED%8C%A8%ED%82%A4%EC%A7%80%EB%9E%80" id="toc-패키지란" class="nav-link" data-scroll-target="#%ED%8C%A8%ED%82%A4%EC%A7%80%EB%9E%80">패키지란?</a></li>
-  <li><a href="#%ED%8C%A8%ED%82%A4%EC%A7%80%EC%9D%98-%EC%A2%85%EB%A5%98" id="toc-패키지의-종류" class="nav-link" data-scroll-target="#%ED%8C%A8%ED%82%A4%EC%A7%80%EC%9D%98-%EC%A2%85%EB%A5%98">패키지의 종류</a></li>
-  <li><a href="#%ED%8C%A8%ED%82%A4%EC%A7%80-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0" id="toc-패키지-설치하기" class="nav-link" data-scroll-target="#%ED%8C%A8%ED%82%A4%EC%A7%80-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0">패키지 설치하기</a></li>
-  <li><a href="#%ED%8C%A8%ED%82%A4%EC%A7%80-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0" id="toc-패키지-불러오기" class="nav-link" data-scroll-target="#%ED%8C%A8%ED%82%A4%EC%A7%80-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0">패키지 불러오기</a></li>
-  <li><a href="#%ED%8C%A8%ED%82%A4%EC%A7%80-%EB%A7%8C%EB%93%A4%EA%B8%B0" id="toc-패키지-만들기" class="nav-link" data-scroll-target="#%ED%8C%A8%ED%82%A4%EC%A7%80-%EB%A7%8C%EB%93%A4%EA%B8%B0">패키지 만들기</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#%ED%83%80%EC%9D%B4%EB%94%94%EB%B2%84%EC%8A%A4-tidyverse" id="toc-타이디버스-tidyverse" class="nav-link" data-scroll-target="#%ED%83%80%EC%9D%B4%EB%94%94%EB%B2%84%EC%8A%A4-tidyverse"><span style="color:coral">타이디버스 Tidyverse</span></a>
-  <ul class="collapse">
-<li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
-  <li><a href="#tidy-universe" id="toc-tidy-universe" class="nav-link" data-scroll-target="#tidy-universe">Tidy + Universe</a></li>
-  <li><a href="#%ED%83%80%EC%9D%B4%EB%94%94%EB%B2%84%EC%8A%A4%EC%99%80-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4" id="toc-타이디버스와-데이터사이언스-프로세스" class="nav-link" data-scroll-target="#%ED%83%80%EC%9D%B4%EB%94%94%EB%B2%84%EC%8A%A4%EC%99%80-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4">타이디버스와 데이터사이언스 프로세스</a></li>
-  <li><a href="#%ED%83%80%EC%9D%B4%EB%94%94%EB%B2%84%EC%8A%A4-%EC%B2%A0%ED%95%99-4%EB%8C%80-%EC%9B%90%EB%A6%AC" id="toc-타이디버스-철학-4대-원리" class="nav-link" data-scroll-target="#%ED%83%80%EC%9D%B4%EB%94%94%EB%B2%84%EC%8A%A4-%EC%B2%A0%ED%95%99-4%EB%8C%80-%EC%9B%90%EB%A6%AC">타이디버스 철학: 4대 원리</a></li>
-  <li><a href="#%ED%83%80%EC%9D%B4%EB%94%94%EB%B2%84%EC%8A%A4-%EC%B2%A0%ED%95%99" id="toc-타이디버스-철학" class="nav-link" data-scroll-target="#%ED%83%80%EC%9D%B4%EB%94%94%EB%B2%84%EC%8A%A4-%EC%B2%A0%ED%95%99">타이디버스 철학</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#%ED%8C%8C%EC%9D%B4%ED%94%84-%EC%97%B0%EC%82%B0%EC%9E%90-pipe-operator" id="toc-파이프-연산자-pipe-operator" class="nav-link" data-scroll-target="#%ED%8C%8C%EC%9D%B4%ED%94%84-%EC%97%B0%EC%82%B0%EC%9E%90-pipe-operator"><span style="color:coral">파이프 연산자 Pipe Operator</span></a>
-  <ul class="collapse">
-<li><a href="#magrittr-%ED%8C%A8%ED%82%A4%EC%A7%80" id="toc-magrittr-패키지" class="nav-link" data-scroll-target="#magrittr-%ED%8C%A8%ED%82%A4%EC%A7%80">magrittr 패키지</a></li>
-  <li><a href="#%EA%B8%B0%EB%B3%B8-%EC%9B%90%EB%A6%AC" id="toc-기본-원리" class="nav-link" data-scroll-target="#%EA%B8%B0%EB%B3%B8-%EC%9B%90%EB%A6%AC">기본 원리</a></li>
-  <li><a href="#%EA%B8%B0%EB%B3%B8-%EC%9B%90%EB%A6%AC-1" id="toc-기본-원리-1" class="nav-link" data-scroll-target="#%EA%B8%B0%EB%B3%B8-%EC%9B%90%EB%A6%AC-1">기본 원리</a></li>
-  <li><a href="#%EA%B8%B0%EB%B3%B8-%EC%9B%90%EB%A6%AC-2" id="toc-기본-원리-2" class="nav-link" data-scroll-target="#%EA%B8%B0%EB%B3%B8-%EC%9B%90%EB%A6%AC-2">기본 원리</a></li>
-  <li><a href="#%EB%84%A4%EC%9D%B4%ED%8B%B0%EB%B8%8C-%ED%8C%8C%EC%9D%B4%ED%94%84-%EC%97%B0%EC%82%B0%EC%9E%90" id="toc-네이티브-파이프-연산자" class="nav-link" data-scroll-target="#%EB%84%A4%EC%9D%B4%ED%8B%B0%EB%B8%8C-%ED%8C%8C%EC%9D%B4%ED%94%84-%EC%97%B0%EC%82%B0%EC%9E%90">네이티브 파이프 연산자</a></li>
-  <li><a href="#%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80-%ED%8C%8C%EC%9D%B4%ED%94%84-%EC%97%B0%EC%82%B0%EC%9E%90" id="toc-데이터사이언스-프로세스와-파이프-연산자" class="nav-link" data-scroll-target="#%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80-%ED%8C%8C%EC%9D%B4%ED%94%84-%EC%97%B0%EC%82%B0%EC%9E%90">데이터사이언스 프로세스와 파이프 연산자</a></li>
-  <li><a href="#no-error-no-gain" id="toc-no-error-no-gain" class="nav-link" data-scroll-target="#no-error-no-gain">No error, no gain!</a></li>
-  </ul>
-</li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>이슈 보고</a></li></ul></div><div class="quarto-alternate-formats"><h2>기타 형식</h2><ul><li><a href="R_lec_02_2025.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
-    </div>
-<!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title d-none d-lg-block"><div class="line-block">
-<span style="color:coral;font-size:0.6em">R Lecture 2</span><br><span style="font-size:1em">R과 데이터사이언스</span>
-</div></h1>
 </div>
 
+  <p class="date">2025-09-16</p>
+</section><section><section id="데이터사이언스를-위한-r" class="title-slide slide level1 center"><h1><span style="color:coral">데이터사이언스를 위한 R</span></h1>
 
+</section><section id="바이블" class="slide level2"><h2>바이블</h2>
 
-<div class="quarto-title-meta">
+<img data-src="images/clipboard-4118011220.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://r4ds.hadley.nz/" style="font-size:1.25rem">https://r4ds.hadley.nz/</a></p></section><section id="데이터사이언스-프로세스와-r" class="slide level2"><h2>데이터사이언스 프로세스와 R</h2>
 
-    <div>
-    <div class="quarto-title-meta-heading">저자</div>
-    <div class="quarto-title-meta-contents">
-             <p><br> 이상일(서울대학교 지리교육과 교수) </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">공개</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">2025년 9월 16일</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
+<img data-src="images/clipboard-3326006124.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://posit.co/blog/artist-in-residence/" style="font-size:1.25rem">https://posit.co/blog/artist-in-residence/</a></p></section><section id="데이터사이언스-프로세스와-r-1" class="slide level2"><h2>데이터사이언스 프로세스와 R</h2>
 
+<img data-src="images/clipboard-411135231.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://r4ds.hadley.nz/intro" style="font-size:1.25rem">https://r4ds.hadley.nz/intro</a></p></section></section><section><section id="패키지-packages" class="title-slide slide level1 center"><h1><span style="color:coral">패키지 Packages</span></h1>
 
-</header><section id="데이터사이언스를-위한-r" class="level1"><h1><span style="color:coral">데이터사이언스를 위한 R</span></h1>
-<section id="바이블" class="level2"><h2 class="anchored" data-anchor-id="바이블">바이블</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/clipboard-4118011220.png" class="img-fluid figure-img"></p>
-<figcaption><a href="https://r4ds.hadley.nz/" style="font-size:1.25rem">https://r4ds.hadley.nz/</a></figcaption></figure>
-</div>
-</section><section id="데이터사이언스-프로세스와-r" class="level2"><h2 class="anchored" data-anchor-id="데이터사이언스-프로세스와-r">데이터사이언스 프로세스와 R</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/clipboard-3326006124.png" class="img-fluid figure-img"></p>
-<figcaption><a href="https://posit.co/blog/artist-in-residence/" style="font-size:1.25rem">https://posit.co/blog/artist-in-residence/</a></figcaption></figure>
-</div>
-</section><section id="데이터사이언스-프로세스와-r-1" class="level2"><h2 class="anchored" data-anchor-id="데이터사이언스-프로세스와-r-1">데이터사이언스 프로세스와 R</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/clipboard-411135231.png" class="img-fluid figure-img"></p>
-<figcaption><a href="https://r4ds.hadley.nz/intro" style="font-size:1.25rem">https://r4ds.hadley.nz/intro</a></figcaption></figure>
-</div>
-</section></section><section id="패키지-packages" class="level1"><h1><span style="color:coral">패키지 Packages</span></h1>
-<section id="패키지란" class="level2"><h2 class="anchored" data-anchor-id="패키지란">패키지란?</h2>
+</section><section id="패키지란" class="slide level2"><h2>패키지란?</h2>
 <ul>
 <li>특정 기능을 손쉽게 사용할 수 있도록 <strong>함수</strong>, 데이터셋, 설명 문서 등을 하나로 묶어 배포하는 단위</li>
 </ul>
-<p><img src="images/clipboard-3555057991.png" class="img-fluid"></p>
-</section><section id="패키지의-종류" class="level2"><h2 class="anchored" data-anchor-id="패키지의-종류">패키지의 종류</h2>
+
+<img data-src="images/clipboard-3555057991.png" class="r-stretch"></section><section id="패키지의-종류" class="slide level2"><h2>패키지의 종류</h2>
 <ul>
 <li><p><a href="https://cran.r-project.org/">CRAN (The Comprehensive R Archive Network)</a></p></li>
 <li><p><a href="https://gallery.shinyapps.io/cran-gauge/">CRAN Download Monitor</a></p></li>
@@ -686,8 +235,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </li>
 </ul>
-<p><img src="images/clipboard-3146270133.png" class="absolute img-fluid" data-top="250" data-right="100" width="550"></p>
-</section><section id="패키지-설치하기" class="level2"><h2 class="anchored" data-anchor-id="패키지-설치하기">패키지 설치하기</h2>
+<p><img data-src="images/clipboard-3146270133.png" class="absolute" style="top: 250px; right: 100px; width: 550px; "></p>
+</section><section id="패키지-설치하기" class="slide level2"><h2>패키지 설치하기</h2>
 <ul>
 <li>
 <p>CRAN 패키지인 경우</p>
@@ -697,18 +246,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/clipboard-1002522383.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<ul>
+
+<img data-src="images/clipboard-1002522383.png" class="quarto-figure quarto-figure-center r-stretch"><ul>
 <li>
 <p>비 CRAN 패키지의 경우</p>
 <ul>
 <li><code>remotes::install_github("사용자명/저장소명")</code></li>
 </ul>
 </li>
-</ul></section><section id="패키지-불러오기" class="level2"><h2 class="anchored" data-anchor-id="패키지-불러오기">패키지 불러오기</h2>
+</ul></section><section id="패키지-불러오기" class="slide level2"><h2>패키지 불러오기</h2>
 <ul>
 <li>
 <p>패키지의 네임스페이스(namespace)를 현재 R 세션에 로드하는 것</p>
@@ -718,21 +264,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
 <li><p><code><a href="https://rdrr.io/r/base/library.html">library(패키지명)</a></code></p></li>
 <li><p>새로운 R 세션이 시작되면 필요한 패키지를 다시 불어와야 함</p></li>
-</ul></section><section id="패키지-만들기" class="level2" data-visibility="hidden"><h2 data-visibility="hidden" class="anchored" data-anchor-id="패키지-만들기">패키지 만들기</h2>
-<ul>
-<li><p><a href="https://r-pkgs.org/">해들리 위컴의 책</a></p></li>
-<li><p><a href="https://psyteachr.github.io/intro-r-pkgs/">가이드 1</a></p></li>
-<li><p><a href="https://indrajeetpatil.github.io/awesome-r-pkgtools/">가이드 2</a></p></li>
-<li><p><a href="https://pkgdown.r-lib.org/">패키지 웹사이트</a></p></li>
-<li><p><a href="https://github.com/rstudio/hex-stickers/?tab=readme-ov-file">헥사곤 로고</a></p></li>
-<li><p><a href="https://github.com/GuangchuangYu/hexSticker?tab=readme-ov-file">헥사곤 로고 만들기 패키지</a></p></li>
-</ul></section></section><section id="타이디버스-tidyverse" class="level1"><h1><span style="color:coral">타이디버스 Tidyverse</span></h1>
-<section id="section" class="level2"><h2 class="anchored" data-anchor-id="section"></h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/clipboard-3736095484.png" class="img-fluid figure-img"></p>
-<figcaption><a href="https://allisonhorst.com/r-packages-functions" style="font-size:1.25rem">https://allisonhorst.com/r-packages-functions</a></figcaption></figure>
-</div>
-</section><section id="tidy-universe" class="level2"><h2 class="anchored" data-anchor-id="tidy-universe">Tidy + Universe</h2>
+</ul></section></section><section><section id="타이디버스-tidyverse" class="title-slide slide level1 center"><h1><span style="color:coral">타이디버스 Tidyverse</span></h1>
+
+</section><section id="section" class="slide level2"><h2></h2>
+
+<img data-src="images/clipboard-3736095484.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://allisonhorst.com/r-packages-functions" style="font-size:1.25rem">https://allisonhorst.com/r-packages-functions</a></p></section><section id="tidy-universe" class="slide level2"><h2>Tidy + Universe</h2>
 <ul>
 <li><p>“정돈된 데이터(tidy data) 처리와 분석을 위한 하나의 우주적 생태계”</p></li>
 <li>
@@ -746,21 +282,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/clipboard-2981827317.png" class="img-fluid figure-img" style="width:65.0%"></p>
+<figure><p><img data-src="images/clipboard-2981827317.png" style="width:65.0%"></p>
 <figcaption><a href="https://tidyverse.tidyverse.org/" style="font-size:1.25rem">https://tidyverse.tidyverse.org/</a></figcaption></figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://sangillee.snu.ac.kr/data_science/images/tidyverse_9.PNG" class="img-fluid figure-img" style="width:70.0%"></p>
+<figure><p><img data-src="https://sangillee.snu.ac.kr/data_science/images/tidyverse_9.PNG" style="width:70.0%"></p>
 <figcaption><a href="https://www.tidyverse.org/" style="font-size:1.25rem">https://www.tidyverse.org/</a></figcaption></figure>
 </div>
 </div>
 </div>
 </div>
-</section><section id="타이디버스와-데이터사이언스-프로세스" class="level2"><h2 class="anchored" data-anchor-id="타이디버스와-데이터사이언스-프로세스">타이디버스와 데이터사이언스 프로세스</h2>
-<p><img src="images/tidyverse_process.png" class="img-fluid"></p>
-</section><section id="타이디버스-철학-4대-원리" class="level2"><h2 class="anchored" data-anchor-id="타이디버스-철학-4대-원리">타이디버스 철학: 4대 원리</h2>
+</section><section id="타이디버스와-데이터사이언스-프로세스" class="slide level2"><h2>타이디버스와 데이터사이언스 프로세스</h2>
+
+<img data-src="images/tidyverse_process.png" class="r-stretch"></section><section id="타이디버스-철학-4대-원리" class="slide level2"><h2>타이디버스 철학: 4대 원리</h2>
 <p><a href="https://design.tidyverse.org/">타이디 디자인 원리(Tidy Design Principles)</a></p>
 <ul>
 <li>
@@ -787,46 +323,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Towards a diverse, open, and friendly community</li>
 </ul>
 </li>
-</ul></section><section id="타이디버스-철학" class="level2"><h2 class="anchored" data-anchor-id="타이디버스-철학">타이디버스 철학</h2>
+</ul></section><section id="타이디버스-철학" class="slide level2"><h2>타이디버스 철학</h2>
 <p><a href="https://style.tidyverse.org/">타이디버스 스타일 가이드</a></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/clipboard-4104447783.png" class="img-fluid figure-img"></p>
-<figcaption><a href="https://allisonhorst.com/r-packages-functions" style="font-size:1.25rem">https://allisonhorst.com/r-packages-functions</a></figcaption></figure>
-</div>
-</section></section><section id="파이프-연산자-pipe-operator" class="level1"><h1><span style="color:coral">파이프 연산자 Pipe Operator</span></h1>
-<section id="magrittr-패키지" class="level2"><h2 class="anchored" data-anchor-id="magrittr-패키지">magrittr 패키지</h2>
+
+<img data-src="images/clipboard-4104447783.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://allisonhorst.com/r-packages-functions" style="font-size:1.25rem">https://allisonhorst.com/r-packages-functions</a></p></section></section><section><section id="파이프-연산자-pipe-operator" class="title-slide slide level1 center"><h1><span style="color:coral">파이프 연산자 Pipe Operator</span></h1>
+
+</section><section id="magrittr-패키지" class="slide level2"><h2>magrittr 패키지</h2>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row quarto-layout-valign-center">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/clipboard-30645075.png" class="img-fluid figure-img"></p>
+<figure><p><img data-src="images/clipboard-30645075.png"></p>
 <figcaption><a href="https://magrittr.tidyverse.org/" style="font-size:1.25rem">https://magrittr.tidyverse.org/</a></figcaption></figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="images/clipboard-4078158871.png" class="img-fluid"></p>
+<p><img data-src="images/clipboard-4078158871.png"></p>
 </div>
 </div>
 </div>
-</section><section id="기본-원리" class="level2"><h2 class="anchored" data-anchor-id="기본-원리">기본 원리</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/clipboard-3095511909.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-</section><section id="기본-원리-1" class="level2"><h2 class="anchored" data-anchor-id="기본-원리-1">기본 원리</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/piping in R is like baking.gif" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-</section><section id="기본-원리-2" class="level2"><h2 class="anchored" data-anchor-id="기본-원리-2">기본 원리</h2>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist">
-<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="" aria-current="page">Base R 1</a></li>
-<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Base R 2</a></li>
-<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">파이프 연산자</a></li>
+</section><section id="기본-원리" class="slide level2"><h2>기본 원리</h2>
+
+<img data-src="images/clipboard-3095511909.png" class="quarto-figure quarto-figure-center r-stretch"></section><section id="기본-원리-1" class="slide level2"><h2>기본 원리</h2>
+
+<img data-src="images/piping in R is like baking.gif" class="quarto-figure quarto-figure-center r-stretch"></section><section id="기본-원리-2" class="slide level2"><h2>기본 원리</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-1-1">Base R 1</a></li>
+<li><a href="#tabset-1-2">Base R 2</a></li>
+<li><a href="#tabset-1-3">파이프 연산자</a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div id="tabset-1-1">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ingredients</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span><span class="va">우유</span>, <span class="va">계란</span>, <span class="va">밀가루</span><span class="op">)</span></span>
 <span><span class="va">mix_result</span> <span class="op">&lt;-</span> <span class="fu">mix</span><span class="op">(</span><span class="va">ingredients</span>, <span class="va">강도</span>, <span class="va">혼합시간</span>, <span class="va">...</span><span class="op">)</span></span>
@@ -835,7 +363,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="va">slice_result</span> <span class="op">&lt;-</span> <span class="fu">slice</span><span class="op">(</span><span class="va">decorate_result</span>, <span class="va">절단도구</span>, <span class="va">등분수</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div id="tabset-1-2">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">slice_result</span> <span class="op">&lt;-</span> <span class="fu">slice</span><span class="op">(</span></span>
 <span>  <span class="fu">decorate</span><span class="op">(</span></span>
@@ -850,7 +378,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="op">)</span> </span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div id="tabset-1-3">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">tibble</span><span class="op">(</span><span class="va">우유</span>, <span class="va">계란</span>, <span class="va">밀가루</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">mix</span><span class="op">(</span><span class="va">강도</span>, <span class="va">혼합시간</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
@@ -861,482 +389,427 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section><section id="네이티브-파이프-연산자" class="level2"><h2 class="anchored" data-anchor-id="네이티브-파이프-연산자">네이티브 파이프 연산자</h2>
+</section><section id="네이티브-파이프-연산자" class="slide level2"><h2>네이티브 파이프 연산자</h2>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row quarto-layout-valign-center">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="images/clipboard-2382832838.png" class="img-fluid"></p>
+<p><img data-src="images/clipboard-2382832838.png"></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="images/clipboard-39249103.png" class="img-fluid"></p>
+<p><img data-src="images/clipboard-39249103.png"></p>
 </div>
 </div>
 </div>
-</section><section id="데이터사이언스-프로세스와-파이프-연산자" class="level2"><h2 class="anchored" data-anchor-id="데이터사이언스-프로세스와-파이프-연산자">데이터사이언스 프로세스와 파이프 연산자</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/clipboard-174079750.png" class="img-fluid figure-img"></p>
-<figcaption><a href="https://www.rforecology.com/post/how-to-use-pipes/" style="font-size:1.25rem">https://www.rforecology.com/post/how-to-use-pipes/</a></figcaption></figure>
-</div>
-</section><section id="no-error-no-gain" class="level2"><h2 class="anchored" data-anchor-id="no-error-no-gain">No error, no gain!</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/clipboard-229605073.png" class="img-fluid figure-img"></p>
-<figcaption><a href="https://allisonhorst.com/everything-else" style="font-size:1.25rem">https://allisonhorst.com/everything-else</a></figcaption></figure>
-</div>
+</section><section id="데이터사이언스-프로세스와-파이프-연산자" class="slide level2"><h2>데이터사이언스 프로세스와 파이프 연산자</h2>
+
+<img data-src="images/clipboard-174079750.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://www.rforecology.com/post/how-to-use-pipes/" style="font-size:1.25rem">https://www.rforecology.com/post/how-to-use-pipes/</a></p></section><section id="no-error-no-gain" class="slide level2"><h2>No error, no gain!</h2>
 
 
-</section></section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> 맨 위로</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
-        }
-      }
-      return false;
-    }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "복사완료!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "복사완료!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
-    }
-    const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
-    });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
-    }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
-          }
-        }
-      }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
+
+<img data-src="images/clipboard-229605073.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://allisonhorst.com/everything-else" style="font-size:1.25rem">https://allisonhorst.com/everything-else</a></p></section></section>
+</div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="snu_edu_1.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>https://sangillee.snu.ac.kr/</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script><script src="site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="site_libs/revealjs/plugin/notes/notes.js"></script><script src="site_libs/revealjs/plugin/search/search.js"></script><script src="site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'pointer': {"key":"q","color":"red","pointerSize":20,"alwaysVisible":false},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'fast',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 960 * 1.5,
+
+        height: 700 * 1.5,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 5.0e-2,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
         },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
-    }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealPointer, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
       });
-    }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
-          }
+    </script><script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
         }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
-            } else {
-              container.appendChild(child.cloneNode(true));
-              break;
+    
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+    
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
             }
           }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
+        }
+    
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+    
+      })();
+    </script><script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
           }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "복사완료!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "복사완료!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
           }
-          return note.innerHTML;
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
         }
-      } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
         }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
         }
-      }
-    }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
         }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
             }
           } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
             });
           }
-        } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
-            if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
         }
-      }, function(instance) {
       });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
-            }
-            selectedAnnoteEl = annoteEl;
-          }
-        };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
-            }
-          });
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
-      } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
-        });
-      }
-    }
-  });
-  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./R_lec_01_2025.html" class="pagination-link" aria-label="| [R Lecture 1]{style=&quot;color:coral;font-size:0.6em&quot;}
-| [R과 RStudio]{style=&quot;font-size:1em&quot;}">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">| <span style="color:coral;font-size:0.6em">R Lecture 1</span> | <span style="font-size:1em">R과 RStudio</span></span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
-</nav>
-</div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
-    <div class="nav-footer-left">
-<p>Copyright 2024, Sang-Il Lee</p>
-</div>   
-    <div class="nav-footer-center">
-      &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>이슈 보고</a></li></ul></div></div>
-    <div class="nav-footer-right">
-      <ul class="footer-items list-unstyled">
-<li class="nav-item compact">
-    <a class="nav-link" href="https://sangillee.snu.ac.kr/">
-      <i class="bi bi-house" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="mailto:si_lee@snu.ac.kr">
-      <i class="bi bi-envelope" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/sangillee66">
-      <i class="bi bi-github" role="img">
-</i> 
-    </a>
-  </li>  
-</ul>
-</div>
-  </div>
-</footer>
+      </script>
 
 
 </body></html>

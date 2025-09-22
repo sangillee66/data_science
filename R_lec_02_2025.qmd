@@ -15,6 +15,7 @@ format:
     # smaller: false
     # scrollable: false
     code-link: true
+    code-line-numbers: false
     code-copy: true
     code-overflow: scroll
     slide-number: true

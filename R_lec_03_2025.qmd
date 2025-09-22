@@ -15,6 +15,7 @@ format:
     # smaller: false
     # scrollable: false
     code-link: true
+    code-line-numbers: false
     code-copy: true
     code-overflow: scroll
     slide-number: true
@@ -32,7 +33,6 @@ format:
     revealjs-plugins:
       - pointer
     css: styles.css
-code-link: true
 execute: 
   warning: false
   error: false
@@ -406,3 +406,14 @@ list(
 ## 웹 발행
 
 -   Quarto Pub(<https://quartopub.com/>)
+
+```{r}
+#| eval: false
+#| echo: true
+n_countries <- gapminder |> distinct(country) |> nrow()
+list(
+  icon = "asterisk",
+  color = "primary",
+  value = n_countries
+)
+```
