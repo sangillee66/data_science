@@ -6160,8 +6160,8 @@
     "objectID": "R_lec_03_2025.html#zotero",
     "href": "R_lec_03_2025.html#zotero",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "https://quarto.org/docs/visual-editor/technical.html",
+    "section": "Zotero",
+    "text": "Zotero\n\nhttps://quarto.org/docs/visual-editor/technical.html",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6178,8 +6178,8 @@
     "objectID": "R_lec_03_2025.html#quarto-pub",
     "href": "R_lec_03_2025.html#quarto-pub",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "https://quarto.org/docs/publishing/quarto-pub.html",
+    "section": "Quarto Pub",
+    "text": "Quarto Pub\n\nhttps://quarto.org/docs/publishing/quarto-pub.html",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6386,8 +6386,8 @@
     "objectID": "R_lec_03_2025.html#데이터사이언스-프로세스-소통",
     "href": "R_lec_03_2025.html#데이터사이언스-프로세스-소통",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "https://r4ds.hadley.nz/",
+    "section": "데이터사이언스 프로세스: 소통",
+    "text": "데이터사이언스 프로세스: 소통\n\nhttps://r4ds.hadley.nz/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6397,8 +6397,8 @@
     "objectID": "R_lec_03_2025.html#패키지",
     "href": "R_lec_03_2025.html#패키지",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "https://r4ds.hadley.nz/",
+    "section": "패키지",
+    "text": "패키지\n\nhttps://r4ds.hadley.nz/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6447,8 +6447,8 @@
     "objectID": "R_lec_03_2025.html#정의",
     "href": "R_lec_03_2025.html#정의",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "“과학적, 기술적 출판을 위한 오픈소스 시스템(an open-source scientific and technical publishing system)”\n\n오픈소스 저작 시스템\n\n다양한 형식의 저작물(노트, 연구 논문, 프레젠테이션, 대시보드, 웹사이트, 블로그, 서적 등)을 다양한 디지털 포맷(HTML, PDF, MS Word, ePub 등)으로 출판할 수 있게 해주는 도구\n적용 분야의 스케일\n\n개인 스케일: 노트, 레포트, 연구 논문, 프레젠테이션, 블로그 등의 작성 도구\n그룹 스케일: 프로젝트의 원할한 진행을 위한 협업 프레임워크\n사회 스케일: 과학 커뮤니티의 재현성(reproducibility) 고양",
+    "section": "정의",
+    "text": "정의\n\n“과학적, 기술적 출판을 위한 오픈소스 시스템(an open-source scientific and technical publishing system)”\n\n오픈소스 저작 시스템\n\n다양한 형식의 저작물(노트, 연구 논문, 프레젠테이션, 대시보드, 웹사이트, 블로그, 서적 등)을 다양한 디지털 포맷(HTML, PDF, MS Word, ePub 등)으로 출판할 수 있게 해주는 도구\n적용 분야의 스케일\n\n개인 스케일: 노트, 레포트, 연구 논문, 프레젠테이션, 블로그 등의 작성 도구\n그룹 스케일: 프로젝트의 원할한 진행을 위한 협업 프레임워크\n사회 스케일: 과학 커뮤니티의 재현성(reproducibility) 고양",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6458,8 +6458,8 @@
     "objectID": "R_lec_03_2025.html#기능",
     "href": "R_lec_03_2025.html#기능",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "https://allisonhorst.com/cetinkaya-rundel-lowndes-quarto-keynote",
+    "section": "기능",
+    "text": "기능\n\nhttps://allisonhorst.com/cetinkaya-rundel-lowndes-quarto-keynote",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6469,8 +6469,8 @@
     "objectID": "R_lec_03_2025.html#기능-1",
     "href": "R_lec_03_2025.html#기능-1",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "https://quarto.org/",
+    "section": "기능",
+    "text": "기능\n\nhttps://quarto.org/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6480,8 +6480,8 @@
     "objectID": "R_lec_03_2025.html#결과물-예시",
     "href": "R_lec_03_2025.html#결과물-예시",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "개인 홈페이지 및 블로그: https://sangillee.snu.ac.kr/\n웹북: https://r4ds.hadley.nz/\n프레젠테이션: https://sangillee.snu.ac.kr/2024_AIEDAP/lecture_3.html\n대시보드: https://sangillee.snu.ac.kr/dashboard_popgeo/\n논문, 포스터, 소식지 등",
+    "section": "결과물 예시",
+    "text": "결과물 예시\n\n개인 홈페이지 및 블로그: https://sangillee.snu.ac.kr/\n웹북: https://r4ds.hadley.nz/\n프레젠테이션: https://sangillee.snu.ac.kr/2024_AIEDAP/lecture_3.html\n대시보드: https://sangillee.snu.ac.kr/dashboard_popgeo/\n논문, 포스터, 소식지 등",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6491,8 +6491,8 @@
     "objectID": "R_lec_03_2025.html#구문syntax",
     "href": "R_lec_03_2025.html#구문syntax",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "마크다운(markdown) 언어: 팬독(pandoc)\n\n마크업(markup) 언어: 다큐먼트의 구조와 포맷을 관장하는 텍스트-엔코딩 시스템\n사용자의 편의성을 크게 향상시킨 마크업 언어\n\nQuarto 다규먼트: .qmd\n\n프로그래밍 언어 + 워드프로세서",
+    "section": "구문(syntax)",
+    "text": "구문(syntax)\n\n마크다운(markdown) 언어: 팬독(pandoc)\n\n마크업(markup) 언어: 다큐먼트의 구조와 포맷을 관장하는 텍스트-엔코딩 시스템\n사용자의 편의성을 크게 향상시킨 마크업 언어\n\nQuarto 다규먼트: .qmd\n\n프로그래밍 언어 + 워드프로세서",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6502,8 +6502,8 @@
     "objectID": "R_lec_03_2025.html#렌더링rendering",
     "href": "R_lec_03_2025.html#렌더링rendering",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "knitr 패키지: .qmd를 .md로 전환\npandoc: .md를 다양한 디지털 포맷으로 전환\n\n\n\n\nhttps://r4ds.hadley.nz/quarto",
+    "section": "렌더링(rendering)",
+    "text": "렌더링(rendering)\n\nknitr 패키지: .qmd를 .md로 전환\npandoc: .md를 다양한 디지털 포맷으로 전환\n\n\nhttps://r4ds.hadley.nz/quarto",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6513,8 +6513,8 @@
     "objectID": "R_lec_03_2025.html#quarto-다큐먼트의-기본-구조",
     "href": "R_lec_03_2025.html#quarto-다큐먼트의-기본-구조",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "YAML 헤더(header)\n\n일종의 메타데이터\n다큐먼트의 전반적인 사항을 관장\n\n코드 청크(code chunk)\n\n프로그래밍 언어가 들어가는 부분\nR 스크립트 파일\n\n마크다운 텍스트(markdown text)\n\n워드프로세서처럼 텍스트를 작성(도표 포함)",
+    "section": "Quarto 다큐먼트의 기본 구조",
+    "text": "Quarto 다큐먼트의 기본 구조\n\nYAML 헤더(header)\n\n일종의 메타데이터\n다큐먼트의 전반적인 사항을 관장\n\n코드 청크(code chunk)\n\n프로그래밍 언어가 들어가는 부분\nR 스크립트 파일\n\n마크다운 텍스트(markdown text)\n\n워드프로세서처럼 텍스트를 작성(도표 포함)",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6538,8 +6538,8 @@
     "objectID": "R_lec_03_2025.html#마크다운-텍스트",
     "href": "R_lec_03_2025.html#마크다운-텍스트",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "소스 에디터(source editor) vs. 비주얼 에디터(visual editor)\n마크다운 언어의 사용자 편이성을 한 번 더 강화한 것",
+    "section": "마크다운 텍스트",
+    "text": "마크다운 텍스트\n\n소스 에디터(source editor) vs. 비주얼 에디터(visual editor)\n마크다운 언어의 사용자 편이성을 한 번 더 강화한 것",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6577,8 +6577,8 @@
     "objectID": "R_lec_03_2025.html#yaml-헤더",
     "href": "R_lec_03_2025.html#yaml-헤더",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "키(key)\n설명\n\n\n\n\ntitle\n다큐먼트의 제목\n\n\ndate\n다큐먼트 작성 날짜\n\n\nauthor\n다큐먼트 저자 이름\n\n\nformat\n다양한 포맷 관련 사항의 지정\n\n\ntoc\n목차 삽입\n\n\nnumber-section\n섹션 제목에 자동 번호 부여 여부\n\n\nexecute: echo\n소스 코드의 포함 여부를 글로벌하게 설정, 보통 true\n\n\nexecute: warning\n경고 메시지를 산출물에 나타나게 할지를 글로벌하게 설정, 보통 false\n\n\neditor\n비주얼 에디터와 소스 에디터 중 선택, 보통 visual",
+    "section": "YAML 헤더",
+    "text": "YAML 헤더\n\n\n\n\n\n\n\n키(key)\n설명\n\n\n\n\ntitle\n다큐먼트의 제목\n\n\ndate\n다큐먼트 작성 날짜\n\n\nauthor\n다큐먼트 저자 이름\n\n\nformat\n다양한 포맷 관련 사항의 지정\n\n\ntoc\n목차 삽입\n\n\nnumber-section\n섹션 제목에 자동 번호 부여 여부\n\n\nexecute: echo\n소스 코드의 포함 여부를 글로벌하게 설정, 보통 true\n\n\nexecute: warning\n경고 메시지를 산출물에 나타나게 할지를 글로벌하게 설정, 보통 false\n\n\neditor\n비주얼 에디터와 소스 에디터 중 선택, 보통 visual",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6588,8 +6588,8 @@
     "objectID": "R_lec_03_2025.html#웹-발행publishing과-호스팅hosting-서비스",
     "href": "R_lec_03_2025.html#웹-발행publishing과-호스팅hosting-서비스",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "Quarto Pub(https://quartopub.com/)\nGitHub Pages(https://pages.github.com/)\nNetlify(https://www.netlify.com/)",
+    "section": "웹 발행(publishing)과 호스팅(hosting) 서비스",
+    "text": "웹 발행(publishing)과 호스팅(hosting) 서비스\n\nQuarto Pub(https://quartopub.com/)\nGitHub Pages(https://pages.github.com/)\nNetlify(https://www.netlify.com/)",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6647,7 +6647,7 @@
     "href": "R_lec_03_2025.html#레이아웃-요소-4-내비게이션-바",
     "title": "R Lecture 3\n소통하기: Quarto",
     "section": "레이아웃 요소 4: 내비게이션 바",
-    "text": "레이아웃 요소 4: 내비게이션 바\n\n\n\n\n\n\ntitle\nauthor\nformat: dashboard\n\nlogo\nnav-buttons\nscrolling: true\n\ntheme: 25 bootswatch themes(https://quarto.org/docs/dashboards/theming.html)",
+    "text": "레이아웃 요소 4: 내비게이션 바\n\n\ntitle\nauthor\nformat: dashboard\n\nlogo\nnav-buttons\nscrolling: true\n\ntheme: 25 bootswatch themes(https://quarto.org/docs/dashboards/theming.html)",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6756,8 +6756,8 @@
     "objectID": "R_lec_03_2025.html#코드-청크",
     "href": "R_lec_03_2025.html#코드-청크",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "Option\nRun code\nShow code\nOutput\nPlots\nMessages\nWarnings\n\n\n\n\neval: false\nX\n\nX\nX\nX\nX\n\n\ninclude: false\n\nX\nX\nX\nX\nX\n\n\necho: false\n\nX\n\n\n\n\n\n\nresults: hide\n\n\nX\n\n\n\n\n\nfig-show: hide\n\n\n\nX\n\n\n\n\nmessage: false\n\n\n\n\nX\n\n\n\nwarning: false\n\n\n\n\n\nX",
+    "section": "코드 청크",
+    "text": "코드 청크\n\n\n\n\n\n\n\n\n\n\n\n\nOption\nRun code\nShow code\nOutput\nPlots\nMessages\nWarnings\n\n\n\n\neval: false\nX\n\nX\nX\nX\nX\n\n\ninclude: false\n\nX\nX\nX\nX\nX\n\n\necho: false\n\nX\n\n\n\n\n\n\nresults: hide\n\n\nX\n\n\n\n\n\nfig-show: hide\n\n\n\nX\n\n\n\n\nmessage: false\n\n\n\n\nX\n\n\n\nwarning: false\n\n\n\n\n\nX",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
