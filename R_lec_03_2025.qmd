@@ -406,14 +406,3 @@ list(
 ## 웹 발행
 
 -   Quarto Pub(<https://quartopub.com/>)
-
-```{r}
-#| eval: false
-#| echo: true
-n_countries <- gapminder |> distinct(country) |> nrow()
-list(
-  icon = "asterisk",
-  color = "primary",
-  value = n_countries
-)
-```

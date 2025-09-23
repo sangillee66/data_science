@@ -6,18 +6,18 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.24">
-<meta name="author" content="  이상일(서울대학교 지리교육과 교수)">
-<meta name="dcterms.date" content="2025-09-23">
-<title>Data Science – quarto-inputd252bd2193bfd15</title>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-<link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
-<link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
-<style>
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.24">
+
+  <meta name="author" content="  이상일(서울대학교 지리교육과 교수)">
+  <meta name="dcterms.date" content="2025-09-23">
+  <title>Data Science – quarto-input2e20fd84b127c4c3</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -96,14 +96,14 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-<link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-379ada49d402fbc145bbc15eac7d5a0e.css">
-<link rel="stylesheet" href="styles.css">
-<link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-<link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-<link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-<link href="site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
-<link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-<style type="text/css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-379ada49d402fbc145bbc15eac7d5a0e.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -195,9 +195,9 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center"><h1 class="title"><div class="line-block">
-<span style="color:coral;font-size:0.6em">R Lecture 3</span><br><span style="font-size:1em">소통하기: Quarto</span>
-</div></h1>
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title"><div class="line-block"><span style="color:coral;font-size:0.6em">R Lecture 3</span><br>
+<span style="font-size:1em">소통하기: Quarto</span></div></h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -208,97 +208,116 @@
 </div>
 
   <p class="date">2025-09-23</p>
-</section><section><section id="quarto-개요" class="title-slide slide level1 center"><h1><span style="color:coral">Quarto 개요</span></h1>
+</section>
+<section>
+<section id="quarto-개요" class="title-slide slide level1 center">
+<h1><span style="color:coral">Quarto 개요</span></h1>
 
-</section><section id="데이터사이언스-프로세스-소통" class="slide level2"><h2>데이터사이언스 프로세스: 소통</h2>
+</section>
+<section id="데이터사이언스-프로세스-소통" class="slide level2">
+<h2>데이터사이언스 프로세스: 소통</h2>
 
-<img data-src="images/data_science_process_communicate-03.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://r4ds.hadley.nz/" style="font-size:1.25rem">https://r4ds.hadley.nz/</a></p></section><section id="패키지" class="slide level2"><h2>패키지</h2>
+<img data-src="images/data_science_process_communicate-03.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://r4ds.hadley.nz/" style="font-size:1.25rem">https://r4ds.hadley.nz/</a></p></section>
+<section id="패키지" class="slide level2">
+<h2>패키지</h2>
 
-<img data-src="images/data_science_process_packages-02.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://r4ds.hadley.nz/" style="font-size:1.25rem">https://r4ds.hadley.nz/</a></p></section><section id="section" class="slide level2"><h2></h2>
+<img data-src="images/data_science_process_packages-02.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://r4ds.hadley.nz/" style="font-size:1.25rem">https://r4ds.hadley.nz/</a></p></section>
+<section id="section" class="slide level2">
+<h2></h2>
 
-<img data-src="images/hex_quarto.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://quarto.org/" style="font-size:1.25rem">https://quarto.org/</a></p></section><section id="정의" class="slide level2"><h2>정의</h2>
+<img data-src="images/hex_quarto.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://quarto.org/" style="font-size:1.25rem">https://quarto.org/</a></p></section>
+<section id="정의" class="slide level2">
+<h2>정의</h2>
 <ul>
-<li>
-<p>“과학적, 기술적 출판을 위한 오픈소스 시스템(an open-source scientific and technical publishing system)”</p>
+<li><p>“과학적, 기술적 출판을 위한 오픈소스 시스템(an open-source scientific and technical publishing system)”</p>
 <ul>
 <li>오픈소스 저작 시스템</li>
-</ul>
-</li>
+</ul></li>
 <li><p>다양한 형식의 저작물(노트, 연구 논문, 프레젠테이션, 대시보드, 웹사이트, 블로그, 서적 등)을 다양한 디지털 포맷(HTML, PDF, MS Word, ePub 등)으로 출판할 수 있게 해주는 도구</p></li>
-<li>
-<p>적용 분야의 스케일</p>
+<li><p>적용 분야의 스케일</p>
 <ul>
 <li><p>개인 스케일: 노트, 레포트, 연구 논문, 프레젠테이션, 블로그 등의 작성 도구</p></li>
 <li><p>그룹 스케일: 프로젝트의 원할한 진행을 위한 협업 프레임워크</p></li>
 <li><p>사회 스케일: 과학 커뮤니티의 재현성(reproducibility) 고양</p></li>
+</ul></li>
 </ul>
-</li>
-</ul></section><section id="기능" class="slide level2"><h2>기능</h2>
+</section>
+<section id="기능" class="slide level2">
+<h2>기능</h2>
 
-<img data-src="images/quarto_illustration_2.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://allisonhorst.com/cetinkaya-rundel-lowndes-quarto-keynote" style="font-size:1.25rem">https://allisonhorst.com/cetinkaya-rundel-lowndes-quarto-keynote</a></p></section><section id="기능-1" class="slide level2"><h2>기능</h2>
+<img data-src="images/quarto_illustration_2.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://allisonhorst.com/cetinkaya-rundel-lowndes-quarto-keynote" style="font-size:1.25rem">https://allisonhorst.com/cetinkaya-rundel-lowndes-quarto-keynote</a></p></section>
+<section id="기능-1" class="slide level2">
+<h2>기능</h2>
 
-<img data-src="images/quarto_types.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://quarto.org/" style="font-size:1.25rem">https://quarto.org/</a></p></section><section id="결과물-예시" class="slide level2"><h2>결과물 예시</h2>
+<img data-src="images/quarto_types.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://quarto.org/" style="font-size:1.25rem">https://quarto.org/</a></p></section>
+<section id="결과물-예시" class="slide level2">
+<h2>결과물 예시</h2>
 <ul>
 <li><p>개인 홈페이지 및 블로그: <a href="https://sangillee.snu.ac.kr/" class="uri">https://sangillee.snu.ac.kr/</a></p></li>
 <li><p>웹북: <a href="https://r4ds.hadley.nz/" class="uri">https://r4ds.hadley.nz/</a></p></li>
 <li><p>프레젠테이션: <a href="https://sangillee.snu.ac.kr/2024_AIEDAP/lecture_3.html" class="uri">https://sangillee.snu.ac.kr/2024_AIEDAP/lecture_3.html</a></p></li>
 <li><p>대시보드: <a href="https://sangillee.snu.ac.kr/dashboard_popgeo/" class="uri">https://sangillee.snu.ac.kr/dashboard_popgeo/</a></p></li>
 <li><p>논문, 포스터, 소식지 등</p></li>
-</ul></section><section id="구문syntax" class="slide level2"><h2>구문(syntax)</h2>
+</ul>
+</section>
+<section id="구문syntax" class="slide level2">
+<h2>구문(syntax)</h2>
 <ul>
-<li>
-<p>마크다운(markdown) 언어: 팬독(pandoc)</p>
+<li><p>마크다운(markdown) 언어: 팬독(pandoc)</p>
 <ul>
 <li><p>마크업(markup) 언어: 다큐먼트의 구조와 포맷을 관장하는 텍스트-엔코딩 시스템</p></li>
 <li><p>사용자의 편의성을 크게 향상시킨 마크업 언어</p></li>
-</ul>
-</li>
-<li>
-<p>Quarto 다규먼트: <code>.qmd</code></p>
+</ul></li>
+<li><p>Quarto 다규먼트: <code>.qmd</code></p>
 <ul>
 <li>프로그래밍 언어 + 워드프로세서</li>
+</ul></li>
 </ul>
-</li>
-</ul></section><section id="렌더링rendering" class="slide level2"><h2>렌더링(rendering)</h2>
+</section>
+<section id="렌더링rendering" class="slide level2">
+<h2>렌더링(rendering)</h2>
 <ul>
 <li><p><code>knitr</code> 패키지: <code>.qmd</code>를 <code>.md</code>로 전환</p></li>
 <li><p><code>pandoc</code>: <code>.md</code>를 다양한 디지털 포맷으로 전환</p></li>
 </ul>
 
-<img data-src="https://quarto.org/docs/get-started/hello/images/rstudio-qmd-how-it-works.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://r4ds.hadley.nz/quarto" class="uri" style="font-size:1.25rem">https://r4ds.hadley.nz/quarto</a></p></section><section id="quarto-다큐먼트의-기본-구조" class="slide level2"><h2>Quarto 다큐먼트의 기본 구조</h2>
+<img data-src="https://quarto.org/docs/get-started/hello/images/rstudio-qmd-how-it-works.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://r4ds.hadley.nz/quarto" class="uri" style="font-size:1.25rem">https://r4ds.hadley.nz/quarto</a></p></section>
+<section id="quarto-다큐먼트의-기본-구조" class="slide level2">
+<h2>Quarto 다큐먼트의 기본 구조</h2>
 <ul>
-<li>
-<p>YAML 헤더(header)</p>
+<li><p>YAML 헤더(header)</p>
 <ul>
 <li>일종의 메타데이터</li>
 <li>다큐먼트의 전반적인 사항을 관장</li>
-</ul>
-</li>
-<li>
-<p>코드 청크(code chunk)</p>
+</ul></li>
+<li><p>코드 청크(code chunk)</p>
 <ul>
 <li>프로그래밍 언어가 들어가는 부분</li>
 <li>R 스크립트 파일</li>
-</ul>
-</li>
-<li>
-<p>마크다운 텍스트(markdown text)</p>
+</ul></li>
+<li><p>마크다운 텍스트(markdown text)</p>
 <ul>
 <li>워드프로세서처럼 텍스트를 작성(도표 포함)</li>
+</ul></li>
 </ul>
-</li>
-</ul></section><section id="section-1" class="slide level2"><h2></h2>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
 
-<img data-src="https://r4ds.hadley.nz/quarto/diamond-sizes-report.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://r4ds.hadley.nz/quarto" style="font-size:1.25rem">https://r4ds.hadley.nz/quarto</a></p></section><section id="yaml-헤더" class="slide level2 smaller"><h2>YAML 헤더</h2>
+<img data-src="https://r4ds.hadley.nz/quarto/diamond-sizes-report.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://r4ds.hadley.nz/quarto" style="font-size:1.25rem">https://r4ds.hadley.nz/quarto</a></p></section>
+<section id="yaml-헤더" class="slide level2 smaller">
+<h2>YAML 헤더</h2>
 <table class="caption-top">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
 </colgroup>
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th>키(key)</th>
 <th>설명</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td>title</td>
@@ -337,7 +356,10 @@
 <td>비주얼 에디터와 소스 에디터 중 선택, 보통 visual</td>
 </tr>
 </tbody>
-</table></section><section id="코드-청크" class="slide level2 smaller"><h2>코드 청크</h2>
+</table>
+</section>
+<section id="코드-청크" class="slide level2 smaller">
+<h2>코드 청크</h2>
 <table class="caption-top">
 <colgroup>
 <col style="width: 24%">
@@ -348,7 +370,8 @@
 <col style="width: 13%">
 <col style="width: 13%">
 </colgroup>
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th>Option</th>
 <th style="text-align: center;">Run code</th>
 <th style="text-align: center;">Show code</th>
@@ -356,7 +379,8 @@
 <th style="text-align: center;">Plots</th>
 <th style="text-align: center;">Messages</th>
 <th style="text-align: center;">Warnings</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td><code>eval: false</code></td>
@@ -422,15 +446,22 @@
 <td style="text-align: center;">X</td>
 </tr>
 </tbody>
-</table></section><section id="마크다운-텍스트" class="slide level2"><h2>마크다운 텍스트</h2>
+</table>
+</section>
+<section id="마크다운-텍스트" class="slide level2">
+<h2>마크다운 텍스트</h2>
 <ul>
 <li><p>소스 에디터(source editor) vs.&nbsp;비주얼 에디터(visual editor)</p></li>
 <li><p>마크다운 언어의 사용자 편이성을 한 번 더 강화한 것</p></li>
 </ul>
 
-<img data-src="images/clipboard-1160965626.png" class="r-stretch"></section><section id="section-2" class="slide level2"><h2></h2>
+<img data-src="images/clipboard-1160965626.png" class="r-stretch"></section>
+<section id="section-2" class="slide level2">
+<h2></h2>
 
-<img data-src="images/clipboard-835183693.png" class="quarto-figure quarto-figure-center r-stretch"></section><section id="section-3" class="slide level2"><h2></h2>
+<img data-src="images/clipboard-835183693.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="section-3" class="slide level2">
+<h2></h2>
 <div class="quarto-layout-panel" data-layout-ncol="3">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
@@ -444,41 +475,51 @@
 </div>
 </div>
 </div>
-</section><section id="zotero" class="slide level2"><h2>Zotero</h2>
+</section>
+<section id="zotero" class="slide level2">
+<h2>Zotero</h2>
 
-<img data-src="https://quarto.org/docs/visual-editor/images/visual-editing-citation-search.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://quarto.org/docs/visual-editor/technical.html" class="uri" style="font-size:1.25rem">https://quarto.org/docs/visual-editor/technical.html</a></p></section><section id="웹-발행publishing과-호스팅hosting-서비스" class="slide level2"><h2>웹 발행(publishing)과 호스팅(hosting) 서비스</h2>
+<img data-src="https://quarto.org/docs/visual-editor/images/visual-editing-citation-search.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://quarto.org/docs/visual-editor/technical.html" class="uri" style="font-size:1.25rem">https://quarto.org/docs/visual-editor/technical.html</a></p></section>
+<section id="웹-발행publishing과-호스팅hosting-서비스" class="slide level2">
+<h2>웹 발행(publishing)과 호스팅(hosting) 서비스</h2>
 <ul>
 <li><p>Quarto Pub(<a href="https://quartopub.com/" class="uri">https://quartopub.com/</a>)</p></li>
 <li><p>GitHub Pages(<a href="https://pages.github.com/" class="uri">https://pages.github.com/</a>)</p></li>
 <li><p>Netlify(<a href="https://www.netlify.com/" class="uri">https://www.netlify.com/</a>)</p></li>
-</ul></section><section id="quarto-pub" class="slide level2"><h2>Quarto Pub</h2>
+</ul>
+</section>
+<section id="quarto-pub" class="slide level2">
+<h2>Quarto Pub</h2>
 
-<img data-src="https://quarto.org/docs/publishing/images/quarto-pub-default-site.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://quarto.org/docs/publishing/quarto-pub.html" class="uri" style="font-size:1.25rem">https://quarto.org/docs/publishing/quarto-pub.html</a></p></section></section><section><section id="quarto로-대시보드-만들기" class="title-slide slide level1 center"><h1><span style="color:coral">Quarto로 대시보드 만들기</span></h1>
+<img data-src="https://quarto.org/docs/publishing/images/quarto-pub-default-site.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://quarto.org/docs/publishing/quarto-pub.html" class="uri" style="font-size:1.25rem">https://quarto.org/docs/publishing/quarto-pub.html</a></p></section></section>
+<section>
+<section id="quarto로-대시보드-만들기" class="title-slide slide level1 center">
+<h1><span style="color:coral">Quarto로 대시보드 만들기</span></h1>
 
-</section><section id="데이터-대시보드" class="slide level2"><h2>데이터 대시보드</h2>
+</section>
+<section id="데이터-대시보드" class="slide level2">
+<h2>데이터 대시보드</h2>
 <ul>
-<li>
-<p>레이아웃 요소: 대시보드의 기본 구조</p>
+<li><p>레이아웃 요소: 대시보드의 기본 구조</p>
 <ul>
 <li><p>카드(행과 열)</p></li>
 <li><p>페이지, 내비게이션 바, 사이드바, 툴바, 탭셋</p></li>
-</ul>
-</li>
-<li>
-<p>내용 요소: 카드를 채우는 내용의 유형</p>
+</ul></li>
+<li><p>내용 요소: 카드를 채우는 내용의 유형</p>
 <ul>
 <li>텍스트, 표, 그래프, 동영상, 밸류박스, 지도, 챗봇 등</li>
-</ul>
-</li>
+</ul></li>
 <li><p>작동 요소: 상호작용성의 형식과 정도</p></li>
-</ul></section><section id="예시" class="slide level2"><h2>예시</h2>
-<p><a href="https://sangillee.quarto.pub/my-first-dashboard/" class="uri">https://sangillee.quarto.pub/my-first-dashboard/</a></p>
-</section><section id="레이아웃-요소-1-카드" class="slide level2"><h2>레이아웃 요소 1: 카드</h2>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-1-1">Code</a></li>
-<li><a href="#tabset-1-2">Result</a></li>
 </ul>
+</section>
+<section id="예시" class="slide level2">
+<h2>예시</h2>
+<p><a href="https://sangillee.quarto.pub/my-first-dashboard/" class="uri">https://sangillee.quarto.pub/my-first-dashboard/</a></p>
+</section>
+<section id="레이아웃-요소-1-카드" class="slide level2">
+<h2>레이아웃 요소 1: 카드</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Code</a></li><li><a href="#tabset-1-2">Result</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
 <pre><code>## Row {height=70%}
@@ -497,18 +538,18 @@ Card 2-2 </code></pre>
 </div>
 <div id="tabset-1-2">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card3.png" class="quarto-figure quarto-figure-center" width="729"></p>
+<figure>
+<p><img data-src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card3.png" class="quarto-figure quarto-figure-center" width="729"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-</section><section id="레이아웃-요소-2-탭셋" class="slide level2"><h2>레이아웃 요소 2: 탭셋</h2>
+</section>
+<section id="레이아웃-요소-2-탭셋" class="slide level2">
+<h2>레이아웃 요소 2: 탭셋</h2>
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-2-1">Code</a></li>
-<li><a href="#tabset-2-2">Result</a></li>
-</ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Code</a></li><li><a href="#tabset-2-2">Result</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
 <pre><code>## Row {height=70%}
@@ -527,18 +568,18 @@ Card 2-2 {width=50%}</code></pre>
 </div>
 <div id="tabset-2-2">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/tabset1.png" class="quarto-figure quarto-figure-center" width="733"></p>
+<figure>
+<p><img data-src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/tabset1.png" class="quarto-figure quarto-figure-center" width="733"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-</section><section id="레이아웃-요소-3-페이지" class="slide level2"><h2>레이아웃 요소 3: 페이지</h2>
+</section>
+<section id="레이아웃-요소-3-페이지" class="slide level2">
+<h2>레이아웃 요소 3: 페이지</h2>
 <div class="panel-tabset">
-<ul id="tabset-3" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-3-1">Code</a></li>
-<li><a href="#tabset-3-2">Result</a></li>
-</ul>
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Code</a></li><li><a href="#tabset-3-2">Result</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1">
 <pre><code># Page A
@@ -563,99 +604,106 @@ Card 3</code></pre>
 </div>
 <div id="tabset-3-2">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card4.png" class="quarto-figure quarto-figure-center" width="726"></p>
+<figure>
+<p><img data-src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card4.png" class="quarto-figure quarto-figure-center" width="726"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-</section><section id="레이아웃-요소-4-내비게이션-바" class="slide level2"><h2>레이아웃 요소 4: 내비게이션 바</h2>
+</section>
+<section id="레이아웃-요소-4-내비게이션-바" class="slide level2">
+<h2>레이아웃 요소 4: 내비게이션 바</h2>
 
 <img data-src="https://quarto.org/docs/dashboards/images/navigation-toolbar.png" class="quarto-figure quarto-figure-center r-stretch"><ul>
 <li><p>title</p></li>
 <li><p>author</p></li>
-<li>
-<p>format: dashboard</p>
+<li><p>format: dashboard</p>
 <ul>
 <li><p>logo</p></li>
 <li><p>nav-buttons</p></li>
 <li><p>scrolling: true</p></li>
-</ul>
-</li>
+</ul></li>
 <li><p>theme: 25 bootswatch themes(<a href="https://quarto.org/docs/dashboards/theming.html" class="uri">https://quarto.org/docs/dashboards/theming.html</a>)</p></li>
-</ul></section><section id="레이아웃-요소-5-사이드바" class="slide level2"><h2>레이아웃 요소 5: 사이드바</h2>
+</ul>
+</section>
+<section id="레이아웃-요소-5-사이드바" class="slide level2">
+<h2>레이아웃 요소 5: 사이드바</h2>
 
-<img data-src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/sidebar.png" class="quarto-figure quarto-figure-center r-stretch"></section><section id="내용-요소-1-그래프" class="slide level2"><h2>내용 요소 1: 그래프</h2>
+<img data-src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/sidebar.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="내용-요소-1-그래프" class="slide level2">
+<h2>내용 요소 1: 그래프</h2>
 <ul>
 <li><p>그래프 카드: 그래프 하나를 만들어내는 코드 청크</p></li>
 <li><p><code>ggplot2</code> 패키지, <code>plotly</code> 패키지</p></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#| title: "Histogram of GDP per capita"</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jennybc/gapminder">gapminder</a></span><span class="op">)</span></span>
-<span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
-</section><section id="내용-요소-2-테이블" class="slide level2"><h2>내용 요소 2: 테이블</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| title: "Histogram of GDP per capita"</span></span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> gdpPercap)) <span class="sc">+</span></span>
+<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="내용-요소-2-테이블" class="slide level2">
+<h2>내용 요소 2: 테이블</h2>
 <ul>
 <li><p>테이블 카드: 테이블 하나를 만들어내는 코드 청크</p></li>
 <li><p><code>DT</code> 패키지, <code>knitr</code> 패키지</p></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#| title: Lookup Table</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/DT">DT</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/DT/man/datatable.html">datatable</a></span><span class="op">(</span><span class="va">gapminder</span>, filter <span class="op">=</span> <span class="st">"top"</span>, </span>
-<span>          options <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
-<span>            pageLength <span class="op">=</span> <span class="fl">5</span>, autoWidth <span class="op">=</span> <span class="cn">TRUE</span></span>
-<span>          <span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
-</section><section id="내용-요소-3-지도" class="slide level2"><h2>내용 요소 3: 지도</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| title: Lookup Table</span></span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(gapminder, <span class="at">filter =</span> <span class="st">"top"</span>, </span>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a>          <span class="at">options =</span> <span class="fu">list</span>(</span>
+<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a>            <span class="at">pageLength =</span> <span class="dv">5</span>, <span class="at">autoWidth =</span> <span class="cn">TRUE</span></span>
+<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a>          ))</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="내용-요소-3-지도" class="slide level2">
+<h2>내용 요소 3: 지도</h2>
 <ul>
 <li><p>지도 카드: 지도 하나를 만들어내는 코드 청크</p></li>
 <li><p><code>ggplot2</code> 패키지, <code>leaflet</code> 패키지</p></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#| title: A Reference Map </span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio.github.io/leaflet/">leaflet</a></span><span class="op">)</span> </span>
-<span><span class="fu"><a href="https://rstudio.github.io/leaflet/reference/leaflet.html">leaflet</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span>  </span>
-<span>  <span class="fu"><a href="https://rstudio.github.io/leaflet/reference/map-layers.html">addTiles</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
-</section><section id="내용-요소-4-텍스트" class="slide level2"><h2>내용 요소 4: 텍스트</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| title: A Reference Map </span></span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet) </span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>() <span class="sc">|&gt;</span>  </span>
+<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>()</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="내용-요소-4-텍스트" class="slide level2">
+<h2>내용 요소 4: 텍스트</h2>
 <ul>
 <li>텍스트 카드: 텍스트 박스 하나를 만들어내는 div</li>
-<li>
-<code>{.card}</code> 탭과 <code>title</code> 속성</li>
+<li><code>{.card}</code> 탭과 <code>title</code> 속성</li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span> {.card title<span class="ot">=</span><span class="st">"Text"</span>}</span>
 <span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>This is my first dashboard.</span>
 <span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
-</section><section id="내용-요소-5-밸류박스valueboxe" class="slide level2"><h2>내용 요소 5: 밸류박스(valueboxe)</h2>
+</section>
+<section id="내용-요소-5-밸류박스valueboxe" class="slide level2">
+<h2>내용 요소 5: 밸류박스(valueboxe)</h2>
 <ul>
 <li><p>밸류박스 카드: 밸류박스 하나를 만들어내는 코드 청크</p></li>
 <li><p>아이콘: bootstrap icon(<a href="https://icons.getbootstrap.com/" class="uri">https://icons.getbootstrap.com/</a>)</p></li>
 <li><p>컬러: 8개(<a href="https://quarto.org/docs/dashboards/data-display.html" class="uri">https://quarto.org/docs/dashboards/data-display.html</a>)</p></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#| content: valuebox</span></span>
-<span><span class="co">#| title: "Number of Countries"</span></span>
-<span><span class="va">n_countries</span> <span class="op">&lt;-</span> <span class="va">gapminder</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">country</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
-<span>  icon <span class="op">=</span> <span class="st">"asterisk"</span>,</span>
-<span>  color <span class="op">=</span> <span class="st">"primary"</span>,</span>
-<span>  value <span class="op">=</span> <span class="va">n_countries</span></span>
-<span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
-</section><section id="웹-발행" class="slide level2"><h2>웹 발행</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| content: valuebox</span></span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">#| title: "Number of Countries"</span></span>
+<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>n_countries <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span> <span class="fu">distinct</span>(country) <span class="sc">|&gt;</span> <span class="fu">nrow</span>()</span>
+<span id="cb8-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(</span>
+<span id="cb8-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="at">icon =</span> <span class="st">"asterisk"</span>,</span>
+<span id="cb8-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="st">"primary"</span>,</span>
+<span id="cb8-7"><a aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> n_countries</span>
+<span id="cb8-8"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="웹-발행" class="slide level2">
+<h2>웹 발행</h2>
 <ul>
 <li>Quarto Pub(<a href="https://quartopub.com/" class="uri">https://quartopub.com/</a>)</li>
 </ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">n_countries</span> <span class="op">&lt;-</span> <span class="va">gapminder</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">country</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
-<span>  icon <span class="op">=</span> <span class="st">"asterisk"</span>,</span>
-<span>  color <span class="op">=</span> <span class="st">"primary"</span>,</span>
-<span>  value <span class="op">=</span> <span class="va">n_countries</span></span>
-<span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
 
 
 </section></section>
-</div>
+    </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="snu_edu_1.png" class="slide-logo"></p>
 <div class="footer footer-default">
@@ -663,7 +711,24 @@ Card 3</code></pre>
 </div>
 </div></div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script><script src="site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="site_libs/revealjs/plugin/notes/notes.js"></script><script src="site_libs/revealjs/plugin/search/search.js"></script><script src="site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
@@ -855,42 +920,8 @@ Card 3</code></pre>
           RevealZoom
         ]
       });
-    </script><script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-    
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-    
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-    
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-    
-      })();
-    </script><script id="quarto-html-after-body" type="application/javascript">
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
         tabsets.forEach(function(tabset) {
@@ -1058,6 +1089,6 @@ Card 3</code></pre>
         }
       });
       </script>
-
+    
 
 </body></html>
