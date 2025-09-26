@@ -1,5 +1,5 @@
 ---
-title: "불러오기와 정리하기"
+title: "불러오기와 정돈하기"
 author: 이상일(서울대학교 지리교육과)
 date-modified: last-modified
 number-sections: true
@@ -21,9 +21,9 @@ editor_options:
 
 ## 개요 {.unnumbered}
 
-여기서는 R로 데이터사이언스를 하는 과정 중 데이터 불러오기(importing)와 데이터 정리하기(tidying)에 집중한다. 아래의 @fig-4-1 에서 보는 바처럼, 불러오기와 데이터 정리하기는 데이터사이언스 프로세스의 첫 두 단계에 해당한다.
+여기서는 R로 데이터사이언스를 하는 과정 중 데이터 불러오기(importing)와 데이터 정돈하기(tidying)에 집중한다. 아래의 @fig-4-1 에서 보는 바처럼, 불러오기와 데이터 정돈하기는 데이터사이언스 프로세스의 첫 두 단계에 해당한다.
 
-![데이터사이언스 프로세스와 불러오기 및 정리하기(<https://r4ds.hadley.nz/import.html>)](images/data_science_process_import-01.png){#fig-4-1}
+![데이터사이언스 프로세스와 불러오기 및 정돈하기(<https://r4ds.hadley.nz/import.html>)](images/data_science_process_import-01.png){#fig-4-1}
 
 본격적으로 해당 주제를 다루기 전에 **tidyverse**의 공식 데이터 프레임 형식인 티블(tibble)에 대해 간단히 설명한다.
 
@@ -408,9 +408,9 @@ read_rds("wpp_2024.rds")
 
 **readr** 패키지는 `write_csv()`, `write_delim()`와 같은 함수를 제공한다. 엑셀 파일을 저장하기 위해서는 [**writexl**](https://github.com/ropensci/writexl) 패키지의 `write_xlsx()` 함수를 사용한다. 혹은 [**openxlsx**](https://ycphs.github.io/openxlsx/) 패키지의 `write.xlsx()` 함수를 사용할 수도 있다.
 
-## 데이터 정리하기
+## 데이터 정돈하기
 
-데이터 정리하기는 지저분한 데이터(messy data)를 정돈된 데이터(tidy data)로 만드는 과정을 의미한다. 정돈된 데이터는 다음의 세 가지 속성을 갖는다.
+데이터 정돈하기는 '지저분한 데이터(messy data)'를 '정돈된 데이터(tidy data)'로 만드는 과정을 의미한다. 정돈된 데이터는 다음의 세 가지 속성을 갖는다.
 
 -   개별 변수(variable)는 열(컬럼, column) 하나를 차지한다. 즉, 개별 열에는 하나의 변수가 위치한다.
 
@@ -420,7 +420,7 @@ read_rds("wpp_2024.rds")
 
 이 세가지 속성 중 하나라도 위배하는 데이터는 정돈된 데이터가 아니다. 어떤 데이터이건 그것이 정돈된 데이터이기만 하다면, 표준적인 툴을 통해 해당 데이터를 다른 데이터와 동일한 방식으로 다룰 수 있다. 데이터 정리하기에 특화된 패키지가 [**tidyverse**](https://www.tidyverse.org/) 패키지의 핵심 패키지 중의 하나인 [**tidyr**](https://tidyr.tidyverse.org/) 패키지이다.
 
-데이터 정리하기는 다음의 세 가지 범주로 나뉜다.
+데이터 정돈하기는 다음의 세 가지 범주로 나뉜다.
 
 -   데이터 구조 변형: 가장 중요한 오퍼레이션으로 데이터 늘이기와 데이터 넓히기기가 포함된다.
 

@@ -1,9 +1,9 @@
 ---
 title: |
   | [R Lecture 4]{style="color:coral;font-size:0.6em"}   
-  | [데이터 불러오기와 정리하기]{style="font-size:1em"} 
+  | [불러오기와 정돈하기]{style="font-size:1em"} 
 author: <br> 이상일(서울대학교 지리교육과 교수)
-date: 2025-9-2
+date: 2025-9-30
 format: 
   revealjs:
     logo: snu_edu_1.png
@@ -15,6 +15,7 @@ format:
     # smaller: false
     # scrollable: false
     code-link: true
+    code-line-numbers: false
     code-copy: true
     code-overflow: scroll
     slide-number: true
@@ -31,7 +32,7 @@ format:
     theme: [default, custom_hq_pretendard_step.scss] # 슬라이드 본문 폰트 크기 조정
     revealjs-plugins:
       - pointer
-code-link: true
+    css: styles.css
 execute: 
   warning: false
   error: false
@@ -48,19 +49,67 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Data Import
+## 데이터사이언스 프로세스
 
-## A data science process with R: 1st step
+![[https://r4ds.hadley.nz/import.html](https://r4ds.hadley.nz/import.html){style="font-size:1.25rem"}](images/data_science_process_import-02.png)
 
-![](images/clipboard-1225375471.png)
+-   티블(tibble)
 
-## `readr` package
+-   데이터 불러오기(importing)
 
-![](images/clipboard-1251213286.png){fig-align="center"}
+-   데이터 정돈하기(tidying)
 
-## Main functions of `readr` package
+# [티블 Tibble]{style="color:coral"}
 
-| Names          | Formats                                    |
+## **tibble** 패키지
+
+-   타이디버스의 핵심 패키지 중의 하나: 새로운 데이터 프레임 형식 제공
+
+![[https://tibble.tidyverse.org/](https://tibble.tidyverse.org/){style="font-size:1.25rem"}](images/clipboard-3459494907.png){fig-align="center"}
+
+## tibble vs. data.frame
+
+![[https://www.r-bloggers.com/2021/02/4-ways-to-make-data-frames-in-r/](https://www.r-bloggers.com/2021/02/4-ways-to-make-data-frames-in-r/){style="font-size:1.25rem"}](images/clipboard-2404269740.png){fig-align="center"}
+
+## 데이터 뷰어 Data viewer
+
+-   데이터 프레임(티블) 객체를 엑셀과 유사한 형태로 디스플레이
+
+-   작동 방법
+
+    -   `View(티블명)` 함수
+
+    -   환경창의 아이콘 클릭
+
+-   기능
+
+    -   소팅(sorting): 분류하기
+
+    -   스크롤링(scrolling): 상하이동
+
+    -   필터링(filtering): 골라내기
+
+    -   서칭(searching): 검색하기
+
+## 데이터 뷰어 Data viewer
+
+![](images/clipboard-3652581161.png)
+
+## 데이터 뷰어 Data viewer
+
+![](images/clipboard-2907343879.png)
+
+# [데이터 불러오기]{style="color:coral"}
+
+## **readr** 패키지
+
+-   타이디버스의 핵심 패키지 중의 하나: 다양한 포맷의 데이터 불러오기
+
+![[https://readr.tidyverse.org/](https://readr.tidyverse.org/){style="font-size:1.25rem"}](images/clipboard-1251213286.png){fig-align="center"}
+
+## **readr** 패키지: 주요 불러오기 함수
+
+| 함수명         | 포맷                                       |
 |----------------|--------------------------------------------|
 | `read_csv()`   | 콤마분리(comma-separated values, CSV) 형식 |
 | `read_csv2()`  | 세미콜론분리(semicolon-separated) 형식     |
@@ -70,101 +119,119 @@ editor_options:
 | `read_table()` | 공백구분 형식                              |
 | `read_log()`   | 아파치 형식(Apache-style)의 로그 파일      |
 
-## Main arguments of `read_csv()`
+## **readr** 패키지: 주요 파싱(parsing) 함수
 
--   컬럼명: `col_names`
+| 컬럼 유형    | 새로운 벡터       | 기존 벡터           |
+|--------------|-------------------|---------------------|
+| 논리형 `lgl` | `col_logical()`   | `parse_logical()`   |
+| 정수형 `int` | `col_integer()`   | `parse_integer()`   |
+| 실수형 `dbl` | `col_double()`    | `parse_double()`    |
+| 문자형 `chr` | `col_character()` | `parse_character()` |
+| 범주형 `fct` | `col_factor()`    | `parse_factor()`    |
 
--   컬럼의 데이터 유형 지정과 파싱(parsing): `col_types = cols()`
+## `read_csv()` 함수의 활용
 
-    -   `col_double()`
+::: panel-tabset
+## 불러오기 1
 
-    -   `col_integer()`
+```{r}
+#| eval: false
+#| echo: true
+library(tidyverse)
+read_csv("https://pos.it/r4ds-students-csv")
+```
 
-    -   `col_character()`
+## 결과 1
 
-    -   `col_logical()`
+```{r}
+library(tidyverse)
+read_csv("https://pos.it/r4ds-students-csv")
+```
 
-## Related packages
+## 불러오기 2
 
-::: {layout="[30,30, 30]" layout-valign="center"}
-![](images/clipboard-2419843589.png)
+```{r}
+#| eval: false
+#| echo: true
+library(tidyverse)
+read_csv(
+  file = "https://pos.it/r4ds-students-csv", 
+  skip = 1, 
+  col_names = c("student_id", "full_name", "favorite_food", "meal_plan", "age"),
+  col_types = cols(
+    meal_plan = col_factor(),
+    age = col_number()
+  ),
+  na = c("N/A")
+  )
+```
 
-![](images/clipboard-2386206028.png)
+## 결과 2
 
-![](images/clipboard-812069546.png)
+```{r}
+library(tidyverse)
+read_csv(
+  file = "https://pos.it/r4ds-students-csv", 
+  skip = 1, 
+  col_names = c("student_id", "full_name", "favorite_food", "meal_plan", "age"),
+  col_types = cols(
+    meal_plan = col_factor(),
+    age = col_number()
+  ),
+  na = c("N/A")
+  )
+```
 :::
 
-## `readxl` package
+## 관련 패키지
+
+::: {layout="[30,30, 30]" layout-valign="center"}
+![[https://readxl.tidyverse.org/](https://readxl.tidyverse.org/){style="font-size:1.25rem"}](images/clipboard-2419843589.png)
+
+![[https://ycphs.github.io/openxlsx/](https://ycphs.github.io/openxlsx/){style="font-size:1.25rem"}](images/clipboard-2386206028.png)
+
+![[https://googlesheets4.tidyverse.org/](https://googlesheets4.tidyverse.org/){style="font-size:1.25rem"}](images/clipboard-812069546.png)
+:::
+
+## **readxl** 패키지
 
 -   `read_xls(), read_xlsx(), read_excel()`
 
-    -   `sheet`
+    -   `path`: 파일 경로와 파일명
 
-    -   `skip`
+    -   `sheet`: 특정 시트의 선택
 
-    -   `col_names`
+    -   `range`: 특정 범위의 셀 선택
 
-    -   `col_types`: "skip", "guess", "text", "logical", "numeric", etc.
+    -   `skip`: 불러들이지 않을 최소 행 번호
 
-## Another way
+    -   `col_names`: 컬럼 이름 지정
+
+    -   `col_types`: 컬럼 데이터 유형 지정("skip", "guess", "text", "logical", "numeric", etc.)
+
+    -   `na`: 결측치 규정
+
+## 데이터 불러오는 다른 방법
 
 ![](images/clipboard-3854717875.png)
 
-# Tibble
+# [데이터 정돈하기]{style="color:coral"}
 
-## `tibble` package
+## **tidyr** 패키지
 
--   A new type of dataframe provided by tidyverse
+-   타이디버스의 핵심 패키지 중의 하나: '정돈된(tidy)' 데이터 만들기
 
-![](images/clipboard-3459494907.png){fig-align="center"}
+![[https://tidyr.tidyverse.org/](https://tidyr.tidyverse.org/){style="font-size:1.25rem"}](images/clipboard-1046439731.png){fig-align="center"}
 
-## tibble vs. data.frame
+## '정돈된 데이터'의 정의
 
-![](images/clipboard-2404269740.png){fig-align="center"}
+![[https://allisonhorst.com/other-r-fun](https://allisonhorst.com/other-r-fun){style="font-size:1.25rem"}](images/clipboard-4067066416.png)
 
-## Data viewer
+## '정돈된 데이터'의 정의
 
--   Like an Excel view
+![[https://allisonhorst.com/other-r-fun](https://allisonhorst.com/other-r-fun){style="font-size:1.25rem"}](images/clipboard-3412852372.png)
 
--   How to initiate
-
-    -   `View()` function
-
-    -   Click on an icon in Environment window
-
--   Functions
-
-    -   Sorting
-
-    -   Scrolling
-
-    -   Filtering
-
-    -   Searching
-
-## Data viewer
-
-![](images/clipboard-3652581161.png)
-
-## Data viewer
-
-![](images/clipboard-2907343879.png)
-
-# Data Tidying
-
-## `tidyr` package
-
-![](images/clipboard-1046439731.png){fig-align="center"}
-
-## The concept of tidy data
-
-![](images/clipboard-4067066416.png)
-
-## The concept of tidy data
-
-![](images/clipboard-3412852372.png)
-
-## The concept of tidy data
+## '정돈된 데이터'의 정의
 
 -   개별 변수(variable)는 열(column) 하나를 차지한다. 즉, 개별 열에는 하나의 변수가 위치한다.
 
@@ -172,7 +239,10 @@ editor_options:
 
 -   개별 값(value)은 하나의 셀(cell)을 차지한다. 즉, 개별 셀에는 하나의 값이 위치한다.
 
-## Examples: table1
+## '정돈된 데이터'의 정의
+
+::: panel-tabset
+## table 1
 
 ```{r}
 #| echo: true
@@ -180,39 +250,50 @@ library(tidyverse)
 table1
 ```
 
-## Examples: table2
+## table 2
 
 ```{r}
+#| echo: true
 table2
 ```
 
-## Examples: table3
+## table 3
 
 ```{r}
+#| echo: true
 table3
 ```
+:::
 
-## Benefits of tidy data
+## '정돈된 데이터'의 이점
 
-![](images/clipboard-3106963859.png)
+![[https://allisonhorst.com/other-r-fun](https://allisonhorst.com/other-r-fun){style="font-size:1.25rem"}](images/clipboard-3106963859.png)
 
-## Benefits of tidy data
+## '정돈된 데이터'의 이점
 
-![](images/clipboard-3609380673.png)
+![[https://allisonhorst.com/other-r-fun](https://allisonhorst.com/other-r-fun){style="font-size:1.25rem"}](images/clipboard-3609380673.png)
 
-## Benefits of tidy data
+## '정돈된 데이터'의 이점
 
-![](images/clipboard-1736663833.png)
+![[https://allisonhorst.com/other-r-fun](https://allisonhorst.com/other-r-fun){style="font-size:1.25rem"}](images/clipboard-1736663833.png)
 
-## Core methods of data tidying
+## 데이터 정돈하기의 핵심 기능
 
-![](images/clipboard-1179593338.png){fig-align="center"}
+-   데이터 구조 변형: 핵심 기능으로 데이터 늘이기와 데이터 넓히기가 포함
 
-## wide form vs. long form
+-   컬럼의 결합 및 분할: 두 개 이상의 컬럼을 하나의 컬럼으로 결합하거나 한 컬럼을 두 개 이상의 컬럼으로 분할
+
+-   결측치 처리: 결측치가 포함된 행을 다양한 방식으로 처리
+
+## 데이터 구조 변형
+
+![[https://www.r-bloggers.com/2024/09/mastering-data-transformation-in-r-with-pivot_longer-and-pivot_wider/](https://www.r-bloggers.com/2024/09/mastering-data-transformation-in-r-with-pivot_longer-and-pivot_wider/){style="font-size:1.25rem"}](images/clipboard-1179593338.png){fig-align="center"}
+
+## 와이드 폼(wide form) vs. 롱 폼(long form)
 
 ![](images/clipboard-2491549849.png){fig-align="center"}
 
-## Lengthening data
+## 데이터 늘이기: `pivot_longer()`
 
 ::: panel-tabset
 ## table4a
@@ -222,7 +303,7 @@ table3
 table4a
 ```
 
-## Result
+## 결과
 
 ```{r}
 #| echo: true
@@ -235,11 +316,11 @@ table4a |>
 ```
 :::
 
-## Lengthening data
+## 데이터 늘이기: `pivot_longer()`
 
 ![](images/clipboard-2601245679.png)
 
-## Widening data
+## 데이터 넓히기: `pivot_wider()`
 
 ::: panel-tabset
 ## table2
@@ -249,7 +330,7 @@ table4a |>
 table2
 ```
 
-## Result
+## 결과
 
 ```{r}
 #| echo: true
@@ -262,36 +343,27 @@ table2 |>
 ```
 :::
 
-## Widening data
+## 데이터 넓히기: `pivot_wider()`
 
 ![](images/clipboard-3400622461.png)
 
-# Data Join
+## 컬럼의 결합 및 분할
 
-## `dplyr` package
+::: panel-tabset
+## table3
 
-![](images/clipboard-3059639685.png){fig-align="center"}
+```{r}
+#| echo: true
+table3
+```
 
-## Keys
+## 결과
 
-![](images/clipboard-1575493085.png)
-
-## Types of join
-
-![](images/clipboard-1394869847.png){fig-align="center"}
-
-## Types of join
-
-::: {layout="[45, -5, 45]" layout-valign="center"}
-![](images/clipboard-3276497169.png)
-
-![](images/clipboard-1577298199.png)
-:::
-
-## Types of join
-
-::: {layout="[45, -5, 45]" layout-valign="center"}
-![](images/clipboard-2197162614.png){fig-align="center"}
-
-![](images/clipboard-2555805146.png){fig-align="center"}
+```{r}
+#| echo: true
+table3 |> separate_wider_delim(
+  rate, delim = "/", names = c("cases", "pop") 
+) 
+  
+```
 :::

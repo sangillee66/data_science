@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.8.24">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="이상일(서울대학교 지리교육과)">
-<title>불러오기와 정리하기 – Data Science</title>
+<title>불러오기와 정돈하기 – Data Science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -279,7 +279,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">불러오기와 정리하기</h1>
+          <h1 class="quarto-secondary-nav-title">불러오기와 정돈하기</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="검색" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -338,7 +338,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_04.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">불러오기와 정리하기</span></a>
+ <span class="menu-text">불러오기와 정돈하기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -405,6 +405,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="./R_lec_03_2025.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">| <span style="color:coral;font-size:0.6em">R Lecture 3</span> | <span style="font-size:1em">소통하기: Quarto</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R_lec_04_2025.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">| <span style="color:coral;font-size:0.6em">R Lecture 4</span> | <span style="font-size:1em">데이터 불러오기와 정돈하기</span></span></a>
   </div>
 </li>
       </ul>
@@ -610,7 +616,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul>
 </li>
   <li>
-<a href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0" id="toc-데이터-정리하기" class="nav-link" data-scroll-target="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0"><span class="header-section-number">3</span> 데이터 정리하기</a>
+<a href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%95%EB%8F%88%ED%95%98%EA%B8%B0" id="toc-데이터-정돈하기" class="nav-link" data-scroll-target="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%95%EB%8F%88%ED%95%98%EA%B8%B0"><span class="header-section-number">3</span> 데이터 정돈하기</a>
   <ul class="collapse">
 <li><a href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B5%AC%EC%A1%B0-%EB%B3%80%ED%98%95" id="toc-데이터-구조-변형" class="nav-link" data-scroll-target="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B5%AC%EC%A1%B0-%EB%B3%80%ED%98%95"><span class="header-section-number">3.1</span> 데이터 구조 변형</a></li>
   <li><a href="#%EC%BB%AC%EB%9F%BC%EC%9D%98-%EA%B2%B0%ED%95%A9-%EB%B0%8F-%EB%B6%84%ED%95%A0" id="toc-컬럼의-결합-및-분할" class="nav-link" data-scroll-target="#%EC%BB%AC%EB%9F%BC%EC%9D%98-%EA%B2%B0%ED%95%A9-%EB%B0%8F-%EB%B6%84%ED%95%A0"><span class="header-section-number">3.2</span> 컬럼의 결합 및 분할</a></li>
@@ -621,7 +627,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title d-none d-lg-block">불러오기와 정리하기</h1>
+<h1 class="title d-none d-lg-block">불러오기와 정돈하기</h1>
 </div>
 
 
@@ -639,7 +645,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2025년 9월 25일</p>
+      <p class="date-modified">2025년 9월 26일</p>
     </div>
   </div>
     
@@ -648,13 +654,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 </header><section id="개요" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="개요">개요</h2>
-<p>여기서는 R로 데이터사이언스를 하는 과정 중 데이터 불러오기(importing)와 데이터 정리하기(tidying)에 집중한다. 아래의 <a href="#fig-4-1" class="quarto-xref">그림&nbsp;1</a> 에서 보는 바처럼, 불러오기와 데이터 정리하기는 데이터사이언스 프로세스의 첫 두 단계에 해당한다.</p>
+<p>여기서는 R로 데이터사이언스를 하는 과정 중 데이터 불러오기(importing)와 데이터 정돈하기(tidying)에 집중한다. 아래의 <a href="#fig-4-1" class="quarto-xref">그림&nbsp;1</a> 에서 보는 바처럼, 불러오기와 데이터 정돈하기는 데이터사이언스 프로세스의 첫 두 단계에 해당한다.</p>
 <div id="fig-4-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-4-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/data_science_process_import-01.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="그림&nbsp;1: 데이터사이언스 프로세스와 불러오기 및 정리하기(https://r4ds.hadley.nz/import.html)"><img src="images/data_science_process_import-01.png" class="img-fluid figure-img"></a>
+<a href="images/data_science_process_import-01.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="그림&nbsp;1: 데이터사이언스 프로세스와 불러오기 및 정돈하기(https://r4ds.hadley.nz/import.html)"><img src="images/data_science_process_import-01.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-4-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;1: 데이터사이언스 프로세스와 불러오기 및 정리하기(<a href="https://r4ds.hadley.nz/import.html" class="uri">https://r4ds.hadley.nz/import.html</a>)
+그림&nbsp;1: 데이터사이언스 프로세스와 불러오기 및 정돈하기(<a href="https://r4ds.hadley.nz/import.html" class="uri">https://r4ds.hadley.nz/import.html</a>)
 </figcaption></figure>
 </div>
 <p>본격적으로 해당 주제를 다루기 전에 <strong>tidyverse</strong>의 공식 데이터 프레임 형식인 티블(tibble)에 대해 간단히 설명한다.</p>
@@ -1293,16 +1299,16 @@ C 5 g 0.60</code></pre>
 </section></section><section id="데이터-쓰기" class="level3" data-number="2.3"><h3 data-number="2.3" class="anchored" data-anchor-id="데이터-쓰기">
 <span class="header-section-number">2.3</span> 데이터 쓰기</h3>
 <p><strong>readr</strong> 패키지는 <code><a href="https://readr.tidyverse.org/reference/write_delim.html">write_csv()</a></code>, <code><a href="https://readr.tidyverse.org/reference/write_delim.html">write_delim()</a></code>와 같은 함수를 제공한다. 엑셀 파일을 저장하기 위해서는 <a href="https://github.com/ropensci/writexl"><strong>writexl</strong></a> 패키지의 <code><a href="https://docs.ropensci.org/writexl/reference/write_xlsx.html">write_xlsx()</a></code> 함수를 사용한다. 혹은 <a href="https://ycphs.github.io/openxlsx/"><strong>openxlsx</strong></a> 패키지의 <code>write.xlsx()</code> 함수를 사용할 수도 있다.</p>
-</section></section><section id="데이터-정리하기" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="데이터-정리하기">
-<span class="header-section-number">3</span> 데이터 정리하기</h2>
-<p>데이터 정리하기는 지저분한 데이터(messy data)를 정돈된 데이터(tidy data)로 만드는 과정을 의미한다. 정돈된 데이터는 다음의 세 가지 속성을 갖는다.</p>
+</section></section><section id="데이터-정돈하기" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="데이터-정돈하기">
+<span class="header-section-number">3</span> 데이터 정돈하기</h2>
+<p>데이터 정돈하기는 ’지저분한 데이터(messy data)’를 ’정돈된 데이터(tidy data)’로 만드는 과정을 의미한다. 정돈된 데이터는 다음의 세 가지 속성을 갖는다.</p>
 <ul>
 <li><p>개별 변수(variable)는 열(컬럼, column) 하나를 차지한다. 즉, 개별 열에는 하나의 변수가 위치한다.</p></li>
 <li><p>개별 관측개체(observation)는 하나의 행(로, row)을 차지한다. 즉, 개별 행에는 하나의 관측개체가 위치한다.</p></li>
 <li><p>개별 값(value)은 하나의 셀(cell)을 차지한다. 즉, 개별 셀에는 하나의 값이 위치한다.</p></li>
 </ul>
 <p>이 세가지 속성 중 하나라도 위배하는 데이터는 정돈된 데이터가 아니다. 어떤 데이터이건 그것이 정돈된 데이터이기만 하다면, 표준적인 툴을 통해 해당 데이터를 다른 데이터와 동일한 방식으로 다룰 수 있다. 데이터 정리하기에 특화된 패키지가 <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a> 패키지의 핵심 패키지 중의 하나인 <a href="https://tidyr.tidyverse.org/"><strong>tidyr</strong></a> 패키지이다.</p>
-<p>데이터 정리하기는 다음의 세 가지 범주로 나뉜다.</p>
+<p>데이터 정돈하기는 다음의 세 가지 범주로 나뉜다.</p>
 <ul>
 <li><p>데이터 구조 변형: 가장 중요한 오퍼레이션으로 데이터 늘이기와 데이터 넓히기기가 포함된다.</p></li>
 <li><p>컬럼의 결합 및 분할: 두 개 이상의 컬럼을 하나의 컬럼으로 결합하거나 한 컬럼을 두 개 이상의 컬럼으로 분할한다.</p></li>

@@ -33,6 +33,7 @@ website:
           - R_lec_01_2025.qmd
           - R_lec_02_2025.qmd
           - R_lec_03_2025.qmd
+          - R_lec_04_2025.qmd
       - text: "---"    
       - section: "R 프레젠테이션: 2024/1"
         contents: 
