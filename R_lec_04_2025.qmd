@@ -63,13 +63,51 @@ editor_options:
 
 ## **tibble** 패키지
 
--   타이디버스의 핵심 패키지 중의 하나: 새로운 데이터 프레임 형식 제공
-
 ![[https://tibble.tidyverse.org/](https://tibble.tidyverse.org/){style="font-size:1.25rem"}](images/clipboard-3459494907.png){fig-align="center"}
 
 ## tibble vs. data.frame
 
-![[https://www.r-bloggers.com/2021/02/4-ways-to-make-data-frames-in-r/](https://www.r-bloggers.com/2021/02/4-ways-to-make-data-frames-in-r/){style="font-size:1.25rem"}](images/clipboard-2404269740.png){fig-align="center"}
+::: panel-tabset
+## 데이터 프레임
+
+```{r}
+#| echo: true
+library(tidyverse)
+a <- c(TRUE, FALSE, TRUE, FALSE)
+b <- c(58L, 25L, 25L, 23L)
+c <- c(3.19, 2.09, 2.11, 2.03)
+d <- c("이상일", "김우형", "이하은", "박서우")
+e <- c("남자", "남자", "여자", "여자")
+df_1 <- data.frame(a, b, c, d, e)
+df_2 <- tibble(a, b, c, d, e)
+```
+
+## data.frame
+
+```{r}
+#| echo: true
+library(tidyverse)
+df_1
+```
+
+## tibble 1
+
+```{r}
+#| echo: true
+library(tidyverse)
+df_2
+```
+
+## tibble 2
+
+```{r}
+#| echo: true
+library(tidyverse)
+df_2 |> mutate(
+  e = fct(e, levels = c("남자", "여자"))
+)
+```
+:::
 
 ## 데이터 뷰어 Data viewer
 
@@ -102,8 +140,6 @@ editor_options:
 # [데이터 불러오기]{style="color:coral"}
 
 ## **readr** 패키지
-
--   타이디버스의 핵심 패키지 중의 하나: 다양한 포맷의 데이터 불러오기
 
 ![[https://readr.tidyverse.org/](https://readr.tidyverse.org/){style="font-size:1.25rem"}](images/clipboard-1251213286.png){fig-align="center"}
 
@@ -218,8 +254,6 @@ read_csv(
 # [데이터 정돈하기]{style="color:coral"}
 
 ## **tidyr** 패키지
-
--   타이디버스의 핵심 패키지 중의 하나: '정돈된(tidy)' 데이터 만들기
 
 ![[https://tidyr.tidyverse.org/](https://tidyr.tidyverse.org/){style="font-size:1.25rem"}](images/clipboard-1046439731.png){fig-align="center"}
 

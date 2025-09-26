@@ -1,7 +1,7 @@
 ---
 title: |
   | [R Lecture 5]{style="color:coral;font-size:0.6em"}   
-  | [데이터 변형하기]{style="font-size:1em"} 
+  | [변형하기]{style="font-size:1em"} 
 author: <br> 이상일(서울대학교 지리교육과 교수)
 date: 2025-9-2
 format: 
@@ -48,43 +48,49 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Basic Concepts
+# [개요]{style="color:coral"}
 
-## A data science process with R: 3rd step
+## 데이터사이언스 프로세스
 
-![](images/clipboard-4049944078.png)
+![[https://r4ds.hadley.nz/transform.html](https://r4ds.hadley.nz/transform.html){style="font-size:1.25rem"}](images/data_science_process_transform-02.png)
 
-## `dplyr` package
+## **dplyr** 패키지
 
-![](images/clipboard-3059639685.png){fig-align="center"}
+![[https://dplyr.tidyverse.org/](https://dplyr.tidyverse.org/){style="font-size:1.25rem"}](images/clipboard-3059639685.png){fig-align="center"}
 
-## `dplyr` basics
+## **dplyr** 패키지: 기본 원리
 
--   The first argument is always a data frame.
+-   함수의 이름은 기본적으로 [**동사**]{style="color:coral"}이다.
 
--   The subsequent arguments typically describe which columns to operate on, using variable names (without quotes).
+-   첫 번째 아규먼트는 항상 [**데이터 프레임**]{style="color:coral"}이다.
 
--   The output is always a data frame.
+-   그 다음 아규먼트(들)는 데이터 변형에 결부되는 [**변수**]{style="color:coral"}(들)를 지정한다 .
 
-## Types of `dplyr` functions
+-   산출물은 항상 [**데이터 프레임**]{style="color:coral"}이다.
 
-Functions are operated on:
+## **dplyr** 패키지: 기능 분류
 
--   Rows
+-   단일 테이블 조작: 데이터 변형하기의 핵심 부분으로, 한 데이터 프레임의 데이터 구조를 조작
 
--   Columns
+-   다중 테이블 결합: 두 개 이상의 데이터 프레임으로 결합
 
--   Groups
+# [단일 테이블 조작]{style="color:coral"}
 
--   Tables
+## **dplyr** 함수의 유형
+
+-   행(rows) 함수: 행에 적용되는 함수, 즉 행의 변화를 야기하는 함수
+
+-   열(columns) 함수: 열에 적용되는 함수, 즉 열의 변화를 야기하는 함수
+
+-   그룹(groups) 함수: 그룹에 적용되는 함수
+
+-   테이블(tables) 함수: 데이터프레임 전체에 적용되는 함수
 
 ## 
 
-![](images/clipboard-2728894062.png){fig-align="center"}
+![[https://kilhwan.github.io/rprogramming/ch-dataTransformation.html](https://kilhwan.github.io/rprogramming/ch-dataTransformation.html){style="font-size:1.25rem"}](images/clipboard-2728894062.png){fig-align="center"}
 
-# Functions Operate on Rows
-
-## Four functions
+## 행 함수: 네 개의 주요 함수
 
 -   `filter()`: 특정 변수(들)에 의거한 조건을 만족하는 행(들)을 추출
 
@@ -98,45 +104,168 @@ Functions are operated on:
 
     -   특정 변수에 따른, 행의 위치에 의거해 행(들)을 추출
 
-## `filter()`
+## 행 함수 1: `filter()`
+
+![[https://allisonhorst.com/r-packages-functions](https://allisonhorst.com/r-packages-functions){style="font-size:1.25rem"}](images/clipboard-2723506167.png)
+
+## 행 함수 1: `filter()`
 
 ![](images/clipboard-565233092.png)
 
-## `filter()`
+## 행 함수 1: `filter()`
 
-![](images/clipboard-2723506167.png)
+::: panel-tabset
+## Data
 
-## `filter()`
+```{r}
+library(tidyverse)
+table1
+```
 
-![](images/clipboard-409657186.png){fig-align="center"}
+## `filter()` 1
 
-## `arrange()`
+```{r}
+#| echo: true
+filter(table1, year == 2000)
+
+```
+
+## `filter()` 2
+
+```{r}
+#| echo: true
+table1 |> 
+  filter(
+    year == 2000 & population > 50000000
+  )
+```
+:::
+
+## 행 함수 2: `arrange()`
 
 ![](images/clipboard-3074305878.png)
 
-## `arrange()`
+## 행 함수 2: `arrange()`
 
-![](images/clipboard-1840428146.png){fig-align="center"}
+::: panel-tabset
+## Data
 
-## `distinct()`
+```{r}
+table1
+```
+
+## `arrange()` 1
+
+```{r}
+#| echo: true
+arrange(table1, cases)
+
+```
+
+## `arrange()` 2
+
+```{r}
+#| echo: true
+table1 |> 
+  arrange(desc(cases))
+```
+:::
+
+## 행 함수 3: `distinct()`
 
 ![](images/clipboard-3425030843.png)
 
-## `distinct()`
+## 행 함수 3: `distinct()`
 
-![](images/clipboard-370656711.png){fig-align="center"}
+::: panel-tabset
+## Data
 
-## `slice()`
+```{r}
+table1
+```
+
+## `distinct()` 1
+
+```{r}
+#| echo: true
+distinct(table1, country)
+
+```
+
+## `distinct()` 2
+
+```{r}
+#| echo: true
+table1 |> 
+  distinct(
+    country, .keep_all = TRUE
+  )
+```
+:::
+
+## 행 함수 4: `slice()`
 
 ![](images/clipboard-1830339037.png)
 
+## 행 함수 4: `slice()`
+
+::: panel-tabset
+## Data
+
+```{r}
+table1
+```
+
 ## `slice()`
 
-![](images/clipboard-1031657585.png){fig-align="center"}
+```{r}
+#| echo: true
+slice(table1, 2:3)
 
-# Functions Operate on Columns
+```
 
-## Four functions
+## `slice_head()`
+
+```{r}
+#| echo: true
+table1 |> 
+  slice_head(n = 2)
+```
+
+## `slice_tail()`
+
+```{r}
+#| echo: true
+table1 |> 
+  slice_tail(prop = 1/3)
+```
+
+## `slice_max()`
+
+```{r}
+#| echo: true
+table1 |> 
+  slice_max(cases, n = 2)
+```
+
+## `slice_min()`
+
+```{r}
+#| echo: true
+table1 |> 
+  slice_min(cases, prop = 1/3)
+```
+
+## `slice_sample()`
+
+```{r}
+#| echo: true
+table1 |> 
+  slice_sample(n = 2, replace = TRUE)
+```
+:::
+
+## 열 함수: 네 개의 주요 함수
 
 -   `select()`: 변수(들) 중 일부를 추출
 
@@ -146,45 +275,146 @@ Functions are operated on:
 
 -   `relocate()`: 변수(들)의 위치(순서)를 변경
 
-## `select()`
+## 열 함수 1: `select()`
 
 ![](images/clipboard-3651470406.png)
 
-## `select()`
+## 열 함수 1: `select()`
 
-![](images/clipboard-2864021695.png){fig-align="center"}
+::: panel-tabset
+## Data
 
-## `mutate()`
+```{r}
+table1
+```
+
+## `select()` 1
+
+```{r}
+#| echo: true
+select(table1, country, year)
+
+```
+
+## `select()` 2
+
+```{r}
+#| echo: true
+table1 |> 
+  select(-cases, -population)
+```
+:::
+
+## 열 함수 2: `mutate()`
+
+![[https://allisonhorst.com/r-packages-functions](https://allisonhorst.com/r-packages-functions){style="font-size:1.25rem"}](images/clipboard-417835741.png){fig-align="center"}
+
+## 열 함수 2: `mutate()`
 
 ![](images/clipboard-1943055285.png)
 
-## 
+## 열 함수 2: `mutate()`
 
-![](images/clipboard-417835741.png){fig-align="center"}
+::: panel-tabset
+## Data
 
-## `rename()`
+```{r}
+table1
+```
+
+## `mutate()` 1
+
+```{r}
+#| echo: true
+mutate(table1, rate = cases / population)
+```
+
+## `mutate()` 2
+
+```{r}
+#| echo: true
+table1_new <- table1 |> 
+  mutate(
+    rate = cases / population,
+    continent = if_else(country == "Brazil", "Americas", "Asia")
+  )
+table1_new
+```
+:::
+
+## 열 함수 3: `rename()`
+
+![[https://allisonhorst.com/r-packages-functions](https://allisonhorst.com/r-packages-functions){style="font-size:1.25rem"}](images/clipboard-3953189394.png){fig-align="center"}
+
+## 열 함수 3: `rename()`
 
 ![](images/clipboard-654990545.png)
 
-## 
+## 열 함수 3: `rename()`
 
-![](images/clipboard-3953189394.png){fig-align="center"}
+::: panel-tabset
+## Data
 
-## `rename()`
+```{r}
+table1_new
+```
 
-![](images/clipboard-3019777280.png){fig-align="center"}
+## `rename()` 1
 
-## `relocate()`
+```{r}
+#| echo: true
+rename(table1_new, cont = continent)
+```
+
+## `rename()` 2
+
+```{r}
+#| echo: true
+table1_new |> 
+  rename(
+    cont = continent,
+    pop = population
+  )
+```
+:::
+
+## 열 함수 4: `relocate()`
+
+![[https://allisonhorst.com/r-packages-functions](https://allisonhorst.com/r-packages-functions){style="font-size:1.25rem"}](images/clipboard-2066290782.png){fig-align="center"}
+
+## 열 함수 4: `relocate()`
 
 ![](images/clipboard-1813959402.png)
 
-## 
+## 열 함수 4: `relocate()`
 
-![](images/clipboard-2066290782.png){fig-align="center"}
+::: panel-tabset
+## Data
 
-# Functions Operate on Groups
+```{r}
+table1_new
+```
 
-## Four functions
+## `relocate()` 1
+
+```{r}
+#| echo: true
+relocate(table1_new, year, continent)
+```
+
+## `relocate()` 2
+
+```{r}
+#| echo: true
+table1_new |> 
+  relocate(
+    rate,
+    .before = year
+  )
+```
+:::
+
+## 그룹 함수: 네 개의 주요 함수
 
 -   `group_by()`: 변수(들)에 의거해 전체 행(들)을 그룹으로 분할
 
@@ -194,38 +424,276 @@ Functions are operated on:
 
 -   `across()`: 그룹별로 여러 변수에 걸쳐 동일한 통계량을 산출하고 새로운 변수들로 저장
 
-## `group_by()`
+## 그룹 함수 1: `group_by()`
 
 ![](images/clipboard-1542658472.png)
 
-## `group_by()`
+## 그룹 함수 1: `group_by()`
 
-![](images/clipboard-1927744566.png){fig-align="center"}
+::: panel-tabset
+## Data
 
-## `summarize()`
+```{r}
+table1_new
+```
+
+## `group_by()` 1
+
+```{r}
+#| echo: true
+group_by(table1_new, continent)
+```
+
+## `group_by()` 2
+
+```{r}
+#| echo: true
+table1_new |> 
+  group_by(continent, year)
+```
+:::
+
+## 그룹 함수 2: `summarize()`
 
 ![](images/clipboard-1592063625.png)
 
-## `group_by()` + `summarize()`
+## 그룹 함수 2: `summarize()`
+
+::: panel-tabset
+## Data
+
+```{r}
+table1_new
+```
+
+## `summarize()` 1
+
+```{r}
+#| echo: true
+summarize(table1_new, 
+  sum_cases = sum(cases)
+  )
+```
+
+## `summarize()` 2
+
+```{r}
+#| echo: true
+table1_new |> 
+  summarize(
+    sum_cases = sum(cases), 
+    mean_rate = mean(rate)
+  )
+```
+:::
+
+## 그룹 함수 1 + 2: `group_by()` + `summarize()`
 
 ![](images/clipboard-1318711495.png)
 
-## `group_by()` + `summarize()`
+## 그룹 함수 1 + 2: `group_by()` + `summarize()`
 
-![](images/clipboard-293917068.png){fig-align="center"}
+::: panel-tabset
+## Data
 
-## `count()`
+```{r}
+table1_new
+```
+
+## Combination 1
+
+```{r}
+#| echo: true
+
+table1_new_group <- group_by(table1_new, continent, year)
+summarize(table1_new_group, 
+  sum_cases = sum(cases),
+  mean_rate = mean(rate)
+)
+```
+
+## Combination 2
+
+```{r}
+#| echo: true
+table1_new |> 
+  group_by(continent, year) |> 
+  summarize(
+    sum_cases = sum(cases), 
+    sum_pop = sum(population)
+  ) |> 
+  mutate(
+    rate = sum_cases / sum_pop
+  ) |> 
+  ungroup()
+```
+:::
+
+## 그룹 함수 3: `count()`
 
 ![](images/clipboard-2066641215.png)
 
-## `count()`
+## 그룹 함수 3: `count()`
 
-![](images/clipboard-171754169.png){fig-align="center"}
+::: panel-tabset
+## Data
 
-## `across()`
+```{r}
+table1_new
+```
 
-![](images/clipboard-2112397168.png)
+## `count()` 1
 
-## 
+```{r}
+#| echo: true
+count(table1_new, year, continent)
+```
 
-![](images/clipboard-2406373084.png){fig-align="center"}
+## `count()` 2
+
+```{r}
+#| echo: true
+table1_new |> 
+  count(year, continent, wt = cases)
+```
+
+## `count()` 3
+
+```{r}
+#| echo: true
+table1_new |> 
+  group_by(year, continent) |> 
+  summarize(
+    cases_n = n(),
+    cases_sum = sum(cases)
+  )
+```
+:::
+
+## 그룹 함수 4: `across()`
+
+![[https://allisonhorst.com/r-packages-functions](https://allisonhorst.com/r-packages-functions){style="font-size:1.25rem"}](images/clipboard-2406373084.png){fig-align="center"}
+
+## 그룹 함수 4: `across()`
+
+::: panel-tabset
+## Data
+
+```{r}
+table1_new
+```
+
+## `across()` 1
+
+```{r}
+#| echo: true
+summarize(table1_new, across(c(cases, population), mean))
+```
+
+## `across()` 2
+
+```{r}
+#| echo: true
+table1_new |> 
+  group_by(year) |> 
+  summarize(
+    across(
+      c(cases, population, rate),
+      mean,
+      .names = "mean_{.col}"
+    )
+  )
+```
+:::
+
+# [다중 테이블 결합]{style="color:coral"}
+
+## 종류
+
+-   테이블 조인(join): 두 개 데이터 프레임을 공통키(common key)를 이용해 결합함으로써 하나의 데이터 프레임을 생성
+
+-   테이블 병합(merge): 두 데이터 프레임을 결합해 새로운 단일한 프레임을 생성한다는 의미에서는 테이블 조인과 동일하지만, 공통키가 없으며, 행과 열 중 하나는 반드시 동일해야 함.
+
+## 테이블 조인: 키(key)
+
+![](images/clipboard-1575493085.png)
+
+## 테이블 조인: 유형
+
+-   [`left_join()`](https://dplyr.tidyverse.org/reference/mutate-joins.html): 첫 번째 변수는 그대로 둔 상태에서 두 번째 변수를 결합함으로써 두 번째 변수의 열을 가져옴
+
+-   [`right_join()`](https://dplyr.tidyverse.org/reference/mutate-joins.html): 두 번째 변수는 그대로 둔 상태에서 첫 번째 변수를 결합함으로써 첫 번째 변수의 열을 가져옴
+
+-   [`inner_join()`](https://dplyr.tidyverse.org/reference/mutate-joins.html): 두 변수 모두에 존재하는 열을 취함
+
+-   [`full_join()`](https://dplyr.tidyverse.org/reference/mutate-joins.html): 최소한 한 변수에 존재하는 열을 모두 취함
+
+-   [`semi_join()`](https://dplyr.tidyverse.org/reference/filter-joins.html): 첫 번째 변수의 행 중 두 번째 변수에 대응하는 행이 있는 것만 취함
+
+-   [`anti_join()`](https://dplyr.tidyverse.org/reference/filter-joins.html): 첫 번째 변수의 행 중 두 번째 변수에 대응하는 행이 없는 것만 취함
+
+## 테이블 조인: 유형
+
+![](images/clipboard-1394869847.png){fig-align="center"}
+
+## 테이블 조인: 유형
+
+::: {layout="[45, -5, 45]" layout-valign="center"}
+![](images/clipboard-3276497169.png)
+
+![](images/clipboard-1577298199.png)
+:::
+
+## 테이블 조인: 유형
+
+::: {layout="[45, -5, 45]" layout-valign="center"}
+![](images/clipboard-2197162614.png){fig-align="center"}
+
+![](images/clipboard-2555805146.png){fig-align="center"}
+:::
+
+## 테이블 병합: 주요 함수
+
+-   `bind_row()`: 컬럼이 동일한 두 테이블을 상하로 연결
+-   `bind_col()`: 행이 동일한 두 테이블을 좌우로 연결
+
+## 테이블 병합: 주요 함수
+
+::: panel-tabset
+## bind_row 1
+
+```{r}
+#| echo: true
+library(tidyverse)
+library(gapminder)
+gap_1957 <- gapminder |> filter(year == 1957)
+gap_1982 <- gapminder |> filter(year == 1982)
+gap_2007 <- gapminder |> filter(year == 2007)
+```
+
+## bind_row 2
+
+```{r}
+#| echo: true
+gapminder_merge_row <- bind_rows(
+  gap_1957, gap_1982, gap_2007
+)
+gapminder_merge_row
+```
+
+## bind_col 1
+
+```{r}
+#| echo: true
+gap_var1 <- gapminder |> select(country, continent, year)
+gap_var2 <- gapminder |> select(lifeExp, pop, gdpPercap)
+```
+
+## bind_col 2
+
+```{r}
+#| echo: true
+gapminder_merge_col <- bind_cols(gap_var1, gap_var2)
+gapminder_merge_col
+```
+:::
