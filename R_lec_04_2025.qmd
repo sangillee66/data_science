@@ -74,7 +74,7 @@ editor_options:
 #| echo: true
 library(tidyverse)
 a <- c(TRUE, FALSE, TRUE, FALSE)
-b <- c(58L, 25L, 25L, 23L)
+b <- c(58L, 26L, 28L, 22L)
 c <- c(3.19, 2.09, 2.11, 2.03)
 d <- c("이상일", "김우형", "이하은", "박서우")
 e <- c("남자", "남자", "여자", "여자")
