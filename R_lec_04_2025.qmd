@@ -1,7 +1,7 @@
 ---
 title: |
   | [R Lecture 4]{style="color:coral;font-size:0.6em"}   
-  | [불러오기와 정돈하기]{style="font-size:1em"} 
+  | [데이터 불러오기와 정돈하기]{style="font-size:1em"} 
 author: <br> 이상일(서울대학교 지리교육과 교수)
 date: 2025-9-30
 format: 
@@ -53,11 +53,11 @@ editor_options:
 
 ![[https://r4ds.hadley.nz/import.html](https://r4ds.hadley.nz/import.html){style="font-size:1.25rem"}](images/data_science_process_import-02.png)
 
--   티블(tibble)
+-   티블(tibble): 타이디버스의 데이터 프레임 형식
 
--   데이터 불러오기(importing)
+-   데이터 불러오기(importing): 데이터를 '가져와' R 객체로 만들기
 
--   데이터 정돈하기(tidying)
+-   데이터 정돈하기(tidying): 불러온 데이터를 '정돈된(tidy)' 데이터로 만들기
 
 # [티블 Tibble]{style="color:coral"}
 
@@ -86,7 +86,6 @@ df_2 <- tibble(a, b, c, d, e)
 
 ```{r}
 #| echo: true
-library(tidyverse)
 df_1
 ```
 
@@ -94,7 +93,6 @@ df_1
 
 ```{r}
 #| echo: true
-library(tidyverse)
 df_2
 ```
 
@@ -102,7 +100,6 @@ df_2
 
 ```{r}
 #| echo: true
-library(tidyverse)
 df_2 |> mutate(
   e = fct(e, levels = c("남자", "여자"))
 )
@@ -273,10 +270,10 @@ read_csv(
 
 -   개별 값(value)은 하나의 셀(cell)을 차지한다. 즉, 개별 셀에는 하나의 값이 위치한다.
 
-## '정돈된 데이터'의 정의
+## '정돈된 데이터'의 예시
 
 ::: panel-tabset
-## table 1
+## table1
 
 ```{r}
 #| echo: true
@@ -284,14 +281,21 @@ library(tidyverse)
 table1
 ```
 
-## table 2
+## table4a
+
+```{r}
+#| echo: true
+table4a
+```
+
+## table2
 
 ```{r}
 #| echo: true
 table2
 ```
 
-## table 3
+## table3
 
 ```{r}
 #| echo: true
@@ -313,11 +317,17 @@ table3
 
 ## 데이터 정돈하기의 핵심 기능
 
--   데이터 구조 변형: 핵심 기능으로 데이터 늘이기와 데이터 넓히기가 포함
+-   데이터 구조 변형
 
--   컬럼의 결합 및 분할: 두 개 이상의 컬럼을 하나의 컬럼으로 결합하거나 한 컬럼을 두 개 이상의 컬럼으로 분할
+    -   핵심 기능으로 데이터 늘이기와 데이터 넓히기가 포함
 
--   결측치 처리: 결측치가 포함된 행을 다양한 방식으로 처리
+-   컬럼의 결합 및 분할
+
+    -   두 개 이상의 컬럼을 하나의 컬럼으로 결합하거나 한 컬럼을 두 개 이상의 컬럼으로 분할
+
+-   결측치 처리
+
+    -   결측치가 포함된 행을 다양한 방식으로 처리
 
 ## 데이터 구조 변형
 
@@ -337,7 +347,7 @@ table3
 table4a
 ```
 
-## 결과
+## 정돈 결과
 
 ```{r}
 #| echo: true
@@ -364,7 +374,7 @@ table4a |>
 table2
 ```
 
-## 결과
+## 정돈 결과
 
 ```{r}
 #| echo: true
@@ -391,12 +401,12 @@ table2 |>
 table3
 ```
 
-## 결과
+## 정돈 결과
 
 ```{r}
 #| echo: true
 table3 |> separate_wider_delim(
-  rate, delim = "/", names = c("cases", "pop") 
+  rate, delim = "/", names = c("cases", "population") 
 ) 
   
 ```
