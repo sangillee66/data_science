@@ -59,6 +59,10 @@ editor_options:
 
 -   데이터 정돈하기(tidying): 불러온 데이터를 '정돈된(tidy)' 데이터로 만들기
 
+## 데이터사이언스 프로세스: 타이디버스
+
+![[https://r4ds.hadley.nz/intro.html](https://r4ds.hadley.nz/intro.html){style="font-size:1.25rem"}](images/data_science_process_packages-03.png)
+
 # [티블 Tibble]{style="color:coral"}
 
 ## **tibble** 패키지

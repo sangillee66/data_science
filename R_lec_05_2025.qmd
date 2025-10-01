@@ -54,6 +54,10 @@ editor_options:
 
 ![[https://r4ds.hadley.nz/transform.html](https://r4ds.hadley.nz/transform.html){style="font-size:1.25rem"}](images/data_science_process_transform-02.png)
 
+## 데이터사이언스 프로세스: 타이디버스
+
+![[https://r4ds.hadley.nz/intro.html](https://r4ds.hadley.nz/intro.html){style="font-size:1.25rem"}](images/data_science_process_packages-04.png)
+
 ## **dplyr** 패키지
 
 ![[https://dplyr.tidyverse.org/](https://dplyr.tidyverse.org/){style="font-size:1.25rem"}](images/clipboard-3059639685.png){fig-align="center"}
