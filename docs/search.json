@@ -7106,9 +7106,9 @@
   {
     "objectID": "R_lec_04_2025.html#tibble-vs.-data.frame",
     "href": "R_lec_04_2025.html#tibble-vs.-data.frame",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
     "section": "tibble vs. data.frame",
-    "text": "tibble vs. data.frame\n\n데이터 프레임data.frametibble 1tibble 2\n\n\n\nlibrary(tidyverse)\na &lt;- c(TRUE, FALSE, TRUE, FALSE)\nb &lt;- c(58L, 26L, 28L, 22L)\nc &lt;- c(3.19, 2.09, 2.11, 2.03)\nd &lt;- c(\"이상일\", \"김우형\", \"이하은\", \"박서우\")\ne &lt;- c(\"남자\", \"남자\", \"여자\", \"여자\")\ndf_1 &lt;- data.frame(a, b, c, d, e)\ndf_2 &lt;- tibble(a, b, c, d, e)\n\n\n\n\ndf_1\n\n      a  b    c      d    e\n1  TRUE 58 3.19 이상일 남자\n2 FALSE 26 2.09 김우형 남자\n3  TRUE 28 2.11 이하은 여자\n4 FALSE 22 2.03 박서우 여자\n\n\n\n\n\ndf_2\n\n# A tibble: 4 × 5\n  a         b     c d      e    \n  &lt;lgl&gt; &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;\n1 TRUE     58  3.19 이상일 남자 \n2 FALSE    26  2.09 김우형 남자 \n3 TRUE     28  2.11 이하은 여자 \n4 FALSE    22  2.03 박서우 여자 \n\n\n\n\n\ndf_2 |&gt; mutate(\n  e = fct(e, levels = c(\"남자\", \"여자\"))\n)\n\n# A tibble: 4 × 5\n  a         b     c d      e    \n  &lt;lgl&gt; &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;fct&gt;\n1 TRUE     58  3.19 이상일 남자 \n2 FALSE    26  2.09 김우형 남자 \n3 TRUE     28  2.11 이하은 여자 \n4 FALSE    22  2.03 박서우 여자",
+    "text": "tibble vs. data.frame\n\n\n데이터 프레임\ndata.frame\ntibble 1\ntibble 2\n\n\n\n\nlibrary(tidyverse)\na &lt;- c(TRUE, FALSE, TRUE, FALSE)\nb &lt;- c(58L, 26L, 28L, 22L)\nc &lt;- c(3.19, 2.09, 2.11, 2.03)\nd &lt;- c(\"이상일\", \"김우형\", \"이하은\", \"박서우\")\ne &lt;- c(\"남자\", \"남자\", \"여자\", \"여자\")\ndf_1 &lt;- data.frame(a, b, c, d, e)\ndf_2 &lt;- tibble(a, b, c, d, e)\n\n\n\n\ndf_1\n\n      a  b    c      d    e\n1  TRUE 58 3.19 이상일 남자\n2 FALSE 26 2.09 김우형 남자\n3  TRUE 28 2.11 이하은 여자\n4 FALSE 22 2.03 박서우 여자\n\n\n\n\n\ndf_2\n\n# A tibble: 4 × 5\n  a         b     c d      e    \n  &lt;lgl&gt; &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;\n1 TRUE     58  3.19 이상일 남자 \n2 FALSE    26  2.09 김우형 남자 \n3 TRUE     28  2.11 이하은 여자 \n4 FALSE    22  2.03 박서우 여자 \n\n\n\n\n\ndf_2 |&gt; mutate(\n  e = fct(e, levels = c(\"남자\", \"여자\"))\n)\n\n# A tibble: 4 × 5\n  a         b     c d      e    \n  &lt;lgl&gt; &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;fct&gt;\n1 TRUE     58  3.19 이상일 남자 \n2 FALSE    26  2.09 김우형 남자 \n3 TRUE     28  2.11 이하은 여자 \n4 FALSE    22  2.03 박서우 여자",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 4]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 불러오기와 정돈하기]{style=\"font-size:1em\"}"
@@ -7897,9 +7897,9 @@
   {
     "objectID": "R_lec_04_2025.html#데이터-뷰어-data-viewer",
     "href": "R_lec_04_2025.html#데이터-뷰어-data-viewer",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
     "section": "데이터 뷰어 Data viewer",
-    "text": "데이터 뷰어 Data viewer\n\n데이터 프레임(티블) 객체를 엑셀과 유사한 형태로 디스플레이\n작동 방법\n\nView(티블명) 함수\n환경창의 아이콘 클릭\n\n기능\n\n소팅(sorting): 분류하기\n스크롤링(scrolling): 상하이동\n필터링(filtering): 골라내기\n서칭(searching): 검색하기",
+    "text": "데이터 뷰어 Data viewer\n\n데이터 프레임(티블) 객체를 엑셀과 유사한 형태로 디스플레이\n\n작동 방법\n\nView(티블명) 함수\n환경창의 아이콘 클릭\n\n\n\n기능\n\n소팅(sorting): 분류하기\n스크롤링(scrolling): 상하이동\n필터링(filtering): 골라내기\n서칭(searching): 검색하기",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 4]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 불러오기와 정돈하기]{style=\"font-size:1em\"}"
@@ -7908,7 +7908,7 @@
   {
     "objectID": "R_lec_04_2025.html#데이터-뷰어-data-viewer-1",
     "href": "R_lec_04_2025.html#데이터-뷰어-data-viewer-1",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
     "section": "데이터 뷰어 Data viewer",
     "text": "데이터 뷰어 Data viewer",
     "crumbs": [
@@ -7926,9 +7926,9 @@
   {
     "objectID": "R_lec_04_2025.html#데이터사이언스-프로세스",
     "href": "R_lec_04_2025.html#데이터사이언스-프로세스",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
-    "section": "",
-    "text": "https://r4ds.hadley.nz/import.html\n\n\n\n티블(tibble): 타이디버스의 데이터 프레임 형식\n데이터 불러오기(importing): 데이터를 ‘가져와’ R 객체로 만들기\n데이터 정돈하기(tidying): 불러온 데이터를 ‘정돈된(tidy)’ 데이터로 만들기",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
+    "section": "데이터사이언스 프로세스",
+    "text": "데이터사이언스 프로세스\n\nhttps://r4ds.hadley.nz/import.html\n티블(tibble): 타이디버스의 데이터 프레임 형식\n데이터 불러오기(importing): 데이터를 ‘가져와’ R 객체로 만들기\n데이터 정돈하기(tidying): 불러온 데이터를 ‘정돈된(tidy)’ 데이터로 만들기",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 4]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 불러오기와 정돈하기]{style=\"font-size:1em\"}"
@@ -7937,7 +7937,7 @@
   {
     "objectID": "R_lec_04_2025.html#데이터-뷰어-data-viewer-2",
     "href": "R_lec_04_2025.html#데이터-뷰어-data-viewer-2",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
     "section": "데이터 뷰어 Data viewer",
     "text": "데이터 뷰어 Data viewer",
     "crumbs": [
@@ -7955,9 +7955,9 @@
   {
     "objectID": "R_lec_04_2025.html#readr-패키지",
     "href": "R_lec_04_2025.html#readr-패키지",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
-    "section": "readr 패키지",
-    "text": "readr 패키지\n\n\n\nhttps://readr.tidyverse.org/",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
+    "section": "\nreadr 패키지",
+    "text": "readr 패키지\n\nhttps://readr.tidyverse.org/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 4]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 불러오기와 정돈하기]{style=\"font-size:1em\"}"
@@ -7973,9 +7973,9 @@
   {
     "objectID": "R_lec_04_2025.html#readr-패키지-주요-불러오기-함수",
     "href": "R_lec_04_2025.html#readr-패키지-주요-불러오기-함수",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
-    "section": "readr 패키지: 주요 불러오기 함수",
-    "text": "readr 패키지: 주요 불러오기 함수\n\n\n\n함수명\n포맷\n\n\n\n\nread_csv()\n콤마분리(comma-separated values, CSV) 형식\n\n\nread_csv2()\n세미콜론분리(semicolon-separated) 형식\n\n\nread_tsv()\n탭구분(tab-limited) 형식\n\n\nread_delim()\n여타의 구분 형식\n\n\nread_fwf()\n고정폭(fixed-width) 형식\n\n\nread_table()\n공백구분 형식\n\n\nread_log()\n아파치 형식(Apache-style)의 로그 파일",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
+    "section": "\nreadr 패키지: 주요 불러오기 함수",
+    "text": "readr 패키지: 주요 불러오기 함수\n\n\n함수명\n포맷\n\n\n\nread_csv()\n콤마분리(comma-separated values, CSV) 형식\n\n\nread_csv2()\n세미콜론분리(semicolon-separated) 형식\n\n\nread_tsv()\n탭구분(tab-limited) 형식\n\n\nread_delim()\n여타의 구분 형식\n\n\nread_fwf()\n고정폭(fixed-width) 형식\n\n\nread_table()\n공백구분 형식\n\n\nread_log()\n아파치 형식(Apache-style)의 로그 파일",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 4]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 불러오기와 정돈하기]{style=\"font-size:1em\"}"
@@ -7984,9 +7984,9 @@
   {
     "objectID": "R_lec_04_2025.html#readr-패키지-주요-파싱parsing-함수",
     "href": "R_lec_04_2025.html#readr-패키지-주요-파싱parsing-함수",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
-    "section": "readr 패키지: 주요 파싱(parsing) 함수",
-    "text": "readr 패키지: 주요 파싱(parsing) 함수\n\n\n\n컬럼 유형\n새로운 벡터\n기존 벡터\n\n\n\n\n논리형 lgl\ncol_logical()\nparse_logical()\n\n\n정수형 int\ncol_integer()\nparse_integer()\n\n\n실수형 dbl\ncol_double()\nparse_double()\n\n\n문자형 chr\ncol_character()\nparse_character()\n\n\n범주형 fct\ncol_factor()\nparse_factor()",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
+    "section": "\nreadr 패키지: 주요 파싱(parsing) 함수",
+    "text": "readr 패키지: 주요 파싱(parsing) 함수\n\n\n컬럼 유형\n새로운 벡터\n기존 벡터\n\n\n\n논리형 lgl\n\ncol_logical()\nparse_logical()\n\n\n정수형 int\n\ncol_integer()\nparse_integer()\n\n\n실수형 dbl\n\ncol_double()\nparse_double()\n\n\n문자형 chr\n\ncol_character()\nparse_character()\n\n\n범주형 fct\n\ncol_factor()\nparse_factor()",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 4]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 불러오기와 정돈하기]{style=\"font-size:1em\"}"
@@ -7995,9 +7995,9 @@
   {
     "objectID": "R_lec_04_2025.html#read_csv-함수의-활용",
     "href": "R_lec_04_2025.html#read_csv-함수의-활용",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
-    "section": "read_csv() 함수의 활용",
-    "text": "read_csv() 함수의 활용\n\n불러오기 1결과 1불러오기 2결과 2\n\n\n\nlibrary(tidyverse)\nread_csv(\"https://pos.it/r4ds-students-csv\")\n\n\n\n\nlibrary(tidyverse)\nread_csv(\"https://pos.it/r4ds-students-csv\")\n\n# A tibble: 6 × 5\n  `Student ID` `Full Name`      favourite.food     mealPlan            AGE  \n         &lt;dbl&gt; &lt;chr&gt;            &lt;chr&gt;              &lt;chr&gt;               &lt;chr&gt;\n1            1 Sunil Huffmann   Strawberry yoghurt Lunch only          4    \n2            2 Barclay Lynn     French fries       Lunch only          5    \n3            3 Jayendra Lyne    N/A                Breakfast and lunch 7    \n4            4 Leon Rossini     Anchovies          Lunch only          &lt;NA&gt; \n5            5 Chidiegwu Dunkel Pizza              Breakfast and lunch five \n6            6 Güvenç Attila    Ice cream          Lunch only          6    \n\n\n\n\n\nlibrary(tidyverse)\nread_csv(\n  file = \"https://pos.it/r4ds-students-csv\", \n  skip = 1, \n  col_names = c(\"student_id\", \"full_name\", \"favorite_food\", \"meal_plan\", \"age\"),\n  col_types = cols(\n    meal_plan = col_factor(),\n    age = col_number()\n  ),\n  na = c(\"N/A\")\n  )\n\n\n\n\nlibrary(tidyverse)\nread_csv(\n  file = \"https://pos.it/r4ds-students-csv\", \n  skip = 1, \n  col_names = c(\"student_id\", \"full_name\", \"favorite_food\", \"meal_plan\", \"age\"),\n  col_types = cols(\n    meal_plan = col_factor(),\n    age = col_number()\n  ),\n  na = c(\"N/A\")\n  )\n\n# A tibble: 6 × 5\n  student_id full_name        favorite_food      meal_plan             age\n       &lt;dbl&gt; &lt;chr&gt;            &lt;chr&gt;              &lt;fct&gt;               &lt;dbl&gt;\n1          1 Sunil Huffmann   Strawberry yoghurt Lunch only              4\n2          2 Barclay Lynn     French fries       Lunch only              5\n3          3 Jayendra Lyne    &lt;NA&gt;               Breakfast and lunch     7\n4          4 Leon Rossini     Anchovies          Lunch only             NA\n5          5 Chidiegwu Dunkel Pizza              Breakfast and lunch    NA\n6          6 Güvenç Attila    Ice cream          Lunch only              6",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
+    "section": "\nread_csv() 함수의 활용",
+    "text": "read_csv() 함수의 활용\n\n\n불러오기 1\n결과 1\n불러오기 2\n결과 2\n\n\n\n\nlibrary(tidyverse)\nread_csv(\"https://pos.it/r4ds-students-csv\")\n\n\n\n\n\n# A tibble: 6 × 5\n  `Student ID` `Full Name`      favourite.food     mealPlan            AGE  \n         &lt;dbl&gt; &lt;chr&gt;            &lt;chr&gt;              &lt;chr&gt;               &lt;chr&gt;\n1            1 Sunil Huffmann   Strawberry yoghurt Lunch only          4    \n2            2 Barclay Lynn     French fries       Lunch only          5    \n3            3 Jayendra Lyne    N/A                Breakfast and lunch 7    \n4            4 Leon Rossini     Anchovies          Lunch only          &lt;NA&gt; \n5            5 Chidiegwu Dunkel Pizza              Breakfast and lunch five \n6            6 Güvenç Attila    Ice cream          Lunch only          6    \n\n\n\n\n\nlibrary(tidyverse)\nread_csv(\n  file = \"https://pos.it/r4ds-students-csv\", \n  skip = 1, \n  col_names = c(\"student_id\", \"full_name\", \"favorite_food\", \"meal_plan\", \"age\"),\n  col_types = cols(\n    meal_plan = col_factor(),\n    age = col_number()\n  ),\n  na = c(\"N/A\")\n  )\n\n\n\n\n\n# A tibble: 6 × 5\n  student_id full_name        favorite_food      meal_plan             age\n       &lt;dbl&gt; &lt;chr&gt;            &lt;chr&gt;              &lt;fct&gt;               &lt;dbl&gt;\n1          1 Sunil Huffmann   Strawberry yoghurt Lunch only              4\n2          2 Barclay Lynn     French fries       Lunch only              5\n3          3 Jayendra Lyne    &lt;NA&gt;               Breakfast and lunch     7\n4          4 Leon Rossini     Anchovies          Lunch only             NA\n5          5 Chidiegwu Dunkel Pizza              Breakfast and lunch    NA\n6          6 Güvenç Attila    Ice cream          Lunch only              6",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 4]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 불러오기와 정돈하기]{style=\"font-size:1em\"}"
@@ -8006,9 +8006,9 @@
   {
     "objectID": "R_lec_04_2025.html#관련-패키지",
     "href": "R_lec_04_2025.html#관련-패키지",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
     "section": "관련 패키지",
-    "text": "관련 패키지\n\n\n\n\n\n\nhttps://readxl.tidyverse.org/\n\n\n\n\n\n\n\nhttps://ycphs.github.io/openxlsx/\n\n\n\n\n\n\n\nhttps://googlesheets4.tidyverse.org/",
+    "text": "관련 패키지\n\n\n\n\n\nhttps://readxl.tidyverse.org/\n\n\n\n\n\nhttps://ycphs.github.io/openxlsx/\n\n\n\n\n\nhttps://googlesheets4.tidyverse.org/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 4]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 불러오기와 정돈하기]{style=\"font-size:1em\"}"
@@ -8017,9 +8017,9 @@
   {
     "objectID": "R_lec_04_2025.html#readxl-패키지",
     "href": "R_lec_04_2025.html#readxl-패키지",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
-    "section": "readxl 패키지",
-    "text": "readxl 패키지\n\nread_xls(), read_xlsx(), read_excel()\n\npath: 파일 경로와 파일명\nsheet: 특정 시트의 선택\nrange: 특정 범위의 셀 선택\nskip: 불러들이지 않을 최소 행 번호\ncol_names: 컬럼 이름 지정\ncol_types: 컬럼 데이터 유형 지정(“skip”, “guess”, “text”, “logical”, “numeric”, etc.)\nna: 결측치 규정",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
+    "section": "\nreadxl 패키지",
+    "text": "readxl 패키지\n\n\nread_xls(), read_xlsx(), read_excel()\n\npath: 파일 경로와 파일명\nsheet: 특정 시트의 선택\nrange: 특정 범위의 셀 선택\nskip: 불러들이지 않을 최소 행 번호\ncol_names: 컬럼 이름 지정\ncol_types: 컬럼 데이터 유형 지정(“skip”, “guess”, “text”, “logical”, “numeric”, etc.)\nna: 결측치 규정",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 4]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 불러오기와 정돈하기]{style=\"font-size:1em\"}"
@@ -8028,7 +8028,7 @@
   {
     "objectID": "R_lec_04_2025.html#데이터-불러오는-다른-방법",
     "href": "R_lec_04_2025.html#데이터-불러오는-다른-방법",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
     "section": "데이터 불러오는 다른 방법",
     "text": "데이터 불러오는 다른 방법",
     "crumbs": [
@@ -8039,9 +8039,9 @@
   {
     "objectID": "R_lec_04_2025.html#tidyr-패키지",
     "href": "R_lec_04_2025.html#tidyr-패키지",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
-    "section": "tidyr 패키지",
-    "text": "tidyr 패키지\n\n\n\nhttps://tidyr.tidyverse.org/",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
+    "section": "\ntidyr 패키지",
+    "text": "tidyr 패키지\n\nhttps://tidyr.tidyverse.org/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 4]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 불러오기와 정돈하기]{style=\"font-size:1em\"}"
@@ -8050,9 +8050,9 @@
   {
     "objectID": "R_lec_04_2025.html#정돈된-데이터의-정의",
     "href": "R_lec_04_2025.html#정돈된-데이터의-정의",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
     "section": "’정돈된 데이터’의 정의",
-    "text": "’정돈된 데이터’의 정의\n\n\n\nhttps://allisonhorst.com/other-r-fun",
+    "text": "’정돈된 데이터’의 정의\n\nhttps://allisonhorst.com/other-r-fun",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 4]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 불러오기와 정돈하기]{style=\"font-size:1em\"}"
@@ -8061,9 +8061,9 @@
   {
     "objectID": "R_lec_04_2025.html#정돈된-데이터의-정의-1",
     "href": "R_lec_04_2025.html#정돈된-데이터의-정의-1",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
     "section": "’정돈된 데이터’의 정의",
-    "text": "’정돈된 데이터’의 정의\n\n\n\nhttps://allisonhorst.com/other-r-fun",
+    "text": "’정돈된 데이터’의 정의\n\nhttps://allisonhorst.com/other-r-fun",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 4]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 불러오기와 정돈하기]{style=\"font-size:1em\"}"
@@ -8072,7 +8072,7 @@
   {
     "objectID": "R_lec_04_2025.html#정돈된-데이터의-정의-2",
     "href": "R_lec_04_2025.html#정돈된-데이터의-정의-2",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
     "section": "’정돈된 데이터’의 정의",
     "text": "’정돈된 데이터’의 정의\n\n개별 변수(variable)는 열(column) 하나를 차지한다. 즉, 개별 열에는 하나의 변수가 위치한다.\n개별 관측개체(observation)는 하나의 행(row)을 차지한다. 즉, 개별 행에는 하나의 관측개체가 위치한다.\n개별 값(value)은 하나의 셀(cell)을 차지한다. 즉, 개별 셀에는 하나의 값이 위치한다.",
     "crumbs": [
@@ -8122,9 +8122,9 @@
   {
     "objectID": "R_lec_04_2025.html#정돈된-데이터의-이점",
     "href": "R_lec_04_2025.html#정돈된-데이터의-이점",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
     "section": "’정돈된 데이터’의 이점",
-    "text": "’정돈된 데이터’의 이점\n\n\n\nhttps://allisonhorst.com/other-r-fun",
+    "text": "’정돈된 데이터’의 이점\n\nhttps://allisonhorst.com/other-r-fun",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 4]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 불러오기와 정돈하기]{style=\"font-size:1em\"}"
@@ -8133,9 +8133,9 @@
   {
     "objectID": "R_lec_04_2025.html#정돈된-데이터의-이점-1",
     "href": "R_lec_04_2025.html#정돈된-데이터의-이점-1",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
     "section": "’정돈된 데이터’의 이점",
-    "text": "’정돈된 데이터’의 이점\n\n\n\nhttps://allisonhorst.com/other-r-fun",
+    "text": "’정돈된 데이터’의 이점\n\nhttps://allisonhorst.com/other-r-fun",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 4]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 불러오기와 정돈하기]{style=\"font-size:1em\"}"
@@ -8144,9 +8144,9 @@
   {
     "objectID": "R_lec_04_2025.html#정돈된-데이터의-이점-2",
     "href": "R_lec_04_2025.html#정돈된-데이터의-이점-2",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
     "section": "’정돈된 데이터’의 이점",
-    "text": "’정돈된 데이터’의 이점\n\n\n\nhttps://allisonhorst.com/other-r-fun",
+    "text": "’정돈된 데이터’의 이점\n\nhttps://allisonhorst.com/other-r-fun",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 4]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 불러오기와 정돈하기]{style=\"font-size:1em\"}"
@@ -8155,9 +8155,9 @@
   {
     "objectID": "R_lec_04_2025.html#데이터-정돈하기의-핵심-기능",
     "href": "R_lec_04_2025.html#데이터-정돈하기의-핵심-기능",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
     "section": "데이터 정돈하기의 핵심 기능",
-    "text": "데이터 정돈하기의 핵심 기능\n\n데이터 구조 변형\n\n핵심 기능으로 데이터 늘이기와 데이터 넓히기가 포함\n\n컬럼의 결합 및 분할\n\n두 개 이상의 컬럼을 하나의 컬럼으로 결합하거나 한 컬럼을 두 개 이상의 컬럼으로 분할\n\n결측치 처리\n\n결측치가 포함된 행을 다양한 방식으로 처리",
+    "text": "데이터 정돈하기의 핵심 기능\n\n\n데이터 구조 변형\n\n핵심 기능으로 데이터 늘이기와 데이터 넓히기가 포함\n\n\n\n컬럼의 결합 및 분할\n\n두 개 이상의 컬럼을 하나의 컬럼으로 결합하거나 한 컬럼을 두 개 이상의 컬럼으로 분할\n\n\n\n결측치 처리\n\n결측치가 포함된 행을 다양한 방식으로 처리",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 4]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 불러오기와 정돈하기]{style=\"font-size:1em\"}"
@@ -8166,9 +8166,9 @@
   {
     "objectID": "R_lec_04_2025.html#데이터-구조-변형",
     "href": "R_lec_04_2025.html#데이터-구조-변형",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
     "section": "데이터 구조 변형",
-    "text": "데이터 구조 변형\n\n\n\nhttps://www.r-bloggers.com/2024/09/mastering-data-transformation-in-r-with-pivot_longer-and-pivot_wider/",
+    "text": "데이터 구조 변형\n\nhttps://www.r-bloggers.com/2024/09/mastering-data-transformation-in-r-with-pivot_longer-and-pivot_wider/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 4]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 불러오기와 정돈하기]{style=\"font-size:1em\"}"
@@ -8177,7 +8177,7 @@
   {
     "objectID": "R_lec_04_2025.html#와이드-폼wide-form-vs.-롱-폼long-form",
     "href": "R_lec_04_2025.html#와이드-폼wide-form-vs.-롱-폼long-form",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
     "section": "와이드 폼(wide form) vs. 롱 폼(long form)",
     "text": "와이드 폼(wide form) vs. 롱 폼(long form)",
     "crumbs": [
@@ -8188,9 +8188,9 @@
   {
     "objectID": "R_lec_04_2025.html#데이터-늘이기-pivot_longer",
     "href": "R_lec_04_2025.html#데이터-늘이기-pivot_longer",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
-    "section": "데이터 늘이기: pivot_longer()",
-    "text": "데이터 늘이기: pivot_longer()\n\ntable4a정돈 결과\n\n\n\ntable4a\n\n# A tibble: 3 × 3\n  country     `1999` `2000`\n  &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;\n1 Afghanistan    745   2666\n2 Brazil       37737  80488\n3 China       212258 213766\n\n\n\n\n\ntable4a |&gt; \n  pivot_longer(\n    cols = c(`1999`, `2000`),\n    names_to = \"year\", \n    values_to = \"cases\"\n  )\n\n# A tibble: 6 × 3\n  country     year   cases\n  &lt;chr&gt;       &lt;chr&gt;  &lt;dbl&gt;\n1 Afghanistan 1999     745\n2 Afghanistan 2000    2666\n3 Brazil      1999   37737\n4 Brazil      2000   80488\n5 China       1999  212258\n6 China       2000  213766",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
+    "section": "데이터 늘이기: pivot_longer()\n",
+    "text": "데이터 늘이기: pivot_longer()\n\n\n\ntable4a\n정돈 결과\n\n\n\n\ntable4a\n\n# A tibble: 3 × 3\n  country     `1999` `2000`\n  &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;\n1 Afghanistan    745   2666\n2 Brazil       37737  80488\n3 China       212258 213766\n\n\n\n\n\ntable4a |&gt; \n  pivot_longer(\n    cols = c(`1999`, `2000`),\n    names_to = \"year\", \n    values_to = \"cases\"\n  )\n\n# A tibble: 6 × 3\n  country     year   cases\n  &lt;chr&gt;       &lt;chr&gt;  &lt;dbl&gt;\n1 Afghanistan 1999     745\n2 Afghanistan 2000    2666\n3 Brazil      1999   37737\n4 Brazil      2000   80488\n5 China       1999  212258\n6 China       2000  213766",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 4]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 불러오기와 정돈하기]{style=\"font-size:1em\"}"
@@ -8199,8 +8199,8 @@
   {
     "objectID": "R_lec_04_2025.html#데이터-늘이기-pivot_longer-1",
     "href": "R_lec_04_2025.html#데이터-늘이기-pivot_longer-1",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
-    "section": "데이터 늘이기: pivot_longer()",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
+    "section": "데이터 늘이기: pivot_longer()\n",
     "text": "데이터 늘이기: pivot_longer()",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
@@ -8210,9 +8210,9 @@
   {
     "objectID": "R_lec_04_2025.html#데이터-넓히기-pivot_wider",
     "href": "R_lec_04_2025.html#데이터-넓히기-pivot_wider",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
-    "section": "데이터 넓히기: pivot_wider()",
-    "text": "데이터 넓히기: pivot_wider()\n\ntable2정돈 결과\n\n\n\ntable2\n\n# A tibble: 12 × 4\n   country      year type            count\n   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n 1 Afghanistan  1999 cases             745\n 2 Afghanistan  1999 population   19987071\n 3 Afghanistan  2000 cases            2666\n 4 Afghanistan  2000 population   20595360\n 5 Brazil       1999 cases           37737\n 6 Brazil       1999 population  172006362\n 7 Brazil       2000 cases           80488\n 8 Brazil       2000 population  174504898\n 9 China        1999 cases          212258\n10 China        1999 population 1272915272\n11 China        2000 cases          213766\n12 China        2000 population 1280428583\n\n\n\n\n\ntable2 |&gt; \n  pivot_wider(\n    id_cols = c(country, year),\n    names_from = type, \n    values_from = count\n  )\n\n# A tibble: 6 × 4\n  country      year  cases population\n  &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;\n1 Afghanistan  1999    745   19987071\n2 Afghanistan  2000   2666   20595360\n3 Brazil       1999  37737  172006362\n4 Brazil       2000  80488  174504898\n5 China        1999 212258 1272915272\n6 China        2000 213766 1280428583",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
+    "section": "데이터 넓히기: pivot_wider()\n",
+    "text": "데이터 넓히기: pivot_wider()\n\n\n\ntable2\n정돈 결과\n\n\n\n\ntable2\n\n# A tibble: 12 × 4\n   country      year type            count\n   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n 1 Afghanistan  1999 cases             745\n 2 Afghanistan  1999 population   19987071\n 3 Afghanistan  2000 cases            2666\n 4 Afghanistan  2000 population   20595360\n 5 Brazil       1999 cases           37737\n 6 Brazil       1999 population  172006362\n 7 Brazil       2000 cases           80488\n 8 Brazil       2000 population  174504898\n 9 China        1999 cases          212258\n10 China        1999 population 1272915272\n11 China        2000 cases          213766\n12 China        2000 population 1280428583\n\n\n\n\n\ntable2 |&gt; \n  pivot_wider(\n    id_cols = c(country, year),\n    names_from = type, \n    values_from = count\n  )\n\n# A tibble: 6 × 4\n  country      year  cases population\n  &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;\n1 Afghanistan  1999    745   19987071\n2 Afghanistan  2000   2666   20595360\n3 Brazil       1999  37737  172006362\n4 Brazil       2000  80488  174504898\n5 China        1999 212258 1272915272\n6 China        2000 213766 1280428583",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 4]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 불러오기와 정돈하기]{style=\"font-size:1em\"}"
@@ -8221,8 +8221,8 @@
   {
     "objectID": "R_lec_04_2025.html#데이터-넓히기-pivot_wider-1",
     "href": "R_lec_04_2025.html#데이터-넓히기-pivot_wider-1",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
-    "section": "데이터 넓히기: pivot_wider()",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
+    "section": "데이터 넓히기: pivot_wider()\n",
     "text": "데이터 넓히기: pivot_wider()",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
@@ -8232,9 +8232,9 @@
   {
     "objectID": "R_lec_04_2025.html#컬럼의-결합-및-분할",
     "href": "R_lec_04_2025.html#컬럼의-결합-및-분할",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
     "section": "컬럼의 결합 및 분할",
-    "text": "컬럼의 결합 및 분할\n\ntable3정돈 결과\n\n\n\ntable3\n\n# A tibble: 6 × 3\n  country      year rate             \n  &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;            \n1 Afghanistan  1999 745/19987071     \n2 Afghanistan  2000 2666/20595360    \n3 Brazil       1999 37737/172006362  \n4 Brazil       2000 80488/174504898  \n5 China        1999 212258/1272915272\n6 China        2000 213766/1280428583\n\n\n\n\n\ntable3 |&gt; separate_wider_delim(\n  rate, delim = \"/\", names = c(\"cases\", \"population\") \n) \n\n# A tibble: 6 × 4\n  country      year cases  population\n  &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Afghanistan  1999 745    19987071  \n2 Afghanistan  2000 2666   20595360  \n3 Brazil       1999 37737  172006362 \n4 Brazil       2000 80488  174504898 \n5 China        1999 212258 1272915272\n6 China        2000 213766 1280428583",
+    "text": "컬럼의 결합 및 분할\n\n\ntable3\n정돈 결과\n\n\n\n\ntable3\n\n# A tibble: 6 × 3\n  country      year rate             \n  &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;            \n1 Afghanistan  1999 745/19987071     \n2 Afghanistan  2000 2666/20595360    \n3 Brazil       1999 37737/172006362  \n4 Brazil       2000 80488/174504898  \n5 China        1999 212258/1272915272\n6 China        2000 213766/1280428583\n\n\n\n\n\ntable3 |&gt; separate_wider_delim(\n  rate, delim = \"/\", names = c(\"cases\", \"population\") \n) \n\n# A tibble: 6 × 4\n  country      year cases  population\n  &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     \n1 Afghanistan  1999 745    19987071  \n2 Afghanistan  2000 2666   20595360  \n3 Brazil       1999 37737  172006362 \n4 Brazil       2000 80488  174504898 \n5 China        1999 212258 1272915272\n6 China        2000 213766 1280428583",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 4]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 불러오기와 정돈하기]{style=\"font-size:1em\"}"
@@ -8243,9 +8243,9 @@
   {
     "objectID": "R_lec_04_2025.html#tibble-패키지",
     "href": "R_lec_04_2025.html#tibble-패키지",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
-    "section": "tibble 패키지",
-    "text": "tibble 패키지\n\n\n\nhttps://tibble.tidyverse.org/",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
+    "section": "\ntibble 패키지",
+    "text": "tibble 패키지\n\nhttps://tibble.tidyverse.org/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 4]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 불러오기와 정돈하기]{style=\"font-size:1em\"}"
@@ -8608,9 +8608,9 @@
   {
     "objectID": "R_lec_04_2025.html#정돈된-데이터의-예시",
     "href": "R_lec_04_2025.html#정돈된-데이터의-예시",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
     "section": "’정돈된 데이터’의 예시",
-    "text": "’정돈된 데이터’의 예시\n\ntable1table4atable2table3\n\n\n\nlibrary(tidyverse)\ntable1\n\n# A tibble: 6 × 4\n  country      year  cases population\n  &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;\n1 Afghanistan  1999    745   19987071\n2 Afghanistan  2000   2666   20595360\n3 Brazil       1999  37737  172006362\n4 Brazil       2000  80488  174504898\n5 China        1999 212258 1272915272\n6 China        2000 213766 1280428583\n\n\n\n\n\ntable4a\n\n# A tibble: 3 × 3\n  country     `1999` `2000`\n  &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;\n1 Afghanistan    745   2666\n2 Brazil       37737  80488\n3 China       212258 213766\n\n\n\n\n\ntable2\n\n# A tibble: 12 × 4\n   country      year type            count\n   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n 1 Afghanistan  1999 cases             745\n 2 Afghanistan  1999 population   19987071\n 3 Afghanistan  2000 cases            2666\n 4 Afghanistan  2000 population   20595360\n 5 Brazil       1999 cases           37737\n 6 Brazil       1999 population  172006362\n 7 Brazil       2000 cases           80488\n 8 Brazil       2000 population  174504898\n 9 China        1999 cases          212258\n10 China        1999 population 1272915272\n11 China        2000 cases          213766\n12 China        2000 population 1280428583\n\n\n\n\n\ntable3\n\n# A tibble: 6 × 3\n  country      year rate             \n  &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;            \n1 Afghanistan  1999 745/19987071     \n2 Afghanistan  2000 2666/20595360    \n3 Brazil       1999 37737/172006362  \n4 Brazil       2000 80488/174504898  \n5 China        1999 212258/1272915272\n6 China        2000 213766/1280428583",
+    "text": "’정돈된 데이터’의 예시\n\n\ntable1\ntable4a\ntable2\ntable3\n\n\n\n\nlibrary(tidyverse)\ntable1\n\n# A tibble: 6 × 4\n  country      year  cases population\n  &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;\n1 Afghanistan  1999    745   19987071\n2 Afghanistan  2000   2666   20595360\n3 Brazil       1999  37737  172006362\n4 Brazil       2000  80488  174504898\n5 China        1999 212258 1272915272\n6 China        2000 213766 1280428583\n\n\n\n\n\ntable4a\n\n# A tibble: 3 × 3\n  country     `1999` `2000`\n  &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;\n1 Afghanistan    745   2666\n2 Brazil       37737  80488\n3 China       212258 213766\n\n\n\n\n\ntable2\n\n# A tibble: 12 × 4\n   country      year type            count\n   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n 1 Afghanistan  1999 cases             745\n 2 Afghanistan  1999 population   19987071\n 3 Afghanistan  2000 cases            2666\n 4 Afghanistan  2000 population   20595360\n 5 Brazil       1999 cases           37737\n 6 Brazil       1999 population  172006362\n 7 Brazil       2000 cases           80488\n 8 Brazil       2000 population  174504898\n 9 China        1999 cases          212258\n10 China        1999 population 1272915272\n11 China        2000 cases          213766\n12 China        2000 population 1280428583\n\n\n\n\n\ntable3\n\n# A tibble: 6 × 3\n  country      year rate             \n  &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;            \n1 Afghanistan  1999 745/19987071     \n2 Afghanistan  2000 2666/20595360    \n3 Brazil       1999 37737/172006362  \n4 Brazil       2000 80488/174504898  \n5 China        1999 212258/1272915272\n6 China        2000 213766/1280428583",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 4]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 불러오기와 정돈하기]{style=\"font-size:1em\"}"
@@ -8679,9 +8679,9 @@
   {
     "objectID": "R_lec_04_2025.html#데이터사이언스-프로세스-타이디버스",
     "href": "R_lec_04_2025.html#데이터사이언스-프로세스-타이디버스",
-    "title": "R Lecture 4\n데이터 불러오기와 정돈하기",
+    "title": "\nR Lecture 4데이터 불러오기와 정돈하기\n",
     "section": "데이터사이언스 프로세스: 타이디버스",
-    "text": "데이터사이언스 프로세스: 타이디버스\n\n\n\nhttps://r4ds.hadley.nz/intro.html",
+    "text": "데이터사이언스 프로세스: 타이디버스\n\nhttps://r4ds.hadley.nz/intro.html",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 4]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 불러오기와 정돈하기]{style=\"font-size:1em\"}"
