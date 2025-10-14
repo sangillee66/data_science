@@ -15,6 +15,7 @@ format:
     # smaller: false
     # scrollable: false
     code-link: true
+    code-line-numbers: false
     code-copy: true
     code-overflow: scroll
     slide-number: true
@@ -31,7 +32,7 @@ format:
     theme: [default, custom_hq_pretendard_step.scss] # 슬라이드 본문 폰트 크기 조정
     revealjs-plugins:
       - pointer
-code-link: true
+    css: styles.css
 execute: 
   warning: false
   error: false
