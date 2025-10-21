@@ -3,7 +3,7 @@ title: |
   | [R Lecture 6]{style="color:coral;font-size:0.6em"}   
   | [데이터 시각화하기]{style="font-size:1em"} 
 author: <br> 이상일(서울대학교 지리교육과 교수)
-date: 2025-9-2
+date: 2025-10-21
 format: 
   revealjs:
     logo: snu_edu_1.png
@@ -49,44 +49,80 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Basic Concepts
+# [기본 개념]{style="color:coral"}
 
-## A data science process with R: 4th step
+## 데이터사이언스 프로세스
 
 ![](images/clipboard-1040421420.png)
 
-## `ggplot2` package
+## 데이터사이언스 프로세스: 타이디버스
 
-![](images/clipboard-3146270133.png){fig-align="center"}
+![[https://r4ds.hadley.nz/intro.html](https://r4ds.hadley.nz/intro.html){style="font-size:1.25rem"}](images/data_science_process_packages-04.png)
 
-## Grammar of graphics
+## **ggplot2** 패키지
 
-![](images/clipboard-3968277018.png){fig-align="center"}
+![[https://ggplot2.tidyverse.org/](https://ggplot2.tidyverse.org/){style="font-size:1.25rem"}](images/hex_ggplot2.png){fig-align="center"}
 
-## Eight components of `ggplot2`
+## **ggplot2** 패키지
 
-![<https://initiation.doana-r.com/06-ggplot2#1>](https://sangillee.snu.ac.kr/data_science/images/clipboard-3014854163.png){fig-align="center"}
+![[https://allisonhorst.com/r-packages-functions](https://allisonhorst.com/r-packages-functions){style="font-size:1.25rem"}](https://sangillee.snu.ac.kr/2024_AIEDAP/images/clipboard-1476685333.png)
 
-# Core Components
+## **ggplot2** 패키지
 
-## Aesthetics & Geometries
+![[https://allisonhorst.com/r-packages-functions](https://allisonhorst.com/r-packages-functions){style="font-size:1.25rem"}](https://sangillee.snu.ac.kr/2024_AIEDAP/images/clipboard-4023683763.png)
 
--   심미성(aesthetics) 혹은 심미성 매핑(aesthetic mapping)
+## GG: Grammar of Graphics
 
-    -   그래프의 외견을 규정
+![](images/clipboard-3968277018.png){fig-align="center" height="880px"}
 
-    -   시각 변수 혹은 속성: color, size, shape 등
+## 
 
--   기하(geometries) 혹은 기하 객체(geometric objects)
+샤를 조제프 미나르의 1812 나폴레옹 러시아 원정도
 
-    -   그래프의 전체 구조 혹은 형식을 규정
+![[https://en.wikipedia.org/wiki/Charles_Joseph_Minard](https://en.wikipedia.org/wiki/Charles_Joseph_Minard){style="font-size:1.25rem"}](images/clipboard-2830686800.png)
 
-    -   그래프의 유형: bar chart, line chart 등
+## **ggplot2**의 8대 구성요소
 
-## Aesthetics & Geometries
+![[https://initiation.doana-r.com/06-ggplot2#1](https://initiation.doana-r.com/06-ggplot2#1){style="font-size:1.25rem"}](https://sangillee.snu.ac.kr/data_science/images/clipboard-3014854163.png){fig-align="center"}
+
+# [핵심 구성요소]{style="color:coral"}
+
+## 시각속성과 기하객체
+
+-   시각속성(aesthetics)
+
+    -   플롯의 외견을 규정
+
+    -   시각속성: 컬러(color), 크기(size), 형태(shape), x-축, y-축 등
+
+    -   시각속성 매핑: 특정한 시각속성을 특정한 변수에 부여하는 과정
+
+    -   `aes(시각속성 = 변수명)` 혹은 `mapping = aes()`
+
+-   기하객체(geometries 또는 geometric objects)
+
+    -   플롯의 전체 구조 혹은 형식을 규정
+
+    -   플롯의 유형: 막대플롯(bar plot), 라인플롯(line plot) 등
+
+    -   `geom_*()`
+
+## 시각속성과 기하객체
 
 ::: panel-tabset
-## Code
+## Code 1
+
+```{r}
+#| eval: false
+#| echo: true
+gapminder_2007 <- gapminder |> 
+  filter(year == 2007) 
+ggplot(data = gapminder_2007, mapping = aes(x = gdpPercap, y = lifeExp)) +
+  geom_point(aes(color = continent)) +
+  geom_smooth(color = "black")
+```
+
+## Code 2
 
 ```{r}
 #| eval: false
@@ -113,60 +149,96 @@ gapminder |>
 ```
 :::
 
-## Aesthetics
+## 시각속성의 종류 {.smaller}
 
--   x-axis, y-axis
++----------------+---------------------+------------------------+---------------+
+| 분류           | 시각속성            | 설명                   | 성격          |
++================+=====================+========================+===============+
+| 컬러 관련      | `aes(color = )`     | 점/선의 컬러 지정      | 정성 \> 정량  |
++----------------+---------------------+------------------------+---------------+
+|                | `aes(fill = )`      | 면의 필(컬러) 지정     | 정성 \> 정량  |
++----------------+---------------------+------------------------+---------------+
+|                | `aes(alpha = )`     | 점/선/면의 투명도 지정 | 정성 \< 정량  |
++----------------+---------------------+------------------------+---------------+
+| 차이 표현 관련 | `aes(size = )`      | 점의 크기 지정         | 정량          |
++----------------+---------------------+------------------------+---------------+
+|                | `aes(shape = )`     | 점의 모양 지정         | 정성          |
++----------------+---------------------+------------------------+---------------+
+|                | `aes(linetype = )`  | 선의 유형 지정         | 정성          |
++----------------+---------------------+------------------------+---------------+
+|                | `aes(linewidth = )` | 선의 크기 지정         | 정량          |
++----------------+---------------------+------------------------+---------------+
+| 위치 관련      | `aes(x = )`         | x축 지정               | 정성/정량     |
++----------------+---------------------+------------------------+---------------+
+|                | `aes(y = )`         | y축 지정               | 정성/정량     |
++----------------+---------------------+------------------------+---------------+
+| 그룹화 관련    | `aes(group = )`     | 그룹화 기준 지정       | 정성          |
++----------------+---------------------+------------------------+---------------+
 
--   color, fill
+: {tbl-colwidths="\[20, 25, 40, 15\]"}
 
--   shape
+## 기하객체의 종류 {.smaller}
 
--   size
++---------------+---------------+--------------------+------------------+
+| 구분          | 내용          | 기하객체           | 이름             |
++===============+===============+====================+==================+
+| 기본 플롯     | 점            | `geom_point()`     | 점플롯(산점도)   |
++---------------+---------------+--------------------+------------------+
+|               | 선            | `geom_line()`      | 선플롯(선그래프) |
++---------------+---------------+--------------------+------------------+
+|               | 면            | `geom_area()`      | 면적플롯         |
++---------------+---------------+--------------------+------------------+
+|               | 막대          | `geom_bar()`       | 막대플롯         |
++---------------+---------------+--------------------+------------------+
+| 통계 플롯     | 분포          | `geom_boxplot()`   | 박스플롯         |
+|               |               |                    |                  |
+|               |               | `geom_histogram()` | 히스토그램       |
++---------------+---------------+--------------------+------------------+
+|               | 추세선        | `geom_smooth()`    | 평활곡선플롯     |
++---------------+---------------+--------------------+------------------+
+| 기타          | 텍스트        | `geom_text()`      | 텍스트플롯       |
+|               |               |                    |                  |
+|               |               | `geom_label()`     | 라벨플롯         |
++---------------+---------------+--------------------+------------------+
+|               | 지도 제작     | `geom_sf()`        | sf플롯           |
++---------------+---------------+--------------------+------------------+
 
--   alpha
+: {tbl-colwidths="\[20, 20, 30, 30\]"}
 
--   position
+# [기타 구성요소]{style="color:coral"}
 
-## Geometries
+## 스케일(scale)
 
--   `geom_point()`
+-   시각속성의 구현: `scale_시각속성_*()`
 
--   `geom_line()`
-
--   `geom_bar(), geom_col()`
-
--   `geom_histogram(), geom_density()`
-
--   `geom_smooth()`
-
--   `geom_boxplot(), geom_violin()`
-
--   `geom_text(), geom_label()`
-
-# Other Components
-
-## Scale
-
--   심미성의 구체적 구현
-
--   x-axis, y-axis
+-   축 관련: x, y
 
     -   `scale_x_continuous()`, `scale_x_discrete()`
 
--   color and fill
+-   컬러 관련: color, fill
 
     -   `scale_color_brewer()`, `scale_fill_brewer()`
     -   `scale_color_manual()`, `scale_fill_manual()`
 
--   others
+-   기타
 
     -   `scale_shape()`, `scale_size()`
 
     -   `scale_linetype()`, `scale_linewidth()`
 
-## Facet
+## 데이터(data)
 
--   다면생성(faceting) 과정을 통해, 하나의 플롯을 여러 개의 하위 플롯으로 분할
+-   시각화의 가장 기본적인 요소
+
+-   최상위 함수에서 글로벌 지정: `ggplot(data = 데이터프레임명)`
+
+-   특정한 기하객체 함수에서 로컬 지정: `geom_*(data = 데이터프레임명)`
+
+-   다중 지정 가능: 다양한 기하객체에 개별적으로 로컬 지정
+
+## 패싯(facet)
+
+-   다면생성(faceting)을 통해, 하나의 플롯을 여러 개의 하위 플롯으로 분할
 
 -   두 가지 중요 함수
 
@@ -174,13 +246,13 @@ gapminder |>
 
     -   `facet_grid()`
 
-## Facet
+## 패싯(facet)
 
 ::: panel-tabset
 ## Normal
 
 ```{r}
-#| echo: false
+#| echo: true
 gapminder |> 
   filter(year == 2007) |> 
   ggplot(aes(x = log(gdpPercap), y = log(lifeExp))) +
@@ -191,7 +263,7 @@ gapminder |>
 ## Faceting
 
 ```{r}
-#| echo: false
+#| echo: true
 gapminder |> 
   filter(year == 2007) |> 
   ggplot(aes(x = log(gdpPercap), y = log(lifeExp))) +
@@ -201,11 +273,13 @@ gapminder |>
 ```
 :::
 
-## Statistical transformation
+## 통계적 변환(statistical transformation)
 
-![<https://r4ds.hadley.nz/layers>](images/clipboard-3826441672.png){fig-align="center"}
+-   시각화 과정에 통계적 변환을 수반
 
-## Coordinates
+![[https://r4ds.hadley.nz/layers](https://r4ds.hadley.nz/layers){.uri style="font-size:1.25rem"}](images/clipboard-3826441672.png){fig-align="center"}
+
+## 좌표(coordinates)
 
 -   그래픽 요소들의 위치 결정에 기준이 되는 준거 체계
 
@@ -215,7 +289,7 @@ gapminder |>
 
     -   `coord_fixed()`
 
-## Theme
+## 테마(theme)
 
 -   그래프의 전체적인 외양(테마)를 수정
 
@@ -223,36 +297,44 @@ gapminder |>
 
 -   그래프의 세부 구성 요소를 수정
 
-    -   `theme()`
+    -   `theme()` 함수
 
-## Theme
+## 테마(theme)
 
-![<https://r4ds.hadley.nz/communication>](images/clipboard-57653269.png){fig-align="center"}
+![[https://r4ds.hadley.nz/communication](https://r4ds.hadley.nz/communication){.uri style="font-size:1.25rem"}](images/clipboard-57653269.png){fig-align="center"}
 
-## Theme
+## 테마(theme)
 
 -   수 많은 옵션 <https://ggplot2.tidyverse.org/reference/theme.html>
 
-    -   axis 관련
+![[https://isabella-b.com/blog/ggplot2-theme-elements-reference/](https://isabella-b.com/blog/ggplot2-theme-elements-reference/){style="font-size:1.25rem"}](https://sangillee.snu.ac.kr/data_science/images/ggplot_elements2.png)
 
-    -   legend 관련
-
-    -   plot.title 관련
-
-# ggplot2 Extensions
+# [ggplot2 Extensions]{style="color:coral"}
 
 <https://exts.ggplot2.tidyverse.org/>
 
-## Major extensions
+## 주요 확장 프로그램
 
--   `patchwork`
+-   [**patchwork**](https://patchwork.data-imaginist.com/)
 
--   `ggplotly`
+-   [**gganimate**](https://gganimate.com/)
 
--   `gganimate`
+-   [**ggiraph**](https://davidgohel.github.io/ggiraph/)
 
--   `GGally`
+-   [**ggpattern**](https://trevorldavis.com/R/ggpattern/dev/)
 
--   `ggcorrplot`
+-   [**geomtextpath**](https://allancameron.github.io/geomtextpath/)
 
--   `tidyterra`
+-   [**ggdensity**](https://jamesotto852.github.io/ggdensity/)
+
+-   [**GGally**](https://ggobi.github.io/ggally/)
+
+-   [**ggcorrplot**](https://rpkgs.datanovia.com/ggcorrplot/)
+
+## [patchwork](https://patchwork.data-imaginist.com/) 패키지
+
+![[https://allisonhorst.com/r-packages-functions](https://allisonhorst.com/r-packages-functions){style="font-size:1.25rem"}](https://sangillee.snu.ac.kr/2024_AIEDAP/images/clipboard-2622112002.png)
+
+## [gganimate](https://gganimate.com/) 패키지
+
+![[https://allisonhorst.com/r-packages-functions](https://allisonhorst.com/r-packages-functions){style="font-size:1.25rem"}](https://sangillee.snu.ac.kr/2024_AIEDAP/images/clipboard-105467609.png)

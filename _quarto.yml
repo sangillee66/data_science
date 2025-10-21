@@ -35,6 +35,7 @@ website:
           - R_lec_03_2025.qmd
           - R_lec_04_2025.qmd
           - R_lec_05_2025.qmd
+          - R_lec_06_2025.qmd
       - text: "---"    
       - section: "R 프레젠테이션: 2024/1"
         contents: 
@@ -56,6 +57,7 @@ website:
           - lab_03_2025.qmd
           - lab_04_2025.qmd
           - lab_05_2025.qmd
+          - lab_06_2025.qmd
       - text: "---"    
       - section: "R 실습: 2024/1"
         contents: 
