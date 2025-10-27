@@ -1,9 +1,9 @@
 ---
 title: |
   | [R Lecture 7]{style="color:coral;font-size:0.6em"}   
-  | [데이터 탐색{style="font-size:1em"} 
+  | [데이터 탐색하기]{style="font-size:1em"} 
 author: <br> 이상일(서울대학교 지리교육과 교수)
-date: 2025-9-2
+date: 2025-10-28
 format: 
   revealjs:
     logo: snu_edu_1.png
@@ -49,19 +49,26 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Basic Concepts
+# [기본 개념]{style="color:coral"}
 
-## Exploration in a data science process
+## 데이터사이언스 프로세스
 
-![](images/clipboard-4075247197.png)
+![[https://r4ds.hadley.nz/whole-game.html](https://r4ds.hadley.nz/whole-game.html){style="font-size:1.25rem"}](images/clipboard-101317234.png)
 
-## Exploration in a data science process
+## **탐색적 데이터 분석: 개념**
 
--   Data exploration is a process of interacting with data to answer questions.
--   A sequential process from data transformation and data visualization is central to data exploration.
--   Data transformation is often a necessary prerequisite for data visualization.
+-   탐색적 데이터 분석은 데이터와의 끝임없는 상호작용을 통해 의미있는 결과물을 얻어내는 과정을 의미한다. 데이터사이언스가 데이터로부터 이해, 지식, 통찰력을 획득하는 과정이라고 했을 때, 탐색적 데이터 분석은 [**데이터사이언스의 심장**]{style="color:coral"}이라 해도 과언이 아니다. 상호작용은 데이터와의 질의응답의 연쇄과정을 의미한다. 의미있는 질문에 답을 얻기 위해서는 거의 반드시 데이터를 변형하거나 시각화해야만 한다.
+-   데이터 변형과 데이터 시각화는 개별적으로 탐색적 데이터 분석에 기여한다. [**데이터 변형**]{style="color:coral"}은 데이터를 다른 각도로 바라볼 수 있게 해주고 다양한 요약 통계값을 산출해 준다. [**데이터 시각화**]{style="color:coral"}는 데이터에 차원을 부가함으로써 시각화 되지 않았다면 발견할 수 없었던 것을 발견할 수 있게 해준다.
 
-## 데이터 탐색의 절차
+## **탐색적 데이터 분석: 개념**
+
+-   [**데이터 변형에서 데이터 시각화로 이어지는 시퀀스**]{style="color:coral"}가 탐색적 데이터 분석의 핵심적인 방법론이다. 데이터 변형의 궁극적인 목적은 바로 데이터 시각화를 위한 준비이다. 특정한 형태의 시각화를 위해서는 특정한 형태로 변형된 데이터가 필수적이고, 그러한 과정이 이해, 지식, 통찰력의 획득으로 나아가게 해주는 주된 경로이다.
+
+-   데이터 [**시각화**]{style="color:coral"}의 두 가지 목적은 [**탐색**]{style="color:coral"}과 [**커뮤니케이션**]{style="color:coral"}이다. 우리가 데이터 시각화를 하는 첫번째 목적은 데이터에 대한 질문에 답을 찾기 위해서이다. 우리가 데이터를 시각화하는 두 번째 목적은 우리가 발견한 것을 다른 사람들과 ‘잘’ 커뮤니케이션하기 위해서이다.
+
+## **탐색적 데이터 분석: 개념**
+
+-   의미있는 질문을 생성한다.
 
 -   질문에 답할 수 있는 그래픽(플롯, 지도 등)을 구상한다.
 
@@ -69,29 +76,47 @@ editor_options:
 
 -   변형한 데이터를 구상한 그래픽으로 시각화한다.
 
--   그래픽으로부터 질문의 답을 구하고, 더 나아가 지식, 이해, 통찰을 이끌어낸다.
+-   그래픽으로부터 질문의 답을 구하고, 더 나아가 지식, 이해, 통찰을 이끌어 낸다.
 
-# Three Examples
+# [세 가지 예제]{style="color:coral"}
 
-## Data
+## 예제 데이터: `gapminder`
 
--   `gapminder` data set
+-   Gapminder 재단
 
-    ```{r}
-    #| echo: true
-    library(tidyverse)
-    library(gapminder)
-    gapminder
-    ```
+-   R의 [**gapminder**](https://jennybc.github.io/gapminder/) 패키지
 
-## Question 1
+-   기간: 1952-2007년 5년 단위(12개 시점)
 
-아시아의 1957년과 2007년의 1인당 GDP는 얼마이며 순위는 어떠한가? 1인당 GDP의 순위가 상승하였는가?
+-   국가 수: 142개국
 
-## Question 1
+-   관측치 수: 1,704개 (142 x 12)
+
+-   변수: country(국가명), continent(대륙), year(연도), lifeExp(기대수명), pop(인구 수), gdpPercap(1인당 GDP)
+
+## 예제 데이터: `gapminder`
+
+```{r}
+#| echo: true
+library(tidyverse)
+library(gapminder)
+gapminder
+```
+
+## 질문 1
+
+> 아시아의 1957년과 2007년의 1인당 GDP는 얼마이며 순위는 어떠한가? 1인당 GDP의 순위가 상승하였는가?
+
+## 질문 1
 
 ::: panel-tabset
-## Result
+## 데이터
+
+```{r}
+gapminder
+```
+
+## 결과
 
 ```{r}
 #| echo: false
@@ -106,7 +131,7 @@ gapminder |>
   arrange(year, desc(gdp_percap_cont))
 ```
 
-## Code
+## 코드
 
 ```{r}
 #| echo: true
@@ -123,14 +148,20 @@ gapminder |>
 ```
 :::
 
-## Question 2
+## 질문 2
 
-대륙별 최대국(인구가 가장 많은 나라)이 소속 대륙 전체에서 차지하는 비중(%)이 어느 정도이고 대륙별로 어느 정도의 차이가 있는지, 그리고 대륙별 최대국의 비중이 시간이 지남에 따라 어떠한 변화 양상을 보이고, 그러한 양상에 대륙별 차이가 있는지를 탐색
+> 대륙별 최대국(인구가 가장 많은 나라)이 소속 대륙 전체에서 차지하는 비중이 어느 정도이고 대륙별로 어느 정도의 차이가 있는지, 그리고 대륙별 최대국의 비중이 시간이 지남에 따라 어떠한 변화 양상을 보여주고 있고, 그러한 양상에 대륙별 차이가 있는지의 여부
 
-## Question 2
+## 질문 2
 
 ::: panel-tabset
-## Graph 1
+## 데이터
+
+```{r}
+gapminder
+```
+
+## 그래프 1
 
 ```{r}
 #| echo: false
@@ -145,7 +176,7 @@ gapminder |>
   geom_line(aes(x = year, y = country_prop, color = continent))
 ```
 
-## Code 1
+## 코드 1
 
 ```{r}
 #| eval: false
@@ -161,7 +192,7 @@ gapminder |>
   geom_line(aes(x = year, y = country_prop, color = continent))
 ```
 
-## Code 2
+## 코드 2
 
 ```{r}
 #| eval: false
@@ -179,7 +210,7 @@ gapminder |>
   labs(x = "Year", y = "% of Population", color = "Continents")
 ```
 
-## Graph 2
+## 그래프 2
 
 ```{r}
 #| echo: false
@@ -197,9 +228,9 @@ gapminder |>
 ```
 :::
 
-## Question 3
+## 질문 3
 
--   1952\~2007년간의 연평균 인구성장률의 대륙간 차이와 대륙 내 국가간 편차를 동시에 탐색
+> 1952\~2007년간의 연평균 인구성장률의 대륙간 차이와 대륙 내 국가간 편차를 동시에 탐색
 
 -   연평균 인구성장률(%)은 다음의 공식에 의거해 산출
 
@@ -207,10 +238,16 @@ $$
 r=\frac{1}{n}\times\ln(\frac{P_n}{P_0})\times100
 $$
 
-## Question 3
+## 질문 3
 
 ::: panel-tabset
-## Graph 1
+## 데이터
+
+```{r}
+gapminder
+```
+
+## 그래프 1
 
 ```{r}
 #| echo: false
@@ -228,7 +265,7 @@ gapminder |>
   
 ```
 
-## Code 1
+## 코드 1
 
 ```{r}
 #| eval: false
@@ -246,7 +283,7 @@ gapminder |>
   geom_boxplot(aes(color = continent))
 ```
 
-## Code 2
+## 코드 2
 
 ```{r}
 #| eval: false
@@ -266,7 +303,7 @@ gapminder |>
   
 ```
 
-## Graph 2
+## 그래프 2
 
 ```{r}
 #| echo: false
