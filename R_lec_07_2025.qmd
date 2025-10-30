@@ -94,6 +94,8 @@ editor_options:
 
 -   변수: country(국가명), continent(대륙), year(연도), lifeExp(기대수명), pop(인구 수), gdpPercap(1인당 GDP)
 
+-   동영상: <https://www.youtube.com/watch?v=GmEKpKEakmQ>
+
 ## 예제 데이터: `gapminder`
 
 ```{r}

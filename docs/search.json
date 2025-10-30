@@ -1780,7 +1780,7 @@
     "section": "",
     "text": "구글 검색, ChatGPT, 이전 실습 자료 등을 참고할 수 있습니다.\n실습에서 다루지 않은 기능들은 문제마다 따로 설명이 되어 있습니다.",
     "crumbs": [
-      "R 실습",
+      "R 실습: 2024/1",
       "Lab06: 데이터 탐색하기"
     ]
   },
@@ -1791,7 +1791,7 @@
     "section": "",
     "text": "구글 검색, ChatGPT, 이전 실습 자료 등을 참고할 수 있습니다.\n실습에서 다루지 않은 기능들은 문제마다 따로 설명이 되어 있습니다.",
     "crumbs": [
-      "R 실습",
+      "R 실습: 2024/1",
       "Lab06: 데이터 탐색하기"
     ]
   },
@@ -1799,10 +1799,10 @@
     "objectID": "lab_06.html#실습-준비",
     "href": "lab_06.html#실습-준비",
     "title": "Lab06: 데이터 탐색하기",
-    "section": "2 실습 준비",
+    "section": "\n2 실습 준비",
     "text": "2 실습 준비\n\nlibrary(tidyverse)\nlibrary(ggrepel)\nwpp_2022 &lt;- read_rds(\"wpp_2022.rds\")",
     "crumbs": [
-      "R 실습",
+      "R 실습: 2024/1",
       "Lab06: 데이터 탐색하기"
     ]
   },
@@ -1810,10 +1810,10 @@
     "objectID": "lab_06.html#연습-문제",
     "href": "lab_06.html#연습-문제",
     "title": "Lab06: 데이터 탐색하기",
-    "section": "3 연습 문제",
+    "section": "\n3 연습 문제",
     "text": "3 연습 문제\n\nUN에 따르면 2023년 4월 인도의 인구가 중국의 인구를 넘어섰습니다. 중국의 심각한 출산율 저하로 인해 두 국가의 인구 수 차이는 앞으로 더 커질 것으로 전망됩니다. 1950년부터 2100년까지의 두 국가의 인구 수를 시각화하여 이러한 경향을 파악해 보겠습니다.\n\n\nwpp_2022의 pop_jul_total 데이터를 활용하세요.\nscale_y_continuous()를 활용하면 y축의 설정을 변경할 수 있습니다. 쉼표를 사용해 숫자를 끊어 가독성을 높이기 위해 어떤 아규먼트가 필요한지 검색을 통해 찾아보세요.\ntheme()을 통해 세부 사항도 조정해보세요. (선 굵기, 테마, 범례의 위치, 굵은 제목 등)",
     "crumbs": [
-      "R 실습",
+      "R 실습: 2024/1",
       "Lab06: 데이터 탐색하기"
     ]
   },
@@ -1821,10 +1821,10 @@
     "objectID": "lab_06.html#연습-문제-1",
     "href": "lab_06.html#연습-문제-1",
     "title": "Lab06: 데이터 탐색하기",
-    "section": "4 연습 문제",
-    "text": "4 연습 문제\n\nGraphCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nwpp_2022 |&gt; \n  filter(region_name == \"India\" | region_name == \"China\") |&gt; \n  select(region_name, year, pop_jul_total) |&gt; \n  ggplot(aes(x = year, y = pop_jul_total, color = region_name)) +\n  geom_line(size = 1.0) +\n  labs(title = \"Population Growth of China and India 1950 - 2100\",\n       subtitle = \"India has overtaken China as the world's most populous country\",\n       x = \"Year\",\n       y = \"Population(thousands)\",\n       color = \"Country\",\n       caption = \"Your Name, Department of AI-Integrated Education at SNU\") +\n  theme_bw() +\n  theme(legend.position = c(0.1, 0.7),\n        plot.title = element_text(face = \"bold\")) +\n  scale_y_continuous(labels = scales::comma)",
+    "section": "\n4 연습 문제",
+    "text": "4 연습 문제\n\n\nGraph\nCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nwpp_2022 |&gt; \n  filter(region_name == \"India\" | region_name == \"China\") |&gt; \n  select(region_name, year, pop_jul_total) |&gt; \n  ggplot(aes(x = year, y = pop_jul_total, color = region_name)) +\n  geom_line(size = 1.0) +\n  labs(title = \"Population Growth of China and India 1950 - 2100\",\n       subtitle = \"India has overtaken China as the world's most populous country\",\n       x = \"Year\",\n       y = \"Population(thousands)\",\n       color = \"Country\",\n       caption = \"Your Name, Department of AI-Integrated Education at SNU\") +\n  theme_bw() +\n  theme(legend.position = c(0.1, 0.7),\n        plot.title = element_text(face = \"bold\")) +\n  scale_y_continuous(labels = scales::comma)",
     "crumbs": [
-      "R 실습",
+      "R 실습: 2024/1",
       "Lab06: 데이터 탐색하기"
     ]
   },
@@ -1832,10 +1832,10 @@
     "objectID": "lab_06.html#문제-1",
     "href": "lab_06.html#문제-1",
     "title": "Lab06: 데이터 탐색하기",
-    "section": "5 문제 1",
-    "text": "5 문제 1\n\n1950년에서 2100년까지 UN의 SDG Region별 인구 성장률의 변화를 한 눈에 알아보고자 합니다. 인구 성장률 0은 회색 점선으로 표시되어 있습니다.\n\n\nwpp_2022의 PGR 데이터를 활용하세요.\ngeom_hline()을 사용하면 플롯에 가로줄을 그릴 수 있습니다. 문제와 똑같은 선을 그리기 위해서는 어떤 아규먼트들이 필요할지 검색을 통해 찾아보세요.",
+    "section": "\n5 문제 1",
+    "text": "5 문제 1\n\n1950년에서 2100년까지 UN의 SDG Region별 인구 성장률의 변화를 한 눈에 알아보고자 합니다. 인구 성장률 0은 회색 점선으로 표시되어 있습니다.\n\n\n\nwpp_2022의 PGR 데이터를 활용하세요.\n\ngeom_hline()을 사용하면 플롯에 가로줄을 그릴 수 있습니다. 문제와 똑같은 선을 그리기 위해서는 어떤 아규먼트들이 필요할지 검색을 통해 찾아보세요.",
     "crumbs": [
-      "R 실습",
+      "R 실습: 2024/1",
       "Lab06: 데이터 탐색하기"
     ]
   },
@@ -1843,10 +1843,10 @@
     "objectID": "lab_06.html#문제-1-1",
     "href": "lab_06.html#문제-1-1",
     "title": "Lab06: 데이터 탐색하기",
-    "section": "6 문제 1",
+    "section": "\n6 문제 1",
     "text": "6 문제 1\n\nwpp_2022 |&gt; \n  filter(type == \"SDG region\" | type == \"World\") |&gt; \n  select(region_name, year, PGR) |&gt; \n  ggplot(aes(x = year, y = PGR)) +\n  geom_line() +\n  facet_wrap(~region_name) +\n  geom_hline(yintercept = 0, linetype = \"dashed\", color = \"gray\") +\n  labs(title = \"Popultaion Growth Rate Trends from 1950 to 2100\",\n       subtitle = \"Comparative Analysis Across SDG Regions and Global Patterns\",\n       x = \"Year\",\n       y = \"Population Growth Rate (%)\",\n       caption = \"Your Name, Department of AI-Integrated Education at SNU\") +\n  theme_bw()",
     "crumbs": [
-      "R 실습",
+      "R 실습: 2024/1",
       "Lab06: 데이터 탐색하기"
     ]
   },
@@ -1854,10 +1854,10 @@
     "objectID": "lab_06.html#문제-2",
     "href": "lab_06.html#문제-2",
     "title": "Lab06: 데이터 탐색하기",
-    "section": "7 문제 2",
-    "text": "7 문제 2\n\n1950년부터 2100년까지 국가별 합계출산율을 25년단위로 박스플롯으로 나타내어 전 세계의 합계출산율이 시간이 지남에 따라 어떻게 변화하는지 파악하고자 합니다. 추가적으로 각 시기별로 합계출산율이 가장 높은 국가를 라벨링해 보겠습니다. 대체출산율 2.1은 빨간색 점선으로 그려져 있습니다.\n\n\nwpp_2022의 TFR 데이터를 활용하세요.\n%in%을 사용하면 filter() 함수를 보다 효과적으로 사용할 수 있습니다. 아래의 두 개는 똑같은 결과를 보입니다.\n\nfilter(year == 1950 | year == 1975 | year == 2000)\nfilter(year %in% c(1950, 1975, 2000))\n\ngeom_hline()을 사용하면 플롯에 가로줄을 그릴 수 있습니다. 문제와 똑같은 선을 그리기 위해서는 어떤 아규먼트들이 필요할지 검색을 통해 찾아보세요.",
+    "section": "\n7 문제 2",
+    "text": "7 문제 2\n\n1950년부터 2100년까지 국가별 합계출산율을 25년단위로 박스플롯으로 나타내어 전 세계의 합계출산율이 시간이 지남에 따라 어떻게 변화하는지 파악하고자 합니다. 추가적으로 각 시기별로 합계출산율이 가장 높은 국가를 라벨링해 보겠습니다. 대체출산율 2.1은 빨간색 점선으로 그려져 있습니다.\n\n\n\nwpp_2022의 TFR 데이터를 활용하세요.\n\n%in%을 사용하면 filter() 함수를 보다 효과적으로 사용할 수 있습니다. 아래의 두 개는 똑같은 결과를 보입니다.\n\nfilter(year == 1950 | year == 1975 | year == 2000)\nfilter(year %in% c(1950, 1975, 2000))\n\n\n\ngeom_hline()을 사용하면 플롯에 가로줄을 그릴 수 있습니다. 문제와 똑같은 선을 그리기 위해서는 어떤 아규먼트들이 필요할지 검색을 통해 찾아보세요.",
     "crumbs": [
-      "R 실습",
+      "R 실습: 2024/1",
       "Lab06: 데이터 탐색하기"
     ]
   },
@@ -1865,10 +1865,10 @@
     "objectID": "lab_06.html#문제-2-1",
     "href": "lab_06.html#문제-2-1",
     "title": "Lab06: 데이터 탐색하기",
-    "section": "8 문제 2",
+    "section": "\n8 문제 2",
     "text": "8 문제 2\n\nwpp_2022_tfr &lt;- wpp_2022 |&gt; \n  filter(year %in% c(1950, 1975, 2000, 2025, 2050, 2075, 2100) & type == \"Country/Area\") |&gt;\n  select(year, region_name, TFR)\n\nwpp_2022_tfr |&gt; \n  ggplot(aes(group = year, x = year, y = TFR)) + \n  geom_boxplot() +\n  geom_label_repel(data = wpp_2022_tfr |&gt; \n                     group_by(year) |&gt; \n                     slice_max(TFR, n = 1), aes(label = region_name)) +\n  geom_hline(yintercept = 2.1, linetype = \"dashed\", color = \"red\", size = 1) +\n  labs(title = \"Total Fertility Rate by Country from 1950 to 2100\",\n       subtitle = \"With Replacement Fertility Rate Emphasized\",\n       x = \"Year\",\n       y = \"Total Fertility Rate(TFR)\",\n       caption = \"Your Name, Department of AI-Integrated Education at SNU\") +\n  theme_bw()",
     "crumbs": [
-      "R 실습",
+      "R 실습: 2024/1",
       "Lab06: 데이터 탐색하기"
     ]
   },
@@ -1876,10 +1876,10 @@
     "objectID": "lab_06.html#문제-3",
     "href": "lab_06.html#문제-3",
     "title": "Lab06: 데이터 탐색하기",
-    "section": "9 문제 3",
-    "text": "9 문제 3\n\n1950년에서 2100년까지 25년 단위로 UN의 SDG Region별 인구가 전 세계 인구에서 차지하는 비중을 확인하고자 합니다.\n\n\nwpp_2022의 pop_jul_total 데이터를 활용하세요.\ngeom_bar()의 아규먼트인 stat = \"identity\"를 사용하면 y축의 높이를 빈도가 아닌 데이터의 값을 기반으로 설정해줍니다.\nscale_y_continuous()를 활용하면 y축의 설정을 변경할 수 있습니다. y축의 값을 백분율로 나타내기 위해 어떤 아규먼트가 필요한지 검색을 통해 찾아보세요.",
+    "section": "\n9 문제 3",
+    "text": "9 문제 3\n\n1950년에서 2100년까지 25년 단위로 UN의 SDG Region별 인구가 전 세계 인구에서 차지하는 비중을 확인하고자 합니다.\n\n\n\nwpp_2022의 pop_jul_total 데이터를 활용하세요.\n\ngeom_bar()의 아규먼트인 stat = \"identity\"를 사용하면 y축의 높이를 빈도가 아닌 데이터의 값을 기반으로 설정해줍니다.\n\nscale_y_continuous()를 활용하면 y축의 설정을 변경할 수 있습니다. y축의 값을 백분율로 나타내기 위해 어떤 아규먼트가 필요한지 검색을 통해 찾아보세요.",
     "crumbs": [
-      "R 실습",
+      "R 실습: 2024/1",
       "Lab06: 데이터 탐색하기"
     ]
   },
@@ -1887,10 +1887,10 @@
     "objectID": "lab_06.html#문제-3-1",
     "href": "lab_06.html#문제-3-1",
     "title": "Lab06: 데이터 탐색하기",
-    "section": "10 문제 3",
+    "section": "\n10 문제 3",
     "text": "10 문제 3\n\nwpp_2022 |&gt; \n  filter(type == \"SDG region\" & year %in% c(1950, 1975, 2000, 2025, 2050, 2075, 2100)) |&gt; \n  select(region_name, year, pop_jul_total) |&gt; \n  group_by(year) |&gt; \n  mutate(prop = pop_jul_total / sum(pop_jul_total)) |&gt; \n  ggplot(aes(x = year, y = prop, fill = region_name)) +\n  geom_bar(stat = \"identity\", position = \"fill\") +\n  scale_y_continuous(labels = scales::percent) +\n  labs(title = \"World Population Proportions by SDG Region, from 1950 to 2100\",\n       x = \"Year\",\n       y = \"Population Proportion (%)\",\n       fill = \"SDG Region\",\n       caption = \"Your Name, Department of AI-Integrated Education at SNU\") +\n  theme(legend.position = \"bottom\")",
     "crumbs": [
-      "R 실습",
+      "R 실습: 2024/1",
       "Lab06: 데이터 탐색하기"
     ]
   },
@@ -9056,9 +9056,9 @@
   {
     "objectID": "R_lec_06_2025.html#데이터사이언스-프로세스-타이디버스",
     "href": "R_lec_06_2025.html#데이터사이언스-프로세스-타이디버스",
-    "title": "\nR Lecture 6데이터 시각화하기\n",
-    "section": "데이터사이언스 프로세스: 타이디버스",
-    "text": "데이터사이언스 프로세스: 타이디버스\n\nhttps://r4ds.hadley.nz/intro.html",
+    "title": "R Lecture 6\n데이터 시각화하기",
+    "section": "",
+    "text": "https://r4ds.hadley.nz/intro.html",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9078,9 +9078,9 @@
   {
     "objectID": "R_lec_06_2025.html#ggplot2-패키지",
     "href": "R_lec_06_2025.html#ggplot2-패키지",
-    "title": "\nR Lecture 6데이터 시각화하기\n",
-    "section": "\nggplot2 패키지",
-    "text": "ggplot2 패키지\n\nhttps://ggplot2.tidyverse.org/",
+    "title": "R Lecture 6\n데이터 시각화하기",
+    "section": "",
+    "text": "https://ggplot2.tidyverse.org/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9100,9 +9100,9 @@
   {
     "objectID": "R_lec_06_2025.html#ggplot2의-8대-구성요소",
     "href": "R_lec_06_2025.html#ggplot2의-8대-구성요소",
-    "title": "\nR Lecture 6데이터 시각화하기\n",
-    "section": "\nggplot2의 8대 구성요소",
-    "text": "ggplot2의 8대 구성요소\n\nhttps://initiation.doana-r.com/06-ggplot2#1",
+    "title": "R Lecture 6\n데이터 시각화하기",
+    "section": "",
+    "text": "https://initiation.doana-r.com/06-ggplot2#1",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9111,9 +9111,9 @@
   {
     "objectID": "R_lec_06_2025.html#시각속성과-기하객체",
     "href": "R_lec_06_2025.html#시각속성과-기하객체",
-    "title": "\nR Lecture 6데이터 시각화하기\n",
+    "title": "R Lecture 6\n데이터 시각화하기",
     "section": "시각속성과 기하객체",
-    "text": "시각속성과 기하객체\n\n\n시각속성(aesthetics)\n\n플롯의 외견을 규정\n시각속성: 컬러(color), 크기(size), 형태(shape), x-축, y-축 등\n시각속성 매핑: 특정한 시각속성을 특정한 변수에 부여하는 과정\naes(시각속성 = 변수명) 혹은 mapping = aes()\n\n\n\n기하객체(geometries 또는 geometric objects)\n\n플롯의 전체 구조 혹은 형식을 규정\n플롯의 유형: 막대플롯(bar plot), 라인플롯(line plot) 등\ngeom_*()",
+    "text": "시각속성과 기하객체\n\n시각속성(aesthetics)\n\n플롯의 외견을 규정\n시각속성: 컬러(color), 크기(size), 형태(shape), x-축, y-축 등\n시각속성 매핑: 특정한 시각속성을 특정한 변수에 부여하는 과정\naes(시각속성 = 변수명) 혹은 mapping = aes()\n\n기하객체(geometries 또는 geometric objects)\n\n플롯의 전체 구조 혹은 형식을 규정\n플롯의 유형: 막대플롯(bar plot), 라인플롯(line plot) 등\ngeom_*()",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9122,9 +9122,9 @@
   {
     "objectID": "R_lec_06_2025.html#시각속성과-기하객체-1",
     "href": "R_lec_06_2025.html#시각속성과-기하객체-1",
-    "title": "\nR Lecture 6데이터 시각화하기\n",
+    "title": "R Lecture 6\n데이터 시각화하기",
     "section": "시각속성과 기하객체",
-    "text": "시각속성과 기하객체\n\n\nCode 1\nCode 2\nResult\n\n\n\n\ngapminder_2007 &lt;- gapminder |&gt; \n  filter(year == 2007) \nggplot(data = gapminder_2007, mapping = aes(x = gdpPercap, y = lifeExp)) +\n  geom_point(aes(color = continent)) +\n  geom_smooth(color = \"black\")\n\n\n\n\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp)) +\n  geom_point(aes(color = continent)) +\n  geom_smooth(color = \"black\")",
+    "text": "시각속성과 기하객체\n\nCode 1Code 2Result\n\n\n\ngapminder_2007 &lt;- gapminder |&gt; \n  filter(year == 2007) \nggplot(data = gapminder_2007, mapping = aes(x = gdpPercap, y = lifeExp)) +\n  geom_point(aes(color = continent)) +\n  geom_smooth(color = \"black\")\n\n\n\n\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp)) +\n  geom_point(aes(color = continent)) +\n  geom_smooth(color = \"black\")",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9133,9 +9133,9 @@
   {
     "objectID": "R_lec_06_2025.html#시각속성의-종류",
     "href": "R_lec_06_2025.html#시각속성의-종류",
-    "title": "\nR Lecture 6데이터 시각화하기\n",
+    "title": "R Lecture 6\n데이터 시각화하기",
     "section": "시각속성의 종류",
-    "text": "시각속성의 종류\n\n\n\n\n\n\n\n\n분류\n시각속성\n설명\n성격\n\n\n\n컬러 관련\naes(color = )\n점/선의 컬러 지정\n정성 &gt; 정량\n\n\n\naes(fill = )\n면의 필(컬러) 지정\n정성 &gt; 정량\n\n\n\naes(alpha = )\n점/선/면의 투명도 지정\n정성 &lt; 정량\n\n\n차이 표현 관련\naes(size = )\n점의 크기 지정\n정량\n\n\n\naes(shape = )\n점의 모양 지정\n정성\n\n\n\naes(linetype = )\n선의 유형 지정\n정성\n\n\n\naes(linewidth = )\n선의 크기 지정\n정량\n\n\n위치 관련\naes(x = )\nx축 지정\n정성/정량\n\n\n\naes(y = )\ny축 지정\n정성/정량\n\n\n그룹화 관련\naes(group = )\n그룹화 기준 지정\n정성",
+    "text": "시각속성의 종류\n\n\n\n\n\n\n\n\n\n분류\n시각속성\n설명\n성격\n\n\n\n\n컬러 관련\naes(color = )\n점/선의 컬러 지정\n정성 &gt; 정량\n\n\n\naes(fill = )\n면의 필(컬러) 지정\n정성 &gt; 정량\n\n\n\naes(alpha = )\n점/선/면의 투명도 지정\n정성 &lt; 정량\n\n\n차이 표현 관련\naes(size = )\n점의 크기 지정\n정량\n\n\n\naes(shape = )\n점의 모양 지정\n정성\n\n\n\naes(linetype = )\n선의 유형 지정\n정성\n\n\n\naes(linewidth = )\n선의 크기 지정\n정량\n\n\n위치 관련\naes(x = )\nx축 지정\n정성/정량\n\n\n\naes(y = )\ny축 지정\n정성/정량\n\n\n그룹화 관련\naes(group = )\n그룹화 기준 지정\n정성",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9151,9 +9151,9 @@
   {
     "objectID": "R_lec_06_2025.html#기하객체의-종류",
     "href": "R_lec_06_2025.html#기하객체의-종류",
-    "title": "\nR Lecture 6데이터 시각화하기\n",
+    "title": "R Lecture 6\n데이터 시각화하기",
     "section": "기하객체의 종류",
-    "text": "기하객체의 종류\n\n\n\n\n\n\n\n\n구분\n내용\n기하객체\n이름\n\n\n\n기본 플롯\n점\ngeom_point()\n점플롯(산점도)\n\n\n\n선\ngeom_line()\n선플롯(선그래프)\n\n\n\n면\ngeom_area()\n면적플롯\n\n\n\n막대\ngeom_bar()\n막대플롯\n\n\n통계 플롯\n분포\n\ngeom_boxplot()\ngeom_histogram()\n\n\n박스플롯\n히스토그램\n\n\n\n\n추세선\ngeom_smooth()\n평활곡선플롯\n\n\n기타\n텍스트\n\ngeom_text()\ngeom_label()\n\n\n텍스트플롯\n라벨플롯\n\n\n\n\n지도 제작\ngeom_sf()\nsf플롯",
+    "text": "기하객체의 종류\n\n\n\n\n\n\n\n\n\n구분\n내용\n기하객체\n이름\n\n\n\n\n기본 플롯\n점\ngeom_point()\n점플롯(산점도)\n\n\n\n선\ngeom_line()\n선플롯(선그래프)\n\n\n\n면\ngeom_area()\n면적플롯\n\n\n\n막대\ngeom_bar()\n막대플롯\n\n\n통계 플롯\n분포\ngeom_boxplot()\ngeom_histogram()\n박스플롯\n히스토그램\n\n\n\n추세선\ngeom_smooth()\n평활곡선플롯\n\n\n기타\n텍스트\ngeom_text()\ngeom_label()\n텍스트플롯\n라벨플롯\n\n\n\n지도 제작\ngeom_sf()\nsf플롯",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9162,9 +9162,9 @@
   {
     "objectID": "R_lec_06_2025.html#스케일scale",
     "href": "R_lec_06_2025.html#스케일scale",
-    "title": "\nR Lecture 6데이터 시각화하기\n",
+    "title": "R Lecture 6\n데이터 시각화하기",
     "section": "스케일(scale)",
-    "text": "스케일(scale)\n\n시각속성의 구현: scale_시각속성_*()\n\n축 관련: x, y\n\n\nscale_x_continuous(), scale_x_discrete()\n\n\n\n\n컬러 관련: color, fill\n\n\nscale_color_brewer(), scale_fill_brewer()\n\n\nscale_color_manual(), scale_fill_manual()\n\n\n\n\n기타\n\nscale_shape(), scale_size()\nscale_linetype(), scale_linewidth()",
+    "text": "스케일(scale)\n\n시각속성의 구현: scale_시각속성_*()\n축 관련: x, y\n\nscale_x_continuous(), scale_x_discrete()\n\n컬러 관련: color, fill\n\nscale_color_brewer(), scale_fill_brewer()\nscale_color_manual(), scale_fill_manual()\n\n기타\n\nscale_shape(), scale_size()\nscale_linetype(), scale_linewidth()",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9173,7 +9173,7 @@
   {
     "objectID": "R_lec_06_2025.html#데이터data",
     "href": "R_lec_06_2025.html#데이터data",
-    "title": "\nR Lecture 6데이터 시각화하기\n",
+    "title": "R Lecture 6\n데이터 시각화하기",
     "section": "데이터(data)",
     "text": "데이터(data)\n\n시각화의 가장 기본적인 요소\n최상위 함수에서 글로벌 지정: ggplot(data = 데이터프레임명)\n특정한 기하객체 함수에서 로컬 지정: geom_*(data = 데이터프레임명)\n다중 지정 가능: 다양한 기하객체에 개별적으로 로컬 지정",
     "crumbs": [
@@ -9184,9 +9184,9 @@
   {
     "objectID": "R_lec_06_2025.html#패싯facet",
     "href": "R_lec_06_2025.html#패싯facet",
-    "title": "\nR Lecture 6데이터 시각화하기\n",
+    "title": "R Lecture 6\n데이터 시각화하기",
     "section": "패싯(facet)",
-    "text": "패싯(facet)\n\n다면생성(faceting)을 통해, 하나의 플롯을 여러 개의 하위 플롯으로 분할\n\n두 가지 중요 함수\n\nfacet_wrap()\nfacet_grid()",
+    "text": "패싯(facet)\n\n다면생성(faceting)을 통해, 하나의 플롯을 여러 개의 하위 플롯으로 분할\n두 가지 중요 함수\n\nfacet_wrap()\nfacet_grid()",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9195,9 +9195,9 @@
   {
     "objectID": "R_lec_06_2025.html#패싯facet-1",
     "href": "R_lec_06_2025.html#패싯facet-1",
-    "title": "\nR Lecture 6데이터 시각화하기\n",
+    "title": "R Lecture 6\n데이터 시각화하기",
     "section": "패싯(facet)",
-    "text": "패싯(facet)\n\n\nNormal\nFaceting\n\n\n\n\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = log(gdpPercap), y = log(lifeExp))) +\n  geom_point(aes(size = pop)) +\n  geom_smooth()\n\n\n\n\n\n\n\n\n\n\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = log(gdpPercap), y = log(lifeExp))) +\n  geom_point(aes(size = pop)) +\n  geom_smooth() +\n  facet_wrap(~continent)",
+    "text": "패싯(facet)\n\nNormalFaceting\n\n\n\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = log(gdpPercap), y = log(lifeExp))) +\n  geom_point(aes(size = pop)) +\n  geom_smooth()\n\n\n\n\n\n\n\n\n\n\n\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = log(gdpPercap), y = log(lifeExp))) +\n  geom_point(aes(size = pop)) +\n  geom_smooth() +\n  facet_wrap(~continent)",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9206,9 +9206,9 @@
   {
     "objectID": "R_lec_06_2025.html#통계적-변환statistical-transformation",
     "href": "R_lec_06_2025.html#통계적-변환statistical-transformation",
-    "title": "\nR Lecture 6데이터 시각화하기\n",
+    "title": "R Lecture 6\n데이터 시각화하기",
     "section": "통계적 변환(statistical transformation)",
-    "text": "통계적 변환(statistical transformation)\n\n시각화 과정에 통계적 변환을 수반\n\n\nhttps://r4ds.hadley.nz/layers",
+    "text": "통계적 변환(statistical transformation)\n\n시각화 과정에 통계적 변환을 수반\n\n\n\n\nhttps://r4ds.hadley.nz/layers",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9217,9 +9217,9 @@
   {
     "objectID": "R_lec_06_2025.html#좌표coordinates",
     "href": "R_lec_06_2025.html#좌표coordinates",
-    "title": "\nR Lecture 6데이터 시각화하기\n",
+    "title": "R Lecture 6\n데이터 시각화하기",
     "section": "좌표(coordinates)",
-    "text": "좌표(coordinates)\n\n그래픽 요소들의 위치 결정에 기준이 되는 준거 체계\n\n두 가지 중요 함수\n\ncoord_flip()\ncoord_fixed()",
+    "text": "좌표(coordinates)\n\n그래픽 요소들의 위치 결정에 기준이 되는 준거 체계\n두 가지 중요 함수\n\ncoord_flip()\ncoord_fixed()",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9228,9 +9228,9 @@
   {
     "objectID": "R_lec_06_2025.html#테마theme",
     "href": "R_lec_06_2025.html#테마theme",
-    "title": "\nR Lecture 6데이터 시각화하기\n",
+    "title": "R Lecture 6\n데이터 시각화하기",
     "section": "테마(theme)",
-    "text": "테마(theme)\n\n\n그래프의 전체적인 외양(테마)를 수정\n\n8개 테마 제공\n\n\n\n그래프의 세부 구성 요소를 수정\n\n\ntheme() 함수",
+    "text": "테마(theme)\n\n그래프의 전체적인 외양(테마)를 수정\n\n8개 테마 제공\n\n그래프의 세부 구성 요소를 수정\n\ntheme() 함수",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9239,9 +9239,9 @@
   {
     "objectID": "R_lec_06_2025.html#테마theme-1",
     "href": "R_lec_06_2025.html#테마theme-1",
-    "title": "\nR Lecture 6데이터 시각화하기\n",
+    "title": "R Lecture 6\n데이터 시각화하기",
     "section": "테마(theme)",
-    "text": "테마(theme)\n\nhttps://r4ds.hadley.nz/communication",
+    "text": "테마(theme)\n\n\n\nhttps://r4ds.hadley.nz/communication",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9250,9 +9250,9 @@
   {
     "objectID": "R_lec_06_2025.html#테마theme-2",
     "href": "R_lec_06_2025.html#테마theme-2",
-    "title": "\nR Lecture 6데이터 시각화하기\n",
+    "title": "R Lecture 6\n데이터 시각화하기",
     "section": "테마(theme)",
-    "text": "테마(theme)\n\n수 많은 옵션 https://ggplot2.tidyverse.org/reference/theme.html\n\n\n\nhttps://isabella-b.com/blog/ggplot2-theme-elements-reference/",
+    "text": "테마(theme)\n\n수 많은 옵션 https://ggplot2.tidyverse.org/reference/theme.html\n\n\n\n\nhttps://isabella-b.com/blog/ggplot2-theme-elements-reference/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9261,7 +9261,7 @@
   {
     "objectID": "R_lec_06_2025.html#주요-확장-프로그램",
     "href": "R_lec_06_2025.html#주요-확장-프로그램",
-    "title": "\nR Lecture 6데이터 시각화하기\n",
+    "title": "R Lecture 6\n데이터 시각화하기",
     "section": "주요 확장 프로그램",
     "text": "주요 확장 프로그램\n\npatchwork\ngganimate\nggiraph\nggpattern\ngeomtextpath\nggdensity\nGGally\nggcorrplot",
     "crumbs": [
@@ -9272,9 +9272,9 @@
   {
     "objectID": "R_lec_06_2025.html#section",
     "href": "R_lec_06_2025.html#section",
-    "title": "\nR Lecture 6데이터 시각화하기\n",
+    "title": "R Lecture 6\n데이터 시각화하기",
     "section": "",
-    "text": "샤를 조제프 미나르의 1812 나폴레옹 러시아 원정도\n\nhttps://en.wikipedia.org/wiki/Charles_Joseph_Minard",
+    "text": "샤를 조제프 미나르의 1812 나폴레옹 러시아 원정도\n\n\n\nhttps://en.wikipedia.org/wiki/Charles_Joseph_Minard",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9297,9 +9297,9 @@
   {
     "objectID": "R_lec_06_2025.html#ggplot2-패키지-1",
     "href": "R_lec_06_2025.html#ggplot2-패키지-1",
-    "title": "\nR Lecture 6데이터 시각화하기\n",
-    "section": "\nggplot2 패키지",
-    "text": "ggplot2 패키지\n\nhttps://allisonhorst.com/r-packages-functions",
+    "title": "R Lecture 6\n데이터 시각화하기",
+    "section": "",
+    "text": "https://allisonhorst.com/r-packages-functions",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9308,9 +9308,9 @@
   {
     "objectID": "R_lec_06_2025.html#ggplot2-패키지-2",
     "href": "R_lec_06_2025.html#ggplot2-패키지-2",
-    "title": "\nR Lecture 6데이터 시각화하기\n",
-    "section": "\nggplot2 패키지",
-    "text": "ggplot2 패키지\n\nhttps://allisonhorst.com/r-packages-functions",
+    "title": "R Lecture 6\n데이터 시각화하기",
+    "section": "",
+    "text": "https://allisonhorst.com/r-packages-functions",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9319,9 +9319,9 @@
   {
     "objectID": "R_lec_06_2025.html#patchwork-패키지",
     "href": "R_lec_06_2025.html#patchwork-패키지",
-    "title": "\nR Lecture 6데이터 시각화하기\n",
-    "section": "\npatchwork 패키지",
-    "text": "patchwork 패키지\n\nhttps://allisonhorst.com/r-packages-functions",
+    "title": "R Lecture 6\n데이터 시각화하기",
+    "section": "patchwork 패키지",
+    "text": "patchwork 패키지\n\n\n\nhttps://allisonhorst.com/r-packages-functions",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9330,8 +9330,8 @@
   {
     "objectID": "R_lec_06_2025.html#gganimate-패키지",
     "href": "R_lec_06_2025.html#gganimate-패키지",
-    "title": "\nR Lecture 6데이터 시각화하기\n",
-    "section": "\ngganimate 패키지",
+    "title": "R Lecture 6\n데이터 시각화하기",
+    "section": "gganimate 패키지",
     "text": "gganimate 패키지\n\n\n\nhttps://allisonhorst.com/r-packages-functions",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
@@ -9398,28 +9398,44 @@
     "href": "R_lec_07_2025.html#데이터사이언스-프로세스",
     "title": "\nR Lecture 7데이터 탐색하기\n",
     "section": "데이터사이언스 프로세스",
-    "text": "데이터사이언스 프로세스\n\nhttps://r4ds.hadley.nz/whole-game.html"
+    "text": "데이터사이언스 프로세스\n\nhttps://r4ds.hadley.nz/whole-game.html",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 7]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 탐색하기]{style=\"font-size:1em\"}"
+    ]
   },
   {
     "objectID": "R_lec_07_2025.html#탐색적-데이터-분석-개념",
     "href": "R_lec_07_2025.html#탐색적-데이터-분석-개념",
     "title": "\nR Lecture 7데이터 탐색하기\n",
     "section": "탐색적 데이터 분석: 개념",
-    "text": "탐색적 데이터 분석: 개념\n\n탐색적 데이터 분석은 데이터와의 끝임없는 상호작용을 통해 의미있는 결과물을 얻어내는 과정을 의미한다. 데이터사이언스가 데이터로부터 이해, 지식, 통찰력을 획득하는 과정이라고 했을 때, 탐색적 데이터 분석은 데이터사이언스의 심장이라 해도 과언이 아니다. 상호작용은 데이터와의 질의응답의 연쇄과정을 의미한다. 의미있는 질문에 답을 얻기 위해서는 거의 반드시 데이터를 변형하거나 시각화해야만 한다.\n데이터 변형과 데이터 시각화는 개별적으로 탐색적 데이터 분석에 기여한다. 데이터 변형은 데이터를 다른 각도로 바라볼 수 있게 해주고 다양한 요약 통계값을 산출해 준다. 데이터 시각화는 데이터에 차원을 부가함으로써 시각화 되지 않았다면 발견할 수 없었던 것을 발견할 수 있게 해준다."
+    "text": "탐색적 데이터 분석: 개념\n\n탐색적 데이터 분석은 데이터와의 끝임없는 상호작용을 통해 의미있는 결과물을 얻어내는 과정을 의미한다. 데이터사이언스가 데이터로부터 이해, 지식, 통찰력을 획득하는 과정이라고 했을 때, 탐색적 데이터 분석은 데이터사이언스의 심장이라 해도 과언이 아니다. 상호작용은 데이터와의 질의응답의 연쇄과정을 의미한다. 의미있는 질문에 답을 얻기 위해서는 거의 반드시 데이터를 변형하거나 시각화해야만 한다.\n데이터 변형과 데이터 시각화는 개별적으로 탐색적 데이터 분석에 기여한다. 데이터 변형은 데이터를 다른 각도로 바라볼 수 있게 해주고 다양한 요약 통계값을 산출해 준다. 데이터 시각화는 데이터에 차원을 부가함으로써 시각화 되지 않았다면 발견할 수 없었던 것을 발견할 수 있게 해준다.",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 7]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 탐색하기]{style=\"font-size:1em\"}"
+    ]
   },
   {
     "objectID": "R_lec_07_2025.html#탐색적-데이터-분석-개념-1",
     "href": "R_lec_07_2025.html#탐색적-데이터-분석-개념-1",
     "title": "\nR Lecture 7데이터 탐색하기\n",
     "section": "탐색적 데이터 분석: 개념",
-    "text": "탐색적 데이터 분석: 개념\n\n데이터 변형에서 데이터 시각화로 이어지는 시퀀스가 탐색적 데이터 분석의 핵심적인 방법론이다. 데이터 변형의 궁극적인 목적은 바로 데이터 시각화를 위한 준비이다. 특정한 형태의 시각화를 위해서는 특정한 형태로 변형된 데이터가 필수적이고, 그러한 과정이 이해, 지식, 통찰력의 획득으로 나아가게 해주는 주된 경로이다.\n데이터 시각화의 두 가지 목적은 탐색과 커뮤니케이션이다. 우리가 데이터 시각화를 하는 첫번째 목적은 데이터에 대한 질문에 답을 찾기 위해서이다. 우리가 데이터를 시각화하는 두 번째 목적은 우리가 발견한 것을 다른 사람들과 ‘잘’ 커뮤니케이션하기 위해서이다."
+    "text": "탐색적 데이터 분석: 개념\n\n데이터 변형에서 데이터 시각화로 이어지는 시퀀스가 탐색적 데이터 분석의 핵심적인 방법론이다. 데이터 변형의 궁극적인 목적은 바로 데이터 시각화를 위한 준비이다. 특정한 형태의 시각화를 위해서는 특정한 형태로 변형된 데이터가 필수적이고, 그러한 과정이 이해, 지식, 통찰력의 획득으로 나아가게 해주는 주된 경로이다.\n데이터 시각화의 두 가지 목적은 탐색과 커뮤니케이션이다. 우리가 데이터 시각화를 하는 첫번째 목적은 데이터에 대한 질문에 답을 찾기 위해서이다. 우리가 데이터를 시각화하는 두 번째 목적은 우리가 발견한 것을 다른 사람들과 ‘잘’ 커뮤니케이션하기 위해서이다.",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 7]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 탐색하기]{style=\"font-size:1em\"}"
+    ]
   },
   {
     "objectID": "R_lec_07_2025.html#탐색적-데이터-분석-개념-2",
     "href": "R_lec_07_2025.html#탐색적-데이터-분석-개념-2",
     "title": "\nR Lecture 7데이터 탐색하기\n",
     "section": "탐색적 데이터 분석: 개념",
-    "text": "탐색적 데이터 분석: 개념\n\n의미있는 질문을 생성한다.\n질문에 답할 수 있는 그래픽(플롯, 지도 등)을 구상한다.\n구상한 그래픽에 부합하도록 데이터를 변형한다.\n변형한 데이터를 구상한 그래픽으로 시각화한다.\n그래픽으로부터 질문의 답을 구하고, 더 나아가 지식, 이해, 통찰을 이끌어 낸다."
+    "text": "탐색적 데이터 분석: 개념\n\n의미있는 질문을 생성한다.\n질문에 답할 수 있는 그래픽(플롯, 지도 등)을 구상한다.\n구상한 그래픽에 부합하도록 데이터를 변형한다.\n변형한 데이터를 구상한 그래픽으로 시각화한다.\n그래픽으로부터 질문의 답을 구하고, 더 나아가 지식, 이해, 통찰을 이끌어 낸다.",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 7]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 탐색하기]{style=\"font-size:1em\"}"
+    ]
   },
   {
     "objectID": "R_lec_07_2025.html#예제-데이터",
@@ -9433,55 +9449,267 @@
     "href": "R_lec_07_2025.html#질문-1",
     "title": "\nR Lecture 7데이터 탐색하기\n",
     "section": "질문 1",
-    "text": "질문 1\n\n아시아의 1957년과 2007년의 1인당 GDP는 얼마이며 순위는 어떠한가? 1인당 GDP의 순위가 상승하였는가?"
+    "text": "질문 1\n\n아시아의 1957년과 2007년의 1인당 GDP는 얼마이며 순위는 어떠한가? 1인당 GDP의 순위가 상승하였는가?",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 7]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 탐색하기]{style=\"font-size:1em\"}"
+    ]
   },
   {
     "objectID": "R_lec_07_2025.html#질문-1-1",
     "href": "R_lec_07_2025.html#질문-1-1",
     "title": "\nR Lecture 7데이터 탐색하기\n",
     "section": "질문 1",
-    "text": "질문 1\n\n\n데이터\n결과\n코드\n\n\n\n\n\n# A tibble: 1,704 × 6\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Afghanistan Asia       1957    30.3  9240934      821.\n 3 Afghanistan Asia       1962    32.0 10267083      853.\n 4 Afghanistan Asia       1967    34.0 11537966      836.\n 5 Afghanistan Asia       1972    36.1 13079460      740.\n 6 Afghanistan Asia       1977    38.4 14880372      786.\n 7 Afghanistan Asia       1982    39.9 12881816      978.\n 8 Afghanistan Asia       1987    40.8 13867957      852.\n 9 Afghanistan Asia       1992    41.7 16317921      649.\n10 Afghanistan Asia       1997    41.8 22227415      635.\n# ℹ 1,694 more rows\n\n\n\n\n\n\n# A tibble: 10 × 5\n# Groups:   year [2]\n    year continent    sum_pop sum_gdp gdp_percap_cont\n   &lt;int&gt; &lt;fct&gt;          &lt;dbl&gt;   &lt;dbl&gt;           &lt;dbl&gt;\n 1  1957 Oceania     11941976 1.34e11          11192.\n 2  1957 Americas   386953916 3.52e12           9098.\n 3  1957 Europe     437890351 3.30e12           7535.\n 4  1957 Africa     264837738 3.83e11           1445.\n 5  1957 Asia      1562780599 1.56e12            998.\n 6  2007 Oceania     24549947 8.07e11          32885.\n 7  2007 Europe     586098529 1.48e13          25244.\n 8  2007 Americas   898871184 1.94e13          21603.\n 9  2007 Asia      3811953827 2.07e13           5432.\n10  2007 Africa     929539692 2.38e12           2561.\n\n\n\n\n\ngapminder |&gt; \n  group_by(year, continent) |&gt; \n  summarize(\n    sum_pop = sum(pop),\n    sum_gdp = sum(pop * gdpPercap),\n    gdp_percap_cont = sum_gdp / sum_pop\n  ) |&gt; \n  filter(year %in% c(1957, 2007)) |&gt; \n  arrange(year, desc(gdp_percap_cont))"
+    "text": "질문 1\n\n\n데이터\n결과\n코드\n\n\n\n\n\n# A tibble: 1,704 × 6\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Afghanistan Asia       1957    30.3  9240934      821.\n 3 Afghanistan Asia       1962    32.0 10267083      853.\n 4 Afghanistan Asia       1967    34.0 11537966      836.\n 5 Afghanistan Asia       1972    36.1 13079460      740.\n 6 Afghanistan Asia       1977    38.4 14880372      786.\n 7 Afghanistan Asia       1982    39.9 12881816      978.\n 8 Afghanistan Asia       1987    40.8 13867957      852.\n 9 Afghanistan Asia       1992    41.7 16317921      649.\n10 Afghanistan Asia       1997    41.8 22227415      635.\n# ℹ 1,694 more rows\n\n\n\n\n\n\n# A tibble: 10 × 5\n# Groups:   year [2]\n    year continent    sum_pop sum_gdp gdp_percap_cont\n   &lt;int&gt; &lt;fct&gt;          &lt;dbl&gt;   &lt;dbl&gt;           &lt;dbl&gt;\n 1  1957 Oceania     11941976 1.34e11          11192.\n 2  1957 Americas   386953916 3.52e12           9098.\n 3  1957 Europe     437890351 3.30e12           7535.\n 4  1957 Africa     264837738 3.83e11           1445.\n 5  1957 Asia      1562780599 1.56e12            998.\n 6  2007 Oceania     24549947 8.07e11          32885.\n 7  2007 Europe     586098529 1.48e13          25244.\n 8  2007 Americas   898871184 1.94e13          21603.\n 9  2007 Asia      3811953827 2.07e13           5432.\n10  2007 Africa     929539692 2.38e12           2561.\n\n\n\n\n\ngapminder |&gt; \n  group_by(year, continent) |&gt; \n  summarize(\n    sum_pop = sum(pop),\n    sum_gdp = sum(pop * gdpPercap),\n    gdp_percap_cont = sum_gdp / sum_pop\n  ) |&gt; \n  filter(year %in% c(1957, 2007)) |&gt; \n  arrange(year, desc(gdp_percap_cont))",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 7]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 탐색하기]{style=\"font-size:1em\"}"
+    ]
   },
   {
     "objectID": "R_lec_07_2025.html#질문-2",
     "href": "R_lec_07_2025.html#질문-2",
     "title": "\nR Lecture 7데이터 탐색하기\n",
     "section": "질문 2",
-    "text": "질문 2\n\n대륙별 최대국(인구가 가장 많은 나라)이 소속 대륙 전체에서 차지하는 비중이 어느 정도이고 대륙별로 어느 정도의 차이가 있는지, 그리고 대륙별 최대국의 비중이 시간이 지남에 따라 어떠한 변화 양상을 보여주고 있고, 그러한 양상에 대륙별 차이가 있는지의 여부"
+    "text": "질문 2\n\n대륙별 최대국(인구가 가장 많은 나라)이 소속 대륙 전체에서 차지하는 비중이 어느 정도이고 대륙별로 어느 정도의 차이가 있는지, 그리고 대륙별 최대국의 비중이 시간이 지남에 따라 어떠한 변화 양상을 보여주고 있고, 그러한 양상에 대륙별 차이가 있는지의 여부",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 7]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 탐색하기]{style=\"font-size:1em\"}"
+    ]
   },
   {
     "objectID": "R_lec_07_2025.html#질문-2-1",
     "href": "R_lec_07_2025.html#질문-2-1",
     "title": "\nR Lecture 7데이터 탐색하기\n",
     "section": "질문 2",
-    "text": "질문 2\n\n\n데이터\n그래프 1\n코드 1\n코드 2\n그래프 2\n\n\n\n\n\n# A tibble: 1,704 × 6\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Afghanistan Asia       1957    30.3  9240934      821.\n 3 Afghanistan Asia       1962    32.0 10267083      853.\n 4 Afghanistan Asia       1967    34.0 11537966      836.\n 5 Afghanistan Asia       1972    36.1 13079460      740.\n 6 Afghanistan Asia       1977    38.4 14880372      786.\n 7 Afghanistan Asia       1982    39.9 12881816      978.\n 8 Afghanistan Asia       1987    40.8 13867957      852.\n 9 Afghanistan Asia       1992    41.7 16317921      649.\n10 Afghanistan Asia       1997    41.8 22227415      635.\n# ℹ 1,694 more rows\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ngapminder |&gt; \n  group_by(year, continent) |&gt; \n  mutate(\n    sum_cont = sum(pop),\n    country_prop = pop * 100 / sum_cont\n  ) |&gt; \n  slice_max(country_prop) |&gt; \n  ggplot() +\n  geom_line(aes(x = year, y = country_prop, color = continent))\n\n\n\n\ngapminder |&gt; \n  group_by(year, continent) |&gt; \n  mutate(\n    sum_cont = sum(pop),\n    country_prop = pop * 100 / sum_cont\n  ) |&gt; \n  slice_max(country_prop) |&gt; \n  ggplot() +\n  geom_line(aes(x = year, y = country_prop, color = continent), linewidth = 1) +\n  scale_x_continuous(breaks = seq(1952, 2007, 5)) +\n  labs(x = \"Year\", y = \"% of Population\", color = \"Continents\")"
+    "text": "질문 2\n\n\n데이터\n그래프 1\n코드 1\n코드 2\n그래프 2\n\n\n\n\n\n# A tibble: 1,704 × 6\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Afghanistan Asia       1957    30.3  9240934      821.\n 3 Afghanistan Asia       1962    32.0 10267083      853.\n 4 Afghanistan Asia       1967    34.0 11537966      836.\n 5 Afghanistan Asia       1972    36.1 13079460      740.\n 6 Afghanistan Asia       1977    38.4 14880372      786.\n 7 Afghanistan Asia       1982    39.9 12881816      978.\n 8 Afghanistan Asia       1987    40.8 13867957      852.\n 9 Afghanistan Asia       1992    41.7 16317921      649.\n10 Afghanistan Asia       1997    41.8 22227415      635.\n# ℹ 1,694 more rows\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ngapminder |&gt; \n  group_by(year, continent) |&gt; \n  mutate(\n    sum_cont = sum(pop),\n    country_prop = pop * 100 / sum_cont\n  ) |&gt; \n  slice_max(country_prop) |&gt; \n  ggplot() +\n  geom_line(aes(x = year, y = country_prop, color = continent))\n\n\n\n\ngapminder |&gt; \n  group_by(year, continent) |&gt; \n  mutate(\n    sum_cont = sum(pop),\n    country_prop = pop * 100 / sum_cont\n  ) |&gt; \n  slice_max(country_prop) |&gt; \n  ggplot() +\n  geom_line(aes(x = year, y = country_prop, color = continent), linewidth = 1) +\n  scale_x_continuous(breaks = seq(1952, 2007, 5)) +\n  labs(x = \"Year\", y = \"% of Population\", color = \"Continents\")",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 7]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 탐색하기]{style=\"font-size:1em\"}"
+    ]
   },
   {
     "objectID": "R_lec_07_2025.html#질문-3",
     "href": "R_lec_07_2025.html#질문-3",
     "title": "\nR Lecture 7데이터 탐색하기\n",
     "section": "질문 3",
-    "text": "질문 3\n\n1952~2007년간의 연평균 인구성장률의 대륙간 차이와 대륙 내 국가간 편차를 동시에 탐색\n\n\n연평균 인구성장률(%)은 다음의 공식에 의거해 산출\n\n\\[\nr=\\frac{1}{n}\\times\\ln(\\frac{P_n}{P_0})\\times100\n\\]"
+    "text": "질문 3\n\n1952~2007년간의 연평균 인구성장률의 대륙간 차이와 대륙 내 국가간 편차를 동시에 탐색\n\n\n연평균 인구성장률(%)은 다음의 공식에 의거해 산출\n\n\\[\nr=\\frac{1}{n}\\times\\ln(\\frac{P_n}{P_0})\\times100\n\\]",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 7]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 탐색하기]{style=\"font-size:1em\"}"
+    ]
   },
   {
     "objectID": "R_lec_07_2025.html#질문-3-1",
     "href": "R_lec_07_2025.html#질문-3-1",
     "title": "\nR Lecture 7데이터 탐색하기\n",
     "section": "질문 3",
-    "text": "질문 3\n\n\n데이터\n그래프 1\n코드 1\n코드 2\n그래프 2\n\n\n\n\n\n# A tibble: 1,704 × 6\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Afghanistan Asia       1957    30.3  9240934      821.\n 3 Afghanistan Asia       1962    32.0 10267083      853.\n 4 Afghanistan Asia       1967    34.0 11537966      836.\n 5 Afghanistan Asia       1972    36.1 13079460      740.\n 6 Afghanistan Asia       1977    38.4 14880372      786.\n 7 Afghanistan Asia       1982    39.9 12881816      978.\n 8 Afghanistan Asia       1987    40.8 13867957      852.\n 9 Afghanistan Asia       1992    41.7 16317921      649.\n10 Afghanistan Asia       1997    41.8 22227415      635.\n# ℹ 1,694 more rows\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ngapminder |&gt; \n  pivot_wider(\n    id_cols = c(country, continent),\n    names_from = year,\n    values_from = pop\n  ) |&gt; \n  mutate(\n    pgr = (1/(2007-1952))*log(`2007`/`1952`) * 100\n  ) |&gt; \n  ggplot(aes(x = continent, y = pgr)) +\n  geom_boxplot(aes(color = continent))\n\n\n\n\ngapminder |&gt; \n  pivot_wider(\n    id_cols = c(country, continent),\n    names_from = year,\n    values_from = pop\n  ) |&gt; \n  mutate(\n    pgr = (1/(2007-1952))*log(`2007`/`1952`) * 100\n  ) |&gt; \n  ggplot(aes(x = fct_reorder(continent, pgr, median), y = pgr)) +\n  geom_boxplot(aes(fill = continent)) +\n  labs(x = \"Continents\", y = \"PGR(%), 1952-2007\", fill = \"Continents\")"
+    "text": "질문 3\n\n\n데이터\n그래프 1\n코드 1\n코드 2\n그래프 2\n\n\n\n\n\n# A tibble: 1,704 × 6\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Afghanistan Asia       1957    30.3  9240934      821.\n 3 Afghanistan Asia       1962    32.0 10267083      853.\n 4 Afghanistan Asia       1967    34.0 11537966      836.\n 5 Afghanistan Asia       1972    36.1 13079460      740.\n 6 Afghanistan Asia       1977    38.4 14880372      786.\n 7 Afghanistan Asia       1982    39.9 12881816      978.\n 8 Afghanistan Asia       1987    40.8 13867957      852.\n 9 Afghanistan Asia       1992    41.7 16317921      649.\n10 Afghanistan Asia       1997    41.8 22227415      635.\n# ℹ 1,694 more rows\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ngapminder |&gt; \n  pivot_wider(\n    id_cols = c(country, continent),\n    names_from = year,\n    values_from = pop\n  ) |&gt; \n  mutate(\n    pgr = (1/(2007-1952))*log(`2007`/`1952`) * 100\n  ) |&gt; \n  ggplot(aes(x = continent, y = pgr)) +\n  geom_boxplot(aes(color = continent))\n\n\n\n\ngapminder |&gt; \n  pivot_wider(\n    id_cols = c(country, continent),\n    names_from = year,\n    values_from = pop\n  ) |&gt; \n  mutate(\n    pgr = (1/(2007-1952))*log(`2007`/`1952`) * 100\n  ) |&gt; \n  ggplot(aes(x = fct_reorder(continent, pgr, median), y = pgr)) +\n  geom_boxplot(aes(fill = continent)) +\n  labs(x = \"Continents\", y = \"PGR(%), 1952-2007\", fill = \"Continents\")",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 7]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 탐색하기]{style=\"font-size:1em\"}"
+    ]
   },
   {
     "objectID": "R_lec_07_2025.html#예제-데이터-gapminder",
     "href": "R_lec_07_2025.html#예제-데이터-gapminder",
     "title": "\nR Lecture 7데이터 탐색하기\n",
     "section": "예제 데이터: gapminder\n",
-    "text": "예제 데이터: gapminder\n\n\nGapminder 재단\nR의 gapminder 패키지\n기간: 1952-2007년 5년 단위(12개 시점)\n국가 수: 142개국\n관측치 수: 1,704개 (142 x 12)\n변수: country(국가명), continent(대륙), year(연도), lifeExp(기대수명), pop(인구 수), gdpPercap(1인당 GDP)"
+    "text": "예제 데이터: gapminder\n\n\nGapminder 재단\nR의 gapminder 패키지\n기간: 1952-2007년 5년 단위(12개 시점)\n국가 수: 142개국\n관측치 수: 1,704개 (142 x 12)\n변수: country(국가명), continent(대륙), year(연도), lifeExp(기대수명), pop(인구 수), gdpPercap(1인당 GDP)\n동영상: https://www.youtube.com/watch?v=GmEKpKEakmQ",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 7]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 탐색하기]{style=\"font-size:1em\"}"
+    ]
   },
   {
     "objectID": "R_lec_07_2025.html#예제-데이터-gapminder-1",
     "href": "R_lec_07_2025.html#예제-데이터-gapminder-1",
     "title": "\nR Lecture 7데이터 탐색하기\n",
     "section": "예제 데이터: gapminder\n",
-    "text": "예제 데이터: gapminder\n\n\nlibrary(tidyverse)\nlibrary(gapminder)\ngapminder\n\n# A tibble: 1,704 × 6\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Afghanistan Asia       1957    30.3  9240934      821.\n 3 Afghanistan Asia       1962    32.0 10267083      853.\n 4 Afghanistan Asia       1967    34.0 11537966      836.\n 5 Afghanistan Asia       1972    36.1 13079460      740.\n 6 Afghanistan Asia       1977    38.4 14880372      786.\n 7 Afghanistan Asia       1982    39.9 12881816      978.\n 8 Afghanistan Asia       1987    40.8 13867957      852.\n 9 Afghanistan Asia       1992    41.7 16317921      649.\n10 Afghanistan Asia       1997    41.8 22227415      635.\n# ℹ 1,694 more rows"
+    "text": "예제 데이터: gapminder\n\n\nlibrary(tidyverse)\nlibrary(gapminder)\ngapminder\n\n# A tibble: 1,704 × 6\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Afghanistan Asia       1957    30.3  9240934      821.\n 3 Afghanistan Asia       1962    32.0 10267083      853.\n 4 Afghanistan Asia       1967    34.0 11537966      836.\n 5 Afghanistan Asia       1972    36.1 13079460      740.\n 6 Afghanistan Asia       1977    38.4 14880372      786.\n 7 Afghanistan Asia       1982    39.9 12881816      978.\n 8 Afghanistan Asia       1987    40.8 13867957      852.\n 9 Afghanistan Asia       1992    41.7 16317921      649.\n10 Afghanistan Asia       1997    41.8 22227415      635.\n# ℹ 1,694 more rows",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 7]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 탐색하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "lab_07_2025.qmd.html#실습-규칙",
+    "href": "lab_07_2025.qmd.html#실습-규칙",
+    "title": "데이터 사이언스의 과정 복습하기",
+    "section": "실습 규칙",
+    "text": "실습 규칙\n\n\n구글 검색, ChatGPT, 이전 실습 자료 등을 참고할 수 있습니다.\n실습에서 다루지 않은 기능들은 문제마다 따로 설명이 되어 있습니다."
+  },
+  {
+    "objectID": "lab_07_2025.qmd.html#실습-준비",
+    "href": "lab_07_2025.qmd.html#실습-준비",
+    "title": "데이터 사이언스의 과정 복습하기",
+    "section": "실습 준비",
+    "text": "실습 준비\n\nlibrary(tidyverse)\nlibrary(ggrepel)\nwpp_2024 &lt;- read_rds(\"wpp_2024.rds\")"
+  },
+  {
+    "objectID": "lab_07_2025.qmd.html#연습-문제",
+    "href": "lab_07_2025.qmd.html#연습-문제",
+    "title": "데이터 사이언스의 과정 복습하기",
+    "section": "연습 문제",
+    "text": "연습 문제\n\nUN에 따르면 2023년 4월 인도의 인구가 중국의 인구를 넘어섰습니다. 중국의 심각한 출산율 저하로 인해 두 국가의 인구 수 차이는 앞으로 더 커질 것으로 전망됩니다. 1950년부터 2100년까지의 두 국가의 인구 수를 시각화하여 이러한 경향을 파악해 보겠습니다.\n\n\nwpp_2024의 pop_jul_total 데이터를 활용하세요.\nscale_y_continuous()를 활용하면 y축의 설정을 변경할 수 있습니다. 쉼표를 사용해 숫자를 끊어 가독성을 높이기 위해 어떤 아규먼트가 필요한지 검색을 통해 찾아보세요.\ntheme()을 통해 세부 사항도 조정해보세요. (선 굵기, 테마, 범례의 위치, 굵은 제목 등)"
+  },
+  {
+    "objectID": "lab_07_2025.qmd.html#연습-문제-1",
+    "href": "lab_07_2025.qmd.html#연습-문제-1",
+    "title": "데이터 사이언스의 과정 복습하기",
+    "section": "연습 문제",
+    "text": "연습 문제\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nwpp_2024 |&gt; \n  filter(region_name == \"India\" | region_name == \"China\") |&gt; \n  select(region_name, year, pop_jul_total) |&gt; \n  ggplot(aes(x = year, y = pop_jul_total, color = region_name)) +\n  geom_line(size = 1.0) +\n  labs(title = \"Population Growth of China and India 1950 - 2100\",\n       subtitle = \"India has overtaken China as the world's most populous country\",\n       x = \"Year\",\n       y = \"Population\",\n       color = \"Country\",\n       caption = \"Your Name, Department of AI-Integrated Education at SNU\") +\n  theme_bw() +\n  theme(legend.position = c(0.1, 0.7),\n        plot.title = element_text(face = \"bold\")) +\n  scale_y_continuous(labels = scales::comma)"
+  },
+  {
+    "objectID": "lab_07_2025.qmd.html#문제-1",
+    "href": "lab_07_2025.qmd.html#문제-1",
+    "title": "데이터 사이언스의 과정 복습하기",
+    "section": "문제 1",
+    "text": "문제 1\n\n1950년에서 2100년까지 UN의 SDG Region별 인구 성장률의 변화를 한 눈에 알아보고자 합니다. 인구 성장률 0은 회색 점선으로 표시되어 있습니다.\n\n\nwpp_2024의 PGR 데이터를 활용하세요.\ngeom_hline()을 사용하면 플롯에 가로줄을 그릴 수 있습니다. 문제와 똑같은 선을 그리기 위해서는 어떤 아규먼트들이 필요할지 검색을 통해 찾아보세요."
+  },
+  {
+    "objectID": "lab_07_2025.qmd.html#문제-1-1",
+    "href": "lab_07_2025.qmd.html#문제-1-1",
+    "title": "데이터 사이언스의 과정 복습하기",
+    "section": "문제 1",
+    "text": "문제 1\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nwpp_2024 |&gt; \n  filter(type == \"SDG region\" | type == \"World\") |&gt; \n  select(region_name, year, PGR) |&gt; \n  ggplot(aes(x = year, y = PGR)) +\n  geom_line() +\n  facet_wrap(~region_name) +\n  geom_hline(yintercept = 0, linetype = \"dashed\", color = \"gray\") +\n  labs(title = \"Popultaion Growth Rate Trends from 1950 to 2100\",\n       subtitle = \"Comparative Analysis Across SDG Regions and Global Patterns\",\n       x = \"Year\",\n       y = \"Population Growth Rate (%)\",\n       caption = \"Your Name, Department of AI-Integrated Education at SNU\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "lab_07_2025.qmd.html#문제-2",
+    "href": "lab_07_2025.qmd.html#문제-2",
+    "title": "데이터 사이언스의 과정 복습하기",
+    "section": "문제 2",
+    "text": "문제 2\n\n1950년부터 2100년까지 국가별 합계출산율을 25년단위로 박스플롯으로 나타내어 전 세계의 합계출산율이 시간이 지남에 따라 어떻게 변화하는지 파악하고자 합니다. 추가적으로 각 시기별로 합계출산율이 가장 높은 국가를 라벨링해 보겠습니다. 대체출산율 2.1은 빨간색 점선으로 그려져 있습니다.\n\n\nwpp_2024의 TFR 데이터를 활용하세요.\n%in%을 사용하면 filter() 함수를 보다 효과적으로 사용할 수 있습니다. 아래의 두 개는 똑같은 결과를 보입니다.\n\nfilter(year == 1950 | year == 1975 | year == 2000)\nfilter(year %in% c(1950, 1975, 2000))\n\ngeom_hline()을 사용하면 플롯에 가로줄을 그릴 수 있습니다. 문제와 똑같은 선을 그리기 위해서는 어떤 아규먼트들이 필요할지 검색을 통해 찾아보세요."
+  },
+  {
+    "objectID": "lab_07_2025.qmd.html#문제-2-1",
+    "href": "lab_07_2025.qmd.html#문제-2-1",
+    "title": "데이터 사이언스의 과정 복습하기",
+    "section": "문제 2",
+    "text": "문제 2\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nwpp_2024_tfr &lt;- wpp_2024 |&gt; \n  filter(year %in% c(1950, 1975, 2000, 2025, 2050, 2075, 2100) & type == \"Country/Area\") |&gt;\n  select(year, region_name, TFR)\n\nwpp_2024_tfr |&gt; \n  ggplot(aes(group = year, x = year, y = TFR)) + \n  geom_boxplot() +\n  geom_label_repel(data = wpp_2024_tfr |&gt; \n                     group_by(year) |&gt; \n                     slice_max(TFR, n = 1), aes(label = region_name)) +\n  geom_hline(yintercept = 2.1, linetype = \"dashed\", color = \"red\", size = 1) +\n  labs(title = \"Total Fertility Rate by Country from 1950 to 2100\",\n       subtitle = \"With Replacement Fertility Rate Emphasized\",\n       x = \"Year\",\n       y = \"Total Fertility Rate(TFR)\",\n       caption = \"Your Name, Department of AI-Integrated Education at SNU\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "lab_07_2025.qmd.html#문제-3",
+    "href": "lab_07_2025.qmd.html#문제-3",
+    "title": "데이터 사이언스의 과정 복습하기",
+    "section": "문제 3",
+    "text": "문제 3\n\n1950년에서 2100년까지 25년 단위로 UN의 SDG Region별 인구가 전 세계 인구에서 차지하는 비중을 확인하고자 합니다.\n\n\nwpp_2024의 pop_jul_total 데이터를 활용하세요.\ngeom_bar()의 아규먼트인 stat = \"identity\"를 사용하면 y축의 높이를 빈도가 아닌 데이터의 값을 기반으로 설정해줍니다.\nscale_y_continuous()를 활용하면 y축의 설정을 변경할 수 있습니다. y축의 값을 백분율로 나타내기 위해 어떤 아규먼트가 필요한지 검색을 통해 찾아보세요."
+  },
+  {
+    "objectID": "lab_07_2025.qmd.html#문제-3-1",
+    "href": "lab_07_2025.qmd.html#문제-3-1",
+    "title": "데이터 사이언스의 과정 복습하기",
+    "section": "문제 3",
+    "text": "문제 3\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nwpp_2024 |&gt; \n  filter(type == \"SDG region\" & year %in% c(1950, 1975, 2000, 2025, 2050, 2075, 2100)) |&gt; \n  select(region_name, year, pop_jul_total) |&gt; \n  group_by(year) |&gt; \n  mutate(prop = pop_jul_total / sum(pop_jul_total)) |&gt; \n  ggplot(aes(x = year, y = prop, fill = region_name)) +\n  geom_bar(stat = \"identity\", position = \"fill\") +\n  scale_y_continuous(labels = scales::percent) +\n  labs(title = \"World Population Proportions by SDG Region, from 1950 to 2100\",\n       x = \"Year\",\n       y = \"Population Proportion (%)\",\n       fill = \"SDG Region\",\n       caption = \"Your Name, Department of AI-Integrated Education at SNU\") +\n  theme(legend.position = \"bottom\")"
+  },
+  {
+    "objectID": "lab_07_2025.html#실습-규칙",
+    "href": "lab_07_2025.html#실습-규칙",
+    "title": "데이터 사이언스의 과정 복습하기",
+    "section": "실습 규칙",
+    "text": "실습 규칙\n\n\n구글 검색, ChatGPT, 이전 실습 자료 등을 참고할 수 있습니다.\n실습에서 다루지 않은 기능들은 문제마다 따로 설명이 되어 있습니다.",
+    "crumbs": [
+      "R 실습: 2025/2",
+      "데이터 사이언스의 과정 복습하기"
+    ]
+  },
+  {
+    "objectID": "lab_07_2025.html#실습-준비",
+    "href": "lab_07_2025.html#실습-준비",
+    "title": "데이터 사이언스의 과정 복습하기",
+    "section": "실습 준비",
+    "text": "실습 준비\n\nlibrary(tidyverse)\nlibrary(ggrepel)\nwpp_2024 &lt;- read_rds(\"wpp_2024.rds\")",
+    "crumbs": [
+      "R 실습: 2025/2",
+      "데이터 사이언스의 과정 복습하기"
+    ]
+  },
+  {
+    "objectID": "lab_07_2025.html#연습-문제",
+    "href": "lab_07_2025.html#연습-문제",
+    "title": "데이터 사이언스의 과정 복습하기",
+    "section": "연습 문제",
+    "text": "연습 문제\n\nUN에 따르면 2023년 4월 인도의 인구가 중국의 인구를 넘어섰습니다. 중국의 심각한 출산율 저하로 인해 두 국가의 인구 수 차이는 앞으로 더 커질 것으로 전망됩니다. 1950년부터 2100년까지의 두 국가의 인구 수를 시각화하여 이러한 경향을 파악해 보겠습니다.\n\n\nwpp_2024의 pop_jul_total 데이터를 활용하세요.\nscale_y_continuous()를 활용하면 y축의 설정을 변경할 수 있습니다. 쉼표를 사용해 숫자를 끊어 가독성을 높이기 위해 어떤 아규먼트가 필요한지 검색을 통해 찾아보세요.\ntheme()을 통해 세부 사항도 조정해보세요. (선 굵기, 테마, 범례의 위치, 굵은 제목 등)",
+    "crumbs": [
+      "R 실습: 2025/2",
+      "데이터 사이언스의 과정 복습하기"
+    ]
+  },
+  {
+    "objectID": "lab_07_2025.html#연습-문제-1",
+    "href": "lab_07_2025.html#연습-문제-1",
+    "title": "데이터 사이언스의 과정 복습하기",
+    "section": "연습 문제",
+    "text": "연습 문제\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nwpp_2024 |&gt; \n  filter(region_name == \"India\" | region_name == \"China\") |&gt; \n  select(region_name, year, pop_jul_total) |&gt; \n  ggplot(aes(x = year, y = pop_jul_total, color = region_name)) +\n  geom_line(size = 1.0) +\n  labs(title = \"Population Growth of China and India 1950 - 2100\",\n       subtitle = \"India has overtaken China as the world's most populous country\",\n       x = \"Year\",\n       y = \"Population\",\n       color = \"Country\",\n       caption = \"Your Name, Department of AI-Integrated Education at SNU\") +\n  theme_bw() +\n  theme(legend.position = c(0.1, 0.7),\n        plot.title = element_text(face = \"bold\")) +\n  scale_y_continuous(labels = scales::comma)",
+    "crumbs": [
+      "R 실습: 2025/2",
+      "데이터 사이언스의 과정 복습하기"
+    ]
+  },
+  {
+    "objectID": "lab_07_2025.html#문제-1",
+    "href": "lab_07_2025.html#문제-1",
+    "title": "데이터 사이언스의 과정 복습하기",
+    "section": "문제 1",
+    "text": "문제 1\n\n1950년에서 2100년까지 UN의 SDG Region별 인구 성장률의 변화를 한 눈에 알아보고자 합니다. 인구 성장률 0은 회색 점선으로 표시되어 있습니다.\n\n\nwpp_2024의 PGR 데이터를 활용하세요.\ngeom_hline()을 사용하면 플롯에 가로줄을 그릴 수 있습니다. 문제와 똑같은 선을 그리기 위해서는 어떤 아규먼트들이 필요할지 검색을 통해 찾아보세요.",
+    "crumbs": [
+      "R 실습: 2025/2",
+      "데이터 사이언스의 과정 복습하기"
+    ]
+  },
+  {
+    "objectID": "lab_07_2025.html#문제-1-1",
+    "href": "lab_07_2025.html#문제-1-1",
+    "title": "데이터 사이언스의 과정 복습하기",
+    "section": "문제 1",
+    "text": "문제 1\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nwpp_2024 |&gt; \n  filter(type == \"SDG region\" | type == \"World\") |&gt; \n  select(region_name, year, PGR) |&gt; \n  ggplot(aes(x = year, y = PGR)) +\n  geom_line() +\n  facet_wrap(~region_name) +\n  geom_hline(yintercept = 0, linetype = \"dashed\", color = \"gray\") +\n  labs(title = \"Popultaion Growth Rate Trends from 1950 to 2100\",\n       subtitle = \"Comparative Analysis Across SDG Regions and Global Patterns\",\n       x = \"Year\",\n       y = \"Population Growth Rate (%)\",\n       caption = \"Your Name, Department of AI-Integrated Education at SNU\") +\n  theme_bw()",
+    "crumbs": [
+      "R 실습: 2025/2",
+      "데이터 사이언스의 과정 복습하기"
+    ]
+  },
+  {
+    "objectID": "lab_07_2025.html#문제-2",
+    "href": "lab_07_2025.html#문제-2",
+    "title": "데이터 사이언스의 과정 복습하기",
+    "section": "문제 2",
+    "text": "문제 2\n\n1950년부터 2100년까지 국가별 합계출산율을 25년단위로 박스플롯으로 나타내어 전 세계의 합계출산율이 시간이 지남에 따라 어떻게 변화하는지 파악하고자 합니다. 추가적으로 각 시기별로 합계출산율이 가장 높은 국가를 라벨링해 보겠습니다. 대체출산율 2.1은 빨간색 점선으로 그려져 있습니다.\n\n\nwpp_2024의 TFR 데이터를 활용하세요.\n%in%을 사용하면 filter() 함수를 보다 효과적으로 사용할 수 있습니다. 아래의 두 개는 똑같은 결과를 보입니다.\n\nfilter(year == 1950 | year == 1975 | year == 2000)\nfilter(year %in% c(1950, 1975, 2000))\n\ngeom_hline()을 사용하면 플롯에 가로줄을 그릴 수 있습니다. 문제와 똑같은 선을 그리기 위해서는 어떤 아규먼트들이 필요할지 검색을 통해 찾아보세요.",
+    "crumbs": [
+      "R 실습: 2025/2",
+      "데이터 사이언스의 과정 복습하기"
+    ]
+  },
+  {
+    "objectID": "lab_07_2025.html#문제-2-1",
+    "href": "lab_07_2025.html#문제-2-1",
+    "title": "데이터 사이언스의 과정 복습하기",
+    "section": "문제 2",
+    "text": "문제 2\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nwpp_2024_tfr &lt;- wpp_2024 |&gt; \n  filter(year %in% c(1950, 1975, 2000, 2025, 2050, 2075, 2100) & type == \"Country/Area\") |&gt;\n  select(year, region_name, TFR)\n\nwpp_2024_tfr |&gt; \n  ggplot(aes(group = year, x = year, y = TFR)) + \n  geom_boxplot() +\n  geom_label_repel(data = wpp_2024_tfr |&gt; \n                     group_by(year) |&gt; \n                     slice_max(TFR, n = 1), aes(label = region_name)) +\n  geom_hline(yintercept = 2.1, linetype = \"dashed\", color = \"red\", size = 1) +\n  labs(title = \"Total Fertility Rate by Country from 1950 to 2100\",\n       subtitle = \"With Replacement Fertility Rate Emphasized\",\n       x = \"Year\",\n       y = \"Total Fertility Rate(TFR)\",\n       caption = \"Your Name, Department of AI-Integrated Education at SNU\") +\n  theme_bw()",
+    "crumbs": [
+      "R 실습: 2025/2",
+      "데이터 사이언스의 과정 복습하기"
+    ]
+  },
+  {
+    "objectID": "lab_07_2025.html#문제-3",
+    "href": "lab_07_2025.html#문제-3",
+    "title": "데이터 사이언스의 과정 복습하기",
+    "section": "문제 3",
+    "text": "문제 3\n\n1950년에서 2100년까지 25년 단위로 UN의 SDG Region별 인구가 전 세계 인구에서 차지하는 비중을 확인하고자 합니다.\n\n\nwpp_2024의 pop_jul_total 데이터를 활용하세요.\ngeom_bar()의 아규먼트인 stat = \"identity\"를 사용하면 y축의 높이를 빈도가 아닌 데이터의 값을 기반으로 설정해줍니다.\nscale_y_continuous()를 활용하면 y축의 설정을 변경할 수 있습니다. y축의 값을 백분율로 나타내기 위해 어떤 아규먼트가 필요한지 검색을 통해 찾아보세요.",
+    "crumbs": [
+      "R 실습: 2025/2",
+      "데이터 사이언스의 과정 복습하기"
+    ]
+  },
+  {
+    "objectID": "lab_07_2025.html#문제-3-1",
+    "href": "lab_07_2025.html#문제-3-1",
+    "title": "데이터 사이언스의 과정 복습하기",
+    "section": "문제 3",
+    "text": "문제 3\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nwpp_2024 |&gt; \n  filter(type == \"SDG region\" & year %in% c(1950, 1975, 2000, 2025, 2050, 2075, 2100)) |&gt; \n  select(region_name, year, pop_jul_total) |&gt; \n  group_by(year) |&gt; \n  mutate(prop = pop_jul_total / sum(pop_jul_total)) |&gt; \n  ggplot(aes(x = year, y = prop, fill = region_name)) +\n  geom_bar(stat = \"identity\", position = \"fill\") +\n  scale_y_continuous(labels = scales::percent) +\n  labs(title = \"World Population Proportions by SDG Region, from 1950 to 2100\",\n       x = \"Year\",\n       y = \"Population Proportion (%)\",\n       fill = \"SDG Region\",\n       caption = \"Your Name, Department of AI-Integrated Education at SNU\") +\n  theme(legend.position = \"bottom\")",
+    "crumbs": [
+      "R 실습: 2025/2",
+      "데이터 사이언스의 과정 복습하기"
+    ]
   }
 ]
