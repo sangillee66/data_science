@@ -1,9 +1,9 @@
 ---
 title: |
   | [R Lecture 8]{style="color:coral;font-size:0.6em"}   
-  | [데이터 수집]{style="font-size:1em"} 
+  | [데이터 수집하기]{style="font-size:1em"} 
 author: <br> 이상일(서울대학교 지리교육과 교수)
-date: 2025-9-2
+date: 2025-11-04
 format: 
   revealjs:
     logo: snu_edu_1.png
@@ -49,89 +49,135 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Collecting Data from Files on the Web
+# [기본 개념]{style="color:coral"}
+
+## 데이터사이언스 프로세스
+
+![[https://r4ds.hadley.nz/import.html](https://r4ds.hadley.nz/import.html){style="font-size:1.25rem"}](images/data_science_process_import-03.png)
+
+## 데이터 수집 방법
+
+-   웹스크레이핑(webscraping)
+
+-   오픈 API의 활용
+
+# [웹스크레이핑]{style="color:coral"}
+
+## 웹스크레이핑의 정의
+
+-   웹페이지로부터 데이터를 추출하는 것, 데이터 긁어 오기
+
+-   데이터 크롤링(crawling)과 유사, 박박 기면서 수집하기
+
+-   해킹(hacking)과의 경계가 모호
+
+    -   허가 없이 정보 시스템에 침투하여 데이터를 취득하는 행위
+
+-   최근들어 점점 회피하는 추세
+
+## HTML의 정의
+
+-   **H**yper**T**ext **M**arkup **L**anguage, 하이퍼텍스터 마크업 언어
+
+    -   웹 브라우저를 통해 표출되는 사항(무엇이 어떻게)을 프로그래밍하는 마크업(markup) 언어 혹은 웹 다큐먼트를 작성하는 마크업 언어
+
+        -   마크업 언어: 다큐먼트의 구조와 포맷을 관장하는 텍스트-엔코딩 시스템
+
+-   마크다운(markdown) 언어
+
+    -   사용자의 편이성이 강화된 마크업 언어
+
+    -   **Quarto:** 비주얼 에디터
+
+## HTML의 기초
+
+-   웹페이지는 다양한 태그(tag)로 구성
+
+    -   각 태그는 시작 태그와 종료 태그로 구성되며, 둘 사이에 해당 콘텐츠가 위치
+
+-   태그의 종류는 다양하며, 크게 세 가지로 구분
+
+    -   최상위인 html 태그
+
+    -   웹페이지의 전반적인 구조를 결정하는 블록(block) 태그
+
+        -   예: h1, section, p, ol 태그 등
+
+    -   블록 태그 내부의 특정 부분에만 적용되는 인라인(inline) 태그
+
+        -   예: b, i, a 태그 등
+
+## HTML의 기초
+
+-   태그들은 복잡한 다단계 구조를 이룸
+
+-   태그는 속성(attribute)를 가질 수 있음
+
+    -   특별히 중요한 속성: [**클래스(class)**]{style="color:coral"}, [**아이디(id)**]{style="color:coral"}
+
+    -   p나 div 태그와 같은 블록 태그: height, width, margin, padding
+
+    -   img 태그: src, alt, width, height
+
+    -   a 태그: href
 
 ## 
 
-::: {layout-ncol="3"}
-![](images/clipboard-1251213286.png)
+![[https://odinuv.cz/articles/html/](https://odinuv.cz/articles/html/){style="font-size:1.25rem"}](https://sangillee.snu.ac.kr/2024_AIEDAP/images/clipboard-613748476.png)
 
-![](images/clipboard-2386206028.png)
+## HTML 엘리먼트의 선택
 
-![](images/clipboard-3228177900.png)
+-   [**HTML 엘리먼트**]{style="color:coral"}
+
+    -   태그와 속성으로 구성된 HTML의 한 단위 혹은 특정 부분
+
+    -   웹스크레이핑의 타깃의 주소
+
+-   HTML 엘리먼트의 선택: [**CSS** **선택자**]{style="color:coral"}(casading style sheet selector)
+
+::: {style="font-size:0.6em"}
+| **선택 대상** | **CSS 선택자** | **결과** |
+|:-----------------------|:-----------------------|:-----------------------|
+| 태그(tag) | tag1 | “tag1”이라는 이름의 모든 tag |
+| 클래스(class) | .class1 | “class1”이라는 class 속성을 갖는 모든 요소 |
+| 아이디(id) | #id1 | “id1”이라는 id 속성을 갖는 모든 요소 |
+| tag와 class의 결합 | tag1.class1 | “tag1”이라는 tag의 “class1”이라는 class 속성을 갖는 모든 요소 |
+| class1과 class2의 결합 | .class1.class2 | “class1”이라는 이름의 class 속성과 “class2”라는 이름의 class 속성을 동시에 갖는 모든 요소 |
+
+: {tbl-colwidths="\[30, 20, 50\]"}
 :::
 
-## `readr` package
+## HTML 엘리먼트의 선택
 
-::: panel-tabset
-## Code
+-   정확한 **CSS 선택자**의 확인
 
-```{r}
-#| echo: true
-#| eval: false
-library(tidyverse)
-library(readr)
-read_csv("https://pos.it/r4ds-students-csv")
-```
+    -   웹페이지에서 오른쪽 마우스 버튼을 눌러 “검사” 선택한 뒤, 탐색
 
-## Result
+    -   브라우저 확장 프로그램의 활용: [SelectGadget](https://chromewebstore.google.com/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb?pli=1)
 
-```{r}
-library(tidyverse)
-library(readr)
-read_csv("https://pos.it/r4ds-students-csv")
-```
-:::
+## **rvest** 패키지
 
-## `openxlsx` package
+![[https://rvest.tidyverse.org/](https://rvest.tidyverse.org/){style="font-size:1.25rem"}](images/hex_rvest.png){fig-align="center"}
 
-::: panel-tabset
-## Code
+## **rvest** 패키지를 활용한 웹스크레이핑 절차
 
-```{r}
-#| echo: true
-#| eval: false
-library(openxlsx)
-read.xlsx("https://github.com/awalker89/openxlsx/raw/master/inst/readTest.xlsx")
-```
+-   1단계: 웹페이지 읽기
 
-## Result
+    -   웹스크레이핑의 대상이 되는 웹페이지의 URL 읽기
 
-```{r}
-library(openxlsx)
-read.xlsx("https://github.com/awalker89/openxlsx/raw/master/inst/readTest.xlsx")
-```
-:::
+-   2단계: HTML 엘리먼트 선택
 
-## `googlesheet4` package
+    -   필요한 정보를 포함하고 있는 엘리먼트의 지정
 
-::: panel-tabset
-## Code
+-   3단계: 하위 엘리먼트 선택
 
-```{r}
-#| echo: true
-#| eval: false
-library(googlesheets4)
-gs4_deauth()
-read_sheet("https://docs.google.com/spreadsheets/d/1U6Cf_qEOhiR9AZqTqS3mbMF3zt2db48ZP5v3rkrAEJY/edit#gid=780868077")
-```
+    -   필요한 정보를 포함하고 있는 하위 엘리먼트의 지정
 
-## Result
+-   4단계: 엘리먼트로부터 데이터 추출
 
-```{r}
-library(googlesheets4)
-gs4_deauth()
-read_sheet("https://docs.google.com/spreadsheets/d/1U6Cf_qEOhiR9AZqTqS3mbMF3zt2db48ZP5v3rkrAEJY/edit#gid=780868077")
-```
-:::
+    -   데이블 데이터, 텍스트 등을 추출
 
-# Web Scraping
-
-## `rvest` package
-
-![](images/clipboard-1209836452.png){fig-align="center"}
-
-## Example 1: Website
+## 사례 1: 스타워즈
 
 [vignette("starwars")](https://rvest.tidyverse.org/articles/starwars.html)
 
@@ -151,14 +197,15 @@ read_sheet("https://docs.google.com/spreadsheets/d/1U6Cf_qEOhiR9AZqTqS3mbMF3zt2d
 </section>
 ```
 
-## Example 1: Title
+## 사례 1: 스타워즈
 
 ::: panel-tabset
-## Code
+## Code 1
 
 ```{r}
 #| echo: true
 #| eval: false
+library(tidyverse)
 library(rvest)
 url <- "https://rvest.tidyverse.org/articles/starwars.html"
 read_html(url) |> 
@@ -167,9 +214,10 @@ read_html(url) |>
   html_text2()
 ```
 
-## Result
+## Result 1
 
 ```{r}
+library(tidyverse)
 library(rvest)
 url <- "https://rvest.tidyverse.org/articles/starwars.html"
 read_html(url) |> 
@@ -177,12 +225,8 @@ read_html(url) |>
   html_element("h2") |> 
   html_text2()
 ```
-:::
 
-## Example 1: All together
-
-::: panel-tabset
-## Code
+## Code 2
 
 ```{r}
 #| echo: true
@@ -207,9 +251,11 @@ tibble(
 )
 ```
 
-## Result
+## Result 2
 
 ```{r}
+#| echo: false
+#| eval: true
 section <- read_html(url) |> 
   html_elements("section")
 tibble(
@@ -231,81 +277,250 @@ tibble(
 ```
 :::
 
-## Example 2: Naver news
+## 사례 2: 웹 상의 테이블
 
-::: r-fit-text
--   [네이버 뉴스](https://news.naver.com/)
-
--   뉴스 검색: "지방소멸"
-
--   검색 결과: <https://search.naver.com/search.naver?where=news&ie=utf8&sm=nws_hty&query=%EC%A7%80%EB%B0%A9%EC%86%8C%EB%A9%B8>
-:::
-
-## Example 2: Naver news
+위키피디어: [전 세계 국가 관련 항목](https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population)
 
 ::: panel-tabset
-## Code
+## Code 1
+
+```{r}
+#| echo: true
+library(tidyverse)
+library(rvest)
+url <- "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
+my_table <- url |> 
+  read_html() |> 
+  html_element("table") |> 
+  html_table()
+```
+
+## Result 1
+
+```{r}
+my_table
+```
+
+## Code 2
+
+```{r}
+#| echo: true
+my_table_new <- my_table |> 
+  select(-Notes) |> 
+  rename(
+    location = "Location",
+    population = "Population",
+    pop_pct = "% ofworld",
+    date = "Date",
+    source = "Source (official or fromthe United Nations)"
+  ) |> 
+  mutate(
+    population = parse_number(population, ","),
+    population = as.numeric(population),
+    pop_pct = str_remove_all(pop_pct, "%"),
+    pop_pct = as.numeric(pop_pct),
+    date = dmy(date)
+  )
+```
+
+## Result 2
+
+```{r}
+my_table_new 
+```
+:::
+
+# [API의 활용]{style="color:coral"}
+
+## API의 정의
+
+-   API(application programming interface)는 일종의 통신 규약(protocol)
+
+    -   복수의 프로그램들이 서로 상호작용하는 방법을 정의하는 일련의 규칙
+
+    -   한 애플리케이션이 다른 애플리케이션의 기능들을 불러 사용할 수 있게 해주는 통로
+
+    -   오픈 API: API 키(key)
+
+-   데이터 API
+
+    -   데이터를 보유하고 있는 공적 기관이 데이터의 사용 권한을 사용자들에게 부여함으로써 데이터에 대한 접근성을 높여주는 일련의 방식
+
+## API 활용의 다양성
+
+-   정형 수치 데이터의 수집
+
+    -   [KOSIS의 API](https://kosis.kr/openapi/)를 활용한 센서스 데이터 수집
+
+    -   [공공데이터포털 API](https://www.data.go.kr/ugs/selectPublicDataUseGuideView.do)를 활용한 전국 초중등학교 위치 데이터 수집
+
+    -   [International Database(IDB)](https://www.census.gov/data/developers/data-sets/international-database.html)의 API를 활용한 세계 인구 데이터 수집
+
+-   정형 텍스트 데이터 수집
+
+    -   [공공데이터포털 API](https://www.data.go.kr/ugs/selectPublicDataUseGuideView.do)를 활용한 학위 논문의 수집
+
+-   비정형 텍스트 데이터 수집: 텍스트 마이닝(text mining)으로 연결
+
+    -   [네이버 검색 API](https://developers.naver.com/)를 활용한 뉴스 데이터 수집
+
+    -   [유튜브 API](https://console.cloud.google.com/apis/)를 활용한 댓글 데이터 수집
+
+## API 활용의 다양성
+
+-   Google Maps Platform (<https://mapsplatform.google.com/>)
+
+-   7 종류의 API
+
+    -   Google Direction API
+
+    -   Google Distance API
+
+    -   Google Elevation API
+
+    -   Google Timezone API
+
+    -   Google Geocode API
+
+    -   Google Reverse Geocode API
+
+    -   Google Places API
+
+-   R 래퍼(rapper) 패키지: [googleway](https://symbolixau.github.io/googleway/)
+
+## **httr2** 패키지
+
+![[https://httr.r-lib.org/](https://httr.r-lib.org/){style="font-size:1.25rem"}](images/hex_httr2.png){fig-align="center"}
+
+## 사례: 공공데이터포털
+
+-   <https://www.data.go.kr/>
+
+-   회원가입
+
+-   데이터 검색: "전국 초중등학교 위치"
+
+-   Open API, 인증키
+
+    -   Base URL: `api.odcloud.kr/api`
+    -   일반 인증키(Decoding)
+    -   데이터 API: `/15099519/v1/uddi:e83bc47a-f235-4b44-96d8-a9d0686435a5`
+
+## 사례: 공공데이터포털
+
+```{r}
+#| echo: false
+your_api_key <- "4EFZj+lIYdJXr0WQ+XuoLyvoEHGj1jYpUFul6GvUT2x4nmC2CZOY65VuwtzfDG+xn9RbPa9ZpKx5419YgSq2zg=="
+```
+
+::: panel-tabset
+## Code 1
 
 ```{r}
 #| echo: true
 #| eval: false
-url <- "https://search.naver.com/search.naver?where=news&ie=utf8&sm=nws_hty&query=%EC%A7%80%EB%B0%A9%EC%86%8C%EB%A9%B8"
-title <- url |> 
-  read_html() |> 
-  html_elements(".news_tit") |> 
-  html_text2()
-contents <- url |> 
-  read_html() |> 
-  html_elements(".dsc_txt_wrap") |> 
-  html_text2()
-tibble(title, contents)
+library(httr2)
+base_url <- "https://api.odcloud.kr/api/15099519/v1/uddi:e83bc47a-f235-4b44-96d8-a9d0686435a5" 
+request(base_url) |>
+  req_url_query(
+    serviceKey = your_api_key,
+    page = 1,
+    perPage = 1000
+  ) |>
+  req_perform() |> 
+  resp_body_json() |> 
+  _[["data"]] |> bind_rows() |> as_tibble() |> slice_head(n = 5)
 ```
 
-## Result
+## Result 1
 
 ```{r}
-url <- "https://search.naver.com/search.naver?where=news&ie=utf8&sm=nws_hty&query=%EC%A7%80%EB%B0%A9%EC%86%8C%EB%A9%B8"
-title <- url |> 
-  read_html() |> 
-  html_elements(".news_tit") |> 
-  html_text2()
-contents <- url |> 
-  read_html() |> 
-  html_elements(".dsc_txt_wrap") |> 
-  html_text2()
-tibble(title, contents)
+#| echo: false
+library(httr2)
+base_url <- "https://api.odcloud.kr/api/15099519/v1/uddi:e83bc47a-f235-4b44-96d8-a9d0686435a5" 
+request(base_url) |>
+  req_url_query(
+    serviceKey = your_api_key,
+    page = 1,
+    perPage = 1000
+  ) |>
+  req_perform() |> 
+  resp_body_json() |> 
+  _[["data"]] |> bind_rows() |> as_tibble() |> slice_head(n = 5)
+```
+
+## Code 2
+
+```{r}
+#| echo: true
+final_data <- map_dfr(1:12, function(p) {
+  request(base_url) |>
+    req_url_query(
+      serviceKey = your_api_key, 
+      page = p, 
+      perPage = 1000) |>
+    req_perform() |>
+    resp_body_json() |>
+    _[["data"]] |> bind_rows() |> as_tibble()
+})
+```
+
+## Result 2
+
+```{r}
+final_data
 ```
 :::
 
-# API
+## 사례: KOSIS
 
-`httr2` package
+-   KOSIS 공유서비스 웹페이지(<https://kosis.kr/openapi/>) 접속
 
-![](images/clipboard-2579380411.png){fig-align="center"}
+-   상단의 \[활용신청\] 탭 클릭
 
-## Example: Naver news
+    -   통계청의 ONE-ID로 통합로그인(없으면 회원가입 필수)
 
-::: r-fit-text
+-   활용신청하여 사용자 인증키 획득
+
+    -   사용자 인증키는 마이페이지에서 언제든 확인 가능
+
+-   [**kosis**](https://cran.r-project.org/web/packages/kosis/index.html) 패키지: 주석훈
+
+## 사례: KOSIS
+
+```{=html}
+<iframe src="https://sangillee.shinyapps.io/ClickOnMap/" 
+loading="lazy" style="width: 100%; height: 700px; border: 
+0px none;" allow="web-share; clipboard-write"></iframe>
+```
+
+<https://sangillee.snu.ac.kr/dashboard_popgeo/>
+
+## 사례: 네이버 뉴스 {.smaller}
+
 -   NAVER Developer (<https://developers.naver.com/main/>)
 
 -   \[Products\]-\[서비스 API\]-\[검색\] (<https://developers.naver.com/products/service-api/search/search.md>)
 
-    -   오픈 API 이용 신청
+    -   오픈 API 이용 신청 절차
 
-    -   개발 가이드 보기
+    -   ClientID와 Client Secret 개념
+
+    -   요청 URL: https://openapi.naver.com/v1/search/news.json
+
+    -   파라미터: query, display, start, sort
 
 -   오픈 API 이용 신청
 
-    -   애플리케이션 이름
+    -   애플리케이션 이름: 아무 이름이나 입력
 
-    -   비로그인 오픈 API 서비스 환경
+    -   사용 API: '검색'이 선택된 상태를 유지
 
-        -   WEB 설정
+    -   비로그인 오픈 API 서비스 환경: 'WEB' 설정
 
-        -   웹 서비스 URL: http://localhost
-:::
+    -   웹 서비스 URL (최대 10개): 'http://localhost'를 입력
 
-## Example: Naver news
+## 사례: 네이버 뉴스
 
 ```{r}
 #| echo: false
@@ -318,11 +533,11 @@ your_Client_Secret <- "m7onDeHfwe"
 
 ```{r}
 #| echo: true
-#| eval: false
 library(httr2)
-search <- "지방소멸"
-your_url <- "https://openapi.naver.com/v1/search/news.json"
-result_naver <- request(your_url) |> 
+search <- "지역소멸"
+base_url <- "https://openapi.naver.com/v1/search/news.json"
+result_naver <- base_url |> 
+  request() |> 
   req_headers(
     "X-Naver-Client-ID" = your_ClientID,
     "X-Naver-Client-Secret" = your_Client_Secret
@@ -334,32 +549,15 @@ result_naver <- request(your_url) |>
     sort = "date"
   ) |> 
   req_perform() |> 
-  resp_body_json() 
-naver_data <- data.frame(t(sapply(result_naver$items, data.frame)))
-naver_data
+  resp_body_json(check_type = FALSE) |> 
+  pluck("items") |> bind_rows()
 ```
 
 ## Result 1
 
 ```{r}
-library(httr2)
-search <- "지방소멸"
-your_url <- "https://openapi.naver.com/v1/search/news.json"
-result_naver <- request(your_url) |> 
-  req_headers(
-    "X-Naver-Client-ID" = your_ClientID,
-    "X-Naver-Client-Secret" = your_Client_Secret
-  ) |> 
-  req_url_query(
-    query = search,
-    display = 100,
-    start = 1,
-    sort = "date"
-  ) |> 
-  req_perform() |> 
-  resp_body_json() 
-naver_data <- data.frame(t(sapply(result_naver$items, data.frame)))
-naver_data
+#| echo: true
+result_naver |> slice_head(n = 5)
 ```
 
 ## Code 2
@@ -367,24 +565,57 @@ naver_data
 ```{r}
 #| echo: true
 #| eval: false
-all_news <- data.frame()
-search <- "지방소멸"
-for(i in 1:10){
-  news <- request(your_url) |> 
-    req_headers(
-      "X-Naver-Client-ID" = your_ClientID,
-      "X-Naver-Client-Secret" = your_Client_Secret
-    ) |> 
-    req_url_query(
-      query = search,
-      display = 100,
-      start = i,
-      sort = "date"
-    ) |> 
-    req_perform() |> 
-    resp_body_json()
-  body <- data.frame(t(sapply(news$item, data.frame)))
-  all_news <- bind_rows(all_news, body)
+naver_extractor <- function(base_url, search_item, n_start = 1, n_display = 100){
+  news <- request(base_url) |> 
+  req_headers(
+    "X-Naver-Client-ID" = your_ClientID,
+    "X-Naver-Client-Secret" = your_Client_Secret
+  ) |> 
+  req_url_query(
+    query = search_item,
+    display = n_display,
+    start = n_start,
+    sort = "date"
+  ) |> 
+  req_perform() |> 
+  resp_body_json() |> pluck("items") |> bind_rows()
 }
+
+search <- "지역소멸"
+rep <- 10
+result_naver <- map_dfr(
+  start_idx <- (0:(rep-1)) * 100 + 1,
+  \(x) naver_extractor(
+    a_url       = your_url,
+    search_item = search,
+    n_start     = x,
+    n_display = 100
+  )
+)
+```
+
+## Result 2
+
+```{r}
+#| echo: true
+result_naver |> slice_head(n = 5)
 ```
 :::
+
+## 텍스트 마이닝과 자연어처리
+
+-   텍스트 마이닝
+
+    -   비정형 텍스트 데이터로부터 패턴 또는 관계를 추출하여 의미 있는 정보를 찾아내는 기법
+
+    -   기본 과정: 텍스트 전처리, 토큰화하기, 단어 빈도 분석하기
+
+    -   고급 분석: 비교 분석, 감정 분석, 의미망 분석, 토픽 모델링 등
+
+-   자연어처리(NLP; natural language processing)
+
+    -   [`KoNLP`](https://cran.r-project.org/src/contrib/Archive/KoNLP/)(Korean Natural Language Processing)
+
+## **mall** 패키지
+
+![[https://mlverse.github.io/mall/](https://mlverse.github.io/mall/){style="font-size:1.25rem"}](images/clipboard-1394818611.png)

@@ -1034,9 +1034,9 @@
     "href": "lab_01.html",
     "title": "Lab01: R과 RStudio",
     "section": "",
-    "text": "R과 R Studio를 설치할 수 있다.\nR Studio의 구조 및 기본 사용법을 이해할 수 있다.\n프로젝트와 스크립트에 대해 이해하고 이를 생성할 수 있다.\n\n\n\n\n\n\n\nR을 시작하기 전 반드시 확인해야 하는 사항\n\n\n\nR은 실행과정에서 폴더 경로에 한글이 포함된 경우 오류가 자주 발생한다. 따라서 사용자 계정 이름이 한국어로 설정되어 있지 않은지 반드시 확인해야 하며, 앞으로 만들 프로젝트 폴더 등도 이름을 모두 영어로 설정하는 것이 좋다.\nWindows: [설정] -&gt; [계정] -&gt; [사용자 정보]로 들어가 볼드체로 된 사용자 계정 이름이 영어인지 확인하기. 사용자 계정이 한국어로 설정되어 있다면 영어로 된 새로운 윈도우 사용자 계정을 만들어야 한다.\nMac: 프로젝트 폴더 이름 설정만 잘 신경쓰면 된다.",
+    "text": "R과 R Studio를 설치할 수 있다.\nR Studio의 구조 및 기본 사용법을 이해할 수 있다.\n프로젝트와 스크립트에 대해 이해하고 이를 생성할 수 있다.\n\n\n\n\n\n\n\n경고R을 시작하기 전 반드시 확인해야 하는 사항\n\n\n\nR은 실행과정에서 폴더 경로에 한글이 포함된 경우 오류가 자주 발생한다. 따라서 사용자 계정 이름이 한국어로 설정되어 있지 않은지 반드시 확인해야 하며, 앞으로 만들 프로젝트 폴더 등도 이름을 모두 영어로 설정하는 것이 좋다.\nWindows: [설정] -&gt; [계정] -&gt; [사용자 정보]로 들어가 볼드체로 된 사용자 계정 이름이 영어인지 확인하기. 사용자 계정이 한국어로 설정되어 있다면 영어로 된 새로운 윈도우 사용자 계정을 만들어야 한다.\nMac: 프로젝트 폴더 이름 설정만 잘 신경쓰면 된다.",
     "crumbs": [
-      "R 실습",
+      "R 실습: 2024/1",
       "Lab01: R과 RStudio"
     ]
   },
@@ -1045,9 +1045,9 @@
     "href": "lab_01.html#실습의-목표",
     "title": "Lab01: R과 RStudio",
     "section": "",
-    "text": "R과 R Studio를 설치할 수 있다.\nR Studio의 구조 및 기본 사용법을 이해할 수 있다.\n프로젝트와 스크립트에 대해 이해하고 이를 생성할 수 있다.\n\n\n\n\n\n\n\nR을 시작하기 전 반드시 확인해야 하는 사항\n\n\n\nR은 실행과정에서 폴더 경로에 한글이 포함된 경우 오류가 자주 발생한다. 따라서 사용자 계정 이름이 한국어로 설정되어 있지 않은지 반드시 확인해야 하며, 앞으로 만들 프로젝트 폴더 등도 이름을 모두 영어로 설정하는 것이 좋다.\nWindows: [설정] -&gt; [계정] -&gt; [사용자 정보]로 들어가 볼드체로 된 사용자 계정 이름이 영어인지 확인하기. 사용자 계정이 한국어로 설정되어 있다면 영어로 된 새로운 윈도우 사용자 계정을 만들어야 한다.\nMac: 프로젝트 폴더 이름 설정만 잘 신경쓰면 된다.",
+    "text": "R과 R Studio를 설치할 수 있다.\nR Studio의 구조 및 기본 사용법을 이해할 수 있다.\n프로젝트와 스크립트에 대해 이해하고 이를 생성할 수 있다.\n\n\n\n\n\n\n\n경고R을 시작하기 전 반드시 확인해야 하는 사항\n\n\n\nR은 실행과정에서 폴더 경로에 한글이 포함된 경우 오류가 자주 발생한다. 따라서 사용자 계정 이름이 한국어로 설정되어 있지 않은지 반드시 확인해야 하며, 앞으로 만들 프로젝트 폴더 등도 이름을 모두 영어로 설정하는 것이 좋다.\nWindows: [설정] -&gt; [계정] -&gt; [사용자 정보]로 들어가 볼드체로 된 사용자 계정 이름이 영어인지 확인하기. 사용자 계정이 한국어로 설정되어 있다면 영어로 된 새로운 윈도우 사용자 계정을 만들어야 한다.\nMac: 프로젝트 폴더 이름 설정만 잘 신경쓰면 된다.",
     "crumbs": [
-      "R 실습",
+      "R 실습: 2024/1",
       "Lab01: R과 RStudio"
     ]
   },
@@ -1056,9 +1056,9 @@
     "href": "lab_01.html#r과-r-studio-설치",
     "title": "Lab01: R과 RStudio",
     "section": "\n1 R과 R Studio 설치",
-    "text": "1 R과 R Studio 설치\nR과 R Studio 설치를 위해서 아래의 링크로 이동한다. 해당 사이트는 R Studio를 만든 posit이라는 회사가 관리하는 R Studio Desktop의 다운로드 페이지이다.\n다운로드 링크: https://posit.co/download/rstudio-desktop/\n\n\n\n\n\n\n참고: 회사 이름에 대한 이야기\n\n\n\n\n\n원래는 회사 이름 자체가 R Studio였는데, 2022년에 사명을 posit으로 변경했다. 수석 과학자의 설명에 따르면 R Studio는 R과 파이썬 모두를 지원하는 IDE(Integrated Development Environment, 통합 개발 환경)인데, 이름 때문에 R에만 제한된다는 느낌을 받았다고 한다. 자세한 내용은 링크 참고.\n\n\n\n링크에 접속하면 아래의 그림 1 과 같이 R과 R studio를 설치할 수 있는 화면이 나타난다.\n\n\n\n\n\n그림 1: R과 R Studio 다운로드 화면\n\n\n\n1.1 R 설치\n위의 링크를 눌러 들어간 웹사이트에서 왼쪽의 “DOWNLOAD AND INSTALL R”을 클릭하게 되면 CRAN(The Comprehensive R Archive Network) 사이트에 접속할 수 있다. 상단의 다운로드 목록 중 본인의 운영체제에 맞는 R의 최신 버전을 다운로드 받으면 된다. 현재 문서 작성 시점에서 R의 최신 버전은 2024년 2월 29에 배포된 4.3.3이다.\n\n\n\n\n\n\nMac 사용자의 경우\n\n\n\n\n\n\n\n위는 애플 실리콘 Mac(M1~M3), 아래는 Intel Mac 전용\n\n\n\n\n\n\n\n\n\n\nWindows 사용자의 경우\n\n\n\n\n\n\n\nInstall R for the first time 클릭 후 R 다운로드\n\n\n\n\n\n1.2 R Studio 설치\nR Studio를 설치하기 위해 다시 원래의 다운로드 페이지로 돌아와 오른쪽의 “DOWNLOAD R DESKTOP FOR WINDOWS”를 눌러 R Studio를 다운받는다. Mac등 다른 운영체제를 사용하는 사람들은 아래로 스크롤하여 설치 파일을 다운로드 받을 수 있다. 현재 문서 작성 시점 기준 R Studio의 최신 버전은 2024년 1월 29일에 배포된 2023.12.1+402이다.",
+    "text": "1 R과 R Studio 설치\nR과 R Studio 설치를 위해서 아래의 링크로 이동한다. 해당 사이트는 R Studio를 만든 posit이라는 회사가 관리하는 R Studio Desktop의 다운로드 페이지이다.\n다운로드 링크: https://posit.co/download/rstudio-desktop/\n\n\n\n\n\n\n힌트참고: 회사 이름에 대한 이야기\n\n\n\n\n\n원래는 회사 이름 자체가 R Studio였는데, 2022년에 사명을 posit으로 변경했다. 수석 과학자의 설명에 따르면 R Studio는 R과 파이썬 모두를 지원하는 IDE(Integrated Development Environment, 통합 개발 환경)인데, 이름 때문에 R에만 제한된다는 느낌을 받았다고 한다. 자세한 내용은 링크 참고.\n\n\n\n링크에 접속하면 아래의 그림 1 과 같이 R과 R studio를 설치할 수 있는 화면이 나타난다.\n\n\n\n\n\n그림 1: R과 R Studio 다운로드 화면\n\n\n\n1.1 R 설치\n위의 링크를 눌러 들어간 웹사이트에서 왼쪽의 “DOWNLOAD AND INSTALL R”을 클릭하게 되면 CRAN(The Comprehensive R Archive Network) 사이트에 접속할 수 있다. 상단의 다운로드 목록 중 본인의 운영체제에 맞는 R의 최신 버전을 다운로드 받으면 된다. 현재 문서 작성 시점에서 R의 최신 버전은 2024년 2월 29에 배포된 4.3.3이다.\n\n\n\n\n\n\n힌트Mac 사용자의 경우\n\n\n\n\n\n\n\n위는 애플 실리콘 Mac(M1~M3), 아래는 Intel Mac 전용\n\n\n\n\n\n\n\n\n\n\n힌트Windows 사용자의 경우\n\n\n\n\n\n\n\nInstall R for the first time 클릭 후 R 다운로드\n\n\n\n\n\n1.2 R Studio 설치\nR Studio를 설치하기 위해 다시 원래의 다운로드 페이지로 돌아와 오른쪽의 “DOWNLOAD R DESKTOP FOR WINDOWS”를 눌러 R Studio를 다운받는다. Mac등 다른 운영체제를 사용하는 사람들은 아래로 스크롤하여 설치 파일을 다운로드 받을 수 있다. 현재 문서 작성 시점 기준 R Studio의 최신 버전은 2024년 1월 29일에 배포된 2023.12.1+402이다.",
     "crumbs": [
-      "R 실습",
+      "R 실습: 2024/1",
       "Lab01: R과 RStudio"
     ]
   },
@@ -1067,9 +1067,9 @@
     "href": "lab_01.html#r의-구조-및-기본-사용법",
     "title": "Lab01: R과 RStudio",
     "section": "\n2 R의 구조 및 기본 사용법",
-    "text": "2 R의 구조 및 기본 사용법\n\n2.1 창(pane, 패인)\nR Studio를 실행하면 그림 2 와 같은 화면이 나온다. 화면이 크게 3개의 창으로 구성되어 있음을 알 수 있다.\n\n\n\n\n\n그림 2: R Studio를 열면 나오는 3개의 창\n\n\n왼편에 가장 크게 나타나 있는 창을 Console 창(pane), 오른쪽 아래의 창을 보통 Output 또는 File 창이라고 부른다. 그리고 오른쪽 위의 창을 보통 Environment 창이라고 부른다.\n\n\n\n\n\n\n노트\n\n\n\n개별 창은 여러 개의 탭(tab)으로 구성되어 있는데, 탭의 기능이 매우 다양하기 때문에 소속 탭의 모든 기능을 포괄하는 일관성 있는 창 이름을 붙이는 것이 매우 어렵다. 예를 들어 Output 창의 경우 Plots와 Viewer 탭은 결과물을 보여주는 것이라 할 수 있지만 나머지 탭은 꼭 그렇지도 않다.\n\n\n\n\n\n\n\n\n참고: Base R의 화면\n\n\n\n\n\n\n\nBase R의 화면. 좌측에 콘솔 창이 있고, 그래프 등을 생성하면 우측에 따로 창이 하나 생성된다. 콘솔 창만을 가지고 R 프로젝트를 수행하는 것은 어려움이 많다.\n\n\n\n\n\n2.2 Console 창에서 놀아보기\n\n2.2.1 프롬프트, 할당, 객체\n콘솔 창에 R 프롬프트인 &gt;가 나타나 있을 것이다. 아래와 같이 숫자 1을 타이핑하고 실행을 위해 [enter] 키를 누른다.\n\n1\n\n[1] 1\n\n\n간단한 연산을 해본다. 사실 R은 기본적으로 계산기이다.\n\n1 + 2\n\n[1] 3\n\n\n이제 할당 연산자(&lt;-)를 활용하여 할당을 해보자.\n\na &lt;- 1\n\n우상의 환경 창을 보면 뭔가 생성된 것을 확인할 수 있을 것이다. a라는 객체가 생성되었으며 그것은 1이라는 값을 품고 있다는 의미이다. 이제 a는 알파벳 소문자가 아니라 1이라는 숫자와 필연적으로 결합해 있는 객체이다. 다음과 같이 하면 이러한 사실을 명확히 확인할 수 있다.\n\na\n\n[1] 1\n\n\n아래와 같이 하면 객체끼리의 연산이 가능하다.\n\nb &lt;- 2\nc &lt;- a + b\nc\n\n[1] 3\n\n\n\n\n\n\n\n\n참고: 할당 연산자로 &lt;-를 사용해야 하는 이유\n\n\n\n\n\n&lt;-를 할당 연산자로 사용하는 데에는 다양한 이유가 있다. 그 중 하나는 =을 사용했을 때 발생할 수 있는 혼란을 방지하기 위함인데, =은 변수 할당 기능 외에도 다른 기능들을 할 수 있기 때문에다. =를 함수 인자 전달에 사용한 아래의 예시를 보자.\n\n# 할당 연산자와 함수 인자 전달에 모두 =를 사용했을 때\nmy_data = c(1, 2, 3, NA, 5)\n\naverage = mean(x = my_data, na.rm = TRUE)\n\naverage\n\n[1] 2.75\n\n\n\n# 할당 연산자에는 &lt;-, 인자 전달에는 =를 사용했을 때\nmy_data &lt;- c(1, 2, 3, NA, 5)\n\naverage &lt;- mean(x = my_data, na.rm = TRUE)\n\naverage\n\n[1] 2.75\n\n\n아래의 예시와 같이 &lt;-와 =를 구분했을 경우에 코드의 가독성이 좋아짐을 확인할 수 있다.\n\n\n\n\n2.2.2 함수\nsum() 함수를 사용하여 동일한 연산을 할 수 있다. sum() 은 R에 기본적으로 내장되어 있는 Base R 함수 중 하나이다.\n\nsum(a, b)\n\n[1] 3\n\n\n\n\n\n\n\n\n중요\n\n\n\n지금부터 모든 함수명에는 항상 ()를 연결하여 나타낼 것이다. 다른 객체명과의 혼동을 방지하기 위한 것도 있지만, 모든 함수는 () 속에 인풋(이것을 아규먼트(argument, 인자)라고 부른다)을 받아들이기 때문이다.\n\n\nR에는 수많은 내장 함수가 있다. 그 중 몇가지만 실행하면 다음과 같다. sqrt()는 제곱근을, abs()는 절대값을, log10()는 로그값을 산출해준다.\n\nsqrt(2)\n\n[1] 1.414214\n\nabs(-3)\n\n[1] 3\n\nlog10(100)\n\n[1] 2\n\n\n\n2.2.3 벡터와 데이터 프레임\n직접 벡터를 만들어보자.\n\na &lt;- c(58, 26, 24)\nb &lt;- c(\"이상일\", \"김세창\", \"김우형\")\nc &lt;- c(TRUE, TRUE, FALSE)\n\n벡터 a는 숫자형(numeric), b는 문자형(character), c는 논리형(logical)으로, 세 개의 벡터가 서로 다른 유형을 가지고 있음을 Environment 창에서 확인할 수 있다.\n\n\n\n\n\n\n노트\n\n\n\nR에서 사용되는 데이터 유형에 대해서는 다음의 웹사이트를 참고할 수 있다. https://tibble.tidyverse.org/articles/types.html\n\n\n벡터를 data.frame()이라는 함수를 통해 결합하면 데이터 프레임을 만들 수 있다.\n\ndf &lt;- data.frame(a, b, c)\ndf\n\n   a      b     c\n1 58 이상일  TRUE\n2 26 김세창  TRUE\n3 24 김우형 FALSE\n\n\n우상의 Environment 창을 보면 뭔가 변화가 있음을 확인할 수 있을 것이다. Data가 생겼고 그 아래에 df가 생성되어 있다. “3 obs. of 3 variables”라는 말이 굉장히 중요하다. 이것은 df라는 데이터 프레임 객체가 3개의 관측개체(observations)와 3개의 변수(variables)로 구성되어 있다는 것을 의미한다. 데이터 프레임, 관측개체, 변수에 대해서는 강의에서 상세하게 다룬다.\nEnvironment 창에서 df를 클릭해보라. 그러면 왼편에 또 하나의 창이 생기면서 마치 엑셀과 같은 형식으로 데이터가 나타날 것이다. View() 함수를 실행해도 동일한 결과를 얻을 수 있다.\n\nView(df)\n\n여기서 중요한 것은 새로 생긴 창이다. 이것을 보통 Editor 창이라고 부른다. 이제부터 Console은 부차적인 목적으로만 사용할 것이고 Editor 창이 주인공이 된다.\n\n\n\n\n\n\n참고: R의 다양한 내장 함수\n\n\n\n\n\n\n통계 함수\n\n\nmean(c(1, 2, 3, 4)) # 벡터의 평균 계산\n\n[1] 2.5\n\nmedian(1:10) # 벡터의 중앙값 계산\n\n[1] 5.5\n\nvar(rep(c(1:5), times = 2)) # 벡터의 분산 계산\n\n[1] 2.222222\n\nsd(seq(1, 10, 2)) # 벡터의 표준편차 계산\n\n[1] 3.162278\n\nquantile(0:100) # 벡터의 사분위수 계산\n\n  0%  25%  50%  75% 100% \n   0   25   50   75  100 \n\n\n\n데이터 탐색\n\n\nstr(cars) # cars 데이터의 구조를 보여준다.\n\n'data.frame':   50 obs. of  2 variables:\n $ speed: num  4 4 7 7 8 9 10 10 10 11 ...\n $ dist : num  2 10 4 22 16 10 18 26 34 17 ...\n\nsummary(cars) # cars 데이터를 요약해준다.\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00  \n\nhead(cars) # cars 데이터의 처음 6개 값을 보여준다.(세부 설정이 가능하다.)\n\n  speed dist\n1     4    2\n2     4   10\n3     7    4\n4     7   22\n5     8   16\n6     9   10\n\ntail(cars, 10) # cars 데이터의 마지막 10개 값을 보여준다.\n\n   speed dist\n41    20   52\n42    20   56\n43    20   64\n44    22   66\n45    23   54\n46    24   70\n47    24   92\n48    24   93\n49    24  120\n50    25   85\n\n\n\n데이터 시각화\n\n\nplot(cars) # 데이터 프레임을 가지고 그래프를 그려준다.\n\n\n\n\n\n\nplot(cars, type=\"l\", main=\"cars\") # 그래프의 형태와 제목을 지정할 수 있다.\n\n\n\n\n\n\n\n이 외에도 다른 수많은 내장 함수들이 존재한다.\n\n\n\n\n\n\n\n\n\n참고: 궁금한 함수가 있다면?\n\n\n\n\n\n함수에 대해 궁금한 점이 있다면 알아볼 수 있는 방법들이 많이 있다. Editor나 Console에 아래의 둘 중 하나를 아무거나 입력후 실행하면 함수에 대한 정보를 확인할 수 있다.\n\n?sum # sum이라는 함수가 궁금할 때\nhelp(sum)\n\n또 이미 발견한 사람도 있겠지만, 이 문서의 본문에 있는 함수들을 클릭하면 함수에 대한 정보가 담긴 페이지로 이동할 수 있다.",
+    "text": "2 R의 구조 및 기본 사용법\n\n2.1 창(pane, 패인)\nR Studio를 실행하면 그림 2 와 같은 화면이 나온다. 화면이 크게 3개의 창으로 구성되어 있음을 알 수 있다.\n\n\n\n\n\n그림 2: R Studio를 열면 나오는 3개의 창\n\n\n왼편에 가장 크게 나타나 있는 창을 Console 창(pane), 오른쪽 아래의 창을 보통 Output 또는 File 창이라고 부른다. 그리고 오른쪽 위의 창을 보통 Environment 창이라고 부른다.\n\n\n\n\n\n\n노트\n\n\n\n개별 창은 여러 개의 탭(tab)으로 구성되어 있는데, 탭의 기능이 매우 다양하기 때문에 소속 탭의 모든 기능을 포괄하는 일관성 있는 창 이름을 붙이는 것이 매우 어렵다. 예를 들어 Output 창의 경우 Plots와 Viewer 탭은 결과물을 보여주는 것이라 할 수 있지만 나머지 탭은 꼭 그렇지도 않다.\n\n\n\n\n\n\n\n\n힌트참고: Base R의 화면\n\n\n\n\n\n\n\nBase R의 화면. 좌측에 콘솔 창이 있고, 그래프 등을 생성하면 우측에 따로 창이 하나 생성된다. 콘솔 창만을 가지고 R 프로젝트를 수행하는 것은 어려움이 많다.\n\n\n\n\n\n2.2 Console 창에서 놀아보기\n\n2.2.1 프롬프트, 할당, 객체\n콘솔 창에 R 프롬프트인 &gt;가 나타나 있을 것이다. 아래와 같이 숫자 1을 타이핑하고 실행을 위해 [enter] 키를 누른다.\n\n1\n\n[1] 1\n\n\n간단한 연산을 해본다. 사실 R은 기본적으로 계산기이다.\n\n1 + 2\n\n[1] 3\n\n\n이제 할당 연산자(&lt;-)를 활용하여 할당을 해보자.\n\na &lt;- 1\n\n우상의 환경 창을 보면 뭔가 생성된 것을 확인할 수 있을 것이다. a라는 객체가 생성되었으며 그것은 1이라는 값을 품고 있다는 의미이다. 이제 a는 알파벳 소문자가 아니라 1이라는 숫자와 필연적으로 결합해 있는 객체이다. 다음과 같이 하면 이러한 사실을 명확히 확인할 수 있다.\n\na\n\n[1] 1\n\n\n아래와 같이 하면 객체끼리의 연산이 가능하다.\n\nb &lt;- 2\nc &lt;- a + b\nc\n\n[1] 3\n\n\n\n\n\n\n\n\n힌트참고: 할당 연산자로 &lt;-를 사용해야 하는 이유\n\n\n\n\n\n&lt;-를 할당 연산자로 사용하는 데에는 다양한 이유가 있다. 그 중 하나는 =을 사용했을 때 발생할 수 있는 혼란을 방지하기 위함인데, =은 변수 할당 기능 외에도 다른 기능들을 할 수 있기 때문에다. =를 함수 인자 전달에 사용한 아래의 예시를 보자.\n\n# 할당 연산자와 함수 인자 전달에 모두 =를 사용했을 때\nmy_data = c(1, 2, 3, NA, 5)\n\naverage = mean(x = my_data, na.rm = TRUE)\n\naverage\n\n[1] 2.75\n\n\n\n# 할당 연산자에는 &lt;-, 인자 전달에는 =를 사용했을 때\nmy_data &lt;- c(1, 2, 3, NA, 5)\n\naverage &lt;- mean(x = my_data, na.rm = TRUE)\n\naverage\n\n[1] 2.75\n\n\n아래의 예시와 같이 &lt;-와 =를 구분했을 경우에 코드의 가독성이 좋아짐을 확인할 수 있다.\n\n\n\n\n2.2.2 함수\nsum() 함수를 사용하여 동일한 연산을 할 수 있다. sum() 은 R에 기본적으로 내장되어 있는 Base R 함수 중 하나이다.\n\nsum(a, b)\n\n[1] 3\n\n\n\n\n\n\n\n\n중요\n\n\n\n지금부터 모든 함수명에는 항상 ()를 연결하여 나타낼 것이다. 다른 객체명과의 혼동을 방지하기 위한 것도 있지만, 모든 함수는 () 속에 인풋(이것을 아규먼트(argument, 인자)라고 부른다)을 받아들이기 때문이다.\n\n\nR에는 수많은 내장 함수가 있다. 그 중 몇가지만 실행하면 다음과 같다. sqrt()는 제곱근을, abs()는 절대값을, log10()는 로그값을 산출해준다.\n\nsqrt(2)\n\n[1] 1.414214\n\nabs(-3)\n\n[1] 3\n\nlog10(100)\n\n[1] 2\n\n\n\n2.2.3 벡터와 데이터 프레임\n직접 벡터를 만들어보자.\n\na &lt;- c(58, 26, 24)\nb &lt;- c(\"이상일\", \"김세창\", \"김우형\")\nc &lt;- c(TRUE, TRUE, FALSE)\n\n벡터 a는 숫자형(numeric), b는 문자형(character), c는 논리형(logical)으로, 세 개의 벡터가 서로 다른 유형을 가지고 있음을 Environment 창에서 확인할 수 있다.\n\n\n\n\n\n\n노트\n\n\n\nR에서 사용되는 데이터 유형에 대해서는 다음의 웹사이트를 참고할 수 있다. https://tibble.tidyverse.org/articles/types.html\n\n\n벡터를 data.frame()이라는 함수를 통해 결합하면 데이터 프레임을 만들 수 있다.\n\ndf &lt;- data.frame(a, b, c)\ndf\n\n   a      b     c\n1 58 이상일  TRUE\n2 26 김세창  TRUE\n3 24 김우형 FALSE\n\n\n우상의 Environment 창을 보면 뭔가 변화가 있음을 확인할 수 있을 것이다. Data가 생겼고 그 아래에 df가 생성되어 있다. “3 obs. of 3 variables”라는 말이 굉장히 중요하다. 이것은 df라는 데이터 프레임 객체가 3개의 관측개체(observations)와 3개의 변수(variables)로 구성되어 있다는 것을 의미한다. 데이터 프레임, 관측개체, 변수에 대해서는 강의에서 상세하게 다룬다.\nEnvironment 창에서 df를 클릭해보라. 그러면 왼편에 또 하나의 창이 생기면서 마치 엑셀과 같은 형식으로 데이터가 나타날 것이다. View() 함수를 실행해도 동일한 결과를 얻을 수 있다.\n\nView(df)\n\n여기서 중요한 것은 새로 생긴 창이다. 이것을 보통 Editor 창이라고 부른다. 이제부터 Console은 부차적인 목적으로만 사용할 것이고 Editor 창이 주인공이 된다.\n\n\n\n\n\n\n힌트참고: R의 다양한 내장 함수\n\n\n\n\n\n\n통계 함수\n\n\nmean(c(1, 2, 3, 4)) # 벡터의 평균 계산\n\n[1] 2.5\n\nmedian(1:10) # 벡터의 중앙값 계산\n\n[1] 5.5\n\nvar(rep(c(1:5), times = 2)) # 벡터의 분산 계산\n\n[1] 2.222222\n\nsd(seq(1, 10, 2)) # 벡터의 표준편차 계산\n\n[1] 3.162278\n\nquantile(0:100) # 벡터의 사분위수 계산\n\n  0%  25%  50%  75% 100% \n   0   25   50   75  100 \n\n\n\n데이터 탐색\n\n\nstr(cars) # cars 데이터의 구조를 보여준다.\n\n'data.frame':   50 obs. of  2 variables:\n $ speed: num  4 4 7 7 8 9 10 10 10 11 ...\n $ dist : num  2 10 4 22 16 10 18 26 34 17 ...\n\nsummary(cars) # cars 데이터를 요약해준다.\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00  \n\nhead(cars) # cars 데이터의 처음 6개 값을 보여준다.(세부 설정이 가능하다.)\n\n  speed dist\n1     4    2\n2     4   10\n3     7    4\n4     7   22\n5     8   16\n6     9   10\n\ntail(cars, 10) # cars 데이터의 마지막 10개 값을 보여준다.\n\n   speed dist\n41    20   52\n42    20   56\n43    20   64\n44    22   66\n45    23   54\n46    24   70\n47    24   92\n48    24   93\n49    24  120\n50    25   85\n\n\n\n데이터 시각화\n\n\nplot(cars) # 데이터 프레임을 가지고 그래프를 그려준다.\n\n\n\n\n\n\nplot(cars, type=\"l\", main=\"cars\") # 그래프의 형태와 제목을 지정할 수 있다.\n\n\n\n\n\n\n\n이 외에도 다른 수많은 내장 함수들이 존재한다.\n\n\n\n\n\n\n\n\n\n힌트참고: 궁금한 함수가 있다면?\n\n\n\n\n\n함수에 대해 궁금한 점이 있다면 알아볼 수 있는 방법들이 많이 있다. Editor나 Console에 아래의 둘 중 하나를 아무거나 입력후 실행하면 함수에 대한 정보를 확인할 수 있다.\n\n?sum # sum이라는 함수가 궁금할 때\nhelp(sum)\n\n또 이미 발견한 사람도 있겠지만, 이 문서의 본문에 있는 함수들을 클릭하면 함수에 대한 정보가 담긴 페이지로 이동할 수 있다.",
     "crumbs": [
-      "R 실습",
+      "R 실습: 2024/1",
       "Lab01: R과 RStudio"
     ]
   },
@@ -1080,7 +1080,7 @@
     "section": "\n3 프로젝트(project)와 스크립트(script)",
     "text": "3 프로젝트(project)와 스크립트(script)\n\n3.1 프로젝트 만들기\n\n3.1.1 R 프로젝트 만들기\n두 가지 방법이 있다.\n\n최상단 메뉴를 이용: File &gt; New Project\n상단 메뉴바 오른쪽 끝의 화살표 아이콘: New Project\n\n그림 3 에 나타나 있는 절차를 통해 프로젝트를 생성한다. 각각 다음의 단계를 거친다.\n\n1단계: 과제 폴더(디렉토리)를 미리 만들어 두지 않았다면, New Directory를 선택한다(추천). 그렇지 않았다면 Existing Directory를 선택한다.\n2단계: New Project를 선택한다.\n3단계: ’Directory name:’에 과제를 위한 폴더명을 타이핑한다(예: AI_Class_2024). ’Create project as subdirectory of:’에 최상위 폴더(예: R_Projects)를 선택한다.\n\n\n\n\n\n\n그림 3: R 프로젝트의 생성 절차\n\n\nOutput 창의 Files 탭을 누르면, 다양한 기본 파일들이 해당 폴더에 생성되었음을 확인할 수 있다. 가장 중요한 파일은 .RProj라는 확장자를 가진 파일이다. 나중에 R 외부에서 이 파일을 더블클릭하면 R 프로젝트를 열 수 있다.\n\n\n\n\n\n\n힌트\n\n\n\nR 외부의 파일 관리 시스템(윈도우즈의 경우 파일 탐색기)를 사용하지 말고, Output 창의 Files 탭을 사용하는 것이 훨씬 유용하다. 파일 탐색기에서 제공하는 거의 대부분의 기능을 제공한다.\n\n\n\n3.1.2 옵션의 변경\nRstudio의 기본 세팅값을 바꿀 수 있는 다양한 옵션이 존재한다. Tools &gt; Global Options를 선택하면 그림 4 과 같은 화면을 볼 수 있을 것이다.\n\n왼쪽에서 Apearance를 선택한 후, ’Editor font size:’나 ’Editor theme’을 변경하여 자신의 선호를 반영하라. 특히 많은 데이터 사이언티스트들이 다크 모드를 선호하기 때문에 다크 모드 테마 중 하나로 변경하는 것을 추천한다.\n\n\n\n\n\n\n그림 4: 옵션의 변경\n\n\n\n3.2 스크립트 만들기\n\n3.2.1 스크립트 파일 생성하고 저장하기\n스크립트 파일을 생성하는 세 가지 정도의 방법이 있다.\n\nFile &gt; New File &gt; R Script 선택\nFile 메뉴 바로 아래의 New File 아이콘을 누른 후 R Script 선택\n단축키(Ctrl + Shift + N) 실행 (Mac의 경우 Command + Shift + N)\n\n이렇게 하면 그림 5 과 같이 좌상에 Editor 창이 생성된다. 그 안에서 그림에서 보는 바와 같이 코드를 작성하게 된다.\n\n\n\n\n\n그림 5: 네 개의 창 (https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html)\n\n\n스크립트 파일에 이름을 부여하고 저장한다.\n\nFile &gt; Save 선택\nSave current document 아이콘 클릭\n단축키(Ctrl + S) 실행 (Mac의 경우 Command + S)\n\n3.2.2 스크립트 파일에서의 실행\n앞에서 Console에서 했던 모든 일을 동일하게 할 수 있다. 단 실행 방식이 조금 다르다. 앞에서 생성한 df 데이터 프레임의 a 벡터(변수)의 평균값을 구하기 위해 이전과 동일하게 입력한다. 그런데 프롬프트가 없고, [enter]를 눌러도 실행되지 않는다.\n\nmean(df$a)\n\n우선 실행할 코드 라인 혹은 코드의 영역을 지정해야 한다. 두 가지 방법이 있다.\n\n실행할 코드 라인 혹은 코드 블록에 커서를 위치시킨다.\n왼쪽 마우스 버튼을 누른 상태에서 커서를 이동시켜 실행할 영역 전체를 선택한다.\n\n영역이 지정되면 실행하면 되는데, 여기에도 두 가지 방법이 있다.\n\n단축키(Ctrl + Enter) 실행 (Mac의 경우 Command + Enter)\nEditor 창의 우상에 있는 ‘Run the current line or selection’ 아이콘을 클릭(그림 6 참조)\n\n\n\n\n\n\n그림 6: 스크립트 파일에서의 실행(https://docs.posit.co/ide/user/ide/guide/code/execution.html)\n\n\n이전의 실행을 반복하고자 할 때는 다음과 같이 하면 된다.\n\n단축키(Ctrl + Alt +P) 실행 (Mac의 경우 Option + Command + P)\nEditor 창의 우상에 있는 ‘Re-run the previous code region’ 아이콘을 클릭(그림 6 참조)\n\n3.2.3 코멘트\n코드에 대한 코멘트를 스크립트 파일 곳곳에 남겨두면 나중에 코드 작성의 의도를 보다 쉽게 파악할 수 있다. 이와 관련하여 두 가지 사항을 알아두면 유용하다.\n첫째, # 표시 뒤의 것은 R이 실행하지 않기 때문에 중간중간에 # 표시를 하고 그 뒤에 자신의 코멘트를 남겨두는 것을 권한다.\n\nmean(df$a) # 세 사람의 나이 평균을 구함. 첫 번째 사람 나이가 엄청나게 많음.\n\n둘째, 코드가 길어지면, 그것을 몇 개의 섹션으로 나누고 그것에 코멘트를 달아 줄 수 있다. 단축키(Crtl + Shift + R, Mac은 Command + Shift + R)를 실행하여 섹션 라벨(Section label)을 달 수 있고, Editor 창의 왼쪽 하단에 있는 작은 아이콘을 이용해 섹션을 빠르게 이동할 수 있다.\n\n\n\n\n\n\n노트\n\n\n\n\n작성한 코드 등 작업물들을 온라인 상에서 관리하고 다른 사람들과 공유하기 위해 Github 사용을 추천한다. 컴퓨터에 Git을 설치하고 Github에 접속하여 회원가입을 하면 Github를 사용할 수 있다. Github의 간단한 기능만을 익혀두어도 나중에 Quarto를 통하여 자신만의 웹사이트를 간단하게 제작할 수 있다.",
     "crumbs": [
-      "R 실습",
+      "R 실습: 2024/1",
       "Lab01: R과 RStudio"
     ]
   },
@@ -4837,7 +4837,7 @@
     "href": "exec_08.html#api의-활용",
     "title": "수집하기",
     "section": "\n3 API의 활용",
-    "text": "3 API의 활용\n\n3.1 정의\nAPI(application programming interface)는 복수의 프로그램들이 서로 상호작용하는 방법을 정의하는 일련의 규칙을 의미한다. 다른 말로 하면 한 프로그램이 다른 프로그램의 기능들을 불러 사용할 수 있게 해주는 통로를 의미한다.\n이런 API 개념이 데이터 수집과 관련하여 중요한 의미를 가지는 것은 오픈 API(open API) 때문이다. 오픈 API는 데이터를 보유하고 있는 공적 기관이 데이터의 사용 권한을 사용자들에게 부여함으로써 데이터에 대한 접근 가능성을 높여주기 때문이다.\n만일 오픈 API가 존재하는 상황이라면 데이터사이언스의 가장 좋은 데이터 수집 방법은 오픈 API를 활용하는 것이다.\n\n3.2 R에서 API를 활용한 데이터 수집\n최근까지 API를 활용한 데이터 수집에는 httr과 jsonlite라는 두 개의 패키지가 함께 사용되었다. 그런데 최근 httr의 완전 업그레이드 버전인 httr2가 선을 보이면서 이 패키지를 단독으로 활용하는 방식이 주목 받고 있다. httr2는 R의 tidyverse 운동을 이끌고 있는 해들리 위컴(Hadley Wickham)이 tidyverse의 철학에 맞추어 httr 패키지를 발전시킨 것이다. 이러한 R 패키지를 직접 활용하는 것이 가장 좋은 방법이겠지만, 초보자의 경우 다소간의 어려움을 겪을 수 있다. httr2 함수가 다른 패키지의 함수에 비해 개념적으로 이해하기 어려운 측면이 있기 때문이기도 하고, 데이터를 획득하는 구체적인 과정이 API 마다 조금씩 다르기 때문이기도 하다.\n이러한 어려움을 들어주기 위해 일종의 연결 패키지들이 개발되어 있는데, 이러한 패키지를 래퍼 패키지(wrapper package)라고 부른다. 래퍼 패키지들은 사용자와 API 수집용 패키지 사이에서 일종의 가교 역할을 하는 것으로, 사용자들이 사용하기 편한 함수를 제공함으로써 보다 손쉽게 오픈 API를 활용할 수 있게 도와준다. 예를 들어, 구글맵스플랫폼(Google Maps Platform)에 API로 접근해 다양한 기능을 활용할 수 있게 도와주는 googleway와 같은 패키지가 좋은 예가 될 수 있다.\n\n3.3 API를 활용한 공공데이터포털 데이터의 수집\n공공데이터포털(https://www.data.go.kr/)은 대한민국 정부의 공식 데이터 공유 플랫폼이다. 다양한 정부 기관이 생산한 데이터를 검색 및 구득할 수 있는 시스템일 갖추고 있다. 데이터를 참고 해당 데이터의 파일을 직접 다운로드한 후 R 세션에 불러들여도 되지만 여기서는 오픈 API를 활용하여 데이터를 수집하는 것을 실습해 본다. 서비스를 사용하려면 우선 공공데이터포털에서 회원가입하고 로그인한다.\n로그인이 된 상태에서 필요한 데이터를 검색창을 통해 검색한다. 여기서는 전국 초중등학교위치 정보 데이터를 수집하는 예제를 실습해 본다. 다음의 순서에 따른다.\n첫째, 검색창에서 “전국 초중등학교 위치”를 검색하면 여러 데이터가 나타나는데 첫 번째에 “재단법인한국지방교육행정연구재단_초중등학교위치”가 나타나 있을 것이다. 클릭한다.\n둘째, 파일데이터를 막바로 다운로드받을 수도 있지만, 오픈 API 탭을 누른다. 우측의 활용신청을 클릭한다. 활용목적 등 필수 입력항목을 채우고 활용신청을 클릭하면 오픈 API키 발급 신청이 끝이 난다.\n셋째, 상단의 마이페이지를 클릭하고, 데이터 활용 &gt; Open API &gt; 활용신청 현황에서 승인 결과 및 인증키를 확인할 수 있다. 데이터 공급처에 따라 Open API 관리 방식이 다소 다르기 때문에 사안마다 탄력적으로 접근할 필요가 있다. “재단법인한국지방교육행정연구재단_초중등학교위치”의 경우 다음의 사항을 확인한다.\n\nBase URL: api.odcloud.kr/api\n\n일반 인증키(Decoding): 두 개의 인증키 중 디코딩용 인증키가 실질적으로 사용되는 인증키임\n2025년 3월 21일 기준의 데이터의 API: /15099519/v1/uddi:e83bc47a-f235-4b44-96d8-a9d0686435a5\n\n\n아래의 코드를 실행한다. base_url을 정의하는게 중요하다. 해당 웹페이지에 획득한 Base URL과 데이터 API를 결합하여 만들어졌다는 것을 알 수 있을 것이다.\n\nlibrary(httr2)\nbase_url &lt;- \"https://api.odcloud.kr/api/15099519/v1/uddi:e83bc47a-f235-4b44-96d8-a9d0686435a5\" \nresp &lt;- request(base_url) |&gt;\n  req_url_query(\n    serviceKey = your_api_key,\n    page = 1,\n    perPage = 1000\n  ) |&gt;\n  req_perform() |&gt; \n  resp_body_json() -&gt; public_data\n\n코드를 살펴보면 1,000개의 학교를 가진 페이지 하나만의 데이터를 수집했다는 것을 알 수 있다. 한 번에 수집 가능한 최대값이 보통 1,000개이고, 그것을 초과할 경우 여러 페이지에 걸쳐 데이터를 수집해야 한다. 결과로 생성된 public_data를 우상이 환경창에서 확인해보면 리스트 형태의 데이터임을 알 수 있다. 우리가 원하는 학교 데이터는 public_data 속의 data에 들어 있으므로 다음과 같이 데이터를 추출한다.\n\npublic_data |&gt; _[[\"data\"]] |&gt; bind_rows() -&gt; final_data\n\nfinal_data 속에는 총 1,000개의 학교에 대한 정보가 담겨져 있다는 것을 확인할 수 있다. 우리가 알아야 하는 핵심 정보는 총 학교수가 몇 개인가 하는 점이다. public_data 속의 totalCount에 그 해답이 담겨 있다. 아래와 같이 실행한다.\n\npublic_data$totalCount\n\n혹은 다음과 같이 보다 타디이버스스럽게 실행할 수도 있다.\n\npublic_data |&gt; _[[\"totalCount\"]]\n\n코드를 수정하여 다음과 같이 실행한다. 문제는 이렇게 실행하면 마지막 12번째 페이지 데이터인 985개만 수집된다는 사실이다.\n\nbase_url &lt;- \"https://api.odcloud.kr/api/15099519/v1/uddi:e83bc47a-f235-4b44-96d8-a9d0686435a5\" \nresp &lt;- request(base_url) |&gt;\n  req_url_query(\n    serviceKey = your_key,\n    page = 12,\n    perPage = 1000\n  ) |&gt;\n  req_perform() |&gt; \n  resp_body_json() -&gt; public_data\n\n따라서 1-12의 페이지 각각을 실행하여 데이터를 종합해야 한다. 다음과 같이 실행한다.\n\nfinal_data &lt;- map_dfr(1:12, function(p) {\n  request(base_url) |&gt;\n    req_url_query(\n      serviceKey = your_api_key, \n      page = p, \n      perPage = 1000) |&gt;\n    req_perform() |&gt;\n    resp_body_json() |&gt;\n    _[[\"data\"]] |&gt; bind_rows() |&gt; as_tibble()\n})\n\nfinal_data를 확인해보면, 11,985개 데이터가 수집되어 있는 것을 확인할 수 있다. 여기에서 map_dfr() 함수는 tidyverse에서 프로그래밍을 담당하고 있는 핵심 패키지인 purrr의 함수로 반복 수행의 결과를 데이터 프레임으로 산출해 준다.\n마지막 라인은 purrr 패키지의 pluck() 함수를 이용하여 조금 간단히 할 수 있다.\n\nfinal_data &lt;- map_dfr(1:12, function(p) {\n  request(base_url) |&gt;\n    req_url_query(\n      serviceKey = your_api_key, \n      page = p, \n      perPage = 1000) |&gt;\n    req_perform() |&gt;\n    resp_body_json(simplifyVector = TRUE) |&gt;\n    pluck(\"data\") |&gt; as.tibble()\n})\n\n\n3.4 API를 활용한 KOSIS 데이터의 수집\nKOSIS를 포함한 많은 대한민국의 데이터 포털은 개방 API 서비스를 제공하고 있다. KOSIS는 공유서비스 홈페이지를 통해 Open API를 통한 데이터 수집을 권장하고 있다. 개발 가이드를 통해 R을 포함한 다양한 프로그래밍 언어에서 KOSIS의 개방 API 서비스를 활용하는 구체적인 코드를 제공하고 있기도 하다. 가이드 북을 읽어 보면, 앞에서 언급한 R의 httr, jsonlite, rvest와 같은 패키지가 활용됨을 알 수 있다.\n앞에서 설명한 것처럼, API용 패키지를 직접 사용할 수도 있지만, 래퍼 패키지가 존재하기만 한다면 그것을 활용하는 것이 훨씬 손쉬운 옵션일 수 있다. 놀랍게도 한국의 주석훈(Seokhoon Joo)이라는 분이 그러한 기능을 하는 kosis라는 패키지를 이미 개발해 두었고, 그것을 활용하고자 한다.\n실습 주제는 2023년 센서스 인구 기준으로 전국의 17개 시도별 ’지방소멸위험지수’를 계산하고 그래프의 형태로 표현하는 것이다.\n\n3.4.1 KOSIS에서 API KEY 받기\n\nKOSIS 공유서비스 웹페이지(https://kosis.kr/openapi/) 접속\n\n상단의 [활용신청] 탭 클릭\n\n통계청의 ONE-ID로 통합로그인(없으면 회원가입 필수)\n\n\n\n활용신청하여 사용자 인증키 획득\n\n사용자 인증키는 마이페이지에서 언제든 확인 가능\n\n\n\n3.4.2 패키지 설치 및 인증키 등록\n우선 kosis 패키지를 오른쪽 하단 윈도우의 Packages 탭을 활용하여 인스톨한다. 이후에 아래와 같이 kosis와 tidyverse 패키지를 불러온다.\n\nlibrary(kosis)\nlibrary(tidyverse)\n\nkosis 패키지의 kosis.setKey() 함수를 이용하여 인증키를 등록한다. Your Key Here 자리에 부여받은 인증키를 붙여 넣는다.\n\nkosis.setKey(apikey = \"Your Key Here\")\n\n\n3.4.3 데이터 추출\n가장 유용한 방식은 kosis 패키지의 getStatDataFromURL() 함수를 활용하는 것이다. KOSIS의 데이터 서비스 구조를 감안할 때 이 것이 좀 더 용이한 방식일 수 있다. 데이터 추출은 다음과 같이 두 단계의 과정을 거친다.\n\nKOSIS에서 필요한 데이터의 위치에 대한 URL 정보를 획득한다.\ngetStatDataFromURL() 함수를 활용하여 데이터를 추출한다.\n\n구체적인 수행 과정은 다음과 같다.\n첫째, KOSIS에 로그인한다. 이것은 api key를 활용하기 위한 필수 조건이다.\n둘째, 인구 센서스 데이터를 바탕으로 시도별 지방소멸위험지수를 계산하고자 하기 때문에, 최신 인구 센서스의 지역별 20~39세의 여성 인구와 65세 이상의 전체 인구에 대한 데이터가 필요하다. KOSIS 홈페이지를 탐색하여 필요한 데이터가 있는 위치를 찾아간다.\n\n[국내통계]-[주제별 통계]-[인구]-[인구총조사]-[인구부문]-[총조사인구(2015년 이후)]-[전수부문 (등록센서스, 2015년 이후)]-[전수기본표]-[연령 및 성별 인구]\n\n셋째, ’조회설정’을 클릭하여 다음과 같이 선택한다.\n\n항목: ‘총인구(명)’, ‘총인구_남자(명)’, ’총인구_여자(명)’만 선택(더 많은 항목을 선택하면 데이터가 너무 커 에러가 발생)\n행정구역별(읍면동): ‘1 레벨’과 ’2 레벨’ 선택(’1 레벨’은 시도 수준, ’2 레벨’은 시군구 수준)\n\n넷째, ‘조회설정’ 창을 없앤 후(조회창의 왼편 가운데의 화살표 클릭), 표의 오른편 상단에 있는 여러개 탭 중 ‘OPENAPI’ 탭을 클릭한다. 다음과 같이 선택한다.\n\n조회기간 설정: ‘기간설정’ 버턴을 누른 후, 기간설정이 2023~2023년인지 확인한다.\n응답필드 설정: 하나씩 눌러 모두 선택한 후, ‘URL생성’ 탭을 클릭한다. 그리고 나서 ‘URL 복사’ 탭을 클릭한다. URL 속에 api key가 포함되어 있음을 확인한다.\n\n다섯째, 다음과 같이 실행한다. “Your URL” 자리에 복사한 URL를 붙여 넣는다.\n\nyour_url &lt;- \"Your URL\"\ndata_api &lt;- getStatDataFromURL(url = your_url)\ndata_api |&gt; \n  slice_head(n = 5)\n\n\n\n  ORG_ID     TBL_ID                     TBL_NM C1 C1_NM          C1_OBJ_NM  C2\n1    101 DT_1IN1503 연령 및 성별 인구 – 읍면동 00  전국 행정구역별(읍면동) 000\n2    101 DT_1IN1503 연령 및 성별 인구 – 읍면동 00  전국 행정구역별(읍면동) 000\n3    101 DT_1IN1503 연령 및 성별 인구 – 읍면동 00  전국 행정구역별(읍면동) 000\n4    101 DT_1IN1503 연령 및 성별 인구 – 읍면동 00  전국 행정구역별(읍면동) 005\n5    101 DT_1IN1503 연령 및 성별 인구 – 읍면동 00  전국 행정구역별(읍면동) 005\n  C2_NM C2_OBJ_NM ITM_ID          ITM_NM        ITM_NM_ENG PRD_SE PRD_DE\n1  합계    연령별    T00      총인구(명)        Population      A   2023\n2  합계    연령별    T01 총인구_남자(명)   Population_Male      A   2023\n3  합계    연령별    T02 총인구_여자(명) Population_Female      A   2023\n4 0~4세    연령별    T00      총인구(명)        Population      A   2023\n5 0~4세    연령별    T01 총인구_남자(명)   Population_Male      A   2023\n        DT\n1 51774521\n2 25903852\n3 25870669\n4  1361737\n5   697702\n\n\n동일한 과제를 httr2 패키지로 실행해 본다.\n\nlibrary(httr2)\nyour_url &lt;- \"Your URL\"\ndata_api &lt;- your_url |&gt; \n  request() |&gt; \n  req_perform() |&gt; \n  resp_body_json(check_type = FALSE) |&gt; \n  bind_rows()\ndata_api |&gt; slice_head(n = 5)\n\n\n\n# A tibble: 5 × 20\n  C1_OBJ_NM    C2_NM DT    C2    C1    PRD_SE ITM_ID TBL_ID ITM_NM TBL_NM PRD_DE\n  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; \n1 행정구역별(읍면동)…… 합계  5177… 000   00    A      T00    DT_1I… 총인구(명… 연령 및 … 2023  \n2 행정구역별(읍면동)…… 합계  2590… 000   00    A      T01    DT_1I… 총인구_남… 연령 및 … 2023  \n3 행정구역별(읍면동)…… 합계  2587… 000   00    A      T02    DT_1I… 총인구_여… 연령 및 … 2023  \n4 행정구역별(읍면동)…… 0~4세 1361… 005   00    A      T00    DT_1I… 총인구(명… 연령 및 … 2023  \n5 행정구역별(읍면동)…… 0~4세 6977… 005   00    A      T01    DT_1I… 총인구_남… 연령 및 … 2023  \n# ℹ 9 more variables: LST_CHN_DE &lt;chr&gt;, C1_NM_ENG &lt;chr&gt;, C1_NM &lt;chr&gt;,\n#   ITM_NM_ENG &lt;chr&gt;, C2_OBJ_NM_ENG &lt;chr&gt;, C2_NM_ENG &lt;chr&gt;, ORG_ID &lt;chr&gt;,\n#   C1_OBJ_NM_ENG &lt;chr&gt;, C2_OBJ_NM &lt;chr&gt;\n\n\n\n3.4.4 데이터 정리 및 변형\n아래와 같이 데이터를 정리한다. 최종적으로 지역별 지역소멸위험지수를 산출한다.\n\ndata &lt;- data_api |&gt; \n  select(C1, C1_NM, C2, C2_NM, ITM_ID, ITM_NM, DT) |&gt; \n  mutate(\n    across(c(C1, DT), as.numeric),\n    ITM_ID = case_match(\n    ITM_ID, \n    \"T00\" ~ \"T\",\n    \"T01\" ~ \"M\",\n    \"T02\" ~ \"F\"),\n  ) |&gt;\n  unite(\"gender_age\", ITM_ID, C2_NM, sep = \"_\") |&gt; \n  pivot_wider(\n    id_cols = c(C1, C1_NM),\n    names_from = gender_age,\n    values_from = DT\n  ) |&gt; \n  mutate(\n    index = (`F_20~24세` + `F_25~29세` + `F_30~34세` + `F_35~39세`) / `T_65세이상`\n  ) |&gt; \n  select(\n    C1, C1_NM, index\n  ) \n\n\n\n\n\n\n\n노트\n\n\n\n여기서는 case_match() 함수에 주목할 필요가 있다. case_match() 함수는 데이터 변형을 위한 tidyverse의 핵심 패키지인 dplyr의 벡터 함수로서, 벡터의 각 요소에 조건 부합성을 검토하고 그것을 통해 새로운 값을 부여할 수 있게 해준다. 우선 변환을 위한 컬럼을 지정하고, ~ 기호를 중심으로 왼편에 현재의 값을, 오른편에 새로운 값을 놓으면 된다. 보통 여러 조건을 나열해 모든 케이스가 새로운 값을 갖게 하지만, 간혹 해당 되는 조건이 없는 케이스를 위해 .default 아규먼트를 사용한다. forcats 패키지에서 문자형 벡터의 레벨(level)을 새로운 레벨로 교체하는데 사용되는 fct_recode() 함수와 유사하다. case_match() 함수와 유사한 함수에 case_when()가 있다. case_match() 함수가 단일 컬럼의 개별 값을 전환할 때 사용되는 함수라면, case_when()은 단일 컬럼에 다양한 조건을 설정하거나 두 개 이상의 컬럼이 개입되는 경우에 사용할 수 있는 함수이다. 따라서 case_match() 함수의 경우는 컬럼명이 한 번만 등장하면 되지만, case_when()에서는 개별 조건에 해당 컬럼명이 등장해야 한다. 아래의 그래프에 활용의 예가 나타나 있다.\n\n\n시도 데이터와 시군구 데이터를 분리하여 저장한다.\n\ndata_sido &lt;- data |&gt; \n  filter(nchar(C1) == 2) \ndata_sigungu &lt;- data |&gt; \n  filter(nchar(C1) == 5 & !C1_NM %in% c(\"동부\", \"면부\", \"읍부\") & str_sub(C1, 5, 5) == 0)\nwrite_rds(data_sido, \"data_sido.rds\")\nwrite_rds(data_sigungu, \"data_sigungu.rds\")\nread_rds(\"data_sigungu.rds\")\n\n# A tibble: 229 × 3\n      C1 C1_NM    index\n   &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;\n 1 11010 종로구   0.932\n 2 11020 중구     0.932\n 3 11030 용산구   0.972\n 4 11040 성동구   0.951\n 5 11050 광진구   1.15 \n 6 11060 동대문구 0.971\n 7 11070 중랑구   0.706\n 8 11080 성북구   0.884\n 9 11090 강북구   0.561\n10 11100 도봉구   0.535\n# ℹ 219 more rows\n\n\n\n3.4.5 그래프 작성\n그래프 작성의 코드가 다소 복잡해 보인다. 이렇게 된 것은 인구소멸위험지수 연구에서 주로 사용되는 5개의 위험도 클래스의 구분법을 적용하고, 위험도 클래스별로 특정한 색상을 적용하고, 그래프의 범례에 5개의 클래스가 모두 나타나게 하려했기 때문이다.\n\ndata_sido_new &lt;- data_sido |&gt; \n  mutate(\n    index_class = case_when(\n      index &lt; 0.2 ~ \"1\",\n      index &gt;= 0.2 & index &lt; 0.5 ~ \"2\",\n      index &gt;= 0.5 & index &lt; 1.0 ~ \"3\",\n      index &gt;= 1.0 & index &lt; 1.5 ~ \"4\",\n      index &gt;= 1.5 ~ \"5\"\n    ),\n    index_class = fct(index_class, levels = as.character(1:5))\n  )\n\nclass_color &lt;- c(\"1\" = \"#d7191c\", \"2\" = \"#fdae61\",\n                 \"3\" = \"#ffffbf\", \"4\" = \"#a6d96a\", \n                 \"5\" = \"#1a9641\")\ndata_sido_new |&gt; \n  ggplot(aes(x = index, y = fct_reorder(C1_NM, index))) +\n  geom_col(aes(fill = index_class), show.legend = TRUE) +\n  geom_text(aes(label = round(index, digits = 3)), hjust = -0.1) +\n  scale_x_continuous(limits = c(0, 1.5)) +\n  scale_fill_manual(name = \"Classes\", \n                    labels = c(\"&lt; 0.2\", \"0.2 ~ 0.5\", \"0.5 ~ 1.0\", \n                               \"1.0 ~ 1.5\", \"&gt;= 1.5\"), \n                    values = class_color, drop = FALSE) +\n  labs(title = \"인구소멸위험지수, 2023년\", \n       x = \"인구소멸위험지수\", \n       y = \"\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n노트\n\n\n\n우선 tidyverse에서 문자열에 특화된 핵심 패키지인 forcats의 두 함수에 대해 언급하고자 한다. fct()는 가장 기본이 되는 함수로 일반 문자형 컬럼을 팩터형(factor) 컬럼으로 전환해주는 함수이다. 동시에 레벨을 지정할 수 있다. fct_relevel() 함수는 팩터 벡터의 기존 레벨의 순서를 바꾸어주는 여러 함수들 중 하나이다. fct_reorder()는 특정 변수의 레벨 순서를 다른 변수의 값의 순서에 의거해 바꾸어준다. 비슷한 함수에 fct_reorder2()가 있는데, 이것은 특정 변수의 레벨 순서를 다른 변수의 값의 순서에 의거하여 바꾸되 그 다른 변수의 값을 또 다른 변수를 통해 규정하고자 할 때 사용할 수 있다. 위의 예를 든다면, 시도의 순서를 인구소멸위험지수의 크기에 따라 배열하되, 만약 여러 연도에 걸쳐 인구소멸위험지수가 계산되었을 경우, 특정 연도(주로 가장 큰 연도)의 값에 의거해 배열하는 것이다. 이외에 레벨의 순서를 역방향으로 바꿀 수 있는 fct_rev() 함수가 빈번하게 사용된다. ggplot2 패키지의 scale_fill_manual() 함수 역시 매우 중요한 역할을 한다. 이것은 막대 그래프를 채울 컬러의 스케일링을 사용자가 메뉴얼하게 할 수 있게 해주는데, 컬러 팔레트(class_color), 범례의 표제와 라벨을 메뉴얼하게 적용할 수 있다. 마지막에 있는 drop = FALSE 인수가 매우 중요한 역할을 한다. 그래프를 보면 시도 수준의 인구소멸위험지수는 양 극단의 두 계급에 케이스를 갖지 않는다. 전체 계급을 보여주는 것이 의미있다고 판단한다면, drop = FALSE 아규먼트를 통해 모든 계급이 범례에 드러나게 할 수 있다.\n\n\n\n3.4.6 또 다른 방식\n또 다른 방식은 kosis 패키지의 getStatData() 함수를 활용하는 것이다. 해당 함수에 기관명(101)과 데이터 코드(DT_1IN503)을 아규먼트에 입력하면 데이터를 불러올 수 있다. 위의 방식의 한 연도의 모든 지역에 대한 데이터를 얻기에 용이하다면, 이 방식은 하나의 지역에 대한 시계열 데이터를 수집하는데 유용하다. 아래의 코드를 통해 서울시 종로구(코드: 11010)의 2015~2023년 데이터를 획득할 수 있다.\n\nregion_code &lt;- \"11010\"\ndata_api &lt;- getStatData(\n  orgId = 101, \n  tblId = \"DT_1IN1503\", \n  prdSe = \"Y\",\n  startPrdDe = \"2015\", \n  endPrdDe = \"20231101\", \n  objL1 = region_code, \n  objL2 = \"ALL\") |&gt; \n  filter(str_length(C2) == 3)\n\n\n\n\n\n\n\n힌트\n\n\n\nregion_code &lt;- \"11010+11020\"과 같은 식으로 설정하면 두 개 이상의 지역에 대한 데이터를 한꺼번에 구할 수도 있다.\n\n\n동일한 과제를 httr2 패키지로 실행해 본다.\n\nlibrary(httr2)\nyour_key &lt;- \"your_key\"\nyour_url &lt;- \"https://kosis.kr/openapi/Param/statisticsParameterData.do\"\nregion_code &lt;- \"11010\"\ndata_api &lt;- your_url |&gt; \n  request() |&gt;\n  req_url_query(\n    method = \"getList\",\n    apiKey = your_key,\n    format = \"json\",\n    jsonVD = \"Y\",\n    orgId = \"101\",\n    tblId = \"DT_1IN1503\",\n    prdSe = \"Y\",\n    startPrdDe = \"2015\",\n    endPrdDe = \"20231101\",\n    objL1 = region_code,  \n    objL2 = \"ALL\",\n    itmId = \"ALL\"\n  ) |&gt;\n  req_perform() |&gt; \n  resp_body_json(check_type = FALSE) |&gt; \n  bind_rows()\n\n아래와 같은 데이터 정리 및 변형 과정이 필요하다.\n\ndata &lt;- data_api |&gt; \n  select(C1, C1_NM, C2, C2_NM, ITM_ID, ITM_NM, DT, PRD_DE) |&gt; \n  filter(ITM_ID == \"T00\" | ITM_ID == \"T01\" | ITM_ID == \"T02\") |&gt; \n  mutate(\n    across(c(C1, DT), as.numeric),\n    ITM_ID = case_match(\n    ITM_ID, \n    \"T00\" ~ \"T\",\n    \"T01\" ~ \"M\",\n    \"T02\" ~ \"F\"),\n  ) |&gt;\n  unite(\"gender_age\", ITM_ID, C2_NM, sep = \"_\") |&gt; \n  pivot_wider(\n    id_cols = c(C1, C1_NM, PRD_DE),\n    names_from = gender_age,\n    values_from = DT\n  ) |&gt; \n  mutate(\n    index = (`F_20~24세` + `F_25~29세` + `F_30~34세` + `F_35~39세`) / `T_65세이상`\n  ) |&gt; \n  select(\n    C1, C1_NM, index, PRD_DE\n  ) \n\n이 데이터를 바탕으로 종로구의 인구소멸위험지수의 변화 추이를 관찰할 수 있다.\n\nregion &lt;- data |&gt; distinct(C1_NM) |&gt; pull()\ndata |&gt; \n  ggplot(aes(x = PRD_DE, y = index, group = C1)) +\n  geom_point() +\n  geom_line(, linewidth = 0.5) +\n  ggtitle(paste0(region, \" 인구소멸위험지수 추이\")) +\n  xlab(label = \"연도\") +\n  ylab(label = \"인구소멸위험지수\") +\n  theme(plot.title = element_text(size = 18, hjust=0.5))\n\n\n\n\n\n\n\necharts4r 패키지를 이용해 인터랙티브 플롯을 제작해 본다.\n\nlibrary(echarts4r)\ndata |&gt; \n  group_by(C1_NM) |&gt; \n  e_charts(PRD_DE) |&gt; \n  e_line(index) |&gt; \n  e_tooltip(trigger = \"axis\")\n\n\n\n\n\n이 모든 과정을 함수로 만들고, Base R의 read_line() 함수를 활용하면 초보적인 상호작용형 도구를 만들 수 있다.\n\nexInd &lt;- function(){\n  # Library\n  library(tidyverse)\n  library(kosis)\n  library(DT)\n  library(openxlsx)\n  \n  # Table for Searching Region Code\n  region_table &lt;- read.xlsx(\"https://github.com/Sechang-Kim/gis-lab/raw/download/korea-sigungu-code(2022).xlsx\")\n  print(datatable(region_table))\n  \n  # Input Arguments\n  aoi_code &lt;- readline('지역 코드를 입력하세요: ')\n  start &lt;- as.numeric(readline('시작 연도를 입력하세요: '))\n  end &lt;- as.numeric(readline('종료 연도를 입력하세요: '))\n  \n  # Data Request\n  aoi &lt;- getStatData(orgId = 101, tblId = \"DT_1IN1503\", prdSe = \"Y\",\n                     startPrdDe = start, endPrdDe = end,\n                     objL1 = aoi_code, objL2 = \"ALL\") |&gt; \n    filter(nchar(C2) == 3) # Delete 1-age interval(Only 5-age interval)\n  \n  # Data Cleansing\n  aoi &lt;- aoi |&gt; \n    select(C1, C1_NM, C2, C2_NM, ITM_ID, ITM_NM, DT, PRD_DE) |&gt; \n    filter(ITM_ID == \"T00\" | ITM_ID == \"T01\" | ITM_ID == \"T02\") |&gt; \n    mutate(\n      across(c(C1, DT), as.numeric),\n      ITM_ID = case_match(\n        ITM_ID, \"T00\" ~ \"T\",\n        \"T01\" ~ \"M\",\n        \"T02\" ~ \"F\"),\n    ) |&gt; \n    unite(\"gender_age\", ITM_ID, C2_NM, sep = \"_\") |&gt; \n    pivot_wider(\n      id_cols = c(C1, C1_NM, PRD_DE),\n      names_from = gender_age,\n      values_from = DT\n    ) |&gt; \n    mutate(\n      index = (`F_20~24세` + `F_25~29세` + `F_30~34세` + `F_35~39세`) / `T_65세이상`\n    ) |&gt; \n    select(\n      C1, C1_NM, index, PRD_DE\n    )\n  \n  ## Visualization\n  region &lt;- aoi$C1_NM[1] # For Auto-Plot Title\n  vis &lt;- aoi |&gt; \n    ggplot(aes(x=PRD_DE, y=index)) +\n    geom_point() +\n    geom_line(group = 1, linewidth = 0.5) +\n    ggtitle(paste0(region, \" 인구소멸위험지수 추이\")) +\n    xlab(label = \"연도\") +\n    ylab(label = \"인구소멸위험지수\") +\n    theme(plot.title = element_text(size = 18, hjust=0.5))\n  \n  return(vis)\n}\n\n함수를 실행해 보자.\n\nexInd()\n\n\n3.5 API를 활용한 NAVER 뉴스 데이터의 수집\n\n3.5.1 NAVER Developer\n네이버의 API를 활용하기 위해서는 네이버 디벨로퍼에서 오픈 API를 신청해야 한다. 절차를 정리하면 다음과 같다.\n첫째, [Documents]에서 ‘API 공통 가이드’를 살펴본다. 특히 비로그인 방식 오픈 API가 중요한데, 그 중에서 ’검색’ 카테고리에 해당하는 뉴스, 백과사전, 블로그 등 다양한 검색 서비스에 주목한다.\n둘째, [Products]-[서비스 API]-[검색](https://developers.naver.com/products/service-api/search/search.md)을 선택한다. 여기에는 ’오픈 API 이용 신청’과 ’개발 가이드 보기’가 있는데, 우선 ’개발 가이드 보기’를 숙지한 후 ’오픈 API 이용 신청’을 한다. ’개발 가이드 보기’에서 특히 다음의 몇 가지에 유의한다.\n\n오픈 API 이용 신청 절차\nClientID와 Client Secret 개념\n요청 URL: https://openapi.naver.com/v1/search/news.json\n파라미터: query, display, start, sort\n\n셋째, ’오픈 API 이용 신청’을 한다. 다음의 몇 가지에 유의한다.\n\n애플리케이션 이름: 아무 이름이나 입력\n사용 API: ’검색’이 선택된 상태를 유지\n비로그인 오픈 API 서비스 환경: ’WEB 설정’을 선택\n웹 서비스 URL (최대 10개): ’http://localhost’를 입력(개인 PC를 이용하겠다는 것을 의미)\n\n3.5.2 httr2 패키지 활용: 처음 100개 검색 결과 추출\n패키지를 불러온다.\n\nlibrary(httr2)\n\n’지방소멸’을 검색어로 하여 최초의 100개 검색 결과에 대한 데이터(특히, 제목과 내용)를 수집한다.\n\nlibrary(httr2)\nsearch &lt;- \"지방소멸\"\nyour_url &lt;- \"https://openapi.naver.com/v1/search/news.json\"\nresult_naver &lt;- your_url |&gt; \n  request() |&gt; \n  req_headers(\n    \"X-Naver-Client-ID\" = your_ClientID,\n    \"X-Naver-Client-Secret\" = your_Client_Secret\n  ) |&gt; \n  req_url_query(\n    query = search,\n    display = 100,\n    start = 1,\n    sort = \"date\"\n  ) |&gt; \n  req_perform() |&gt; \n  resp_body_json(check_type = FALSE) \n\nView(result_naver)을 샐행해 보면 결과 데이터가 복잡한 위계 구조를 가지고 있는 리스트(list) 형식의 데이터라는 것을 알 수 있다. 다섯 개의 하위 요소들 중 items가 또 다른 리스트이며, 그 리스트의 아래에 100개의 또 다른 하위 리스트가 있으며, 그 100개의 하위 리스트 각각에 우리가 원하는 정보가 다섯개의 속성(title, originallink, link, description, pubData)의 속성으로 나뉘어 존재한다는 것을 알 수 있다.\n다음과 같은 방식으로 복잡한 위계 구조를 가진 리스트로부터 우리가 원하는 다섯 개의 속성을 추출할 수 있다. 우선 해당 리스트를 tibble 패키지의 객체 형식으로 바꾼다. 이것은 리스트를 tibble 객체의 리스트 컬럼(list column)으로 바꾸는 것이다. 이렇게 하면 리스트를 훨씬 더 손쉽게 다룰 수 있게 된다. 이러한 과정에 리스트 중 원하는 데이터가 포함되어 있는 부분(여기서는 items)만 추출한다. 그리고 나서 tidyr 패키지가 제공하는 함수(이 경우는 unnest_wider() 함수)를 활용하여 우리가 원하는 정보를 정돈된 데이터 형식으로 추출한다.\n\nnaver_tb &lt;- tibble(naver = result_naver$items)\nnaver_res &lt;- naver_tb |&gt; \n  unnest_wider(naver)\nnaver_res |&gt; slice_head(n = 5)\n\n# A tibble: 5 × 5\n  title                                   originallink link  description pubDate\n  &lt;chr&gt;                                   &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;  \n1 김경수 &quot;비수도권 권역화 必…&lt;b&gt;지방&lt;/b&gt; 살리기 넘어 … http://www.… http… \"‘5극 3특’이 … Mon, 0…\n2 행정안전부 주관 국정과제를 소개합니다!  https://www… http… \"① &lt;b&gt;지방소멸… Mon, 0…\n3 KH한국건강관리협회, '제2차 사회공헌위원회' 개최…… http://www.… http… \"또한 동해안 바다… Mon, 0…\n4 이철 전남도의회 부의장, '2025 &lt;b&gt;지방&lt;/b&gt;자치 의정대상' … http://www.… http… \"이어 이 부의장은… Mon, 0…\n5 속초시, 영북권 최초 ‘속초미디어센터’ 개관…… https://new… http… \"이병선 속초시장은… Mon, 0…\n\n\n\n\n\n\n\n\n노트\n\n\n\nunnest_wider()와 unnest_longer() 함수는 tidyr 패키지가 제공하는 것으로, 복잡한 위계 구조를 가진 리스트 데이터로부터 원하는 데이터 만들 추출해 정돈된 형식의 데이터 프레임을 만들 때 가장 많이 사용된다. 리스트 컬럼은 유명(named) 리스트 컬럼과 무명(unnamed) 리스트 컬럼으로 크게 대별된다. 유명 리스트 컬럼은 마치 변수명과 같은 이름이 리스트열에 부여되어 있고 모든 리스트열의 길이가 동일한 것이고, 무명 리스트 컬럼은 이름이 부여되어 있지 않고 길이도 서로 다른 경우가 많다. 따라서 유명 리스트 컬럼은 최종적으로 변수가 되고, 무명 리스트 컬럼은 최종적으로 행이 된다고 생각할 수 있다. 유명 리시트 컬럼에는 unnest_wider() 함수를, 무명 리스트 컬럼에는 unnest_longer() 함수를 적용하여 데이터를 추출해낸다.\n\n\n\n\n\n\n\n\n힌트\n\n\n\ntidyverse의 핵심 패키지 중의 하나인 purrr 패키지의 함수를 이용하면 보다 간단하게 처리할 수 있다.\n\nlibrary(purrr)\nnaver_res &lt;- result_naver |&gt; pluck(\"items\") |&gt; bind_rows()\n\n\n\n\n3.5.3 httr2 패키지 활용: for 함수를 이용하여 1,000개 검색 결과 추출\n반복 과정을 통해 1,000개까지 데이터를 추출해 본다.\n\nsearch &lt;- \"지방소멸\"\nrep &lt;- 10\nstart_idx &lt;- (0:(rep-1)) * 100 + 1\nfor(i in start_idx){\n  news &lt;- your_url |&gt; \n    request() |&gt; \n    req_headers(\n      \"X-Naver-Client-ID\" = your_ClientID,\n      \"X-Naver-Client-Secret\" = your_Client_Secret\n    ) |&gt; \n    req_url_query(\n      query = search,\n      display = 100,\n      start = i,\n      sort = \"date\"\n    ) |&gt; \n    req_perform() |&gt; \n    resp_body_json() |&gt; pluck(\"items\") |&gt; bind_rows()\n}\n\n이 모든 과정을 자동화하기 위해 함수를 만들어 본다. naver_extractor() 함수는 네이버 뉴스에서 특정한 검색어를 통해 기사를 추출할 수 있게 해주는 것이다.\n\nnaver_extractor &lt;- function(a_url, search_item, n_start = 1, n_display = 100){\n  news &lt;- request(a_url) |&gt; \n  req_headers(\n    \"X-Naver-Client-ID\" = your_ClientID,\n    \"X-Naver-Client-Secret\" = your_Client_Secret\n  ) |&gt; \n  req_url_query(\n    query = search_item,\n    display = n_display,\n    start = n_start,\n    sort = \"date\"\n  ) |&gt; \n  req_perform() |&gt; \n  resp_body_json() |&gt; pluck(\"items\") |&gt; bind_rows()\n}\n\n이 함수를 이용해 데이터를 추출해 본다.\n\nres_1 &lt;- naver_extractor(a_url = your_url, search_item = \"지방소멸\")\n\n여러번 반복을 위해 purrr 패키지의 map_dfr() 함수를 활용한다. 네이버 API를 통한 정보 수집은 한 번에 최대 1,000건 정도이고, 하루 호출 한도는 25,000회이다.\n\nlibrary(purrr)\n\nsearch &lt;- \"지방소멸\"\nrep &lt;- 10\nres_2 &lt;- map_dfr(\n  start_idx &lt;- (0:(rep-1)) * 100 + 1,\n  \\(x) naver_extractor(\n    a_url       = your_url,\n    search_item = search,\n    n_start     = x,\n    n_display = 100\n  )\n)\n\n\n\n\n\n\n\n힌트\n\n\n\n이렇게 수집된 문자열 데이터는 텍스트 마이닝(text mining)을 위한 중요한 원천이 되는데, 분석을 위해서는 데이터 정처리 과정이 필수적이다. 다음의 링크(https://r2bit.com/book_tm/)를 참고할 수 있다. 또한 다음의 책을 참고할 수 있다(김영우 2021).",
+    "text": "3 API의 활용\n\n3.1 정의\nAPI(application programming interface)는 복수의 프로그램들이 서로 상호작용하는 방법을 정의하는 일련의 규칙을 의미한다. 다른 말로 하면 한 프로그램이 다른 프로그램의 기능들을 불러 사용할 수 있게 해주는 통로를 의미한다.\n이런 API 개념이 데이터 수집과 관련하여 중요한 의미를 가지는 것은 오픈 API(open API) 때문이다. 오픈 API는 데이터를 보유하고 있는 공적 기관이 데이터의 사용 권한을 사용자들에게 부여함으로써 데이터에 대한 접근 가능성을 높여주기 때문이다.\n만일 오픈 API가 존재하는 상황이라면 데이터사이언스의 가장 좋은 데이터 수집 방법은 오픈 API를 활용하는 것이다.\n\n3.2 R에서 API를 활용한 데이터 수집\n최근까지 API를 활용한 데이터 수집에는 httr과 jsonlite라는 두 개의 패키지가 함께 사용되었다. 그런데 최근 httr의 완전 업그레이드 버전인 httr2가 선을 보이면서 이 패키지를 단독으로 활용하는 방식이 주목 받고 있다. httr2는 R의 tidyverse 운동을 이끌고 있는 해들리 위컴(Hadley Wickham)이 tidyverse의 철학에 맞추어 httr 패키지를 발전시킨 것이다. 이러한 R 패키지를 직접 활용하는 것이 가장 좋은 방법이겠지만, 초보자의 경우 다소간의 어려움을 겪을 수 있다. httr2 함수가 다른 패키지의 함수에 비해 개념적으로 이해하기 어려운 측면이 있기 때문이기도 하고, 데이터를 획득하는 구체적인 과정이 API 마다 조금씩 다르기 때문이기도 하다.\n이러한 어려움을 들어주기 위해 일종의 연결 패키지들이 개발되어 있는데, 이러한 패키지를 래퍼 패키지(wrapper package)라고 부른다. 래퍼 패키지들은 사용자와 API 수집용 패키지 사이에서 일종의 가교 역할을 하는 것으로, 사용자들이 사용하기 편한 함수를 제공함으로써 보다 손쉽게 오픈 API를 활용할 수 있게 도와준다. 예를 들어, 구글맵스플랫폼(Google Maps Platform)에 API로 접근해 다양한 기능을 활용할 수 있게 도와주는 googleway와 같은 패키지가 좋은 예가 될 수 있다.\n\n3.3 API를 활용한 공공데이터포털 데이터의 수집\n공공데이터포털(https://www.data.go.kr/)은 대한민국 정부의 공식 데이터 공유 플랫폼이다. 다양한 정부 기관이 생산한 데이터를 검색 및 구득할 수 있는 시스템일 갖추고 있다. 데이터를 참고 해당 데이터의 파일을 직접 다운로드한 후 R 세션에 불러들여도 되지만 여기서는 오픈 API를 활용하여 데이터를 수집하는 것을 실습해 본다. 서비스를 사용하려면 우선 공공데이터포털에서 회원가입하고 로그인한다.\n로그인이 된 상태에서 필요한 데이터를 검색창을 통해 검색한다. 여기서는 전국 초중등학교위치 정보 데이터를 수집하는 예제를 실습해 본다. 다음의 순서에 따른다.\n첫째, 검색창에서 “전국 초중등학교 위치”를 검색하면 여러 데이터가 나타나는데 첫 번째에 “재단법인한국지방교육행정연구재단_초중등학교위치”가 나타나 있을 것이다. 클릭한다.\n둘째, 파일데이터를 막바로 다운로드받을 수도 있지만, 오픈 API 탭을 누른다. 우측의 활용신청을 클릭한다. 활용목적 등 필수 입력항목을 채우고 활용신청을 클릭하면 오픈 API키 발급 신청이 끝이 난다.\n셋째, 상단의 마이페이지를 클릭하고, 데이터 활용 &gt; Open API &gt; 활용신청 현황에서 승인 결과 및 인증키를 확인할 수 있다. 데이터 공급처에 따라 Open API 관리 방식이 다소 다르기 때문에 사안마다 탄력적으로 접근할 필요가 있다. “재단법인한국지방교육행정연구재단_초중등학교위치”의 경우 다음의 사항을 확인한다.\n\nBase URL: api.odcloud.kr/api\n\n일반 인증키(Decoding): 두 개의 인증키 중 디코딩용 인증키가 실질적으로 사용되는 인증키임\n2025년 3월 21일 기준의 데이터의 API: /15099519/v1/uddi:e83bc47a-f235-4b44-96d8-a9d0686435a5\n\n\n아래의 코드를 실행한다. base_url을 정의하는게 중요하다. 해당 웹페이지에 획득한 Base URL과 데이터 API를 결합하여 만들어졌다는 것을 알 수 있을 것이다.\n\nlibrary(httr2)\nbase_url &lt;- \"https://api.odcloud.kr/api/15099519/v1/uddi:e83bc47a-f235-4b44-96d8-a9d0686435a5\" \nresp &lt;- request(base_url) |&gt;\n  req_url_query(\n    serviceKey = your_api_key,\n    page = 1,\n    perPage = 1000\n  ) |&gt;\n  req_perform() |&gt; \n  resp_body_json() -&gt; public_data\n\n코드를 살펴보면 1,000개의 학교를 가진 페이지 하나만의 데이터를 수집했다는 것을 알 수 있다. 한 번에 수집 가능한 최대값이 보통 1,000개이고, 그것을 초과할 경우 여러 페이지에 걸쳐 데이터를 수집해야 한다. 결과로 생성된 public_data를 우상이 환경창에서 확인해보면 리스트 형태의 데이터임을 알 수 있다. 우리가 원하는 학교 데이터는 public_data 속의 data에 들어 있으므로 다음과 같이 데이터를 추출한다.\n\npublic_data |&gt; _[[\"data\"]] |&gt; bind_rows() -&gt; final_data\n\nfinal_data 속에는 총 1,000개의 학교에 대한 정보가 담겨져 있다는 것을 확인할 수 있다. 우리가 알아야 하는 핵심 정보는 총 학교수가 몇 개인가 하는 점이다. public_data 속의 totalCount에 그 해답이 담겨 있다. 아래와 같이 실행한다.\n\npublic_data$totalCount\n\n혹은 다음과 같이 보다 타디이버스스럽게 실행할 수도 있다.\n\npublic_data |&gt; _[[\"totalCount\"]]\n\n코드를 수정하여 다음과 같이 실행한다. 문제는 이렇게 실행하면 마지막 12번째 페이지 데이터인 985개만 수집된다는 사실이다.\n\nbase_url &lt;- \"https://api.odcloud.kr/api/15099519/v1/uddi:e83bc47a-f235-4b44-96d8-a9d0686435a5\" \nresp &lt;- request(base_url) |&gt;\n  req_url_query(\n    serviceKey = your_key,\n    page = 12,\n    perPage = 1000\n  ) |&gt;\n  req_perform() |&gt; \n  resp_body_json() -&gt; public_data\n\n따라서 1-12의 페이지 각각을 실행하여 데이터를 종합해야 한다. 다음과 같이 실행한다.\n\nfinal_data &lt;- map_dfr(1:12, function(p) {\n  request(base_url) |&gt;\n    req_url_query(\n      serviceKey = your_api_key, \n      page = p, \n      perPage = 1000) |&gt;\n    req_perform() |&gt;\n    resp_body_json() |&gt;\n    _[[\"data\"]] |&gt; bind_rows() |&gt; as_tibble()\n})\n\nfinal_data를 확인해보면, 11,985개 데이터가 수집되어 있는 것을 확인할 수 있다. 여기에서 map_dfr() 함수는 tidyverse에서 프로그래밍을 담당하고 있는 핵심 패키지인 purrr의 함수로 반복 수행의 결과를 데이터 프레임으로 산출해 준다.\n마지막 라인은 purrr 패키지의 pluck() 함수를 이용하여 조금 간단히 할 수 있다.\n\nfinal_data &lt;- map_dfr(1:12, function(p) {\n  request(base_url) |&gt;\n    req_url_query(\n      serviceKey = your_api_key, \n      page = p, \n      perPage = 1000) |&gt;\n    req_perform() |&gt;\n    resp_body_json(simplifyVector = TRUE) |&gt;\n    pluck(\"data\") |&gt; as.tibble()\n})\n\n\n3.4 API를 활용한 KOSIS 데이터의 수집\nKOSIS를 포함한 많은 대한민국의 데이터 포털은 개방 API 서비스를 제공하고 있다. KOSIS는 공유서비스 홈페이지를 통해 Open API를 통한 데이터 수집을 권장하고 있다. 개발 가이드를 통해 R을 포함한 다양한 프로그래밍 언어에서 KOSIS의 개방 API 서비스를 활용하는 구체적인 코드를 제공하고 있기도 하다. 가이드 북을 읽어 보면, 앞에서 언급한 R의 httr, jsonlite, rvest와 같은 패키지가 활용됨을 알 수 있다.\n앞에서 설명한 것처럼, API용 패키지를 직접 사용할 수도 있지만, 래퍼 패키지가 존재하기만 한다면 그것을 활용하는 것이 훨씬 손쉬운 옵션일 수 있다. 놀랍게도 한국의 주석훈(Seokhoon Joo)이라는 분이 그러한 기능을 하는 kosis라는 패키지를 이미 개발해 두었고, 그것을 활용하고자 한다.\n실습 주제는 2023년 센서스 인구 기준으로 전국의 17개 시도별 ’지방소멸위험지수’를 계산하고 그래프의 형태로 표현하는 것이다.\n\n3.4.1 KOSIS에서 API KEY 받기\n\nKOSIS 공유서비스 웹페이지(https://kosis.kr/openapi/) 접속\n\n상단의 [활용신청] 탭 클릭\n\n통계청의 ONE-ID로 통합로그인(없으면 회원가입 필수)\n\n\n\n활용신청하여 사용자 인증키 획득\n\n사용자 인증키는 마이페이지에서 언제든 확인 가능\n\n\n\n3.4.2 패키지 설치 및 인증키 등록\n우선 kosis 패키지를 오른쪽 하단 윈도우의 Packages 탭을 활용하여 인스톨한다. 이후에 아래와 같이 kosis와 tidyverse 패키지를 불러온다.\n\nlibrary(kosis)\nlibrary(tidyverse)\n\nkosis 패키지의 kosis.setKey() 함수를 이용하여 인증키를 등록한다. Your Key Here 자리에 부여받은 인증키를 붙여 넣는다.\n\nkosis.setKey(apikey = \"Your Key Here\")\n\n\n3.4.3 데이터 추출\n가장 유용한 방식은 kosis 패키지의 getStatDataFromURL() 함수를 활용하는 것이다. KOSIS의 데이터 서비스 구조를 감안할 때 이 것이 좀 더 용이한 방식일 수 있다. 데이터 추출은 다음과 같이 두 단계의 과정을 거친다.\n\nKOSIS에서 필요한 데이터의 위치에 대한 URL 정보를 획득한다.\ngetStatDataFromURL() 함수를 활용하여 데이터를 추출한다.\n\n구체적인 수행 과정은 다음과 같다.\n첫째, KOSIS에 로그인한다. 이것은 api key를 활용하기 위한 필수 조건이다.\n둘째, 인구 센서스 데이터를 바탕으로 시도별 지방소멸위험지수를 계산하고자 하기 때문에, 최신 인구 센서스의 지역별 20~39세의 여성 인구와 65세 이상의 전체 인구에 대한 데이터가 필요하다. KOSIS 홈페이지를 탐색하여 필요한 데이터가 있는 위치를 찾아간다.\n\n[국내통계]-[주제별 통계]-[인구]-[인구총조사]-[인구부문]-[총조사인구(2015년 이후)]-[전수부문 (등록센서스, 2015년 이후)]-[전수기본표]-[연령 및 성별 인구]\n\n셋째, ’조회설정’을 클릭하여 다음과 같이 선택한다.\n\n항목: ‘총인구(명)’, ‘총인구_남자(명)’, ’총인구_여자(명)’만 선택(더 많은 항목을 선택하면 데이터가 너무 커 에러가 발생)\n행정구역별(읍면동): ‘1 레벨’과 ’2 레벨’ 선택(’1 레벨’은 시도 수준, ’2 레벨’은 시군구 수준)\n\n넷째, ‘조회설정’ 창을 없앤 후(조회창의 왼편 가운데의 화살표 클릭), 표의 오른편 상단에 있는 여러개 탭 중 ‘OPENAPI’ 탭을 클릭한다. 다음과 같이 선택한다.\n\n조회기간 설정: ‘기간설정’ 버턴을 누른 후, 기간설정이 2023~2023년인지 확인한다.\n응답필드 설정: 하나씩 눌러 모두 선택한 후, ‘URL생성’ 탭을 클릭한다. 그리고 나서 ‘URL 복사’ 탭을 클릭한다. URL 속에 api key가 포함되어 있음을 확인한다.\n\n다섯째, 다음과 같이 실행한다. “Your URL” 자리에 복사한 URL를 붙여 넣는다.\n\nyour_url &lt;- \"Your URL\"\ndata_api &lt;- getStatDataFromURL(url = your_url)\ndata_api |&gt; \n  slice_head(n = 5)\n\n\n\n  ORG_ID     TBL_ID                     TBL_NM C1 C1_NM          C1_OBJ_NM  C2\n1    101 DT_1IN1503 연령 및 성별 인구 – 읍면동 00  전국 행정구역별(읍면동) 000\n2    101 DT_1IN1503 연령 및 성별 인구 – 읍면동 00  전국 행정구역별(읍면동) 000\n3    101 DT_1IN1503 연령 및 성별 인구 – 읍면동 00  전국 행정구역별(읍면동) 000\n4    101 DT_1IN1503 연령 및 성별 인구 – 읍면동 00  전국 행정구역별(읍면동) 005\n5    101 DT_1IN1503 연령 및 성별 인구 – 읍면동 00  전국 행정구역별(읍면동) 005\n  C2_NM C2_OBJ_NM ITM_ID          ITM_NM        ITM_NM_ENG PRD_SE PRD_DE\n1  합계    연령별    T00      총인구(명)        Population      A   2023\n2  합계    연령별    T01 총인구_남자(명)   Population_Male      A   2023\n3  합계    연령별    T02 총인구_여자(명) Population_Female      A   2023\n4 0~4세    연령별    T00      총인구(명)        Population      A   2023\n5 0~4세    연령별    T01 총인구_남자(명)   Population_Male      A   2023\n        DT\n1 51774521\n2 25903852\n3 25870669\n4  1361737\n5   697702\n\n\n동일한 과제를 httr2 패키지로 실행해 본다.\n\nlibrary(httr2)\nyour_url &lt;- \"Your URL\"\ndata_api &lt;- your_url |&gt; \n  request() |&gt; \n  req_perform() |&gt; \n  resp_body_json(check_type = FALSE) |&gt; \n  bind_rows()\ndata_api |&gt; slice_head(n = 5)\n\n\n\n# A tibble: 5 × 20\n  C1_OBJ_NM    C2_NM DT    C2    C1    PRD_SE ITM_ID TBL_ID ITM_NM TBL_NM PRD_DE\n  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; \n1 행정구역별(읍면동)…… 합계  5177… 000   00    A      T00    DT_1I… 총인구(명… 연령 및 … 2023  \n2 행정구역별(읍면동)…… 합계  2590… 000   00    A      T01    DT_1I… 총인구_남… 연령 및 … 2023  \n3 행정구역별(읍면동)…… 합계  2587… 000   00    A      T02    DT_1I… 총인구_여… 연령 및 … 2023  \n4 행정구역별(읍면동)…… 0~4세 1361… 005   00    A      T00    DT_1I… 총인구(명… 연령 및 … 2023  \n5 행정구역별(읍면동)…… 0~4세 6977… 005   00    A      T01    DT_1I… 총인구_남… 연령 및 … 2023  \n# ℹ 9 more variables: LST_CHN_DE &lt;chr&gt;, C1_NM_ENG &lt;chr&gt;, C1_NM &lt;chr&gt;,\n#   ITM_NM_ENG &lt;chr&gt;, C2_OBJ_NM_ENG &lt;chr&gt;, C2_NM_ENG &lt;chr&gt;, ORG_ID &lt;chr&gt;,\n#   C1_OBJ_NM_ENG &lt;chr&gt;, C2_OBJ_NM &lt;chr&gt;\n\n\n\n3.4.4 데이터 정리 및 변형\n아래와 같이 데이터를 정리한다. 최종적으로 지역별 지역소멸위험지수를 산출한다.\n\ndata &lt;- data_api |&gt; \n  select(C1, C1_NM, C2, C2_NM, ITM_ID, ITM_NM, DT) |&gt; \n  mutate(\n    across(c(C1, DT), as.numeric),\n    ITM_ID = case_match(\n    ITM_ID, \n    \"T00\" ~ \"T\",\n    \"T01\" ~ \"M\",\n    \"T02\" ~ \"F\"),\n  ) |&gt;\n  unite(\"gender_age\", ITM_ID, C2_NM, sep = \"_\") |&gt; \n  pivot_wider(\n    id_cols = c(C1, C1_NM),\n    names_from = gender_age,\n    values_from = DT\n  ) |&gt; \n  mutate(\n    index = (`F_20~24세` + `F_25~29세` + `F_30~34세` + `F_35~39세`) / `T_65세이상`\n  ) |&gt; \n  select(\n    C1, C1_NM, index\n  ) \n\n\n\n\n\n\n\n노트\n\n\n\n여기서는 case_match() 함수에 주목할 필요가 있다. case_match() 함수는 데이터 변형을 위한 tidyverse의 핵심 패키지인 dplyr의 벡터 함수로서, 벡터의 각 요소에 조건 부합성을 검토하고 그것을 통해 새로운 값을 부여할 수 있게 해준다. 우선 변환을 위한 컬럼을 지정하고, ~ 기호를 중심으로 왼편에 현재의 값을, 오른편에 새로운 값을 놓으면 된다. 보통 여러 조건을 나열해 모든 케이스가 새로운 값을 갖게 하지만, 간혹 해당 되는 조건이 없는 케이스를 위해 .default 아규먼트를 사용한다. forcats 패키지에서 문자형 벡터의 레벨(level)을 새로운 레벨로 교체하는데 사용되는 fct_recode() 함수와 유사하다. case_match() 함수와 유사한 함수에 case_when()가 있다. case_match() 함수가 단일 컬럼의 개별 값을 전환할 때 사용되는 함수라면, case_when()은 단일 컬럼에 다양한 조건을 설정하거나 두 개 이상의 컬럼이 개입되는 경우에 사용할 수 있는 함수이다. 따라서 case_match() 함수의 경우는 컬럼명이 한 번만 등장하면 되지만, case_when()에서는 개별 조건에 해당 컬럼명이 등장해야 한다. 아래의 그래프에 활용의 예가 나타나 있다.\n\n\n시도 데이터와 시군구 데이터를 분리하여 저장한다.\n\ndata_sido &lt;- data |&gt; \n  filter(nchar(C1) == 2) \ndata_sigungu &lt;- data |&gt; \n  filter(nchar(C1) == 5 & !C1_NM %in% c(\"동부\", \"면부\", \"읍부\") & str_sub(C1, 5, 5) == 0)\nwrite_rds(data_sido, \"data_sido.rds\")\nwrite_rds(data_sigungu, \"data_sigungu.rds\")\nread_rds(\"data_sigungu.rds\")\n\n# A tibble: 229 × 3\n      C1 C1_NM    index\n   &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;\n 1 11010 종로구   0.932\n 2 11020 중구     0.932\n 3 11030 용산구   0.972\n 4 11040 성동구   0.951\n 5 11050 광진구   1.15 \n 6 11060 동대문구 0.971\n 7 11070 중랑구   0.706\n 8 11080 성북구   0.884\n 9 11090 강북구   0.561\n10 11100 도봉구   0.535\n# ℹ 219 more rows\n\n\n\n3.4.5 그래프 작성\n그래프 작성의 코드가 다소 복잡해 보인다. 이렇게 된 것은 인구소멸위험지수 연구에서 주로 사용되는 5개의 위험도 클래스의 구분법을 적용하고, 위험도 클래스별로 특정한 색상을 적용하고, 그래프의 범례에 5개의 클래스가 모두 나타나게 하려했기 때문이다.\n\ndata_sido_new &lt;- data_sido |&gt; \n  mutate(\n    index_class = case_when(\n      index &lt; 0.2 ~ \"1\",\n      index &gt;= 0.2 & index &lt; 0.5 ~ \"2\",\n      index &gt;= 0.5 & index &lt; 1.0 ~ \"3\",\n      index &gt;= 1.0 & index &lt; 1.5 ~ \"4\",\n      index &gt;= 1.5 ~ \"5\"\n    ),\n    index_class = fct(index_class, levels = as.character(1:5))\n  )\n\nclass_color &lt;- c(\"1\" = \"#d7191c\", \"2\" = \"#fdae61\",\n                 \"3\" = \"#ffffbf\", \"4\" = \"#a6d96a\", \n                 \"5\" = \"#1a9641\")\ndata_sido_new |&gt; \n  ggplot(aes(x = index, y = fct_reorder(C1_NM, index))) +\n  geom_col(aes(fill = index_class), show.legend = TRUE) +\n  geom_text(aes(label = round(index, digits = 3)), hjust = -0.1) +\n  scale_x_continuous(limits = c(0, 1.5)) +\n  scale_fill_manual(name = \"Classes\", \n                    labels = c(\"&lt; 0.2\", \"0.2 ~ 0.5\", \"0.5 ~ 1.0\", \n                               \"1.0 ~ 1.5\", \"&gt;= 1.5\"), \n                    values = class_color, drop = FALSE) +\n  labs(title = \"인구소멸위험지수, 2023년\", \n       x = \"인구소멸위험지수\", \n       y = \"\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n노트\n\n\n\n우선 tidyverse에서 문자열에 특화된 핵심 패키지인 forcats의 두 함수에 대해 언급하고자 한다. fct()는 가장 기본이 되는 함수로 일반 문자형 컬럼을 팩터형(factor) 컬럼으로 전환해주는 함수이다. 동시에 레벨을 지정할 수 있다. fct_relevel() 함수는 팩터 벡터의 기존 레벨의 순서를 바꾸어주는 여러 함수들 중 하나이다. fct_reorder()는 특정 변수의 레벨 순서를 다른 변수의 값의 순서에 의거해 바꾸어준다. 비슷한 함수에 fct_reorder2()가 있는데, 이것은 특정 변수의 레벨 순서를 다른 변수의 값의 순서에 의거하여 바꾸되 그 다른 변수의 값을 또 다른 변수를 통해 규정하고자 할 때 사용할 수 있다. 위의 예를 든다면, 시도의 순서를 인구소멸위험지수의 크기에 따라 배열하되, 만약 여러 연도에 걸쳐 인구소멸위험지수가 계산되었을 경우, 특정 연도(주로 가장 큰 연도)의 값에 의거해 배열하는 것이다. 이외에 레벨의 순서를 역방향으로 바꿀 수 있는 fct_rev() 함수가 빈번하게 사용된다. ggplot2 패키지의 scale_fill_manual() 함수 역시 매우 중요한 역할을 한다. 이것은 막대 그래프를 채울 컬러의 스케일링을 사용자가 메뉴얼하게 할 수 있게 해주는데, 컬러 팔레트(class_color), 범례의 표제와 라벨을 메뉴얼하게 적용할 수 있다. 마지막에 있는 drop = FALSE 인수가 매우 중요한 역할을 한다. 그래프를 보면 시도 수준의 인구소멸위험지수는 양 극단의 두 계급에 케이스를 갖지 않는다. 전체 계급을 보여주는 것이 의미있다고 판단한다면, drop = FALSE 아규먼트를 통해 모든 계급이 범례에 드러나게 할 수 있다.\n\n\n\n3.4.6 또 다른 방식\n또 다른 방식은 kosis 패키지의 getStatData() 함수를 활용하는 것이다. 해당 함수에 기관명(101)과 데이터 코드(DT_1IN503)을 아규먼트에 입력하면 데이터를 불러올 수 있다. 위의 방식의 한 연도의 모든 지역에 대한 데이터를 얻기에 용이하다면, 이 방식은 하나의 지역에 대한 시계열 데이터를 수집하는데 유용하다. 아래의 코드를 통해 서울시 종로구(코드: 11010)의 2015~2023년 데이터를 획득할 수 있다.\n\nregion_code &lt;- \"11010\"\ndata_api &lt;- getStatData(\n  orgId = 101, \n  tblId = \"DT_1IN1503\", \n  prdSe = \"Y\",\n  startPrdDe = \"2015\", \n  endPrdDe = \"20231101\", \n  objL1 = region_code, \n  objL2 = \"ALL\") |&gt; \n  filter(str_length(C2) == 3)\n\n\n\n\n\n\n\n힌트\n\n\n\nregion_code &lt;- \"11010+11020\"과 같은 식으로 설정하면 두 개 이상의 지역에 대한 데이터를 한꺼번에 구할 수도 있다.\n\n\n동일한 과제를 httr2 패키지로 실행해 본다.\n\nlibrary(httr2)\nyour_key &lt;- \"your_key\"\nyour_url &lt;- \"https://kosis.kr/openapi/Param/statisticsParameterData.do\"\nregion_code &lt;- \"11010\"\ndata_api &lt;- your_url |&gt; \n  request() |&gt;\n  req_url_query(\n    method = \"getList\",\n    apiKey = your_key,\n    format = \"json\",\n    jsonVD = \"Y\",\n    orgId = \"101\",\n    tblId = \"DT_1IN1503\",\n    prdSe = \"Y\",\n    startPrdDe = \"2015\",\n    endPrdDe = \"20231101\",\n    objL1 = region_code,  \n    objL2 = \"ALL\",\n    itmId = \"ALL\"\n  ) |&gt;\n  req_perform() |&gt; \n  resp_body_json(check_type = FALSE) |&gt; \n  bind_rows()\n\n아래와 같은 데이터 정리 및 변형 과정이 필요하다.\n\ndata &lt;- data_api |&gt; \n  select(C1, C1_NM, C2, C2_NM, ITM_ID, ITM_NM, DT, PRD_DE) |&gt; \n  filter(ITM_ID == \"T00\" | ITM_ID == \"T01\" | ITM_ID == \"T02\") |&gt; \n  mutate(\n    across(c(C1, DT), as.numeric),\n    ITM_ID = case_match(\n    ITM_ID, \n    \"T00\" ~ \"T\",\n    \"T01\" ~ \"M\",\n    \"T02\" ~ \"F\"),\n  ) |&gt;\n  unite(\"gender_age\", ITM_ID, C2_NM, sep = \"_\") |&gt; \n  pivot_wider(\n    id_cols = c(C1, C1_NM, PRD_DE),\n    names_from = gender_age,\n    values_from = DT\n  ) |&gt; \n  mutate(\n    index = (`F_20~24세` + `F_25~29세` + `F_30~34세` + `F_35~39세`) / `T_65세이상`\n  ) |&gt; \n  select(\n    C1, C1_NM, index, PRD_DE\n  ) \n\n이 데이터를 바탕으로 종로구의 인구소멸위험지수의 변화 추이를 관찰할 수 있다.\n\nregion &lt;- data |&gt; distinct(C1_NM) |&gt; pull()\ndata |&gt; \n  ggplot(aes(x = PRD_DE, y = index, group = C1)) +\n  geom_point() +\n  geom_line(, linewidth = 0.5) +\n  ggtitle(paste0(region, \" 인구소멸위험지수 추이\")) +\n  xlab(label = \"연도\") +\n  ylab(label = \"인구소멸위험지수\") +\n  theme(plot.title = element_text(size = 18, hjust=0.5))\n\n\n\n\n\n\n\necharts4r 패키지를 이용해 인터랙티브 플롯을 제작해 본다.\n\nlibrary(echarts4r)\ndata |&gt; \n  group_by(C1_NM) |&gt; \n  e_charts(PRD_DE) |&gt; \n  e_line(index) |&gt; \n  e_tooltip(trigger = \"axis\")\n\n\n\n\n\n이 모든 과정을 함수로 만들고, Base R의 read_line() 함수를 활용하면 초보적인 상호작용형 도구를 만들 수 있다.\n\nexInd &lt;- function(){\n  # Library\n  library(tidyverse)\n  library(kosis)\n  library(DT)\n  library(openxlsx)\n  \n  # Table for Searching Region Code\n  region_table &lt;- read.xlsx(\"https://github.com/Sechang-Kim/gis-lab/raw/download/korea-sigungu-code(2022).xlsx\")\n  print(datatable(region_table))\n  \n  # Input Arguments\n  aoi_code &lt;- readline('지역 코드를 입력하세요: ')\n  start &lt;- as.numeric(readline('시작 연도를 입력하세요: '))\n  end &lt;- as.numeric(readline('종료 연도를 입력하세요: '))\n  \n  # Data Request\n  aoi &lt;- getStatData(orgId = 101, tblId = \"DT_1IN1503\", prdSe = \"Y\",\n                     startPrdDe = start, endPrdDe = end,\n                     objL1 = aoi_code, objL2 = \"ALL\") |&gt; \n    filter(nchar(C2) == 3) # Delete 1-age interval(Only 5-age interval)\n  \n  # Data Cleansing\n  aoi &lt;- aoi |&gt; \n    select(C1, C1_NM, C2, C2_NM, ITM_ID, ITM_NM, DT, PRD_DE) |&gt; \n    filter(ITM_ID == \"T00\" | ITM_ID == \"T01\" | ITM_ID == \"T02\") |&gt; \n    mutate(\n      across(c(C1, DT), as.numeric),\n      ITM_ID = case_match(\n        ITM_ID, \"T00\" ~ \"T\",\n        \"T01\" ~ \"M\",\n        \"T02\" ~ \"F\"),\n    ) |&gt; \n    unite(\"gender_age\", ITM_ID, C2_NM, sep = \"_\") |&gt; \n    pivot_wider(\n      id_cols = c(C1, C1_NM, PRD_DE),\n      names_from = gender_age,\n      values_from = DT\n    ) |&gt; \n    mutate(\n      index = (`F_20~24세` + `F_25~29세` + `F_30~34세` + `F_35~39세`) / `T_65세이상`\n    ) |&gt; \n    select(\n      C1, C1_NM, index, PRD_DE\n    )\n  \n  ## Visualization\n  region &lt;- aoi$C1_NM[1] # For Auto-Plot Title\n  vis &lt;- aoi |&gt; \n    ggplot(aes(x=PRD_DE, y=index)) +\n    geom_point() +\n    geom_line(group = 1, linewidth = 0.5) +\n    ggtitle(paste0(region, \" 인구소멸위험지수 추이\")) +\n    xlab(label = \"연도\") +\n    ylab(label = \"인구소멸위험지수\") +\n    theme(plot.title = element_text(size = 18, hjust=0.5))\n  \n  return(vis)\n}\n\n함수를 실행해 보자.\n\nexInd()\n\n\n3.5 API를 활용한 NAVER 뉴스 데이터의 수집\n\n3.5.1 NAVER Developer\n네이버의 API를 활용하기 위해서는 네이버 디벨로퍼에서 오픈 API를 신청해야 한다. 절차를 정리하면 다음과 같다.\n첫째, [Documents]에서 ‘API 공통 가이드’를 살펴본다. 특히 비로그인 방식 오픈 API가 중요한데, 그 중에서 ’검색’ 카테고리에 해당하는 뉴스, 백과사전, 블로그 등 다양한 검색 서비스에 주목한다.\n둘째, [Products]-[서비스 API]-[검색](https://developers.naver.com/products/service-api/search/search.md)을 선택한다. 여기에는 ’오픈 API 이용 신청’과 ’개발 가이드 보기’가 있는데, 우선 ’개발 가이드 보기’를 숙지한 후 ’오픈 API 이용 신청’을 한다. ’개발 가이드 보기’에서 특히 다음의 몇 가지에 유의한다.\n\n오픈 API 이용 신청 절차\nClientID와 Client Secret 개념\n요청 URL: https://openapi.naver.com/v1/search/news.json\n파라미터: query, display, start, sort\n\n셋째, ’오픈 API 이용 신청’을 한다. 다음의 몇 가지에 유의한다.\n\n애플리케이션 이름: 아무 이름이나 입력\n사용 API: ’검색’이 선택된 상태를 유지\n비로그인 오픈 API 서비스 환경: ’WEB 설정’을 선택\n웹 서비스 URL (최대 10개): ’http://localhost’를 입력(개인 PC를 이용하겠다는 것을 의미)\n\n3.5.2 httr2 패키지 활용: 처음 100개 검색 결과 추출\n패키지를 불러온다.\n\nlibrary(httr2)\n\n’지방소멸’을 검색어로 하여 최초의 100개 검색 결과에 대한 데이터(특히, 제목과 내용)를 수집한다.\n\nlibrary(httr2)\nsearch &lt;- \"지방소멸\"\nyour_url &lt;- \"https://openapi.naver.com/v1/search/news.json\"\nresult_naver &lt;- your_url |&gt; \n  request() |&gt; \n  req_headers(\n    \"X-Naver-Client-ID\" = your_ClientID,\n    \"X-Naver-Client-Secret\" = your_Client_Secret\n  ) |&gt; \n  req_url_query(\n    query = search,\n    display = 100,\n    start = 1,\n    sort = \"date\"\n  ) |&gt; \n  req_perform() |&gt; \n  resp_body_json(check_type = FALSE) \n\nView(result_naver)을 샐행해 보면 결과 데이터가 복잡한 위계 구조를 가지고 있는 리스트(list) 형식의 데이터라는 것을 알 수 있다. 다섯 개의 하위 요소들 중 items가 또 다른 리스트이며, 그 리스트의 아래에 100개의 또 다른 하위 리스트가 있으며, 그 100개의 하위 리스트 각각에 우리가 원하는 정보가 다섯개의 속성(title, originallink, link, description, pubData)의 속성으로 나뉘어 존재한다는 것을 알 수 있다.\n다음과 같은 방식으로 복잡한 위계 구조를 가진 리스트로부터 우리가 원하는 다섯 개의 속성을 추출할 수 있다. 우선 해당 리스트를 tibble 패키지의 객체 형식으로 바꾼다. 이것은 리스트를 tibble 객체의 리스트 컬럼(list column)으로 바꾸는 것이다. 이렇게 하면 리스트를 훨씬 더 손쉽게 다룰 수 있게 된다. 이러한 과정에 리스트 중 원하는 데이터가 포함되어 있는 부분(여기서는 items)만 추출한다. 그리고 나서 tidyr 패키지가 제공하는 함수(이 경우는 unnest_wider() 함수)를 활용하여 우리가 원하는 정보를 정돈된 데이터 형식으로 추출한다.\n\nnaver_tb &lt;- tibble(naver = result_naver$items)\nnaver_res &lt;- naver_tb |&gt; \n  unnest_wider(naver)\nnaver_res |&gt; slice_head(n = 5)\n\n# A tibble: 5 × 5\n  title                                   originallink link  description pubDate\n  &lt;chr&gt;                                   &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;  \n1 에코프로, 포항서 지속가능한 배터리 생태계 구축…… http://www.… http… \"에코프로는 &lt;b&gt;… Mon, 0…\n2 교보교육재단, '27회 교보교육대상' 4개 부분 수상자 선정…… http://www.… http… \"평생교육 부문 대… Mon, 0…\n3 與 “저성장 탓 적극적 재정 운용”… 野 “재정건전성 고려해야”…… https://www… http… \"예결특위 위원장인… Mon, 0…\n4 부안군, ESG 행정 실천의 장 ‘ESG 플레이 캠프’ 성료…… http://sjbn… http… \"군은 &lt;b&gt;지방소… Mon, 0…\n5 교보교육재단, '제27회 교보교육대상' 수상자 선정…… https://www… http… \"평생교육 부문 대… Mon, 0…\n\n\n\n\n\n\n\n\n노트\n\n\n\nunnest_wider()와 unnest_longer() 함수는 tidyr 패키지가 제공하는 것으로, 복잡한 위계 구조를 가진 리스트 데이터로부터 원하는 데이터 만들 추출해 정돈된 형식의 데이터 프레임을 만들 때 가장 많이 사용된다. 리스트 컬럼은 유명(named) 리스트 컬럼과 무명(unnamed) 리스트 컬럼으로 크게 대별된다. 유명 리스트 컬럼은 마치 변수명과 같은 이름이 리스트열에 부여되어 있고 모든 리스트열의 길이가 동일한 것이고, 무명 리스트 컬럼은 이름이 부여되어 있지 않고 길이도 서로 다른 경우가 많다. 따라서 유명 리스트 컬럼은 최종적으로 변수가 되고, 무명 리스트 컬럼은 최종적으로 행이 된다고 생각할 수 있다. 유명 리시트 컬럼에는 unnest_wider() 함수를, 무명 리스트 컬럼에는 unnest_longer() 함수를 적용하여 데이터를 추출해낸다.\n\n\n\n\n\n\n\n\n힌트\n\n\n\ntidyverse의 핵심 패키지 중의 하나인 purrr 패키지의 함수를 이용하면 보다 간단하게 처리할 수 있다.\n\nlibrary(purrr)\nnaver_res &lt;- result_naver |&gt; pluck(\"items\") |&gt; bind_rows()\n\n\n\n\n3.5.3 httr2 패키지 활용: for 함수를 이용하여 1,000개 검색 결과 추출\n반복 과정을 통해 1,000개까지 데이터를 추출해 본다.\n\nsearch &lt;- \"지방소멸\"\nrep &lt;- 10\nstart_idx &lt;- (0:(rep-1)) * 100 + 1\nfor(i in start_idx){\n  news &lt;- your_url |&gt; \n    request() |&gt; \n    req_headers(\n      \"X-Naver-Client-ID\" = your_ClientID,\n      \"X-Naver-Client-Secret\" = your_Client_Secret\n    ) |&gt; \n    req_url_query(\n      query = search,\n      display = 100,\n      start = i,\n      sort = \"date\"\n    ) |&gt; \n    req_perform() |&gt; \n    resp_body_json() |&gt; pluck(\"items\") |&gt; bind_rows()\n}\n\n이 모든 과정을 자동화하기 위해 함수를 만들어 본다. naver_extractor() 함수는 네이버 뉴스에서 특정한 검색어를 통해 기사를 추출할 수 있게 해주는 것이다.\n\nnaver_extractor &lt;- function(a_url, search_item, n_start = 1, n_display = 100){\n  news &lt;- request(a_url) |&gt; \n  req_headers(\n    \"X-Naver-Client-ID\" = your_ClientID,\n    \"X-Naver-Client-Secret\" = your_Client_Secret\n  ) |&gt; \n  req_url_query(\n    query = search_item,\n    display = n_display,\n    start = n_start,\n    sort = \"date\"\n  ) |&gt; \n  req_perform() |&gt; \n  resp_body_json() |&gt; pluck(\"items\") |&gt; bind_rows()\n}\n\n이 함수를 이용해 데이터를 추출해 본다.\n\nres_1 &lt;- naver_extractor(a_url = your_url, search_item = \"지방소멸\")\n\n여러번 반복을 위해 purrr 패키지의 map_dfr() 함수를 활용한다. 네이버 API를 통한 정보 수집은 한 번에 최대 1,000건 정도이고, 하루 호출 한도는 25,000회이다.\n\nlibrary(purrr)\n\nsearch &lt;- \"지방소멸\"\nrep &lt;- 10\nres_2 &lt;- map_dfr(\n  start_idx &lt;- (0:(rep-1)) * 100 + 1,\n  \\(x) naver_extractor(\n    a_url       = your_url,\n    search_item = search,\n    n_start     = x,\n    n_display = 100\n  )\n)\n\n\n\n\n\n\n\n힌트\n\n\n\n이렇게 수집된 문자열 데이터는 텍스트 마이닝(text mining)을 위한 중요한 원천이 되는데, 분석을 위해서는 데이터 정처리 과정이 필수적이다. 다음의 링크(https://r2bit.com/book_tm/)를 참고할 수 있다. 또한 다음의 책을 참고할 수 있다(김영우 2021).",
     "crumbs": [
       "R과 데이터사이언스",
       "수집하기"
@@ -5352,8 +5352,8 @@
     "objectID": "R_lec_01_2025.html#주요-사건들",
     "href": "R_lec_01_2025.html#주요-사건들",
     "title": "\nR Lecture 1R과 RStudio\n",
-    "section": "",
-    "text": "https://www.mdpi.com/2075-1729/12/5/648",
+    "section": "주요 사건들",
+    "text": "주요 사건들\n\nhttps://www.mdpi.com/2075-1729/12/5/648",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5363,8 +5363,8 @@
     "objectID": "R_lec_01_2025.html#bell-labs-in-1975",
     "href": "R_lec_01_2025.html#bell-labs-in-1975",
     "title": "\nR Lecture 1R과 RStudio\n",
-    "section": "",
-    "text": "https://en.wikipedia.org/wiki/Bell_Labs",
+    "section": "Bell Labs in 1975",
+    "text": "Bell Labs in 1975\n\nhttps://en.wikipedia.org/wiki/Bell_Labs",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5374,8 +5374,8 @@
     "objectID": "R_lec_01_2025.html#s-plus-1997",
     "href": "R_lec_01_2025.html#s-plus-1997",
     "title": "\nR Lecture 1R과 RStudio\n",
-    "section": "",
-    "text": "https://knihobot.cz/g/485637\n\n\n\n\n\nhttps://link.springer.com/book/10.1007/978-1-4615-7826-0",
+    "section": "S-Plus, 1997",
+    "text": "S-Plus, 1997\n\n\n\n\n\nhttps://knihobot.cz/g/485637\n\n\n\n\n\nhttps://link.springer.com/book/10.1007/978-1-4615-7826-0",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5385,8 +5385,8 @@
     "objectID": "R_lec_01_2025.html#fathers-of-r-1993",
     "href": "R_lec_01_2025.html#fathers-of-r-1993",
     "title": "\nR Lecture 1R과 RStudio\n",
-    "section": "",
-    "text": "조지 로스 이하카 George Ross Ihaka\n\n\n\n\n\n오클랜드 대학 University of Auckland\n\n\n\n\n\n로버트 젠틀맨 Robert C. Gentleman",
+    "section": "Fathers of R, 1993",
+    "text": "Fathers of R, 1993\n\n\n\n\n\n조지 로스 이하카 George Ross Ihaka\n\n\n\n\n\n오클랜드 대학 University of Auckland\n\n\n\n\n\n로버트 젠틀맨 Robert C. Gentleman",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5396,8 +5396,8 @@
     "objectID": "R_lec_01_2025.html#official-birth",
     "href": "R_lec_01_2025.html#official-birth",
     "title": "\nR Lecture 1R과 RStudio\n",
-    "section": "",
-    "text": "https://www.r-consortium.org/blog/2023/02/28/happy-23rd-birthday-r",
+    "section": "Official Birth",
+    "text": "Official Birth\n\nhttps://www.r-consortium.org/blog/2023/02/28/happy-23rd-birthday-r",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5407,8 +5407,8 @@
     "objectID": "R_lec_01_2025.html#ggplot2-2007",
     "href": "R_lec_01_2025.html#ggplot2-2007",
     "title": "\nR Lecture 1R과 RStudio\n",
-    "section": "",
-    "text": "https://ggplot2.tidyverse.org/\n\n\n\n \n\n\n\n\n해들리 위컴(Hadley Wickham), posit",
+    "section": "ggplot2, 2007",
+    "text": "ggplot2, 2007\n\n\n\n\n\nhttps://ggplot2.tidyverse.org/\n\n\n\n \n\n\n\n\n해들리 위컴(Hadley Wickham), posit",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5418,8 +5418,8 @@
     "objectID": "R_lec_01_2025.html#rstudio-2011",
     "href": "R_lec_01_2025.html#rstudio-2011",
     "title": "\nR Lecture 1R과 RStudio\n",
-    "section": "",
-    "text": "https://posit.co/download/rstudio-desktop/",
+    "section": "RStudio, 2011",
+    "text": "RStudio, 2011\n\nhttps://posit.co/download/rstudio-desktop/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5429,8 +5429,8 @@
     "objectID": "R_lec_01_2025.html#shiny-2012",
     "href": "R_lec_01_2025.html#shiny-2012",
     "title": "\nR Lecture 1R과 RStudio\n",
-    "section": "",
-    "text": "https://shiny.posit.co/",
+    "section": "shiny, 2012",
+    "text": "shiny, 2012\n\n\n\n\n\n\n\n\nhttps://shiny.posit.co/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5440,8 +5440,8 @@
     "objectID": "R_lec_01_2025.html#tidyverse-2016",
     "href": "R_lec_01_2025.html#tidyverse-2016",
     "title": "\nR Lecture 1R과 RStudio\n",
-    "section": "",
-    "text": "https://www.tidyverse.org/\n\n\n\n \n\n\n\n\nhttps://www.tidyverse.org/",
+    "section": "tidyverse, 2016",
+    "text": "tidyverse, 2016\n\n\n\n\n\nhttps://www.tidyverse.org/\n\n\n\n \n\n\n\n\nhttps://www.tidyverse.org/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5451,8 +5451,8 @@
     "objectID": "R_lec_01_2025.html#posit-2022",
     "href": "R_lec_01_2025.html#posit-2022",
     "title": "\nR Lecture 1R과 RStudio\n",
-    "section": "",
-    "text": "https://posit.co/",
+    "section": "posit, 2022",
+    "text": "posit, 2022\n\nhttps://posit.co/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5462,8 +5462,8 @@
     "objectID": "R_lec_01_2025.html#quarto-2022",
     "href": "R_lec_01_2025.html#quarto-2022",
     "title": "\nR Lecture 1R과 RStudio\n",
-    "section": "",
-    "text": "https://quarto.org/\n\n\n\n\n\nhttps://rstudio.github.io/cheatsheets/html/quarto.html",
+    "section": "quarto, 2022",
+    "text": "quarto, 2022\n\n\n\n\n\nhttps://quarto.org/\n\n\n\n\n\nhttps://rstudio.github.io/cheatsheets/html/quarto.html",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5485,7 +5485,7 @@
     "href": "R_lec_01_2025.html#ide-2",
     "title": "\nR Lecture 1R과 RStudio\n",
     "section": "IDE",
-    "text": "IDE\n\n\nhttps://djangostars.com/blog/python-ide/",
+    "text": "IDE\n\nhttps://djangostars.com/blog/python-ide/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5496,7 +5496,7 @@
     "href": "R_lec_01_2025.html#ide-3",
     "title": "\nR Lecture 1R과 RStudio\n",
     "section": "IDE",
-    "text": "IDE\n\n\nhttps://posit.co/blog/positron-product-announcement-aug-2025/",
+    "text": "IDE\n\nhttps://posit.co/blog/positron-product-announcement-aug-2025/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5529,7 +5529,7 @@
     "href": "R_lec_01_2025.html#r-project-1",
     "title": "\nR Lecture 1R과 RStudio\n",
     "section": "R Project",
-    "text": "R Project\n\n\nhttps://allisonhorst.com/allison-horst",
+    "text": "R Project\n\nhttps://allisonhorst.com/allison-horst",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5562,7 +5562,7 @@
     "href": "R_lec_01_2025.html#연산자-operators",
     "title": "\nR Lecture 1R과 RStudio\n",
     "section": "연산자 Operators",
-    "text": "연산자 Operators\n\n\nhttps://learnetutorials.com/r-programming/operators-and-types",
+    "text": "연산자 Operators\n\nhttps://learnetutorials.com/r-programming/operators-and-types",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5617,7 +5617,7 @@
     "href": "R_lec_01_2025.html#함수-functions",
     "title": "\nR Lecture 1R과 RStudio\n",
     "section": "함수 functions",
-    "text": "함수 functions\n\nseq(from = 2, to = 100, by = 2)\n\n\n\nhttps://www.r4epi.com/speaking-rs-language",
+    "text": "함수 functions\n\nseq(from = 2, to = 100, by = 2)\n\n\nhttps://www.r4epi.com/speaking-rs-language",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
@@ -5818,7 +5818,7 @@
     "href": "R_lec_02_2025.html#no-error-no-gain",
     "title": "\nR Lecture 2R과 데이터사이언스\n",
     "section": "No error, no gain!",
-    "text": "No error, no gain!\n\n\nhttps://allisonhorst.com/everything-else",
+    "text": "No error, no gain!\n\n\n\nhttps://allisonhorst.com/everything-else",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 2]{style=\"color:coral;font-size:0.6em\"}\n| [R과 데이터사이언스]{style=\"font-size:1em\"}"
@@ -5890,7 +5890,7 @@
     "href": "R_lec_02_2025.html#패키지-설치하기",
     "title": "\nR Lecture 2R과 데이터사이언스\n",
     "section": "패키지 설치하기",
-    "text": "패키지 설치하기\n\n\nCRAN 패키지인 경우\n\ninstall.packages(\"패키지명\")\n아웃풋(output) 창의 Packages 탭\n\n\n\n\n\n\n\n\n\n비 CRAN 패키지의 경우\n\nremotes::install_github(\"사용자명/저장소명\")",
+    "text": "패키지 설치하기\n\n\nCRAN 패키지인 경우\n\ninstall.packages(\"패키지명\")\n아웃풋(output) 창의 Packages 탭\n\n\n\n\n\n\n비 CRAN 패키지의 경우\n\nremotes::install_github(\"사용자명/저장소명\")",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 2]{style=\"color:coral;font-size:0.6em\"}\n| [R과 데이터사이언스]{style=\"font-size:1em\"}"
@@ -5959,7 +5959,7 @@
     "href": "R_lec_02_2025.html#타이디버스-철학",
     "title": "\nR Lecture 2R과 데이터사이언스\n",
     "section": "타이디버스 철학",
-    "text": "타이디버스 철학\n타이디버스 스타일 가이드\n\n\nhttps://allisonhorst.com/r-packages-functions",
+    "text": "타이디버스 철학\n타이디버스 스타일 가이드\n\nhttps://allisonhorst.com/r-packages-functions",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 2]{style=\"color:coral;font-size:0.6em\"}\n| [R과 데이터사이언스]{style=\"font-size:1em\"}"
@@ -6025,7 +6025,7 @@
     "href": "R_lec_02_2025.html#데이터사이언스-프로세스와-파이프-연산자",
     "title": "\nR Lecture 2R과 데이터사이언스\n",
     "section": "데이터사이언스 프로세스와 파이프 연산자",
-    "text": "데이터사이언스 프로세스와 파이프 연산자\n\n\nhttps://www.rforecology.com/post/how-to-use-pipes/",
+    "text": "데이터사이언스 프로세스와 파이프 연산자\n\nhttps://www.rforecology.com/post/how-to-use-pipes/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 2]{style=\"color:coral;font-size:0.6em\"}\n| [R과 데이터사이언스]{style=\"font-size:1em\"}"
@@ -6046,8 +6046,8 @@
     "objectID": "R_lec_02_2025.html#데이터사이언스-프로세스와-r",
     "href": "R_lec_02_2025.html#데이터사이언스-프로세스와-r",
     "title": "\nR Lecture 2R과 데이터사이언스\n",
-    "section": "",
-    "text": "https://posit.co/blog/artist-in-residence/",
+    "section": "데이터사이언스 프로세스와 R",
+    "text": "데이터사이언스 프로세스와 R\n\nhttps://posit.co/blog/artist-in-residence/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 2]{style=\"color:coral;font-size:0.6em\"}\n| [R과 데이터사이언스]{style=\"font-size:1em\"}"
@@ -6057,8 +6057,8 @@
     "objectID": "R_lec_02_2025.html#데이터사이언스-프로세스와-r-1",
     "href": "R_lec_02_2025.html#데이터사이언스-프로세스와-r-1",
     "title": "\nR Lecture 2R과 데이터사이언스\n",
-    "section": "",
-    "text": "https://r4ds.hadley.nz/intro",
+    "section": "데이터사이언스 프로세스와 R",
+    "text": "데이터사이언스 프로세스와 R\n\nhttps://r4ds.hadley.nz/intro",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 2]{style=\"color:coral;font-size:0.6em\"}\n| [R과 데이터사이언스]{style=\"font-size:1em\"}"
@@ -6068,8 +6068,8 @@
     "objectID": "R_lec_02_2025.html#바이블",
     "href": "R_lec_02_2025.html#바이블",
     "title": "\nR Lecture 2R과 데이터사이언스\n",
-    "section": "",
-    "text": "https://r4ds.hadley.nz/",
+    "section": "바이블",
+    "text": "바이블\n\nhttps://r4ds.hadley.nz/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 2]{style=\"color:coral;font-size:0.6em\"}\n| [R과 데이터사이언스]{style=\"font-size:1em\"}"
@@ -6160,8 +6160,8 @@
     "objectID": "R_lec_03_2025.html#zotero",
     "href": "R_lec_03_2025.html#zotero",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "https://quarto.org/docs/visual-editor/technical.html",
+    "section": "Zotero",
+    "text": "Zotero\n\nhttps://quarto.org/docs/visual-editor/technical.html",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6178,8 +6178,8 @@
     "objectID": "R_lec_03_2025.html#quarto-pub",
     "href": "R_lec_03_2025.html#quarto-pub",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "https://quarto.org/docs/publishing/quarto-pub.html",
+    "section": "Quarto Pub",
+    "text": "Quarto Pub\n\nhttps://quarto.org/docs/publishing/quarto-pub.html",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6386,8 +6386,8 @@
     "objectID": "R_lec_03_2025.html#데이터사이언스-프로세스-소통",
     "href": "R_lec_03_2025.html#데이터사이언스-프로세스-소통",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "https://r4ds.hadley.nz/",
+    "section": "데이터사이언스 프로세스: 소통",
+    "text": "데이터사이언스 프로세스: 소통\n\nhttps://r4ds.hadley.nz/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6397,8 +6397,8 @@
     "objectID": "R_lec_03_2025.html#패키지",
     "href": "R_lec_03_2025.html#패키지",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "https://r4ds.hadley.nz/",
+    "section": "패키지",
+    "text": "패키지\n\nhttps://r4ds.hadley.nz/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6447,8 +6447,8 @@
     "objectID": "R_lec_03_2025.html#정의",
     "href": "R_lec_03_2025.html#정의",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "“과학적, 기술적 출판을 위한 오픈소스 시스템(an open-source scientific and technical publishing system)”\n\n오픈소스 저작 시스템\n\n다양한 형식의 저작물(노트, 연구 논문, 프레젠테이션, 대시보드, 웹사이트, 블로그, 서적 등)을 다양한 디지털 포맷(HTML, PDF, MS Word, ePub 등)으로 출판할 수 있게 해주는 도구\n적용 분야의 스케일\n\n개인 스케일: 노트, 레포트, 연구 논문, 프레젠테이션, 블로그 등의 작성 도구\n그룹 스케일: 프로젝트의 원할한 진행을 위한 협업 프레임워크\n사회 스케일: 과학 커뮤니티의 재현성(reproducibility) 고양",
+    "section": "정의",
+    "text": "정의\n\n“과학적, 기술적 출판을 위한 오픈소스 시스템(an open-source scientific and technical publishing system)”\n\n오픈소스 저작 시스템\n\n다양한 형식의 저작물(노트, 연구 논문, 프레젠테이션, 대시보드, 웹사이트, 블로그, 서적 등)을 다양한 디지털 포맷(HTML, PDF, MS Word, ePub 등)으로 출판할 수 있게 해주는 도구\n적용 분야의 스케일\n\n개인 스케일: 노트, 레포트, 연구 논문, 프레젠테이션, 블로그 등의 작성 도구\n그룹 스케일: 프로젝트의 원할한 진행을 위한 협업 프레임워크\n사회 스케일: 과학 커뮤니티의 재현성(reproducibility) 고양",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6458,8 +6458,8 @@
     "objectID": "R_lec_03_2025.html#기능",
     "href": "R_lec_03_2025.html#기능",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "https://allisonhorst.com/cetinkaya-rundel-lowndes-quarto-keynote",
+    "section": "기능",
+    "text": "기능\n\nhttps://allisonhorst.com/cetinkaya-rundel-lowndes-quarto-keynote",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6469,8 +6469,8 @@
     "objectID": "R_lec_03_2025.html#기능-1",
     "href": "R_lec_03_2025.html#기능-1",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "https://quarto.org/",
+    "section": "기능",
+    "text": "기능\n\nhttps://quarto.org/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6480,8 +6480,8 @@
     "objectID": "R_lec_03_2025.html#결과물-예시",
     "href": "R_lec_03_2025.html#결과물-예시",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "개인 홈페이지 및 블로그: https://sangillee.snu.ac.kr/\n웹북: https://r4ds.hadley.nz/\n프레젠테이션: https://sangillee.snu.ac.kr/2024_AIEDAP/lecture_3.html\n대시보드: https://sangillee.snu.ac.kr/dashboard_popgeo/\n논문, 포스터, 소식지 등",
+    "section": "결과물 예시",
+    "text": "결과물 예시\n\n개인 홈페이지 및 블로그: https://sangillee.snu.ac.kr/\n웹북: https://r4ds.hadley.nz/\n프레젠테이션: https://sangillee.snu.ac.kr/2024_AIEDAP/lecture_3.html\n대시보드: https://sangillee.snu.ac.kr/dashboard_popgeo/\n논문, 포스터, 소식지 등",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6491,8 +6491,8 @@
     "objectID": "R_lec_03_2025.html#구문syntax",
     "href": "R_lec_03_2025.html#구문syntax",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "마크다운(markdown) 언어: 팬독(pandoc)\n\n마크업(markup) 언어: 다큐먼트의 구조와 포맷을 관장하는 텍스트-엔코딩 시스템\n사용자의 편의성을 크게 향상시킨 마크업 언어\n\nQuarto 다규먼트: .qmd\n\n프로그래밍 언어 + 워드프로세서",
+    "section": "구문(syntax)",
+    "text": "구문(syntax)\n\n마크다운(markdown) 언어: 팬독(pandoc)\n\n마크업(markup) 언어: 다큐먼트의 구조와 포맷을 관장하는 텍스트-엔코딩 시스템\n사용자의 편의성을 크게 향상시킨 마크업 언어\n\nQuarto 다규먼트: .qmd\n\n프로그래밍 언어 + 워드프로세서",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6502,8 +6502,8 @@
     "objectID": "R_lec_03_2025.html#렌더링rendering",
     "href": "R_lec_03_2025.html#렌더링rendering",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "knitr 패키지: .qmd를 .md로 전환\npandoc: .md를 다양한 디지털 포맷으로 전환\n\n\n\n\nhttps://r4ds.hadley.nz/quarto",
+    "section": "렌더링(rendering)",
+    "text": "렌더링(rendering)\n\nknitr 패키지: .qmd를 .md로 전환\npandoc: .md를 다양한 디지털 포맷으로 전환\n\n\nhttps://r4ds.hadley.nz/quarto",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6513,8 +6513,8 @@
     "objectID": "R_lec_03_2025.html#quarto-다큐먼트의-기본-구조",
     "href": "R_lec_03_2025.html#quarto-다큐먼트의-기본-구조",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "YAML 헤더(header)\n\n일종의 메타데이터\n다큐먼트의 전반적인 사항을 관장\n\n코드 청크(code chunk)\n\n프로그래밍 언어가 들어가는 부분\nR 스크립트 파일\n\n마크다운 텍스트(markdown text)\n\n워드프로세서처럼 텍스트를 작성(도표 포함)",
+    "section": "Quarto 다큐먼트의 기본 구조",
+    "text": "Quarto 다큐먼트의 기본 구조\n\nYAML 헤더(header)\n\n일종의 메타데이터\n다큐먼트의 전반적인 사항을 관장\n\n코드 청크(code chunk)\n\n프로그래밍 언어가 들어가는 부분\nR 스크립트 파일\n\n마크다운 텍스트(markdown text)\n\n워드프로세서처럼 텍스트를 작성(도표 포함)",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6538,8 +6538,8 @@
     "objectID": "R_lec_03_2025.html#마크다운-텍스트",
     "href": "R_lec_03_2025.html#마크다운-텍스트",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "소스 에디터(source editor) vs. 비주얼 에디터(visual editor)\n마크다운 언어의 사용자 편이성을 한 번 더 강화한 것",
+    "section": "마크다운 텍스트",
+    "text": "마크다운 텍스트\n\n소스 에디터(source editor) vs. 비주얼 에디터(visual editor)\n마크다운 언어의 사용자 편이성을 한 번 더 강화한 것",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6577,8 +6577,8 @@
     "objectID": "R_lec_03_2025.html#yaml-헤더",
     "href": "R_lec_03_2025.html#yaml-헤더",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "키(key)\n설명\n\n\n\n\ntitle\n다큐먼트의 제목\n\n\ndate\n다큐먼트 작성 날짜\n\n\nauthor\n다큐먼트 저자 이름\n\n\nformat\n다양한 포맷 관련 사항의 지정\n\n\ntoc\n목차 삽입\n\n\nnumber-section\n섹션 제목에 자동 번호 부여 여부\n\n\nexecute: echo\n소스 코드의 포함 여부를 글로벌하게 설정, 보통 true\n\n\nexecute: warning\n경고 메시지를 산출물에 나타나게 할지를 글로벌하게 설정, 보통 false\n\n\neditor\n비주얼 에디터와 소스 에디터 중 선택, 보통 visual",
+    "section": "YAML 헤더",
+    "text": "YAML 헤더\n\n\n\n\n\n\n\n키(key)\n설명\n\n\n\n\ntitle\n다큐먼트의 제목\n\n\ndate\n다큐먼트 작성 날짜\n\n\nauthor\n다큐먼트 저자 이름\n\n\nformat\n다양한 포맷 관련 사항의 지정\n\n\ntoc\n목차 삽입\n\n\nnumber-section\n섹션 제목에 자동 번호 부여 여부\n\n\nexecute: echo\n소스 코드의 포함 여부를 글로벌하게 설정, 보통 true\n\n\nexecute: warning\n경고 메시지를 산출물에 나타나게 할지를 글로벌하게 설정, 보통 false\n\n\neditor\n비주얼 에디터와 소스 에디터 중 선택, 보통 visual",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6588,8 +6588,8 @@
     "objectID": "R_lec_03_2025.html#웹-발행publishing과-호스팅hosting-서비스",
     "href": "R_lec_03_2025.html#웹-발행publishing과-호스팅hosting-서비스",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "Quarto Pub(https://quartopub.com/)\nGitHub Pages(https://pages.github.com/)\nNetlify(https://www.netlify.com/)",
+    "section": "웹 발행(publishing)과 호스팅(hosting) 서비스",
+    "text": "웹 발행(publishing)과 호스팅(hosting) 서비스\n\nQuarto Pub(https://quartopub.com/)\nGitHub Pages(https://pages.github.com/)\nNetlify(https://www.netlify.com/)",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6647,7 +6647,7 @@
     "href": "R_lec_03_2025.html#레이아웃-요소-4-내비게이션-바",
     "title": "R Lecture 3\n소통하기: Quarto",
     "section": "레이아웃 요소 4: 내비게이션 바",
-    "text": "레이아웃 요소 4: 내비게이션 바\n\n\n\n\n\n\ntitle\nauthor\nformat: dashboard\n\nlogo\nnav-buttons\nscrolling: true\n\ntheme: 25 bootswatch themes(https://quarto.org/docs/dashboards/theming.html)",
+    "text": "레이아웃 요소 4: 내비게이션 바\n\n\ntitle\nauthor\nformat: dashboard\n\nlogo\nnav-buttons\nscrolling: true\n\ntheme: 25 bootswatch themes(https://quarto.org/docs/dashboards/theming.html)",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -6756,8 +6756,8 @@
     "objectID": "R_lec_03_2025.html#코드-청크",
     "href": "R_lec_03_2025.html#코드-청크",
     "title": "R Lecture 3\n소통하기: Quarto",
-    "section": "",
-    "text": "Option\nRun code\nShow code\nOutput\nPlots\nMessages\nWarnings\n\n\n\n\neval: false\nX\n\nX\nX\nX\nX\n\n\ninclude: false\n\nX\nX\nX\nX\nX\n\n\necho: false\n\nX\n\n\n\n\n\n\nresults: hide\n\n\nX\n\n\n\n\n\nfig-show: hide\n\n\n\nX\n\n\n\n\nmessage: false\n\n\n\n\nX\n\n\n\nwarning: false\n\n\n\n\n\nX",
+    "section": "코드 청크",
+    "text": "코드 청크\n\n\n\n\n\n\n\n\n\n\n\n\nOption\nRun code\nShow code\nOutput\nPlots\nMessages\nWarnings\n\n\n\n\neval: false\nX\n\nX\nX\nX\nX\n\n\ninclude: false\n\nX\nX\nX\nX\nX\n\n\necho: false\n\nX\n\n\n\n\n\n\nresults: hide\n\n\nX\n\n\n\n\n\nfig-show: hide\n\n\n\nX\n\n\n\n\nmessage: false\n\n\n\n\nX\n\n\n\nwarning: false\n\n\n\n\n\nX",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 3]{style=\"color:coral;font-size:0.6em\"}\n| [소통하기: Quarto]{style=\"font-size:1em\"}"
@@ -9056,9 +9056,9 @@
   {
     "objectID": "R_lec_06_2025.html#데이터사이언스-프로세스-타이디버스",
     "href": "R_lec_06_2025.html#데이터사이언스-프로세스-타이디버스",
-    "title": "R Lecture 6\n데이터 시각화하기",
-    "section": "",
-    "text": "https://r4ds.hadley.nz/intro.html",
+    "title": "\nR Lecture 6데이터 시각화하기\n",
+    "section": "데이터사이언스 프로세스: 타이디버스",
+    "text": "데이터사이언스 프로세스: 타이디버스\n\nhttps://r4ds.hadley.nz/intro.html",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9078,9 +9078,9 @@
   {
     "objectID": "R_lec_06_2025.html#ggplot2-패키지",
     "href": "R_lec_06_2025.html#ggplot2-패키지",
-    "title": "R Lecture 6\n데이터 시각화하기",
-    "section": "",
-    "text": "https://ggplot2.tidyverse.org/",
+    "title": "\nR Lecture 6데이터 시각화하기\n",
+    "section": "\nggplot2 패키지",
+    "text": "ggplot2 패키지\n\nhttps://ggplot2.tidyverse.org/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9100,9 +9100,9 @@
   {
     "objectID": "R_lec_06_2025.html#ggplot2의-8대-구성요소",
     "href": "R_lec_06_2025.html#ggplot2의-8대-구성요소",
-    "title": "R Lecture 6\n데이터 시각화하기",
-    "section": "",
-    "text": "https://initiation.doana-r.com/06-ggplot2#1",
+    "title": "\nR Lecture 6데이터 시각화하기\n",
+    "section": "\nggplot2의 8대 구성요소",
+    "text": "ggplot2의 8대 구성요소\n\nhttps://initiation.doana-r.com/06-ggplot2#1",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9111,9 +9111,9 @@
   {
     "objectID": "R_lec_06_2025.html#시각속성과-기하객체",
     "href": "R_lec_06_2025.html#시각속성과-기하객체",
-    "title": "R Lecture 6\n데이터 시각화하기",
+    "title": "\nR Lecture 6데이터 시각화하기\n",
     "section": "시각속성과 기하객체",
-    "text": "시각속성과 기하객체\n\n시각속성(aesthetics)\n\n플롯의 외견을 규정\n시각속성: 컬러(color), 크기(size), 형태(shape), x-축, y-축 등\n시각속성 매핑: 특정한 시각속성을 특정한 변수에 부여하는 과정\naes(시각속성 = 변수명) 혹은 mapping = aes()\n\n기하객체(geometries 또는 geometric objects)\n\n플롯의 전체 구조 혹은 형식을 규정\n플롯의 유형: 막대플롯(bar plot), 라인플롯(line plot) 등\ngeom_*()",
+    "text": "시각속성과 기하객체\n\n\n시각속성(aesthetics)\n\n플롯의 외견을 규정\n시각속성: 컬러(color), 크기(size), 형태(shape), x-축, y-축 등\n시각속성 매핑: 특정한 시각속성을 특정한 변수에 부여하는 과정\naes(시각속성 = 변수명) 혹은 mapping = aes()\n\n\n\n기하객체(geometries 또는 geometric objects)\n\n플롯의 전체 구조 혹은 형식을 규정\n플롯의 유형: 막대플롯(bar plot), 라인플롯(line plot) 등\ngeom_*()",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9122,9 +9122,9 @@
   {
     "objectID": "R_lec_06_2025.html#시각속성과-기하객체-1",
     "href": "R_lec_06_2025.html#시각속성과-기하객체-1",
-    "title": "R Lecture 6\n데이터 시각화하기",
+    "title": "\nR Lecture 6데이터 시각화하기\n",
     "section": "시각속성과 기하객체",
-    "text": "시각속성과 기하객체\n\nCode 1Code 2Result\n\n\n\ngapminder_2007 &lt;- gapminder |&gt; \n  filter(year == 2007) \nggplot(data = gapminder_2007, mapping = aes(x = gdpPercap, y = lifeExp)) +\n  geom_point(aes(color = continent)) +\n  geom_smooth(color = \"black\")\n\n\n\n\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp)) +\n  geom_point(aes(color = continent)) +\n  geom_smooth(color = \"black\")",
+    "text": "시각속성과 기하객체\n\n\nCode 1\nCode 2\nResult\n\n\n\n\ngapminder_2007 &lt;- gapminder |&gt; \n  filter(year == 2007) \nggplot(data = gapminder_2007, mapping = aes(x = gdpPercap, y = lifeExp)) +\n  geom_point(aes(color = continent)) +\n  geom_smooth(color = \"black\")\n\n\n\n\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp)) +\n  geom_point(aes(color = continent)) +\n  geom_smooth(color = \"black\")",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9133,9 +9133,9 @@
   {
     "objectID": "R_lec_06_2025.html#시각속성의-종류",
     "href": "R_lec_06_2025.html#시각속성의-종류",
-    "title": "R Lecture 6\n데이터 시각화하기",
+    "title": "\nR Lecture 6데이터 시각화하기\n",
     "section": "시각속성의 종류",
-    "text": "시각속성의 종류\n\n\n\n\n\n\n\n\n\n분류\n시각속성\n설명\n성격\n\n\n\n\n컬러 관련\naes(color = )\n점/선의 컬러 지정\n정성 &gt; 정량\n\n\n\naes(fill = )\n면의 필(컬러) 지정\n정성 &gt; 정량\n\n\n\naes(alpha = )\n점/선/면의 투명도 지정\n정성 &lt; 정량\n\n\n차이 표현 관련\naes(size = )\n점의 크기 지정\n정량\n\n\n\naes(shape = )\n점의 모양 지정\n정성\n\n\n\naes(linetype = )\n선의 유형 지정\n정성\n\n\n\naes(linewidth = )\n선의 크기 지정\n정량\n\n\n위치 관련\naes(x = )\nx축 지정\n정성/정량\n\n\n\naes(y = )\ny축 지정\n정성/정량\n\n\n그룹화 관련\naes(group = )\n그룹화 기준 지정\n정성",
+    "text": "시각속성의 종류\n\n\n\n\n\n\n\n\n분류\n시각속성\n설명\n성격\n\n\n\n컬러 관련\naes(color = )\n점/선의 컬러 지정\n정성 &gt; 정량\n\n\n\naes(fill = )\n면의 필(컬러) 지정\n정성 &gt; 정량\n\n\n\naes(alpha = )\n점/선/면의 투명도 지정\n정성 &lt; 정량\n\n\n차이 표현 관련\naes(size = )\n점의 크기 지정\n정량\n\n\n\naes(shape = )\n점의 모양 지정\n정성\n\n\n\naes(linetype = )\n선의 유형 지정\n정성\n\n\n\naes(linewidth = )\n선의 크기 지정\n정량\n\n\n위치 관련\naes(x = )\nx축 지정\n정성/정량\n\n\n\naes(y = )\ny축 지정\n정성/정량\n\n\n그룹화 관련\naes(group = )\n그룹화 기준 지정\n정성",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9151,9 +9151,9 @@
   {
     "objectID": "R_lec_06_2025.html#기하객체의-종류",
     "href": "R_lec_06_2025.html#기하객체의-종류",
-    "title": "R Lecture 6\n데이터 시각화하기",
+    "title": "\nR Lecture 6데이터 시각화하기\n",
     "section": "기하객체의 종류",
-    "text": "기하객체의 종류\n\n\n\n\n\n\n\n\n\n구분\n내용\n기하객체\n이름\n\n\n\n\n기본 플롯\n점\ngeom_point()\n점플롯(산점도)\n\n\n\n선\ngeom_line()\n선플롯(선그래프)\n\n\n\n면\ngeom_area()\n면적플롯\n\n\n\n막대\ngeom_bar()\n막대플롯\n\n\n통계 플롯\n분포\ngeom_boxplot()\ngeom_histogram()\n박스플롯\n히스토그램\n\n\n\n추세선\ngeom_smooth()\n평활곡선플롯\n\n\n기타\n텍스트\ngeom_text()\ngeom_label()\n텍스트플롯\n라벨플롯\n\n\n\n지도 제작\ngeom_sf()\nsf플롯",
+    "text": "기하객체의 종류\n\n\n\n\n\n\n\n\n구분\n내용\n기하객체\n이름\n\n\n\n기본 플롯\n점\ngeom_point()\n점플롯(산점도)\n\n\n\n선\ngeom_line()\n선플롯(선그래프)\n\n\n\n면\ngeom_area()\n면적플롯\n\n\n\n막대\ngeom_bar()\n막대플롯\n\n\n통계 플롯\n분포\n\ngeom_boxplot()\ngeom_histogram()\n\n\n박스플롯\n히스토그램\n\n\n\n\n추세선\ngeom_smooth()\n평활곡선플롯\n\n\n기타\n텍스트\n\ngeom_text()\ngeom_label()\n\n\n텍스트플롯\n라벨플롯\n\n\n\n\n지도 제작\ngeom_sf()\nsf플롯",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9162,9 +9162,9 @@
   {
     "objectID": "R_lec_06_2025.html#스케일scale",
     "href": "R_lec_06_2025.html#스케일scale",
-    "title": "R Lecture 6\n데이터 시각화하기",
+    "title": "\nR Lecture 6데이터 시각화하기\n",
     "section": "스케일(scale)",
-    "text": "스케일(scale)\n\n시각속성의 구현: scale_시각속성_*()\n축 관련: x, y\n\nscale_x_continuous(), scale_x_discrete()\n\n컬러 관련: color, fill\n\nscale_color_brewer(), scale_fill_brewer()\nscale_color_manual(), scale_fill_manual()\n\n기타\n\nscale_shape(), scale_size()\nscale_linetype(), scale_linewidth()",
+    "text": "스케일(scale)\n\n시각속성의 구현: scale_시각속성_*()\n\n축 관련: x, y\n\n\nscale_x_continuous(), scale_x_discrete()\n\n\n\n\n컬러 관련: color, fill\n\n\nscale_color_brewer(), scale_fill_brewer()\n\n\nscale_color_manual(), scale_fill_manual()\n\n\n\n\n기타\n\nscale_shape(), scale_size()\nscale_linetype(), scale_linewidth()",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9173,7 +9173,7 @@
   {
     "objectID": "R_lec_06_2025.html#데이터data",
     "href": "R_lec_06_2025.html#데이터data",
-    "title": "R Lecture 6\n데이터 시각화하기",
+    "title": "\nR Lecture 6데이터 시각화하기\n",
     "section": "데이터(data)",
     "text": "데이터(data)\n\n시각화의 가장 기본적인 요소\n최상위 함수에서 글로벌 지정: ggplot(data = 데이터프레임명)\n특정한 기하객체 함수에서 로컬 지정: geom_*(data = 데이터프레임명)\n다중 지정 가능: 다양한 기하객체에 개별적으로 로컬 지정",
     "crumbs": [
@@ -9184,9 +9184,9 @@
   {
     "objectID": "R_lec_06_2025.html#패싯facet",
     "href": "R_lec_06_2025.html#패싯facet",
-    "title": "R Lecture 6\n데이터 시각화하기",
+    "title": "\nR Lecture 6데이터 시각화하기\n",
     "section": "패싯(facet)",
-    "text": "패싯(facet)\n\n다면생성(faceting)을 통해, 하나의 플롯을 여러 개의 하위 플롯으로 분할\n두 가지 중요 함수\n\nfacet_wrap()\nfacet_grid()",
+    "text": "패싯(facet)\n\n다면생성(faceting)을 통해, 하나의 플롯을 여러 개의 하위 플롯으로 분할\n\n두 가지 중요 함수\n\nfacet_wrap()\nfacet_grid()",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9195,9 +9195,9 @@
   {
     "objectID": "R_lec_06_2025.html#패싯facet-1",
     "href": "R_lec_06_2025.html#패싯facet-1",
-    "title": "R Lecture 6\n데이터 시각화하기",
+    "title": "\nR Lecture 6데이터 시각화하기\n",
     "section": "패싯(facet)",
-    "text": "패싯(facet)\n\nNormalFaceting\n\n\n\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = log(gdpPercap), y = log(lifeExp))) +\n  geom_point(aes(size = pop)) +\n  geom_smooth()\n\n\n\n\n\n\n\n\n\n\n\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = log(gdpPercap), y = log(lifeExp))) +\n  geom_point(aes(size = pop)) +\n  geom_smooth() +\n  facet_wrap(~continent)",
+    "text": "패싯(facet)\n\n\nNormal\nFaceting\n\n\n\n\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = log(gdpPercap), y = log(lifeExp))) +\n  geom_point(aes(size = pop)) +\n  geom_smooth()\n\n\n\n\n\n\n\n\n\n\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = log(gdpPercap), y = log(lifeExp))) +\n  geom_point(aes(size = pop)) +\n  geom_smooth() +\n  facet_wrap(~continent)",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9206,9 +9206,9 @@
   {
     "objectID": "R_lec_06_2025.html#통계적-변환statistical-transformation",
     "href": "R_lec_06_2025.html#통계적-변환statistical-transformation",
-    "title": "R Lecture 6\n데이터 시각화하기",
+    "title": "\nR Lecture 6데이터 시각화하기\n",
     "section": "통계적 변환(statistical transformation)",
-    "text": "통계적 변환(statistical transformation)\n\n시각화 과정에 통계적 변환을 수반\n\n\n\n\nhttps://r4ds.hadley.nz/layers",
+    "text": "통계적 변환(statistical transformation)\n\n시각화 과정에 통계적 변환을 수반\n\n\nhttps://r4ds.hadley.nz/layers",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9217,9 +9217,9 @@
   {
     "objectID": "R_lec_06_2025.html#좌표coordinates",
     "href": "R_lec_06_2025.html#좌표coordinates",
-    "title": "R Lecture 6\n데이터 시각화하기",
+    "title": "\nR Lecture 6데이터 시각화하기\n",
     "section": "좌표(coordinates)",
-    "text": "좌표(coordinates)\n\n그래픽 요소들의 위치 결정에 기준이 되는 준거 체계\n두 가지 중요 함수\n\ncoord_flip()\ncoord_fixed()",
+    "text": "좌표(coordinates)\n\n그래픽 요소들의 위치 결정에 기준이 되는 준거 체계\n\n두 가지 중요 함수\n\ncoord_flip()\ncoord_fixed()",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9228,9 +9228,9 @@
   {
     "objectID": "R_lec_06_2025.html#테마theme",
     "href": "R_lec_06_2025.html#테마theme",
-    "title": "R Lecture 6\n데이터 시각화하기",
+    "title": "\nR Lecture 6데이터 시각화하기\n",
     "section": "테마(theme)",
-    "text": "테마(theme)\n\n그래프의 전체적인 외양(테마)를 수정\n\n8개 테마 제공\n\n그래프의 세부 구성 요소를 수정\n\ntheme() 함수",
+    "text": "테마(theme)\n\n\n그래프의 전체적인 외양(테마)를 수정\n\n8개 테마 제공\n\n\n\n그래프의 세부 구성 요소를 수정\n\n\ntheme() 함수",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9239,9 +9239,9 @@
   {
     "objectID": "R_lec_06_2025.html#테마theme-1",
     "href": "R_lec_06_2025.html#테마theme-1",
-    "title": "R Lecture 6\n데이터 시각화하기",
+    "title": "\nR Lecture 6데이터 시각화하기\n",
     "section": "테마(theme)",
-    "text": "테마(theme)\n\n\n\nhttps://r4ds.hadley.nz/communication",
+    "text": "테마(theme)\n\nhttps://r4ds.hadley.nz/communication",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9250,9 +9250,9 @@
   {
     "objectID": "R_lec_06_2025.html#테마theme-2",
     "href": "R_lec_06_2025.html#테마theme-2",
-    "title": "R Lecture 6\n데이터 시각화하기",
+    "title": "\nR Lecture 6데이터 시각화하기\n",
     "section": "테마(theme)",
-    "text": "테마(theme)\n\n수 많은 옵션 https://ggplot2.tidyverse.org/reference/theme.html\n\n\n\n\nhttps://isabella-b.com/blog/ggplot2-theme-elements-reference/",
+    "text": "테마(theme)\n\n수 많은 옵션 https://ggplot2.tidyverse.org/reference/theme.html\n\n\n\nhttps://isabella-b.com/blog/ggplot2-theme-elements-reference/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9261,7 +9261,7 @@
   {
     "objectID": "R_lec_06_2025.html#주요-확장-프로그램",
     "href": "R_lec_06_2025.html#주요-확장-프로그램",
-    "title": "R Lecture 6\n데이터 시각화하기",
+    "title": "\nR Lecture 6데이터 시각화하기\n",
     "section": "주요 확장 프로그램",
     "text": "주요 확장 프로그램\n\npatchwork\ngganimate\nggiraph\nggpattern\ngeomtextpath\nggdensity\nGGally\nggcorrplot",
     "crumbs": [
@@ -9272,9 +9272,9 @@
   {
     "objectID": "R_lec_06_2025.html#section",
     "href": "R_lec_06_2025.html#section",
-    "title": "R Lecture 6\n데이터 시각화하기",
+    "title": "\nR Lecture 6데이터 시각화하기\n",
     "section": "",
-    "text": "샤를 조제프 미나르의 1812 나폴레옹 러시아 원정도\n\n\n\nhttps://en.wikipedia.org/wiki/Charles_Joseph_Minard",
+    "text": "샤를 조제프 미나르의 1812 나폴레옹 러시아 원정도\n\nhttps://en.wikipedia.org/wiki/Charles_Joseph_Minard",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9297,9 +9297,9 @@
   {
     "objectID": "R_lec_06_2025.html#ggplot2-패키지-1",
     "href": "R_lec_06_2025.html#ggplot2-패키지-1",
-    "title": "R Lecture 6\n데이터 시각화하기",
-    "section": "",
-    "text": "https://allisonhorst.com/r-packages-functions",
+    "title": "\nR Lecture 6데이터 시각화하기\n",
+    "section": "\nggplot2 패키지",
+    "text": "ggplot2 패키지\n\nhttps://allisonhorst.com/r-packages-functions",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9308,9 +9308,9 @@
   {
     "objectID": "R_lec_06_2025.html#ggplot2-패키지-2",
     "href": "R_lec_06_2025.html#ggplot2-패키지-2",
-    "title": "R Lecture 6\n데이터 시각화하기",
-    "section": "",
-    "text": "https://allisonhorst.com/r-packages-functions",
+    "title": "\nR Lecture 6데이터 시각화하기\n",
+    "section": "\nggplot2 패키지",
+    "text": "ggplot2 패키지\n\nhttps://allisonhorst.com/r-packages-functions",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9319,9 +9319,9 @@
   {
     "objectID": "R_lec_06_2025.html#patchwork-패키지",
     "href": "R_lec_06_2025.html#patchwork-패키지",
-    "title": "R Lecture 6\n데이터 시각화하기",
-    "section": "patchwork 패키지",
-    "text": "patchwork 패키지\n\n\n\nhttps://allisonhorst.com/r-packages-functions",
+    "title": "\nR Lecture 6데이터 시각화하기\n",
+    "section": "\npatchwork 패키지",
+    "text": "patchwork 패키지\n\nhttps://allisonhorst.com/r-packages-functions",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 6]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 시각화하기]{style=\"font-size:1em\"}"
@@ -9330,8 +9330,8 @@
   {
     "objectID": "R_lec_06_2025.html#gganimate-패키지",
     "href": "R_lec_06_2025.html#gganimate-패키지",
-    "title": "R Lecture 6\n데이터 시각화하기",
-    "section": "gganimate 패키지",
+    "title": "\nR Lecture 6데이터 시각화하기\n",
+    "section": "\ngganimate 패키지",
     "text": "gganimate 패키지\n\n\n\nhttps://allisonhorst.com/r-packages-functions",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
@@ -9710,6 +9710,327 @@
     "crumbs": [
       "R 실습: 2025/2",
       "데이터 사이언스의 과정 복습하기"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#데이터사이언스-프로세스",
+    "href": "R_lec_08_2025.html#데이터사이언스-프로세스",
+    "title": "\nR Lecture 8데이터 수집하기\n",
+    "section": "데이터사이언스 프로세스",
+    "text": "데이터사이언스 프로세스\n\nhttps://r4ds.hadley.nz/import.html",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#데이터-수집-방법",
+    "href": "R_lec_08_2025.html#데이터-수집-방법",
+    "title": "\nR Lecture 8데이터 수집하기\n",
+    "section": "데이터 수집 방법",
+    "text": "데이터 수집 방법\n\n웹스크레이핑(webscraping)\n오픈 API의 활용",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#정의",
+    "href": "R_lec_08_2025.html#정의",
+    "title": "\nR Lecture 8데이터 수집\n",
+    "section": "정의",
+    "text": "정의\n\n웹페이지로부터 데이터를 추출하는 것, 데이터 긁어 오기\n데이터 크롤링(crawling)과 유사, 박박 기면서 수집하기\n\n해킹(hacking)과의 경계가 모호\n\n허가 없이 정보 시스템에 침투하여 데이터를 취득하는 행위\n\n\n최근들어 점점 회피하는 추세"
+  },
+  {
+    "objectID": "R_lec_08_2025.html#html의-정의",
+    "href": "R_lec_08_2025.html#html의-정의",
+    "title": "\nR Lecture 8데이터 수집하기\n",
+    "section": "HTML의 정의",
+    "text": "HTML의 정의\n\n\nHyperText Markup Language, 하이퍼텍스터 마크업 언어\n\n\n웹 브라우저를 통해 표출되는 사항(무엇이 어떻게)을 프로그래밍하는 마크업(markup) 언어 혹은 웹 다큐먼트를 작성하는 마크업 언어\n\n마크업 언어: 다큐먼트의 구조와 포맷을 관장하는 텍스트-엔코딩 시스템\n\n\n\n\n\n마크다운(markdown) 언어\n\n사용자의 편이성이 강화된 마크업 언어\nQuarto: 비주얼 에디터",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#html의-기초-1",
+    "href": "R_lec_08_2025.html#html의-기초-1",
+    "title": "\nR Lecture 8데이터 수집하기\n",
+    "section": "HTML의 기초",
+    "text": "HTML의 기초\n\n태그들은 복잡한 다단계 구조를 이룸\n\n태그는 속성(attribute)를 가질 수 있음\n\n특별히 중요한 속성: 클래스(class), 아이디(id)\np나 div 태그와 같은 블록 태그: height, width, margin, padding\nimg 태그: src, alt, width, height\na 태그: href",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#html의-기초-2",
+    "href": "R_lec_08_2025.html#html의-기초-2",
+    "title": "\nR Lecture 8데이터 수집\n",
+    "section": "HTML의 기초 2",
+    "text": "HTML의 기초 2\n\n태그들은 복잡한 다단계 구조를 이룸\n\n태그는 속성(attribute)를 가질 수 있음\n\n특별히 중요한 속성: 클래스(class), 아이디(id)\np나 div 태그와 같은 블록 태그: height, width, margin, padding\nimg 태그: src, alt, width, height\na 태그: href"
+  },
+  {
+    "objectID": "R_lec_08_2025.html#section",
+    "href": "R_lec_08_2025.html#section",
+    "title": "\nR Lecture 8데이터 수집하기\n",
+    "section": "",
+    "text": "https://odinuv.cz/articles/html/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#html-엘리먼트의-선택",
+    "href": "R_lec_08_2025.html#html-엘리먼트의-선택",
+    "title": "\nR Lecture 8데이터 수집하기\n",
+    "section": "HTML 엘리먼트의 선택",
+    "text": "HTML 엘리먼트의 선택\n\n\nHTML 엘리먼트\n\n태그와 속성으로 구성된 HTML의 한 단위 혹은 특정 부분\n웹스크레이핑의 타깃의 주소\n\n\nHTML 엘리먼트의 선택: CSS 선택자(casading style sheet selector)\n\n\n\n\n\n\n\n\n\n선택 대상\nCSS 선택자\n결과\n\n\n\n태그(tag)\ntag1\n“tag1”이라는 이름의 모든 tag\n\n\n클래스(class)\n.class1\n“class1”이라는 class 속성을 갖는 모든 요소\n\n\n아이디(id)\n#id1\n“id1”이라는 id 속성을 갖는 모든 요소\n\n\ntag와 class의 결합\ntag1.class1\n“tag1”이라는 tag의 “class1”이라는 class 속성을 갖는 모든 요소\n\n\nclass1과 class2의 결합\n.class1.class2\n“class1”이라는 이름의 class 속성과 “class2”라는 이름의 class 속성을 동시에 갖는 모든 요소",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#html-엘리먼트의-선택-1",
+    "href": "R_lec_08_2025.html#html-엘리먼트의-선택-1",
+    "title": "\nR Lecture 8데이터 수집하기\n",
+    "section": "HTML 엘리먼트의 선택",
+    "text": "HTML 엘리먼트의 선택\n\n\n정확한 CSS 선택자의 확인\n\n웹페이지에서 오른쪽 마우스 버튼을 눌러 “검사” 선택한 뒤, 탐색\n브라우저 확장 프로그램의 활용: SelectGadget",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#rvest-패키지",
+    "href": "R_lec_08_2025.html#rvest-패키지",
+    "title": "\nR Lecture 8데이터 수집하기\n",
+    "section": "\nrvest 패키지",
+    "text": "rvest 패키지\n\nhttps://rvest.tidyverse.org/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#rvest를-활용한-웹스크레이핑-절차",
+    "href": "R_lec_08_2025.html#rvest를-활용한-웹스크레이핑-절차",
+    "title": "\nR Lecture 8데이터 수집\n",
+    "section": "\nrvest를 활용한 웹스크레이핑 절차",
+    "text": "rvest를 활용한 웹스크레이핑 절차\n\n\n1단계: 웹페이지 읽기\n\n웹스크레이핑의 대상이 되는 웹페이지의 URL 읽기\n\n\n\n2단계: HTML 엘리먼트의 선택\n\n필요한 정보를 포함하고 있는 엘리먼트의 특정\n\n\n\n3단계: 하위 엘리먼트의 선택\n\n필요한 정보를 포함하고 있는 하위 엘리먼트의 특정\n\n\n\n4단계: 엘리먼트로부터 데이터를 추출\n\n데이블 데이터, 텍스트 등을 추출"
+  },
+  {
+    "objectID": "R_lec_08_2025.html#사례-1-스타워즈",
+    "href": "R_lec_08_2025.html#사례-1-스타워즈",
+    "title": "\nR Lecture 8데이터 수집하기\n",
+    "section": "사례 1: 스타워즈",
+    "text": "사례 1: 스타워즈\nvignette(“starwars”)\n\n&lt;section&gt;\n  &lt;h2 data-id=\"1\"&gt;The Phantom Menace&lt;/h2&gt;\n  &lt;p&gt;Released: 1999-05-19&lt;/p&gt;\n  &lt;p&gt;Director: &lt;span class=\"director\"&gt;George Lucas&lt;/span&gt;&lt;/p&gt;\n  \n  &lt;div class=\"crawl\"&gt;\n    &lt;p&gt;...&lt;/p&gt;\n    &lt;p&gt;...&lt;/p&gt;\n    &lt;p&gt;...&lt;/p&gt;\n  &lt;/div&gt;\n&lt;/section&gt;",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#사례-1-스타워즈-1",
+    "href": "R_lec_08_2025.html#사례-1-스타워즈-1",
+    "title": "\nR Lecture 8데이터 수집하기\n",
+    "section": "사례 1: 스타워즈",
+    "text": "사례 1: 스타워즈\n\n\nCode 1\nResult 1\nCode 2\nResult 2\n\n\n\n\nlibrary(tidyverse)\nlibrary(rvest)\nurl &lt;- \"https://rvest.tidyverse.org/articles/starwars.html\"\nread_html(url) |&gt; \n  html_elements(\"section\") |&gt; \n  html_element(\"h2\") |&gt; \n  html_text2()\n\n\n\n\n\n[1] \"The Phantom Menace\"      \"Attack of the Clones\"   \n[3] \"Revenge of the Sith\"     \"A New Hope\"             \n[5] \"The Empire Strikes Back\" \"Return of the Jedi\"     \n[7] \"The Force Awakens\"      \n\n\n\n\n\nsection &lt;- read_html(url) |&gt; \n  html_elements(\"section\")\ntibble(\n  title = section |&gt; \n    html_element(\"h2\") |&gt; \n    html_text2(),\n  released = section |&gt; \n    html_element(\"p\") |&gt; \n    html_text2() |&gt; \n    str_remove(\"Released: \") |&gt; \n    parse_date(),\n  director = section |&gt; \n    html_element(\".director\") |&gt; \n    html_text2(),\n  intro = section |&gt; \n    html_element(\".crawl\") |&gt; \n    html_text2()\n)\n\n\n\n\n\n# A tibble: 7 × 4\n  title                   released   director         intro                     \n  &lt;chr&gt;                   &lt;date&gt;     &lt;chr&gt;            &lt;chr&gt;                     \n1 The Phantom Menace      1999-05-19 George Lucas     \"Turmoil has engulfed the…\n2 Attack of the Clones    2002-05-16 George Lucas     \"There is unrest in the G…\n3 Revenge of the Sith     2005-05-19 George Lucas     \"War! The Republic is cru…\n4 A New Hope              1977-05-25 George Lucas     \"It is a period of civil …\n5 The Empire Strikes Back 1980-05-17 Irvin Kershner   \"It is a dark time for th…\n6 Return of the Jedi      1983-05-25 Richard Marquand \"Luke Skywalker has retur…\n7 The Force Awakens       2015-12-11 J. J. Abrams     \"Luke Skywalker has vanis…",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#사례-1-스타워즈-2",
+    "href": "R_lec_08_2025.html#사례-1-스타워즈-2",
+    "title": "\nR Lecture 8데이터 수집\n",
+    "section": "사례 1: 스타워즈",
+    "text": "사례 1: 스타워즈\n\n\nCode\nResult\n\n\n\n\nsection &lt;- read_html(url) |&gt; \n  html_elements(\"section\")\ntibble(\n  title = section |&gt; \n    html_element(\"h2\") |&gt; \n    html_text2(),\n  released = section |&gt; \n    html_element(\"p\") |&gt; \n    html_text2() |&gt; \n    str_remove(\"Released: \") |&gt; \n    parse_date(),\n  director = section |&gt; \n    html_element(\".director\") |&gt; \n    html_text2(),\n  intro = section |&gt; \n    html_element(\".crawl\") |&gt; \n    html_text2()\n)\n\n\n\n\n\n# A tibble: 7 × 4\n  title                   released   director         intro                     \n  &lt;chr&gt;                   &lt;date&gt;     &lt;chr&gt;            &lt;chr&gt;                     \n1 The Phantom Menace      1999-05-19 George Lucas     \"Turmoil has engulfed the…\n2 Attack of the Clones    2002-05-16 George Lucas     \"There is unrest in the G…\n3 Revenge of the Sith     2005-05-19 George Lucas     \"War! The Republic is cru…\n4 A New Hope              1977-05-25 George Lucas     \"It is a period of civil …\n5 The Empire Strikes Back 1980-05-17 Irvin Kershner   \"It is a dark time for th…\n6 Return of the Jedi      1983-05-25 Richard Marquand \"Luke Skywalker has retur…\n7 The Force Awakens       2015-12-11 J. J. Abrams     \"Luke Skywalker has vanis…"
+  },
+  {
+    "objectID": "R_lec_08_2025.html#사례-2-웹-상의-테이블",
+    "href": "R_lec_08_2025.html#사례-2-웹-상의-테이블",
+    "title": "\nR Lecture 8데이터 수집하기\n",
+    "section": "사례 2: 웹 상의 테이블",
+    "text": "사례 2: 웹 상의 테이블\n위키피디어: 전 세계 국가 관련 항목\n\n\nCode 1\nResult 1\nCode 2\nResult 2\n\n\n\n\nlibrary(tidyverse)\nlibrary(rvest)\nurl &lt;- \"https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population\"\nmy_table &lt;- url |&gt; \n  read_html() |&gt; \n  html_element(\"table\") |&gt; \n  html_table()\n\n\n\n\n\n# A tibble: 240 × 6\n   Location      Population    `% ofworld` Date     Source (official or …¹ Notes\n   &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;                  &lt;chr&gt;\n 1 World         8,232,000,000 100%        13 Jun … UN projection[1][3]    \"\"   \n 2 India         1,417,492,000 17.3%       1 Jul 2… Official projection[4] \"[b]\"\n 3 China         1,408,280,000 17.2%       31 Dec … Official estimate[5]   \"[c]\"\n 4 United States 340,110,988   4.1%        1 Jul 2… Official estimate[6]   \"[d]\"\n 5 Indonesia     284,438,782   3.5%        30 Jun … National annual proje… \"\"   \n 6 Pakistan      241,499,431   2.9%        1 Mar 2… 2023 census result[8]  \"[e]\"\n 7 Nigeria       223,800,000   2.7%        1 Jul 2… Official projection[9] \"\"   \n 8 Brazil        213,421,037   2.6%        1 Jul 2… Official estimate[10]  \"\"   \n 9 Bangladesh    169,828,911   2.1%        14 Jun … 2022 census result[11] \"[f]\"\n10 Russia        146,028,325   1.8%        1 Jan 2… Official estimate[13]  \"[g]\"\n# ℹ 230 more rows\n# ℹ abbreviated name: ¹​`Source (official or fromthe United Nations)`\n\n\n\n\n\nmy_table_new &lt;- my_table |&gt; \n  select(-Notes) |&gt; \n  rename(\n    location = \"Location\",\n    population = \"Population\",\n    pop_pct = \"% ofworld\",\n    date = \"Date\",\n    source = \"Source (official or fromthe United Nations)\"\n  ) |&gt; \n  mutate(\n    population = parse_number(population, \",\"),\n    population = as.numeric(population),\n    pop_pct = str_remove_all(pop_pct, \"%\"),\n    pop_pct = as.numeric(pop_pct),\n    date = dmy(date)\n  )\n\n\n\n\n\n# A tibble: 240 × 5\n   location      population pop_pct date       source                       \n   &lt;chr&gt;              &lt;dbl&gt;   &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;                        \n 1 World         8232000000   100   2025-06-13 UN projection[1][3]          \n 2 India         1417492000    17.3 2025-07-01 Official projection[4]       \n 3 China         1408280000    17.2 2024-12-31 Official estimate[5]         \n 4 United States  340110988     4.1 2024-07-01 Official estimate[6]         \n 5 Indonesia      284438782     3.5 2025-06-30 National annual projection[7]\n 6 Pakistan       241499431     2.9 2023-03-01 2023 census result[8]        \n 7 Nigeria        223800000     2.7 2023-07-01 Official projection[9]       \n 8 Brazil         213421037     2.6 2025-07-01 Official estimate[10]        \n 9 Bangladesh     169828911     2.1 2022-06-14 2022 census result[11]       \n10 Russia         146028325     1.8 2025-01-01 Official estimate[13]        \n# ℹ 230 more rows",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#정의-1",
+    "href": "R_lec_08_2025.html#정의-1",
+    "title": "\nR Lecture 8데이터 수집\n",
+    "section": "정의",
+    "text": "정의\n\n\nAPI(application programming interface)는 일종의 통신 규약(protocol)\n\n복수의 프로그램들이 서로 상호작용하는 방법을 정의하는 일련의 규칙\n한 애플리케이션이 다른 애플리케이션의 기능들을 불러 사용할 수 있게 해주는 통로\n오픈 API: API 키(key)\n\n\n\n데이터 API\n\n데이터를 보유하고 있는 공적 기관이 데이터의 사용 권한을 사용자들에게 부여함으로써 데이터에 대한 접근성을 높여주는 일련의 방식"
+  },
+  {
+    "objectID": "R_lec_08_2025.html#api-활용의-다양성",
+    "href": "R_lec_08_2025.html#api-활용의-다양성",
+    "title": "\nR Lecture 8데이터 수집하기\n",
+    "section": "API 활용의 다양성",
+    "text": "API 활용의 다양성\n\n\n정형 수치 데이터의 수집\n\nKOSIS의 API를 활용한 센서스 데이터 수집\n공공데이터포털 API를 활용한 전국 초중등학교 위치 데이터 수집\nInternational Database(IDB)의 API를 활용한 세계 인구 데이터 수집\n\n\n\n정형 텍스트 데이터 수집\n\n\n공공데이터포털 API를 활용한 학위 논문의 수집\n\n\n\n비정형 텍스트 데이터 수집: 텍스트 마이닝(text mining)으로 연결\n\n네이버 검색 API를 활용한 뉴스 데이터 수집\n유튜브 API를 활용한 댓글 데이터 수집",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#api-활용의-다양성-1",
+    "href": "R_lec_08_2025.html#api-활용의-다양성-1",
+    "title": "\nR Lecture 8데이터 수집하기\n",
+    "section": "API 활용의 다양성",
+    "text": "API 활용의 다양성\n\nGoogle Maps Platform (https://mapsplatform.google.com/)\n\n7 종류의 API\n\nGoogle Direction API\nGoogle Distance API\nGoogle Elevation API\nGoogle Timezone API\nGoogle Geocode API\nGoogle Reverse Geocode API\nGoogle Places API\n\n\nR 래퍼(rapper) 패키지: googleway",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#httr2-패키지",
+    "href": "R_lec_08_2025.html#httr2-패키지",
+    "title": "\nR Lecture 8데이터 수집하기\n",
+    "section": "\nhttr2 패키지",
+    "text": "httr2 패키지\n\nhttps://httr.r-lib.org/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#사례-공공데이터포털",
+    "href": "R_lec_08_2025.html#사례-공공데이터포털",
+    "title": "\nR Lecture 8데이터 수집하기\n",
+    "section": "사례: 공공데이터포털",
+    "text": "사례: 공공데이터포털\n\nhttps://www.data.go.kr/\n회원가입\n데이터 검색: “전국 초중등학교 위치”\n\nOpen API, 인증키\n\nBase URL: api.odcloud.kr/api\n\n일반 인증키(Decoding)\n데이터 API: /15099519/v1/uddi:e83bc47a-f235-4b44-96d8-a9d0686435a5",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#사례-공공데이터포털-1",
+    "href": "R_lec_08_2025.html#사례-공공데이터포털-1",
+    "title": "\nR Lecture 8데이터 수집하기\n",
+    "section": "사례: 공공데이터포털",
+    "text": "사례: 공공데이터포털\n\n\nCode 1\nResult 1\nCode 2\nResult 2\n\n\n\n\nlibrary(httr2)\nbase_url &lt;- \"https://api.odcloud.kr/api/15099519/v1/uddi:e83bc47a-f235-4b44-96d8-a9d0686435a5\" \nrequest(base_url) |&gt;\n  req_url_query(\n    serviceKey = your_api_key,\n    page = 1,\n    perPage = 1000\n  ) |&gt;\n  req_perform() |&gt; \n  resp_body_json() |&gt; \n  _[[\"data\"]] |&gt; bind_rows() |&gt; as_tibble() |&gt; slice_head(n = 5)\n\n\n\n\n\n# A tibble: 5 × 18\n  경도        교육지원청명   교육지원청코드 데이터기준일자 변경일자 본교분교구분\n  &lt;chr&gt;       &lt;chr&gt;                   &lt;int&gt; &lt;chr&gt;          &lt;chr&gt;    &lt;chr&gt;       \n1 126.9214593 서울특별시동작관악교육지원…        7132000 2025-03-21     2024-11… 본교        \n2 127.0627595 서울특별시강남서초교육지원…        7091300 2025-03-21     2024-11… 본교        \n3 127.4110049 대전광역시동부교육지원청……        7441000 2025-03-21     2024-11… 본교        \n4 127.2639169 세종특별자치시교육청……        9300000 2025-03-21     2024-11… 본교        \n5 127.3532800 대전광역시서부교육지원청……        7451000 2025-03-21     2024-11… 본교        \n# ℹ 12 more variables: 생성일자 &lt;chr&gt;, 설립일자 &lt;chr&gt;, 설립형태 &lt;chr&gt;,\n#   소재지도로명주소 &lt;chr&gt;, 소재지지번주소 &lt;chr&gt;, 시도교육청명 &lt;chr&gt;,\n#   시도교육청코드 &lt;int&gt;, 운영상태 &lt;chr&gt;, 위도 &lt;chr&gt;, 학교ID &lt;chr&gt;,\n#   학교급구분 &lt;chr&gt;, 학교명 &lt;chr&gt;\n\n\n\n\n\nfinal_data &lt;- map_dfr(1:12, function(p) {\n  request(base_url) |&gt;\n    req_url_query(\n      serviceKey = your_api_key, \n      page = p, \n      perPage = 1000) |&gt;\n    req_perform() |&gt;\n    resp_body_json() |&gt;\n    _[[\"data\"]] |&gt; bind_rows() |&gt; as_tibble()\n})\n\n\n\n\n\n# A tibble: 11,985 × 18\n   경도        교육지원청명  교육지원청코드 데이터기준일자 변경일자 본교분교구분\n   &lt;chr&gt;       &lt;chr&gt;                  &lt;int&gt; &lt;chr&gt;          &lt;chr&gt;    &lt;chr&gt;       \n 1 126.9214593 서울특별시동작관악교육지…        7132000 2025-03-21     2024-11… 본교        \n 2 127.0627595 서울특별시강남서초교육지…        7091300 2025-03-21     2024-11… 본교        \n 3 127.4110049 대전광역시동부교육지원청…        7441000 2025-03-21     2024-11… 본교        \n 4 127.2639169 세종특별자치시교육청……        9300000 2025-03-21     2024-11… 본교        \n 5 127.3532800 대전광역시서부교육지원청…        7451000 2025-03-21     2024-11… 본교        \n 6 127.0946485 서울특별시동부교육지원청…        7021000 2025-03-21     2024-11… 본교        \n 7 126.8852718 광주광역시동부교육지원청…        7391000 2025-03-21     2024-11… 본교        \n 8 128.8031292 경상남도김해교육지원청……        9091000 2025-03-21     2024-11… 본교        \n 9 127.3215290 대전광역시서부교육지원청…        7451000 2025-03-21     2024-11… 본교        \n10 127.0571716 서울특별시북부교육지원청…        7051000 2025-03-21     2024-11… 본교        \n# ℹ 11,975 more rows\n# ℹ 12 more variables: 생성일자 &lt;chr&gt;, 설립일자 &lt;chr&gt;, 설립형태 &lt;chr&gt;,\n#   소재지도로명주소 &lt;chr&gt;, 소재지지번주소 &lt;chr&gt;, 시도교육청명 &lt;chr&gt;,\n#   시도교육청코드 &lt;int&gt;, 운영상태 &lt;chr&gt;, 위도 &lt;chr&gt;, 학교ID &lt;chr&gt;,\n#   학교급구분 &lt;chr&gt;, 학교명 &lt;chr&gt;",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#사례-네이버-뉴스",
+    "href": "R_lec_08_2025.html#사례-네이버-뉴스",
+    "title": "\nR Lecture 8데이터 수집하기\n",
+    "section": "사례: 네이버 뉴스",
+    "text": "사례: 네이버 뉴스\n\nNAVER Developer (https://developers.naver.com/main/)\n\n[Products]-[서비스 API]-[검색] (https://developers.naver.com/products/service-api/search/search.md)\n\n오픈 API 이용 신청 절차\nClientID와 Client Secret 개념\n요청 URL: https://openapi.naver.com/v1/search/news.json\n파라미터: query, display, start, sort\n\n\n\n오픈 API 이용 신청\n\n애플리케이션 이름: 아무 이름이나 입력\n사용 API: ’검색’이 선택된 상태를 유지\n비로그인 오픈 API 서비스 환경: ‘WEB’ 설정\n웹 서비스 URL (최대 10개): ’http://localhost’를 입력",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#사례-네이버-뉴스-1",
+    "href": "R_lec_08_2025.html#사례-네이버-뉴스-1",
+    "title": "\nR Lecture 8데이터 수집하기\n",
+    "section": "사례: 네이버 뉴스",
+    "text": "사례: 네이버 뉴스\n\n\nCode 1\nResult 1\nCode 2\nResult 2\n\n\n\n\nlibrary(httr2)\nsearch &lt;- \"지역소멸\"\nbase_url &lt;- \"https://openapi.naver.com/v1/search/news.json\"\nresult_naver &lt;- base_url |&gt; \n  request() |&gt; \n  req_headers(\n    \"X-Naver-Client-ID\" = your_ClientID,\n    \"X-Naver-Client-Secret\" = your_Client_Secret\n  ) |&gt; \n  req_url_query(\n    query = search,\n    display = 100,\n    start = 1,\n    sort = \"date\"\n  ) |&gt; \n  req_perform() |&gt; \n  resp_body_json(check_type = FALSE) |&gt; \n  pluck(\"items\") |&gt; bind_rows()\n\n\n\n\nresult_naver |&gt; slice_head(n = 5)\n\n# A tibble: 5 × 5\n  title                                   originallink link  description pubDate\n  &lt;chr&gt;                                   &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;  \n1 전북자치도, 2차 민생회복 소비쿠폰 신청 마감…… http://www.… http… \"소비쿠폰은 이달 … Mon, 0…\n2 에코프로, 포항서 지속가능한 배터리 생태계 구축…… http://www.… http… \"에코프로는 지방 … Mon, 0…\n3 교보교육재단, '27회 교보교육대상' 4개 부분 수상자 선정…… http://www.… http… \"평생교육 부문 대… Mon, 0…\n4 김태훈 순천시의원, &lt;b&gt;지역&lt;/b&gt;경제 활성화 정책 제안…… http://www.… http… \"곧 &lt;b&gt;지역 소… Mon, 0…\n5 대전·세종, 연극·오페라·심포니로 이어지는 사유의 무대…… https://www… http… \"인간성의 &lt;b&gt;소… Mon, 0…\n\n\n\n\n\nnaver_extractor &lt;- function(base_url, search_item, n_start = 1, n_display = 100){\n  news &lt;- request(base_url) |&gt; \n  req_headers(\n    \"X-Naver-Client-ID\" = your_ClientID,\n    \"X-Naver-Client-Secret\" = your_Client_Secret\n  ) |&gt; \n  req_url_query(\n    query = search_item,\n    display = n_display,\n    start = n_start,\n    sort = \"date\"\n  ) |&gt; \n  req_perform() |&gt; \n  resp_body_json() |&gt; pluck(\"items\") |&gt; bind_rows()\n}\n\nsearch &lt;- \"지역소멸\"\nrep &lt;- 10\nresult_naver &lt;- map_dfr(\n  start_idx &lt;- (0:(rep-1)) * 100 + 1,\n  \\(x) naver_extractor(\n    a_url       = your_url,\n    search_item = search,\n    n_start     = x,\n    n_display = 100\n  )\n)\n\n\n\n\nresult_naver |&gt; slice_head(n = 5)\n\n# A tibble: 5 × 5\n  title                                   originallink link  description pubDate\n  &lt;chr&gt;                                   &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;  \n1 전북자치도, 2차 민생회복 소비쿠폰 신청 마감…… http://www.… http… \"소비쿠폰은 이달 … Mon, 0…\n2 에코프로, 포항서 지속가능한 배터리 생태계 구축…… http://www.… http… \"에코프로는 지방 … Mon, 0…\n3 교보교육재단, '27회 교보교육대상' 4개 부분 수상자 선정…… http://www.… http… \"평생교육 부문 대… Mon, 0…\n4 김태훈 순천시의원, &lt;b&gt;지역&lt;/b&gt;경제 활성화 정책 제안…… http://www.… http… \"곧 &lt;b&gt;지역 소… Mon, 0…\n5 대전·세종, 연극·오페라·심포니로 이어지는 사유의 무대…… https://www… http… \"인간성의 &lt;b&gt;소… Mon, 0…",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#rvest-패키지를-활용한-웹스크레이핑-절차",
+    "href": "R_lec_08_2025.html#rvest-패키지를-활용한-웹스크레이핑-절차",
+    "title": "\nR Lecture 8데이터 수집하기\n",
+    "section": "\nrvest 패키지를 활용한 웹스크레이핑 절차",
+    "text": "rvest 패키지를 활용한 웹스크레이핑 절차\n\n\n1단계: 웹페이지 읽기\n\n웹스크레이핑의 대상이 되는 웹페이지의 URL 읽기\n\n\n\n2단계: HTML 엘리먼트 선택\n\n필요한 정보를 포함하고 있는 엘리먼트의 지정\n\n\n\n3단계: 하위 엘리먼트 선택\n\n필요한 정보를 포함하고 있는 하위 엘리먼트의 지정\n\n\n\n4단계: 엘리먼트로부터 데이터 추출\n\n데이블 데이터, 텍스트 등을 추출",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#텍스트-마이닝과-자연어처리",
+    "href": "R_lec_08_2025.html#텍스트-마이닝과-자연어처리",
+    "title": "\nR Lecture 8데이터 수집하기\n",
+    "section": "텍스트 마이닝과 자연어처리",
+    "text": "텍스트 마이닝과 자연어처리\n\n\n텍스트 마이닝\n\n비정형 텍스트 데이터로부터 패턴 또는 관계를 추출하여 의미 있는 정보를 찾아내는 기법\n기본 과정: 텍스트 전처리, 토큰화하기, 단어 빈도 분석하기\n고급 분석: 비교 분석, 감정 분석, 의미망 분석, 토픽 모델링 등\n\n\n\n자연어처리(NLP; natural language processing)\n\n\nKoNLP(Korean Natural Language Processing)",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#mall-패키지",
+    "href": "R_lec_08_2025.html#mall-패키지",
+    "title": "\nR Lecture 8데이터 수집하기\n",
+    "section": "\nmall 패키지",
+    "text": "mall 패키지\n\n\n\nhttps://mlverse.github.io/mall/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#html의-기초",
+    "href": "R_lec_08_2025.html#html의-기초",
+    "title": "\nR Lecture 8데이터 수집하기\n",
+    "section": "HTML의 기초",
+    "text": "HTML의 기초\n\n\n웹페이지는 다양한 태그(tag)로 구성\n\n각 태그는 시작 태그와 종료 태그로 구성되며, 둘 사이에 해당 콘텐츠가 위치\n\n\n\n태그의 종류는 다양하며, 크게 세 가지로 구분\n\n최상위인 html 태그\n\n웹페이지의 전반적인 구조를 결정하는 블록(block) 태그\n\n예: h1, section, p, ol 태그 등\n\n\n\n블록 태그 내부의 특정 부분에만 적용되는 인라인(inline) 태그\n\n예: b, i, a 태그 등",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#사례-kosis",
+    "href": "R_lec_08_2025.html#사례-kosis",
+    "title": "\nR Lecture 8데이터 수집하기\n",
+    "section": "사례: KOSIS",
+    "text": "사례: KOSIS\n\nKOSIS 공유서비스 웹페이지(https://kosis.kr/openapi/) 접속\n\n상단의 [활용신청] 탭 클릭\n\n통계청의 ONE-ID로 통합로그인(없으면 회원가입 필수)\n\n\n\n활용신청하여 사용자 인증키 획득\n\n사용자 인증키는 마이페이지에서 언제든 확인 가능\n\n\nkosis 패키지: 주석훈",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#사례-kosis-1",
+    "href": "R_lec_08_2025.html#사례-kosis-1",
+    "title": "\nR Lecture 8데이터 수집하기\n",
+    "section": "사례: KOSIS",
+    "text": "사례: KOSIS\n\nhttps://sangillee.snu.ac.kr/dashboard_popgeo/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#웹스크레이핑의-정의",
+    "href": "R_lec_08_2025.html#웹스크레이핑의-정의",
+    "title": "\nR Lecture 8데이터 수집하기\n",
+    "section": "웹스크레이핑의 정의",
+    "text": "웹스크레이핑의 정의\n\n웹페이지로부터 데이터를 추출하는 것, 데이터 긁어 오기\n데이터 크롤링(crawling)과 유사, 박박 기면서 수집하기\n\n해킹(hacking)과의 경계가 모호\n\n허가 없이 정보 시스템에 침투하여 데이터를 취득하는 행위\n\n\n최근들어 점점 회피하는 추세",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#api의-정의",
+    "href": "R_lec_08_2025.html#api의-정의",
+    "title": "\nR Lecture 8데이터 수집하기\n",
+    "section": "API의 정의",
+    "text": "API의 정의\n\n\nAPI(application programming interface)는 일종의 통신 규약(protocol)\n\n복수의 프로그램들이 서로 상호작용하는 방법을 정의하는 일련의 규칙\n한 애플리케이션이 다른 애플리케이션의 기능들을 불러 사용할 수 있게 해주는 통로\n오픈 API: API 키(key)\n\n\n\n데이터 API\n\n데이터를 보유하고 있는 공적 기관이 데이터의 사용 권한을 사용자들에게 부여함으로써 데이터에 대한 접근성을 높여주는 일련의 방식",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
     ]
   }
 ]

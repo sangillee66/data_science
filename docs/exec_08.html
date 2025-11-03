@@ -452,6 +452,12 @@ div.csl-indent {
  <span class="menu-text">| <span style="color:coral;font-size:0.6em">R Lecture 7</span> | <span style="font-size:1em">데이터 탐색하기</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R_lec_08_2025.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">| <span style="color:coral;font-size:0.6em">R Lecture 8</span> | <span style="font-size:1em">데이터 수집하기</span></span></a>
+  </div>
+</li>
       </ul>
 </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -1689,8 +1695,8 @@ div.csl-indent {
 <span>  <span class="fu"><a href="http://echarts4r.john-coene.com/reference/e_line.html">e_line</a></span><span class="op">(</span><span class="va">index</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="http://echarts4r.john-coene.com/reference/e-tooltip.html">e_tooltip</a></span><span class="op">(</span>trigger <span class="op">=</span> <span class="st">"axis"</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div class="echarts4r html-widget html-fill-item" id="htmlwidget-4f53c79651d07c14cfe8" style="width:100%;height:500px;"></div>
-<script type="application/json" data-for="htmlwidget-4f53c79651d07c14cfe8">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true}],"xAxis":[{"data":["2015","2016","2017","2018","2019","2020","2021","2022","2023"],"type":"category","boundaryGap":true}],"legend":{"data":["종로구"]},"series":[{"data":[{"value":["2015","1.1114206"]},{"value":["2016","1.0766989"]},{"value":["2017","1.0761595"]},{"value":["2018","1.0902399"]},{"value":["2019","1.0563815"]},{"value":["2020","0.9858794"]},{"value":["2021","0.9728141"]},{"value":["2022","0.9651754"]},{"value":["2023","0.9324705"]}],"yAxisIndex":0,"xAxisIndex":0,"name":"종로구","type":"line","coordinateSystem":"cartesian2d"}],"tooltip":{"trigger":"axis"}},"dispose":true},"evals":[],"jsHooks":[]}</script>
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-dbf30db306b13a56c6b2" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-dbf30db306b13a56c6b2">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true}],"xAxis":[{"data":["2015","2016","2017","2018","2019","2020","2021","2022","2023"],"type":"category","boundaryGap":true}],"legend":{"data":["종로구"]},"series":[{"data":[{"value":["2015","1.1114206"]},{"value":["2016","1.0766989"]},{"value":["2017","1.0761595"]},{"value":["2018","1.0902399"]},{"value":["2019","1.0563815"]},{"value":["2020","0.9858794"]},{"value":["2021","0.9728141"]},{"value":["2022","0.9651754"]},{"value":["2023","0.9324705"]}],"yAxisIndex":0,"xAxisIndex":0,"name":"종로구","type":"line","coordinateSystem":"cartesian2d"}],"tooltip":{"trigger":"axis"}},"dispose":true},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>이 모든 과정을 함수로 만들고, Base R의 <code>read_line()</code> 함수를 활용하면 초보적인 상호작용형 도구를 만들 수 있다.</p>
@@ -1815,11 +1821,11 @@ div.csl-indent {
 <pre><code># A tibble: 5 × 5
   title                                   originallink link  description pubDate
   &lt;chr&gt;                                   &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;  
-1 김경수 &amp;quot;비수도권 권역화 必…&lt;b&gt;지방&lt;/b&gt; 살리기 넘어 … http://www.… http… "‘5극 3특’이 … Mon, 0…
-2 행정안전부 주관 국정과제를 소개합니다!  https://www… http… "① &lt;b&gt;지방소멸… Mon, 0…
-3 KH한국건강관리협회, '제2차 사회공헌위원회' 개최…… http://www.… http… "또한 동해안 바다… Mon, 0…
-4 이철 전남도의회 부의장, '2025 &lt;b&gt;지방&lt;/b&gt;자치 의정대상' … http://www.… http… "이어 이 부의장은… Mon, 0…
-5 속초시, 영북권 최초 ‘속초미디어센터’ 개관…… https://new… http… "이병선 속초시장은… Mon, 0…</code></pre>
+1 에코프로, 포항서 지속가능한 배터리 생태계 구축…… http://www.… http… "에코프로는 &lt;b&gt;… Mon, 0…
+2 교보교육재단, '27회 교보교육대상' 4개 부분 수상자 선정…… http://www.… http… "평생교육 부문 대… Mon, 0…
+3 與 “저성장 탓 적극적 재정 운용”… 野 “재정건전성 고려해야”…… https://www… http… "예결특위 위원장인… Mon, 0…
+4 부안군, ESG 행정 실천의 장 ‘ESG 플레이 캠프’ 성료…… http://sjbn… http… "군은 &lt;b&gt;지방소… Mon, 0…
+5 교보교육재단, '제27회 교보교육대상' 수상자 선정…… https://www… http… "평생교육 부문 대… Mon, 0…</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
