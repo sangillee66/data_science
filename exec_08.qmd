@@ -142,7 +142,7 @@ HTML 요소란 태그와 속성으로 확정가능한 HTML의 특정 부분을 �
 선택 대상을 효과적으로 규정하기 위해 사용되는 것이 'CSS(cascading style sheet) 선택자'(selector)이다. CSS는 HTML의 시각적 구성을 통제하는 툴인데, html의 특정 부분을 지목할 수 있는 작은 언어(miniature language)를 가지고 있고, 그것을 CSS 선택자라 부르는 것이다.
 
 | 선택 대상 | CSS 선택자 | 결과 |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | 태그(`tag`) | `tag1` | `"tag1"`이라는 이름의 모든 `tag` |
 | 클래스(`class`) | `.class1` | `"class1"`이라는 `class` 속성을 갖는 모든 요소 |
 | 아이디(`id`) | `#id1` | `"id1"`이라는 `id` 속성을 갖는 모든 요소 |
@@ -307,14 +307,13 @@ kospi_table <- kospi |>
   read_html(encoding = "EUC-KR") |> 
   html_elements("table") |> 
   html_table()
-kospi_table
+kospi_table 
 ```
 
-여기서는 리스트(list)가 산출되었으므로 다음과 같은 방식으로 데이터 프레임을 생성한다.
+여기서는 리스트(list)가 산출되었고, 해당 리스트의 두 번째 요소만 필요하므로 다음과 같은 방식으로 데이터 프레임을 생성한다.
 
 ```{r}
-kospi_res <- kospi_table |> 
-  _[[2]] |> 
+kospi_res <- tibble(kospi_table[[2]]) |> 
   filter(!is.na(N))
 kospi_res |> 
   slice_head(n = 5)
@@ -414,6 +413,113 @@ API(application programming interface)는 복수의 프로그램들이 서로 �
 최근까지 API를 활용한 데이터 수집에는 [**httr**](https://httr.r-lib.org/)과 [**jsonlite**](https://jeroen.r-universe.dev/jsonlite)라는 두 개의 패키지가 함께 사용되었다. 그런데 최근 [**httr**](https://httr.r-lib.org/)의 완전 업그레이드 버전인 [**httr2**](https://httr2.r-lib.org/)가 선을 보이면서 이 패키지를 단독으로 활용하는 방식이 주목 받고 있다. [**httr2**](https://httr2.r-lib.org/)는 R의 [**tidyverse**](https://www.tidyverse.org/) 운동을 이끌고 있는 해들리 위컴(Hadley Wickham)이 [**tidyverse**](https://www.tidyverse.org/)의 철학에 맞추어 [**httr**](https://httr.r-lib.org/) 패키지를 발전시킨 것이다. 이러한 R 패키지를 직접 활용하는 것이 가장 좋은 방법이겠지만, 초보자의 경우 다소간의 어려움을 겪을 수 있다. [**httr2**](https://httr2.r-lib.org/) 함수가 다른 패키지의 함수에 비해 개념적으로 이해하기 어려운 측면이 있기 때문이기도 하고, 데이터를 획득하는 구체적인 과정이 API 마다 조금씩 다르기 때문이기도 하다.
 
 이러한 어려움을 들어주기 위해 일종의 연결 패키지들이 개발되어 있는데, 이러한 패키지를 래퍼 패키지(wrapper package)라고 부른다. 래퍼 패키지들은 사용자와 API 수집용 패키지 사이에서 일종의 가교 역할을 하는 것으로, 사용자들이 사용하기 편한 함수를 제공함으로써 보다 손쉽게 오픈 API를 활용할 수 있게 도와준다. 예를 들어, 구글맵스플랫폼(Google Maps Platform)에 API로 접근해 다양한 기능을 활용할 수 있게 도와주는 [**googleway**](https://cran.r-project.org/web/packages/googleway/vignettes/googleway-vignette.html)와 같은 패키지가 좋은 예가 될 수 있다.
+
+### API를 활용한 공공데이터포털 데이터의 수집
+
+공공데이터포털(<https://www.data.go.kr/>)은 대한민국 정부의 공식 데이터 공유 플랫폼이다. 다양한 정부 기관이 생산한 데이터를 검색 및 구득할 수 있는 시스템일 갖추고 있다. 데이터를 참고 해당 데이터의 파일을 직접 다운로드한 후 R 세션에 불러들여도 되지만 여기서는 오픈 API를 활용하여 데이터를 수집하는 것을 실습해 본다. 서비스를 사용하려면 우선 공공데이터포털에서 회원가입하고 로그인한다.
+
+로그인이 된 상태에서 필요한 데이터를 검색창을 통해 검색한다. 여기서는 전국 초중등학교위치 정보 데이터를 수집하는 예제를 실습해 본다. 다음의 순서에 따른다.
+
+첫째, 검색창에서 "전국 초중등학교 위치"를 검색하면 여러 데이터가 나타나는데 첫 번째에 "재단법인한국지방교육행정연구재단_초중등학교위치"가 나타나 있을 것이다. 클릭한다.
+
+둘째, 파일데이터를 막바로 다운로드받을 수도 있지만, 오픈 API 탭을 누른다. 우측의 활용신청을 클릭한다. 활용목적 등 필수 입력항목을 채우고 활용신청을 클릭하면 오픈 API키 발급 신청이 끝이 난다.
+
+셋째, 상단의 마이페이지를 클릭하고, 데이터 활용 \> Open API \> 활용신청 현황에서 승인 결과 및 인증키를 확인할 수 있다. 데이터 공급처에 따라 Open API 관리 방식이 다소 다르기 때문에 사안마다 탄력적으로 접근할 필요가 있다. "재단법인한국지방교육행정연구재단_초중등학교위치"의 경우 다음의 사항을 확인한다.
+
+-   Base URL: `api.odcloud.kr/api`
+-   일반 인증키(Decoding): 두 개의 인증키 중 디코딩용 인증키가 실질적으로 사용되는 인증키임
+-   2025년 3월 21일 기준의 데이터의 API: `/15099519/v1/uddi:e83bc47a-f235-4b44-96d8-a9d0686435a5`
+
+```{r}
+#| echo: false
+your_api_key <- "4EFZj+lIYdJXr0WQ+XuoLyvoEHGj1jYpUFul6GvUT2x4nmC2CZOY65VuwtzfDG+xn9RbPa9ZpKx5419YgSq2zg=="
+```
+
+아래의 코드를 실행한다. `base_url`을 정의하는게 중요하다. 해당 웹페이지에 획득한 Base URL과 데이터 API를 결합하여 만들어졌다는 것을 알 수 있을 것이다.
+
+```{r}
+#| eval: false
+library(httr2)
+base_url <- "https://api.odcloud.kr/api/15099519/v1/uddi:e83bc47a-f235-4b44-96d8-a9d0686435a5" 
+resp <- request(base_url) |>
+  req_url_query(
+    serviceKey = your_api_key,
+    page = 1,
+    perPage = 1000
+  ) |>
+  req_perform() |> 
+  resp_body_json() -> public_data
+```
+
+코드를 살펴보면 1,000개의 학교를 가진 페이지 하나만의 데이터를 수집했다는 것을 알 수 있다. 한 번에 수집 가능한 최대값이 보통 1,000개이고, 그것을 초과할 경우 여러 페이지에 걸쳐 데이터를 수집해야 한다. 결과로 생성된 `public_data`를 우상이 환경창에서 확인해보면 리스트 형태의 데이터임을 알 수 있다. 우리가 원하는 학교 데이터는 `public_data` 속의 `data`에 들어 있으므로 다음과 같이 데이터를 추출한다.
+
+```{r}
+#| eval: false
+public_data |> _[["data"]] |> bind_rows() -> final_data
+```
+
+`final_data` 속에는 총 1,000개의 학교에 대한 정보가 담겨져 있다는 것을 확인할 수 있다. 우리가 알아야 하는 핵심 정보는 총 학교수가 몇 개인가 하는 점이다. `public_data` 속의 `totalCount`에 그 해답이 담겨 있다. 아래와 같이 실행한다.
+
+```{r}
+#| eval: false
+public_data$totalCount
+```
+
+혹은 다음과 같이 보다 타디이버스스럽게 실행할 수도 있다.
+
+```{r}
+#| eval: false
+public_data |> _[["totalCount"]]
+```
+
+코드를 수정하여 다음과 같이 실행한다. 문제는 이렇게 실행하면 마지막 12번째 페이지 데이터인 985개만 수집된다는 사실이다.
+
+```{r}
+#| eval: false
+base_url <- "https://api.odcloud.kr/api/15099519/v1/uddi:e83bc47a-f235-4b44-96d8-a9d0686435a5" 
+resp <- request(base_url) |>
+  req_url_query(
+    serviceKey = your_key,
+    page = 12,
+    perPage = 1000
+  ) |>
+  req_perform() |> 
+  resp_body_json() -> public_data
+```
+
+따라서 1-12의 페이지 각각을 실행하여 데이터를 종합해야 한다. 다음과 같이 실행한다.
+
+```{r}
+#| eval: false
+final_data <- map_dfr(1:12, function(p) {
+  request(base_url) |>
+    req_url_query(
+      serviceKey = your_api_key, 
+      page = p, 
+      perPage = 1000) |>
+    req_perform() |>
+    resp_body_json() |>
+    _[["data"]] |> bind_rows() |> as_tibble()
+})
+```
+
+`final_data`를 확인해보면, 11,985개 데이터가 수집되어 있는 것을 확인할 수 있다. 여기에서 `map_dfr()` 함수는 [**tidyverse**](https://tidyverse.org/)에서 프로그래밍을 담당하고 있는 핵심 패키지인 [**purrr**](https://purrr.tidyverse.org/)의 함수로 반복 수행의 결과를 데이터 프레임으로 산출해 준다.
+
+마지막 라인은 [**purrr**](https://purrr.tidyverse.org/) 패키지의 `pluck()` 함수를 이용하여 조금 간단히 할 수 있다.
+
+```{r}
+#| eval: false
+final_data <- map_dfr(1:12, function(p) {
+  request(base_url) |>
+    req_url_query(
+      serviceKey = your_api_key, 
+      page = p, 
+      perPage = 1000) |>
+    req_perform() |>
+    resp_body_json(simplifyVector = TRUE) |>
+    pluck("data") |> as.tibble()
+})
+```
 
 ### API를 활용한 KOSIS 데이터의 수집
 
