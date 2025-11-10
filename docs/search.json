@@ -6878,9 +6878,13 @@
   {
     "objectID": "R_lec_08_2025.html",
     "href": "R_lec_08_2025.html",
-    "title": "\nR Lecture 8데이터 수집\n",
+    "title": "R Lecture 8\n데이터 수집하기",
     "section": "",
-    "text": "Code\nResult\n\n\n\n\nlibrary(tidyverse)\nlibrary(readr)\nread_csv(\"https://pos.it/r4ds-students-csv\")\n\n\n\n\nlibrary(tidyverse)\nlibrary(readr)\nread_csv(\"https://pos.it/r4ds-students-csv\")\n\n# A tibble: 6 × 5\n  `Student ID` `Full Name`      favourite.food     mealPlan            AGE  \n         &lt;dbl&gt; &lt;chr&gt;            &lt;chr&gt;              &lt;chr&gt;               &lt;chr&gt;\n1            1 Sunil Huffmann   Strawberry yoghurt Lunch only          4    \n2            2 Barclay Lynn     French fries       Lunch only          5    \n3            3 Jayendra Lyne    N/A                Breakfast and lunch 7    \n4            4 Leon Rossini     Anchovies          Lunch only          &lt;NA&gt; \n5            5 Chidiegwu Dunkel Pizza              Breakfast and lunch five \n6            6 Güvenç Attila    Ice cream          Lunch only          6    \n\n\n\n\n\n\n\n\nCode\nResult\n\n\n\n\nlibrary(openxlsx)\nread.xlsx(\"https://github.com/awalker89/openxlsx/raw/master/inst/readTest.xlsx\")\n\n\n\n\nlibrary(openxlsx)\nread.xlsx(\"https://github.com/awalker89/openxlsx/raw/master/inst/readTest.xlsx\")\n\n    Var1 Var2   Var3 Var4  Var5         Var6 Var7\n1   TRUE    1   1.00    a 42042 3209324 This   NA\n2   TRUE   NA     NA    b 42041         &lt;NA&gt;   NA\n3   TRUE    2   1.34    c 42040         &lt;NA&gt;   NA\n4  FALSE    2     NA &lt;NA&gt;    NA         &lt;NA&gt;   NA\n5  FALSE    3   1.56    e    NA         &lt;NA&gt;   NA\n6  FALSE    1   1.70    f 42037         &lt;NA&gt;   NA\n7     NA   NA     NA &lt;NA&gt; 42036         &lt;NA&gt;   NA\n8  FALSE    2  23.00    h 42035         &lt;NA&gt;   NA\n9  FALSE    3  67.30    i 42034         &lt;NA&gt;   NA\n10    NA    1 123.00 &lt;NA&gt; 42033         &lt;NA&gt;   NA\n\n\n\n\n\n\n\n\nCode\nResult\n\n\n\n\nlibrary(googlesheets4)\ngs4_deauth()\nread_sheet(\"https://docs.google.com/spreadsheets/d/1U6Cf_qEOhiR9AZqTqS3mbMF3zt2db48ZP5v3rkrAEJY/edit#gid=780868077\")\n\n\n\n\nlibrary(googlesheets4)\ngs4_deauth()\nread_sheet(\"https://docs.google.com/spreadsheets/d/1U6Cf_qEOhiR9AZqTqS3mbMF3zt2db48ZP5v3rkrAEJY/edit#gid=780868077\")\n\n# A tibble: 624 × 6\n   country continent  year lifeExp      pop gdpPercap\n   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n 1 Algeria Africa     1952    43.1  9279525     2449.\n 2 Algeria Africa     1957    45.7 10270856     3014.\n 3 Algeria Africa     1962    48.3 11000948     2551.\n 4 Algeria Africa     1967    51.4 12760499     3247.\n 5 Algeria Africa     1972    54.5 14760787     4183.\n 6 Algeria Africa     1977    58.0 17152804     4910.\n 7 Algeria Africa     1982    61.4 20033753     5745.\n 8 Algeria Africa     1987    65.8 23254956     5681.\n 9 Algeria Africa     1992    67.7 26298373     5023.\n10 Algeria Africa     1997    69.2 29072015     4797.\n# ℹ 614 more rows"
+    "text": "https://r4ds.hadley.nz/import.html\n\n\n\n\n\n\n웹스크레이핑(webscraping)\n오픈 API의 활용",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
   },
   {
     "objectID": "R_lec_08_2025.html#readr-package",
@@ -7566,58 +7570,62 @@
   {
     "objectID": "R_lec_09_2025.html",
     "href": "R_lec_09_2025.html",
-    "title": "R Lecture 9\n인터랙티브 시각화",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
     "section": "",
-    "text": "DataTable (https://datatables.net/)\n\nR wrapper package: DT package (https://rstudio.github.io/DT/)\n\n\n\n\n\nhttps://posit.co/blog/dt-an-r-interface-to-the-datatables-library/\n\n\n\n\n\n\nlibrary(tidyverse)\nlibrary(DT)\niris2 = iris[c(1:10, 51:60, 101:110), ]\ndatatable(iris2, filter = 'top', options = list(\n  pageLength = 5, autoWidth = TRUE\n))\n\n\n\n\n\n\n\n\n\ndatatable(iris) %&gt;% \n  formatStyle('Sepal.Length', fontWeight = styleInterval(5, c('normal', 'bold'))) %&gt;%\n  formatStyle(\n    'Sepal.Width',\n    color = styleInterval(c(3.4, 3.8), c('white', 'blue', 'red')),\n    backgroundColor = styleInterval(3.4, c('gray', 'yellow'))\n  ) %&gt;%\n  formatStyle(\n    'Petal.Length',\n    background = styleColorBar(iris$Petal.Length, 'steelblue'),\n    backgroundSize = '100% 90%',\n    backgroundRepeat = 'no-repeat',\n    backgroundPosition = 'center'\n  ) %&gt;%\n  formatStyle(\n    'Species',\n    transform = 'rotateX(45deg) rotateY(20deg) rotateZ(30deg)',\n    backgroundColor = styleEqual(\n      unique(iris$Species), c('lightblue', 'lightgreen', 'lightpink')\n    )\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nlibrary(tidyverse)\nlibrary(gganimate)\nlibrary(gapminder)\np &lt;- ggplot(\n  gapminder, \n  aes(x = gdpPercap, y=lifeExp, size = pop, colour = country)\n  ) +\n  geom_point(show.legend = FALSE, alpha = 0.7) +\n  scale_color_viridis_d() +\n  scale_size(range = c(2, 12)) +\n  scale_x_log10() +\n  labs(x = \"GDP per capita\", y = \"Life expectancy\")\np + transition_time(year) +\n  labs(title = \"Year: {frame_time}\")\n\n\n\n\n\n\n\n\n\n\n\n\nJavaScript library\n\nPlotly (https://plotly.com/graphing-libraries/)\nD3 (https://d3js.org/)\nHighcharts (https://www.highcharts.com/)\nECharts (https://echarts.apache.org/)\ndygraphs (https://dygraphs.com/)\n\nWrapper packages\n\n\n\n\n\nPlotly (https://plotly.com/graphing-libraries/)\n\nR wrapper package: plotly package (https://plotly.com/r/)\nggplotly() function\n\n\n\n\n\n\n\n\n\n\n\nlibrary(plotly)\nfig &lt;- plot_ly(data = iris, x = ~Sepal.Length, y = ~Petal.Length, color = ~Species)\nfig"
+    "text": "역동성과 상호작용성이 부가된 시각화\n구현 방식\n\n임베딩(embedding): 외부 콘텐츠 삽입\n동적ㆍ반응형 내용 요소의 직접 제작\n\n\n\n\n\n\n개념\n\n외부 웹 사이트/앱의 콘텐츠를 현재 웹 사이트/앱 안에 삽입하여 보여주는 기법\nHTML의 iframe 태그 활용\n별도의 페이지 전환 없이 다른 서비스나 시각화 결과를 한 웹 앱에 통합\n일부 사이트는 임베딩 불가능\n\n대상\n\n동적ㆍ반응형 시각화 웹 사이트/앱\n상호작용형 교육ㆍ협업 도구: Padlet, Mentimeter, Google Forms 등\n동영상: YouTube\n\n\n\n\n\n\nR 패키지 활용\n\n동적ㆍ반응형 내용 요소 제작을 지원하는 R 자체 패키지\ngganimate, ggiraph\n\nR 래퍼 패키지 활용\n\nJS 라이브러리와의 가교\nDT, plotly\n\n결합\n\nR 패키지로 제작한 정적 콘텐츠를 R 래퍼 패키지를 통해 동적ㆍ반응형 콘텐츠로 전환\nggplot2 + plotly",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
   },
   {
     "objectID": "R_lec_09_2025.html#tables-interactive-and-stylish",
     "href": "R_lec_09_2025.html#tables-interactive-and-stylish",
-    "title": "R Lecture 9\n인터랙티브 시각화",
-    "section": "",
-    "text": "DataTable (https://datatables.net/)\n\nR wrapper package: DT package (https://rstudio.github.io/DT/)\n\n\n\n\n\nhttps://posit.co/blog/dt-an-r-interface-to-the-datatables-library/"
+    "title": "\nR Lecture 9인터랙티브 시각화\n",
+    "section": "Tables: interactive and stylish",
+    "text": "Tables: interactive and stylish\n\n\nDataTable (https://datatables.net/)\n\nR wrapper package: DT package (https://rstudio.github.io/DT/)\n\n\n\n\nhttps://posit.co/blog/dt-an-r-interface-to-the-datatables-library/"
   },
   {
     "objectID": "R_lec_09_2025.html#tables-dt-examples",
     "href": "R_lec_09_2025.html#tables-dt-examples",
-    "title": "R Lecture 9\n인터랙티브 시각화",
-    "section": "",
-    "text": "library(tidyverse)\nlibrary(DT)\niris2 = iris[c(1:10, 51:60, 101:110), ]\ndatatable(iris2, filter = 'top', options = list(\n  pageLength = 5, autoWidth = TRUE\n))"
+    "title": "\nR Lecture 9인터랙티브 시각화\n",
+    "section": "Tables: DT examples",
+    "text": "Tables: DT examples"
   },
   {
     "objectID": "R_lec_09_2025.html#tables-dt-examples-1",
     "href": "R_lec_09_2025.html#tables-dt-examples-1",
-    "title": "R Lecture 9\n인터랙티브 시각화",
-    "section": "",
-    "text": "datatable(iris) %&gt;% \n  formatStyle('Sepal.Length', fontWeight = styleInterval(5, c('normal', 'bold'))) %&gt;%\n  formatStyle(\n    'Sepal.Width',\n    color = styleInterval(c(3.4, 3.8), c('white', 'blue', 'red')),\n    backgroundColor = styleInterval(3.4, c('gray', 'yellow'))\n  ) %&gt;%\n  formatStyle(\n    'Petal.Length',\n    background = styleColorBar(iris$Petal.Length, 'steelblue'),\n    backgroundSize = '100% 90%',\n    backgroundRepeat = 'no-repeat',\n    backgroundPosition = 'center'\n  ) %&gt;%\n  formatStyle(\n    'Species',\n    transform = 'rotateX(45deg) rotateY(20deg) rotateZ(30deg)',\n    backgroundColor = styleEqual(\n      unique(iris$Species), c('lightblue', 'lightgreen', 'lightpink')\n    )\n  )"
+    "title": "\nR Lecture 9인터랙티브 시각화\n",
+    "section": "Tables: DT examples",
+    "text": "Tables: DT examples"
   },
   {
     "objectID": "R_lec_09_2025.html#graphs-gganimate-example",
     "href": "R_lec_09_2025.html#graphs-gganimate-example",
-    "title": "R Lecture 9\n인터랙티브 시각화",
-    "section": "",
-    "text": "library(tidyverse)\nlibrary(gganimate)\nlibrary(gapminder)\np &lt;- ggplot(\n  gapminder, \n  aes(x = gdpPercap, y=lifeExp, size = pop, colour = country)\n  ) +\n  geom_point(show.legend = FALSE, alpha = 0.7) +\n  scale_color_viridis_d() +\n  scale_size(range = c(2, 12)) +\n  scale_x_log10() +\n  labs(x = \"GDP per capita\", y = \"Life expectancy\")\np + transition_time(year) +\n  labs(title = \"Year: {frame_time}\")"
+    "title": "\nR Lecture 9인터랙티브 시각화\n",
+    "section": "Graphs: gganimate example",
+    "text": "Graphs: gganimate example"
   },
   {
     "objectID": "R_lec_09_2025.html#graphs-interactive-animated-3d",
     "href": "R_lec_09_2025.html#graphs-interactive-animated-3d",
-    "title": "R Lecture 9\n인터랙티브 시각화",
-    "section": "",
-    "text": "JavaScript library\n\nPlotly (https://plotly.com/graphing-libraries/)\nD3 (https://d3js.org/)\nHighcharts (https://www.highcharts.com/)\nECharts (https://echarts.apache.org/)\ndygraphs (https://dygraphs.com/)\n\nWrapper packages"
+    "title": "\nR Lecture 9인터랙티브 시각화\n",
+    "section": "Graphs: interactive, animated, 3D",
+    "text": "Graphs: interactive, animated, 3D\n\n\nJavaScript library\n\nPlotly (https://plotly.com/graphing-libraries/)\nD3 (https://d3js.org/)\nHighcharts (https://www.highcharts.com/)\nECharts (https://echarts.apache.org/)\ndygraphs (https://dygraphs.com/)\n\n\nWrapper packages"
   },
   {
     "objectID": "R_lec_09_2025.html#graphs-plotly-example",
     "href": "R_lec_09_2025.html#graphs-plotly-example",
-    "title": "R Lecture 9\n인터랙티브 시각화",
-    "section": "",
-    "text": "Plotly (https://plotly.com/graphing-libraries/)\n\nR wrapper package: plotly package (https://plotly.com/r/)\nggplotly() function"
+    "title": "\nR Lecture 9인터랙티브 시각화\n",
+    "section": "Graphs: plotly example",
+    "text": "Graphs: plotly example\n\n\nPlotly (https://plotly.com/graphing-libraries/)\n\nR wrapper package: plotly package (https://plotly.com/r/)\n\nggplotly() function"
   },
   {
     "objectID": "R_lec_09_2025.html#graphs-plotly-example-1",
     "href": "R_lec_09_2025.html#graphs-plotly-example-1",
-    "title": "R Lecture 9\n인터랙티브 시각화",
-    "section": "",
-    "text": "library(plotly)\nfig &lt;- plot_ly(data = iris, x = ~Sepal.Length, y = ~Petal.Length, color = ~Species)\nfig"
+    "title": "\nR Lecture 9인터랙티브 시각화\n",
+    "section": "Graphs: plotly example",
+    "text": "Graphs: plotly example"
   },
   {
     "objectID": "R_lec_03_2025.html#데이터-대시보드",
@@ -9715,9 +9723,9 @@
   {
     "objectID": "R_lec_08_2025.html#데이터사이언스-프로세스",
     "href": "R_lec_08_2025.html#데이터사이언스-프로세스",
-    "title": "\nR Lecture 8데이터 수집하기\n",
-    "section": "데이터사이언스 프로세스",
-    "text": "데이터사이언스 프로세스\n\nhttps://r4ds.hadley.nz/import.html",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "",
+    "text": "https://r4ds.hadley.nz/import.html",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
@@ -9726,9 +9734,9 @@
   {
     "objectID": "R_lec_08_2025.html#데이터-수집-방법",
     "href": "R_lec_08_2025.html#데이터-수집-방법",
-    "title": "\nR Lecture 8데이터 수집하기\n",
-    "section": "데이터 수집 방법",
-    "text": "데이터 수집 방법\n\n웹스크레이핑(webscraping)\n오픈 API의 활용",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "",
+    "text": "웹스크레이핑(webscraping)\n오픈 API의 활용",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
@@ -9744,9 +9752,9 @@
   {
     "objectID": "R_lec_08_2025.html#html의-정의",
     "href": "R_lec_08_2025.html#html의-정의",
-    "title": "\nR Lecture 8데이터 수집하기\n",
+    "title": "R Lecture 8\n데이터 수집하기",
     "section": "HTML의 정의",
-    "text": "HTML의 정의\n\n\nHyperText Markup Language, 하이퍼텍스터 마크업 언어\n\n\n웹 브라우저를 통해 표출되는 사항(무엇이 어떻게)을 프로그래밍하는 마크업(markup) 언어 혹은 웹 다큐먼트를 작성하는 마크업 언어\n\n마크업 언어: 다큐먼트의 구조와 포맷을 관장하는 텍스트-엔코딩 시스템\n\n\n\n\n\n마크다운(markdown) 언어\n\n사용자의 편이성이 강화된 마크업 언어\nQuarto: 비주얼 에디터",
+    "text": "HTML의 정의\n\nHyperText Markup Language, 하이퍼텍스터 마크업 언어\n\n웹 브라우저를 통해 표출되는 사항(무엇이 어떻게)을 프로그래밍하는 마크업(markup) 언어 혹은 웹 다큐먼트를 작성하는 마크업 언어\n\n마크업 언어: 다큐먼트의 구조와 포맷을 관장하는 텍스트-엔코딩 시스템\n\n\n마크다운(markdown) 언어\n\n사용자의 편이성이 강화된 마크업 언어\nQuarto: 비주얼 에디터",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
@@ -9755,9 +9763,9 @@
   {
     "objectID": "R_lec_08_2025.html#html의-기초-1",
     "href": "R_lec_08_2025.html#html의-기초-1",
-    "title": "\nR Lecture 8데이터 수집하기\n",
+    "title": "R Lecture 8\n데이터 수집하기",
     "section": "HTML의 기초",
-    "text": "HTML의 기초\n\n태그들은 복잡한 다단계 구조를 이룸\n\n태그는 속성(attribute)를 가질 수 있음\n\n특별히 중요한 속성: 클래스(class), 아이디(id)\np나 div 태그와 같은 블록 태그: height, width, margin, padding\nimg 태그: src, alt, width, height\na 태그: href",
+    "text": "HTML의 기초\n\n태그들은 복잡한 다단계 구조를 이룸\n태그는 속성(attribute)를 가질 수 있음\n\n특별히 중요한 속성: 클래스(class), 아이디(id)\np나 div 태그와 같은 블록 태그: height, width, margin, padding\nimg 태그: src, alt, width, height\na 태그: href",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
@@ -9773,7 +9781,7 @@
   {
     "objectID": "R_lec_08_2025.html#section",
     "href": "R_lec_08_2025.html#section",
-    "title": "\nR Lecture 8데이터 수집하기\n",
+    "title": "R Lecture 8\n데이터 수집하기",
     "section": "",
     "text": "https://odinuv.cz/articles/html/",
     "crumbs": [
@@ -9784,9 +9792,9 @@
   {
     "objectID": "R_lec_08_2025.html#html-엘리먼트의-선택",
     "href": "R_lec_08_2025.html#html-엘리먼트의-선택",
-    "title": "\nR Lecture 8데이터 수집하기\n",
+    "title": "R Lecture 8\n데이터 수집하기",
     "section": "HTML 엘리먼트의 선택",
-    "text": "HTML 엘리먼트의 선택\n\n\nHTML 엘리먼트\n\n태그와 속성으로 구성된 HTML의 한 단위 혹은 특정 부분\n웹스크레이핑의 타깃의 주소\n\n\nHTML 엘리먼트의 선택: CSS 선택자(casading style sheet selector)\n\n\n\n\n\n\n\n\n\n선택 대상\nCSS 선택자\n결과\n\n\n\n태그(tag)\ntag1\n“tag1”이라는 이름의 모든 tag\n\n\n클래스(class)\n.class1\n“class1”이라는 class 속성을 갖는 모든 요소\n\n\n아이디(id)\n#id1\n“id1”이라는 id 속성을 갖는 모든 요소\n\n\ntag와 class의 결합\ntag1.class1\n“tag1”이라는 tag의 “class1”이라는 class 속성을 갖는 모든 요소\n\n\nclass1과 class2의 결합\n.class1.class2\n“class1”이라는 이름의 class 속성과 “class2”라는 이름의 class 속성을 동시에 갖는 모든 요소",
+    "text": "HTML 엘리먼트의 선택\n\nHTML 엘리먼트\n\n태그와 속성으로 구성된 HTML의 한 단위 혹은 특정 부분\n웹스크레이핑의 타깃의 주소\n\nHTML 엘리먼트의 선택: CSS 선택자(casading style sheet selector)\n\n\n\n\n\n\n\n\n\n\n선택 대상\nCSS 선택자\n결과\n\n\n\n\n태그(tag)\ntag1\n“tag1”이라는 이름의 모든 tag\n\n\n클래스(class)\n.class1\n“class1”이라는 class 속성을 갖는 모든 요소\n\n\n아이디(id)\n#id1\n“id1”이라는 id 속성을 갖는 모든 요소\n\n\ntag와 class의 결합\ntag1.class1\n“tag1”이라는 tag의 “class1”이라는 class 속성을 갖는 모든 요소\n\n\nclass1과 class2의 결합\n.class1.class2\n“class1”이라는 이름의 class 속성과 “class2”라는 이름의 class 속성을 동시에 갖는 모든 요소",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
@@ -9795,9 +9803,9 @@
   {
     "objectID": "R_lec_08_2025.html#html-엘리먼트의-선택-1",
     "href": "R_lec_08_2025.html#html-엘리먼트의-선택-1",
-    "title": "\nR Lecture 8데이터 수집하기\n",
+    "title": "R Lecture 8\n데이터 수집하기",
     "section": "HTML 엘리먼트의 선택",
-    "text": "HTML 엘리먼트의 선택\n\n\n정확한 CSS 선택자의 확인\n\n웹페이지에서 오른쪽 마우스 버튼을 눌러 “검사” 선택한 뒤, 탐색\n브라우저 확장 프로그램의 활용: SelectGadget",
+    "text": "HTML 엘리먼트의 선택\n\n정확한 CSS 선택자의 확인\n\n웹페이지에서 오른쪽 마우스 버튼을 눌러 “검사” 선택한 뒤, 탐색\n브라우저 확장 프로그램의 활용: SelectGadget",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
@@ -9806,9 +9814,9 @@
   {
     "objectID": "R_lec_08_2025.html#rvest-패키지",
     "href": "R_lec_08_2025.html#rvest-패키지",
-    "title": "\nR Lecture 8데이터 수집하기\n",
-    "section": "\nrvest 패키지",
-    "text": "rvest 패키지\n\nhttps://rvest.tidyverse.org/",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "rvest 패키지",
+    "text": "rvest 패키지\n\n\n\nhttps://rvest.tidyverse.org/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
@@ -9824,7 +9832,7 @@
   {
     "objectID": "R_lec_08_2025.html#사례-1-스타워즈",
     "href": "R_lec_08_2025.html#사례-1-스타워즈",
-    "title": "\nR Lecture 8데이터 수집하기\n",
+    "title": "R Lecture 8\n데이터 수집하기",
     "section": "사례 1: 스타워즈",
     "text": "사례 1: 스타워즈\nvignette(“starwars”)\n\n&lt;section&gt;\n  &lt;h2 data-id=\"1\"&gt;The Phantom Menace&lt;/h2&gt;\n  &lt;p&gt;Released: 1999-05-19&lt;/p&gt;\n  &lt;p&gt;Director: &lt;span class=\"director\"&gt;George Lucas&lt;/span&gt;&lt;/p&gt;\n  \n  &lt;div class=\"crawl\"&gt;\n    &lt;p&gt;...&lt;/p&gt;\n    &lt;p&gt;...&lt;/p&gt;\n    &lt;p&gt;...&lt;/p&gt;\n  &lt;/div&gt;\n&lt;/section&gt;",
     "crumbs": [
@@ -9835,9 +9843,9 @@
   {
     "objectID": "R_lec_08_2025.html#사례-1-스타워즈-1",
     "href": "R_lec_08_2025.html#사례-1-스타워즈-1",
-    "title": "\nR Lecture 8데이터 수집하기\n",
+    "title": "R Lecture 8\n데이터 수집하기",
     "section": "사례 1: 스타워즈",
-    "text": "사례 1: 스타워즈\n\n\nCode 1\nResult 1\nCode 2\nResult 2\n\n\n\n\nlibrary(tidyverse)\nlibrary(rvest)\nurl &lt;- \"https://rvest.tidyverse.org/articles/starwars.html\"\nread_html(url) |&gt; \n  html_elements(\"section\") |&gt; \n  html_element(\"h2\") |&gt; \n  html_text2()\n\n\n\n\n\n[1] \"The Phantom Menace\"      \"Attack of the Clones\"   \n[3] \"Revenge of the Sith\"     \"A New Hope\"             \n[5] \"The Empire Strikes Back\" \"Return of the Jedi\"     \n[7] \"The Force Awakens\"      \n\n\n\n\n\nsection &lt;- read_html(url) |&gt; \n  html_elements(\"section\")\ntibble(\n  title = section |&gt; \n    html_element(\"h2\") |&gt; \n    html_text2(),\n  released = section |&gt; \n    html_element(\"p\") |&gt; \n    html_text2() |&gt; \n    str_remove(\"Released: \") |&gt; \n    parse_date(),\n  director = section |&gt; \n    html_element(\".director\") |&gt; \n    html_text2(),\n  intro = section |&gt; \n    html_element(\".crawl\") |&gt; \n    html_text2()\n)\n\n\n\n\n\n# A tibble: 7 × 4\n  title                   released   director         intro                     \n  &lt;chr&gt;                   &lt;date&gt;     &lt;chr&gt;            &lt;chr&gt;                     \n1 The Phantom Menace      1999-05-19 George Lucas     \"Turmoil has engulfed the…\n2 Attack of the Clones    2002-05-16 George Lucas     \"There is unrest in the G…\n3 Revenge of the Sith     2005-05-19 George Lucas     \"War! The Republic is cru…\n4 A New Hope              1977-05-25 George Lucas     \"It is a period of civil …\n5 The Empire Strikes Back 1980-05-17 Irvin Kershner   \"It is a dark time for th…\n6 Return of the Jedi      1983-05-25 Richard Marquand \"Luke Skywalker has retur…\n7 The Force Awakens       2015-12-11 J. J. Abrams     \"Luke Skywalker has vanis…",
+    "text": "사례 1: 스타워즈\n\nCode 1Result 1Code 2Result 2\n\n\n\nlibrary(tidyverse)\nlibrary(rvest)\nurl &lt;- \"https://rvest.tidyverse.org/articles/starwars.html\"\nread_html(url) |&gt; \n  html_elements(\"section\") |&gt; \n  html_element(\"h2\") |&gt; \n  html_text2()\n\n\n\n\n\n[1] \"The Phantom Menace\"      \"Attack of the Clones\"   \n[3] \"Revenge of the Sith\"     \"A New Hope\"             \n[5] \"The Empire Strikes Back\" \"Return of the Jedi\"     \n[7] \"The Force Awakens\"      \n\n\n\n\n\nsection &lt;- read_html(url) |&gt; \n  html_elements(\"section\")\ntibble(\n  title = section |&gt; \n    html_element(\"h2\") |&gt; \n    html_text2(),\n  released = section |&gt; \n    html_element(\"p\") |&gt; \n    html_text2() |&gt; \n    str_remove(\"Released: \") |&gt; \n    parse_date(),\n  director = section |&gt; \n    html_element(\".director\") |&gt; \n    html_text2(),\n  intro = section |&gt; \n    html_element(\".crawl\") |&gt; \n    html_text2()\n)\n\n\n\n\n\n# A tibble: 7 × 4\n  title                   released   director         intro                     \n  &lt;chr&gt;                   &lt;date&gt;     &lt;chr&gt;            &lt;chr&gt;                     \n1 The Phantom Menace      1999-05-19 George Lucas     \"Turmoil has engulfed the…\n2 Attack of the Clones    2002-05-16 George Lucas     \"There is unrest in the G…\n3 Revenge of the Sith     2005-05-19 George Lucas     \"War! The Republic is cru…\n4 A New Hope              1977-05-25 George Lucas     \"It is a period of civil …\n5 The Empire Strikes Back 1980-05-17 Irvin Kershner   \"It is a dark time for th…\n6 Return of the Jedi      1983-05-25 Richard Marquand \"Luke Skywalker has retur…\n7 The Force Awakens       2015-12-11 J. J. Abrams     \"Luke Skywalker has vanis…",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
@@ -9853,9 +9861,9 @@
   {
     "objectID": "R_lec_08_2025.html#사례-2-웹-상의-테이블",
     "href": "R_lec_08_2025.html#사례-2-웹-상의-테이블",
-    "title": "\nR Lecture 8데이터 수집하기\n",
+    "title": "R Lecture 8\n데이터 수집하기",
     "section": "사례 2: 웹 상의 테이블",
-    "text": "사례 2: 웹 상의 테이블\n위키피디어: 전 세계 국가 관련 항목\n\n\nCode 1\nResult 1\nCode 2\nResult 2\n\n\n\n\nlibrary(tidyverse)\nlibrary(rvest)\nurl &lt;- \"https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population\"\nmy_table &lt;- url |&gt; \n  read_html() |&gt; \n  html_element(\"table\") |&gt; \n  html_table()\n\n\n\n\n\n# A tibble: 240 × 6\n   Location      Population    `% ofworld` Date     Source (official or …¹ Notes\n   &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;                  &lt;chr&gt;\n 1 World         8,232,000,000 100%        13 Jun … UN projection[1][3]    \"\"   \n 2 India         1,417,492,000 17.3%       1 Jul 2… Official projection[4] \"[b]\"\n 3 China         1,408,280,000 17.2%       31 Dec … Official estimate[5]   \"[c]\"\n 4 United States 340,110,988   4.1%        1 Jul 2… Official estimate[6]   \"[d]\"\n 5 Indonesia     284,438,782   3.5%        30 Jun … National annual proje… \"\"   \n 6 Pakistan      241,499,431   2.9%        1 Mar 2… 2023 census result[8]  \"[e]\"\n 7 Nigeria       223,800,000   2.7%        1 Jul 2… Official projection[9] \"\"   \n 8 Brazil        213,421,037   2.6%        1 Jul 2… Official estimate[10]  \"\"   \n 9 Bangladesh    169,828,911   2.1%        14 Jun … 2022 census result[11] \"[f]\"\n10 Russia        146,028,325   1.8%        1 Jan 2… Official estimate[13]  \"[g]\"\n# ℹ 230 more rows\n# ℹ abbreviated name: ¹​`Source (official or fromthe United Nations)`\n\n\n\n\n\nmy_table_new &lt;- my_table |&gt; \n  select(-Notes) |&gt; \n  rename(\n    location = \"Location\",\n    population = \"Population\",\n    pop_pct = \"% ofworld\",\n    date = \"Date\",\n    source = \"Source (official or fromthe United Nations)\"\n  ) |&gt; \n  mutate(\n    population = parse_number(population, \",\"),\n    population = as.numeric(population),\n    pop_pct = str_remove_all(pop_pct, \"%\"),\n    pop_pct = as.numeric(pop_pct),\n    date = dmy(date)\n  )\n\n\n\n\n\n# A tibble: 240 × 5\n   location      population pop_pct date       source                       \n   &lt;chr&gt;              &lt;dbl&gt;   &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;                        \n 1 World         8232000000   100   2025-06-13 UN projection[1][3]          \n 2 India         1417492000    17.3 2025-07-01 Official projection[4]       \n 3 China         1408280000    17.2 2024-12-31 Official estimate[5]         \n 4 United States  340110988     4.1 2024-07-01 Official estimate[6]         \n 5 Indonesia      284438782     3.5 2025-06-30 National annual projection[7]\n 6 Pakistan       241499431     2.9 2023-03-01 2023 census result[8]        \n 7 Nigeria        223800000     2.7 2023-07-01 Official projection[9]       \n 8 Brazil         213421037     2.6 2025-07-01 Official estimate[10]        \n 9 Bangladesh     169828911     2.1 2022-06-14 2022 census result[11]       \n10 Russia         146028325     1.8 2025-01-01 Official estimate[13]        \n# ℹ 230 more rows",
+    "text": "사례 2: 웹 상의 테이블\n위키피디어: 전 세계 국가 관련 항목\n\nCode 1Result 1Code 2Result 2\n\n\n\nlibrary(tidyverse)\nlibrary(rvest)\nurl &lt;- \"https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population\"\nmy_table &lt;- url |&gt; \n  read_html() |&gt; \n  html_element(\"table\") |&gt; \n  html_table()\n\n\n\n\n\n# A tibble: 240 × 6\n   Location      Population    `% ofworld` Date     Source (official or …¹ Notes\n   &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;                  &lt;chr&gt;\n 1 World         8,232,000,000 100%        13 Jun … UN projection[1][3]    \"\"   \n 2 India         1,417,492,000 17.3%       1 Jul 2… Official projection[4] \"[b]\"\n 3 China         1,408,280,000 17.2%       31 Dec … Official estimate[5]   \"[c]\"\n 4 United States 340,110,988   4.1%        1 Jul 2… Official estimate[6]   \"[d]\"\n 5 Indonesia     284,438,782   3.5%        30 Jun … National annual proje… \"\"   \n 6 Pakistan      241,499,431   2.9%        1 Mar 2… 2023 census result[8]  \"[e]\"\n 7 Nigeria       223,800,000   2.7%        1 Jul 2… Official projection[9] \"\"   \n 8 Brazil        213,421,037   2.6%        1 Jul 2… Official estimate[10]  \"\"   \n 9 Bangladesh    169,828,911   2.1%        14 Jun … 2022 census result[11] \"[f]\"\n10 Russia        146,028,325   1.8%        1 Jan 2… Official estimate[13]  \"[g]\"\n# ℹ 230 more rows\n# ℹ abbreviated name: ¹​`Source (official or fromthe United Nations)`\n\n\n\n\n\nmy_table_new &lt;- my_table |&gt; \n  select(-Notes) |&gt; \n  rename(\n    location = \"Location\",\n    population = \"Population\",\n    pop_pct = \"% ofworld\",\n    date = \"Date\",\n    source = \"Source (official or fromthe United Nations)\"\n  ) |&gt; \n  mutate(\n    population = parse_number(population, \",\"),\n    population = as.numeric(population),\n    pop_pct = str_remove_all(pop_pct, \"%\"),\n    pop_pct = as.numeric(pop_pct),\n    date = dmy(date)\n  )\n\n\n\n\n\n# A tibble: 240 × 5\n   location      population pop_pct date       source                       \n   &lt;chr&gt;              &lt;dbl&gt;   &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;                        \n 1 World         8232000000   100   2025-06-13 UN projection[1][3]          \n 2 India         1417492000    17.3 2025-07-01 Official projection[4]       \n 3 China         1408280000    17.2 2024-12-31 Official estimate[5]         \n 4 United States  340110988     4.1 2024-07-01 Official estimate[6]         \n 5 Indonesia      284438782     3.5 2025-06-30 National annual projection[7]\n 6 Pakistan       241499431     2.9 2023-03-01 2023 census result[8]        \n 7 Nigeria        223800000     2.7 2023-07-01 Official projection[9]       \n 8 Brazil         213421037     2.6 2025-07-01 Official estimate[10]        \n 9 Bangladesh     169828911     2.1 2022-06-14 2022 census result[11]       \n10 Russia         146028325     1.8 2025-01-01 Official estimate[13]        \n# ℹ 230 more rows",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
@@ -9871,9 +9879,9 @@
   {
     "objectID": "R_lec_08_2025.html#api-활용의-다양성",
     "href": "R_lec_08_2025.html#api-활용의-다양성",
-    "title": "\nR Lecture 8데이터 수집하기\n",
+    "title": "R Lecture 8\n데이터 수집하기",
     "section": "API 활용의 다양성",
-    "text": "API 활용의 다양성\n\n\n정형 수치 데이터의 수집\n\nKOSIS의 API를 활용한 센서스 데이터 수집\n공공데이터포털 API를 활용한 전국 초중등학교 위치 데이터 수집\nInternational Database(IDB)의 API를 활용한 세계 인구 데이터 수집\n\n\n\n정형 텍스트 데이터 수집\n\n\n공공데이터포털 API를 활용한 학위 논문의 수집\n\n\n\n비정형 텍스트 데이터 수집: 텍스트 마이닝(text mining)으로 연결\n\n네이버 검색 API를 활용한 뉴스 데이터 수집\n유튜브 API를 활용한 댓글 데이터 수집",
+    "text": "API 활용의 다양성\n\n정형 수치 데이터의 수집\n\nKOSIS의 API를 활용한 센서스 데이터 수집\n공공데이터포털 API를 활용한 전국 초중등학교 위치 데이터 수집\nInternational Database(IDB)의 API를 활용한 세계 인구 데이터 수집\n\n정형 텍스트 데이터 수집\n\n공공데이터포털 API를 활용한 학위 논문의 수집\n\n비정형 텍스트 데이터 수집: 텍스트 마이닝(text mining)으로 연결\n\n네이버 검색 API를 활용한 뉴스 데이터 수집\n유튜브 API를 활용한 댓글 데이터 수집",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
@@ -9882,9 +9890,9 @@
   {
     "objectID": "R_lec_08_2025.html#api-활용의-다양성-1",
     "href": "R_lec_08_2025.html#api-활용의-다양성-1",
-    "title": "\nR Lecture 8데이터 수집하기\n",
+    "title": "R Lecture 8\n데이터 수집하기",
     "section": "API 활용의 다양성",
-    "text": "API 활용의 다양성\n\nGoogle Maps Platform (https://mapsplatform.google.com/)\n\n7 종류의 API\n\nGoogle Direction API\nGoogle Distance API\nGoogle Elevation API\nGoogle Timezone API\nGoogle Geocode API\nGoogle Reverse Geocode API\nGoogle Places API\n\n\nR 래퍼(rapper) 패키지: googleway",
+    "text": "API 활용의 다양성\n\nGoogle Maps Platform (https://mapsplatform.google.com/)\n7 종류의 API\n\nGoogle Direction API\nGoogle Distance API\nGoogle Elevation API\nGoogle Timezone API\nGoogle Geocode API\nGoogle Reverse Geocode API\nGoogle Places API\n\nR 래퍼(rapper) 패키지: googleway",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
@@ -9893,9 +9901,9 @@
   {
     "objectID": "R_lec_08_2025.html#httr2-패키지",
     "href": "R_lec_08_2025.html#httr2-패키지",
-    "title": "\nR Lecture 8데이터 수집하기\n",
-    "section": "\nhttr2 패키지",
-    "text": "httr2 패키지\n\nhttps://httr.r-lib.org/",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "httr2 패키지",
+    "text": "httr2 패키지\n\n\n\nhttps://httr.r-lib.org/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
@@ -9904,9 +9912,9 @@
   {
     "objectID": "R_lec_08_2025.html#사례-공공데이터포털",
     "href": "R_lec_08_2025.html#사례-공공데이터포털",
-    "title": "\nR Lecture 8데이터 수집하기\n",
+    "title": "R Lecture 8\n데이터 수집하기",
     "section": "사례: 공공데이터포털",
-    "text": "사례: 공공데이터포털\n\nhttps://www.data.go.kr/\n회원가입\n데이터 검색: “전국 초중등학교 위치”\n\nOpen API, 인증키\n\nBase URL: api.odcloud.kr/api\n\n일반 인증키(Decoding)\n데이터 API: /15099519/v1/uddi:e83bc47a-f235-4b44-96d8-a9d0686435a5",
+    "text": "사례: 공공데이터포털\n\nhttps://www.data.go.kr/\n회원가입\n데이터 검색: “전국 초중등학교 위치”\nOpen API, 인증키\n\nBase URL: api.odcloud.kr/api\n일반 인증키(Decoding)\n데이터 API: /15099519/v1/uddi:e83bc47a-f235-4b44-96d8-a9d0686435a5",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
@@ -9915,9 +9923,9 @@
   {
     "objectID": "R_lec_08_2025.html#사례-공공데이터포털-1",
     "href": "R_lec_08_2025.html#사례-공공데이터포털-1",
-    "title": "\nR Lecture 8데이터 수집하기\n",
+    "title": "R Lecture 8\n데이터 수집하기",
     "section": "사례: 공공데이터포털",
-    "text": "사례: 공공데이터포털\n\n\nCode 1\nResult 1\nCode 2\nResult 2\n\n\n\n\nlibrary(httr2)\nbase_url &lt;- \"https://api.odcloud.kr/api/15099519/v1/uddi:e83bc47a-f235-4b44-96d8-a9d0686435a5\" \nrequest(base_url) |&gt;\n  req_url_query(\n    serviceKey = your_api_key,\n    page = 1,\n    perPage = 1000\n  ) |&gt;\n  req_perform() |&gt; \n  resp_body_json() |&gt; \n  _[[\"data\"]] |&gt; bind_rows() |&gt; as_tibble() |&gt; slice_head(n = 5)\n\n\n\n\n\n# A tibble: 5 × 18\n  경도        교육지원청명   교육지원청코드 데이터기준일자 변경일자 본교분교구분\n  &lt;chr&gt;       &lt;chr&gt;                   &lt;int&gt; &lt;chr&gt;          &lt;chr&gt;    &lt;chr&gt;       \n1 126.9214593 서울특별시동작관악교육지원…        7132000 2025-03-21     2024-11… 본교        \n2 127.0627595 서울특별시강남서초교육지원…        7091300 2025-03-21     2024-11… 본교        \n3 127.4110049 대전광역시동부교육지원청……        7441000 2025-03-21     2024-11… 본교        \n4 127.2639169 세종특별자치시교육청……        9300000 2025-03-21     2024-11… 본교        \n5 127.3532800 대전광역시서부교육지원청……        7451000 2025-03-21     2024-11… 본교        \n# ℹ 12 more variables: 생성일자 &lt;chr&gt;, 설립일자 &lt;chr&gt;, 설립형태 &lt;chr&gt;,\n#   소재지도로명주소 &lt;chr&gt;, 소재지지번주소 &lt;chr&gt;, 시도교육청명 &lt;chr&gt;,\n#   시도교육청코드 &lt;int&gt;, 운영상태 &lt;chr&gt;, 위도 &lt;chr&gt;, 학교ID &lt;chr&gt;,\n#   학교급구분 &lt;chr&gt;, 학교명 &lt;chr&gt;\n\n\n\n\n\nfinal_data &lt;- map_dfr(1:12, function(p) {\n  request(base_url) |&gt;\n    req_url_query(\n      serviceKey = your_api_key, \n      page = p, \n      perPage = 1000) |&gt;\n    req_perform() |&gt;\n    resp_body_json() |&gt;\n    _[[\"data\"]] |&gt; bind_rows() |&gt; as_tibble()\n})\n\n\n\n\n\n# A tibble: 11,985 × 18\n   경도        교육지원청명  교육지원청코드 데이터기준일자 변경일자 본교분교구분\n   &lt;chr&gt;       &lt;chr&gt;                  &lt;int&gt; &lt;chr&gt;          &lt;chr&gt;    &lt;chr&gt;       \n 1 126.9214593 서울특별시동작관악교육지…        7132000 2025-03-21     2024-11… 본교        \n 2 127.0627595 서울특별시강남서초교육지…        7091300 2025-03-21     2024-11… 본교        \n 3 127.4110049 대전광역시동부교육지원청…        7441000 2025-03-21     2024-11… 본교        \n 4 127.2639169 세종특별자치시교육청……        9300000 2025-03-21     2024-11… 본교        \n 5 127.3532800 대전광역시서부교육지원청…        7451000 2025-03-21     2024-11… 본교        \n 6 127.0946485 서울특별시동부교육지원청…        7021000 2025-03-21     2024-11… 본교        \n 7 126.8852718 광주광역시동부교육지원청…        7391000 2025-03-21     2024-11… 본교        \n 8 128.8031292 경상남도김해교육지원청……        9091000 2025-03-21     2024-11… 본교        \n 9 127.3215290 대전광역시서부교육지원청…        7451000 2025-03-21     2024-11… 본교        \n10 127.0571716 서울특별시북부교육지원청…        7051000 2025-03-21     2024-11… 본교        \n# ℹ 11,975 more rows\n# ℹ 12 more variables: 생성일자 &lt;chr&gt;, 설립일자 &lt;chr&gt;, 설립형태 &lt;chr&gt;,\n#   소재지도로명주소 &lt;chr&gt;, 소재지지번주소 &lt;chr&gt;, 시도교육청명 &lt;chr&gt;,\n#   시도교육청코드 &lt;int&gt;, 운영상태 &lt;chr&gt;, 위도 &lt;chr&gt;, 학교ID &lt;chr&gt;,\n#   학교급구분 &lt;chr&gt;, 학교명 &lt;chr&gt;",
+    "text": "사례: 공공데이터포털\n\nCode 1Result 1Code 2Result 2\n\n\n\nlibrary(httr2)\nbase_url &lt;- \"https://api.odcloud.kr/api/15099519/v1/uddi:e83bc47a-f235-4b44-96d8-a9d0686435a5\" \nrequest(base_url) |&gt;\n  req_url_query(\n    serviceKey = your_api_key,\n    page = 1,\n    perPage = 1000\n  ) |&gt;\n  req_perform() |&gt; \n  resp_body_json() |&gt; \n  _[[\"data\"]] |&gt; bind_rows() |&gt; as_tibble() |&gt; slice_head(n = 5)\n\n\n\n\n\n# A tibble: 5 × 18\n  경도        교육지원청명   교육지원청코드 데이터기준일자 변경일자 본교분교구분\n  &lt;chr&gt;       &lt;chr&gt;                   &lt;int&gt; &lt;chr&gt;          &lt;chr&gt;    &lt;chr&gt;       \n1 126.9214593 서울특별시동작관악교육지원…        7132000 2025-03-21     2024-11… 본교        \n2 127.0627595 서울특별시강남서초교육지원…        7091300 2025-03-21     2024-11… 본교        \n3 127.4110049 대전광역시동부교육지원청……        7441000 2025-03-21     2024-11… 본교        \n4 127.2639169 세종특별자치시교육청……        9300000 2025-03-21     2024-11… 본교        \n5 127.3532800 대전광역시서부교육지원청……        7451000 2025-03-21     2024-11… 본교        \n# ℹ 12 more variables: 생성일자 &lt;chr&gt;, 설립일자 &lt;chr&gt;, 설립형태 &lt;chr&gt;,\n#   소재지도로명주소 &lt;chr&gt;, 소재지지번주소 &lt;chr&gt;, 시도교육청명 &lt;chr&gt;,\n#   시도교육청코드 &lt;int&gt;, 운영상태 &lt;chr&gt;, 위도 &lt;chr&gt;, 학교ID &lt;chr&gt;,\n#   학교급구분 &lt;chr&gt;, 학교명 &lt;chr&gt;\n\n\n\n\n\nfinal_data &lt;- map_dfr(1:12, function(p) {\n  request(base_url) |&gt;\n    req_url_query(\n      serviceKey = your_api_key, \n      page = p, \n      perPage = 1000) |&gt;\n    req_perform() |&gt;\n    resp_body_json() |&gt;\n    _[[\"data\"]] |&gt; bind_rows() |&gt; as_tibble()\n})\n\n\n\n\n\n# A tibble: 11,985 × 18\n   경도        교육지원청명  교육지원청코드 데이터기준일자 변경일자 본교분교구분\n   &lt;chr&gt;       &lt;chr&gt;                  &lt;int&gt; &lt;chr&gt;          &lt;chr&gt;    &lt;chr&gt;       \n 1 126.9214593 서울특별시동작관악교육지…        7132000 2025-03-21     2024-11… 본교        \n 2 127.0627595 서울특별시강남서초교육지…        7091300 2025-03-21     2024-11… 본교        \n 3 127.4110049 대전광역시동부교육지원청…        7441000 2025-03-21     2024-11… 본교        \n 4 127.2639169 세종특별자치시교육청……        9300000 2025-03-21     2024-11… 본교        \n 5 127.3532800 대전광역시서부교육지원청…        7451000 2025-03-21     2024-11… 본교        \n 6 127.0946485 서울특별시동부교육지원청…        7021000 2025-03-21     2024-11… 본교        \n 7 126.8852718 광주광역시동부교육지원청…        7391000 2025-03-21     2024-11… 본교        \n 8 128.8031292 경상남도김해교육지원청……        9091000 2025-03-21     2024-11… 본교        \n 9 127.3215290 대전광역시서부교육지원청…        7451000 2025-03-21     2024-11… 본교        \n10 127.0571716 서울특별시북부교육지원청…        7051000 2025-03-21     2024-11… 본교        \n# ℹ 11,975 more rows\n# ℹ 12 more variables: 생성일자 &lt;chr&gt;, 설립일자 &lt;chr&gt;, 설립형태 &lt;chr&gt;,\n#   소재지도로명주소 &lt;chr&gt;, 소재지지번주소 &lt;chr&gt;, 시도교육청명 &lt;chr&gt;,\n#   시도교육청코드 &lt;int&gt;, 운영상태 &lt;chr&gt;, 위도 &lt;chr&gt;, 학교ID &lt;chr&gt;,\n#   학교급구분 &lt;chr&gt;, 학교명 &lt;chr&gt;",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
@@ -9926,9 +9934,9 @@
   {
     "objectID": "R_lec_08_2025.html#사례-네이버-뉴스",
     "href": "R_lec_08_2025.html#사례-네이버-뉴스",
-    "title": "\nR Lecture 8데이터 수집하기\n",
+    "title": "R Lecture 8\n데이터 수집하기",
     "section": "사례: 네이버 뉴스",
-    "text": "사례: 네이버 뉴스\n\nNAVER Developer (https://developers.naver.com/main/)\n\n[Products]-[서비스 API]-[검색] (https://developers.naver.com/products/service-api/search/search.md)\n\n오픈 API 이용 신청 절차\nClientID와 Client Secret 개념\n요청 URL: https://openapi.naver.com/v1/search/news.json\n파라미터: query, display, start, sort\n\n\n\n오픈 API 이용 신청\n\n애플리케이션 이름: 아무 이름이나 입력\n사용 API: ’검색’이 선택된 상태를 유지\n비로그인 오픈 API 서비스 환경: ‘WEB’ 설정\n웹 서비스 URL (최대 10개): ’http://localhost’를 입력",
+    "text": "사례: 네이버 뉴스\n\nNAVER Developer (https://developers.naver.com/main/)\n[Products]-[서비스 API]-[검색] (https://developers.naver.com/products/service-api/search/search.md)\n\n오픈 API 이용 신청 절차\nClientID와 Client Secret 개념\n요청 URL: https://openapi.naver.com/v1/search/news.json\n파라미터: query, display, start, sort\n\n오픈 API 이용 신청\n\n애플리케이션 이름: 아무 이름이나 입력\n사용 API: ’검색’이 선택된 상태를 유지\n비로그인 오픈 API 서비스 환경: ‘WEB’ 설정\n웹 서비스 URL (최대 10개): ’http://localhost’를 입력",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
@@ -9937,9 +9945,9 @@
   {
     "objectID": "R_lec_08_2025.html#사례-네이버-뉴스-1",
     "href": "R_lec_08_2025.html#사례-네이버-뉴스-1",
-    "title": "\nR Lecture 8데이터 수집하기\n",
+    "title": "R Lecture 8\n데이터 수집하기",
     "section": "사례: 네이버 뉴스",
-    "text": "사례: 네이버 뉴스\n\n\nCode 1\nResult 1\nCode 2\nResult 2\n\n\n\n\nlibrary(httr2)\nsearch &lt;- \"지역소멸\"\nbase_url &lt;- \"https://openapi.naver.com/v1/search/news.json\"\nresult_naver &lt;- base_url |&gt; \n  request() |&gt; \n  req_headers(\n    \"X-Naver-Client-ID\" = your_ClientID,\n    \"X-Naver-Client-Secret\" = your_Client_Secret\n  ) |&gt; \n  req_url_query(\n    query = search,\n    display = 100,\n    start = 1,\n    sort = \"date\"\n  ) |&gt; \n  req_perform() |&gt; \n  resp_body_json(check_type = FALSE) |&gt; \n  pluck(\"items\") |&gt; bind_rows()\n\n\n\n\nresult_naver |&gt; slice_head(n = 5)\n\n# A tibble: 5 × 5\n  title                                   originallink link  description pubDate\n  &lt;chr&gt;                                   &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;  \n1 전북자치도, 2차 민생회복 소비쿠폰 신청 마감…… http://www.… http… \"소비쿠폰은 이달 … Mon, 0…\n2 에코프로, 포항서 지속가능한 배터리 생태계 구축…… http://www.… http… \"에코프로는 지방 … Mon, 0…\n3 교보교육재단, '27회 교보교육대상' 4개 부분 수상자 선정…… http://www.… http… \"평생교육 부문 대… Mon, 0…\n4 김태훈 순천시의원, &lt;b&gt;지역&lt;/b&gt;경제 활성화 정책 제안…… http://www.… http… \"곧 &lt;b&gt;지역 소… Mon, 0…\n5 대전·세종, 연극·오페라·심포니로 이어지는 사유의 무대…… https://www… http… \"인간성의 &lt;b&gt;소… Mon, 0…\n\n\n\n\n\nnaver_extractor &lt;- function(base_url, search_item, n_start = 1, n_display = 100){\n  news &lt;- request(base_url) |&gt; \n  req_headers(\n    \"X-Naver-Client-ID\" = your_ClientID,\n    \"X-Naver-Client-Secret\" = your_Client_Secret\n  ) |&gt; \n  req_url_query(\n    query = search_item,\n    display = n_display,\n    start = n_start,\n    sort = \"date\"\n  ) |&gt; \n  req_perform() |&gt; \n  resp_body_json() |&gt; pluck(\"items\") |&gt; bind_rows()\n}\n\nsearch &lt;- \"지역소멸\"\nrep &lt;- 10\nresult_naver &lt;- map_dfr(\n  start_idx &lt;- (0:(rep-1)) * 100 + 1,\n  \\(x) naver_extractor(\n    a_url       = your_url,\n    search_item = search,\n    n_start     = x,\n    n_display = 100\n  )\n)\n\n\n\n\nresult_naver |&gt; slice_head(n = 5)\n\n# A tibble: 5 × 5\n  title                                   originallink link  description pubDate\n  &lt;chr&gt;                                   &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;  \n1 전북자치도, 2차 민생회복 소비쿠폰 신청 마감…… http://www.… http… \"소비쿠폰은 이달 … Mon, 0…\n2 에코프로, 포항서 지속가능한 배터리 생태계 구축…… http://www.… http… \"에코프로는 지방 … Mon, 0…\n3 교보교육재단, '27회 교보교육대상' 4개 부분 수상자 선정…… http://www.… http… \"평생교육 부문 대… Mon, 0…\n4 김태훈 순천시의원, &lt;b&gt;지역&lt;/b&gt;경제 활성화 정책 제안…… http://www.… http… \"곧 &lt;b&gt;지역 소… Mon, 0…\n5 대전·세종, 연극·오페라·심포니로 이어지는 사유의 무대…… https://www… http… \"인간성의 &lt;b&gt;소… Mon, 0…",
+    "text": "사례: 네이버 뉴스\n\nCode 1Result 1Code 2Result 2\n\n\n\nlibrary(httr2)\nsearch &lt;- \"지역소멸\"\nbase_url &lt;- \"https://openapi.naver.com/v1/search/news.json\"\nresult_naver &lt;- base_url |&gt; \n  request() |&gt; \n  req_headers(\n    \"X-Naver-Client-ID\" = your_ClientID,\n    \"X-Naver-Client-Secret\" = your_Client_Secret\n  ) |&gt; \n  req_url_query(\n    query = search,\n    display = 100,\n    start = 1,\n    sort = \"date\"\n  ) |&gt; \n  req_perform() |&gt; \n  resp_body_json(check_type = FALSE) |&gt; \n  pluck(\"items\") |&gt; bind_rows()\n\n\n\n\nresult_naver |&gt; slice_head(n = 5)\n\n# A tibble: 5 × 5\n  title                                   originallink link  description pubDate\n  &lt;chr&gt;                                   &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;  \n1 전북자치도, 2차 민생회복 소비쿠폰 신청 마감…… http://www.… http… \"소비쿠폰은 이달 … Mon, 0…\n2 에코프로, 포항서 지속가능한 배터리 생태계 구축…… http://www.… http… \"에코프로는 지방 … Mon, 0…\n3 교보교육재단, '27회 교보교육대상' 4개 부분 수상자 선정…… http://www.… http… \"평생교육 부문 대… Mon, 0…\n4 김태훈 순천시의원, &lt;b&gt;지역&lt;/b&gt;경제 활성화 정책 제안…… http://www.… http… \"곧 &lt;b&gt;지역 소… Mon, 0…\n5 대전·세종, 연극·오페라·심포니로 이어지는 사유의 무대…… https://www… http… \"인간성의 &lt;b&gt;소… Mon, 0…\n\n\n\n\n\nnaver_extractor &lt;- function(base_url, search_item, n_start = 1, n_display = 100){\n  news &lt;- request(base_url) |&gt; \n  req_headers(\n    \"X-Naver-Client-ID\" = your_ClientID,\n    \"X-Naver-Client-Secret\" = your_Client_Secret\n  ) |&gt; \n  req_url_query(\n    query = search_item,\n    display = n_display,\n    start = n_start,\n    sort = \"date\"\n  ) |&gt; \n  req_perform() |&gt; \n  resp_body_json() |&gt; pluck(\"items\") |&gt; bind_rows()\n}\n\nsearch &lt;- \"지역소멸\"\nrep &lt;- 10\nresult_naver &lt;- map_dfr(\n  start_idx &lt;- (0:(rep-1)) * 100 + 1,\n  \\(x) naver_extractor(\n    a_url       = your_url,\n    search_item = search,\n    n_start     = x,\n    n_display = 100\n  )\n)\n\n\n\n\nresult_naver |&gt; slice_head(n = 5)\n\n# A tibble: 5 × 5\n  title                                   originallink link  description pubDate\n  &lt;chr&gt;                                   &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;  \n1 전북자치도, 2차 민생회복 소비쿠폰 신청 마감…… http://www.… http… \"소비쿠폰은 이달 … Mon, 0…\n2 에코프로, 포항서 지속가능한 배터리 생태계 구축…… http://www.… http… \"에코프로는 지방 … Mon, 0…\n3 교보교육재단, '27회 교보교육대상' 4개 부분 수상자 선정…… http://www.… http… \"평생교육 부문 대… Mon, 0…\n4 김태훈 순천시의원, &lt;b&gt;지역&lt;/b&gt;경제 활성화 정책 제안…… http://www.… http… \"곧 &lt;b&gt;지역 소… Mon, 0…\n5 대전·세종, 연극·오페라·심포니로 이어지는 사유의 무대…… https://www… http… \"인간성의 &lt;b&gt;소… Mon, 0…",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
@@ -9948,9 +9956,9 @@
   {
     "objectID": "R_lec_08_2025.html#rvest-패키지를-활용한-웹스크레이핑-절차",
     "href": "R_lec_08_2025.html#rvest-패키지를-활용한-웹스크레이핑-절차",
-    "title": "\nR Lecture 8데이터 수집하기\n",
-    "section": "\nrvest 패키지를 활용한 웹스크레이핑 절차",
-    "text": "rvest 패키지를 활용한 웹스크레이핑 절차\n\n\n1단계: 웹페이지 읽기\n\n웹스크레이핑의 대상이 되는 웹페이지의 URL 읽기\n\n\n\n2단계: HTML 엘리먼트 선택\n\n필요한 정보를 포함하고 있는 엘리먼트의 지정\n\n\n\n3단계: 하위 엘리먼트 선택\n\n필요한 정보를 포함하고 있는 하위 엘리먼트의 지정\n\n\n\n4단계: 엘리먼트로부터 데이터 추출\n\n데이블 데이터, 텍스트 등을 추출",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "rvest 패키지를 활용한 웹스크레이핑 절차",
+    "text": "rvest 패키지를 활용한 웹스크레이핑 절차\n\n1단계: 웹페이지 읽기\n\n웹스크레이핑의 대상이 되는 웹페이지의 URL 읽기\n\n2단계: HTML 엘리먼트 선택\n\n필요한 정보를 포함하고 있는 엘리먼트의 지정\n\n3단계: 하위 엘리먼트 선택\n\n필요한 정보를 포함하고 있는 하위 엘리먼트의 지정\n\n4단계: 엘리먼트로부터 데이터 추출\n\n데이블 데이터, 텍스트 등을 추출",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
@@ -9959,9 +9967,9 @@
   {
     "objectID": "R_lec_08_2025.html#텍스트-마이닝과-자연어처리",
     "href": "R_lec_08_2025.html#텍스트-마이닝과-자연어처리",
-    "title": "\nR Lecture 8데이터 수집하기\n",
+    "title": "R Lecture 8\n데이터 수집하기",
     "section": "텍스트 마이닝과 자연어처리",
-    "text": "텍스트 마이닝과 자연어처리\n\n\n텍스트 마이닝\n\n비정형 텍스트 데이터로부터 패턴 또는 관계를 추출하여 의미 있는 정보를 찾아내는 기법\n기본 과정: 텍스트 전처리, 토큰화하기, 단어 빈도 분석하기\n고급 분석: 비교 분석, 감정 분석, 의미망 분석, 토픽 모델링 등\n\n\n\n자연어처리(NLP; natural language processing)\n\n\nKoNLP(Korean Natural Language Processing)",
+    "text": "텍스트 마이닝과 자연어처리\n\n텍스트 마이닝\n\n비정형 텍스트 데이터로부터 패턴 또는 관계를 추출하여 의미 있는 정보를 찾아내는 기법\n기본 과정: 텍스트 전처리, 토큰화하기, 단어 빈도 분석하기\n고급 분석: 비교 분석, 감정 분석, 의미망 분석, 토픽 모델링 등\n\n자연어처리(NLP; natural language processing)\n\nKoNLP(Korean Natural Language Processing)",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
@@ -9970,8 +9978,8 @@
   {
     "objectID": "R_lec_08_2025.html#mall-패키지",
     "href": "R_lec_08_2025.html#mall-패키지",
-    "title": "\nR Lecture 8데이터 수집하기\n",
-    "section": "\nmall 패키지",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "mall 패키지",
     "text": "mall 패키지\n\n\n\nhttps://mlverse.github.io/mall/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
@@ -9981,9 +9989,9 @@
   {
     "objectID": "R_lec_08_2025.html#html의-기초",
     "href": "R_lec_08_2025.html#html의-기초",
-    "title": "\nR Lecture 8데이터 수집하기\n",
+    "title": "R Lecture 8\n데이터 수집하기",
     "section": "HTML의 기초",
-    "text": "HTML의 기초\n\n\n웹페이지는 다양한 태그(tag)로 구성\n\n각 태그는 시작 태그와 종료 태그로 구성되며, 둘 사이에 해당 콘텐츠가 위치\n\n\n\n태그의 종류는 다양하며, 크게 세 가지로 구분\n\n최상위인 html 태그\n\n웹페이지의 전반적인 구조를 결정하는 블록(block) 태그\n\n예: h1, section, p, ol 태그 등\n\n\n\n블록 태그 내부의 특정 부분에만 적용되는 인라인(inline) 태그\n\n예: b, i, a 태그 등",
+    "text": "HTML의 기초\n\n웹페이지는 다양한 태그(tag)로 구성\n\n각 태그는 시작 태그와 종료 태그로 구성되며, 둘 사이에 해당 콘텐츠가 위치\n\n태그의 종류는 다양하며, 크게 세 가지로 구분\n\n최상위인 html 태그\n웹페이지의 전반적인 구조를 결정하는 블록(block) 태그\n\n예: h1, section, p, ol 태그 등\n\n블록 태그 내부의 특정 부분에만 적용되는 인라인(inline) 태그\n\n예: b, i, a 태그 등",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
@@ -9992,9 +10000,9 @@
   {
     "objectID": "R_lec_08_2025.html#사례-kosis",
     "href": "R_lec_08_2025.html#사례-kosis",
-    "title": "\nR Lecture 8데이터 수집하기\n",
+    "title": "R Lecture 8\n데이터 수집하기",
     "section": "사례: KOSIS",
-    "text": "사례: KOSIS\n\nKOSIS 공유서비스 웹페이지(https://kosis.kr/openapi/) 접속\n\n상단의 [활용신청] 탭 클릭\n\n통계청의 ONE-ID로 통합로그인(없으면 회원가입 필수)\n\n\n\n활용신청하여 사용자 인증키 획득\n\n사용자 인증키는 마이페이지에서 언제든 확인 가능\n\n\nkosis 패키지: 주석훈",
+    "text": "사례: KOSIS\n\nKOSIS 공유서비스 웹페이지(https://kosis.kr/openapi/) 접속\n상단의 [활용신청] 탭 클릭\n\n통계청의 ONE-ID로 통합로그인(없으면 회원가입 필수)\n\n활용신청하여 사용자 인증키 획득\n\n사용자 인증키는 마이페이지에서 언제든 확인 가능\n\nkosis 패키지: 주석훈",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
@@ -10003,7 +10011,7 @@
   {
     "objectID": "R_lec_08_2025.html#사례-kosis-1",
     "href": "R_lec_08_2025.html#사례-kosis-1",
-    "title": "\nR Lecture 8데이터 수집하기\n",
+    "title": "R Lecture 8\n데이터 수집하기",
     "section": "사례: KOSIS",
     "text": "사례: KOSIS\n\nhttps://sangillee.snu.ac.kr/dashboard_popgeo/",
     "crumbs": [
@@ -10014,9 +10022,9 @@
   {
     "objectID": "R_lec_08_2025.html#웹스크레이핑의-정의",
     "href": "R_lec_08_2025.html#웹스크레이핑의-정의",
-    "title": "\nR Lecture 8데이터 수집하기\n",
+    "title": "R Lecture 8\n데이터 수집하기",
     "section": "웹스크레이핑의 정의",
-    "text": "웹스크레이핑의 정의\n\n웹페이지로부터 데이터를 추출하는 것, 데이터 긁어 오기\n데이터 크롤링(crawling)과 유사, 박박 기면서 수집하기\n\n해킹(hacking)과의 경계가 모호\n\n허가 없이 정보 시스템에 침투하여 데이터를 취득하는 행위\n\n\n최근들어 점점 회피하는 추세",
+    "text": "웹스크레이핑의 정의\n\n웹페이지로부터 데이터를 추출하는 것, 데이터 긁어 오기\n데이터 크롤링(crawling)과 유사, 박박 기면서 수집하기\n해킹(hacking)과의 경계가 모호\n\n허가 없이 정보 시스템에 침투하여 데이터를 취득하는 행위\n\n최근들어 점점 회피하는 추세",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
@@ -10025,12 +10033,645 @@
   {
     "objectID": "R_lec_08_2025.html#api의-정의",
     "href": "R_lec_08_2025.html#api의-정의",
-    "title": "\nR Lecture 8데이터 수집하기\n",
+    "title": "R Lecture 8\n데이터 수집하기",
     "section": "API의 정의",
-    "text": "API의 정의\n\n\nAPI(application programming interface)는 일종의 통신 규약(protocol)\n\n복수의 프로그램들이 서로 상호작용하는 방법을 정의하는 일련의 규칙\n한 애플리케이션이 다른 애플리케이션의 기능들을 불러 사용할 수 있게 해주는 통로\n오픈 API: API 키(key)\n\n\n\n데이터 API\n\n데이터를 보유하고 있는 공적 기관이 데이터의 사용 권한을 사용자들에게 부여함으로써 데이터에 대한 접근성을 높여주는 일련의 방식",
+    "text": "API의 정의\n\nAPI(application programming interface)는 일종의 통신 규약(protocol)\n\n복수의 프로그램들이 서로 상호작용하는 방법을 정의하는 일련의 규칙\n한 애플리케이션이 다른 애플리케이션의 기능들을 불러 사용할 수 있게 해주는 통로\n오픈 API: API 키(key)\n\n데이터 API\n\n데이터를 보유하고 있는 공적 기관이 데이터의 사용 권한을 사용자들에게 부여함으로써 데이터에 대한 접근성을 높여주는 일련의 방식",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#quarto와-r-기반의-웹-앱-개발",
+    "href": "R_lec_09_2025.html#quarto와-r-기반의-웹-앱-개발",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "Quarto와 R 기반의 웹 앱 개발",
+    "text": "Quarto와 R 기반의 웹 앱 개발"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#동적ㆍ반응형-시각화의-구현",
+    "href": "R_lec_09_2025.html#동적ㆍ반응형-시각화의-구현",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "",
+    "text": "역동성과 상호작용성이 부가된 시각화\n구현 방식\n\n임베딩(embedding): 외부 콘텐츠 삽입\n동적ㆍ반응형 내용 요소의 직접 제작",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#임베딩",
+    "href": "R_lec_09_2025.html#임베딩",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "",
+    "text": "개념\n\n외부 웹 사이트/앱의 콘텐츠를 현재 웹 사이트/앱 안에 삽입하여 보여주는 기법\nHTML의 iframe 태그 활용\n별도의 페이지 전환 없이 다른 서비스나 시각화 결과를 한 웹 앱에 통합\n일부 사이트는 임베딩 불가능\n\n대상\n\n동적ㆍ반응형 시각화 웹 사이트/앱\n상호작용형 교육ㆍ협업 도구: Padlet, Mentimeter, Google Forms 등\n동영상: YouTube",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#임베딩-사례-1",
+    "href": "R_lec_09_2025.html#임베딩-사례-1",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "임베딩: 사례 1",
+    "text": "임베딩: 사례 1\n\n통계놀이터(https://kosis.kr/edu/)\n\n\n\nCode\nResult\n\n\n\n&lt;iframe src=\"https://kosis.kr/edu/share.do?shareID=S0500_16\" \nloading=\"lazy\" style=\"width: 100%; height: 600px; border: \n0px none;\" allow=\"web-share; clipboard-write\"&gt;&lt;/iframe&gt;"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#graphs-static-and-extended",
+    "href": "R_lec_09_2025.html#graphs-static-and-extended",
+    "title": "\nR Lecture 9인터랙티브 시각화\n",
+    "section": "Graphs: static and extended",
+    "text": "Graphs: static and extended"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#임베딩-사례-2",
+    "href": "R_lec_09_2025.html#임베딩-사례-2",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "임베딩: 사례 2",
+    "text": "임베딩: 사례 2\n\nOur World in Data(https://ourworldindata.org/)\n\n\n\nCode\nResult\n\n\n\n&lt;iframe src=\"https://ourworldindata.org/explorers/population-and-demography?indicator=Fertility+rate&Sex=Both+sexes&Age=Total&Projection+scenario=Medium&country=Asia+%28UN%29~Europe+%28UN%29~Africa+%28UN%29~Oceania+%28UN%29~Northern+America+%28UN%29~Latin+America+and+the+Caribbean+%28UN%29~OWID_WRL~KOR&tab=chart&hideControls=true\" loading=\"lazy\" style=\"width: 70%; height: 600px; border: 0px none;\" allow=\"web-share; clipboard-write\"&gt;&lt;/iframe&gt;"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#테이블",
+    "href": "R_lec_09_2025.html#테이블",
+    "title": "\nR Lecture 9인터랙티브 시각화\n",
+    "section": "테이블",
+    "text": "테이블\n\n\n테이블 역시 시각화의 일부\n\n데이터 변형 및 요약을 거친 테이블\n시각성이 가미된 테이블\n인트렉티브 테이블"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#테이블-1",
+    "href": "R_lec_09_2025.html#테이블-1",
+    "title": "\nR Lecture 9인터랙티브 시각화\n",
+    "section": "테이블",
+    "text": "테이블\n\nhttps://r-graph-gallery.com/table.html"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#테이블-gt-패키지",
+    "href": "R_lec_09_2025.html#테이블-gt-패키지",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "테이블: gt 패키지",
+    "text": "테이블: gt 패키지\n\nhttps://gt.rstudio.com/"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#테이블-gt-패키지-1",
+    "href": "R_lec_09_2025.html#테이블-gt-패키지-1",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "테이블: gt 패키지",
+    "text": "테이블: gt 패키지\n\nhttps://gt.rstudio.com/"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#테이블-gt-패키지-2",
+    "href": "R_lec_09_2025.html#테이블-gt-패키지-2",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "테이블: gt 패키지",
+    "text": "테이블: gt 패키지\n\nhttps://towardsdatascience.com/exploring-the-gt-grammar-of-tables-package-in-r-7fff9d0b40cd"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#테이블-dt-패키지",
+    "href": "R_lec_09_2025.html#테이블-dt-패키지",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "테이블: DT 패키지",
+    "text": "테이블: DT 패키지\n\nDataTables: 자바스크립트 라이브러리\nR 래퍼 패키지: DT\n\n\nhttps://datatables.net/"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#테이블-dt-패키지-1",
+    "href": "R_lec_09_2025.html#테이블-dt-패키지-1",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "테이블: DT 패키지",
+    "text": "테이블: DT 패키지\n\nPagination: 페이지 이동 기능\nInstant search: 즉각적 검색 기능(Search에 타이핑하기 시작하면 즉각적으로 검색 결과 보여줌)\nOrdering/sorging: 컬럼 정렬 기능\nMulti-column ordering: 다중 컬럼 정렬 기능(컬럼 하나를 선택한 후 ctrl을 누른 상태에서 다른 컬럼을 선택)\nFiltering: 값 추림 기능\nEditable: 셀 값 수정 기능\nButtons: 셀 숨기기 기능, CSV, PDF, XLSX 등의 확장자로 내보내기 등을 수행하는 버튼 생성 기능"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#테이블-2",
+    "href": "R_lec_09_2025.html#테이블-2",
+    "title": "\nR Lecture 9인터랙티브 시각화\n",
+    "section": "테이블",
+    "text": "테이블\n\n\nCode\nResult\n\n\n\n\ngapminder |&gt; \n  datatable(\n    filter = \"top\",\n    extensions = \"Buttons\",\n    options = list(\n      pageLength = 5,\n      autoWidth = TRUE,\n      dom = \"Bfrtip\",\n      buttons = c(\"copy\", \"excel\", \"pdf\", \"print\")\n    )\n  )"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#테이블-개요",
+    "href": "R_lec_09_2025.html#테이블-개요",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "테이블: 개요",
+    "text": "테이블: 개요\n\n\n테이블 역시 시각화의 일부\n\n데이터 변형 및 요약을 거친 정적 테이블\n시각성이 가미된 정적 테이블\n인터랙티브 테이블\n\n\n\n테이블 디자인 원칙(핸즈온 데이터 시각화, 2022)\n\n열 제목을 데이터 상단에 눈에 띄게 만들어라.\n밝은 음영을 사용해 열이나 행을 구분하라.\n읽기 쉽도록 텍스트는 왼쪽 정렬하고 숫자는 오른쪽 정렬하라.\n레이블을 첫 번째 행에만 배치하여 중복을 피하라.\n테이터를 그룹화 및 정렬하여 의미 있는 패턴을 강조하라."
+  },
+  {
+    "objectID": "R_lec_09_2025.html#테이블-도구의-분류",
+    "href": "R_lec_09_2025.html#테이블-도구의-분류",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "테이블: 도구의 분류",
+    "text": "테이블: 도구의 분류\n\nhttps://r-graph-gallery.com/table.html"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#테이블-dt-패키지-2",
+    "href": "R_lec_09_2025.html#테이블-dt-패키지-2",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "테이블: DT 패키지",
+    "text": "테이블: DT 패키지\n\n\nCode\nResult\n\n\n\n\ngapminder |&gt; \n  datatable(\n    filter = \"top\",\n    extensions = \"Buttons\",\n    options = list(\n      pageLength = 5,\n      autoWidth = TRUE,\n      dom = \"Bfrtip\",\n      buttons = c(\"copy\", \"excel\", \"pdf\", \"print\")\n    )\n  )"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#그래프-graphs",
+    "href": "R_lec_09_2025.html#그래프-graphs",
+    "title": "\nR Lecture 9인터랙티브 시각화\n",
+    "section": "그래프 Graphs\n",
+    "text": "그래프 Graphs\n\n\n\n\n\n\n\n자바스크립트 라이브러리\nR 래퍼 패키지\n\n\n\nPlotly\nplotly\n\n\nD3\nr2d3\n\n\nHighcharts\nhighcharter\n\n\nECharts\necharts4r\n\n\ndygraphs\ndygraphs\n\n\nGoogle Charts\ngoogleVis\n\n\nChart.js\nchartjs"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#그래프-graphs-plotly-패키지",
+    "href": "R_lec_09_2025.html#그래프-graphs-plotly-패키지",
+    "title": "\nR Lecture 9인터랙티브 시각화\n",
+    "section": "그래프 Graphs: plotly 패키지",
+    "text": "그래프 Graphs: plotly 패키지\n\nPlotly: 자바스크립트 라이브러리, 동적ㆍ반응형 그래프 생성\n\nR 래퍼 패키지: plotly package\n\n\nggplotly() 함수\n\n\n\n\nhttps://plotly.com/"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#그래프-plotly-패키지",
+    "href": "R_lec_09_2025.html#그래프-plotly-패키지",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "그래프: plotly 패키지",
+    "text": "그래프: plotly 패키지\n\nPlotly: 자바스크립트 라이브러리\n\nR 래퍼 패키지: plotly package\n\n\nggplotly() 함수\n\n\n\n\nhttps://plotly.com/"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#그래프-plotly-패키지-1",
+    "href": "R_lec_09_2025.html#그래프-plotly-패키지-1",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "그래프: plotly 패키지",
+    "text": "그래프: plotly 패키지\n\n\nCode\nResult\n\n\n\n\nlibrary(plotly)\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  plot_ly(\n    x = ~gdpPercap, \n    y = ~lifeExp, \n    color = ~continent,\n    text = ~paste(\n      \"Country: \", country, \n      \"&lt;br&gt;GDP per capita: \", gdpPercap, \n      \"$&lt;br&gt;Life Expectancy at Birth:\", lifeExp\n    )\n  )"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#그래프-ggplotly-함수",
+    "href": "R_lec_09_2025.html#그래프-ggplotly-함수",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "그래프: ggplotly() 함수",
+    "text": "그래프: ggplotly() 함수\n\n\nCode\nResult\n\n\n\n\nP &lt;- gapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent)) +\n  geom_point() + \n  scale_color_brewer(palette = \"Set2\") +\n  theme_minimal()\nggplotly(P)"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#그래프-graphs-gganimate-패키지",
+    "href": "R_lec_09_2025.html#그래프-graphs-gganimate-패키지",
+    "title": "\nR Lecture 9인터랙티브 시각화\n",
+    "section": "그래프 Graphs: gganimate 패키지",
+    "text": "그래프 Graphs: gganimate 패키지\n\n\nCode\nResult\n\n\n\n\nlibrary(gganimate)\nP &lt;- gapminder |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, size = pop, color = continent)) +\n  geom_point(show.legend = FALSE, alpha = 0.7) +\n  scale_x_log10() +\n  scale_size(range = c(2, 12))\nP + transition_time(year) +\n  labs(title = \"Year: {frame_time}\")"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#그래프",
+    "href": "R_lec_09_2025.html#그래프",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "그래프",
+    "text": "그래프\n\n\n\n\n\n\n자바스크립트 라이브러리\nR 래퍼 패키지\n\n\n\nPlotly\nplotly\n\n\nD3\nr2d3\n\n\nHighcharts\nhighcharter\n\n\nECharts\n\necharts4r, echarty\n\n\n\ndygraphs\ndygraphs\n\n\nGoogle Charts\ngoogleVis\n\n\nChart.js\nchartjs"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#그래프-plotly-패키지-2",
+    "href": "R_lec_09_2025.html#그래프-plotly-패키지-2",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "그래프: plotly 패키지",
+    "text": "그래프: plotly 패키지\n\n\nCode\nResult\n\n\n\n\ngapminder |&gt; \n  plot_ly(\n    x = ~log10(gdpPercap), y = ~lifeExp,\n    text = ~paste(\n      \"Country:\", country, \n      \"&lt;/br&gt;Continent:\", continent, \n      \"&lt;/br&gt;lifeExp:\", lifeExp\n    )\n  ) |&gt; \n  add_markers(\n    color = ~continent, \n    size = ~pop, \n    frame = ~year, \n    marker = list(sizeref = 0.2, sizemode = \"area\")\n  )"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#그래프-gganimate-패키지",
+    "href": "R_lec_09_2025.html#그래프-gganimate-패키지",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "그래프: gganimate 패키지",
+    "text": "그래프: gganimate 패키지\n\n\nCode\nResult\n\n\n\n\nlibrary(gganimate)\nP &lt;- gapminder |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, size = pop, color = continent)) +\n  geom_point(show.legend = FALSE, alpha = 0.7) +\n  scale_x_log10() +\n  scale_size(range = c(2, 12))\nP + transition_time(year) +\n  labs(title = \"Year: {frame_time}\")"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#quarto와-r-기반의-웹-앱-개발-프레임워크",
+    "href": "R_lec_09_2025.html#quarto와-r-기반의-웹-앱-개발-프레임워크",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "Quarto와 R 기반의 웹 앱 개발 프레임워크",
+    "text": "Quarto와 R 기반의 웹 앱 개발 프레임워크"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#quartor-기반의-웹-앱-개발-프레임워크",
+    "href": "R_lec_09_2025.html#quartor-기반의-웹-앱-개발-프레임워크",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "Quarto/R 기반의 웹 앱 개발 프레임워크",
+    "text": "Quarto/R 기반의 웹 앱 개발 프레임워크"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#동적ㆍ반응형-내용-요소의-제작",
+    "href": "R_lec_09_2025.html#동적ㆍ반응형-내용-요소의-제작",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "동적ㆍ반응형 내용 요소의 제작",
+    "text": "동적ㆍ반응형 내용 요소의 제작\n\n\nR 패키지 활용\n\n동적ㆍ반응형 내용 요소 제작을 지원하는 R 자체 패키지\ngganimate 패키지\n\n\n\nR 래퍼 패키지 활용\n\nJS 라이브러리의 가교\nDT, plotly\n\n\n\n결합\n\nR 패키지로 제작한 정적 콘텐츠를 R 래퍼 패키지를 통해 동적ㆍ반응형 콘텐츠로 전환\nggplot2 + plotly"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#직접-제작",
+    "href": "R_lec_09_2025.html#직접-제작",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "",
+    "text": "R 패키지 활용\n\n동적ㆍ반응형 내용 요소 제작을 지원하는 R 자체 패키지\ngganimate, ggiraph\n\nR 래퍼 패키지 활용\n\nJS 라이브러리와의 가교\nDT, plotly\n\n결합\n\nR 패키지로 제작한 정적 콘텐츠를 R 래퍼 패키지를 통해 동적ㆍ반응형 콘텐츠로 전환\nggplot2 + plotly",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#테이블-flextable",
+    "href": "R_lec_09_2025.html#테이블-flextable",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "테이블: flextable\n",
+    "text": "테이블: flextable\n\n\n웹북(https://ardata-fr.github.io/flextable-book/)\n\n\nhttps://twitter.com/DavidGohel/status/1376892794627883016/photo/1"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#테이블-reactable",
+    "href": "R_lec_09_2025.html#테이블-reactable",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "테이블: reactable\n",
+    "text": "테이블: reactable\n\n\n\nCode\nResult\n\n\n\n\nlibrary(reactable)\nlibrary(gapminder)\ngapminder |&gt; \n  reactable()"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#테이블-인터랙티브",
+    "href": "R_lec_09_2025.html#테이블-인터랙티브",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "테이블: 인터랙티브",
+    "text": "테이블: 인터랙티브\n\n\n자바스크립트 라이브러리\nR 래퍼 패키지\n\n\n\nDataTables\nDT\n\n\nTanstack Table\nreactable"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#그래프-echar4r-패키지",
+    "href": "R_lec_09_2025.html#그래프-echar4r-패키지",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "그래프: echar4r 패키지",
+    "text": "그래프: echar4r 패키지\n\n\nCode\nResult\n\n\n\n\nlibrary(tidyverse)\nlibrary(echarts4r)\nlibrary(RColorBrewer)\nmy.data &lt;- read_rds(\"D:/My R/Population Geography/wpp_2024.rds\")\nmy.data |&gt; \n  filter(\n    type == \"Region\"\n  ) |&gt; \n  distinct(region_name) |&gt; pull() -&gt; UN.region.name\n\ndata.sel &lt;- my.data |&gt; \n  filter(\n    type == \"Subregion\" | region_name == \"Northern America\",\n    year == 2025\n  )\ncustom_colors &lt;- brewer.pal(n = 6, name = \"Set2\")\ndata.sel |&gt; \n  arrange(median_age) |&gt; \n  mutate(\n    median_age = round(median_age, digits = 1)\n  ) |&gt; \n  group_by(Region_NM) |&gt; \n  e_charts(region_name) |&gt; \n  e_bar(serie = median_age, stack = \"grp\") |&gt; # stack 아규먼트가 두께를 크게 하는 핵심\n  e_color(custom_colors) |&gt; \n  e_flip_coords() |&gt; \n  e_x_axis(name = \"Median Age\") |&gt; \n  e_tooltip() |&gt; \n  e_legend()"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#테이블-flextable패키지",
+    "href": "R_lec_09_2025.html#테이블-flextable패키지",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "테이블: flextable패키지",
+    "text": "테이블: flextable패키지\n\n웹북(https://ardata-fr.github.io/flextable-book/)\n\n\nhttps://twitter.com/DavidGohel/status/1376892794627883016/photo/1"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#그래프-echarts4r-패키지",
+    "href": "R_lec_09_2025.html#그래프-echarts4r-패키지",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "그래프: echarts4r 패키지",
+    "text": "그래프: echarts4r 패키지\n\n\nCode\nResult\n\n\n\n\nlibrary(tidyverse)\nlibrary(echarts4r)\nlibrary(RColorBrewer)\nmy.data &lt;- read_rds(\"D:/My R/Population Geography/wpp_2024.rds\")\nmy.data |&gt; \n  filter(\n    type == \"Region\"\n  ) |&gt; \n  distinct(region_name) |&gt; pull() -&gt; UN.region.name\ndata.sel &lt;- my.data |&gt; \n  filter(\n    type == \"Subregion\" | region_name == \"Northern America\",\n    year == 2025\n  )\ncustom_colors &lt;- brewer.pal(n = 6, name = \"Set2\")\ndata.sel |&gt; \n  arrange(median_age) |&gt; \n  mutate(\n    median_age = round(median_age, digits = 1)\n  ) |&gt; \n  group_by(Region_NM) |&gt; \n  e_charts(region_name, width = \"100%\", height = \"800px\") |&gt; \n  e_bar(serie = median_age, stack = \"grp\") |&gt; \n  e_color(custom_colors) |&gt; \n  e_flip_coords() |&gt; \n  e_x_axis(name = \"Median Age\") |&gt; \n  e_tooltip() |&gt; \n  e_legend()"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#그래프-plotly-패키지의-ggplotly-함수",
+    "href": "R_lec_09_2025.html#그래프-plotly-패키지의-ggplotly-함수",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "그래프: plotly 패키지의 ggplotly() 함수",
+    "text": "그래프: plotly 패키지의 ggplotly() 함수\n\n\nCode\nResult\n\n\n\n\nP &lt;- gapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent)) +\n  geom_point() + \n  scale_color_brewer(palette = \"Set2\") +\n  theme_minimal()\nggplotly(P)"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#그래프-ggiraph-패키지",
+    "href": "R_lec_09_2025.html#그래프-ggiraph-패키지",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "그래프: ggiraph 패키지",
+    "text": "그래프: ggiraph 패키지\n\nggplot2 패키지의 확장\n\n상호작용형 기하객체(geometry): geom_*_interactive\n\ngeom_point(): geom_point_interactive()\ngeom_sf(): geom_sf_interactive()\n…\n\n\n\n상호작용형 시각속성(aethetics)\n\ntoolitp\nonclick\ndata_id\n\n\n웹북(https://www.ardata.fr/ggiraph-book/)"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#그래프-ggiraph-패키지-1",
+    "href": "R_lec_09_2025.html#그래프-ggiraph-패키지-1",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "그래프: ggiraph 패키지",
+    "text": "그래프: ggiraph 패키지\n\n\nCode\nResult\n\n\n\n\nlibrary(tidyverse)\nlibrary(ggiraph)\ndata &lt;- mtcars\ndata &lt;- data |&gt; rownames_to_column(var = \"carname\")\ngg_point = ggplot(data = data) +\n  geom_point_interactive(\n    aes(x = wt, y = qsec, color = disp, \n        tooltip = carname, data_id = carname)\n  ) + \n  theme_minimal()\ngirafe(ggobj = gg_point)"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#그래프-래퍼-패키지-활용",
+    "href": "R_lec_09_2025.html#그래프-래퍼-패키지-활용",
+    "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
+    "section": "그래프: 래퍼 패키지 활용",
+    "text": "그래프: 래퍼 패키지 활용\n\n\n\n\n\n\n자바스크립트 라이브러리\nR 래퍼 패키지\n\n\n\nPlotly\nplotly\n\n\nD3\nr2d3\n\n\nHighcharts\nhighcharter\n\n\nECharts\n\necharts4r, echarty\n\n\n\ndygraphs\ndygraphs\n\n\nGoogle Charts\ngoogleVis\n\n\nChart.js\nchartjs"
+  },
+  {
+    "objectID": "R_lec_09_2025.html#사례-1",
+    "href": "R_lec_09_2025.html#사례-1",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "사례 1",
+    "text": "사례 1\n\n통계놀이터(https://kosis.kr/edu/)\n\n\nCodeResult\n\n\n&lt;iframe src=\"https://kosis.kr/edu/share.do?shareID=S0500_16\" \nloading=\"lazy\" style=\"width: 100%; height: 600px; border: \n0px none;\" allow=\"web-share; clipboard-write\"&gt;&lt;/iframe&gt;",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#사례-2",
+    "href": "R_lec_09_2025.html#사례-2",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "사례 2",
+    "text": "사례 2\n\nOur World in Data(https://ourworldindata.org/)\n\n\nCodeResult\n\n\n&lt;iframe src=\"https://ourworldindata.org/explorers/population-and-demography?indicator=Fertility+rate&Sex=Both+sexes&Age=Total&Projection+scenario=Medium&country=Asia+%28UN%29~Europe+%28UN%29~Africa+%28UN%29~Oceania+%28UN%29~Northern+America+%28UN%29~Latin+America+and+the+Caribbean+%28UN%29~OWID_WRL~KOR&tab=chart&hideControls=true\" loading=\"lazy\" style=\"width: 70%; height: 600px; border: 0px none;\" allow=\"web-share; clipboard-write\"&gt;&lt;/iframe&gt;",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#개요",
+    "href": "R_lec_09_2025.html#개요",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "개요",
+    "text": "개요\n\n테이블 역시 시각화의 일부\n\n데이터 변형 및 요약을 거친 정적 테이블\n시각성이 가미된 정적 테이블\n인터랙티브 테이블\n\n테이블 디자인 원칙(핸즈온 데이터 시각화, 2022)\n\n열 제목을 데이터 상단에 눈에 띄게 만들어라.\n밝은 음영을 사용해 열이나 행을 구분하라.\n읽기 쉽도록 텍스트는 왼쪽 정렬하고 숫자는 오른쪽 정렬하라.\n레이블을 첫 번째 행에만 배치하여 중복을 피하라.\n테이터를 그룹화 및 정렬하여 의미 있는 패턴을 강조하라.",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#도구의-분류",
+    "href": "R_lec_09_2025.html#도구의-분류",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "도구의 분류",
+    "text": "도구의 분류\n\n\n\nhttps://r-graph-gallery.com/table.html",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#gt-패키지",
+    "href": "R_lec_09_2025.html#gt-패키지",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "gt 패키지",
+    "text": "gt 패키지\n\n\n\nhttps://gt.rstudio.com/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#gt-패키지-1",
+    "href": "R_lec_09_2025.html#gt-패키지-1",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "gt 패키지",
+    "text": "gt 패키지\n\n\n\nhttps://gt.rstudio.com/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#gt-패키지-2",
+    "href": "R_lec_09_2025.html#gt-패키지-2",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "gt 패키지",
+    "text": "gt 패키지\n\n\n\nhttps://towardsdatascience.com/exploring-the-gt-grammar-of-tables-package-in-r-7fff9d0b40cd",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#flextable패키지",
+    "href": "R_lec_09_2025.html#flextable패키지",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "flextable패키지",
+    "text": "flextable패키지\n\n웹북(https://ardata-fr.github.io/flextable-book/)\n\n\n\n\nhttps://twitter.com/DavidGohel/status/1376892794627883016/photo/1",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#인터랙티브-테이블",
+    "href": "R_lec_09_2025.html#인터랙티브-테이블",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "인터랙티브 테이블",
+    "text": "인터랙티브 테이블\n\n\n\n자바스크립트 라이브러리\nR 래퍼 패키지\n\n\n\n\nDataTables\nDT\n\n\nTanstack Table\nreactable",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#래퍼-패키지-dt",
+    "href": "R_lec_09_2025.html#래퍼-패키지-dt",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "래퍼 패키지: DT",
+    "text": "래퍼 패키지: DT\n\nDataTables: 자바스크립트 라이브러리\nR 래퍼 패키지: DT\n\n\n\n\nhttps://datatables.net/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#래퍼-패키지-dt-1",
+    "href": "R_lec_09_2025.html#래퍼-패키지-dt-1",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "래퍼 패키지: DT",
+    "text": "래퍼 패키지: DT\n\nPagination: 페이지 이동 기능\nInstant search: 즉각적 검색 기능(Search에 타이핑하기 시작하면 즉각적으로 검색 결과 보여줌)\nOrdering/sorging: 컬럼 정렬 기능\nMulti-column ordering: 다중 컬럼 정렬 기능(컬럼 하나를 선택한 후 ctrl을 누른 상태에서 다른 컬럼을 선택)\nFiltering: 값 추림 기능\nEditable: 셀 값 수정 기능\nButtons: 셀 숨기기 기능, CSV, PDF, XLSX 등의 확장자로 내보내기 등을 수행하는 버튼 생성 기능",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#래퍼-패키지-dt-2",
+    "href": "R_lec_09_2025.html#래퍼-패키지-dt-2",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "래퍼 패키지: DT",
+    "text": "래퍼 패키지: DT\n\nCodeResult\n\n\n\ngapminder |&gt; \n  datatable(\n    filter = \"top\",\n    extensions = \"Buttons\",\n    options = list(\n      pageLength = 5,\n      autoWidth = TRUE,\n      dom = \"Bfrtip\",\n      buttons = c(\"copy\", \"excel\", \"pdf\", \"print\")\n    )\n  )",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#r-패키지-gganimate",
+    "href": "R_lec_09_2025.html#r-패키지-gganimate",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "R 패키지: gganimate",
+    "text": "R 패키지: gganimate\n\nCodeResult\n\n\n\nlibrary(gganimate)\nP &lt;- gapminder |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, size = pop, color = continent)) +\n  geom_point(show.legend = FALSE, alpha = 0.7) +\n  scale_x_log10() +\n  scale_size(range = c(2, 12))\nP + transition_time(year) +\n  labs(title = \"Year: {frame_time}\")",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#r-패키지-ggiraph-패키지",
+    "href": "R_lec_09_2025.html#r-패키지-ggiraph-패키지",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "R 패키지: ggiraph 패키지",
+    "text": "R 패키지: ggiraph 패키지\n\nggplot2 패키지의 확장\n상호작용형 기하객체(geometry): geom_*_interactive\n\ngeom_point(): geom_point_interactive()\ngeom_sf(): geom_sf_interactive()\n…\n\n상호작용형 시각속성(aethetics)\n\ntoolitp\nonclick\ndata_id\n\n웹북(https://www.ardata.fr/ggiraph-book/)",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#r-패키지-ggiraph-패키지-1",
+    "href": "R_lec_09_2025.html#r-패키지-ggiraph-패키지-1",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "R 패키지: ggiraph 패키지",
+    "text": "R 패키지: ggiraph 패키지\n\nCodeResult\n\n\n\nlibrary(tidyverse)\nlibrary(ggiraph)\ndata &lt;- mtcars\ndata &lt;- data |&gt; rownames_to_column(var = \"carname\")\ngg_point = ggplot(data = data) +\n  geom_point_interactive(\n    aes(x = wt, y = qsec, color = disp, \n        tooltip = carname, data_id = carname)\n  ) + \n  theme_minimal()\ngirafe(ggobj = gg_point)",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#래퍼-패키지-활용",
+    "href": "R_lec_09_2025.html#래퍼-패키지-활용",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "래퍼 패키지 활용",
+    "text": "래퍼 패키지 활용\n\n\n\n\n\n\n\n자바스크립트 라이브러리\nR 래퍼 패키지\n\n\n\n\nPlotly\nplotly\n\n\nD3\nr2d3\n\n\nHighcharts\nhighcharter\n\n\nECharts\necharts4r, echarty\n\n\ndygraphs\ndygraphs\n\n\nGoogle Charts\ngoogleVis\n\n\nChart.js\nchartjs",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#래퍼-패키지-plotly-패키지",
+    "href": "R_lec_09_2025.html#래퍼-패키지-plotly-패키지",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "래퍼 패키지: plotly 패키지",
+    "text": "래퍼 패키지: plotly 패키지\n\nPlotly: 자바스크립트 라이브러리\nR 래퍼 패키지: plotly package\n\nggplotly() 함수\n\n\n\n\n\nhttps://plotly.com/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#래퍼-패키지-plotly-패키지-1",
+    "href": "R_lec_09_2025.html#래퍼-패키지-plotly-패키지-1",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "래퍼 패키지: plotly 패키지",
+    "text": "래퍼 패키지: plotly 패키지\n\nCodeResult\n\n\n\nlibrary(plotly)\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  plot_ly(\n    x = ~gdpPercap, \n    y = ~lifeExp, \n    color = ~continent,\n    text = ~paste(\n      \"Country: \", country, \n      \"&lt;br&gt;GDP per capita: \", gdpPercap, \n      \"$&lt;br&gt;Life Expectancy at Birth:\", lifeExp\n    )\n  )",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#래퍼-패키지-plotly-패키지-2",
+    "href": "R_lec_09_2025.html#래퍼-패키지-plotly-패키지-2",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "래퍼 패키지: plotly 패키지",
+    "text": "래퍼 패키지: plotly 패키지\n\nCodeResult\n\n\n\ngapminder |&gt; \n  plot_ly(\n    x = ~log10(gdpPercap), y = ~lifeExp,\n    text = ~paste(\n      \"Country:\", country, \n      \"&lt;/br&gt;Continent:\", continent, \n      \"&lt;/br&gt;lifeExp:\", lifeExp\n    )\n  ) |&gt; \n  add_markers(\n    color = ~continent, \n    size = ~pop, \n    frame = ~year, \n    marker = list(sizeref = 0.2, sizemode = \"area\")\n  )",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#래퍼-패키지-plotly-패키지의-ggplotly-함수",
+    "href": "R_lec_09_2025.html#래퍼-패키지-plotly-패키지의-ggplotly-함수",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "래퍼 패키지: plotly 패키지의 ggplotly() 함수",
+    "text": "래퍼 패키지: plotly 패키지의 ggplotly() 함수\n\nCodeResult\n\n\n\nP &lt;- gapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent)) +\n  geom_point() + \n  scale_color_brewer(palette = \"Set2\") +\n  theme_minimal()\nggplotly(P)",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#래퍼-패키지-echarts4r-패키지",
+    "href": "R_lec_09_2025.html#래퍼-패키지-echarts4r-패키지",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "래퍼 패키지: echarts4r 패키지",
+    "text": "래퍼 패키지: echarts4r 패키지\n\nCodeResult\n\n\n\nlibrary(tidyverse)\nlibrary(echarts4r)\nlibrary(RColorBrewer)\nmy.data &lt;- read_rds(\"D:/My R/Population Geography/wpp_2024.rds\")\nmy.data |&gt; \n  filter(\n    type == \"Region\"\n  ) |&gt; \n  distinct(region_name) |&gt; pull() -&gt; UN.region.name\ndata.sel &lt;- my.data |&gt; \n  filter(\n    type == \"Subregion\" | region_name == \"Northern America\",\n    year == 2025\n  )\ncustom_colors &lt;- brewer.pal(n = 6, name = \"Set2\")\ndata.sel |&gt; \n  arrange(median_age) |&gt; \n  mutate(\n    median_age = round(median_age, digits = 1)\n  ) |&gt; \n  group_by(Region_NM) |&gt; \n  e_charts(region_name, width = \"100%\", height = \"800px\") |&gt; \n  e_bar(serie = median_age, stack = \"grp\") |&gt; \n  e_color(custom_colors) |&gt; \n  e_flip_coords() |&gt; \n  e_x_axis(name = \"Median Age\") |&gt; \n  e_tooltip() |&gt; \n  e_legend()",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "lab_08_2025.html",
+    "href": "lab_08_2025.html",
+    "title": "데이터 수집하기",
+    "section": "",
+    "text": "이 실습은 R로 데이터를 수집하는 과정을 다룬다. R을 활용한 데이터 수집은 다양한 방법으로 진행될 수 있지만 여기서는 웹상의 데이터 파일 불러오기, 웹 스크레이핑, API를 이용하는 방식에 집중한다. 실습의 시작은 tidyverse 패키지를 불러오는 것이다.",
+    "crumbs": [
+      "R 실습: 2025/2",
+      "Lab07: 데이터 수집하기"
+    ]
+  },
+  {
+    "objectID": "lab_08_2025.html#실습-개요",
+    "href": "lab_08_2025.html#실습-개요",
+    "title": "데이터 수집하기",
+    "section": "",
+    "text": "이 실습은 R로 데이터를 수집하는 과정을 다룬다. R을 활용한 데이터 수집은 다양한 방법으로 진행될 수 있지만 여기서는 웹상의 데이터 파일 불러오기, 웹 스크레이핑, API를 이용하는 방식에 집중한다. 실습의 시작은 tidyverse 패키지를 불러오는 것이다.",
+    "crumbs": [
+      "R 실습: 2025/2",
+      "Lab07: 데이터 수집하기"
+    ]
+  },
+  {
+    "objectID": "lab_08_2025.html#웹상의-데이터-파일-불러오기",
+    "href": "lab_08_2025.html#웹상의-데이터-파일-불러오기",
+    "title": "데이터 수집하기",
+    "section": "\n1 웹상의 데이터 파일 불러오기",
+    "text": "1 웹상의 데이터 파일 불러오기\n\nlibrary(tidyverse)\n\n아마도 데이터를 수집하는 가장 단순한 방법은 웹상에 파일 형태로 존재하는 데이터를 R에서 불러오는 것일 것이다. readr 패키지에서 제공하는 다양한 데이터 불러오기 함수(예: read_csv())를 데이터의 URL에 적용하면 손쉽게 데이터를 획득할 수 있다.\n\nstudents &lt;- read_csv(\"https://pos.it/r4ds-students-csv\")\nstudents\n\n# A tibble: 6 × 5\n  `Student ID` `Full Name`      favourite.food     mealPlan            AGE  \n         &lt;dbl&gt; &lt;chr&gt;            &lt;chr&gt;              &lt;chr&gt;               &lt;chr&gt;\n1            1 Sunil Huffmann   Strawberry yoghurt Lunch only          4    \n2            2 Barclay Lynn     French fries       Lunch only          5    \n3            3 Jayendra Lyne    N/A                Breakfast and lunch 7    \n4            4 Leon Rossini     Anchovies          Lunch only          &lt;NA&gt; \n5            5 Chidiegwu Dunkel Pizza              Breakfast and lunch five \n6            6 Güvenç Attila    Ice cream          Lunch only          6    \n\n\n그런데 엑셀 형식의 파일은 readxl 패키지가 제공하는 read_excel() 함수를 이용해 막바로 데이터를 불러오는 것이 불가능하다. openxlsx 패키지는 이러한 문제를 해결할 수 있게 해준다. 정말 다양한 함수를 제공하지만 read.xlsx() 함수가 URL을 통해 엑셀 데이터를 불러오는데 사용된다.\n\nlibrary(openxlsx)\nxlsx_data &lt;- read.xlsx(\"https://github.com/awalker89/openxlsx/raw/master/inst/readTest.xlsx\")\nxlsx_data\n\n    Var1 Var2   Var3 Var4  Var5         Var6 Var7\n1   TRUE    1   1.00    a 42042 3209324 This   NA\n2   TRUE   NA     NA    b 42041         &lt;NA&gt;   NA\n3   TRUE    2   1.34    c 42040         &lt;NA&gt;   NA\n4  FALSE    2     NA &lt;NA&gt;    NA         &lt;NA&gt;   NA\n5  FALSE    3   1.56    e    NA         &lt;NA&gt;   NA\n6  FALSE    1   1.70    f 42037         &lt;NA&gt;   NA\n7     NA   NA     NA &lt;NA&gt; 42036         &lt;NA&gt;   NA\n8  FALSE    2  23.00    h 42035         &lt;NA&gt;   NA\n9  FALSE    3  67.30    i 42034         &lt;NA&gt;   NA\n10    NA    1 123.00 &lt;NA&gt; 42033         &lt;NA&gt;   NA",
+    "crumbs": [
+      "R 실습: 2025/2",
+      "Lab07: 데이터 수집하기"
+    ]
+  },
+  {
+    "objectID": "lab_08_2025.html#웹스크레이핑",
+    "href": "lab_08_2025.html#웹스크레이핑",
+    "title": "데이터 수집하기",
+    "section": "\n2 웹스크레이핑",
+    "text": "2 웹스크레이핑\n웹스크레이핑(web scraping)이란 웹페이지로부터 특정한 데이터를 추출하는 것을 의미한다. R에서 웹스크레이핑은 rvest 패키지가 담당하는데, reaxl 패키지와 마찬가지로 tidyverse의 핵심 패키지는 아니기 때문에 따로 불러와야 한다.\n\nlibrary(rvest)\n\n\n2.1 웹스크레이핑의 실제 1: 테이블이 하나 있는 경우\n위키피디어의 한 항목(List of countries and dependencies by population)에는 표 하나가 포함되어 있다. 해당 표의 데이터를 수집한다.\n\nurl &lt;- \"https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population\"\nmy_table &lt;- url |&gt; \n  read_html() |&gt; \n  html_element(\"table\") |&gt; \n  html_table()\nmy_table\n\n# A tibble: 240 × 6\n   Location      Population    `% ofworld` Date     Source (official or …¹ Notes\n   &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;                  &lt;chr&gt;\n 1 World         8,232,000,000 100%        13 Jun … UN projection[1][3]    \"\"   \n 2 India         1,417,492,000 17.3%       1 Jul 2… Official projection[4] \"[b]\"\n 3 China         1,408,280,000 17.2%       31 Dec … Official estimate[5]   \"[c]\"\n 4 United States 340,110,988   4.1%        1 Jul 2… Official estimate[6]   \"[d]\"\n 5 Indonesia     284,438,782   3.5%        30 Jun … National annual proje… \"\"   \n 6 Pakistan      241,499,431   2.9%        1 Mar 2… 2023 census result[8]  \"[e]\"\n 7 Nigeria       223,800,000   2.7%        1 Jul 2… Official projection[9] \"\"   \n 8 Brazil        213,421,037   2.6%        1 Jul 2… Official estimate[10]  \"\"   \n 9 Bangladesh    169,828,911   2.1%        14 Jun … 2022 census result[11] \"[f]\"\n10 Russia        146,028,325   1.8%        1 Jan 2… Official estimate[13]  \"[g]\"\n# ℹ 230 more rows\n# ℹ abbreviated name: ¹​`Source (official or fromthe United Nations)`\n\n\n수집한 데이터를 가공해본다. 필요없는 컬럼을 제거하고, 컬럼 이름을 바꾸고, 몇몇 변수를 특정 형태의 타입(numeric, date)으로 변환하기 위한 과정이다.\n\nmy_table &lt;- my_table |&gt; \n  select(-6) |&gt; \n  rename(\n    location = \"Location\",\n    population = \"Population\",\n    pop_pct = \"% ofworld\",\n    date = \"Date\",\n    source = \"Source (official or fromthe United Nations)\"\n  ) |&gt; \n  mutate(\n    population = str_remove_all(population, \",\"),\n    population = as.numeric(population),\n    pop_pct = str_remove(pop_pct, \"%\"),\n    pop_pct = as.numeric(pop_pct),\n    date = dmy(date)\n  )\n\nmy_table\n\n# A tibble: 240 × 5\n   location      population pop_pct date       source                       \n   &lt;chr&gt;              &lt;dbl&gt;   &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;                        \n 1 World         8232000000   100   2025-06-13 UN projection[1][3]          \n 2 India         1417492000    17.3 2025-07-01 Official projection[4]       \n 3 China         1408280000    17.2 2024-12-31 Official estimate[5]         \n 4 United States  340110988     4.1 2024-07-01 Official estimate[6]         \n 5 Indonesia      284438782     3.5 2025-06-30 National annual projection[7]\n 6 Pakistan       241499431     2.9 2023-03-01 2023 census result[8]        \n 7 Nigeria        223800000     2.7 2023-07-01 Official projection[9]       \n 8 Brazil         213421037     2.6 2025-07-01 Official estimate[10]        \n 9 Bangladesh     169828911     2.1 2022-06-14 2022 census result[11]       \n10 Russia         146028325     1.8 2025-01-01 Official estimate[13]        \n# ℹ 230 more rows\n\n\n\n\n\n\n\n\n노트유용한 문자열 함수\n\n\n\n\n\n코드에 포함된 parse_number()과 str_remove_all() 함수는 매우 유용한 함수이므로 잘 익혀 둘 필요가 있다. parse_number()함수는 readr 패키지에 포함되어 있는 것으로, 투입 벡터에서 오로지 숫자만 골라내 실수형 벡터를 생성해준다. 위의 예를 보자면, my_table 데이터 프레임의 population 컬럼은 인구수와 콤마가 결합된 문자형 벡터이므로 콤마를 제거하고 숫자만 추출할 필요가 있다. 유사한 함수에 parse_logical(), parse_integer(), parse_double(), parse_character(), parse_factor() 등이 있다. str_remove_all() 함수는 tidyverse의 핵심 패키지 중의 하나인 stringr 패키지에 포함되어 있는 것으로, 투입 벡터에서 특정한 문자나 문자 패턴을 제거해 준다. 위의 예를 보자면, my_table 데이터 프레임의 pop_pct 컬럼에는 %라는 부호가 포함되어 있기 때문에 그것을 제거할 필요가 있다. 그러므로 str_remove_all() 함수는 셀에 포함되어 있는 특정 문자 모두를 제거할 때 사용할 수 있는 함수이다. 유사한 함수에 str_remove()도 있는데, 이것은 셀에 포함되어 있는 특정 문자 중 단지 첫 번째 것만 제거한다. 문자열을 잘 다루려면 정규표현식(regular expression)에 대한 상당한 이해가 있어야 한다. 다음의 링크가 도움이 될 수 있을 것이다. https://bookdown.org/ahn_media/bookdown-demo/cleantool.html#%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9Dregular-expressions\n\n\n\n\n2.2 웹스크레이핑의 실제 2: 테이블이 둘 이상인 경우\n위키피디아의 한 항목(List of FIPS country codes)에는 동일한 내용에 대해 여러 개의 표가 나타나 있다. 개별 표의 데이터를 수집한 후 결합하여 단일한 데이터 프레임을 구성한다.\n\nurl &lt;- \"https://en.wikipedia.org/wiki/List_of_FIPS_country_codes\"\nmy_tables &lt;- url |&gt; \n  read_html() |&gt; \n  html_elements(\"table\") |&gt; # 'element'가 아니라 'elements'이다.\n  html_table() |&gt; \n  bind_rows()\nmy_tables\n\n# A tibble: 277 × 10\n   Code    `Short-form name` .mw-parser-output .n…¹ .mw-parser-output .n…² ...3 \n   &lt;chr&gt;   &lt;chr&gt;             &lt;chr&gt;                  &lt;chr&gt;                  &lt;chr&gt;\n 1 .mw-pa… Aruba             &lt;NA&gt;                   &lt;NA&gt;                   &lt;NA&gt; \n 2 AC      Antigua and Barb… &lt;NA&gt;                   &lt;NA&gt;                   &lt;NA&gt; \n 3 AD      Akrotiri          &lt;NA&gt;                   &lt;NA&gt;                   &lt;NA&gt; \n 4 AE      United Arab Emir… &lt;NA&gt;                   &lt;NA&gt;                   &lt;NA&gt; \n 5 AF      Afghanistan       &lt;NA&gt;                   &lt;NA&gt;                   &lt;NA&gt; \n 6 AG      Algeria           &lt;NA&gt;                   &lt;NA&gt;                   &lt;NA&gt; \n 7 AJ      Azerbaijan        &lt;NA&gt;                   &lt;NA&gt;                   &lt;NA&gt; \n 8 AL      Albania           &lt;NA&gt;                   &lt;NA&gt;                   &lt;NA&gt; \n 9 AM      Armenia           &lt;NA&gt;                   &lt;NA&gt;                   &lt;NA&gt; \n10 AN      Andorra           &lt;NA&gt;                   &lt;NA&gt;                   &lt;NA&gt; \n# ℹ 267 more rows\n# ℹ abbreviated names:\n#   ¹​`.mw-parser-output .navbar{display:inline;font-size:88%;font-weight:normal}.mw-parser-output .navbar-collapse{float:left;text-align:left}.mw-parser-output .navbar-boxtext{word-spacing:0}.mw-parser-output .navbar ul{display:inline-block;white-space:nowrap;line-height:inherit}.mw-parser-output .navbar-brackets::before{margin-right:-0.125em;content:\"[ \"}.mw-parser-output .navbar-brackets::after{margin-left:-0.125em;content:\" ]\"}.mw-parser-output .navbar li{word-spacing:-0.125em}.mw-parser-output .navbar a&gt;span,.mw-parser-output .navbar a&gt;abbr{text-decoration:inherit}.mw-parser-output .navbar-mini abbr{font-variant:small-caps;border-bottom:none;text-decoration:none;cursor:inherit}.mw-parser-output .navbar-ct-full{font-size:114%;margin:0 7em}.mw-parser-output .navbar-ct-mini{font-size:114%;margin:0 4em}html.skin-theme-clientpref-night .mw-parser-output .navbar li a abbr{color:var(--color-base)!important}@media(prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .navbar li a abbr{color:var(--color-base)!important}}@media print{.mw-parser-output .navbar{display:none!important}}vteGeocode systems...1`,\n#   ²​`.mw-parser-output .navbar{display:inline;font-size:88%;font-weight:normal}.mw-parser-output .navbar-collapse{float:left;text-align:left}.mw-parser-output .navbar-boxtext{word-spacing:0}.mw-parser-output .navbar ul{display:inline-block;white-space:nowrap;line-height:inherit}.mw-parser-output .navbar-brackets::before{margin-right:-0.125em;content:\"[ \"}.mw-parser-output .navbar-brackets::after{margin-left:-0.125em;content:\" ]\"}.mw-parser-output .navbar li{word-spacing:-0.125em}.mw-parser-output .navbar a&gt;span,.mw-parser-output .navbar a&gt;abbr{text-decoration:inherit}.mw-parser-output .navbar-mini abbr{font-variant:small-caps;border-bottom:none;text-decoration:none;cursor:inherit}.mw-parser-output .navbar-ct-full{font-size:114%;margin:0 7em}.mw-parser-output .navbar-ct-mini{font-size:114%;margin:0 4em}html.skin-theme-clientpref-night .mw-parser-output .navbar li a abbr{color:var(--color-base)!important}@media(prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .navbar li a abbr{color:var(--color-base)!important}}@media print{.mw-parser-output .navbar{display:none!important}}vteGeocode systems...2`\n# ℹ 5 more variables: ...4 &lt;chr&gt;, ...5 &lt;chr&gt;, ...6 &lt;chr&gt;, X1 &lt;chr&gt;, X2 &lt;chr&gt;\n\n\n수집한 데이터를 약간 가공한다. 역시 필요한 컬럼만 남기고, 이름을 바꿔준다. 마지막 str_extract는 Aruba의 단축어에 원치 않는 문자열이 추가되어 있어 제거하기 위한 코드이다.\n\nmy_tables &lt;- my_tables |&gt; \n  select(1, 2) |&gt; \n  rename(\n    code = \"Code\", \n    short_name = \"Short-form name\"\n  ) |&gt; \n  mutate(\n    code = str_extract(code, \"[A-Z][A-Z]\") # 알파벳 두 개가 연결되어 있는 것을 추출\n  )\nmy_tables\n\n# A tibble: 277 × 2\n   code  short_name          \n   &lt;chr&gt; &lt;chr&gt;               \n 1 AA    Aruba               \n 2 AC    Antigua and Barbuda \n 3 AD    Akrotiri            \n 4 AE    United Arab Emirates\n 5 AF    Afghanistan         \n 6 AG    Algeria             \n 7 AJ    Azerbaijan          \n 8 AL    Albania             \n 9 AM    Armenia             \n10 AN    Andorra             \n# ℹ 267 more rows\n\n\n\n\n\n\n\n\n힌트추가 예제\n\n\n\n\n\n간혹 테이블을 불러올 때 데이터가 깨지는 경우도 발생한다. 이는 인코딩 방식의 문제인데, 아래와 같이 인코딩 아규먼트를 추가하면 해결된다. 보통 “EUC-KR”이나 “UTF-8” 둘 중 하나는 제대로 작동한다.\n한 번 네이버가 제공하는 주식 거래 상위 품목을 크롤링해보자.\n\nlibrary(DT)\nkospi &lt;- \"https://finance.naver.com/sise/sise_quant.naver?sosok=0\"\n\nkospi_table &lt;- kospi |&gt; \n  read_html(, encoding = \"EUC-KR\") |&gt; \n  html_elements(\"table\") |&gt; \n  html_table() |&gt; \n  _[[2]] |&gt; \n  filter(is.na(N) == FALSE)\n\ndatatable(kospi_table)",
+    "crumbs": [
+      "R 실습: 2025/2",
+      "Lab07: 데이터 수집하기"
+    ]
+  },
+  {
+    "objectID": "lab_08_2025.html#api의-활용",
+    "href": "lab_08_2025.html#api의-활용",
+    "title": "데이터 수집하기",
+    "section": "\n3 API의 활용",
+    "text": "3 API의 활용\nKOSIS를 포함한 많은 대한민국의 데이터 포털은 개방 API 서비스를 제공하고 있다. KOSIS는 공유서비스 홈페이지(https://kosis.kr/openapi/)를 통해 Open API를 통한 데이터 수집을 권장하고 있다.\n앞에서 설명한 것처럼, API용 패키지를 직접 사용할 수도 있지만, 래퍼 패키지가 존재하기만 한다면 그것을 활용하는 것이 훨씬 손쉬운 옵션일 수 있다. 놀랍게도 한국의 주석훈(Seokhoon Joo)이라는 분이 그러한 기능을 하는 kosis(https://cran.r-project.org/web/packages/kosis/index.html)라는 패키지를 이미 개발해 두었고, 그것을 활용하고자 한다.\n실습 주제는 2024년 센서스 인구 기준으로 전국의 17개 시도별 ’지방소멸위험지수’를 계산하고 그래프의 형태로 표현하는 것이다.\n\n3.1 KOSIS에서 API KEY 받기\n먼저 API를 활용하기 위해 기관으로부터 KEY를 발급받아야 한다. 이를 위해 통계청에 회원가입을 한 후, KEY를 요청해야 한다. 과정은 아래와 같다.\n\nKOSIS 공유서비스 웹페이지(https://kosis.kr/openapi/) 접속\n\n상단의 [활용신청] 탭 클릭\n\n통계청의 ONE-ID로 통합로그인(없으면 회원가입 필수)\n\n\n\n활용신청하여 사용자 인증키 획득\n\n사용자 인증키는 마이페이지에서 언제든 확인 가능\n\n\n\n3.2 패키지 설치 및 인증키 등록\n우선 kosis 패키지를 오른쪽 하단 윈도우의 Packages 탭을 활용하여 인스톨한다. 이후에 아래와 같이 kosis와 tidyverse 패키지를 불러온다.\n\nlibrary(kosis)\n\n다음으로, kosis 패키지의 kosis.setKey() 함수를 이용하여 인증키를 등록한다. Your Key Here 자리에 부여받은 인증키를 붙여 넣는다.\n\nkosis.setKey(apiKey = \"Your Key Here\")\n\n\n3.3 데이터 추출\n이제 통계청 홈페이지에 접속해서 데이터를 불러와본다. 과정은 아래와 같다.\n\nKOSIS에 접속 후 로그인\n\n데이터에 접근 후 URL 생성\n\n[국내통계]-[주제별 통계]-[인구]-[인구총조사]-[인구부문]-[총조사인구(2015년 이후)]-[전수부문 (등록센서스, 2015년 이후)]-[전수기본표]-[연령 및 성별 인구]\n항목: ‘총인구(명)’, ‘총인구_남자(명)’, ’총인구_여자(명)’만 선택(더 많은 항목을 선택하면 데이터가 너무 커 에러가 발생)\n행정구역별(읍면동): ‘1 레벨’과 ’2 레벨’ 선택(’1 레벨’은 시도 수준, ’2 레벨’은 시군구 수준)\n조회기간: ‘기간설정’ 버튼을 누른 후, 기간설정이 2024~2024년인지 확인한다.\n응답필드: 하나씩 눌러 모두 선택한 후, ‘URL생성’ 탭을 클릭한다. 그리고 나서 ‘URL 복사’ 탭을 클릭한다. URL 속에 api key가 포함되어 있음을 확인한다.\n\n\n생성한 URL로부터 데이터 획득\n\n\nyour_url &lt;- \"Your URL\"\ndata_api &lt;- getStatDataFromURL(url = your_url)\n\ngetStatDataFromURL 함수의 아규먼트에 위에서 생성한 URL을 입력하면, 다운로드 과정 없이 곧바로 데이터를 획득할 수 있다.\n\n3.4 데이터 정리 및 변형\n아래와 같이 데이터를 정리 및 변형한다. 최종적으로 지역별 지역소멸위험지수를 산출한다.\n\ndata &lt;- data_api |&gt; \n  select(C1, C1_NM, C2_NM, ITM_ID, DT) |&gt; \n  # C1: 행정구역 코드 / C1_NM: 행정구역 이름 \n  # C2: 연령 코드 / C2_NM: 연령대\n  # ITM_ID: 성별 코드 / DT: 인구 수\n  mutate(\n    DT = na_if(DT, \"X\"),\n    across(c(C1, DT), as.numeric),\n    ITM_ID = case_match(\n    ITM_ID,\n    \"T00\" ~ \"T\",\n    \"T01\" ~ \"M\",\n    \"T02\" ~ \"F\"),\n  ) |&gt;\n  unite(\"gender_age\", ITM_ID, C2_NM, sep = \"_\") |&gt; \n  pivot_wider(\n    id_cols = c(C1, C1_NM),\n    names_from = gender_age,\n    values_from = DT\n  ) |&gt; \n  mutate(\n    index = (`F_20~24세` + `F_25~29세` + `F_30~34세` + `F_35~39세`) / `T_65세이상`\n  ) |&gt; \n  select(\n    C1, C1_NM, index\n  )\n\n\n\n\n\n\n\n노트결측치 처리 함수\n\n\n\n\n\nna_if() 함수는 두 개의 인수를 받는데, 첫번째는 벡터(혹은 열), 두번째는 특정 값이다. 두 값을 받아 해당 열의 특정 값을 결측치로 바꾸는 역할을 한다. 여기서는 DT 열에 포함된 ’X’라는 값을 결측치로 바꿔 분석에서 제외했다. 반대로, replace_na()라는 함수는 이미 NA(결측치)로 되어 있는 값을 다른 값으로 채울 때 사용된다.\n\n\n\n시도 데이터와 시군구 데이터를 분리하여 저장한다.\n\ndata_sido &lt;- data |&gt; \n  filter(nchar(C1) == 2) \n\ndata_sgg &lt;- data |&gt; \n  filter(nchar(C1) == 5 & substr(C1, 5, 5) == 0 & !C1_NM %in% c(\"동부\", \"면부\", \"읍부\"))\n\n\n3.5 그래프 작성\n인구소멸위험지수 연구에서 주로 사용되는 5개의 위험도 클래스의 구분법을 적용하고, 위험도 클래스별로 특정한 색상을 적용하고, 그래프의 범례에 5개의 클래스가 모두 나타나게 하려다보니 코드가 조금 복잡해졌다. \n\ndata_sido &lt;- data_sido |&gt; \n  mutate(\n    index_class = case_when(\n      index &lt; 0.2 ~ \"1\",\n      index &gt;= 0.2 & index &lt; 0.5 ~ \"2\",\n      index &gt;= 0.5 & index &lt; 1.0 ~ \"3\",\n      index &gt;= 1.0 & index &lt; 1.5 ~ \"4\",\n      index &gt;= 1.5 ~ \"5\"\n    ),\n    index_class = factor(index_class, levels = as.character(1:5))\n  )\n\nclass_color &lt;- c(\"1\" = \"#d7191c\", \"2\" = \"#fdae61\",\n                 \"3\" = \"#ffffbf\", \"4\" = \"#a6d96a\", \n                 \"5\" = \"#1a9641\")\ndata_sido |&gt; \n  ggplot(aes(x = index, y = fct_reorder(C1_NM, index))) +\n  geom_col(aes(fill = index_class), show.legend = TRUE) +\n  geom_text(aes(label = format(round(index, digits = 3), \n                               nsmall = 3)), hjust = -0.1) +\n  scale_x_continuous(limits = c(0, 1.5)) +\n  scale_fill_manual(name = \"Classes\", \n                    labels = c(\"&lt; 0.2\", \"0.2 ~ 0.5\", \"0.5 ~ 1.0\", \n                               \"1.0 ~ 1.5\", \"&gt;= 1.5\"), \n                    values = class_color, drop = FALSE) +\n  labs(title = \"인구소멸위험지수, 2024년\", \n       x = \"인구소멸위험지수\", \n       y = \"\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n힌트KOSIS API의 추가 예제\n\n\n\n\n\n이렇게 KOSIS 홈페이지에서 URL을 직접 지정하지 않고도 데이터를 불러오는 방법이 있다. getStatData 함수로, 기관명과 데이터 코드를 아규먼트에 입력하면 해당 데이터를 불러올 수 있다. 가령 방금 실습에서 사용한 데이터는 통계청의 2015년 인구총조사 전수부문의 연령 및 성별인구에 해당한다. 이때 통계청의 기관 코드는 101, 해당 데이터의 코드는 DT_1IN503이다.\n아래의 코드는 여기에 몇 개의 아규먼트를 더 추가하여 서울특별시 종로구의 2015년부터 2022년까지의 데이터를 불러오고, 이를 바탕으로 인구소멸지수를 계산하여 그 추이를 시각화 한 것이다.\n\naoi_code &lt;- \"11010\" # 서울특별시 종로구 코드\naoi &lt;- getStatData(orgId = 101, tblId = \"DT_1IN1503\", prdSe = \"Y\",\n                    startPrdDe = \"2015\", endPrdDe = \"2024\",\n                    objL1 = aoi_code, objL2 = \"ALL\") |&gt; \n  filter(nchar(C2) == 3)\n\naoi &lt;- aoi |&gt; \n  select(C1, C1_NM, C2, C2_NM, ITM_ID, ITM_NM, DT, PRD_DE) |&gt; \n  filter(ITM_ID == \"T00\" | ITM_ID == \"T01\" | ITM_ID == \"T02\") |&gt; \n  mutate(\n    DT = na_if(DT, \"X\"),\n    across(c(C1, DT), as.numeric),\n    ITM_ID = case_match(\n      ITM_ID, \"T00\" ~ \"T\",\n      \"T01\" ~ \"M\",\n      \"T02\" ~ \"F\"),\n  ) |&gt; \n  unite(\"gender_age\", ITM_ID, C2_NM, sep = \"_\") |&gt; \n  pivot_wider(\n    id_cols = c(C1, C1_NM, PRD_DE),\n    names_from = gender_age,\n    values_from = DT\n  ) |&gt; \n  mutate(\n    index = (`F_20~24세` + `F_25~29세` + `F_30~34세` + `F_35~39세`) / `T_65세이상`\n  ) |&gt; \n  select(\n    C1, C1_NM, index, PRD_DE\n  )\n\nregion &lt;- aoi$C1_NM[1]\n\n\naoi |&gt; \n  ggplot(aes(x=PRD_DE, y=index)) +\n  geom_point() +\n  geom_line(group = 1, linewidth = 0.5) +\n  ggtitle(paste0(region, \" 인구소멸위험지수 추이\")) +\n  xlab(label = \"연도\") +\n  ylab(label = \"인구소멸위험지수\") +\n  theme(plot.title = element_text(size = 18, hjust=0.5))\n\n\n\n\n\n\n\naoi_code에 내가 원하는 지역의 코드를 넣으면 마찬가지로 해당 관심지역의 인구소멸위험지수 추이를 관측할 수 있다. 예컨대 인구가 빠르게 증가하는 경기 김포시는 “31230”, 화성시는 “31240”이고, 소멸지수가 가장 높은 경북 상주시는 “37080”, 경북 문경시는 “37090”이다. 제공한 코드에서 한번 aoi_code 부분만 변경해보자.\n한편, 이렇게 URL 없이 데이터를 불러오는 경우 KOSIS에서 직접 조정하는 것에 비해 덜 번거롭지만 제한사항도 많다. 가령 복수의 지역을 불러오는 것이 반복문을 사용하지 않고서는 불가능하고, 불필요한 데이터를 빼고 가져오기도 어렵다. 그러나 startPrdDe와 endPrdDe 아규먼트를 이용해 데이터를 시계열로 수집하고자 하는 측면에서는 유용하다.\n그러므로 수집하고자 하는 데이터를 잘 파악해서 API를 활용해보자.\n\n\n\n\n3.6 cf) KOSIS API를 활용한 함수 작성\n마지막으로, API를 활용한 함수를 소개한다. API를 신청할 때 보았듯, 이는 웹/앱 애플리케이션을 제작하기 위한 용도로 주로 사용된다.\n이와 관련된 매우 간단한 예시로, 학생에게 인구소멸지수가 궁금한 지역을 검색해보도록 하는 활동을 구상한다고 가정해보자. 학생이 매번 코드를 작성하며 확인하기란 사실상 불가능하다. 그런데 위에서 사용한 코드와 API를 활용하면 함수를 어렵지 않게 생성할 수 있다.\n예컨대 교사가 아래와 같이 exInd() 함수를 한번 작성해두면, 학생은 단 한 줄의 코드만 입력해도 금방 지역의 인구소멸지수의 추이를 탐색해볼 수 있을 것이다.\n\n# 함수 생성: 교사 작성 부분\nexInd &lt;- function(){\n  # Library\n  library(tidyverse)\n  library(kosis)\n  library(DT)\n  library(openxlsx)\n  \n  # Table for Searching Region Code\n  region_table &lt;- read.xlsx(\"https://github.com/Sechang-Kim/gis-lab/raw/download/korea-sigungu-code(2022).xlsx\")\n  print(datatable(region_table))\n  \n  # Input Arguments\n  aoi_code &lt;- readline('지역 코드를 입력하세요: ')\n  start &lt;- as.numeric(readline('시작 연도를 입력하세요: '))\n  end &lt;- as.numeric(readline('종료 연도를 입력하세요: '))\n  \n  # Data Request\n  aoi &lt;- getStatData(orgId = 101, tblId = \"DT_1IN1503\", prdSe = \"Y\",\n                     startPrdDe = start, endPrdDe = end,\n                     objL1 = aoi_code, objL2 = \"ALL\") |&gt; \n    filter(nchar(C2) == 3) # Delete 1-age interval(Only 5-age interval)\n  \n  # Data Cleansing\n  aoi &lt;- aoi |&gt; \n    select(C1, C1_NM, C2, C2_NM, ITM_ID, ITM_NM, DT, PRD_DE) |&gt; \n    filter(ITM_ID == \"T00\" | ITM_ID == \"T01\" | ITM_ID == \"T02\") |&gt; \n    mutate(\n      DT = na_if(DT, \"X\"),\n      across(c(C1, DT), as.numeric),\n      ITM_ID = case_match(\n        ITM_ID, \"T00\" ~ \"T\",\n        \"T01\" ~ \"M\",\n        \"T02\" ~ \"F\"),\n    ) |&gt; \n    unite(\"gender_age\", ITM_ID, C2_NM, sep = \"_\") |&gt; \n    pivot_wider(\n      id_cols = c(C1, C1_NM, PRD_DE),\n      names_from = gender_age,\n      values_from = DT\n    ) |&gt; \n    mutate(\n      index = (`F_20~24세` + `F_25~29세` + `F_30~34세` + `F_35~39세`) / `T_65세이상`\n    ) |&gt; \n    select(\n      C1, C1_NM, index, PRD_DE\n    )\n  \n  ## Visualization\n  region &lt;- aoi$C1_NM[1] # For Auto-Plot Title\n  vis &lt;- aoi |&gt; \n    ggplot(aes(x=PRD_DE, y=index)) +\n    geom_point() +\n    geom_line(group = 1, linewidth = 0.5) +\n    ggtitle(paste0(region, \" 인구소멸위험지수 추이\")) +\n    xlab(label = \"연도\") +\n    ylab(label = \"인구소멸위험지수\") +\n    theme(plot.title = element_text(size = 18, hjust=0.5))\n  \n  return(vis)\n}\n\n\n# 함수 실행: 학생 작성 부분\nexInd()",
+    "crumbs": [
+      "R 실습: 2025/2",
+      "Lab07: 데이터 수집하기"
+    ]
+  },
+  {
+    "objectID": "lab_09_2025.html",
+    "href": "lab_09_2025.html",
+    "title": "소통하기: 인터랙티브 시각화",
+    "section": "",
+    "text": "여기서는 대시보드의 구성 요소로 활용할 수 있는 다양한 시각화 기법을 익힌다. 우리는 지금까지 도표(차트, 플롯, 그래프, 테이블)를 중심으로 데이터 시각화 기법을 다루었다. 특히 ggplot2 패키지는 이러한 과정에서 핵심적인 역할을 했다. 그런데 지금까지의 모든 도표는 정적(static) 이라는 특징이 있다. 많은 경우 도표는 정적으로 표현될 수 밖에 없으며, 또한 많은 경우 도표는 정적인 것으로 충분하며, 어떤 경우에는 동적인 것보다 더 낳다.\n소통을 위한 시각화 재료로서 정적인 도표가 가지는 절대적인 중요성에도 불구하고, 상호작용성(interactivity)과 생동감(animatedness)이 부가된 도표는 어떤 상항에서는 소통의 본질적 가치를 고양하는데 많은 도움을 줄 수 있다.\n먼저, Quarto Document를 만들고 YAML 해더를 작성한다.\n---\ntitle: \"Interactive Visualizetion\"\nauthor: Your_Name\nformat: \n  dashboard:\n    scrolling: true\ntheme: cosmo\neditor: visual\neditor_options: \n  chunk_output_type: console\n---\ngapminder 데이터를 실습의 여러 곳에서 활용할 것이다. 우선 tidyverse와 gapminder패키지를 불러온다.\n\nlibrary(tidyverse)\nlibrary(gapminder)",
+    "crumbs": [
+      "R 실습: 2025/2",
+      "소통하기: 인터랙티브 시각화"
+    ]
+  },
+  {
+    "objectID": "lab_09_2025.html#개요",
+    "href": "lab_09_2025.html#개요",
+    "title": "소통하기: 인터랙티브 시각화",
+    "section": "",
+    "text": "여기서는 대시보드의 구성 요소로 활용할 수 있는 다양한 시각화 기법을 익힌다. 우리는 지금까지 도표(차트, 플롯, 그래프, 테이블)를 중심으로 데이터 시각화 기법을 다루었다. 특히 ggplot2 패키지는 이러한 과정에서 핵심적인 역할을 했다. 그런데 지금까지의 모든 도표는 정적(static) 이라는 특징이 있다. 많은 경우 도표는 정적으로 표현될 수 밖에 없으며, 또한 많은 경우 도표는 정적인 것으로 충분하며, 어떤 경우에는 동적인 것보다 더 낳다.\n소통을 위한 시각화 재료로서 정적인 도표가 가지는 절대적인 중요성에도 불구하고, 상호작용성(interactivity)과 생동감(animatedness)이 부가된 도표는 어떤 상항에서는 소통의 본질적 가치를 고양하는데 많은 도움을 줄 수 있다.\n먼저, Quarto Document를 만들고 YAML 해더를 작성한다.\n---\ntitle: \"Interactive Visualizetion\"\nauthor: Your_Name\nformat: \n  dashboard:\n    scrolling: true\ntheme: cosmo\neditor: visual\neditor_options: \n  chunk_output_type: console\n---\ngapminder 데이터를 실습의 여러 곳에서 활용할 것이다. 우선 tidyverse와 gapminder패키지를 불러온다.\n\nlibrary(tidyverse)\nlibrary(gapminder)",
+    "crumbs": [
+      "R 실습: 2025/2",
+      "소통하기: 인터랙티브 시각화"
+    ]
+  },
+  {
+    "objectID": "lab_09_2025.html#임베딩",
+    "href": "lab_09_2025.html#임베딩",
+    "title": "소통하기: 인터랙티브 시각화",
+    "section": "\n1 임베딩",
+    "text": "1 임베딩\n동적, 반응형 시각화를 직접 제작하는 과정을 배우기 전에 대시보드에 동적, 반응형 시각화를 실현하는 가장 쉬운 방법은 동적, 반응형 시각화가 구현되어 있는 웹사이트를 대시보드에 불러오는 것일 것이다. 이것을 임베딩(embedding)이라고 하는데, HTML의 iframe 태그를 사용한다.\n통계청의 통계놀이터는 다양한 주제에 대해 동적, 반응형 시각화를 제작하여 이용자들에게 제공하고 있다. 해당 홈페이지의 [비주얼 통계]에서 “우리나라 출생아 수와 합계 출산율의 변화”를 검색하면 동적, 반응형 시각화가 구현된 웹페이지를 볼 수 있다. [공유]를 눌러 URL을 복사하고, 아래와 같은 코드를 Quarto 문서에 삽입하면 해당 웹페이지를 임베딩할 수 있다. src=\"\" 부분에 복사한 URL를 붙여 넣는다는 것을 쉽게 알 수 있을 것이다. 여기에 다른 URL을 교체해 넣으면 대부분의 웹사이트를 임베딩할 수 있는데, 임베딩이 불가능하게 막아 뒀거나 광고가 많이 붙어 있는 웹사이트는 잘 안된다. style=\"\" 부분을 적절히 수정하면 임베딩된 웹사이트의 외견을 바꿔볼 수 있다.\n&lt;iframe src=\"https://kosis.kr/edu/share.do?shareID=S0500_16\" \nloading=\"lazy\" style=\"width: 100%; height: 600px; border: \n0px none;\" allow=\"web-share; clipboard-write\"&gt;&lt;/iframe&gt;\n\n\n\n\nOur World in Data는 아름다운 인터랙티브 시각화 자료를 제공하는 것으로 유명하다. 심지어 [공유] 버턴을 눌렀을 때 &lt;/&gt; Embed 라는 옵션이 나타나는 데, 이것을 누르면 위와 같은 iframe 태그 내용이 그대로 나타나기 때문에 복사하여 붙이기만 하면 된다. Chart 탭 뿐만 아니라 Table 탭과 Map 탭도 있으니 눌러서 내용을 확인할 수 있다. 아마도 ECharts 자바스크립트 라이브러리를 사용한 것으로 보인다.\n&lt;iframe src=\"https://ourworldindata.org/grapher/child-mortality?time=earliest..latest&tab=chart\" \nloading=\"lazy\" style=\"width: 100%; height: 600px; border: 0px none;\" allow=\"web-share; clipboard-write\"&gt;&lt;/iframe&gt;\n\n\n\n\n\n\n그림 1: 임베딩 사례: Our World in Data\n\n\nOur World in Data에서 제공하는 다양한 인터랙티브 시각화 자료를 임베딩하는 절차를 요약하면 다음과 같다.\n\nOur World in Data에 접속한다.\n첫 화면의 하단에 있는 ’Data explorers’의 네 개 박스로 이동한다. 인구 관련 데이터에 관심이 있다면 ’Population & Demography’를 선택한다.\n’Population & Demography Data Explorer’에서 제공된 다양한 옵션을 이용해 원하는 인터랙티브 시각화 자료를 완성한다.\n‘Share’를 클릭하고’&lt;/&gt; Embed’를 선택한 후 URL을 복사한다. 흥미로운 점은 위에서 어떤 옵션을 어떻게 설정했느냐에 따라 URL이 달라진다는 사실이다.\niframe 태그의 “src=”에 붙여 넣어 임베딩을 완수한다.",
+    "crumbs": [
+      "R 실습: 2025/2",
+      "소통하기: 인터랙티브 시각화"
+    ]
+  },
+  {
+    "objectID": "lab_09_2025.html#테이블",
+    "href": "lab_09_2025.html#테이블",
+    "title": "소통하기: 인터랙티브 시각화",
+    "section": "\n2 테이블",
+    "text": "2 테이블\n우리는 지금까지 테이블(table)의 중요성에 대해 거의 다루지 않았다. 그러나 상호작용형 테이블 혹은 대화형 테이블이 되었을 때, 많은 경우, 테이블은 가장 효과적인 정보 전달 도구가 된다. 특히, 데이터 변형하기를 통해 새로운 요약 테이블을 생성하고, 그것을 대화형으로 제시하는 것은 매우 중요한 데이터사이언스의 과정이다. 여기서는 DT 패키지를 활용하여 간단한 인터랙티브 테이블을 만들어 본다. 웹에서 인터렉티브 테이블을 생성할 수 있게 해주는 다양한 종류의 JavaScript 라이브러리가 존재한다. 예를 들어 DataTables, FlexTable, React Table 등이 있는데, DT 패키지는 DataTables를 쓸 수 있게 해주는 래퍼 패키지이다.\n\nlibrary(DT)\n\n그리고 gapminder 데이터를 datatable() 함수를 통해 불러온다. R 코드를 실행하려면 반드시 코드 청크 안에 코드를 넣어야 한다. 청크 안의 코드는 R이 인식하여 실행하고, 결과를 문서에 출력한다.\n\ndatatable(gapminder)\n\n\n\n\n\n\n결과를 좀 더 크게 보기 위해, ‘Render’ 버튼 바로 오른편에 있는 아이콘을 클릭해 ’Chunk Output in Console’를 선택할 수 있다. 결과 테이블을 이리저리 살펴본다. 언뚯 보면 View() 함수를 활용해 데이터프레임을 살펴보는 것과 유사한 것처럼 보이지만, 부가적인 기능이 제공된다.\nDT 패키지는 테이블의 상호작용성과 관련하여 몇 가지 기능을 제공한다.\n\nPagination: 페이지를 이동할 수 있는 기능\nInstant search: 즉각적인 찾기 기능(Search에 타이핑하기 시작하면 즉각적으로 검색 결과 보여줌)\nMulti-column ordering: 다중 컬럼 정렬 기능(컬럼 하나를 선택한 후 ctrl을 누른 상태에서 다른 컬럼을 선택)\nFiltering: 값을 정렬할 수 있는 기능\nEditable: 셀 값을 수정할 수 있는 기능\nButtons: 셀 숨기기, CSV, PDF, XLSX 등의 확장자로 내보내기 등을 수행하는 버튼 생성 기능\n\n그 중 몇 가지 기능을 여기에서 살펴본다. 자세한 사항은 DT 패키지 홈페이지에 잘 정리되어 있다.\n\n2.1 테이블 CSS 클래스\ndatatable() 함수의 class 인수를 통해 테이블의 외관을 바꿀 수 있다. 다음과 같은 옵션이 가능하다.\n\n\n\n\n\n\nClass name\nDescription\n\n\n\ndisplay\n\nstripe, hover, row-border, order-column을 동시 적용한 디폴트\n\n\ncell-border\n모든 셀의 상하좌우에 경계선 표시\n\n\ncompact\n여백 축소\n\n\nhover\n마우스의 위치에 따라 점멸 효과\n\n\nnowrap\n줄바꿈 없이 텍스트 표시\n\n\norder-column\n정렬의 키가 되는 컬럼에 하이라이트 표시\n\n\nrow-border\n행별 경계선 표시\n\n\nstripe\n행을 스트라이프로 표시\n\n\n\n아래와 같이 cell-border과 compact를 함께 실행해 보고 테이블의 변화를 확인한다.\n\ndatatable(head(gapminder), class = \"cell-border compact\")\n\n\n\n\n\n\n또한 특정 컬럼의 정렬 방식(왼편, 오른편, 중앙)을 변경할 수 있다. 사용가능한 옵션은 다음과 같다.\n\n\nClass name\nDescription\n\n\n\ndt[-head|-body]-left\n왼편 정렬\n\n\ndt[-head|-body]-center\n가운데 정렬\n\n\ndt[-head|-body]-right\n오른편 정렬\n\n\ndt[-head|-body]-justify\n양쪽 맞춤\n\n\ndt[-head|-body]-nowrap\n줄바꿈 없는 맞춤\n\n\n\n아래는 첫 번째와 두 번째 컬럼(country, continent)의 내용(body)을 가운데 정렬로 나타낸다.\n\ndatatable(head(gapminder),\n          options = list(\n            columnDefs = list(list(className = \"dt-body-center\", targets = 1:2))\n          ))\n\n\n\n\n\n\n2.2 테이블 에디팅\neditable 인수를 통해 테이블의 값을 수정할 수 있게 만들 수 있다. 테이블의 특정 셀에 더블클릭하면 수정할 수 있다.\n\ndatatable(head(gapminder), editable = \"cell\")\n\n\n\n\n\n\n2.3 컬럼 필터\n다음과 같은 방식으로 필터를 설정할 수 있다.\n\ndatatable(gapminder, filter = \"top\", \n          options = list(\n            pageLength = 5, \n            autoWidth = TRUE\n          ))\n\n\n\n\n\n\n2.4 버튼 기능\nextenstion에 Buttons, dom에 Bftip, buttons에 c(\"copy\", \"excel\", \"pdf\", \"print\")를 입력하면 버튼 기능을 활성화할 수 있다. 각 인수가 무엇을 의미하는지는 다음의 웹사이트를 참고할 수 있다.\n\ndatatable(gapminder, filter = \"top\",\n          extensions = \"Buttons\",\n          options = list(\n            pageLength = 5,\n            autoWidth = TRUE,\n            dom = \"Bfrtip\",\n            buttons = c(\"copy\", \"excel\", \"pdf\", \"print\")\n          ))",
+    "crumbs": [
+      "R 실습: 2025/2",
+      "소통하기: 인터랙티브 시각화"
+    ]
+  },
+  {
+    "objectID": "lab_09_2025.html#그래프",
+    "href": "lab_09_2025.html#그래프",
+    "title": "소통하기: 인터랙티브 시각화",
+    "section": "\n3 그래프",
+    "text": "3 그래프\n\n3.1 인터랙티브 그래프\n인터랙티브 시각화 도구로 최근 널리 각광을 받고 있는 Plotly이다. Plotly는 사실 캐나다 퀘백에 본사를 두고 있는 데이터 시각화 전문 회사 이름이다. 그러나 보통 데이터 시각화용 JavaScript 라이브러리를 일컽는다. 이 라이버러리는 다양한 오픈소스 프로그래밍 언어에서 사용가능하며(이기준 2023), R의 랩퍼 프로그램이 plotly 패키지이다.\n\nlibrary(plotly)\n\ngapminder 데이터를 이용하여 간단한 그래프를 그려보자. 문법이 ggplot2와 크게 다르지 않음을 알 수 있다.\n\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  plot_ly(x = ~gdpPercap, y = ~lifeExp, color = ~continent,\n          text = ~paste(\"Country: \", country, \n                        \"&lt;br&gt;GDP per capita: \", gdpPercap, \n                        \"$&lt;br&gt;Life Expectancy at Birth:\", lifeExp))\n\n\n\n\n\n\n줌(zoom), 팬(pan), 박스 선택(box select), 라소 선택(Lasso select), 줌인(zome in), 줌 아웃(zoom out) 등과 같은 상호작용 기능을 확인할 수 있다. 또 그래프 상의 데이터 포인트 위에 마우스를 올리면 text 인수를 통해 설정한 내용을 볼 수 있다. 그리고 범례를 클릭하면 특정 continent의 국가를 나타나지 않게 할 수 있다.\n이와 같이 plotly 패키지를 직접 사용하면 다양한 기능을 활용할 수 있겠지만, plotly 패키지가 제공하는 ggplotly() 함수를 활용하면 ggplot2로 만들어진 그래프를 단숨에 plotly 그래프로 바꿀 수 있다. 물론 정확히 같지는 않다.\n\nP &lt;- gapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent)) +\n  geom_point() + \n  scale_color_brewer(palette = \"Set2\") +\n  theme_minimal()\nggplotly(P)\n\n\n\n\n\n\n다음 예제 역시 반응형이지만 바로 다음에서 다룰 동적인 특성도 동시에 가지고 있는 그래프를 만드는 것이다. 역시 plotly 패키지를 이용한다.\n\ngapminder |&gt; \n  plot_ly(x = ~log10(gdpPercap), y = ~lifeExp,\n          text = ~paste(\"Country: \", country)) |&gt; \n  add_markers(color = ~continent, size = ~pop, frame = ~year, \n              marker = list(sizeref = 0.2, sizemode = \"area\"))\n\n\n\n\n\n\n하단에 있는 ‘Play’ 버튼을 누르면 연도에 따라 그래프가 바뀌면서 동적인 효과가 나타나게 된다.\n\n3.2 애니메이션 그래프\n이 실습에서는 gganimate 패키지를 활용하여, 움직이는 그래프를 만드는 방법을 익히도록 한다. 물론 움직인다고 해서 인터랙티브한 그래프인 것은 아니다. gganimate 패키지를 설치한 후 불러온다.\n\nlibrary(gganimate)\n\n우선 정적인 그래프를 그린다.\n\nP &lt;- gapminder |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, size = pop, color = continent)) +\n  geom_point(show.legend = FALSE, alpha = 0.7) +\n  scale_x_log10() +\n  scale_size(range = c(2, 12))\nP\n\n\n\n\n\n\n\n이 그래프는 두 변수 간에 양적인 관련성이 있다는 사실은 명백히 보여주지만, 데이터 변형의 측면에서는 잘못된 것이다. 모든 연도(1952~2007년간 5년 단위)가 나타나 있어서 한 국가가 그래프에 12번 등장한다.\n이를 해결하기 위해 ggplot2 패키지의 facet_wrap() 함수를 활용한다.\n\nP + facet_wrap(~year)\n\n\n\n\n\n\n\n이 그래프는 두 변수간의 양적인 상관관계가 12개 모두의 연도에서 나타난다는 사실을 명확히 보여준다. 그러나 그래프를 세세히 살펴보면 알 수 있듯이, 두 변수의 관련성이라는 측면에서 개별 국가가 시간의 흐름에 따라 어떻게 변화해 나가는지에 대한 사항을 파악하기는 매우 어렵다.\ngganimate 패키지의 transition_time() 함수를 활용하여 동적인 그래프를 작성해 본다.\n\nP + transition_time(year) +\n  labs(title = \"Year: {frame_time}\")\n\n\n\n\n\n\n\n대륙별로 분할하여 표현할 수도 있다.\n\nP + facet_wrap(~continent) +\n  transition_time(year) +\n  labs(title = \"Year: {frame_time}\")\n\n\n\n\n\n\n\n움직임을 조금 더 역동적이게 만들어 볼 수 있다.\n\nP + transition_time(year) +\n  labs(title = \"Year: {frame_time}\") +\n  shadow_wake(wake_length = 0.1, alpha = FALSE)\n\n\n\n\n\n\n\n그래프를 저장하고 싶으면 anim_save() 함수를 활용할 수 있다. ggsave() 함수와 동일한 문법을 갖는다.",
+    "crumbs": [
+      "R 실습: 2025/2",
+      "소통하기: 인터랙티브 시각화"
     ]
   }
 ]
