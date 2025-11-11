@@ -201,7 +201,7 @@ loading="lazy" style="width: 100%; height: 600px; border:
 | [DataTables](https://datatables.net/) | [DT](https://rstudio.github.io/DT/) |
 | [Tanstack Table](https://tanstack.com/table/v7/) | [reactable](https://glin.github.io/reactable/) |
 
-## 래퍼 패키지: [**DT**](https://rstudio.github.io/DT/) 
+## 래퍼 패키지: [**DT**](https://rstudio.github.io/DT/)
 
 -   [DataTables](https://datatables.net/): 자바스크립트 라이브러리
 
@@ -209,7 +209,7 @@ loading="lazy" style="width: 100%; height: 600px; border:
 
 ![[https://datatables.net/](https://datatables.net/){style="font-size:1.25rem"}](https://sangillee.snu.ac.kr/2024_AIEDAP/images/clipboard-4023553912.png)
 
-## 래퍼 패키지: [**DT**](https://rstudio.github.io/DT/) 
+## 래퍼 패키지: [**DT**](https://rstudio.github.io/DT/)
 
 -   Pagination: 페이지 이동 기능
 
@@ -225,7 +225,7 @@ loading="lazy" style="width: 100%; height: 600px; border:
 
 -   Buttons: 셀 숨기기 기능, CSV, PDF, XLSX 등의 확장자로 내보내기 등을 수행하는 버튼 생성 기능
 
-## 래퍼 패키지: [**DT**](https://rstudio.github.io/DT/)  {.scrollable}
+## 래퍼 패키지: [**DT**](https://rstudio.github.io/DT/) {.scrollable}
 
 ::: panel-tabset
 ## Code
@@ -265,9 +265,9 @@ gapminder |>
 ```
 :::
 
-# [그래프]{style="color:coral"}
+# [차트]{style="color:coral"}
 
-## R 패키지: [**gganimate**](https://gganimate.com/) 
+## R 패키지: [**gganimate**](https://gganimate.com/)
 
 ::: panel-tabset
 ## Code
@@ -373,6 +373,7 @@ girafe(ggobj = gg_point)
 | [dygraphs](https://dygraphs.com/) | [dygraphs](https://rstudio.github.io/dygraphs/) |
 | [Google Charts](https://developers.google.com/chart?hl=ko) | [googleVis](https://mages.github.io/googleVis/articles/googleVis_intro.html) |
 | [Chart.js](https://www.chartjs.org/docs/latest/) | [chartjs](https://tutuchan.github.io/chartjs/) |
+| [three.js](https://threejs.org/) | [r3js](https://shwilks.github.io/r3js/)) |
 
 : {tbl-colwidths="\[50,50\]"}
 
