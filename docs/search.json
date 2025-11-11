@@ -10507,7 +10507,7 @@
     "href": "R_lec_09_2025.html#래퍼-패키지-활용",
     "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
     "section": "래퍼 패키지 활용",
-    "text": "래퍼 패키지 활용\n\n\n\n\n\n\n자바스크립트 라이브러리\nR 래퍼 패키지\n\n\n\nPlotly\nplotly\n\n\nD3\nr2d3\n\n\nHighcharts\nhighcharter\n\n\nECharts\n\necharts4r, echarty\n\n\n\ndygraphs\ndygraphs\n\n\nGoogle Charts\ngoogleVis\n\n\nChart.js\nchartjs\n\n\nthree.js\n\nr3js)",
+    "text": "래퍼 패키지 활용\n\n\n\n\n\n\n자바스크립트 라이브러리\nR 래퍼 패키지\n\n\n\nPlotly\nplotly\n\n\nD3\nr2d3\n\n\nHighcharts\nhighcharter\n\n\nECharts\n\necharts4r, echarty\n\n\n\ndygraphs\ndygraphs\n\n\nGoogle Charts\ngoogleVis\n\n\nChart.js\nchartjs\n\n\nthree.js\nr3js",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
@@ -10562,7 +10562,7 @@
     "href": "R_lec_09_2025.html#래퍼-패키지-echarts4r-패키지",
     "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
     "section": "래퍼 패키지: echarts4r 패키지",
-    "text": "래퍼 패키지: echarts4r 패키지\n\n\nCode\nResult\n\n\n\n\nlibrary(tidyverse)\nlibrary(echarts4r)\nlibrary(RColorBrewer)\nmy.data &lt;- read_rds(\"D:/My R/Population Geography/wpp_2024.rds\")\nmy.data |&gt; \n  filter(\n    type == \"Region\"\n  ) |&gt; \n  distinct(region_name) |&gt; pull() -&gt; UN.region.name\ndata.sel &lt;- my.data |&gt; \n  filter(\n    type == \"Subregion\" | region_name == \"Northern America\",\n    year == 2025\n  )\ncustom_colors &lt;- brewer.pal(n = 6, name = \"Set2\")\ndata.sel |&gt; \n  arrange(median_age) |&gt; \n  mutate(\n    median_age = round(median_age, digits = 1)\n  ) |&gt; \n  group_by(Region_NM) |&gt; \n  e_charts(region_name, width = \"100%\", height = \"800px\") |&gt; \n  e_bar(serie = median_age, stack = \"grp\") |&gt; \n  e_color(custom_colors) |&gt; \n  e_flip_coords() |&gt; \n  e_x_axis(name = \"Median Age\") |&gt; \n  e_tooltip() |&gt; \n  e_legend()",
+    "text": "래퍼 패키지: echarts4r 패키지\n\n\nCode\nResult\n\n\n\n\nlibrary(tidyverse)\nlibrary(echarts4r)\nlibrary(RColorBrewer)\nmy.data &lt;- read_rds(\"D:/My R/Population Geography/wpp_2024.rds\")\ndata.sel &lt;- my.data |&gt; \n  filter(\n    type == \"Subregion\" | region_name == \"Northern America\",\n    year == 2025\n  )\ncustom_colors &lt;- brewer.pal(n = 6, name = \"Set2\")\ndata.sel |&gt; \n  arrange(median_age) |&gt; \n  mutate(\n    median_age = round(median_age, digits = 1)\n  ) |&gt; \n  group_by(Region_NM) |&gt; \n  e_charts(region_name, width = \"100%\", height = \"800px\") |&gt; \n  e_bar(serie = median_age, stack = \"grp\") |&gt; \n  e_color(custom_colors) |&gt; \n  e_flip_coords() |&gt; \n  e_x_axis(name = \"Median Age\") |&gt; \n  e_tooltip() |&gt; \n  e_legend()",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
