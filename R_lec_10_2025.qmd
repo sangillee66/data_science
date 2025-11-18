@@ -154,7 +154,7 @@ editor_options:
 ## 벡터 데이터: [**sf**](https://r-spatial.github.io/sf/) 패키지 {.smaller}
 
 | 구분 | 함수 |
-|------------------------------------|------------------------------------|
+|----|----|
 | 읽고 쓰기 | `st_read()`, `st_write()`, `read_sf()`, `write_sf()` |
 | 투영 관련 | `st_crs()`, `st_transform()` |
 | 기하 측정 | `st_area()`, `st_length()`, `st_perimeter()`, `st_distance()` |
@@ -267,7 +267,7 @@ ggplot() + geom_sf(data = sigungu_shp)
 
 ::: {style="font-size:2.1rem"}
 | 투영법 | PROJ 파라미터 |
-|----------------------------------------------|--------------------------|
+|----|----|
 | 정적원통 도법 Equal Area Cylindrical | +proj=cea |
 | 컴펙트 밀러 도법 Compact Miller | +proj=comill |
 | 에케르트 IV 도법 Eckert IV | +proj=eck4 |
@@ -287,7 +287,7 @@ ggplot() + geom_sf(data = sigungu_shp)
 
 ::: {style="font-size:2.1rem"}
 | 적용 스케일 | EPSG 숫자코드 | 설명 |
-|------------------------|------------------------|------------------------|
+|----|----|----|
 | 전세계 | [EPSG:4326]{style="color:coral"} | WGS84, 측지좌표계, GPS에 사용 |
 |  | EPSG:3857 | 웹 메르카토르 도법, 구글 맵스, 오픈스트리트맵에서 사용 |
 |  | EPSG:7789 | ITRF2014 |
