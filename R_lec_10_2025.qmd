@@ -1,9 +1,9 @@
 ---
 title: |
   | [R Lecture 10]{style="color:coral;font-size:0.6em"}   
-  | [지리공간적 시각화]{style="font-size:1em"} 
+  | [웹 앱 개발: 심화]{style="font-size:1em"} 
 author: <br> 이상일(서울대학교 지리교육과 교수)
-date: 2025-9-2
+date: 2025-11-18
 format: 
   revealjs:
     logo: snu_edu_1.png
@@ -49,141 +49,1035 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Geospatial Visualization
+# [지리공간적 시각화]{style="color:coral"}
 
-## Maps: geometric data
+## 사례: 전 세계 인구 분포 지도
 
--   `sf` package (<https://r-spatial.github.io/sf/>)
+![](images/Population%20Distribution,%202020.png)
 
-![](images/clipboard-3930476942.jpeg){fig-align="center"}
+## 사례: 전 세계 인구 분포 지도
 
-## Maps: geometric data
+-   데이터 레이어
 
+    -   국가 경계, 호수, 그래티큘: 벡터(vector) 데이터
+
+    -   인구밀도, 수심: 래스터(raster) 데이터
+
+-   데이터 원천
+
+    -   [Natural Earth Data](https://www.naturalearthdata.com/): 국가 경계, 호수, 그래티큘, 수심
+
+    -   [NASA's Socioeconomic Data and Applications Center (SEDAC)](https://search.earthdata.nasa.gov/search?q=CIESIN%20ESDIS): 인구 밀도
+
+-   투영법: 로빈슨 도법(Robinson projection)
+
+    -   CRS (coordinate reference system, 좌표참조계)
+
+-   지도화 기법: 컬러, 범례, 주기 표기 등
+
+## 사례: 전 세계 인구 분포 지도
+
+::: {layout-ncol="2"}
+![[https://r-spatial.github.io/sf/](https://r-spatial.github.io/sf/){style="font-size:1.25rem"}](images/hex_sf.png){width="699"}
+
+![[https://rspatial.github.io/terra/](https://rspatial.github.io/terra/){style="font-size:1.25rem"}](images/hex_terra.png)
+:::
+
+## 사례: 전 세계 인구 분포 지도
+
+::: {layout="[45, -10, 45]"}
+![[https://ggplot2.tidyverse.org/](https://ggplot2.tidyverse.org/){style="font-size:1.25rem"}](images/hex_ggplot2-01.png)
+
+![[https://r-tmap.github.io/tmap/](https://r-tmap.github.io/tmap/){style="font-size:1.25rem"}](images/tmap_1-01.png)
+:::
+
+## 지리공간적 데이터의 종류
+
+-   벡터(vector) 데이터
+
+    -   포인트, 라인, 폴리곤
+
+    -   형상 데이터 + 속성 데이터
+
+-   래스터(raster) 데이터
+
+    -   그리드 셀(grid cell)
+
+    -   일체형
+
+## 지리공간적 데이터의 종류
+
+![](images/clipboard-216726006.jpeg)
+
+## 지리공간적 데이터의 종류
+
+![](images/clipboard-2659758028.png)
+
+## 벡터 데이터
+
+-   벡터 데이터: 형상 데이터 + 속성 데이터
+
+    -   [**형상 데이터**]{style="color:coral"} (기하, 도형, 공간 데이터)
+
+        -   지리공간적 객체 자체에 대한 데이터
+
+        -   포인트(점), 라인(선), 폴리곤(면)으로 구분
+
+        -   버텍스(vertex)의 좌표값
+
+    -   [**속성 데이터**]{style="color:coral"}
+
+        -   지리공간적 객체가 보유한 속성
+
+        -   기존 일반 데이터와 동일
+
+## 벡터 데이터
+
+-   형상 데이터: 셰이프 파일(shape file) (ESRI사)
+
+    -   `sigungu.shp`: 버텍스의 좌표값이 포함된 핵심 파일
+
+    -   `sigungu.shx`: 공간적 인덱싱 파일
+
+    -   `sigungu.dbf`: 기본 속성 파일
+
+    -   `sigungu.prj`: 투영 정보 파일
+
+-   특수한 패키지 필요: [**sf**](https://r-spatial.github.io/sf/) 패키지
+
+    -   `st_read()` 혹은 `read_sf()` 함수
+
+## 벡터 데이터: [**sf**](https://r-spatial.github.io/sf/) 패키지
+
+![[https://allisonhorst.com/r-packages-functions](https://allisonhorst.com/r-packages-functions){style="font-size:1.25rem"}](images/clipboard-601191076.png)
+
+## 벡터 데이터: [**sf**](https://r-spatial.github.io/sf/) 패키지 {.smaller}
+
+| 구분 | 함수 |
+|------------------------------------|------------------------------------|
+| 읽고 쓰기 | `st_read()`, `st_write()`, `read_sf()`, `write_sf()` |
+| 투영 관련 | `st_crs()`, `st_transform()` |
+| 기하 측정 | `st_area()`, `st_length()`, `st_perimeter()`, `st_distance()` |
+| 기하 변형 | `st_centroid()`, `st_buffer()`, `st_boundary()`, `st_simplify()` |
+| 기하 생성 | `st_point()`, `st_voronoi()` , `st_convex_hull()`, `st_make_grid()` |
+| 기하 검토 | `st_is_valid()`, `st_make_valid()` |
+| 기하 중첩 | `st_filter()`, `st_intersection()`, `st_union()`, `st_crop()` |
+| 기타 | `st_coordinates()`, `st_cast()`, `st_as_sf()`, `st_graticule()`, `st_join()` |
+
+: {tbl-colwidths="\[20,80\]"}
+
+## 벡터 데이터: [**sf**](https://r-spatial.github.io/sf/) 패키지
+
+::: panel-tabset
+## Code
+
+```{r}
+#| eval: false
+#| echo: true
+library(tidyverse)
+library(sf)
+sigungu_shp <- st_read("sigungu.shp", options = "ENCODING=CP949")
+ggplot() + geom_sf(data = sigungu_shp)
+```
+
+## Result
+
+```{r}
+#| results: false
+#| echo: false
+#| fig-height: 7.5
+library(tidyverse)
+library(sf)
+sigungu_shp <- st_read("sigungu.shp", options = "ENCODING=CP949")
+ggplot() + geom_sf(data = sigungu_shp)
+```
+:::
+
+## 벡터 데이터
+
+-   속성 데이터
+
+    -   csv 파일: [**readr**](https://readr.tidyverse.org/) 패키지의 `read_csv()` 함수
+
+    -   엑셀 파일: [**readxl**](https://readxl.tidyverse.org/) 패키지의 `read_excel()` 함수
+
+    -   Open API를 통해 수집: `tibble` 객체
+
+-   형상 데이터와 속성 데이터의 결합: [**dplyr**](https://dplyr.tidyverse.org/) 패키지의 `left_join()` 함수
+
+    -   왼편: 형상 데이터
+
+    -   오른편: 속성 데이터
+
+## 래스터 데이터
+
+-   데이터 형식
+
+    -   TIFF 혹은 GeoTIFF
+
+-   패키지: [**terra**](https://rspatial.github.io/terra/) 패키지
+
+    -   불러오기: `rast()`
+
+    -   변환하기: `project()`, `mosaic()`, `crop()`
+
+    -   계산하기: `global()`, `focal()`, `zonal()`
+
+    -   수 많은 다른 함수들
+
+## CRS
+
+![[https://datacarpentry.github.io/organization-geospatial/03-crs.html](https://datacarpentry.github.io/organization-geospatial/03-crs.html){style="font-size:1.25rem"}](https://sangillee.snu.ac.kr/2024_AIEDAP/images/clipboard-215094760.png)
+
+## CRS: 정의
+
+-   좌표참조계 Coordinate Reference System
+
+-   모든 지리공간데이터는 특정한 좌표참조계에 의거해 제작되며 이러한 좌표참조계는 매우 다양함
+
+    -   준거타원체
+
+    -   [**투영법(map projection)**]{style="color:coral"}
+
+    -   투영 파라미터: 투영축, 투영격, 중앙경선, 가상원점 등
+
+-   지리공간데이터의 SRID(Spatial Reference System Identifiers, 공간참조계식별자)
+
+-   [**sf**](https://r-spatial.github.io/sf/) 패키지: `st_crs()` 함수
+
+## CRS: 방식
+
+-   [**PROJ 정형문자열**]{style="color:coral"}
+
+    -   <https://proj.org/en/9.4/>
+    -   준거타원체, 투영법, 투영 파라미터를 + 기호로 연결해 작성한 문자열
+    -   UTM-K
+        -   +proj=tmerc +lat_0=38 +lon_0=127.5 +k=0.9996 +x_0=1000000 +y_0=2000000 +ellps=GRS80 +units=m
+
+-   [**EPSG 숫자코드**]{style="color:coral"}
+
+    -   <https://epsg.io/>
+    -   모든 CRS에 1024\~32767 사이의 고유 숫자를 부여
+    -   UTM-K
+        -   EPSG: 5179
+
+## CRS: PROJ 정형문자열
+
+-   세계지도를 위한 주요 투영법의 PROJ 별명(alias)
+
+::: {style="font-size:2.1rem"}
+| 투영법 | PROJ 파라미터 |
+|----------------------------------------------|--------------------------|
+| 정적원통 도법 Equal Area Cylindrical | +proj=cea |
+| 컴펙트 밀러 도법 Compact Miller | +proj=comill |
+| 에케르트 IV 도법 Eckert IV | +proj=eck4 |
+| 정거원통 도법 Equidistant Cylindrical | +proj=eqc |
+| 구드 도법 Goode Homolosine | +proj=goode |
+| 단열형 구드 도법 Interrupted Goode Homolosine | +proj=igh |
+| 메르카토르 도법 Mercator | +proj=merc |
+| 몰바이데 도법 Mollweide | +proj=moll |
+| [로빈슨 도법 Robinson]{style="color:coral"} | [+proj=robin]{style="color:coral"} |
+| 시뉴소이드 도법 Sinusoidal | +proj=sinu |
+| 빈켈트리펠 도법 Winkel Tripel | +proj=wintri |
+:::
+
+## CRS: EPSG 숫자코드
+
+-   널리 사용되는 CRS의 EPSG
+
+::: {style="font-size:2.1rem"}
+| 적용 스케일 | EPSG 숫자코드 | 설명 |
+|------------------------|------------------------|------------------------|
+| 전세계 | [EPSG:4326]{style="color:coral"} | WGS84, 측지좌표계, GPS에 사용 |
+|  | EPSG:3857 | 웹 메르카토르 도법, 구글 맵스, 오픈스트리트맵에서 사용 |
+|  | EPSG:7789 | ITRF2014 |
+| 미국 | EPSG:2163 | 알베르스 정적원추 도법 |
+| 유럽 | EPSG:3035 | 람베르트 정적방위 도법 |
+| 우리나라 | [EPSG:5179]{style="color:coral"} | UTM-K |
+|  | EPSG:5185 | 서부원점 |
+|  | EPSG:5186 | 중부원점 |
+|  | EPSG:5187 | 동부원점 |
+|  | EPSG:5188 | 동해원점 |
+
+: {tbl-colwidths="\[20,25,55\]"}
+:::
+
+## CRS: 세계지도에 적용
+
+::: panel-tabset
 ```{r}
 #| output: false
+library(tidyverse)
+library(spData)
+data(world)
+world <- st_as_sf(world)
+ne_bbox <- st_read("ne_bbox.shp")
+```
+
+## 플라트카레
+
+```{r}
+#| fig-height: 7.5
+#| fig-width: 15
+ggplot() +
+  geom_sf(data = world) +
+  geom_sf(data = ne_bbox, fill = NA) +
+  coord_sf(crs = "+proj=eqc") +
+  scale_x_continuous(breaks = seq(-180, 180, 30)) +
+  scale_y_continuous(breaks = c(-89.9, seq(-60, 60, 30), 89.9)) +
+  theme(
+    panel.background = element_rect("white"),
+    panel.grid = element_line(color = "gray80")
+  )
+```
+
+## 컴펙트 밀러 도법
+
+```{r}
+#| fig-height: 7.5
+#| fig-width: 15
+ggplot() +
+  geom_sf(data = world) +
+  geom_sf(data = ne_bbox, fill = NA) +
+  coord_sf(crs = "+proj=comill") +
+  scale_x_continuous(breaks = seq(-180, 180, 30)) +
+  scale_y_continuous(breaks = c(-89.9, seq(-60, 60, 30), 89.9)) +
+  theme(
+    panel.background = element_rect("white"),
+    panel.grid = element_line(color = "gray80")
+  )
+```
+
+## 로빈슨
+
+```{r}
+#| fig-height: 7.5
+#| fig-width: 15
+ggplot() +
+  geom_sf(data = world) +
+  geom_sf(data = ne_bbox, fill = NA) +
+  coord_sf(crs = "+proj=robin") +
+  scale_x_continuous(breaks = seq(-180, 180, 30)) +
+  scale_y_continuous(breaks = c(-89.9, seq(-60, 60, 30), 89.9)) +
+  theme(
+    panel.background = element_rect("white"),
+    panel.grid = element_line(color = "gray80")
+  )
+```
+
+## 에케르트 IV
+
+```{r}
+#| fig-height: 7.5
+#| fig-width: 15
+ggplot() +
+  geom_sf(data = world) +
+  geom_sf(data = ne_bbox, fill = NA) +
+  coord_sf(crs = "+proj=eck4") +
+  scale_x_continuous(breaks = seq(-180, 180, 30)) +
+  scale_y_continuous(breaks = c(-89.9, seq(-60, 60, 30), 89.9)) +
+  theme(
+    panel.background = element_rect("white"),
+    panel.grid = element_line(color = "gray80")
+  )
+```
+:::
+
+## 지리공간적 시각화: 정적 vs. 동적
+
+-   정적(static) 지도
+
+    -   [**ggplot2**](https://ggplot2.tidyverse.org/) 패키지, [**tmap**](https://r-tmap.github.io/tmap/) 패키지
+
+-   동적(animated) 지도
+
+    -   [**gganimate**](https://gganimate.com/) 패키지
+
+    -   [**tmap**](https://r-tmap.github.io/tmap/) 패키지
+
+-   인터랙티브(interactive) 지도
+
+    -   [**plotly**](https://plotly.com/r/) 패키지의 `ggplotly()` 함수
+
+    -   [**ggiraph**](https://davidgohel.github.io/ggiraph/) 패키지
+
+    -   [**leaflet**](https://rstudio.github.io/leaflet/) 패키지: [**Leaflet JS 라이브러리**](https://leafletjs.com/)의 래퍼 패키지
+
+## 정적 지도: 코로플레스 맵
+
+![](images/clipboard-3706145292.png)
+
+## 정적 지도: 두 가지 관점
+
+-   "지도도 그래프다" 관점: 일반성
+
+    -   [**ggplot2**](https://ggplot2.tidyverse.org/) 패키지
+        -   `geom_sf()`, `coord_sf()`
+
+-   "지도는 지도이다" 관점: 특수성
+
+    -   [**tmap**](https://r-tmap.github.io/tmap/) 패키지
+        -   4.2.0
+
+## [**ggplot2**](https://ggplot2.tidyverse.org/) vs [**tmap**](https://r-tmap.github.io/tmap/): 세계지도
+
+::: panel-tabset
+## 데이터 정리
+
+```{r}
+#| results: hide
+#| echo: true
+library(tidyverse)
+library(spData)
 library(sf)
+data(world)
+world <- st_as_sf(world)
+wpp_2024 <- read_rds("wpp_2024.rds")
+my_wpp <- wpp_2024 |> 
+  filter(year == 2025)
+world_data <- world |>
+  left_join(my_wpp, join_by(iso_a2 == ISO2))
+```
+
+## **ggplot2**: Code
+
+```{r}
+#| eval: false
+#| echo: true
+world_map <- ggplot() +
+  geom_sf(data = world_data, aes(fill = TFR, text = name_long)) +
+  coord_sf(crs = "+proj=robin") +
+  scale_fill_viridis_c() +
+  scale_x_continuous(breaks = seq(-180, 180, 30)) +
+  scale_y_continuous(breaks = c(-89.5, seq(-60, 60, 30), 89.5)) +
+  theme(
+    panel.background = element_rect("white"),
+    panel.grid = element_line(color = "gray80")
+  )
+world_map
+```
+
+## **ggplot2**: Result
+
+```{r}
+#| results: false
+#| echo: false
+#| fig-height: 7.5
+#| fig-width: 15
+world_map <- ggplot() +
+  geom_sf(data = world_data, aes(fill = TFR, text = name_long)) +
+  coord_sf(crs = "+proj=robin") +
+  scale_fill_viridis_c() +
+  scale_x_continuous(breaks = seq(-180, 180, 30)) +
+  scale_y_continuous(breaks = c(-89.5, seq(-60, 60, 30), 89.5)) +
+  theme(
+    panel.background = element_rect("white"),
+    panel.grid = element_line(color = "gray80")
+  )
+world_map
+```
+
+## **tmap**: Code
+
+```{r}
+#| eval: false
+#| echo: true
 library(tmap)
+tm_world_map <- tm_shape(world_data, crs = "+proj=robin") +
+  tm_graticules(
+    labels.show = FALSE,
+    x = seq(-180, 180, 30), 
+    y = c(-89.5, seq(-60, 60, 30), 89.5)
+  ) + 
+  tm_polygons(
+    fill = "TFR", 
+    fill.scale = tm_scale_continuous(values = "viridis")
+  ) +
+  tm_layout(frame = FALSE)
+tm_world_map
+```
+
+## **tmap**: Result
+
+```{r}
+#| results: false
+#| echo: false
+#| fig-height: 7.5
+#| fig-width: 15
+library(tmap)
+tm_world_map <- tm_shape(world_data, crs = "+proj=robin") +
+  tm_graticules(
+    labels.show = FALSE,
+    x = seq(-180, 180, 30), 
+    y = c(-89.5, seq(-60, 60, 30), 89.5)
+  ) + 
+  tm_polygons(
+    fill = "TFR", 
+    fill.scale = tm_scale_continuous(
+      values = "viridis"
+    )
+  ) +
+  tm_layout(frame = FALSE)
+tm_world_map
+```
+:::
+
+## [**ggplot2**](https://ggplot2.tidyverse.org/) vs [**tmap**](https://r-tmap.github.io/tmap/): 우리나라 지도
+
+::: panel-tabset
+## 데이터 정리
+
+```{r}
+#| results: hide
+#| echo: true
+library(tidyverse)
+library(sf)
+sido_shp <- st_read("sido.shp", options = "ENCODING=CP949")
 sigungu_shp <- st_read("sigungu.shp", options = "ENCODING=CP949")
+data_sigungu <- read_rds("data_sigungu.rds")
+sigungu_data <- sigungu_shp |> 
+  left_join(data_sigungu, join_by(SGG1_CD == C1))
 ```
 
+## **ggplot2**: Code
+
 ```{r}
-qtm(sigungu_shp)
+#| eval: false
+#| echo: true
+library(ggspatial)
+sigungu_data <- sigungu_data |> 
+  mutate(
+    index_class = case_when(
+      index < 0.2 ~ "1",
+      index >= 0.2 & index < 0.5 ~ "2",
+      index >= 0.5 & index < 1.0 ~ "3",
+      index >= 1.0 & index < 1.5 ~ "4",
+      index >= 1.5 ~ "5"
+    ),
+    index_class = fct(index_class, levels = as.character(1:5))
+  )
+class_color <- c("1" = "#d7191c", "2" = "#fdae61",
+                 "3" = "#ffffbf", "4" = "#a6d96a", 
+                 "5" = "#1a9641")
+ggplot_map <- ggplot() +
+  geom_sf(
+    data = sigungu_data, 
+    aes(fill = index_class, text = SGG1_FNM), 
+    show.legend = TRUE
+  ) +
+  geom_sf(
+    data = sido_shp, 
+    fill = NA, 
+    lwd = 0.5
+  ) +
+  scale_fill_manual(
+    name = "Classes", 
+    labels = c("< 0.2", "0.2 ~ 0.5", "0.5 ~ 1.0", 
+               "1.0 ~ 1.5", ">= 1.5"), 
+    values = class_color, drop = FALSE
+  ) +
+  annotation_scale(
+    location = "br", 
+    bar_cols = c("gray40", "white"), 
+    width_hint = 0.4
+  )
+ggplot_map
 ```
 
-## Maps: static, a map as a graph
-
--   `ggplot2` package (<https://ggplot2.tidyverse.org/>)
-
-    -   `geom_sf()`
-
-    -   `geom_sf_label()`
-
-    -   `geom_sf_text()`
-
-    -   `coord_sf()`
-
-    -   `stat_sf()`
-
-## Maps: static, a map as a map
-
--   `tmap` package (<https://r-tmap.github.io/tmap/articles/tmap_vv.html>)
-
-![](images/clipboard-3147080854.png){fig-align="center"}
-
-## Maps: interactive, animated, 3D
-
--   `Plotly` (<https://plotly.com/graphing-libraries/>)
-
-    -   R wrapper package: `plotly` package (<https://plotly.com/r/>)
-
--   `Leaflet` (<https://leafletjs.com/>)
-
-    -   R wrapper packag: `leaflet` (<https://rstudio.github.io/leaflet/>)
-
--   `rayshader` package (<https://www.rayshader.com/>)
-
-## Maps: `leaflet` example
+## **ggplot2**: Result
 
 ```{r}
+#| results: false
+#| echo: false
+#| fig-height: 7
+#| fig-width: 15
+library(ggspatial)
+sigungu_data <- sigungu_data |> 
+  mutate(
+    index_class = case_when(
+      index < 0.2 ~ "1",
+      index >= 0.2 & index < 0.5 ~ "2",
+      index >= 0.5 & index < 1.0 ~ "3",
+      index >= 1.0 & index < 1.5 ~ "4",
+      index >= 1.5 ~ "5"
+    ),
+    index_class = fct(index_class, levels = as.character(1:5))
+  )
+class_color <- c("1" = "#d7191c", "2" = "#fdae61",
+                 "3" = "#ffffbf", "4" = "#a6d96a", 
+                 "5" = "#1a9641")
+ggplot_map <- ggplot() +
+  geom_sf(
+    data = sigungu_data, 
+    aes(fill = index_class, text = SGG1_FNM), 
+    show.legend = TRUE
+  ) +
+  geom_sf(
+    data = sido_shp, 
+    fill = NA, 
+    lwd = 0.5
+  ) +
+  scale_fill_manual(
+    name = "Classes", 
+    labels = c("< 0.2", "0.2 ~ 0.5", "0.5 ~ 1.0", 
+               "1.0 ~ 1.5", ">= 1.5"), 
+    values = class_color, drop = FALSE
+  ) +
+  annotation_scale(
+    location = "br", 
+    bar_cols = c("gray40", "white"), 
+    width_hint = 0.4
+  )
+ggplot_map
+```
+
+## **tmap**: Code
+
+```{r}
+#| eval: false
+#| echo: true
+class_color <- c("#d7191c", "#fdae61", "#ffffbf", "#a6d96a", "#1a9641")
+tmap_map <- tm_graticules(labels.cardinal = TRUE) +
+  tm_shape(sigungu_data) + 
+  tm_polygons(
+    fill = "index", id = "SGG1_FNM", 
+    fill.scale = tm_scale_intervals(
+      values = class_color, 
+      breaks = c(0, 0.2, 0.5, 1.0, 1.5, Inf), 
+      labels = c("< 0.2", "0.2 ~ 0.5", "0.5 ~ 1.0", 
+               "1.0 ~ 1.5", ">= 1.5")
+    ),
+    fill.legend = tm_legend(title = "Classes")
+  ) +
+  tm_shape(sido_shp) + tm_borders(lwd = 1.5) +
+  tm_scalebar(breaks = seq(0, 200, 50)) 
+tmap_map
+```
+
+## **tmap**: Result
+
+```{r}
+#| results: false
+#| echo: false
+#| fig-height: 7
+#| fig-width: 15
+class_color <- c("#d7191c", "#fdae61", "#ffffbf", "#a6d96a", "#1a9641")
+tmap_map <- tm_graticules(labels.cardinal = TRUE) +
+  tm_shape(sigungu_data) + 
+  tm_polygons(
+    fill = "index", id = "SGG1_FNM", 
+    fill.scale = tm_scale_intervals(
+      values = class_color, 
+      breaks = c(0, 0.2, 0.5, 1.0, 1.5, Inf), 
+      labels = c("< 0.2", "0.2 ~ 0.5", "0.5 ~ 1.0", 
+               "1.0 ~ 1.5", ">= 1.5")
+    ),
+    fill.legend = tm_legend(title = "Classes")
+  ) +
+  tm_shape(sido_shp) + tm_borders(lwd = 1.5) +
+  tm_scalebar(breaks = seq(0, 200, 50)) 
+tmap_map
+```
+:::
+
+## 인터랙티브 지도: `ggplotly()` 함수
+
+::: panel-tabset
+## Code
+
+```{r}
+#| eval: false
+#| echo: true
+library(plotly)
+ggplotly(world_map)
+```
+
+## Result
+
+```{r}
+#| fig-height: 7.5
+#| fig-width: 15
+library(plotly)
+ggplotly(world_map)
+```
+:::
+
+## 인터렉티브 지도: [**ggiraph**](https://davidgohel.github.io/ggiraph/) 패키지
+
+::: panel-tabset
+## Code
+
+```{r}
+#| eval: false
+#| echo: true
+library(ggiraph)
+sigungu_data <- sigungu_data |> 
+  mutate(
+    index = format(index, digits = 4, nsmall = 4),
+    my_tooltip = str_c("Name: ", SGG1_FNM, "\n Index: ", index)
+  )
+gg <- ggplot() +
+  geom_sf_interactive(
+    data = sigungu_data, 
+    aes(fill = index_class, tooltip = my_tooltip, data_id = SGG1_FNM), 
+    show.legend = TRUE
+  ) +
+  geom_sf(data = sido_shp, fill = NA, lwd = 0.5) +
+  scale_fill_manual(
+    name = "Classes", 
+    labels = c("< 0.2", "0.2 ~ 0.5", "0.5 ~ 1.0", "1.0 ~ 1.5", ">= 1.5"), 
+    values = class_color, drop = FALSE
+  ) 
+girafe(ggobj = gg) |> 
+  girafe_options(opts_hover(css = "fill: gray"))
+```
+
+## Result
+
+```{r}
+#| echo: false
+library(ggiraph)
+sigungu_data <- sigungu_data |> 
+  mutate(
+    index = format(index, digits = 4, nsmall = 4),
+    my_tooltip = str_c("Name: ", SGG1_FNM, "\n Index: ", index)
+  )
+gg <- ggplot() +
+  geom_sf_interactive(
+    data = sigungu_data, 
+    aes(fill = index_class, tooltip = my_tooltip, data_id = SGG1_FNM), 
+    show.legend = TRUE
+  ) +
+  geom_sf(data = sido_shp, fill = NA, lwd = 0.5) +
+  scale_fill_manual(
+    name = "Classes", 
+    labels = c("< 0.2", "0.2 ~ 0.5", "0.5 ~ 1.0", "1.0 ~ 1.5", ">= 1.5"), 
+    values = class_color, drop = FALSE
+  ) 
+girafe(ggobj = gg) |> 
+  girafe_options(opts_hover(css = "fill: gray"))
+```
+:::
+
+## [**leaflet**](https://rstudio.github.io/leaflet/): 자바스크립트 라이브러리
+
+-   R 래퍼 패키지: [**leaflet**](https://rstudio.github.io/leaflet/)
+
+![[https://leafletjs.com/](https://leafletjs.com/){style="font-size:1.25rem"}](https://sangillee.snu.ac.kr/2024_AIEDAP/images/clipboard-3712927039.png)
+
+## [**leaflet**](https://rstudio.github.io/leaflet/): 단순 일반도
+
+::: panel-tabset
+## Code
+
+```{r}
+#| eval: false
+#| echo: true
 library(leaflet)
 leaflet() |> 
   addTiles() |> 
-  # addProviderTiles('CartoDB.Positron') |> 
-  addPopups(126.955184, 37.460422, "Sang-Il's Office")
+  addPopups(126.955184, 37.460422, "Sang-Il's Office",
+            options = popupOptions(closeButton = FALSE))
 ```
 
-## Maps: `rayshader` example
+## Result
 
-![<https://www.rayshader.com/>](images/clipboard-3713320529.png){fig-align="center"}
+```{r}
+#| echo: false
+#| fig-height: 7.5
+#| fig-width: 15
+library(leaflet)
+leaflet() |> 
+  addTiles() |> 
+  addPopups(126.955184, 37.460422, "Sang-Il's Office",
+            options = popupOptions(closeButton = FALSE))
+```
+:::
 
-## Maps: `rayshader` example
+## [**leaflet**](https://rstudio.github.io/leaflet/): 매시업(mashup) 주제도
 
-![](https://wp.unil.ch/citadyne-news/files/2023/02/thworld.jpeg){fig-align="center"}
+::: panel-tabset
+## 세계: Code
 
-## Maps: `rayshader` example {.smaller}
+```{r}
+#| eval: false
+#| echo: true
+library(leaflet)
+world_data <- world_data |> filter(!is.na(TFR))
 
-{{< video seoul_ani.mp4 height = "600" >}}
+bins <- c(0, 1.5, 2.1, 3, 4, 5, Inf)
+pal <- colorBin("YlOrRd", domain = world_data$TFR, bins = bins)
+labels <- sprintf("<strong>%s</strong><br/>%g",
+  world_data$name_long, world_data$TFR) |> lapply(htmltools::HTML)
 
-# More Advanced R
+leaflet(world_data) |> 
+  addProviderTiles(providers$Esri.WorldTopoMap) |> 
+  addPolygons(
+    fillColor = ~pal(TFR), weight =  2, opacity = 1, color = "white", 
+    dashArray = "3", fillOpacity = 0.6,
+    highlightOptions = highlightOptions(
+      weight = 5, color = "#666", dashArray = "", 
+      fillOpacity = 0.6, bringToFront = TRUE
+    ),
+    label = labels,
+    labelOptions = labelOptions(
+      style = list("font-weight" = "normal", padding = "3px 8px"), 
+      textsize = "15px", direction = "auto"
+    )
+  ) |> 
+  addLegend(
+    pal = pal, values = ~TFR, opacity = 0.6, title = NULL, position = "bottomright"
+  )
+```
 
-## Advanced interactivity: Shiny
+## 세계: Result
 
-![<https://shiny.posit.co/>](images/clipboard-3736716242.png){fig-align="center"}
+```{r}
+#| fig-height: 6.5
+#| fig-width: 10
+library(leaflet)
 
-## Advanced interactivity: Shiny
+world_data <- world_data |> filter(!is.na(TFR))
 
--   Web publication: <https://www.shinyapps.io/>
+bins <- c(0, 1.5, 2.1, 3, 4, 5, Inf)
+pal <- colorBin("YlOrRd", domain = world_data$TFR, bins = bins)
+labels <- sprintf("<strong>%s</strong><br/>%g",
+  world_data$name_long, world_data$TFR) |> lapply(htmltools::HTML)
 
-![](images/clipboard-2928271543.png){fig-align="center"}
+leaflet(world_data) |> 
+  addProviderTiles(providers$Esri.WorldTopoMap) |> 
+  addPolygons(
+    fillColor = ~pal(TFR), weight =  2, opacity = 1, color = "white", 
+    dashArray = "3", fillOpacity = 0.6,
+    highlightOptions = highlightOptions(
+      weight = 5, color = "#666", dashArray = "", 
+      fillOpacity = 0.6, bringToFront = TRUE
+    ),
+    label = labels,
+    labelOptions = labelOptions(
+      style = list("font-weight" = "normal", padding = "3px 8px"), 
+      textsize = "15px", direction = "auto"
+    )
+  ) |> 
+  addLegend(
+    pal = pal, values = ~TFR, opacity = 0.6, title = NULL, position = "bottomright"
+  )
+```
 
-## Advanced interactivity: Shiny
+## 우리나라: Code
 
--   My first Shiny app
+```{r}
+#| eval: false
+#| echo: true
+library(tmap)
+class_color <- c("#d7191c", "#fdae61", "#ffffbf", "#a6d96a", "#1a9641")
+sigungu_data <- sigungu_data |> mutate(index = as.numeric(index))
+tmap_mode(mode = "view")
+my_tmap <- tm_shape(sigungu_data) + 
+  tm_polygons(
+    fill = "index", fill_alpha = 0.6, col_alpha = 0.5,
+    popup.vars = c("지역소멸위험지수: " = "index"), 
+    popup.format = list(index = list(digits = 3)), 
+    id = "SGG1_FNM", 
+    fill.scale = tm_scale_intervals(
+      values = class_color, breaks = c(0, 0.2, 0.5, 1.0, 1.5, Inf), 
+      labels = c("< 0.2", "0.2~0.5", "0.5~1.0", "1.0~1.5", ">= 1.5")
+    ),
+    fill.legend = tm_legend(title = "Classes")
+  ) +
+  tm_shape(sido_shp) + tm_borders(lwd = 2)
+my_tmap
+```
 
--   Spatial Kernel Density Estimation
+## 우리나라: Result
 
-<https://sangillee.shinyapps.io/SpatialKernelDensityEstimation/>
+```{r}
+#| fig-height: 6.5
+#| fig-width: 10
+class_color <- c("#d7191c", "#fdae61", "#ffffbf", "#a6d96a", "#1a9641")
+sigungu_data <- sigungu_data |> mutate(index = as.numeric(index))
+tmap_mode(mode = "view")
+my_tmap <- tm_shape(sigungu_data) + 
+  tm_polygons(
+    fill = "index", fill_alpha = 0.6, col_alpha = 0.5,
+    popup.vars = c("지역소멸위험지수: " = "index"), 
+    popup.format = list(index = list(digits = 3)), 
+    id = "SGG1_FNM", 
+    fill.scale = tm_scale_intervals(
+      values = class_color, breaks = c(0, 0.2, 0.5, 1.0, 1.5, Inf), 
+      labels = c("< 0.2", "0.2~0.5", "0.5~1.0", "1.0~1.5", ">= 1.5")
+    ),
+    fill.legend = tm_legend(title = "Classes")
+  ) +
+  tm_shape(sido_shp) + tm_borders(lwd = 2)
+my_tmap
+```
+:::
 
-## Advanced modeling
+# [LLM-기반 웹 앱 내용 요소]{style="color:coral"}
 
-![<https://www.tidymodels.org/>](images/clipboard-3467293569.png){fig-align="center"}
+## LLM: 개념
 
-## Advanced programming
+-   Large Language Model (거대 언어 모델)
 
-![<https://purrr.tidyverse.org/>](images/clipboard-3235294248.png){fig-align="center"}
+![[https://www.geeksforgeeks.org/artificial-intelligence/large-language-model-llm/](https://www.geeksforgeeks.org/artificial-intelligence/large-language-model-llm/){style="font-size:1.25rem"}](https://media.geeksforgeeks.org/wp-content/uploads/20250820175240431060/exploring_large_language_models_llms_.webp)
 
-## R and Generative AI: ChatGPT
+## LLM: 개념
 
--   Automated code generation
+![[https://x.com/samuraipreneur/status/1888530105280168421](https://x.com/samuraipreneur/status/1888530105280168421){style="font-size:1.25rem"}](images/clipboard-3134904240.png)
 
--   Learning programming concepts
+## LLM API: 프로그래밍적 접근
 
--   Creative writing and documentation
+-   LLM을 웹 인터페이스에서 사용하는 것이 아니라, 코드로 직접 제어하고 자동화하는 방식
 
--   Debugging assistance
+-   API(Application Programming Interface, 응용프로그램 프로그래밍 인터페이스)
 
--   Improved Shiny app development
+    -   응용프로그램(예: 웹 앱)이 프로그래밍을 통해 다른 프로그램이나 서비스(예: ChatGPT)와 상호작용하도록 해 주는 접점
 
--   Assistance with statistics and data science
+    -   HTTP 요청(POST) + JSON 구조로 메시지 전달
 
-## R and Generative AI: ChatGPT
+    -   모델 이름, 메시지, 파라미터를 코드로 지정
 
--   Air (<https://github.com/soumyaray/air>)
+    -   응답은 JSON 형태의 텍스트/토큰
 
--   TheOpenAIR (<https://openair-lib.org/>)
+-   대량 처리, 반복 처리, 자동화, 소프트웨어 통합
 
--   RTutor (<https://github.com/gexijin/RTutor>)
+## LLM API: 기본 구조
 
--   askgpt (<https://github.com/JBGruber/askgpt>)
+-   요청(request) 구성 요소
 
--   gptstudio (<https://github.com/MichelNivard/gptstudio>)
+    -   Base URL: 모델 서버의 접속 주소, https://api.openai.com/v1
 
--   gpttools (<https://github.com/JamesHWade/gpttools>)
+    -   모델 이름: gpt-5.1
 
--   gptchatteR (<https://github.com/isinaltinkaya/gptchatteR>)
+    -   API Key (인증): 사용자 신원 증명 토큰
 
-## R and Generative AI: General
+    -   메시지: 모델에 보낼 내용, JSON 배열로 구성
 
--   `GenAI` (<https://genai.gd.edu.kg/>)
+-   응답(response) 구성 요소
 
-![](https://genai.gd.edu.kg/assets/img/overview.svg)
+    -   모델 출력 텍스트: 모델이 생성한 실제 답변
+
+    -   토큰 사용량: 과금 및 모델 내부 처리량 계산에 사용
+
+    -   메시지 구조(JSON)
+
+## 사례: Google Gemini
+
+-   Google AI Studio(<https://aistudio.google.com/app/>) 접속
+
+    -   구글 계정 로그인 필요
+
+-   왼쪽 하단에서 Get API Key 클릭
+
+-   오른쪽 상단에서 API 키 만들기 클릭
+
+-   새 키 만들기 창
+
+    -   키 이름 지정: 이름 지정
+
+    -   가져온 프로젝트 선택: 프로젝트 가져오기 혹은 프로젝트 만들기
+
+-   오른쪽 아이콘 중 Copy API key 선택
+
+## 사례: Google Gemini
+
+-   콘솔: `usethis::edit_r_environ()` 실행
+
+-   `.Renviron` 파일
+
+    -   `GEMINI_API_KEY=your_key_here`
+
+    -   저장
+
+-   Session \> Restart R 실행
+
+## [**ellmer**](https://ellmer.tidyverse.org/) 패키지
+
+![[https://ellmer.tidyverse.org/](https://ellmer.tidyverse.org/){style="font-size:1.25rem"}](images/hex_ellmer.png)
+
+## [**ellmer**](https://ellmer.tidyverse.org/) 패키지
+
+::: panel-tabset
+## 코드
+
+```{r}
+#| echo: true
+#| eval: false
+library(ellmer)
+chat <- chat_google_gemini(
+  base_url = "https://generativelanguage.googleapis.com/v1beta/",
+  api_key = Sys.getenv("GEMINI_API_KEY"),
+  model = "gemini-2.5-flash",
+  system_prompt = ""
+)
+chat$chat("서울대학교 AI융합교육학과를 소개해주세요.")
+```
+
+## 결과
+
+```{r}
+library(ellmer)
+chat <- chat_google_gemini(
+  base_url = "https://generativelanguage.googleapis.com/v1beta/",
+  api_key = Sys.getenv("GEMINI_API_KEY"),
+  model = "gemini-2.5-flash",
+  system_prompt = ""
+)
+chat$chat("서울대학교 AI융합교육학과를 소개해주세요.")
+```
+:::
+
+## 로컬 LLM: [Ollama](https://ollama.com/)
+
+-   Ollama 홈페이지 접속: <https://ollama.com/>
+
+-   Download 클릭
+
+    -   Windows / macOS / Linux 중 하나를 선택
+
+-   모델 다운로드: Windows PowerShell 실행
+
+    -   `ollama pull gemma3:4b`
+
+-   실행
+
+## 로컬 LLM: [Ollama](https://ollama.com/)
+
+::: panel-tabset
+## 코드
+
+```{r}
+#| echo: true
+#| eval: false
+library(ellmer)
+chat <- chat_ollama(
+  base_url = "http://localhost:11434",
+  model = "gemma3:4b",
+  system_prompt = ""
+)
+chat$chat("서울대학교 AI융합교육학과를 소개해주세요.")
+```
+
+## 결과
+
+```{r}
+library(ellmer)
+chat <- chat_ollama(
+  base_url = "http://localhost:11434",
+  model = "gemma3:4b",
+  system_prompt = ""
+)
+chat$chat("서울대학교 AI융합교육학과를 소개해주세요.")
+```
+:::
+
+## LLM과 웹 앱
+
+-   [**shiny**](https://shiny.posit.co/): 서버형 웹 앱 개발 프레임워크
+
+-   [**shinychat**](https://posit-dev.github.io/shinychat/r/): LLM shiny 웹 앱 개발 도우미 패키지
+
+    -   [**ellmer**](https://ellmer.tidyverse.org/) 패키지와 결합
+
+-   예시: <https://sangillee.shinyapps.io/KosisChat/>

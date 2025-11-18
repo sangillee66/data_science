@@ -1,0 +1,382 @@
+---
+title: "소통하기: 지리공간적 시각화"
+author: 이상일·김우형(서울대학교 지리교육과)
+date-modified: last-modified
+number-sections: true
+format: 
+  html: 
+    toc: true
+    embed-resources: true
+code-link: true
+code-copy: true
+execute: 
+  warning: false
+  error: false
+  freeze: auto
+lightbox: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+
+## 개요 {.unnumbered}
+
+여기서는 지리공간적 시각화, 특히 지도 제작에 집중한다.
+
+우선 [**tidyverse**](https://www.tidyverse.org/) 패키지를 불러온다.
+
+```{r}
+library(tidyverse)
+```
+
+## 지리공간적 데이터와 지도
+
+### 벡터와 래스터 데이터
+
+지도는 간단히 말해 지리공간적(geospatial) 데이터를 그래픽 형태로 나타낸 것이다. 따라서 지리공간적 데이터를 이해하는 것이 지도 제작의 시발점이 되어야 한다. 지리공간적 데이터는 GIS적 관점에서 벡터(vector) 데이터와 래스터(raster) 데이터로 나뉜다. 벡터 데이터는 지리공간적 사상의 기하학적 형태(형상 데이터)와 그것의 다양한 특성(속성 데이터)을 담고 있는 데이터이다.
+
+벡터 데이터는 지리공간적 사상을 포인트, 라인, 폴리곤 피처로 구분하고, 개별 피처를 형태와 위치를 개별 피처를 구성하고 있는 버택스의 좌표값을 저장함으로써 구현하는데, 이러한 정보를 담고 있는 것을 형상 데이터라고 한다. 예를 들어 우리나라 17개 시도에 대한 디지털 행정구역도가 여기에 해당한다. 이에 반해 속성 데이터는 포인트, 라인, 폴리곤 등으로 재현된 개별 피처의 다양한 특성을 가지고 있는 것으로 보통 테이블 데이터라고 한다. 예를 들어, 우리나라 17개 시도의 인구수, 인구성장률, 순이동률과 같은 것이다. 형상 데이터가 지리공간적 데이터의 특수성을 더 잘 반영하기 때문에 보통 형상 데이터를 공간 데이터라고도 하면, 벡터 데이터에서는 이 두 종류의 데이터가 기본적으로 독립적이며 보통은 느슨한 형태로 결합되어 있다.
+
+![](images/clipboard-3748613320.png)
+
+이에 반해 래스터 데이터는 세상을 동일한 크기의 수 많은 그리드 셀(grid cell)로 구성되어 있다고 보며, 개별 그리드 셀에 속성이 저장되어 있는 데이터를 의미한다. 가장 쉬운 예가 인공위성 영상이다. 인공위성 영상의 특정한 공간해상도를 가진 픽셀로 나뉘어져 있고, 개별 픽셀에 특정한 값(특정한 밴드의 반사값)이 들어가 있다. 따라서 래스터 데이터는 벡터 데이터처럼 형상 데이터와 속성 데이터가 분리되어 있는 것이 아니라 일체형이다. 특수한 경우가 아니라면 하나의 래스터 파일에는 하나의 속성만이 들어가 있다. 이에 반해 벡터 데이터의 속성 파일에는 수많은 변수가 포함될 수 있다.
+
+![](images/clipboard-3795609245.png)
+
+지도 제작의 원칙은 동일하지만, 지도로 나타낼 데이터가 벡터 데이터인지 래스터 데이터인지에 혹은 둘 다인지에 따라 지도화의 세부 절차는 달라질 수 있다. 여기서는 벡터 데이터에 기반한 지도 제작에 집중하고자 한다. 속성 데이터는 기본적으로 R의 데이터 프레임과 동일한 개념이므로, 데이터사이언스의 기본 과정을 통해 불러오고, 정돈하고, 변형할 수 있다. 따라서 보다 중요한 것은 형상 데이터를 다루는 것이다.
+
+### 셰이프 파일
+
+벡터 데이터 포맷, 보다 정확하게는 형상 데이터의 포맷으로 가장 널리 사용되고 있는 것이 셰이프 파일(shape file)이다. 셰이프 파일(확장자가 .shp인 파일)은 전세계에서 가장 큰 GIS 회사인 [ESRI](https://www.esri.com/)가 오래전에 개발한 벡터 데이터 포맷으로, 현재 표준 포맷의 역할을 하고 있다. 그런데 셰이프 파일은 동일한 이름을 공유하지만 확장자가 서로 다른 몇 개의 파일의 묶음을 지칭한다는 점을 이해할 필요가 있다. 반드시 다음의 네 파일을 함께 가지고 있어야 한다.
+
+-   `*.shp`: 버텍스의 좌표값이 포함된 핵심 파일
+
+-   `*.dbf`: 기본 속성 파일
+
+-   `*.shx`: 공간적 인덱싱 파일
+
+-   `*.prj`: 투영 정보 파일
+
+마지막의 `*.prj` 파일은 없어도 지도로 나타날 수는 있다. 그러나 다른 셰이프 파일과 함께 지도로 나타내거나 축척막대와 같은 지도 요소를 적절하게 나타내기 위해서는 좌표참조계(CRS) 정보가 포함된 `*.prj` 파일은 가질 필요가 있다.
+
+### sf 패키지
+
+R에서 형상 데이터를 다루는데 있어 거의 표준처럼 사용되고 있는 것이 [**sf**](https://r-spatial.github.io/sf/) 패키지이다. 기본적으로는 셰이프 파일을 불러오기 위한 `st_read()` 함수를 주로 사용하게 되겠지만, [**sf**](https://r-spatial.github.io/sf/) 패키지는 벡터-기반 GIS 오퍼레이션을 위한 폭넓은 함수를 제공한다. 중요한 것을 정리하면 다음과 같다.
+
++-----------+---------------------+-----------------------------------+
+| 구분      | 함수                | 설명                              |
++===========+=====================+===================================+
+| 읽고 쓰기 | `st_read()`         | 셰이프 파일 읽어 들이기           |
+|           |                     |                                   |
+|           | `read_sf()`         |                                   |
++-----------+---------------------+-----------------------------------+
+|           | `st_write()`        | 셰이프 파일 저장                  |
++-----------+---------------------+-----------------------------------+
+| 투영 관련 | `st_crs()`          | CRS 정보 확인                     |
++-----------+---------------------+-----------------------------------+
+|           | `st_transform()`    | CRS 바꾸기                        |
++-----------+---------------------+-----------------------------------+
+| 기하 측정 | `st_area()`         | 면적 계산                         |
++-----------+---------------------+-----------------------------------+
+|           | `st_length()`       | 길이 계산                         |
++-----------+---------------------+-----------------------------------+
+|           | `st_perimeter()`    | 둘레 계산                         |
++-----------+---------------------+-----------------------------------+
+|           | `st_distance()`     | 거리 계산                         |
++-----------+---------------------+-----------------------------------+
+| 기하 변형 | `st_centroid()`     | 센트로이드 생성                   |
++-----------+---------------------+-----------------------------------+
+|           | `st_buffer()`       | 버퍼 생성                         |
++-----------+---------------------+-----------------------------------+
+|           | `st_boundary()`     | 가장자리 추출                     |
++-----------+---------------------+-----------------------------------+
+|           | `st_simplify()`     | 선 피처 단순화 실행               |
++-----------+---------------------+-----------------------------------+
+| 기하 생성 | `st_point()`        | 포인트 피처 생성                  |
++-----------+---------------------+-----------------------------------+
+|           | `st_vironoi()`      | 보로노이 폴리곤 생성              |
++-----------+---------------------+-----------------------------------+
+|           | `st_convex_hull()`  | 컨벡스 헐 생성                    |
++-----------+---------------------+-----------------------------------+
+|           | `st_make_grid()`    | 규칙 그리드 생성                  |
++-----------+---------------------+-----------------------------------+
+| 기하 검토 | `st_is_valid()`     | 지오메트리가 밸리드한지 여부 검토 |
++-----------+---------------------+-----------------------------------+
+|           | `st_make_valid()`   | 지오메트리를 밸리드하게 만들기    |
++-----------+---------------------+-----------------------------------+
+| 기하 중첩 | `st_intersection()` | 기하 교집합 중첩                  |
++-----------+---------------------+-----------------------------------+
+|           | `st_union()`        | 기하 합집합 중첩                  |
++-----------+---------------------+-----------------------------------+
+|           | `st_crop()`         | 기하 크롭 중첩                    |
++-----------+---------------------+-----------------------------------+
+| 기타      | `st_coordinates()`  | 버택스 좌표값 반환                |
++-----------+---------------------+-----------------------------------+
+|           | `st_cast()`         | 다른 피처 유형으로 변환           |
++-----------+---------------------+-----------------------------------+
+|           | `st_as_sf()`        | sf 객체로 변환                    |
++-----------+---------------------+-----------------------------------+
+|           | `st_graticule()`    | 그래티큘 생성                     |
++-----------+---------------------+-----------------------------------+
+|           | `st_join()`         | 공간적 조인 실행                  |
++-----------+---------------------+-----------------------------------+
+
+래스터 데이터를 다루는데는 [**terra**](https://rspatial.github.io/terra/) 패키지가 가장 널리 사용되고 있으며, [**stars**](https://r-spatial.github.io/stars/)패키지가 최근 많은 주목을 받고 있다. [**stars**](https://r-spatial.github.io/stars/) 패키지와 [**sf**](https://r-spatial.github.io/sf/) 패키지는 모두 [에트저르 페베스마(Edzer Pebesma)](https://www.uni-muenster.de/Geoinformatics/en/institute/staff/index.php/119/Edzer_Pebesma)가 만들었다. 두 패키지에 대한 설명은 페베스마와 로저 비번드(Roger Bivand)가 함께 쓴 '[R을 활용한 공간데이터사이언스(Spatial Data Science With Applications in R](https://r-spatial.org/book/))'에 잘 나타나 있다
+
+## 정적 지도 제작
+
+### 세계 지도
+
+[**ggplot2**](https://ggplot2.tidyverse.org/) 패키지를 이용하여 정적 지도를 그려본다. [**ggplot2**](https://ggplot2.tidyverse.org/)패키지로 지도를 그린다는 것은 '지도도 그래프다.'라는 접근법에 기반하고 있다. [**ggplot2**](https://ggplot2.tidyverse.org/)의 문법을 지도 제작으로 확장할 수 있고, 막강한 생태계를 고려할 때 충분히 이점이 있는 접근법이다.
+
+데이터는 지난 실습에서 사용한 WPP 2024(World Population Prospects 2024)이다. 2024년 전세계 국가별 TFR(Total Fertility Rate, 합계출산율) 지도를 그려본다.
+
+벡터 데이터를 활용한 지도는 형상 데이터와 속성 데이터를 결합해야만 제작할 수 있다. 여기서 형상 데이터는 전세계 국가 경계 데이터이고, 속성 데이터는 TFR이 포함된 WPP 2024 데이터이다. 형상 데이터는 `spData` 패키지에 들어 있는 `world` 객체를 사용한다. 벡터 형식의 데이터는 [**sf**](https://r-spatial.github.io/sf/) 패키지의 `st_as_sf()` 함수를 통해 `sf` 객체로 변환하는 것이 좋다.
+
+```{r}
+library(spData)
+library(sf)
+data(world)
+world <- st_as_sf(world)
+```
+
+WPP 2024 데이터를 불러와 2025년만 골라낸다.
+
+```{r}
+wpp_2024 <- read_rds("wpp_2024.rds")
+my_wpp <- wpp_2024 |> 
+  filter(year == 2025)
+```
+
+두 데이터를 `left_join()` 함수를 이용하여 결합한다. 벡터 데이터의 경우는 늘 반드시 형상 데이터를 중심에 두고 `left_join()` 함수를 통해 속성 데이터를 불러와 합체해야 한다.
+
+```{r}
+world_data <- world |>
+  left_join(my_wpp, join_by(iso_a2 == ISO2))
+```
+
+로빈슨 도법(Robinson projection)의 지도를 제작한다. [**ggplot2**](https://ggplot2.tidyverse.org/) 패키지로 지도를 그리는 가장 좋은 방법은 기하객체 함수인 `geom_sf()`와 좌표 변환 함수인 `coord_sf()`를 결합하는 것이다. `scale_x_continuous()`와 `scale_y_continuous()`의 내용은 그래티큘(경위선망)을 원하는 방식대로 지도에 포함시키기 위한 것이다. 그래프를 `world_map`이라는 이름의 객체로 저장하는 것은 뒤에서 이 지도를 사용하기 때문이다.
+
+```{r}
+world_map <- ggplot() +
+  geom_sf(data = world_data, aes(fill = TFR, text = name_long)) + # text는 나중에 인터랙티브 지도에 사용
+  coord_sf(crs = "+proj=robin") + # "로빈슨 도법"으로 설정
+  scale_fill_viridis_c() +
+  scale_x_continuous(breaks = seq(-180, 180, 30)) + # x축(경도) 설정
+  scale_y_continuous(breaks = c(-89.5, seq(-60, 60, 30), 89.5)) + # y축(위도) 설정
+  theme(
+    panel.background = element_rect("white"), # 배경색
+    panel.grid = element_line(color = "gray80") # 경위도 색
+  )
+world_map
+```
+
+`coord_sf`의 `crs` 설정을 변경하면 다른 투영법의 지도도 만들 수 있다. `crs`를 변경하여 개인적으로 좋아하는 대한민국 중심의 정사 도법(Orthographic Projection) 지도를 그려본다. 마치 지구본을 보는 듯한 지도를 그릴 수 있다. 혹시 다른 투영법이 적용된 지도를 그리고 싶다면 ChatGPT에게 물어보거나 [epsg.io](https://epsg.io/)에서 PROJ.4 문자열을 찾아볼 수도 있다.
+
+```{r}
+world_map_korea_ortho <- ggplot() +
+  geom_sf(data = world_data) +
+  # === 정사도법 및 중심 좌표 설정 ===
+  coord_sf(crs = "+proj=ortho +lon_0=127.5 +lat_0=37") +
+  theme(
+    panel.background = element_rect("black"),
+    panel.grid = element_blank()
+  )
+world_map_korea_ortho
+```
+
+### 우리나라 지도
+
+우리나라 지도도 그려본다. 'Lab08: 데이터 수집하기'에서 KOSIS의 API를 통해 수집, 정리한 시군구 단위 지역소멸위험지수를 지도화한다. 우선 우리나라 시군구 행정 경계에 대한 도형(형상, 기하) 데이터가 필요하다.
+
+행정구역 파일은 통계청의 [통계지리정보서비스](https://sgis.kostat.go.kr/)나 [V-World 디지털트윈국토](https://www.vworld.kr/v4po_main.do) 에서 구할 수 있다. 다운받는 방법을 익히면 좋겠지만, 시간 절약을 위해 다운받아 정리한 파일을 그냥 제공한다. 프로젝트 폴더에 파일을 저장한 후, 아래의 코드를 통해 불러온다.
+
+```{r}
+#| output: false
+sido_shp <- st_read("shapefile/sido.shp", options = "ENCODING=CP949")
+sigungu_shp <- read_sf("shapefile/sigungu.shp", options = "ENCODING=CP949")
+```
+
+두 파일에 대해 서로 다른 함수를 적용한 것을 알 수 있다. `st_read()` 함수는 가장 보편적으로 사용되는 것으로 불러올 때마다 파일에 대한 정보(지오메트리 유형, 바운딩 박스, CRS 등)가 자동으로 디스플레이된다. 이러한 정보는 항상 유익한 것이지만 보이지 않게 하고 싶을 수도 있다. 이 때 `read_sf()` 함수를 사용할 수 있다.
+
+불러들인 파일을 바탕으로 시군구 경계를 그려본다. 지도 제작 전문 패키지인 [**tmap**](https://r-tmap.github.io/tmap/)의 `qtm()` 함수를 이용하여 시군구 경계에 대한 지도를 빠르게 그려본다. [**tmap**](https://r-tmap.github.io/tmap/)패키지로 지도를 그린다는 것은 '지도는 지도다.'라는 접근법에 기반하고 있다. [**tmap**](https://r-tmap.github.io/tmap/)의 문법을 새로 배워야 한다는 단점이 있긴 하지만, 지도는 그래프로 환원될 수 없는 고유한 특성이 있고, [**tmap**](https://r-tmap.github.io/tmap/)패키지는 이러한 지도의 고유한 특성을 잘 반영하고 있다. 좀 더 복잡한 [**tmap**](https://r-tmap.github.io/tmap/)의 문법을 사용한 지도 제작은 맨 뒤에서 다루기로 한다.
+
+```{r}
+library(tmap)
+qtm(sigungu_shp)
+```
+
+etl에 업로드 되어있는 지역소멸위험지수 데이터(`data_sigungu`)를 불러온다.
+
+```{r}
+data_sigungu <- read_rds("data_sigungu.rds")
+```
+
+도형 데이터(korea_sgg)와 속성 데이터(data_sigungu)를 공통 키(key)를 활용하여 결합한다.
+
+```{r}
+sigungu_data <- sigungu_shp |> 
+  left_join(
+    data_sigungu, join_by(SGG1_CD == C1)
+  )
+```
+
+이제 [**ggplot2**](https://ggplot2.tidyverse.org/) 패키지를 이용하여 지도를 제작한다. 'Lab08: 데이터 수집하기'에서 인구소멸위험지수의 시도별 그래프를 제작한 것과 비교해 보라. 그 유사함에 깜짝 놀랄 수도 있다. [**ggplot2**](https://ggplot2.tidyverse.org/)에서는 그래프와 지도의 구분이 없다. 이것은 [**ggplot2**](https://ggplot2.tidyverse.org/)의 장점이자 단점이다.
+
+```{r}
+sigungu_data <- sigungu_data |> 
+  mutate(
+    index_class = case_when(
+      index < 0.2 ~ "1",
+      index >= 0.2 & index < 0.5 ~ "2",
+      index >= 0.5 & index < 1.0 ~ "3",
+      index >= 1.0 & index < 1.5 ~ "4",
+      index >= 1.5 ~ "5"
+    ),
+    index_class = fct(index_class, levels = as.character(1:5))
+  )
+
+class_color <- c("1" = "#d7191c", "2" = "#fdae61",
+                 "3" = "#ffffbf", "4" = "#a6d96a", 
+                 "5" = "#1a9641")
+ggplot() +
+  geom_sf(data = sigungu_data, aes(fill = index_class), show.legend = TRUE) +
+  geom_sf(data = sido_shp, fill = NA, lwd = 0.5) + # 굵은 시도 경계
+  scale_fill_manual(name = "Classes", 
+                    labels = c("< 0.2", "0.2 ~ 0.5", "0.5 ~ 1.0", 
+                               "1.0 ~ 1.5", ">= 1.5"), 
+                    values = class_color, drop = FALSE) # 데이터에 해당 범주가 없어도 모든 레벨 표시
+```
+
+## 인터랙티브 지도 제작
+
+위에서 사용한 [**plotly**](https://plotly.com/r/) 패키지의 `ggplotly()` 함수를 활용하면 반응형 지도를 생성할 수 있다. 앞의 코드 둘째 줄에 `aes()`에 `text = name_long`이 설정되어 있는데, 마우스로 국가를 가리킬 때 이름이 나타날 수 있게 조치한 것이다.
+
+```{r}
+library(plotly)
+ggplotly(world_map)
+```
+
+지도 위에서 [**plotly**](https://plotly.com/r/) 가 제공하는 다양한 기능을 적용해 볼 필요가 있다. 인터랙티브 그래프에 비해 인터랙티브 지도의 유용성이 더 높아 보인다.
+
+우리나라 지도는 다른 방식으로 반응형으로 만들어 본다. 여기서는 [**ggiraph**](https://davidgohel.github.io/ggiraph/) 패키지를 사용한다. 처음 사용하는 경우라면 먼저 패키지를 인스톨해야 한다. 코드의 전반부는 커서를 특정 시군구 위에 올렸을 때 나타나는 정보를 좀 더 다양하게 하려는 조치이다. 중간의 코드가 핵심인데, 찬찬히 살펴보면 그렇게 복잡하지 않다. 마지막은 완전히 지엽적인 것인데, 커서를 특정 시군구 위에 올렸을 때 색이 회색으로 변하게 하기 위한 것이다.
+
+```{r}
+library(ggiraph)
+sigungu_data <- sigungu_data |> 
+  mutate(
+    index = format(index, digits = 4, nsmall = 4),
+    my_tooltip = str_c("Name: ", SGG1_FNM, "\n Index: ", index)
+  )
+
+gg <- ggplot() +
+  geom_sf_interactive(
+    data = sigungu_data, 
+    aes(
+      fill = index_class, 
+      tooltip = my_tooltip, 
+      data_id = SGG1_FNM
+      ), 
+    show.legend = TRUE) +
+  geom_sf(data = sido_shp, fill = NA, lwd = 0.5) +
+  scale_fill_manual(
+    name = "Classes", 
+    labels = c("< 0.2", "0.2 ~ 0.5", "0.5 ~ 1.0", "1.0 ~ 1.5", ">= 1.5"), 
+    values = class_color, drop = FALSE) 
+girafe(ggobj = gg) |> 
+  girafe_options(
+    opts_hover(css = "fill: gray")
+  )
+```
+
+그러나 반응형 지도 제작에 가장 널리 쓰이는 것은 [leaflet](https://leafletjs.com/)이다. [leaflet](https://leafletjs.com/)은 웹 상의 반응형 지도 제작에 특화된 JavaScript 라이브러리이다. 이 라이브러리를 R에서 쓸 수 있게 도와주는 래퍼 패키지가 [**leaflet**](https://rstudio.github.io/leaflet/) 패키지이다. 패키지 홈페이지가 매우 상세하게 잘 되어 있다. 숙독하기를 권한다.
+
+```{r}
+library(leaflet)
+```
+
+매우 단순한 인터랙티브 지도를 만들어 본다. 자신이 원하는 경위도값과 설명문으로 수정하면 된다.
+
+```{r}
+leaflet() |> 
+  addTiles() |> 
+  addPopups(126.9556513, 37.4598712, "VR Lab",
+            options = popupOptions(closeButton = FALSE))
+```
+
+</br>
+
+위에서 작성했던 TFR 세계지도를 [**leaflet**](https://rstudio.github.io/leaflet/) 패키지의 다양한 함수와 아규먼트를 활용하여 인터랙티브 지도를 제작해 본다.
+
+```{r}
+world_data <- world_data |> filter(!is.na(TFR))
+
+# TFR 값의 범위 정의
+bins <- c(0, 1.5, 2.1, 3, 4, 5, Inf)
+# 색상 팔레트 정의
+pal <- colorBin("YlOrRd", domain = world_data$TFR, bins = bins)
+# 국가 위에 마우스를 올렸을 때 표시될 툴팁 정의
+labels <- sprintf("<strong>%s</strong><br/>%g",
+  world_data$name_long, world_data$TFR) |> lapply(htmltools::HTML)
+
+leaflet(world_data) |> 
+  addProviderTiles(providers$Esri.WorldTopoMap) |> 
+  addPolygons(
+    fillColor = ~pal(TFR),
+    weight =  2, 
+    opacity = 1,
+    color = "white",
+    dashArray = "3",
+    fillOpacity = 0.6,
+    highlightOptions = highlightOptions(
+      weight = 5,
+      color = "#666",
+      dashArray = "",
+      fillOpacity = 0.6,
+      bringToFront = TRUE),
+    label = labels,
+    labelOptions = labelOptions(
+      style = list("font-weight" = "normal", padding = "3px 8px"),
+      textsize = "15px",
+      direction = "auto")
+  ) |> 
+  addLegend(
+    pal = pal, values = ~TFR, opacity = 0.6, title = NULL,
+    position = "bottomright"
+  )
+```
+
+</br>
+
+우리나라 시군구 단위의 인구소멸위험지수에 대한 지도를 반응형으로 만들어 본다. 여기서는 `tmap`을 활용한다. 해당 시군구 위에 클릭하면 지역소멸위험지수가 나타난다.
+
+```{r}
+class_color <- c("#d7191c", "#fdae61", "#ffffbf", "#a6d96a", "#1a9641")
+sigungu_data <- sigungu_data |> 
+  mutate(
+    index = as.numeric(index)
+  )
+# 반응형 지도 모드
+# 정적 지도 제작을 위해서는 mode = "plot"으로 설정
+tmap_mode(mode = "view") 
+my_tmap <- tm_shape(sigungu_data) + 
+  tm_polygons(
+    fill = "index",
+    fill.scale = tm_scale_intervals(
+      values = class_color,
+      breaks = c(0, 0.2, 0.5, 1.0, 1.5, Inf), 
+      labels = c("< 0.2", "0.2~0.5", "0.5~1.0", "1.0~1.5", ">= 1.5")
+      ), 
+    fill.legend = tm_legend(
+      title = "Classes"
+    ),
+    popup.vars=c("지역소멸위험지수: " = "index"), 
+    popup.format = list(index = list(digits = 3)), 
+    id = "SGG1_FNM", 
+    fill_alpha = 0.6, 
+    col_alpha = 0.5
+  ) +
+  tm_shape(sido_shp) + tm_borders(lwd = 2)
+my_tmap
+tmap_save(my_tmap, "지방소멸위험지수.html")
+```

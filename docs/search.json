@@ -10441,7 +10441,7 @@
     "href": "R_lec_09_2025.html#래퍼-패키지-dt",
     "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
     "section": "래퍼 패키지: DT\n",
-    "text": "래퍼 패키지: DT\n\n\nDataTables: 자바스크립트 라이브러리\nR 래퍼 패키지: DT\n\n\nhttps://datatables.net/",
+    "text": "래퍼 패키지: DT\n\n\nDataTables: 자바스크립트 라이브러리\n\nR 래퍼 패키지: DT\n\n웹북: D3 for R Users\n\n\n\n\n\nhttps://datatables.net/",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
@@ -10485,7 +10485,7 @@
     "href": "R_lec_09_2025.html#r-패키지-ggiraph-패키지",
     "title": "\nR Lecture 9웹 앱 개발: 인터랙티브 시각화\n",
     "section": "R 패키지: ggiraph 패키지",
-    "text": "R 패키지: ggiraph 패키지\n\nggplot2 패키지의 확장\n\n상호작용형 기하객체(geometry): geom_*_interactive\n\ngeom_point(): geom_point_interactive()\ngeom_sf(): geom_sf_interactive()\n…\n\n\n\n상호작용형 시각속성(aethetics)\n\ntoolitp\nonclick\ndata_id\n\n\n웹북(https://www.ardata.fr/ggiraph-book/)",
+    "text": "R 패키지: ggiraph 패키지\n\nggplot2 패키지의 확장\n\n상호작용형 기하객체(geometry): geom_*_interactive\n\ngeom_point(): geom_point_interactive()\ngeom_sf(): geom_sf_interactive()\n…\n\n\n\n상호작용형 시각속성(aethetics)\n\ntoolitp\nonclick\ndata_id\n\n\n웹북: ggiraph-book",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
@@ -10676,6 +10676,601 @@
     "crumbs": [
       "R 실습: 2025/2",
       "소통하기: 인터랙티브 시각화"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#지리공간적-데이터의-종류",
+    "href": "R_lec_10_2025.html#지리공간적-데이터의-종류",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "지리공간적 데이터의 종류",
+    "text": "지리공간적 데이터의 종류\n\n\n벡터(vector) 데이터\n\n포인트, 라인, 폴리곤\n형상 데이터 + 속성 데이터\n\n\n\n래스터(raster) 데이터\n\n그리드 셀(grid cell)\n일체형",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#지리공간적-데이터의-종류-1",
+    "href": "R_lec_10_2025.html#지리공간적-데이터의-종류-1",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "지리공간적 데이터의 종류",
+    "text": "지리공간적 데이터의 종류",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#지리공간적-데이터의-종류-2",
+    "href": "R_lec_10_2025.html#지리공간적-데이터의-종류-2",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "지리공간적 데이터의 종류",
+    "text": "지리공간적 데이터의 종류",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#벡터-데이터",
+    "href": "R_lec_10_2025.html#벡터-데이터",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "벡터 데이터",
+    "text": "벡터 데이터\n\n\n벡터 데이터: 형상 데이터 + 속성 데이터\n\n\n형상 데이터 (기하, 도형, 공간 데이터)\n\n지리공간적 객체 자체에 대한 데이터\n포인트(점), 라인(선), 폴리곤(면)으로 구분\n버텍스(vertex)의 좌표값\n\n\n\n속성 데이터\n\n지리공간적 객체가 보유한 속성\n기존 일반 데이터와 동일",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#벡터-데이터-1",
+    "href": "R_lec_10_2025.html#벡터-데이터-1",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "벡터 데이터",
+    "text": "벡터 데이터\n\n\n형상 데이터: 셰이프 파일(shape file) (ESRI사)\n\nsigungu.shp: 버텍스의 좌표값이 포함된 핵심 파일\nsigungu.shx: 공간적 인덱싱 파일\nsigungu.dbf: 기본 속성 파일\nsigungu.prj: 투영 정보 파일\n\n\n\n특수한 패키지 필요: sf 패키지\n\n\nst_read() 혹은 read_sf() 함수",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#sf-패키지",
+    "href": "R_lec_10_2025.html#sf-패키지",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "\nsf 패키지",
+    "text": "sf 패키지\n\nhttps://allisonhorst.com/r-packages-functions"
+  },
+  {
+    "objectID": "R_lec_10_2025.html#sf-패키지-주요-함수",
+    "href": "R_lec_10_2025.html#sf-패키지-주요-함수",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "\nsf 패키지: 주요 함수",
+    "text": "sf 패키지: 주요 함수\n\n\n\n\n\n\n구분\n함수\n\n\n\n읽고 쓰기\n\nst_read(), st_write(), read_sf(), write_sf()\n\n\n\n투영 관련\n\nst_crs(), st_transform()\n\n\n\n기하 측정\n\nst_area(), st_length(), st_perimeter(), st_distance()\n\n\n\n기하 변형\n\nst_centroid(), st_buffer(), st_boundary(), st_simplify()\n\n\n\n기하 생성\n\nst_point(), st_voronoi() , st_convex_hull(), st_make_grid()\n\n\n\n기하 검토\n\nst_is_valid(), st_make_valid()\n\n\n\n기하 중첩\n\nst_filter(), st_intersection(), st_union(), st_crop()\n\n\n\n기타\n\nst_coordinates(), st_cast(), st_as_sf(), st_graticule(), st_join()"
+  },
+  {
+    "objectID": "R_lec_10_2025.html#sf-패키지-st_read",
+    "href": "R_lec_10_2025.html#sf-패키지-st_read",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "\nsf 패키지: st_read()\n",
+    "text": "sf 패키지: st_read()\n\n\n\nCode\nResult\n\n\n\n\nlibrary(tidyverse)\nlibrary(sf)\nsigungu_shp &lt;- st_read(\"sigungu.shp\", options = \"ENCODING=CP949\")\nggplot() + geom_sf(data = sigungu_shp)"
+  },
+  {
+    "objectID": "R_lec_10_2025.html#crs",
+    "href": "R_lec_10_2025.html#crs",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "CRS",
+    "text": "CRS\n\nhttps://datacarpentry.github.io/organization-geospatial/03-crs.html",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#crs-정의",
+    "href": "R_lec_10_2025.html#crs-정의",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "CRS: 정의",
+    "text": "CRS: 정의\n\n좌표참조계 Coordinate Reference System\n\n모든 지리공간데이터는 특정한 좌표참조계에 의거해 제작되며 이러한 좌표참조계는 매우 다양함\n\n준거타원체\n투영법(map projection)\n투영 파라미터: 투영축, 투영격, 중앙경선, 가상원점 등\n\n\n지리공간데이터의 SRID(Spatial Reference System Identifiers, 공간참조계식별자)\nsf 패키지: st_crs() 함수",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#crs-방식",
+    "href": "R_lec_10_2025.html#crs-방식",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "CRS: 방식",
+    "text": "CRS: 방식\n\n\nPROJ 정형문자열\n\nhttps://proj.org/en/9.4/\n준거타원체, 투영법, 투영 파라미터를 + 기호로 연결해 작성한 문자열\nUTM-K\n\n+proj=tmerc +lat_0=38 +lon_0=127.5 +k=0.9996 +x_0=1000000 +y_0=2000000 +ellps=GRS80 +units=m\n\n\n\n\n\nEPSG 숫자코드\n\nhttps://epsg.io/\n모든 CRS에 1024~32767 사이의 고유 숫자를 부여\nUTM-K\n\nEPSG: 5179",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#crs-proj-정형문자열",
+    "href": "R_lec_10_2025.html#crs-proj-정형문자열",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "CRS: PROJ 정형문자열",
+    "text": "CRS: PROJ 정형문자열\n\n세계지도를 위한 주요 투영법의 PROJ 별명(alias)\n\n\n\n\n\n\n\n\n투영법\nPROJ 파라미터\n\n\n\n정적원통 도법 Equal Area Cylindrical\n+proj=cea\n\n\n컴펙트 밀러 도법 Compact Miller\n+proj=comill\n\n\n에케르트 IV 도법 Eckert IV\n+proj=eck4\n\n\n정거원통 도법 Equidistant Cylindrical\n+proj=eqc\n\n\n구드 도법 Goode Homolosine\n+proj=goode\n\n\n단열형 구드 도법 Interrupted Goode Homolosine\n+proj=igh\n\n\n메르카토르 도법 Mercator\n+proj=merc\n\n\n몰바이데 도법 Mollweide\n+proj=moll\n\n\n로빈슨 도법 Robinson\n+proj=robin\n\n\n시뉴소이드 도법 Sinusoidal\n+proj=sinu\n\n\n빈켈트리펠 도법 Winkel Tripel\n+proj=wintri",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#crs-epsg-숫자코드",
+    "href": "R_lec_10_2025.html#crs-epsg-숫자코드",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "CRS: EPSG 숫자코드",
+    "text": "CRS: EPSG 숫자코드\n\n널리 사용되는 CRS의 EPSG\n\n\n\n\n\n\n\n\n\n적용 스케일\nEPSG 숫자코드\n설명\n\n\n\n전세계\nEPSG:4326\nWGS84, 측지좌표계, GPS에 사용\n\n\n\nEPSG:3857\n웹 메르카토르 도법, 구글 맵스, 오픈스트리트맵에서 사용\n\n\n\nEPSG:7789\nITRF2014\n\n\n미국\nEPSG:2163\n알베르스 정적원추 도법\n\n\n유럽\nEPSG:3035\n람베르트 정적방위 도법\n\n\n우리나라\nEPSG:5179\nUTM-K\n\n\n\nEPSG:5185\n서부원점\n\n\n\nEPSG:5186\n중부원점\n\n\n\nEPSG:5187\n동부원점\n\n\n\nEPSG:5188\n동해원점",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#crs-세계지도에-적용",
+    "href": "R_lec_10_2025.html#crs-세계지도에-적용",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "CRS: 세계지도에 적용",
+    "text": "CRS: 세계지도에 적용\n\n\n플라트카레\n컴펙트 밀러 도법\n로빈슨\n에케르트 IV",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#지리공간적-시각화-코로플레스맵",
+    "href": "R_lec_10_2025.html#지리공간적-시각화-코로플레스맵",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "지리공간적 시각화: 코로플레스맵",
+    "text": "지리공간적 시각화: 코로플레스맵"
+  },
+  {
+    "objectID": "R_lec_10_2025.html#지리공간적-시각화-두-가지-관점",
+    "href": "R_lec_10_2025.html#지리공간적-시각화-두-가지-관점",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "지리공간적 시각화: 두 가지 관점",
+    "text": "지리공간적 시각화: 두 가지 관점\n\n\n\n\n\n“지도도 그래프다” 관점: 일반성\n\n\nggplot2 패키지\n\n\ngeom_sf(), coord_sf()\n\n\n\n\n\n\n“지도는 지도이다” 관점: 특수성\n\n\ntmap 패키지\n\n4.2.0"
+  },
+  {
+    "objectID": "R_lec_10_2025.html#ggplot2-vs-tmap-세계지도",
+    "href": "R_lec_10_2025.html#ggplot2-vs-tmap-세계지도",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "\nggplot2 vs tmap: 세계지도",
+    "text": "ggplot2 vs tmap: 세계지도\n\n\n데이터 정리\nggplot2: Code\nggplot2: Result\ntmap: Code\ntmap: Result\n\n\n\n\nlibrary(tidyverse)\nlibrary(spData)\nlibrary(sf)\ndata(world)\nworld &lt;- st_as_sf(world)\nwpp_2024 &lt;- read_rds(\"wpp_2024.rds\")\nmy_wpp &lt;- wpp_2024 |&gt; \n  filter(year == 2025)\nworld_data &lt;- world |&gt;\n  left_join(my_wpp, join_by(iso_a2 == ISO2))\n\n\n\n\nworld_map &lt;- ggplot() +\n  geom_sf(data = world_data, aes(fill = TFR, text = name_long)) +\n  coord_sf(crs = \"+proj=robin\") +\n  scale_fill_viridis_c() +\n  scale_x_continuous(breaks = seq(-180, 180, 30)) +\n  scale_y_continuous(breaks = c(-89.5, seq(-60, 60, 30), 89.5)) +\n  theme(\n    panel.background = element_rect(\"white\"),\n    panel.grid = element_line(color = \"gray80\")\n  )\nworld_map\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nlibrary(tmap)\ntm_world_map &lt;- tm_shape(world_data, crs = \"+proj=robin\") +\n  tm_graticules(\n    labels.show = FALSE,\n    x = seq(-180, 180, 30), \n    y = c(-89.5, seq(-60, 60, 30), 89.5)\n  ) + \n  tm_polygons(\n    fill = \"TFR\", \n    fill.scale = tm_scale_continuous(values = \"viridis\")\n  ) +\n  tm_layout(frame = FALSE)\ntm_world_map",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#ggplot2-vs-tmap-우리나라-지도",
+    "href": "R_lec_10_2025.html#ggplot2-vs-tmap-우리나라-지도",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "\nggplot2 vs tmap: 우리나라 지도",
+    "text": "ggplot2 vs tmap: 우리나라 지도\n\n\n데이터 정리\nggplot2: Code\nggplot2: Result\ntmap: Code\ntmap: Result\n\n\n\n\nlibrary(tidyverse)\nlibrary(sf)\nsido_shp &lt;- st_read(\"sido.shp\", options = \"ENCODING=CP949\")\nsigungu_shp &lt;- st_read(\"sigungu.shp\", options = \"ENCODING=CP949\")\ndata_sigungu &lt;- read_rds(\"data_sigungu.rds\")\nsigungu_data &lt;- sigungu_shp |&gt; \n  left_join(data_sigungu, join_by(SGG1_CD == C1))\n\n\n\n\nlibrary(ggspatial)\nsigungu_data &lt;- sigungu_data |&gt; \n  mutate(\n    index_class = case_when(\n      index &lt; 0.2 ~ \"1\",\n      index &gt;= 0.2 & index &lt; 0.5 ~ \"2\",\n      index &gt;= 0.5 & index &lt; 1.0 ~ \"3\",\n      index &gt;= 1.0 & index &lt; 1.5 ~ \"4\",\n      index &gt;= 1.5 ~ \"5\"\n    ),\n    index_class = fct(index_class, levels = as.character(1:5))\n  )\nclass_color &lt;- c(\"1\" = \"#d7191c\", \"2\" = \"#fdae61\",\n                 \"3\" = \"#ffffbf\", \"4\" = \"#a6d96a\", \n                 \"5\" = \"#1a9641\")\nggplot_map &lt;- ggplot() +\n  geom_sf(\n    data = sigungu_data, \n    aes(fill = index_class, text = SGG1_FNM), \n    show.legend = TRUE\n  ) +\n  geom_sf(\n    data = sido_shp, \n    fill = NA, \n    lwd = 0.5\n  ) +\n  scale_fill_manual(\n    name = \"Classes\", \n    labels = c(\"&lt; 0.2\", \"0.2 ~ 0.5\", \"0.5 ~ 1.0\", \n               \"1.0 ~ 1.5\", \"&gt;= 1.5\"), \n    values = class_color, drop = FALSE\n  ) +\n  annotation_scale(\n    location = \"br\", \n    bar_cols = c(\"gray40\", \"white\"), \n    width_hint = 0.4\n  )\nggplot_map\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nclass_color &lt;- c(\"#d7191c\", \"#fdae61\", \"#ffffbf\", \"#a6d96a\", \"#1a9641\")\ntmap_map &lt;- tm_graticules(labels.cardinal = TRUE) +\n  tm_shape(sigungu_data) + \n  tm_polygons(\n    fill = \"index\", id = \"SGG1_FNM\", \n    fill.scale = tm_scale_intervals(\n      values = class_color, \n      breaks = c(0, 0.2, 0.5, 1.0, 1.5, Inf), \n      labels = c(\"&lt; 0.2\", \"0.2 ~ 0.5\", \"0.5 ~ 1.0\", \n               \"1.0 ~ 1.5\", \"&gt;= 1.5\")\n    ),\n    fill.legend = tm_legend(title = \"Classes\")\n  ) +\n  tm_shape(sido_shp) + tm_borders(lwd = 1.5) +\n  tm_scalebar(breaks = seq(0, 200, 50)) \ntmap_map",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#인터랙티브-지도-ggplotly-함수",
+    "href": "R_lec_10_2025.html#인터랙티브-지도-ggplotly-함수",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "인터랙티브 지도: ggplotly() 함수",
+    "text": "인터랙티브 지도: ggplotly() 함수\n\n\nCode\nResult\n\n\n\n\nlibrary(plotly)\nggplotly(world_map)",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#인터렉티브-지도-ggiraph-패키지",
+    "href": "R_lec_10_2025.html#인터렉티브-지도-ggiraph-패키지",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "인터렉티브 지도: ggiraph 패키지",
+    "text": "인터렉티브 지도: ggiraph 패키지\n\n\nCode\nResult\n\n\n\n\nlibrary(ggiraph)\nsigungu_data &lt;- sigungu_data |&gt; \n  mutate(\n    index = format(index, digits = 4, nsmall = 4),\n    my_tooltip = str_c(\"Name: \", SGG1_FNM, \"\\n Index: \", index)\n  )\ngg &lt;- ggplot() +\n  geom_sf_interactive(\n    data = sigungu_data, \n    aes(fill = index_class, tooltip = my_tooltip, data_id = SGG1_FNM), \n    show.legend = TRUE\n  ) +\n  geom_sf(data = sido_shp, fill = NA, lwd = 0.5) +\n  scale_fill_manual(\n    name = \"Classes\", \n    labels = c(\"&lt; 0.2\", \"0.2 ~ 0.5\", \"0.5 ~ 1.0\", \"1.0 ~ 1.5\", \"&gt;= 1.5\"), \n    values = class_color, drop = FALSE\n  ) \ngirafe(ggobj = gg) |&gt; \n  girafe_options(opts_hover(css = \"fill: gray\"))",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#leaflet-자바스크립트-라이브러리",
+    "href": "R_lec_10_2025.html#leaflet-자바스크립트-라이브러리",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "\nleaflet: 자바스크립트 라이브러리",
+    "text": "leaflet: 자바스크립트 라이브러리\n\nR 래퍼 패키지: leaflet\n\n\n\nhttps://leafletjs.com/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#leaflet-단순-일반도",
+    "href": "R_lec_10_2025.html#leaflet-단순-일반도",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "\nleaflet: 단순 일반도",
+    "text": "leaflet: 단순 일반도\n\n\nCode\nResult\n\n\n\n\nlibrary(leaflet)\nleaflet() |&gt; \n  addTiles() |&gt; \n  addPopups(126.955184, 37.460422, \"Sang-Il's Office\",\n            options = popupOptions(closeButton = FALSE))",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#leaflet-매시업mashup-주제도",
+    "href": "R_lec_10_2025.html#leaflet-매시업mashup-주제도",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "\nleaflet: 매시업(mashup) 주제도",
+    "text": "leaflet: 매시업(mashup) 주제도\n\n\n세계: Code\n세계: Result\n우리나라: Code\n우리나라: Result\n\n\n\n\nlibrary(leaflet)\nworld_data &lt;- world_data |&gt; filter(!is.na(TFR))\n\nbins &lt;- c(0, 1.5, 2.1, 3, 4, 5, Inf)\npal &lt;- colorBin(\"YlOrRd\", domain = world_data$TFR, bins = bins)\nlabels &lt;- sprintf(\"&lt;strong&gt;%s&lt;/strong&gt;&lt;br/&gt;%g\",\n  world_data$name_long, world_data$TFR) |&gt; lapply(htmltools::HTML)\n\nleaflet(world_data) |&gt; \n  addProviderTiles(providers$Esri.WorldTopoMap) |&gt; \n  addPolygons(\n    fillColor = ~pal(TFR), weight =  2, opacity = 1, color = \"white\", \n    dashArray = \"3\", fillOpacity = 0.6,\n    highlightOptions = highlightOptions(\n      weight = 5, color = \"#666\", dashArray = \"\", \n      fillOpacity = 0.6, bringToFront = TRUE\n    ),\n    label = labels,\n    labelOptions = labelOptions(\n      style = list(\"font-weight\" = \"normal\", padding = \"3px 8px\"), \n      textsize = \"15px\", direction = \"auto\"\n    )\n  ) |&gt; \n  addLegend(\n    pal = pal, values = ~TFR, opacity = 0.6, title = NULL, position = \"bottomright\"\n  )\n\n\n\n\n\n\n\n\n\n\n\n\nlibrary(tmap)\nclass_color &lt;- c(\"#d7191c\", \"#fdae61\", \"#ffffbf\", \"#a6d96a\", \"#1a9641\")\nsigungu_data &lt;- sigungu_data |&gt; mutate(index = as.numeric(index))\ntmap_mode(mode = \"view\")\nmy_tmap &lt;- tm_shape(sigungu_data) + \n  tm_polygons(\n    fill = \"index\", fill_alpha = 0.6, col_alpha = 0.5,\n    popup.vars = c(\"지역소멸위험지수: \" = \"index\"), \n    popup.format = list(index = list(digits = 3)), \n    id = \"SGG1_FNM\", \n    fill.scale = tm_scale_intervals(\n      values = class_color, breaks = c(0, 0.2, 0.5, 1.0, 1.5, Inf), \n      labels = c(\"&lt; 0.2\", \"0.2~0.5\", \"0.5~1.0\", \"1.0~1.5\", \"&gt;= 1.5\")\n    ),\n    fill.legend = tm_legend(title = \"Classes\")\n  ) +\n  tm_shape(sido_shp) + tm_borders(lwd = 2)\nmy_tmap",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#sf-패키지-주요-함수-1",
+    "href": "R_lec_10_2025.html#sf-패키지-주요-함수-1",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "\nsf 패키지: 주요 함수",
+    "text": "sf 패키지: 주요 함수\n\n\n\n\n\n\n구분\n함수\n\n\n\n읽고 쓰기\n\nst_read(), st_write(), read_sf(), write_sf()\n\n\n\n투영 관련\n\nst_crs(), st_transform()\n\n\n\n기하 측정\n\nst_area(), st_length(), st_perimeter(), st_distance()\n\n\n\n기하 변형\n\nst_centroid(), st_buffer(), st_boundary(), st_simplify()\n\n\n\n기하 생성\n\nst_point(), st_voronoi() , st_convex_hull(), st_make_grid()\n\n\n\n기하 검토\n\nst_is_valid(), st_make_valid()\n\n\n\n기하 중첩\n\nst_filter(), st_intersection(), st_union(), st_crop()\n\n\n\n기타\n\nst_coordinates(), st_cast(), st_as_sf(), st_graticule(), st_join()"
+  },
+  {
+    "objectID": "R_lec_10_2025.html#지리공간적-시각화-코로플레스-맵",
+    "href": "R_lec_10_2025.html#지리공간적-시각화-코로플레스-맵",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "지리공간적 시각화: 코로플레스 맵",
+    "text": "지리공간적 시각화: 코로플레스 맵"
+  },
+  {
+    "objectID": "R_lec_10_2025.html#llm-개념",
+    "href": "R_lec_10_2025.html#llm-개념",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "LLM: 개념",
+    "text": "LLM: 개념\n\nLarge Language Model (거대 언어 모델)\n\n\nhttps://www.geeksforgeeks.org/artificial-intelligence/large-language-model-llm/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#llm-개념-1",
+    "href": "R_lec_10_2025.html#llm-개념-1",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "LLM: 개념",
+    "text": "LLM: 개념\n\nhttps://x.com/samuraipreneur/status/1888530105280168421",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#llm-api-프로그래밍적-접근",
+    "href": "R_lec_10_2025.html#llm-api-프로그래밍적-접근",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "LLM API: 프로그래밍적 접근",
+    "text": "LLM API: 프로그래밍적 접근\n\nLLM을 웹 인터페이스에서 사용하는 것이 아니라, 코드로 직접 제어하고 자동화하는 방식\n\nAPI(Application Programming Interface, 응용프로그램 프로그래밍 인터페이스)\n\n응용프로그램(예: 웹 앱)이 프로그래밍을 통해 다른 프로그램이나 서비스(예: ChatGPT)와 상호작용하도록 해 주는 접점\nHTTP 요청(POST) + JSON 구조로 메시지 전달\n모델 이름, 메시지, 파라미터를 코드로 지정\n응답은 JSON 형태의 텍스트/토큰\n\n\n대량 처리, 반복 처리, 자동화, 소프트웨어 통합",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#llm-api-기본-구조",
+    "href": "R_lec_10_2025.html#llm-api-기본-구조",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "LLM API: 기본 구조",
+    "text": "LLM API: 기본 구조\n\n\n요청(request) 구성 요소\n\nBase URL: 모델 서버의 접속 주소, https://api.openai.com/v1\n모델 이름: gpt-5.1\nAPI Key (인증): 사용자 신원 증명 토큰\n메시지: 모델에 보낼 내용, JSON 배열로 구성\n\n\n\n응답(response) 구성 요소\n\n모델 출력 텍스트: 모델이 생성한 실제 답변\n토큰 사용량: 과금 및 모델 내부 처리량 계산에 사용\n메시지 구조(JSON)",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#api-key-획득-google-gemini",
+    "href": "R_lec_10_2025.html#api-key-획득-google-gemini",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "API Key 획득: Google Gemini",
+    "text": "API Key 획득: Google Gemini\n\n\nGoogle AI Studio(https://aistudio.google.com/app/) 접속\n\n구글 계정 로그인 필요\n\n\n왼쪽 하단에서 Get API Key 클릭\n오른쪽 상단에서 API 키 만들기 클릭\n\n새 키 만들기 창\n\n키 이름 지정: 이름 지정\n가져온 프로젝트 선택: 프로젝트 가져오기 혹은 프로젝트 만들기\n\n\n오른쪽 아이콘 중 Copy API key 선택",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#api-key-저장",
+    "href": "R_lec_10_2025.html#api-key-저장",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "API Key 저장",
+    "text": "API Key 저장\n\n콘솔: usethis::edit_r_environ() 실행\n\n.Renviron 파일\n\nGEMINI_API_KEY=your_key_here\n저장\n\n\nSession &gt; Restart R 실행",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#ellmer-패키지",
+    "href": "R_lec_10_2025.html#ellmer-패키지",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "\nellmer 패키지",
+    "text": "ellmer 패키지\n\nhttps://ellmer.tidyverse.org/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#ellmer-패키지-1",
+    "href": "R_lec_10_2025.html#ellmer-패키지-1",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "\nellmer 패키지",
+    "text": "ellmer 패키지\n\n\n코드\n결과\n\n\n\n\nlibrary(ellmer)\nchat &lt;- chat_google_gemini(\n  base_url = \"https://generativelanguage.googleapis.com/v1beta/\",\n  api_key = Sys.getenv(\"GEMINI_API_KEY\"),\n  model = \"gemini-2.5-flash\",\n  system_prompt = \"\"\n)\nchat$chat(\"서울대학교 AI융합교육학과를 소개해주세요.\")\n\n\n\n\n\n서울대학교 AI융합교육학과는 4차 산업혁명 시대를 이끌어갈 핵심 동력인 인공지능(AI) 기술과 다양한 학문 분야의 융합을 통해 새로운 가치를 \n창출하고, 미래 사회를 선도할 융합형 인재를 양성하기 위해 설립된 학과입니다. 단순히 AI 기술자를 넘어, AI를 통해 사회 전반의 혁신을 \n이끌어낼 리더를 키우는 데 중점을 둡니다.\n\n다음은 서울대학교 AI융합교육학과에 대한 상세한 소개입니다.\n\n---\n\n### **서울대학교 AI융합교육학과 소개**\n\n**1. 설립 배경 및 목표**\n*   **시대적 요구:** 인공지능 기술의 급격한 발전과 함께 사회, 경제, 문화 등 모든 분야에서 인공지능과의 융합이 필수적인 시대가 \n도래했습니다. 이에 따라 깊이 있는 AI 전문성과 더불어 다양한 분야를 이해하고 융합할 수 있는 인재에 대한 요구가 증대되었습니다.\n*   **학과 목표:**\n    *   **AI 핵심 역량:** 인공지능의 핵심 이론과 기술(머신러닝, 딥러닝, 데이터 과학 등)에 대한 깊이 있는 이해와 실제 구현 \n역량 함양.\n    *   **융합적 사고:** AI 기술을 다양한 학문 분야(교육, 의료, 금융, 예술, 인문사회 등)에 적용하고, 새로운 문제 해결 \n방안을 모색하는 융합적 사고 능력 배양.\n    *   **사회적 리더십:** AI 시대의 윤리적, 사회적 문제에 대한 비판적 통찰력을 바탕으로, AI 기술을 통해 인류와 사회에 \n기여할 수 있는 리더십 함양.\n\n**2. 교육 과정 및 커리큘럼**\nAI융합교육학과는 학제 간 융합 교육의 특성을 살려, 다음 세 가지 축을 중심으로 커리큘럼을 구성합니다.\n*   **AI 심화 학습:**\n    *   인공지능 개론, 기계학습, 딥러닝, 자연어 처리, 컴퓨터 비전, 강화 학습 등 AI 핵심 기술 과목.\n    *   데이터 과학, 통계학, 알고리즘 등 AI 구현에 필요한 기초 및 심화 과목.\n*   **융합 및 응용 분야 학습:**\n    *   AI를 활용한 다양한 분야의 응용 사례 연구 및 프로젝트 수행.\n    *   (예: 교육 AI, 헬스케어 AI, 금융 AI, 로봇 AI, 인문사회 AI 등)\n    *   도메인 특화 데이터 분석 및 모델링 능력 강화.\n*   **윤리 및 사회적 관점:**\n    *   AI 윤리, 인공지능과 사회, 인공지능 법규 등 AI 시대의 책임감 있는 개발 및 활용을 위한 과목.\n    *   기술 혁신이 가져올 사회적 영향에 대한 이해와 비판적 사고력 함양.\n\n**3. 학과의 특징 및 강점**\n*   **서울대학교 최고 수준의 연구 환경:** 대한민국 최고 지성의 요람인 서울대학교의 풍부한 연구 인프라와 다양한 학문 분야의 전문가 \n네트워크를 활용합니다.\n*   **학제 간 융합 교육:** 특정 단과대학에 소속되기보다는 여러 학문 분야의 교수진이 참여하여 다학제적 관점에서 AI를 연구하고 \n교육합니다. 이를 통해 학생들은 폭넓은 시야와 깊이 있는 전문성을 동시에 확보할 수 있습니다.\n*   **실용적 문제 해결 능력 강조:** 이론 교육과 더불어 실제 데이터와 문제에 기반한 프로젝트 및 연구 참여 기회를 풍부하게 제공하여,\n학생들이 현실 문제 해결 능력을 갖추도록 돕습니다.\n*   **미래 지향적 인재 양성:** 변화하는 시대의 요구에 발맞춰 AI 기술을 선도하고, 이를 통해 새로운 가치를 창출할 수 있는 \n창의적이고 비판적인 인재를 양성하는 데 주력합니다.\n\n**4. 졸업 후 진로**\nAI융합교육학과 졸업생들은 다양한 분야에서 핵심적인 역할을 수행할 수 있습니다.\n*   **IT/AI 기업:** 국내외 AI 선도 기업(네이버, 카카오, 삼성전자, LG전자, 구글, 마이크로소프트 등)의 AI 개발자, \n데이터 과학자, AI 연구원, AI 서비스 기획자.\n*   **다양한 산업 분야:** 금융, 의료, 제조, 교육, 미디어, 국방 등 AI 기술을 적극적으로 도입하고 활용하는 기업 및 기관의 AI\n전략가, 컨설턴트, 융합 전문가.\n*   **학계 및 연구기관:** 국내외 대학원 진학을 통한 심화 연구, 정부출연연구소 등 전문 연구기관의 AI 연구원.\n*   **공공 부문:** AI 관련 정책 수립 및 집행을 담당하는 정부 및 공공기관 전문가.\n*   **스타트업 창업:** AI 기술을 활용한 혁신적인 서비스 및 제품 개발을 통한 창업.\n\n---\n\n서울대학교 AI융합교육학과는 AI 기술의 깊이 있는 이해를 바탕으로 사회 전반의 혁신을 이끌어낼 인재, 즉 'AI 시대를 이끄는 융합형 \n리더'를 양성하는 데 목표를 둔, 매우 미래 지향적이고 핵심적인 학과라고 할 수 있습니다.",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#로컬-llm-ollama",
+    "href": "R_lec_10_2025.html#로컬-llm-ollama",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "로컬 LLM: Ollama\n",
+    "text": "로컬 LLM: Ollama\n\n\nOllama 홈페이지 접속: https://ollama.com/\n\nDownload 클릭\n\nWindows / macOS / Linux 중 하나를 선택\n\n\n\n모델 다운로드: Windows PowerShell 실행\n\nollama pull gemma3:4b\n\n\n실행",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#로컬-llm-ollama-1",
+    "href": "R_lec_10_2025.html#로컬-llm-ollama-1",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "로컬 LLM: Ollama\n",
+    "text": "로컬 LLM: Ollama\n\n\n\n코드\n결과\n\n\n\n\nlibrary(ellmer)\nchat &lt;- chat_ollama(\n  base_url = \"http://localhost:11434\",\n  model = \"gemma3:4b\",\n  system_prompt = \"\"\n)\nchat$chat(\"서울대학교 AI융합교육학과를 소개해주세요.\")\n\n\n\n\n\n서울대학교 AI융합교육학과(이하 AI융합교육학과)는 인공지능(AI) 기술의 발전 속도에 발맞춰, AI를 교육의 핵심 요소로 통합하고, 미래 \n사회를 이끌어갈 창의적이고 윤리적인 인재를 양성하기 위해 설립된 학과입니다. \n\n**주요 특징 및 목표:**\n\n* **AI 교육의 선도:** 국내 대학 최초로 AI융합교육을 전공으로 정립하여, AI 교육의 표준을 제시하고 발전시키는 역할을 수행합니다.\n* **융합 교육 중심:** IT, 인문학, 사회과학 등 다양한 분야를 융합하여 AI의 활용 가능성을 극대화하고, 실생활에 적용 가능한 \n창의적인 문제 해결 능력을 키웁니다.\n* **미래 인재 양성:** AI 기술을 이해하고 활용할 수 있는 핵심 역량과 더불어, 윤리적 책임감을 갖춘 미래 사회의 리더를 육성합니다.\n* **실용적인 교육 과정:** 이론 교육과 더불어, AI 관련 프로젝트, 워크숍, 캡스톤 디자인 등의 실습 중심 교육을 통해 학습 효과를 \n높입니다.\n\n**교육 과정:**\n\n* **교양:** AI 기초, 데이터 분석, 윤리 등 AI를 전반적으로 이해할 수 있는 교양 강좌를 제공합니다.\n* **전공 필수:** AI 기초, 머신러닝, 딥러닝, 자연어 처리, 컴퓨터 비전 등 AI 관련 핵심 기술을 집중적으로 학습합니다.\n* **전공 선택:** 교육 데이터 분석, AI 활용 사례 연구, 인간-AI 상호작용, AI 및 사회 문제 등 관심 분야를 심화 학습할 수 \n있는 선택 강좌를 제공합니다.\n* **기타:** 인문학, 사회과학 등의 분야를 융합하여 AI를 비판적으로 사고하고 활용하는 능력을 길러줍니다.\n\n**특징적인 교육 방식:**\n\n* **AI 랩 운영:** 다양한 AI 랩을 운영하여 학생들에게 실제 AI 연구 경험을 제공합니다.\n* **산업체 연계 프로그램:** 기업과의 산학 협력을 통해 학생들의 실무 능력을 향상시키고, 취업 기회를 확대합니다.\n* **글로벌 네트워크 구축:** 해외 대학과의 교류 프로그램을 통해 국제적인 시각을 함양합니다.\n\n**참고 자료:**\n\n* **서울대학교 AI융합교육학과 홈페이지:** \n[https://www.ai.snu.ac.kr/](https://www.ai.snu.ac.kr/)\n\n더 자세한 정보는 위 홈페이지에서 확인하실 수 있으며, 궁금한 점이 있다면 언제든지 다시 질문해주세요.",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#llm과-웹-앱-shiny",
+    "href": "R_lec_10_2025.html#llm과-웹-앱-shiny",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "LLM과 웹 앱: shiny",
+    "text": "LLM과 웹 앱: shiny\nhttps://sangillee.shinyapps.io/KosisChat/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#사례-전-세계-인구-분포-지도",
+    "href": "R_lec_10_2025.html#사례-전-세계-인구-분포-지도",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "사례: 전 세계 인구 분포 지도",
+    "text": "사례: 전 세계 인구 분포 지도",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#사례-전-세계-인구-분포-지도-1",
+    "href": "R_lec_10_2025.html#사례-전-세계-인구-분포-지도-1",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "사례: 전 세계 인구 분포 지도",
+    "text": "사례: 전 세계 인구 분포 지도\n\n\n데이터 레이어\n\n국가 경계, 호수, 그래티큘: 벡터(vector) 데이터\n인구밀도, 수심: 래스터(raster) 데이터\n\n\n\n데이터 원천\n\nNatural Earth Data: 국가 경계, 호수, 그래티큘, 수심\nNASA’s Socioeconomic Data and Applications Center (SEDAC): 인구 밀도\n\n\n\n투영법: 로빈슨 도법(Robinson projection)\n\nCRS (coordinate reference system, 좌표참조계)\n\n\n지도화 기법: 컬러, 범례, 주기 표기 등",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#사례-전-세계-인구-분포-지도-2",
+    "href": "R_lec_10_2025.html#사례-전-세계-인구-분포-지도-2",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "사례: 전 세계 인구 분포 지도",
+    "text": "사례: 전 세계 인구 분포 지도\n\n\n\n\n\nhttps://r-spatial.github.io/sf/\n\n\n\n\n\nhttps://rspatial.github.io/terra/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#사례-전-세계-인구-분포-지도-3",
+    "href": "R_lec_10_2025.html#사례-전-세계-인구-분포-지도-3",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "사례: 전 세계 인구 분포 지도",
+    "text": "사례: 전 세계 인구 분포 지도\n\n\n\n\n\nhttps://ggplot2.tidyverse.org/\n\n\n\n \n\n\n\n\nhttps://r-tmap.github.io/tmap/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#벡터-데이터-sf-패키지",
+    "href": "R_lec_10_2025.html#벡터-데이터-sf-패키지",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "벡터 데이터: sf 패키지",
+    "text": "벡터 데이터: sf 패키지\n\nhttps://allisonhorst.com/r-packages-functions",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#벡터-데이터-sf-패키지-1",
+    "href": "R_lec_10_2025.html#벡터-데이터-sf-패키지-1",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "벡터 데이터: sf 패키지",
+    "text": "벡터 데이터: sf 패키지\n\n\n\n\n\n\n구분\n함수\n\n\n\n읽고 쓰기\n\nst_read(), st_write(), read_sf(), write_sf()\n\n\n\n투영 관련\n\nst_crs(), st_transform()\n\n\n\n기하 측정\n\nst_area(), st_length(), st_perimeter(), st_distance()\n\n\n\n기하 변형\n\nst_centroid(), st_buffer(), st_boundary(), st_simplify()\n\n\n\n기하 생성\n\nst_point(), st_voronoi() , st_convex_hull(), st_make_grid()\n\n\n\n기하 검토\n\nst_is_valid(), st_make_valid()\n\n\n\n기하 중첩\n\nst_filter(), st_intersection(), st_union(), st_crop()\n\n\n\n기타\n\nst_coordinates(), st_cast(), st_as_sf(), st_graticule(), st_join()",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#벡터-데이터-sf-패키지-2",
+    "href": "R_lec_10_2025.html#벡터-데이터-sf-패키지-2",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "벡터 데이터: sf 패키지",
+    "text": "벡터 데이터: sf 패키지\n\n\nCode\nResult\n\n\n\n\nlibrary(tidyverse)\nlibrary(sf)\nsigungu_shp &lt;- st_read(\"sigungu.shp\", options = \"ENCODING=CP949\")\nggplot() + geom_sf(data = sigungu_shp)",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#래스터-데이터",
+    "href": "R_lec_10_2025.html#래스터-데이터",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "래스터 데이터",
+    "text": "래스터 데이터\n\n\n데이터 형식\n\nTIFF 혹은 GeoTIFF\n\n\n\n패키지: terra 패키지\n\n불러오기: rast()\n변환하기: project(), mosaic(), crop()\n계산하기: global(), focal(), zonal()\n수 많은 다른 함수들",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#지리공간적-시각화-정적-vs.-동적-vs.-인터랙티브",
+    "href": "R_lec_10_2025.html#지리공간적-시각화-정적-vs.-동적-vs.-인터랙티브",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "지리공간적 시각화: 정적 vs. 동적 vs. 인터랙티브",
+    "text": "지리공간적 시각화: 정적 vs. 동적 vs. 인터랙티브\n\n\n정적(static) 지도\n\n\nggplot2 패키지, tmap 패키지\n\n\n\n동적(animated) 지도\n\ngganimate 패키지\ntmap 패키지\n\n\n\n인터랙티브(interactive) 지도\n\nplotly 패키지의 ggplotly() 함수\nggiraph 패키지\nleaflet 패키지: Leaflet JS 라이브러리의 래퍼 패키지"
+  },
+  {
+    "objectID": "R_lec_10_2025.html#정적-지도-코로플레스-맵",
+    "href": "R_lec_10_2025.html#정적-지도-코로플레스-맵",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "정적 지도: 코로플레스 맵",
+    "text": "정적 지도: 코로플레스 맵",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#정적-지도-두-가지-관점",
+    "href": "R_lec_10_2025.html#정적-지도-두-가지-관점",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "정적 지도: 두 가지 관점",
+    "text": "정적 지도: 두 가지 관점\n\n\n“지도도 그래프다” 관점: 일반성\n\n\nggplot2 패키지\n\n\ngeom_sf(), coord_sf()\n\n\n\n\n\n\n“지도는 지도이다” 관점: 특수성\n\n\ntmap 패키지\n\n4.2.0",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#지리공간적-시각화-정적-vs.-동적",
+    "href": "R_lec_10_2025.html#지리공간적-시각화-정적-vs.-동적",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "지리공간적 시각화: 정적 vs. 동적",
+    "text": "지리공간적 시각화: 정적 vs. 동적\n\n\n정적(static) 지도\n\n\nggplot2 패키지, tmap 패키지\n\n\n\n동적(animated) 지도\n\ngganimate 패키지\ntmap 패키지\n\n\n\n인터랙티브(interactive) 지도\n\nplotly 패키지의 ggplotly() 함수\nggiraph 패키지\nleaflet 패키지: Leaflet JS 라이브러리의 래퍼 패키지",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#벡터-데이터-2",
+    "href": "R_lec_10_2025.html#벡터-데이터-2",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "벡터 데이터",
+    "text": "벡터 데이터\n\n\n속성 데이터\n\ncsv 파일: readr 패키지의 read_csv() 함수\n엑셀 파일: readxl 패키지의 read_excel() 함수\nOpen API를 통해 수집: tibble 객체\n\n\n\n형상 데이터와 속성 데이터의 결합: dplyr 패키지의 left_join() 함수\n\n왼편: 형상 데이터\n오른편: 속성 데이터",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#사례-google-gemini",
+    "href": "R_lec_10_2025.html#사례-google-gemini",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "사례: Google Gemini",
+    "text": "사례: Google Gemini\n\n\nGoogle AI Studio(https://aistudio.google.com/app/) 접속\n\n구글 계정 로그인 필요\n\n\n왼쪽 하단에서 Get API Key 클릭\n오른쪽 상단에서 API 키 만들기 클릭\n\n새 키 만들기 창\n\n키 이름 지정: 이름 지정\n가져온 프로젝트 선택: 프로젝트 가져오기 혹은 프로젝트 만들기\n\n\n오른쪽 아이콘 중 Copy API key 선택",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#사례-google-gemini-1",
+    "href": "R_lec_10_2025.html#사례-google-gemini-1",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "사례: Google Gemini",
+    "text": "사례: Google Gemini\n\n콘솔: usethis::edit_r_environ() 실행\n\n.Renviron 파일\n\nGEMINI_API_KEY=your_key_here\n저장\n\n\nSession &gt; Restart R 실행",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#llm과-웹-앱",
+    "href": "R_lec_10_2025.html#llm과-웹-앱",
+    "title": "\nR Lecture 10웹 앱 개발: 심화\n",
+    "section": "LLM과 웹 앱",
+    "text": "LLM과 웹 앱\n\nshiny: 서버형 웹 앱 개발 프레임워크\n\nshinychat: LLM shiny 웹 앱 개발 도우미 패키지\n\n\nellmer 패키지와 결합\n\n\n예시: https://sangillee.shinyapps.io/KosisChat/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "lab_10_2025.html",
+    "href": "lab_10_2025.html",
+    "title": "소통하기: 지리공간적 시각화",
+    "section": "",
+    "text": "여기서는 지리공간적 시각화, 특히 지도 제작에 집중한다.\n우선 tidyverse 패키지를 불러온다.\n\nlibrary(tidyverse)",
+    "crumbs": [
+      "R 실습: 2025/2",
+      "소통하기: 지리공간적 시각화"
+    ]
+  },
+  {
+    "objectID": "lab_10_2025.html#개요",
+    "href": "lab_10_2025.html#개요",
+    "title": "소통하기: 지리공간적 시각화",
+    "section": "",
+    "text": "여기서는 지리공간적 시각화, 특히 지도 제작에 집중한다.\n우선 tidyverse 패키지를 불러온다.\n\nlibrary(tidyverse)",
+    "crumbs": [
+      "R 실습: 2025/2",
+      "소통하기: 지리공간적 시각화"
+    ]
+  },
+  {
+    "objectID": "lab_10_2025.html#지리공간적-데이터와-지도",
+    "href": "lab_10_2025.html#지리공간적-데이터와-지도",
+    "title": "소통하기: 지리공간적 시각화",
+    "section": "\n1 지리공간적 데이터와 지도",
+    "text": "1 지리공간적 데이터와 지도\n\n1.1 벡터와 래스터 데이터\n지도는 간단히 말해 지리공간적(geospatial) 데이터를 그래픽 형태로 나타낸 것이다. 따라서 지리공간적 데이터를 이해하는 것이 지도 제작의 시발점이 되어야 한다. 지리공간적 데이터는 GIS적 관점에서 벡터(vector) 데이터와 래스터(raster) 데이터로 나뉜다. 벡터 데이터는 지리공간적 사상의 기하학적 형태(형상 데이터)와 그것의 다양한 특성(속성 데이터)을 담고 있는 데이터이다.\n벡터 데이터는 지리공간적 사상을 포인트, 라인, 폴리곤 피처로 구분하고, 개별 피처를 형태와 위치를 개별 피처를 구성하고 있는 버택스의 좌표값을 저장함으로써 구현하는데, 이러한 정보를 담고 있는 것을 형상 데이터라고 한다. 예를 들어 우리나라 17개 시도에 대한 디지털 행정구역도가 여기에 해당한다. 이에 반해 속성 데이터는 포인트, 라인, 폴리곤 등으로 재현된 개별 피처의 다양한 특성을 가지고 있는 것으로 보통 테이블 데이터라고 한다. 예를 들어, 우리나라 17개 시도의 인구수, 인구성장률, 순이동률과 같은 것이다. 형상 데이터가 지리공간적 데이터의 특수성을 더 잘 반영하기 때문에 보통 형상 데이터를 공간 데이터라고도 하면, 벡터 데이터에서는 이 두 종류의 데이터가 기본적으로 독립적이며 보통은 느슨한 형태로 결합되어 있다.\n\n이에 반해 래스터 데이터는 세상을 동일한 크기의 수 많은 그리드 셀(grid cell)로 구성되어 있다고 보며, 개별 그리드 셀에 속성이 저장되어 있는 데이터를 의미한다. 가장 쉬운 예가 인공위성 영상이다. 인공위성 영상의 특정한 공간해상도를 가진 픽셀로 나뉘어져 있고, 개별 픽셀에 특정한 값(특정한 밴드의 반사값)이 들어가 있다. 따라서 래스터 데이터는 벡터 데이터처럼 형상 데이터와 속성 데이터가 분리되어 있는 것이 아니라 일체형이다. 특수한 경우가 아니라면 하나의 래스터 파일에는 하나의 속성만이 들어가 있다. 이에 반해 벡터 데이터의 속성 파일에는 수많은 변수가 포함될 수 있다.\n\n지도 제작의 원칙은 동일하지만, 지도로 나타낼 데이터가 벡터 데이터인지 래스터 데이터인지에 혹은 둘 다인지에 따라 지도화의 세부 절차는 달라질 수 있다. 여기서는 벡터 데이터에 기반한 지도 제작에 집중하고자 한다. 속성 데이터는 기본적으로 R의 데이터 프레임과 동일한 개념이므로, 데이터사이언스의 기본 과정을 통해 불러오고, 정돈하고, 변형할 수 있다. 따라서 보다 중요한 것은 형상 데이터를 다루는 것이다.\n\n1.2 셰이프 파일\n벡터 데이터 포맷, 보다 정확하게는 형상 데이터의 포맷으로 가장 널리 사용되고 있는 것이 셰이프 파일(shape file)이다. 셰이프 파일(확장자가 .shp인 파일)은 전세계에서 가장 큰 GIS 회사인 ESRI가 오래전에 개발한 벡터 데이터 포맷으로, 현재 표준 포맷의 역할을 하고 있다. 그런데 셰이프 파일은 동일한 이름을 공유하지만 확장자가 서로 다른 몇 개의 파일의 묶음을 지칭한다는 점을 이해할 필요가 있다. 반드시 다음의 네 파일을 함께 가지고 있어야 한다.\n\n*.shp: 버텍스의 좌표값이 포함된 핵심 파일\n*.dbf: 기본 속성 파일\n*.shx: 공간적 인덱싱 파일\n*.prj: 투영 정보 파일\n\n마지막의 *.prj 파일은 없어도 지도로 나타날 수는 있다. 그러나 다른 셰이프 파일과 함께 지도로 나타내거나 축척막대와 같은 지도 요소를 적절하게 나타내기 위해서는 좌표참조계(CRS) 정보가 포함된 *.prj 파일은 가질 필요가 있다.\n\n1.3 sf 패키지\nR에서 형상 데이터를 다루는데 있어 거의 표준처럼 사용되고 있는 것이 sf 패키지이다. 기본적으로는 셰이프 파일을 불러오기 위한 st_read() 함수를 주로 사용하게 되겠지만, sf 패키지는 벡터-기반 GIS 오퍼레이션을 위한 폭넓은 함수를 제공한다. 중요한 것을 정리하면 다음과 같다.\n\n\n\n\n\n\n\n구분\n함수\n설명\n\n\n\n읽고 쓰기\n\nst_read()\nread_sf()\n\n셰이프 파일 읽어 들이기\n\n\n\nst_write()\n셰이프 파일 저장\n\n\n투영 관련\nst_crs()\nCRS 정보 확인\n\n\n\nst_transform()\nCRS 바꾸기\n\n\n기하 측정\nst_area()\n면적 계산\n\n\n\nst_length()\n길이 계산\n\n\n\nst_perimeter()\n둘레 계산\n\n\n\nst_distance()\n거리 계산\n\n\n기하 변형\nst_centroid()\n센트로이드 생성\n\n\n\nst_buffer()\n버퍼 생성\n\n\n\nst_boundary()\n가장자리 추출\n\n\n\nst_simplify()\n선 피처 단순화 실행\n\n\n기하 생성\nst_point()\n포인트 피처 생성\n\n\n\nst_vironoi()\n보로노이 폴리곤 생성\n\n\n\nst_convex_hull()\n컨벡스 헐 생성\n\n\n\nst_make_grid()\n규칙 그리드 생성\n\n\n기하 검토\nst_is_valid()\n지오메트리가 밸리드한지 여부 검토\n\n\n\nst_make_valid()\n지오메트리를 밸리드하게 만들기\n\n\n기하 중첩\nst_intersection()\n기하 교집합 중첩\n\n\n\nst_union()\n기하 합집합 중첩\n\n\n\nst_crop()\n기하 크롭 중첩\n\n\n기타\nst_coordinates()\n버택스 좌표값 반환\n\n\n\nst_cast()\n다른 피처 유형으로 변환\n\n\n\nst_as_sf()\nsf 객체로 변환\n\n\n\nst_graticule()\n그래티큘 생성\n\n\n\nst_join()\n공간적 조인 실행\n\n\n\n래스터 데이터를 다루는데는 terra 패키지가 가장 널리 사용되고 있으며, stars패키지가 최근 많은 주목을 받고 있다. stars 패키지와 sf 패키지는 모두 에트저르 페베스마(Edzer Pebesma)가 만들었다. 두 패키지에 대한 설명은 페베스마와 로저 비번드(Roger Bivand)가 함께 쓴 ’R을 활용한 공간데이터사이언스(Spatial Data Science With Applications in R)’에 잘 나타나 있다",
+    "crumbs": [
+      "R 실습: 2025/2",
+      "소통하기: 지리공간적 시각화"
+    ]
+  },
+  {
+    "objectID": "lab_10_2025.html#정적-지도-제작",
+    "href": "lab_10_2025.html#정적-지도-제작",
+    "title": "소통하기: 지리공간적 시각화",
+    "section": "\n2 정적 지도 제작",
+    "text": "2 정적 지도 제작\n\n2.1 세계 지도\nggplot2 패키지를 이용하여 정적 지도를 그려본다. ggplot2패키지로 지도를 그린다는 것은 ’지도도 그래프다.’라는 접근법에 기반하고 있다. ggplot2의 문법을 지도 제작으로 확장할 수 있고, 막강한 생태계를 고려할 때 충분히 이점이 있는 접근법이다.\n데이터는 지난 실습에서 사용한 WPP 2024(World Population Prospects 2024)이다. 2024년 전세계 국가별 TFR(Total Fertility Rate, 합계출산율) 지도를 그려본다.\n벡터 데이터를 활용한 지도는 형상 데이터와 속성 데이터를 결합해야만 제작할 수 있다. 여기서 형상 데이터는 전세계 국가 경계 데이터이고, 속성 데이터는 TFR이 포함된 WPP 2024 데이터이다. 형상 데이터는 spData 패키지에 들어 있는 world 객체를 사용한다. 벡터 형식의 데이터는 sf 패키지의 st_as_sf() 함수를 통해 sf 객체로 변환하는 것이 좋다.\n\nlibrary(spData)\nlibrary(sf)\ndata(world)\nworld &lt;- st_as_sf(world)\n\nWPP 2024 데이터를 불러와 2025년만 골라낸다.\n\nwpp_2024 &lt;- read_rds(\"wpp_2024.rds\")\nmy_wpp &lt;- wpp_2024 |&gt; \n  filter(year == 2025)\n\n두 데이터를 left_join() 함수를 이용하여 결합한다. 벡터 데이터의 경우는 늘 반드시 형상 데이터를 중심에 두고 left_join() 함수를 통해 속성 데이터를 불러와 합체해야 한다.\n\nworld_data &lt;- world |&gt;\n  left_join(my_wpp, join_by(iso_a2 == ISO2))\n\n로빈슨 도법(Robinson projection)의 지도를 제작한다. ggplot2 패키지로 지도를 그리는 가장 좋은 방법은 기하객체 함수인 geom_sf()와 좌표 변환 함수인 coord_sf()를 결합하는 것이다. scale_x_continuous()와 scale_y_continuous()의 내용은 그래티큘(경위선망)을 원하는 방식대로 지도에 포함시키기 위한 것이다. 그래프를 world_map이라는 이름의 객체로 저장하는 것은 뒤에서 이 지도를 사용하기 때문이다.\n\nworld_map &lt;- ggplot() +\n  geom_sf(data = world_data, aes(fill = TFR, text = name_long)) + # text는 나중에 인터랙티브 지도에 사용\n  coord_sf(crs = \"+proj=robin\") + # \"로빈슨 도법\"으로 설정\n  scale_fill_viridis_c() +\n  scale_x_continuous(breaks = seq(-180, 180, 30)) + # x축(경도) 설정\n  scale_y_continuous(breaks = c(-89.5, seq(-60, 60, 30), 89.5)) + # y축(위도) 설정\n  theme(\n    panel.background = element_rect(\"white\"), # 배경색\n    panel.grid = element_line(color = \"gray80\") # 경위도 색\n  )\nworld_map\n\n\n\n\n\n\n\ncoord_sf의 crs 설정을 변경하면 다른 투영법의 지도도 만들 수 있다. crs를 변경하여 개인적으로 좋아하는 대한민국 중심의 정사 도법(Orthographic Projection) 지도를 그려본다. 마치 지구본을 보는 듯한 지도를 그릴 수 있다. 혹시 다른 투영법이 적용된 지도를 그리고 싶다면 ChatGPT에게 물어보거나 epsg.io에서 PROJ.4 문자열을 찾아볼 수도 있다.\n\nworld_map_korea_ortho &lt;- ggplot() +\n  geom_sf(data = world_data) +\n  # === 정사도법 및 중심 좌표 설정 ===\n  coord_sf(crs = \"+proj=ortho +lon_0=127.5 +lat_0=37\") +\n  theme(\n    panel.background = element_rect(\"black\"),\n    panel.grid = element_blank()\n  )\nworld_map_korea_ortho\n\n\n\n\n\n\n\n\n2.2 우리나라 지도\n우리나라 지도도 그려본다. ’Lab08: 데이터 수집하기’에서 KOSIS의 API를 통해 수집, 정리한 시군구 단위 지역소멸위험지수를 지도화한다. 우선 우리나라 시군구 행정 경계에 대한 도형(형상, 기하) 데이터가 필요하다.\n행정구역 파일은 통계청의 통계지리정보서비스나 V-World 디지털트윈국토 에서 구할 수 있다. 다운받는 방법을 익히면 좋겠지만, 시간 절약을 위해 다운받아 정리한 파일을 그냥 제공한다. 프로젝트 폴더에 파일을 저장한 후, 아래의 코드를 통해 불러온다.\n\nsido_shp &lt;- st_read(\"shapefile/sido.shp\", options = \"ENCODING=CP949\")\nsigungu_shp &lt;- read_sf(\"shapefile/sigungu.shp\", options = \"ENCODING=CP949\")\n\n두 파일에 대해 서로 다른 함수를 적용한 것을 알 수 있다. st_read() 함수는 가장 보편적으로 사용되는 것으로 불러올 때마다 파일에 대한 정보(지오메트리 유형, 바운딩 박스, CRS 등)가 자동으로 디스플레이된다. 이러한 정보는 항상 유익한 것이지만 보이지 않게 하고 싶을 수도 있다. 이 때 read_sf() 함수를 사용할 수 있다.\n불러들인 파일을 바탕으로 시군구 경계를 그려본다. 지도 제작 전문 패키지인 tmap의 qtm() 함수를 이용하여 시군구 경계에 대한 지도를 빠르게 그려본다. tmap패키지로 지도를 그린다는 것은 ’지도는 지도다.’라는 접근법에 기반하고 있다. tmap의 문법을 새로 배워야 한다는 단점이 있긴 하지만, 지도는 그래프로 환원될 수 없는 고유한 특성이 있고, tmap패키지는 이러한 지도의 고유한 특성을 잘 반영하고 있다. 좀 더 복잡한 tmap의 문법을 사용한 지도 제작은 맨 뒤에서 다루기로 한다.\n\nlibrary(tmap)\nqtm(sigungu_shp)\n\n\n\n\n\n\n\netl에 업로드 되어있는 지역소멸위험지수 데이터(data_sigungu)를 불러온다.\n\ndata_sigungu &lt;- read_rds(\"data_sigungu.rds\")\n\n도형 데이터(korea_sgg)와 속성 데이터(data_sigungu)를 공통 키(key)를 활용하여 결합한다.\n\nsigungu_data &lt;- sigungu_shp |&gt; \n  left_join(\n    data_sigungu, join_by(SGG1_CD == C1)\n  )\n\n이제 ggplot2 패키지를 이용하여 지도를 제작한다. ’Lab08: 데이터 수집하기’에서 인구소멸위험지수의 시도별 그래프를 제작한 것과 비교해 보라. 그 유사함에 깜짝 놀랄 수도 있다. ggplot2에서는 그래프와 지도의 구분이 없다. 이것은 ggplot2의 장점이자 단점이다.\n\nsigungu_data &lt;- sigungu_data |&gt; \n  mutate(\n    index_class = case_when(\n      index &lt; 0.2 ~ \"1\",\n      index &gt;= 0.2 & index &lt; 0.5 ~ \"2\",\n      index &gt;= 0.5 & index &lt; 1.0 ~ \"3\",\n      index &gt;= 1.0 & index &lt; 1.5 ~ \"4\",\n      index &gt;= 1.5 ~ \"5\"\n    ),\n    index_class = fct(index_class, levels = as.character(1:5))\n  )\n\nclass_color &lt;- c(\"1\" = \"#d7191c\", \"2\" = \"#fdae61\",\n                 \"3\" = \"#ffffbf\", \"4\" = \"#a6d96a\", \n                 \"5\" = \"#1a9641\")\nggplot() +\n  geom_sf(data = sigungu_data, aes(fill = index_class), show.legend = TRUE) +\n  geom_sf(data = sido_shp, fill = NA, lwd = 0.5) + # 굵은 시도 경계\n  scale_fill_manual(name = \"Classes\", \n                    labels = c(\"&lt; 0.2\", \"0.2 ~ 0.5\", \"0.5 ~ 1.0\", \n                               \"1.0 ~ 1.5\", \"&gt;= 1.5\"), \n                    values = class_color, drop = FALSE) # 데이터에 해당 범주가 없어도 모든 레벨 표시",
+    "crumbs": [
+      "R 실습: 2025/2",
+      "소통하기: 지리공간적 시각화"
+    ]
+  },
+  {
+    "objectID": "lab_10_2025.html#인터랙티브-지도-제작",
+    "href": "lab_10_2025.html#인터랙티브-지도-제작",
+    "title": "소통하기: 지리공간적 시각화",
+    "section": "\n3 인터랙티브 지도 제작",
+    "text": "3 인터랙티브 지도 제작\n위에서 사용한 plotly 패키지의 ggplotly() 함수를 활용하면 반응형 지도를 생성할 수 있다. 앞의 코드 둘째 줄에 aes()에 text = name_long이 설정되어 있는데, 마우스로 국가를 가리킬 때 이름이 나타날 수 있게 조치한 것이다.\n\nlibrary(plotly)\nggplotly(world_map)\n\n\n\n\n\n지도 위에서 plotly 가 제공하는 다양한 기능을 적용해 볼 필요가 있다. 인터랙티브 그래프에 비해 인터랙티브 지도의 유용성이 더 높아 보인다.\n우리나라 지도는 다른 방식으로 반응형으로 만들어 본다. 여기서는 ggiraph 패키지를 사용한다. 처음 사용하는 경우라면 먼저 패키지를 인스톨해야 한다. 코드의 전반부는 커서를 특정 시군구 위에 올렸을 때 나타나는 정보를 좀 더 다양하게 하려는 조치이다. 중간의 코드가 핵심인데, 찬찬히 살펴보면 그렇게 복잡하지 않다. 마지막은 완전히 지엽적인 것인데, 커서를 특정 시군구 위에 올렸을 때 색이 회색으로 변하게 하기 위한 것이다.\n\nlibrary(ggiraph)\nsigungu_data &lt;- sigungu_data |&gt; \n  mutate(\n    index = format(index, digits = 4, nsmall = 4),\n    my_tooltip = str_c(\"Name: \", SGG1_FNM, \"\\n Index: \", index)\n  )\n\ngg &lt;- ggplot() +\n  geom_sf_interactive(\n    data = sigungu_data, \n    aes(\n      fill = index_class, \n      tooltip = my_tooltip, \n      data_id = SGG1_FNM\n      ), \n    show.legend = TRUE) +\n  geom_sf(data = sido_shp, fill = NA, lwd = 0.5) +\n  scale_fill_manual(\n    name = \"Classes\", \n    labels = c(\"&lt; 0.2\", \"0.2 ~ 0.5\", \"0.5 ~ 1.0\", \"1.0 ~ 1.5\", \"&gt;= 1.5\"), \n    values = class_color, drop = FALSE) \ngirafe(ggobj = gg) |&gt; \n  girafe_options(\n    opts_hover(css = \"fill: gray\")\n  )\n\n\n\n\n\n그러나 반응형 지도 제작에 가장 널리 쓰이는 것은 leaflet이다. leaflet은 웹 상의 반응형 지도 제작에 특화된 JavaScript 라이브러리이다. 이 라이브러리를 R에서 쓸 수 있게 도와주는 래퍼 패키지가 leaflet 패키지이다. 패키지 홈페이지가 매우 상세하게 잘 되어 있다. 숙독하기를 권한다.\n\nlibrary(leaflet)\n\n매우 단순한 인터랙티브 지도를 만들어 본다. 자신이 원하는 경위도값과 설명문으로 수정하면 된다.\n\nleaflet() |&gt; \n  addTiles() |&gt; \n  addPopups(126.9556513, 37.4598712, \"VR Lab\",\n            options = popupOptions(closeButton = FALSE))\n\n\n\n\n\n\n위에서 작성했던 TFR 세계지도를 leaflet 패키지의 다양한 함수와 아규먼트를 활용하여 인터랙티브 지도를 제작해 본다.\n\nworld_data &lt;- world_data |&gt; filter(!is.na(TFR))\n\n# TFR 값의 범위 정의\nbins &lt;- c(0, 1.5, 2.1, 3, 4, 5, Inf)\n# 색상 팔레트 정의\npal &lt;- colorBin(\"YlOrRd\", domain = world_data$TFR, bins = bins)\n# 국가 위에 마우스를 올렸을 때 표시될 툴팁 정의\nlabels &lt;- sprintf(\"&lt;strong&gt;%s&lt;/strong&gt;&lt;br/&gt;%g\",\n  world_data$name_long, world_data$TFR) |&gt; lapply(htmltools::HTML)\n\nleaflet(world_data) |&gt; \n  addProviderTiles(providers$Esri.WorldTopoMap) |&gt; \n  addPolygons(\n    fillColor = ~pal(TFR),\n    weight =  2, \n    opacity = 1,\n    color = \"white\",\n    dashArray = \"3\",\n    fillOpacity = 0.6,\n    highlightOptions = highlightOptions(\n      weight = 5,\n      color = \"#666\",\n      dashArray = \"\",\n      fillOpacity = 0.6,\n      bringToFront = TRUE),\n    label = labels,\n    labelOptions = labelOptions(\n      style = list(\"font-weight\" = \"normal\", padding = \"3px 8px\"),\n      textsize = \"15px\",\n      direction = \"auto\")\n  ) |&gt; \n  addLegend(\n    pal = pal, values = ~TFR, opacity = 0.6, title = NULL,\n    position = \"bottomright\"\n  )\n\n\n\n\n\n\n우리나라 시군구 단위의 인구소멸위험지수에 대한 지도를 반응형으로 만들어 본다. 여기서는 tmap을 활용한다. 해당 시군구 위에 클릭하면 지역소멸위험지수가 나타난다.\n\nclass_color &lt;- c(\"#d7191c\", \"#fdae61\", \"#ffffbf\", \"#a6d96a\", \"#1a9641\")\nsigungu_data &lt;- sigungu_data |&gt; \n  mutate(\n    index = as.numeric(index)\n  )\n# 반응형 지도 모드\n# 정적 지도 제작을 위해서는 mode = \"plot\"으로 설정\ntmap_mode(mode = \"view\") \nmy_tmap &lt;- tm_shape(sigungu_data) + \n  tm_polygons(\n    fill = \"index\",\n    fill.scale = tm_scale_intervals(\n      values = class_color,\n      breaks = c(0, 0.2, 0.5, 1.0, 1.5, Inf), \n      labels = c(\"&lt; 0.2\", \"0.2~0.5\", \"0.5~1.0\", \"1.0~1.5\", \"&gt;= 1.5\")\n      ), \n    fill.legend = tm_legend(\n      title = \"Classes\"\n    ),\n    popup.vars=c(\"지역소멸위험지수: \" = \"index\"), \n    popup.format = list(index = list(digits = 3)), \n    id = \"SGG1_FNM\", \n    fill_alpha = 0.6, \n    col_alpha = 0.5\n  ) +\n  tm_shape(sido_shp) + tm_borders(lwd = 2)\nmy_tmap\n\n\n\n\n\ntmap_save(my_tmap, \"지방소멸위험지수.html\")",
+    "crumbs": [
+      "R 실습: 2025/2",
+      "소통하기: 지리공간적 시각화"
     ]
   }
 ]

@@ -199,7 +199,7 @@ loading="lazy" style="width: 100%; height: 600px; border:
 ## 인터랙티브 테이블
 
 | 자바스크립트 라이브러리 | R 래퍼 패키지 |
-|------------------------------------|------------------------------------|
+|----|----|
 | [DataTables](https://datatables.net/) | [DT](https://rstudio.github.io/DT/) |
 | [Tanstack Table](https://tanstack.com/table/v7/) | [reactable](https://glin.github.io/reactable/) |
 
@@ -208,6 +208,8 @@ loading="lazy" style="width: 100%; height: 600px; border:
 -   [DataTables](https://datatables.net/): 자바스크립트 라이브러리
 
 -   R 래퍼 패키지: [**DT**](https://rstudio.github.io/DT/)
+
+    -   웹북: [D3 for R Users](https://jtr13.github.io/d3book/)
 
 ![[https://datatables.net/](https://datatables.net/){style="font-size:1.25rem"}](https://sangillee.snu.ac.kr/2024_AIEDAP/images/clipboard-4023553912.png)
 
@@ -324,7 +326,7 @@ P + transition_time(year) +
 
     -   `data_id`
 
--   웹북(<https://www.ardata.fr/ggiraph-book/>)
+-   웹북: [ggiraph-book](https://www.ardata.fr/ggiraph-book/)
 
 ## R 패키지: [**ggiraph**](https://davidgohel.github.io/ggiraph/) 패키지
 
@@ -367,7 +369,7 @@ girafe(ggobj = gg_point)
 ## 래퍼 패키지 활용
 
 | 자바스크립트 라이브러리 | R 래퍼 패키지 |
-|------------------------------------|------------------------------------|
+|----|----|
 | [Plotly](https://plotly.com/graphing-libraries/) | [plotly](https://plotly.com/r/) |
 | [D3](https://d3js.org/) | [r2d3](https://rstudio.github.io/r2d3/) |
 | [Highcharts](https://www.highcharts.com/) | [highcharter](https://jkunst.com/highcharter/) |
