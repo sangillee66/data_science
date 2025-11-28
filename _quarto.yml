@@ -40,6 +40,8 @@ website:
           - R_lec_08_2025.qmd
           - R_lec_09_2025.qmd
           - R_lec_10_2025.qmd
+          - R_lec_11_2025.qmd
+          - R_lec_12_2025.qmd
       - text: "---"    
       - section: "R 프레젠테이션: 2024/1"
         contents: 
@@ -53,8 +55,6 @@ website:
           - R_lec_08.qmd
           - R_lec_09.qmd
           - R_lec_10.qmd
-          - R_lec_11.qmd
-          - R_lec_12.qmd
       - text: "---"    
       - section: "R 실습: 2025/2"
         contents: 
