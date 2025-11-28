@@ -11443,7 +11443,7 @@
     "href": "R_lec_11_2025.html#기본-구조-ui-부분",
     "title": "R Lecture 11\n웹 앱 개발: Shiny 1",
     "section": "기본 구조: ui 부분",
-    "text": "기본 구조: ui 부분\n\n입력(input)\n\n‘입력 함수’: 사용자로부터 입력을 받아 ’입력 객체’를 만드는 함수\n위젯(widget): ui를 위한 기본 시각 요소로, 미리 만들어져 있는 것\n\n버튼, 스크롤 바, 텍스트 상자, 체크박스, 라디오 버튼 등\n\n입력의 종류에 따라 다양: *Input()\n\nslideInput(inputID = \"\")\n\n\n출력(output)\n\n‘출력 함수’: 서버로부터 ’출력 객체’를 받아 디스플레이하는 함수\n출력의 종류에 따라 다양: *Output()\n\nplotOutput(outputID = \"\")",
+    "text": "기본 구조: ui 부분\n\n입력(input)\n\n‘입력 함수’: 사용자로부터 입력을 받아 ’입력 객체’를 만드는 함수\n위젯(widget): ui를 위한 기본 시각 요소로, 미리 만들어져 있는 것\n\n버튼, 스크롤 바, 텍스트 상자, 체크박스, 라디오 버튼 등\n\n입력의 종류에 따라 다양: *Input()\n\nsliderInput(inputID = \"\")\n\n\n출력(output)\n\n‘출력 함수’: 서버로부터 ’출력 객체’를 받아 디스플레이하는 함수\n출력의 종류에 따라 다양: *Output()\n\nplotOutput(outputID = \"\")",
     "crumbs": [
       "R 프레젠테이션: 2025/2",
       "| [R Lecture 11]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: Shiny 1]{style=\"font-size:1em\"}"

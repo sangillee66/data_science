@@ -106,7 +106,7 @@ editor_options:
 
     -   입력의 종류에 따라 다양: `*Input()`
 
-        -   `slideInput(inputID = "")`
+        -   `sliderInput(inputID = "")`
 
 -   출력(output)
 
@@ -173,7 +173,7 @@ editor_options:
 -   주요 패키지별 출력 생성(렌더링) 함수 및 출력 함수
 
 | 주요 패키지 | 출력 생성(렌더링) 함수 | 출력 함수 |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | [**DT**](https://rstudio.github.io/DT/) | `renderDT({})` | `DTOutput(outputID = "")` |
 | [**reactable**](https://glin.github.io/reactable/) | `renderReactable({})` | `reactableOutput(outputID = "")` |
 | [**plotly**](https://plotly.com/r/) | `renderPlotyl({})` | `plotlyOutput(outputID = "")` |
