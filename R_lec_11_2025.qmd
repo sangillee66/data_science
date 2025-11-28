@@ -1,0 +1,208 @@
+---
+title: |
+  | [R Lecture 11]{style="color:coral;font-size:0.6em"}
+  | [웹 앱 개발: Shiny 1]{style="font-size:1em"} 
+author: <br> 이상일(서울대학교 지리교육과 교수)
+date: last-modified
+format: 
+  revealjs:
+    logo: snu_edu_1.png
+    footer: https://sangillee.snu.ac.kr/
+    transition: fade
+    transition-speed: fast
+    margin: 0.05
+    center: false
+    # smaller: false
+    # scrollable: false
+    code-link: true
+    code-line-numbers: false
+    code-copy: true
+    code-overflow: scroll
+    slide-number: true
+    width: 960 * 1.5
+    height: 700 * 1.5
+    lightbox: false
+    # min-scale: 1
+    # max-scale: 1
+    pointer:
+      pointerSize: 20
+      color: red
+    menu: true
+    embed-resources: false
+    theme: [default, custom_hq_pretendard_step.scss] # 슬라이드 본문 폰트 크기 조정
+    revealjs-plugins:
+      - pointer
+    css: styles.css
+execute: 
+  warning: false
+  error: false
+  freeze: auto  
+dpi: 600
+editor: visual
+# suppress-bibliography: true
+editor_options: 
+  chunk_output_type: console
+---
+
+## Shiny: (서버-기반) 웹 앱 개발 프레임워크
+
+![[https://shiny.posit.co/](https://shiny.posit.co/){style="font-size:1.25rem"}](images/hex_shiny.png)
+
+## 리소스: Shiny 홈페이지
+
+-   <https://shiny.posit.co/>
+
+    -   Shiny for R(<https://shiny.posit.co/r/>)
+
+    -   Shiny for Python(<https://shiny.posit.co/py/>)
+
+-   11개 예시
+
+    -   예시의 이름 검색: `runExample()`
+
+        -   "01_hello", "02_text", "03_reactivity", "04_mpg", "05_sliders", "06_tabsets", "07_widgets", "08_html", "09_upload", "10_download", "11_timer"
+
+    -   예시의 웹 앱 및 코드 보기: `runExample("01_hello", display = "showcase")`
+
+## 리소스: 웹북
+
+-   [Mastering Shiny](https://mastering-shiny.org/) by [Hadley Wickham](https://hadley.nz/)
+
+-   [Outstanding User Interfaces with Shiny](https://unleash-shiny.rinterface.com/)
+
+-   [Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/)
+
+-   [Interactive Web-Based Data Visualization with R, plotly, and shiny](https://plotly-r.com/)
+
+-   [R Shiny Applications in Finance, Medicine Pharma and Education Industry](https://bookdown.org/loankimrobinson/rshinybook/)
+
+-   [Introduction to Data Science: 25 Shiny Applications](https://bookdown.org/hneth/i2ds/shiny.html)
+
+-   [데이터 사이언스를 위한 R 프로그래밍: 14 shiny](https://greendaygh.github.io/Rprog2021/shiny.html)
+
+## 기본 구조
+
+-   ui 부분: 프론트엔드(front-end) 부분
+
+    -   입력을 받고 출력을 보여주는 부분
+
+-   server 부분: 백엔드(back-end) 부분
+
+    -   받은 입력으로 출력을 산출하는 부분
+
+-   결합: `shinyApp(ui = ui, server = server)`
+
+![[https://bookdown.org/hneth/i2ds/shiny.html](https://bookdown.org/hneth/i2ds/shiny.html){style="font-size:1.25rem"}](https://bookdown.org/hneth/i2ds/images/Shiny_ui_server.png)
+
+## 기본 구조: ui 부분
+
+-   입력(input)
+
+    -   '입력 함수': 사용자로부터 입력을 받아 '입력 객체'를 만드는 함수
+
+    -   위젯(widget): ui를 위한 기본 시각 요소로, 미리 만들어져 있는 것
+
+        -   버튼, 스크롤 바, 텍스트 상자, 체크박스, 라디오 버튼 등
+
+    -   입력의 종류에 따라 다양: `*Input()`
+
+        -   `slideInput(inputID = "")`
+
+-   출력(output)
+
+    -   '출력 함수': 서버로부터 '출력 객체'를 받아 디스플레이하는 함수
+
+    -   출력의 종류에 따라 다양: `*Output()`
+
+        -   `plotOutput(outputID = "")`
+
+## 기본 구조: ui 부분
+
+-   입력 함수(위젯): <https://shiny.posit.co/r/components/>
+
+![](images/clipboard-2818742956.png)
+
+## 기본 구조: ui 부분
+
+-   출력 함수: <https://shiny.posit.co/r/components/>
+
+-   주요 함수: `*Output(outputID = "")`
+
+    -   플롯: `plotOutput(outputID = "")`
+
+    -   테이블: `tableOutput(outputID = "")`
+
+    -   일반 텍스트: `textOutput(outputID = "")`
+
+    -   사전 포맷된 텍스트: `verbatimeTextOutput(outputID = "")`
+
+    -   이미지: `imageOutput(outputID = "")`
+
+## 기본 구조: server 부분
+
+-   입력 객체를 받아 특정한 출력 객체를 생성
+
+    -   입력 객체: `input$inputID`
+
+-   출력 객체 생성 함수(렌더링 함수): render\*({})
+
+    -   `renderPlot({})`
+
+    -   출력 객체: `output$outputID`
+
+-   주요 함수: `render*()`
+
+    -   플롯: `renderPlot()`
+
+    -   테이블: `renderTable()`
+
+    -   일반 텍스트: `renderText()`
+
+    -   사전 포맷된 텍스트: `renderPrint()`
+
+    -   이미지: `renderImage()`
+
+## 기본 구조: ui-server 연계
+
+-   출력 생성(렌더링) 함수와 출력 함수: <https://shiny.posit.co/r/components/>
+
+![](images/clipboard-1333453652.png)
+
+## 기본 구조: ui-server 연계 {.smaller}
+
+-   주요 패키지별 출력 생성(렌더링) 함수 및 출력 함수
+
+| 주요 패키지 | 출력 생성(렌더링) 함수 | 출력 함수 |
+|----|----|----|
+| [**DT**](https://rstudio.github.io/DT/) | `renderDT({})` | `DTOutput(outputID = "")` |
+| [**reactable**](https://glin.github.io/reactable/) | `renderReactable({})` | `reactableOutput(outputID = "")` |
+| [**plotly**](https://plotly.com/r/) | `renderPlotyl({})` | `plotlyOutput(outputID = "")` |
+| [**echarts4r**](https://echarts4r.john-coene.com/) | `renderEcharts4r({})` | `echarts4rOutput(outputID = "")` |
+| [**leaflet**](https://rstudio.github.io/leaflet/) | `renderLeaflet({})` | `leafletOutput(outputID = "")` |
+| [**tmap**](https://r-tmap.github.io/tmap/) | `renderTmap({})` | `tmapOutput(outputID = "")` |
+
+## 반응성 함수 `reactive({})`
+
+-   `render*()` 함수는 이미 반응성 함수
+
+    -   사용자의 선택이 바뀔 때마다 갱신
+
+-   반응성 함수 `reactive({})`
+
+    -   입력 객체를 받아 '반응성 표현식(reactive expression)' 생성
+
+    -   반응성 표현식: 단순히 최종 산출물(값이나 객체)만을 의미하지 않고, 그 산출물을 관리하는 메커니즘(종속성 추적, 지연 실행, 캐싱 등) 포함하는 동적인 객체
+
+        -   반드시 함수 형태로 표기
+
+    -   하나의 '입력 객체'가 다양한 '출력 객체(출력 생성 함수)'와 결부되는 경우
+
+        -   동일한 입력 객체의 중복 사용 회피 목적
+
+        -   해당 입력 객체를 반응성 표현식으로 전환
+
+        -   다수의 출력 생성 함수에 입력 객체로 투입
+
+## 확장: bslib 패키지
+
+![[https://rstudio.github.io/bslib/](https://rstudio.github.io/bslib/){style="font-size:1.25rem"}](images/hex_bslib.png)
