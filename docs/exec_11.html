@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.24">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>웹사이트 소개 – Data Science</title>
+<meta name="author" content="이상일(서울대학교 지리교육과)">
+<title>Shiny를 활용한 웹 앱 개발 – Data Science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,8 +18,42 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
-
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
@@ -42,10 +74,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b1ea10b977b5d0608b7f11732f9b146b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-d07cc0ff850f6621e1f6c1f3ad9c9934.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-b1ea10b977b5d0608b7f11732f9b146b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-9e227471bb36b425561843ed1c2ca3ae.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-1d1e30c4ff39a421c5d0be39657e8b6a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-9e227471bb36b425561843ed1c2ca3ae.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -71,12 +102,8 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "검색",
     "search-label": "검색"
   }
-}</script>
-
-
-<link rel="stylesheet" href="styles.css">
+}</script><link rel="stylesheet" href="styles.css">
 </head>
-
 <body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -242,26 +269,20 @@ ul.task-list li input[type="checkbox"] {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">웹사이트 소개</h1>
+          <h1 class="quarto-secondary-nav-title">Shiny를 활용한 웹 앱 개발</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="검색" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
       </a>
       <div class="sidebar-tools-main">
@@ -275,9 +296,9 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">웹사이트 소개</span></a>
   </div>
 </li>
@@ -290,8 +311,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R과 RStudio</span></a>
@@ -352,7 +373,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -362,8 +383,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R_lec_01_2025.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">| <span style="color:coral;font-size:0.6em">R Lecture 1</span> | <span style="font-size:1em">R과 RStudio</span></span></a>
@@ -436,7 +457,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -446,8 +467,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R_lec_01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R &amp; RStudio</span></a>
@@ -508,7 +529,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -518,8 +539,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lab_01_2025.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R and RStudio</span></a>
@@ -580,7 +601,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -590,8 +611,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lab_01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab01: R과 RStudio</span></a>
@@ -652,42 +673,40 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">목차</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#웹사이트의-목적" id="toc-웹사이트의-목적" class="nav-link active" data-scroll-target="#웹사이트의-목적">웹사이트의 목적</a></li>
-  <li><a href="#웹사이트의-구조" id="toc-웹사이트의-구조" class="nav-link" data-scroll-target="#웹사이트의-구조">웹사이트의 구조</a></li>
-  <li><a href="#참고문헌" id="toc-참고문헌" class="nav-link" data-scroll-target="#참고문헌">참고문헌</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>이슈 보고</a></li></ul></div></nav>
+<li><a href="#%EA%B0%9C%EC%9A%94" id="toc-개요" class="nav-link active" data-scroll-target="#%EA%B0%9C%EC%9A%94">개요</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">1</span> </a></li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>이슈 보고</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title d-none d-lg-block">웹사이트 소개</h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title d-none d-lg-block">Shiny를 활용한 웹 앱 개발</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">저자</div>
+    <div class="quarto-title-meta-contents">
+             <p>이상일(서울대학교 지리교육과) </p>
+          </div>
+  </div>
     
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2025년 10월 30일</p>
+      <p class="date-modified">2025년 12월 15일</p>
     </div>
   </div>
     
@@ -695,74 +714,17 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header>
+</header><section id="개요" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="개요">개요</h2>
+<p>여기서는 지리공간적 시각화, 특히 지도 제작에 집중한다. “지도는 텍스트, 테이블, 챠트와 같은 것들 보다 훨씬 더 효과적으로 정보를 전달할 수 있다.”</p>
+<p>우선 <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a> 패키지를 불러온다.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section><section id="section" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="section">
+<span class="header-section-number">1</span> </h2>
 
 
-<section id="웹사이트의-목적" class="level2">
-<h2 class="anchored" data-anchor-id="웹사이트의-목적">웹사이트의 목적</h2>
-<ul>
-<li><p>이 웹사이트는 데이터사이언스(Data Science)를 위한 개인 공부방으로 디자인되었다 .</p></li>
-<li><p>하지만 서울대학교에서 내가 개설한 데이터사이언스 관련 교과목의 보충 웹사이트로 활용될 수도 있다.</p>
-<ul>
-<li>2025/2 M3449.000300 <a href="https://sangillee.snu.ac.kr/lectures.html">AI 융합교육을 위한 인문사회 콘텐츠 설계</a> (Designing Human and Social Education Contents for AI Convergence Education)</li>
-<li>2024/1 M3450.001400 <a href="https://sangillee.snu.ac.kr/classes/2024_1_AI_Edu.html">AI 융합교육을 위한 인문사회 컨텐츠 설계</a> (Designing Human and Social Education Contents for AI Convergence Education)</li>
-</ul></li>
-</ul>
-</section>
-<section id="웹사이트의-구조" class="level2">
-<h2 class="anchored" data-anchor-id="웹사이트의-구조">웹사이트의 구조</h2>
-<ul>
-<li><p>데이터 사이언스 관련 내용을 모두 10개의 하위 섹션으로 나누었다.</p></li>
-<li><p>각 하위 섹션은 세 개의 콘텐츠를 갖는다.</p>
-<ul>
-<li><p>내용 강의</p></li>
-<li><p>실습 강의</p></li>
-<li><p>실습</p></li>
-</ul></li>
-</ul>
-</section>
-<section id="참고문헌" class="level2">
-<h2 class="anchored" data-anchor-id="참고문헌">참고문헌</h2>
-<ul>
-<li><p>Wickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund, 2023,&nbsp;<a href="https://r4ds.hadley.nz/"><em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em></a><em>,</em>&nbsp;2nd edition, Boston: O’Reilly.&nbsp;</p>
-<ul>
-<li>이 사이트의 내용은 위의 책에 많은 토대를 두고 있다.</li>
-</ul></li>
-<li><p>Wickham, Hadley, and Garrett Grolemund. 2016.&nbsp;<a href="https://r4ds.had.co.nz/"><em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em></a>. 1st edition. Sebastopol, CA: O’Reilly. (김설기ㆍ최혜민 옮김, 2019, <a href="https://www.yes24.com/Product/Goods/67856488">R을 활용한 데이터 과학: 데이터 불러오기, 정리하기, 변형하기, 시각화하기, 모델링하기</a>, 1판, 서울: 인사이트.)</p></li>
-<li><p>Bonnell, Jerry, and Mitsunori Ogihara. 2023.&nbsp;<a href="https://ds4world.cs.miami.edu/"><em>Exploring Data Science with R and the Tidyverse</em></a>. 1st edition. Chapman; Hall/CRC.</p></li>
-<li><p>Irizarry, Rafael A. 2024.&nbsp;<a href="https://rafalab.dfci.harvard.edu/dsbook-part-1/"><em>Introduction to Data Science: Data Wrangling and Visualization with R</em></a>. 2nd edition, Boca Raton: CRC Press.</p></li>
-<li><p>Irizarry, Rafael A. 2024.&nbsp;<a href="https://rafalab.dfci.harvard.edu/dsbook-part-2/"><em>Introduction to Data Science: Statistics and Prediction Algorithms Through Case Studies</em></a>. Boca Raton: CRC Press.</p></li>
-<li><p>Irizarry, Rafael A. 2020.&nbsp;<a href="https://rafalab.dfci.harvard.edu/dsbook/"><em>Introduction to Data Science: Data Analysis and Prediction Algorithms with R</em></a>. Boca Raton: CRC Press.</p></li>
-<li><p>Alexander, R., 2023, <a href="https://tellingstorieswithdata.com/"><em>Telling Stories with Data: With Applications in R</em></a>, Boca Raton: CRC Press.</p></li>
-<li><p>Grolemund, Garrett. 2014.&nbsp;<a href="https://rstudio-education.github.io/hopr/"><em>Hands-On Programming with R: Write Your Own Functions and Simulations</em></a>.&nbsp;O’Reilly Media, Inc..</p></li>
-<li><p>Stauffer, R., Chimiak-Opoka, Joanna, Rodríguez-R, Luis Miguel, Simon, Thorsten, Zeileis, Achim, 2024, <a href="https://discdown.org/rprogramming/"><em>Introduction to Programming with R</em></a>, 웹북</p></li>
-<li><p>Douglas, Alex, Roos, Deon, Mancini, Francesca, Couto Ana, Lusseau, David, 2024, <a href="https://intro2r.com/"><em>An Introduction to R</em></a>, 웹북</p></li>
-<li><p>Batra, Neale, ed., 2024, <a href="https://epirhandbook.com/en/"><em>The Epidemiologist R Handbook</em></a>, 웹북</p></li>
-<li><p>Doser, Jeffrey W., Finley, Andrew O., Melfi, Vince, 2022, <a href="https://www.jeffdoser.com/files/for875/_book/"><em>R Programming for Data Sciences</em></a>, 웹북</p></li>
-<li><p>Bonnin, Sarah, 2020, <a href="https://biocorecrg.github.io/CRG_RIntroduction/"><em>Introduction to R 2021</em></a>, 웹북</p></li>
-<li><p>Grolemund, Garrett, 2020, <a href="https://rstudio-education.github.io/tidyverse-cookbook/"><em>The Tidyverse Cookbook</em></a>, 웹북</p></li>
-<li><p>Ansell, Brendan R. E. , <a href="https://bookdown.org/ansellbr/WEHI_tidyR_course_book/"><em>Introduction to R - tidyverse</em></a>, 웹북</p></li>
-<li><p>Sarafian, Ron, <a href="https://bookdown.org/ronsarafian/IntrotoDS/"><em>Introduction to Data Science</em></a>, 웹북</p></li>
-<li><p><a href="https://r-unimelb.gitbook.io/rbook"><em>Introduction to R</em></a>, 웹북</p></li>
-<li><p><a href="https://datacarpentry.org/R-ecology-lesson/"><em>Data Analysis and Visualization in R for Ecologists</em></a>, 웹북</p></li>
-<li><p><a href="https://www.r4epi.com/"><em>R for Epidemiology</em></a>, 웹북</p></li>
-<li><p>RStudio IDE User Guide (<a href="https://docs.posit.co/ide/user/" class="uri">https://docs.posit.co/ide/user/</a>)</p></li>
-<li><p>한국알사용자회, <a href="https://r2bit.com/book_analytics/">데이터 과학을 지탱하는 기본기</a>, 웹북</p></li>
-<li><p>한국알사용자회, <a href="https://r2bit.com/book_viz/">데이터 시각화</a>, 웹북</p></li>
-<li><p>한국알사용자회ㆍ이광춘, 2024, <a href="https://r2bit.com/gpt-quarto/">챗GPT쿼토: 인공지능 시대 과학기술 저작 도구</a>, 웹북</p></li>
-<li><p>김기환, 2023, <a href="https://kilhwan.github.io/rprogramming/">R 프로그래밍(개정판)</a>, 웹북</p></li>
-<li><p>백영민. 2023.&nbsp;<a href="https://www.yes24.com/Product/Goods/123807713">R 기반 데이터 과학: 타이디버스(tidyverse) 접근</a>. 서울: 한나래아카데미.</p></li>
-<li><p>차영준ㆍ박진표, 2022, <a href="https://www.yes24.com/Product/Goods/111420341">데이터과학 입문을 위한 R과 타이디버스</a>, 파주: 자유아카데미.</p></li>
-<li><p>곽기영, 2022, <a href="https://www.yes24.com/Product/Goods/108044525">R 기초와 활용</a>, 서울: 청람.</p></li>
-<li><p>강전희ㆍ엄동란, 2018, <a href="https://www.yes24.com/Product/Goods/64497252">처음 시작하는 R 데이터 분석</a>, 서울: 한빛미디어.</p></li>
-<li><p>김영우, 2017, <a href="https://www.yes24.com/Product/Goods/43868089">쉽게 배우는 R 데이터 분석</a>, 서울: 이지스퍼블리싱.</p></li>
-</ul>
-
-
-</section>
-
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> 맨 위로</a></main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> 맨 위로</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1176,8 +1138,7 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>Copyright 2024, Sang-Il Lee</p>
 </div>   
@@ -1186,7 +1147,7 @@ ul.task-list li input[type="checkbox"] {
     <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>이슈 보고</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item compact">
+<li class="nav-item compact">
     <a class="nav-link" href="https://sangillee.snu.ac.kr/">
       <i class="bi bi-house" role="img">
 </i> 
@@ -1205,11 +1166,9 @@ ul.task-list li input[type="checkbox"] {
     </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
 </footer>
-
-
 
 
 </body></html>

@@ -1,0 +1,32 @@
+---
+title: "Shiny를 활용한 웹 앱 개발"
+author: 이상일(서울대학교 지리교육과)
+date-modified: last-modified
+number-sections: true
+format: 
+  html: 
+    toc: true
+code-link: true
+code-copy: true
+execute: 
+  warning: false
+  error: false
+  freeze: auto
+lightbox: true
+editor: visual
+bibliography: references.bib
+editor_options: 
+  chunk_output_type: console
+---
+
+## 개요 {.unnumbered}
+
+여기서는 지리공간적 시각화, 특히 지도 제작에 집중한다. "지도는 텍스트, 테이블, 챠트와 같은 것들 보다 훨씬 더 효과적으로 정보를 전달할 수 있다."
+
+우선 [**tidyverse**](https://www.tidyverse.org/) 패키지를 불러온다.
+
+```{r}
+library(tidyverse)
+```
+
+## 

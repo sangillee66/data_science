@@ -1,0 +1,15 @@
+{
+  "hash": "404d3611a29724af5f57c76c20a87f7a",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Shiny를 활용한 웹 앱 개발\"\nauthor: 이상일(서울대학교 지리교육과)\ndate-modified: last-modified\nnumber-sections: true\nformat: \n  html: \n    toc: true\ncode-link: true\ncode-copy: true\nexecute: \n  warning: false\n  error: false\n  freeze: auto\nlightbox: true\neditor: visual\nbibliography: references.bib\neditor_options: \n  chunk_output_type: console\n---\n\n## 개요 {.unnumbered}\n\n여기서는 지리공간적 시각화, 특히 지도 제작에 집중한다. \"지도는 텍스트, 테이블, 챠트와 같은 것들 보다 훨씬 더 효과적으로 정보를 전달할 수 있다.\"\n\n우선 [**tidyverse**](https://www.tidyverse.org/) 패키지를 불러온다.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\n```\n:::\n\n\n## \n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
