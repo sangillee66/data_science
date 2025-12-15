@@ -398,6 +398,12 @@ div.csl-indent {
  <span class="menu-text">소통하기: 지리공간적 시각화</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exec_11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">웹 앱 개발: Shiny의 활용</span></a>
+  </div>
+</li>
       </ul>
 </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -456,6 +462,30 @@ div.csl-indent {
   <div class="sidebar-item-container"> 
   <a href="./R_lec_08_2025.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">| <span style="color:coral;font-size:0.6em">R Lecture 8</span> | <span style="font-size:1em">데이터 수집하기</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R_lec_09_2025.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">| <span style="color:coral;font-size:0.6em">R Lecture 9</span> | <span style="font-size:1em">웹 앱 개발: 인터랙티브 시각화</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R_lec_10_2025.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">| <span style="color:coral;font-size:0.6em">R Lecture 10</span> | <span style="font-size:1em">웹 앱 개발: 심화</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R_lec_11_2025.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">| <span style="color:coral;font-size:0.6em">R Lecture 11</span> | <span style="font-size:1em">웹 앱 개발: Shiny 1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R_lec_12_2025.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">| <span style="color:coral;font-size:0.6em">R Lecture 12</span> | <span style="font-size:1em">웹 앱 개발: Shiny 2</span></span></a>
   </div>
 </li>
       </ul>
@@ -582,6 +612,24 @@ div.csl-indent {
   <div class="sidebar-item-container"> 
   <a href="./lab_07_2025.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">데이터 사이언스의 과정 복습하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab_08_2025.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">데이터 수집하기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab_09_2025.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">소통하기: 인터랙티브 시각화</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lab_10_2025.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">소통하기: 지리공간적 시각화</span></a>
   </div>
 </li>
       </ul>
@@ -1032,8 +1080,8 @@ div.csl-indent {
    Location      Population    `% ofworld` Date     Source (official or …¹ Notes
    &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;                  &lt;chr&gt;
  1 World         8,232,000,000 100%        13 Jun … UN projection[1][3]    ""   
- 2 India         1,417,492,000 17.3%       1 Jul 2… Official projection[4] "[b]"
- 3 China         1,408,280,000 17.2%       31 Dec … Official estimate[5]   "[c]"
+ 2 India         1,417,492,000 17.2%       1 Jul 2… Official projection[4] "[b]"
+ 3 China         1,408,280,000 17.1%       31 Dec … Official estimate[5]   "[c]"
  4 United States 340,110,988   4.1%        1 Jul 2… Official estimate[6]   "[d]"
  5 Indonesia     284,438,782   3.5%        30 Jun … National annual proje… ""   
  6 Pakistan      241,499,431   2.9%        1 Mar 2… 2023 census result[8]  "[e]"
@@ -1069,8 +1117,8 @@ div.csl-indent {
    location      population pop_pct date       source                       
    &lt;chr&gt;              &lt;dbl&gt;   &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;                        
  1 World         8232000000   100   2025-06-13 UN projection[1][3]          
- 2 India         1417492000    17.3 2025-07-01 Official projection[4]       
- 3 China         1408280000    17.2 2024-12-31 Official estimate[5]         
+ 2 India         1417492000    17.2 2025-07-01 Official projection[4]       
+ 3 China         1408280000    17.1 2024-12-31 Official estimate[5]         
  4 United States  340110988     4.1 2024-07-01 Official estimate[6]         
  5 Indonesia      284438782     3.5 2025-06-30 National annual projection[7]
  6 Pakistan       241499431     2.9 2023-03-01 2023 census result[8]        
@@ -1118,15 +1166,15 @@ div.csl-indent {
        N 종목명  현재가 전일비 등락률 거래량 거래대금 매수호가 매도호가 시가총액
    &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;   
  1    NA ""      ""     ""     ""     ""     ""       ""       ""       ""      
- 2     1 "KODEX… "658"  "하락\n… "-6.2… "1,07… "727,19… "658"    "659"    "13,714"
- 3     2 "KODEX… "2,49… "하락\n… "-2.9… "82,2… "207,59… "2,495"  "2,500"  "7,245" 
- 4     3 "대원전선"… "4,22… "상승\n… "+15.… "58,4… "244,05… "4,220"  "4,225"  "3,164" 
- 5     4 "KODEX… "1,90… "상승\n… "+3.1… "49,0… "91,423" "1,900"  "1,901"  "5,812" 
- 6     5 "삼성전자"… "111,… "상승\n… "+3.3… "29,9… "3,277,… "111,10… "111,20… "6,576,…
+ 2     1 "KODEX… "690"  "상승\n… "+4.5… "740,… "510,06… "689"    "690"    "15,699"
+ 3     2 "KODEX… "2,57… "상승\n… "+2.3… "43,7… "112,45… "2,570"  "2,575"  "8,024" 
+ 4     3 "티엠씨"…… "16,7… "상승\n… "+80.… "29,4… "595,94… "16,760" "16,770" "4,041" 
+ 5     4 "KODEX… "1,75… "하락\n… "-0.5… "26,4… "46,145" "1,756"  "1,757"  "5,861" 
+ 6     5 "삼성전자"… "104,… "하락\n… "-3.7… "20,3… "2,136,… "104,80… "104,90… "6,203,…
  7    NA ""      ""     ""     ""     ""     ""       ""       ""       ""      
  8    NA ""      ""     ""     ""     ""     ""       ""       ""       ""      
  9    NA ""      ""     ""     ""     ""     ""       ""       ""       ""      
-10     6 "KODEX… "47,3… "상승\n… "+6.2… "29,6… "1,372,… "47,300" "47,305" "33,157"
+10     6 "KODEX… "2,87… "상승\n… "+0.1… "19,2… "55,524" "2,865"  "2,870"  "2,259" 
 # ℹ 151 more rows
 # ℹ 2 more variables: PER &lt;chr&gt;, ROE &lt;chr&gt;</code></pre>
 </div>
@@ -1141,11 +1189,11 @@ div.csl-indent {
 <pre><code># A tibble: 5 × 12
       N 종목명   현재가 전일비 등락률 거래량 거래대금 매수호가 매도호가 시가총액
   &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;   
-1     1 KODEX 2… 658    "하락\n… -6.27% 1,079… 727,197  658      659      13,714  
-2     2 KODEX 인… 2,495  "하락\n… -2.92% 82,21… 207,594  2,495    2,500    7,245   
-3     3 대원전선 4,220  "상승\n… +15.6… 58,47… 244,054  4,220    4,225    3,164   
-4     4 KODEX 2… 1,900  "상승\n… +3.15% 49,04… 91,423   1,900    1,901    5,812   
-5     5 삼성전자 111,1… "상승\n… +3.35% 29,95… 3,277,8… 111,100  111,200  6,576,7…
+1     1 KODEX 2… 690    "상승\n… +4.55% 740,5… 510,069  689      690      15,699  
+2     2 KODEX 인… 2,575  "상승\n… +2.39% 43,71… 112,450  2,570    2,575    8,024   
+3     3 티엠씨   16,770 "상승\n… +80.3… 29,40… 595,940  16,760   16,770   4,041   
+4     4 KODEX 2… 1,757  "하락\n… -0.57% 26,43… 46,145   1,756    1,757    5,861   
+5     5 삼성전자 104,8… "하락\n… -3.76% 20,31… 2,136,2… 104,800  104,900  6,203,7…
 # ℹ 2 more variables: PER &lt;chr&gt;, ROE &lt;chr&gt;</code></pre>
 </div>
 </div>
@@ -1695,8 +1743,8 @@ div.csl-indent {
 <span>  <span class="fu"><a href="http://echarts4r.john-coene.com/reference/e_line.html">e_line</a></span><span class="op">(</span><span class="va">index</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="http://echarts4r.john-coene.com/reference/e-tooltip.html">e_tooltip</a></span><span class="op">(</span>trigger <span class="op">=</span> <span class="st">"axis"</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div class="echarts4r html-widget html-fill-item" id="htmlwidget-dbf30db306b13a56c6b2" style="width:100%;height:500px;"></div>
-<script type="application/json" data-for="htmlwidget-dbf30db306b13a56c6b2">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true}],"xAxis":[{"data":["2015","2016","2017","2018","2019","2020","2021","2022","2023"],"type":"category","boundaryGap":true}],"legend":{"data":["종로구"]},"series":[{"data":[{"value":["2015","1.1114206"]},{"value":["2016","1.0766989"]},{"value":["2017","1.0761595"]},{"value":["2018","1.0902399"]},{"value":["2019","1.0563815"]},{"value":["2020","0.9858794"]},{"value":["2021","0.9728141"]},{"value":["2022","0.9651754"]},{"value":["2023","0.9324705"]}],"yAxisIndex":0,"xAxisIndex":0,"name":"종로구","type":"line","coordinateSystem":"cartesian2d"}],"tooltip":{"trigger":"axis"}},"dispose":true},"evals":[],"jsHooks":[]}</script>
+<div class="echarts4r html-widget html-fill-item" id="htmlwidget-88b6b286cef652479559" style="width:100%;height:500px;"></div>
+<script type="application/json" data-for="htmlwidget-88b6b286cef652479559">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true}],"xAxis":[{"data":["2015","2016","2017","2018","2019","2020","2021","2022","2023"],"type":"category","boundaryGap":true}],"legend":{"data":["종로구"]},"series":[{"data":[{"value":["2015","1.1114206"]},{"value":["2016","1.0766989"]},{"value":["2017","1.0761595"]},{"value":["2018","1.0902399"]},{"value":["2019","1.0563815"]},{"value":["2020","0.9858794"]},{"value":["2021","0.9728141"]},{"value":["2022","0.9651754"]},{"value":["2023","0.9324705"]}],"yAxisIndex":0,"xAxisIndex":0,"name":"종로구","type":"line","coordinateSystem":"cartesian2d"}],"tooltip":{"trigger":"axis"}},"dispose":true},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>이 모든 과정을 함수로 만들고, Base R의 <code>read_line()</code> 함수를 활용하면 초보적인 상호작용형 도구를 만들 수 있다.</p>
@@ -1821,11 +1869,11 @@ div.csl-indent {
 <pre><code># A tibble: 5 × 5
   title                                   originallink link  description pubDate
   &lt;chr&gt;                                   &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;  
-1 에코프로, 포항서 지속가능한 배터리 생태계 구축…… http://www.… http… "에코프로는 &lt;b&gt;… Mon, 0…
-2 교보교육재단, '27회 교보교육대상' 4개 부분 수상자 선정…… http://www.… http… "평생교육 부문 대… Mon, 0…
-3 與 “저성장 탓 적극적 재정 운용”… 野 “재정건전성 고려해야”…… https://www… http… "예결특위 위원장인… Mon, 0…
-4 부안군, ESG 행정 실천의 장 ‘ESG 플레이 캠프’ 성료…… http://sjbn… http… "군은 &lt;b&gt;지방소… Mon, 0…
-5 교보교육재단, '제27회 교보교육대상' 수상자 선정…… https://www… http… "평생교육 부문 대… Mon, 0…</code></pre>
+1 울릉군, '섬청년 보금자리' 공공임대주택 착공…… http://www.… http… "'섬청년 보금자리… Mon, 1…
+2 이광희 국회의원, 민주당 2년 연속 '국정감사 우수의원상'…… http://www.… http… "이 의원은 국감 … Mon, 1…
+3 [SPECIAL＆ISSUE] 손병복 울진군수, '울진형 복지로 미래 … https://www… http… "고령화와 인구감소… Mon, 1…
+4 충남 청양군의 사례를 보며…'농어촌 기본소득' &lt;b&gt;지방&lt;/b&gt; 자구… https://www… http… "청양군은 초고령화… Mon, 1…
+5 천철호 아산시의원, 더불어민주당 '우수조례상' 수상…… http://www.… http… "출생 이후가 아닌… Mon, 1…</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">

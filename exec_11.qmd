@@ -1,5 +1,5 @@
 ---
-title: "Shiny를 활용한 웹 앱 개발"
+title: "웹 앱 개발: Shiny의 활용"
 author: 이상일(서울대학교 지리교육과)
 date-modified: last-modified
 number-sections: true
@@ -21,12 +21,40 @@ editor_options:
 
 ## 개요 {.unnumbered}
 
-여기서는 지리공간적 시각화, 특히 지도 제작에 집중한다. "지도는 텍스트, 테이블, 챠트와 같은 것들 보다 훨씬 더 효과적으로 정보를 전달할 수 있다."
+여기서는 웹 앱 개발 도구로서의 [**Shiny**](https://shiny.posit.co/)에 대해 배운다. [**Shiny**](https://shiny.posit.co/)는 서버-기반의 웹 앱을 개발하기 위한 프레임워크를 제공한다. 원래 [R 패키지](https://rstudio.github.io/shiny/)로 개발되었으나 이제는 R과 Python 모두를 위한 웹 앱 개발 도구로 발전하고 있다.
 
-우선 [**tidyverse**](https://www.tidyverse.org/) 패키지를 불러온다.
+-   [Shiny for R](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/)
 
-```{r}
-library(tidyverse)
-```
+-   [Shiny for Python](https://shiny.posit.co/py/)
 
-## 
+[**Shiny**](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/)를 배우기 위한 다양한 리소스가 존재한다. 가장 중요한 리소스는 [Shiny for R](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/) 홈페이지이다. Get Started를 살펴본 후 Gallery의 다양한 예제를 살펴보는 것으로 시작하는 것이 좋다. 이 홈페이지의 내용만으로도 Shiny의 기본 구조를 익히기에 충분하다.
+
+좀 더 종합적으로 Shiny을 이해하려면 다음의 웹 북을 활용할 수 있다. 첫 번째가 바이블이라고 할 수 있다.
+
+-   [*Mastering Shiny*](https://mastering-shiny.org/) by Hadley Wickham
+
+-   [*Outstanding User Interfaces with Shiny*](https://unleash-shiny.rinterface.com/)
+
+-   [*Engineering Production-Grade Shiny Apps*](https://engineering-shiny.org/)
+
+-   [*Interactive Web-Based Data Visualization with R, plotly, and shiny*](https://plotly-r.com/)
+
+-   [*R Shiny Applications in Finance, Medicine Pharama and Education Industry*](https://bookdown.org/loankimrobinson/rshinybook/)
+
+-   [*Introduction to Data Science*: 25 Shiny Applications](https://bookdown.org/hneth/i2ds/shiny.html)
+
+-   [데이터 사이언스를 위한 R 프로그래밍: 14 shiny](https://greendaygh.github.io/Rprog2021/shiny.html)
+
+## 기본 구조
+
+Shiny는 크게 세 부분으로 나뉘어 진다(@fig-structure).
+
+첫째, ui(혹은 ux) 부분이다. 프론트엔트(front-end) 부분으로 입력을 받고 출력을 표출하는 부분이다.
+
+둘째, server 부분이다. 백엔드(back-end) 부분으로 받은 입력으로 출력을 산출하는 부분이다.
+
+셋째, 결합 부분이다. ui와 server 부분을 결합해 웹 앱을 실행하는 부분이다.
+
+![Shiny의 구조(<https://bookdown.org/hneth/i2ds/shiny.html>)](https://bookdown.org/hneth/i2ds/images/Shiny_ui_server.png "Shiny의 구조"){#fig-structure}
+
+이건 좀

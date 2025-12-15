@@ -27,6 +27,7 @@ website:
           - exec_08.qmd
           - exec_09.qmd
           - exec_10.qmd
+          - exec_11.qmd
       - text: "---"    
       - section: "R 프레젠테이션: 2025/2"
         contents: 

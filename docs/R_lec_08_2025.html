@@ -11,7 +11,7 @@
 <meta name="generator" content="quarto-1.8.24">
 <meta name="author" content="  이상일(서울대학교 지리교육과 교수)">
 <meta name="dcterms.date" content="2025-11-04">
-<title>Data Science – quarto-input7f8657f26383e3db</title>
+<title>Data Science – quarto-input1609345ac874f903</title>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -417,6 +417,13 @@
 </div>
 <div id="tabset-1-2">
 <div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rvest.tidyverse.org/">rvest</a></span><span class="op">)</span></span>
+<span><span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://rvest.tidyverse.org/articles/starwars.html"</span></span>
+<span><span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html</a></span><span class="op">(</span><span class="va">url</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements</a></span><span class="op">(</span><span class="st">"section"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_element</a></span><span class="op">(</span><span class="st">"h2"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_text.html">html_text2</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "The Phantom Menace"      "Attack of the Clones"   
 [3] "Revenge of the Sith"     "A New Hope"             
@@ -427,7 +434,7 @@
 </div>
 <div id="tabset-1-3">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">section</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html</a></span><span class="op">(</span><span class="va">url</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">section</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html">read_html</a></span><span class="op">(</span><span class="va">url</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rvest.tidyverse.org/reference/html_element.html">html_elements</a></span><span class="op">(</span><span class="st">"section"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span></span>
 <span>  title <span class="op">=</span> <span class="va">section</span> <span class="op">|&gt;</span> </span>
@@ -477,7 +484,7 @@
 <div class="tab-content">
 <div id="tabset-2-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rvest.tidyverse.org/">rvest</a></span><span class="op">)</span></span>
 <span><span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"</span></span>
 <span><span class="va">my_table</span> <span class="op">&lt;-</span> <span class="va">url</span> <span class="op">|&gt;</span> </span>
@@ -488,13 +495,14 @@
 </div>
 <div id="tabset-2-2">
 <div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">my_table</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 240 × 6
    Location      Population    `% ofworld` Date     Source (official or …¹ Notes
    &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;                  &lt;chr&gt;
  1 World         8,232,000,000 100%        13 Jun … UN projection[1][3]    ""   
- 2 India         1,417,492,000 17.3%       1 Jul 2… Official projection[4] "[b]"
- 3 China         1,408,280,000 17.2%       31 Dec … Official estimate[5]   "[c]"
+ 2 India         1,417,492,000 17.2%       1 Jul 2… Official projection[4] "[b]"
+ 3 China         1,408,280,000 17.1%       31 Dec … Official estimate[5]   "[c]"
  4 United States 340,110,988   4.1%        1 Jul 2… Official estimate[6]   "[d]"
  5 Indonesia     284,438,782   3.5%        30 Jun … National annual proje… ""   
  6 Pakistan      241,499,431   2.9%        1 Mar 2… 2023 census result[8]  "[e]"
@@ -509,7 +517,7 @@
 </div>
 <div id="tabset-2-3">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">my_table_new</span> <span class="op">&lt;-</span> <span class="va">my_table</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">my_table_new</span> <span class="op">&lt;-</span> <span class="va">my_table</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="va">Notes</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span></span>
 <span>    location <span class="op">=</span> <span class="st">"Location"</span>,</span>
@@ -529,13 +537,14 @@
 </div>
 <div id="tabset-2-4">
 <div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">my_table_new</span> </span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 240 × 5
    location      population pop_pct date       source                       
    &lt;chr&gt;              &lt;dbl&gt;   &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;                        
  1 World         8232000000   100   2025-06-13 UN projection[1][3]          
- 2 India         1417492000    17.3 2025-07-01 Official projection[4]       
- 3 China         1408280000    17.2 2024-12-31 Official estimate[5]         
+ 2 India         1417492000    17.2 2025-07-01 Official projection[4]       
+ 3 China         1408280000    17.1 2024-12-31 Official estimate[5]         
  4 United States  340110988     4.1 2024-07-01 Official estimate[6]         
  5 Indonesia      284438782     3.5 2025-06-30 National annual projection[7]
  6 Pakistan       241499431     2.9 2023-03-01 2023 census result[8]        
@@ -636,7 +645,7 @@
 <div class="tab-content">
 <div id="tabset-3-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://httr2.r-lib.org">httr2</a></span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://httr2.r-lib.org">httr2</a></span><span class="op">)</span></span>
 <span><span class="va">base_url</span> <span class="op">&lt;-</span> <span class="st">"https://api.odcloud.kr/api/15099519/v1/uddi:e83bc47a-f235-4b44-96d8-a9d0686435a5"</span> </span>
 <span><span class="fu"><a href="https://httr2.r-lib.org/reference/request.html">request</a></span><span class="op">(</span><span class="va">base_url</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/req_url.html">req_url_query</a></span><span class="op">(</span></span>
@@ -653,13 +662,13 @@
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 18
-  경도        교육지원청명   교육지원청코드 데이터기준일자 변경일자 본교분교구분
-  &lt;chr&gt;       &lt;chr&gt;                   &lt;int&gt; &lt;chr&gt;          &lt;chr&gt;    &lt;chr&gt;       
-1 126.9214593 서울특별시동작관악교육지원…        7132000 2025-03-21     2024-11… 본교        
-2 127.0627595 서울특별시강남서초교육지원…        7091300 2025-03-21     2024-11… 본교        
-3 127.4110049 대전광역시동부교육지원청……        7441000 2025-03-21     2024-11… 본교        
-4 127.2639169 세종특별자치시교육청……        9300000 2025-03-21     2024-11… 본교        
-5 127.3532800 대전광역시서부교육지원청……        7451000 2025-03-21     2024-11… 본교        
+  경도          교육지원청명 교육지원청코드 데이터기준일자 변경일자 본교분교구분
+  &lt;chr&gt;         &lt;chr&gt;                 &lt;int&gt; &lt;chr&gt;          &lt;chr&gt;    &lt;chr&gt;       
+1 126.83075160… 전북특별자치도정읍교육…        8362000 2025-09-22     2025-07… 본교        
+2 126.62621220… 인천광역시서부교육지원…        7361000 2025-09-22     2025-07… 본교        
+3 127.61483550… 전북특별자치도장수교육…        8422000 2025-09-22     2025-07… 본교        
+4 129.39651960… 경상북도포항교육지원청…        8761000 2025-09-22     2025-07… 본교        
+5 129.07938730… 부산광역시동래교육지원…        7191000 2025-09-22     2025-07… 본교        
 # ℹ 12 more variables: 생성일자 &lt;chr&gt;, 설립일자 &lt;chr&gt;, 설립형태 &lt;chr&gt;,
 #   소재지도로명주소 &lt;chr&gt;, 소재지지번주소 &lt;chr&gt;, 시도교육청명 &lt;chr&gt;,
 #   시도교육청코드 &lt;int&gt;, 운영상태 &lt;chr&gt;, 위도 &lt;chr&gt;, 학교ID &lt;chr&gt;,
@@ -669,7 +678,7 @@
 </div>
 <div id="tabset-3-3">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">final_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/map_dfr.html">map_dfr</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">12</span>, <span class="kw">function</span><span class="op">(</span><span class="va">p</span><span class="op">)</span> <span class="op">{</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">final_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/map_dfr.html">map_dfr</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">12</span>, <span class="kw">function</span><span class="op">(</span><span class="va">p</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/request.html">request</a></span><span class="op">(</span><span class="va">base_url</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>    <span class="fu"><a href="https://httr2.r-lib.org/reference/req_url.html">req_url_query</a></span><span class="op">(</span></span>
 <span>      serviceKey <span class="op">=</span> <span class="va">your_api_key</span>, </span>
@@ -683,21 +692,22 @@
 </div>
 <div id="tabset-3-4">
 <div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">final_data</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 11,985 × 18
-   경도        교육지원청명  교육지원청코드 데이터기준일자 변경일자 본교분교구분
-   &lt;chr&gt;       &lt;chr&gt;                  &lt;int&gt; &lt;chr&gt;          &lt;chr&gt;    &lt;chr&gt;       
- 1 126.9214593 서울특별시동작관악교육지…        7132000 2025-03-21     2024-11… 본교        
- 2 127.0627595 서울특별시강남서초교육지…        7091300 2025-03-21     2024-11… 본교        
- 3 127.4110049 대전광역시동부교육지원청…        7441000 2025-03-21     2024-11… 본교        
- 4 127.2639169 세종특별자치시교육청……        9300000 2025-03-21     2024-11… 본교        
- 5 127.3532800 대전광역시서부교육지원청…        7451000 2025-03-21     2024-11… 본교        
- 6 127.0946485 서울특별시동부교육지원청…        7021000 2025-03-21     2024-11… 본교        
- 7 126.8852718 광주광역시동부교육지원청…        7391000 2025-03-21     2024-11… 본교        
- 8 128.8031292 경상남도김해교육지원청……        9091000 2025-03-21     2024-11… 본교        
- 9 127.3215290 대전광역시서부교육지원청…        7451000 2025-03-21     2024-11… 본교        
-10 127.0571716 서울특별시북부교육지원청…        7051000 2025-03-21     2024-11… 본교        
-# ℹ 11,975 more rows
+<pre><code># A tibble: 12,000 × 18
+   경도         교육지원청명 교육지원청코드 데이터기준일자 변경일자 본교분교구분
+   &lt;chr&gt;        &lt;chr&gt;                 &lt;int&gt; &lt;chr&gt;          &lt;chr&gt;    &lt;chr&gt;       
+ 1 126.8307516… 전북특별자치도정읍교육…        8362000 2025-09-22     2025-07… 본교        
+ 2 126.6262122… 인천광역시서부교육지원…        7361000 2025-09-22     2025-07… 본교        
+ 3 127.6148355… 전북특별자치도장수교육…        8422000 2025-09-22     2025-07… 본교        
+ 4 129.3965196… 경상북도포항교육지원청…        8761000 2025-09-22     2025-07… 본교        
+ 5 129.0793873… 부산광역시동래교육지원…        7191000 2025-09-22     2025-07… 본교        
+ 6 128.8886173… 경상남도김해교육지원청…        9091000 2025-09-22     2025-07… 본교        
+ 7 128.0643803… 경상남도사천교육지원청…        9081000 2025-09-22     2025-07… 본교        
+ 8 126.4853077… 전라남도무안교육지원청…        8661000 2025-09-22     2025-07… 본교        
+ 9 126.7792304… 경기도파주교육지원청……        7681000 2025-09-22     2025-07… 본교        
+10 128.5672852… 대구광역시서부교육지원…        7261000 2025-09-22     2025-07… 본교        
+# ℹ 11,990 more rows
 # ℹ 12 more variables: 생성일자 &lt;chr&gt;, 설립일자 &lt;chr&gt;, 설립형태 &lt;chr&gt;,
 #   소재지도로명주소 &lt;chr&gt;, 소재지지번주소 &lt;chr&gt;, 시도교육청명 &lt;chr&gt;,
 #   시도교육청코드 &lt;int&gt;, 운영상태 &lt;chr&gt;, 위도 &lt;chr&gt;, 학교ID &lt;chr&gt;,
@@ -759,7 +769,7 @@
 <div class="tab-content">
 <div id="tabset-4-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://httr2.r-lib.org">httr2</a></span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://httr2.r-lib.org">httr2</a></span><span class="op">)</span></span>
 <span><span class="va">search</span> <span class="op">&lt;-</span> <span class="st">"지역소멸"</span></span>
 <span><span class="va">base_url</span> <span class="op">&lt;-</span> <span class="st">"https://openapi.naver.com/v1/search/news.json"</span></span>
 <span><span class="va">result_naver</span> <span class="op">&lt;-</span> <span class="va">base_url</span> <span class="op">|&gt;</span> </span>
@@ -781,22 +791,22 @@
 </div>
 <div id="tabset-4-2">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">result_naver</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">result_naver</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 5
   title                                   originallink link  description pubDate
   &lt;chr&gt;                                   &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;  
-1 전북자치도, 2차 민생회복 소비쿠폰 신청 마감…… http://www.… http… "소비쿠폰은 이달 … Mon, 0…
-2 에코프로, 포항서 지속가능한 배터리 생태계 구축…… http://www.… http… "에코프로는 지방 … Mon, 0…
-3 교보교육재단, '27회 교보교육대상' 4개 부분 수상자 선정…… http://www.… http… "평생교육 부문 대… Mon, 0…
-4 김태훈 순천시의원, &lt;b&gt;지역&lt;/b&gt;경제 활성화 정책 제안…… http://www.… http… "곧 &lt;b&gt;지역 소… Mon, 0…
-5 대전·세종, 연극·오페라·심포니로 이어지는 사유의 무대…… https://www… http… "인간성의 &lt;b&gt;소… Mon, 0…</code></pre>
+1 2차 공공기관 이전                       http://www.… http… "미뤄지면서 &lt;b&gt;… Mon, 1…
+2 영양군, 오뚜기와 협업한 '더핫 열라면' 우수사례로 선정…… http://www.… http… "행사는 지방&lt;b&gt;… Mon, 1…
+3 수도권 접경지에도 '기회의 문' 열려야    https://www… http… "'수도권이니 알아… Mon, 1…
+4 구미도시공사, 3년 연속 &lt;b&gt;지역&lt;/b&gt;사회공헌 인정…… http://www.… http… "주요 활동으로는 … Mon, 1…
+5 충남도의회 이정우 의원, 청양군 농어촌 기본소득 도비 지원 촉구…… http://www.… http… "이어 &amp;quot;… Mon, 1…</code></pre>
 </div>
 </div>
 </div>
 <div id="tabset-4-3">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">naver_extractor</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">base_url</span>, <span class="va">search_item</span>, <span class="va">n_start</span> <span class="op">=</span> <span class="fl">1</span>, <span class="va">n_display</span> <span class="op">=</span> <span class="fl">100</span><span class="op">)</span><span class="op">{</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">naver_extractor</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">base_url</span>, <span class="va">search_item</span>, <span class="va">n_start</span> <span class="op">=</span> <span class="fl">1</span>, <span class="va">n_display</span> <span class="op">=</span> <span class="fl">100</span><span class="op">)</span><span class="op">{</span></span>
 <span>  <span class="va">news</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://httr2.r-lib.org/reference/request.html">request</a></span><span class="op">(</span><span class="va">base_url</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/req_headers.html">req_headers</a></span><span class="op">(</span></span>
 <span>    <span class="st">"X-Naver-Client-ID"</span> <span class="op">=</span> <span class="va">your_ClientID</span>,</span>
@@ -827,16 +837,16 @@
 </div>
 <div id="tabset-4-4">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">result_naver</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">result_naver</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 5
   title                                   originallink link  description pubDate
   &lt;chr&gt;                                   &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;  
-1 전북자치도, 2차 민생회복 소비쿠폰 신청 마감…… http://www.… http… "소비쿠폰은 이달 … Mon, 0…
-2 에코프로, 포항서 지속가능한 배터리 생태계 구축…… http://www.… http… "에코프로는 지방 … Mon, 0…
-3 교보교육재단, '27회 교보교육대상' 4개 부분 수상자 선정…… http://www.… http… "평생교육 부문 대… Mon, 0…
-4 김태훈 순천시의원, &lt;b&gt;지역&lt;/b&gt;경제 활성화 정책 제안…… http://www.… http… "곧 &lt;b&gt;지역 소… Mon, 0…
-5 대전·세종, 연극·오페라·심포니로 이어지는 사유의 무대…… https://www… http… "인간성의 &lt;b&gt;소… Mon, 0…</code></pre>
+1 2차 공공기관 이전                       http://www.… http… "미뤄지면서 &lt;b&gt;… Mon, 1…
+2 영양군, 오뚜기와 협업한 '더핫 열라면' 우수사례로 선정…… http://www.… http… "행사는 지방&lt;b&gt;… Mon, 1…
+3 수도권 접경지에도 '기회의 문' 열려야    https://www… http… "'수도권이니 알아… Mon, 1…
+4 구미도시공사, 3년 연속 &lt;b&gt;지역&lt;/b&gt;사회공헌 인정…… http://www.… http… "주요 활동으로는 … Mon, 1…
+5 충남도의회 이정우 의원, 청양군 농어촌 기본소득 도비 지원 촉구…… http://www.… http… "이어 &amp;quot;… Mon, 1…</code></pre>
 </div>
 </div>
 </div>
@@ -1065,41 +1075,6 @@
           RevealZoom
         ]
       });
-    </script><script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-    
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-    
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-    
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-    
-      })();
     </script><script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
