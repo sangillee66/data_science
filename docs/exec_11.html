@@ -760,7 +760,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2025년 12월 16일</p>
+      <p class="date-modified">2025년 12월 17일</p>
     </div>
   </div>
     
@@ -863,13 +863,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>코드를 자세히 살펴보자. 우선 <a href="https://rstudio.github.io/shiny/"><strong>shiny</strong></a>라는 R 패키지를 불러와야 한다. 코드가 ui, server, shinyApp의 세 부분으로 나뉘어져 있다는 것을 알 수 있고, 이것이 위에서 설명한 UI 부분, Server 부분, 결합 및 실행 부분을 담당한다는 점을 쉽게 이해할 수 있다.</p>
 <section id="ui-부분" class="level3" data-number="2.1"><h3 data-number="2.1" class="anchored" data-anchor-id="ui-부분">
 <span class="header-section-number">2.1</span> UI 부분</h3>
-<p>UI 부분은 다음과 같은 구조를 가지고 있다.</p>
-<p>첫째, 전체적으로 <code><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage()</a></code>라는 함수에 의해 규정되고, <code><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage()</a></code>는 다시 <code><a href="https://rdrr.io/pkg/shiny/man/titlePanel.html">titlePanel()</a></code>과 <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarLayout()</a></code>으로 나뉘고, <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarLayout()</a></code>은 다시 <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarPanel()</a></code>과 <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">mainPanel()</a></code>로 나뉜다.</p>
+<p>UI 부분은 다양한 함수들이 위계 구조를 이루고 있는데, 전체 구조를 결정하는 <strong>레이아웃 함수</strong>가 마치 컨테이너처럼 존재하고 그 속에 <strong>입출력 함수</strong>가 포함되어 있는 구조이다.</p>
+<p>첫째, 레이아웃 함수가 위계 구조를 이루고 있다. 최상위 <code><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage()</a></code> 함수는 <code><a href="https://rdrr.io/pkg/shiny/man/titlePanel.html">titlePanel()</a></code>과 <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarLayout()</a></code>로 구성되고, <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarLayout()</a></code>은 다시 <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarPanel()</a></code>과 <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">mainPanel()</a></code>로 구성된다. 하나씩 위계적으로 살펴보면 다음과 같다.</p>
 <ul>
 <li>
-<p><code><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage()</a></code> : UI의 최상위 컨테이너로서 전체 레이아웃을 관장하며, 브라우저 화면 크기에 따라 자동으로 늘어나고 줄어드는 반응형 레이아웃을 제공한다. 이러한 특성 때문에 ’fluid’라는 이름이 붙었으며, 고정 폭을 가진 레이아웃은 <code><a href="https://rdrr.io/pkg/shiny/man/fixedPage.html">fixedPage()</a></code>를 통해 정의할 수 있다. Shiny 앱에서는 기본적으로 <code><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage()</a></code>를 사용한다고 생각하면 된다.</p>
+<p><code><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage()</a></code> : UI의 최상위 컨테이너로서 전체 레이아웃을 관장하며, 브라우저 화면 크기에 따라 자동으로 늘어나고 줄어드는 반응형 레이아웃을 제공한다. 이러한 특성 때문에 ’fluid’라는 이름이 붙었다. 고정 폭을 가진 레이아웃은 <code><a href="https://rdrr.io/pkg/shiny/man/fixedPage.html">fixedPage()</a></code>를 통해 정의할 수 있다. Shiny 앱에서는 기본적으로 <code><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage()</a></code>를 사용한다고 생각하면 된다.</p>
 <ul>
-<li><p><code><a href="https://rdrr.io/pkg/shiny/man/titlePanel.html">titlePanel()</a></code> : 제목이 들어가는 부분으로, 생략할 수 있다.</p></li>
+<li><p><code><a href="https://rdrr.io/pkg/shiny/man/titlePanel.html">titlePanel()</a></code> : 제목이 들어가는 부분이다. 생략가능하다.</p></li>
 <li>
 <p><code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarLayout()</a></code>: UI의 핵심 부분으로, 가장 전형적인 “사이드바 + 메인 영역” 레이아웃을 <code><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage()</a></code> 내에 생성할 수 있게 해준다.</p>
 <ul>
@@ -883,13 +883,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>둘째, <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarPanel()</a></code> 내의 <code><a href="https://rdrr.io/pkg/shiny/man/sliderInput.html">sliderInput()</a></code>은 특정한 <strong>입력 함수</strong> 혹은 <strong>입력 위젯 생성 함수</strong>이다. 여기서는 슬라이더바 형태의 입력을 받기 때문에 <code><a href="https://rdrr.io/pkg/shiny/man/sliderInput.html">sliderInput()</a></code> 함수가 사용된 것이다. 입력의 형태에 따라 다양한 입력 함수가 존재하며, 일반적으로 <code>*Input()</code> 형식을 띤다. 뒤에서 자세히 다룬다. 개별 함수는 상호작용형 인터페이스 컴포넌트로 미리 만들어져 있기 때문에 위젯이라고 부른다. <code><a href="https://rdrr.io/pkg/shiny/man/sliderInput.html">sliderInput()</a></code>은 다양한 인수로 구성되어 있는데, 가장 중요한 것이 <code>inputId</code> 인수이다. 입력 함수는 위젯을 통해 입력값을 받고 그 입력값은 Server의 <code>input</code> 객체의 한 요소가 되는데 <code>inputId</code> 인수는 <code>input</code> 객체에서 해당 요소를 참조할 ’이름’을 지정한다.</p>
 <p>셋째, <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">mainPanel()</a></code> 내의 <code><a href="https://rdrr.io/pkg/shiny/man/plotOutput.html">plotOutput()</a></code>은 특정한 <strong>출력 표출 함수</strong> 혹은 <strong>출력 바인딩(binding) 함수</strong>이다. 이것은 Server에서 전달받은 출력 즉 <code>output</code> 객체의 요소를 표출한다. 바인딩 함수라고 부르는 것은 출력 요소와 브라우저의 특정 UI 영역을 ’연결(바인드)’하기 때문이다. 출력의 형태가 플롯(plot)이기 때문에 <code><a href="https://rdrr.io/pkg/shiny/man/plotOutput.html">plotOutput()</a></code> 함수가 사용된 것이다. 출력의 형태에 따라 다양한 출력 표출 함수가 존재하며, 일반적으로 <code>*Output()</code>의 형식을 띤다. 뒤에서 자세히 다룬다. <code><a href="https://rdrr.io/pkg/shiny/man/plotOutput.html">plotOutput()</a></code> 함수의 가장 중요한 인수는 <code>outputId</code>로 표출할 <code>output</code> 객체의 요소의 ’이름’을 지정한다. <code>plotOutput(outputId = "distPlot")</code>는 서버에서 만들어진 <code>"distPlot"</code>라는 이름의 플롯(<code>output</code> 객체의 한 요소)을 해당 위치에 표출한다는 의미이다.</p>
 <blockquote class="blockquote">
-<p>결국 UI는 입력을 받고 출력을 표출하는데, 전자는 <code><a href="https://rdrr.io/pkg/shiny/man/sliderInput.html">sliderInput()</a></code>와 같은 입력 함수를 통해 이루어지며, 후자는 <code><a href="https://rdrr.io/pkg/shiny/man/plotOutput.html">plotOutput()</a></code>과 같은 출력 표출 함수를 통해 이루어진다. 이들 함수는 출력과 입력의 형식에 따라 일반적으로 <code>*Input()</code>과 <code>*Output()</code>의 형태를 띤다.</p>
+<p>결국 UI는 입력을 받고 출력을 표출하는 두 가지 일을 하는데, 전자는 <code><a href="https://rdrr.io/pkg/shiny/man/sliderInput.html">sliderInput()</a></code>과 같은 입력 함수를 통해 이루어지며, 후자는 <code><a href="https://rdrr.io/pkg/shiny/man/plotOutput.html">plotOutput()</a></code>과 같은 출력 표출 함수를 통해 이루어진다. 이들 함수는 출력과 입력의 형식에 따라 일반적으로 <code>*Input()</code>과 <code>*Output()</code>의 형태를 띤다.</p>
 </blockquote>
 </section><section id="server-부분" class="level3" data-number="2.2"><h3 data-number="2.2" class="anchored" data-anchor-id="server-부분">
 <span class="header-section-number">2.2</span> Server 부분</h3>
 <p>Server 부분은 다음과 같은 구조를 가지고 있다.</p>
 <p>첫째, Server 부분은 반드시 <strong>함수</strong>로 정의되며, 일반적으로 <code>function(input, output){}</code> 혹은 <code>function(input, output, session){}</code>의 형식을 갖는다(<code>input</code>과 <code>output</code>은 필수이지만 <code>session</code>은 부가적으로 정의될 수 있다). 반드시 함수로 정의되어야 하는 것은 <code>input</code>과 <code>output</code>(부가적으로 session)을 인수로 받아, 입력 변화에 따라 반응형 출력이 생성 및 갱신되는 로직을 정의하기 때문입니다.</p>
-<p>둘째, 출력물은 <code>renderPlot({})</code>과 같은 <strong>출력 생성 함수</strong>를 통해 이루어진다. 이렇게 생성된 출력은 ’이름’이 지정되어 Server의 <code>output</code> 객체의 한 원소로 저장된다. 예를 들어, 코드에서 <code>output$distPlot</code>은 생성된 출력에 <code>"distPlot"</code>이라는 이름을 부여하고 이를 <code>output</code> 객체에 저장함을 의미한다. 이 이름은 UI 부분의 <code>plotOutput(outputId = "distPlot")</code>에서 사용되며, 이를 통해 해당 출력이 UI에 표출된다.</p>
+<p>둘째, 출력물은 <code>renderPlot({})</code>과 같은 <strong>출력 생성 함수(렌더링 함수)</strong>를 통해 이루어진다. 이렇게 생성된 출력은 ’이름’이 지정되어 Server의 <code>output</code> 객체의 한 원소로 저장된다. 예를 들어, 코드에서 <code>output$distPlot</code>은 생성된 출력에 <code>"distPlot"</code>이라는 이름을 부여하고 이를 <code>output</code> 객체에 저장함을 의미한다. 이 이름은 UI의 출력 표출 함수 <code>plotOutput(outputId = "distPlot")</code>에서 사용되며, 이를 통해 해당 출력이 UI에 표출된다.</p>
 <p>셋째, 출력의 형태가 플롯이기 때문에 <code>renderPlot({})</code> 함수가 사용된 것이다. 출력의 형태에 따라 다양한 출력 생성 함수가 존재하며, 일반적으로 <code>render*({})</code>의 형식을 띤다. 뒤에서 자세히 다룬다.</p>
 <p>넷째, 입력 함수로부터 전달되어 Server의 <code>input</code> 객체의 요소로 저장된 입력값은 출력 생성 함수 내부에서 사용된다. 예를 들어, <code>seq(min(x), max(x), length.out = input$bins + 1)</code>에서 <code><a href="https://rdrr.io/pkg/shiny/man/sliderInput.html">sliderInput()</a></code> 함수로부터 전달된 <code>bins</code>라는 입력값(즉, <code>input</code> 객체의 한 요소)이 <code><a href="https://rdrr.io/r/base/seq.html">seq()</a></code> 함수 내부에서 사용된다. 입력값이 달라짐에 따라 히스토그램의 모양이 달라지는 이유가 여기에 있다.</p>
 <blockquote class="blockquote">
@@ -940,7 +940,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/runApp.html">runApp</a></span><span class="op">(</span><span class="st">"폴더명"</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>위의 두 가지 방식을 결합한 제3의 길도 있다. 우선 위의 분리 파일 방식과 같이 UI와 Server 부분에 대한 파일을 개별적을 생성한다. 차이점은 반드시 ui와 server 객체를 할당하는 방식으로 일어져야 한다는 점이다. my_ui.R의 내용은 다음과 같다. 이 방식에서는 UI 부분의 파일 이름이 반드시 ui.R일 필요가 없다.</p>
+<p>위의 두 가지 방식을 결합한 제3의 길도 있다. 우선 위의 분리 파일 방식과 같이 UI와 Server 부분에 대한 파일을 개별적을 생성한다. 차이점은 반드시 ui와 server 객체를 할당하는 방식으로 이러우져야 한다는 점이다. my_ui.R의 내용은 다음과 같다. 이 방식에서는 UI 부분의 파일 이름이 반드시 ui.R일 필요가 없다.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage</a></span><span class="op">(</span></span>
 <span>    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/titlePanel.html">titlePanel</a></span><span class="op">(</span><span class="st">"Old Faithful Geyser Data"</span><span class="op">)</span>,</span>
@@ -970,7 +970,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>    <span class="op">}</span><span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>그리고 나서 단일 파일 방식과 같이 app.R 파일을 통해 결합한다. 내용은 다음과 같다.</p>
+<p>그리고 나서 단일 파일 방식과 같이 app.R 파일을 통해 결합한다. app.R 파일의 내용은 다음과 같다.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.posit.co/">shiny</a></span><span class="op">)</span></span>
 <span></span>
@@ -979,12 +979,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html">shinyApp</a></span><span class="op">(</span>ui <span class="op">=</span> <span class="va">ui</span>, server <span class="op">=</span> <span class="va">server</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>UI 파일과 Server 파일을 분리하는 방식은 코드가 매우 복잡할 때 사용하는 것으로 보통을 단일 파일 방식을 사용한다.</p>
+<p>UI 파일과 Server 파일을 분리하는 방식은 코드가 매우 복잡할 때 사용하는 것으로 보통은 단일 파일 방식을 사용한다.</p>
 </section></section><section id="입출력-함수의-종류" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="입출력-함수의-종류">
 <span class="header-section-number">3</span> 입출력 함수의 종류</h2>
 <section id="입력-함수" class="level3" data-number="3.1"><h3 data-number="3.1" class="anchored" data-anchor-id="입력-함수">
 <span class="header-section-number">3.1</span> 입력 함수</h3>
-<p>입력 함수 혹은 입력 위젯 생성 함수의 종류는 다양한데, <a href="https://shiny.posit.co/r/components/">R Shiny Components</a> 웹페이지 기준으로 대략 25개 정도이다. <a href="#fig-widget" class="quarto-xref">그림&nbsp;4</a> 은 그 중 일부를 보여주고 있다.</p>
+<p>앞에서 언급한 것처럼, 입력 함수 혹은 입력 위젯 생성 함수의 종류는 다양하다. <a href="https://shiny.posit.co/r/components/">R Shiny Components</a> 웹페이지 기준으로 대략 25개 정도이다. <a href="#fig-widget" class="quarto-xref">그림&nbsp;4</a> 은 그 중 일부를 보여주고 있다.</p>
 <div id="fig-widget" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-widget-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="https://shiny.posit.co/r/getstarted/build-an-app/images/cheatsheet-inputs.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="그림&nbsp;4: 입력 위젯의 종류(https://shiny.posit.co/r/getstarted/build-an-app/reactive-flow/ui-inputs.html)"><img src="https://shiny.posit.co/r/getstarted/build-an-app/images/cheatsheet-inputs.png" class="img-fluid figure-img"></a>
@@ -995,11 +995,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>몇 가지 주목할 사항이 있다.</p>
 <p>첫째, 모든 함수의 이름이 <code>*Input()</code> 형식인 것은 아니다. 특히 버튼 형식의 경우 <code>*Button()</code> 혹은 <code>*Buttons()</code> 형식을 띤다. 이 외에 <code>*Link()</code>, <code>*switch()</code>로 끝나는 함수도 있다.</p>
-<p>둘째, 입력 함수에 따라 인수의 종류가 다르다. 자세한 사항은 <a href="https://shiny.posit.co/r/components/">R Shiny Components</a> 웹페이지를 참조한다.</p>
+<p>둘째, 입력 함수의 인수에 주목할 필요가 있다. 이름을 부여하는 <code>inputID</code> 인수와 입력 위젯의 설명 글귀를 지정하는 <code>label</code> 인수는 공통이다. 그러나 나머지 인수는 입력 함수에 따라 달라진다. 위의 예에서 <code><a href="https://rdrr.io/pkg/shiny/man/sliderInput.html">sliderInput()</a></code> 입력 함수는 <code>min</code>, <code>max</code>, <code>value</code>라는 추가적인 인수를 갖는데, <code>min</code>과 <code>max</code>는 슬라이더의 최대 및 최소값을, <code>value</code>는 위젯에 기본값을 지정하는 인수이다. 입력 함수별 인수에 대한 자세한 사항은 <a href="https://shiny.posit.co/r/components/">R Shiny Components</a> 웹페이지를 참조한다.</p>
 </section><section id="출력-함수-출력-표출-함수와-출력-생성-함수" class="level3" data-number="3.2"><h3 data-number="3.2" class="anchored" data-anchor-id="출력-함수-출력-표출-함수와-출력-생성-함수">
 <span class="header-section-number">3.2</span> 출력 함수: 출력 표출 함수와 출력 생성 함수</h3>
-<p>출력 함수는 서버에서 생성된 출력을 UI에서 표출해주는 출력 표출(바인딩) 함수와 서버에서 실질적으로 출력을 창출하는 출력 생성 함수로 구분된다. 출력 함수의 종류는 출력의 형식(플롯, 테이블, 텍스트, 이미지 등)에 의해 결정되기 때문에 기본적인 출력의 종류에 따라 출력 표출 함수와 출력 생성 함수가 쌍을 이룰 수 밖에 없다.</p>
-<p>다음은 다섯 가지 기본 출력 함수를 보여준다. 출력 표출 함수는 <code>*Output()</code>의 형식을, 출력 생성 함수는 <code>render*({})</code>의 형식을 취한다.</p>
+<p>출력 함수는 서버에서 생성된 출력을 UI에서 표출해주는 출력 표출(바인딩) 함수와 서버에서 실질적으로 출력을 창출하는 출력 생성 함수(렌더링 함수)로 구분된다. 출력 함수의 종류는 출력의 형식(플롯, 테이블, 텍스트, 이미지 등)에 의해 결정되기 때문에 기본적인 출력의 종류에 따라 출력 표출 함수와 출력 생성 함수가 쌍을 이룰 수 밖에 없다.</p>
+<p>다음은 다섯 가지 기본 출력 함수의 쌍을 보여준다. 출력 표출 함수는 <code>*Output()</code>의 형식을, 출력 생성 함수는 <code>render*({})</code>의 형식을 취한다.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 26%">
@@ -1079,7 +1079,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<p>Shiny 웹 앱에서의 활용을 염두에 둔 패키지들은 모두 이러한 출력 함수의 쌍을 제공하고 있다. 따라서 출력 함수는 굉장히 많을 수 있다. <a href="https://shiny.posit.co/r/components/">R Shiny Components</a> 웹페이지 기본 5개의 함수쌍에 주요 패키지를 포함하는 12개 정도의 출력 함수쌍을 예시로 제공하고 있다.</p>
+<p>Shiny 웹 앱에서의 활용을 염두에 둔 패키지들은 모두 이러한 출력 함수의 쌍을 제공하고 있다. 따라서 출력 함수는 굉장히 많을 수 있다. <a href="https://shiny.posit.co/r/components/">R Shiny Components</a> 웹페이지는 기본 5개의 함수쌍에 주요 패키지를 포함하는 12개 정도의 출력 함수쌍을 예시로 제시하고 있다.</p>
 </section></section><section id="반응성-함수" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="반응성-함수">
 <span class="header-section-number">4</span> 반응성 함수</h2>
 <section id="정의" class="level3" data-number="4.1"><h3 data-number="4.1" class="anchored" data-anchor-id="정의">

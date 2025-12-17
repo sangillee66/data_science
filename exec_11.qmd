@@ -120,13 +120,13 @@ shinyApp(ui = ui, server = server)
 
 ### UI 부분
 
-UI 부분은 다음과 같은 구조를 가지고 있다.
+UI 부분은 다양한 함수들이 위계 구조를 이루고 있는데, 전체 구조를 결정하는 **레이아웃 함수**가 마치 컨테이너처럼 존재하고 그 속에 **입출력 함수**가 포함되어 있는 구조이다.
 
-첫째, 전체적으로 `fluidPage()`라는 함수에 의해 규정되고, `fluidPage()`는 다시 `titlePanel()`과 `sidebarLayout()`으로 나뉘고, `sidebarLayout()`은 다시 `sidebarPanel()`과 `mainPanel()`로 나뉜다.
+첫째, 레이아웃 함수가 위계 구조를 이루고 있다. 최상위 `fluidPage()` 함수는 `titlePanel()`과 `sidebarLayout()`로 구성되고, `sidebarLayout()`은 다시 `sidebarPanel()`과 `mainPanel()`로 구성된다. 하나씩 위계적으로 살펴보면 다음과 같다.
 
--   `fluidPage()` : UI의 최상위 컨테이너로서 전체 레이아웃을 관장하며, 브라우저 화면 크기에 따라 자동으로 늘어나고 줄어드는 반응형 레이아웃을 제공한다. 이러한 특성 때문에 ‘fluid’라는 이름이 붙었으며, 고정 폭을 가진 레이아웃은 `fixedPage()`를 통해 정의할 수 있다. Shiny 앱에서는 기본적으로 `fluidPage()`를 사용한다고 생각하면 된다.
+-   `fluidPage()` : UI의 최상위 컨테이너로서 전체 레이아웃을 관장하며, 브라우저 화면 크기에 따라 자동으로 늘어나고 줄어드는 반응형 레이아웃을 제공한다. 이러한 특성 때문에 ‘fluid’라는 이름이 붙었다. 고정 폭을 가진 레이아웃은 `fixedPage()`를 통해 정의할 수 있다. Shiny 앱에서는 기본적으로 `fluidPage()`를 사용한다고 생각하면 된다.
 
-    -   `titlePanel()` : 제목이 들어가는 부분으로, 생략할 수 있다.
+    -   `titlePanel()` : 제목이 들어가는 부분이다. 생략가능하다.
 
     -   `sidebarLayout()`: UI의 핵심 부분으로, 가장 전형적인 "사이드바 + 메인 영역" 레이아웃을 `fluidPage()` 내에 생성할 수 있게 해준다.
 
@@ -138,7 +138,7 @@ UI 부분은 다음과 같은 구조를 가지고 있다.
 
 셋째, `mainPanel()` 내의 `plotOutput()`은 특정한 **출력 표출 함수** 혹은 **출력 바인딩(binding) 함수**이다. 이것은 Server에서 전달받은 출력 즉 `output` 객체의 요소를 표출한다. 바인딩 함수라고 부르는 것은 출력 요소와 브라우저의 특정 UI 영역을 '연결(바인드)'하기 때문이다. 출력의 형태가 플롯(plot)이기 때문에 `plotOutput()` 함수가 사용된 것이다. 출력의 형태에 따라 다양한 출력 표출 함수가 존재하며, 일반적으로 `*Output()`의 형식을 띤다. 뒤에서 자세히 다룬다. `plotOutput()` 함수의 가장 중요한 인수는 `outputId`로 표출할 `output` 객체의 요소의 '이름'을 지정한다. `plotOutput(outputId = "distPlot")`는 서버에서 만들어진 `"distPlot"`라는 이름의 플롯(`output` 객체의 한 요소)을 해당 위치에 표출한다는 의미이다.
 
-> 결국 UI는 입력을 받고 출력을 표출하는데, 전자는 `sliderInput()`와 같은 입력 함수를 통해 이루어지며, 후자는 `plotOutput()`과 같은 출력 표출 함수를 통해 이루어진다. 이들 함수는 출력과 입력의 형식에 따라 일반적으로 `*Input()`과 `*Output()`의 형태를 띤다.
+> 결국 UI는 입력을 받고 출력을 표출하는 두 가지 일을 하는데, 전자는 `sliderInput()`과 같은 입력 함수를 통해 이루어지며, 후자는 `plotOutput()`과 같은 출력 표출 함수를 통해 이루어진다. 이들 함수는 출력과 입력의 형식에 따라 일반적으로 `*Input()`과 `*Output()`의 형태를 띤다.
 
 ### Server 부분
 
@@ -146,7 +146,7 @@ Server 부분은 다음과 같은 구조를 가지고 있다.
 
 첫째, Server 부분은 반드시 **함수**로 정의되며, 일반적으로 `function(input, output){}` 혹은 `function(input, output, session){}`의 형식을 갖는다(`input`과 `output`은 필수이지만 `session`은 부가적으로 정의될 수 있다). 반드시 함수로 정의되어야 하는 것은 `input`과 `output`(부가적으로 session)을 인수로 받아, 입력 변화에 따라 반응형 출력이 생성 및 갱신되는 로직을 정의하기 때문입니다.
 
-둘째, 출력물은 `renderPlot({})`과 같은 **출력 생성 함수**를 통해 이루어진다. 이렇게 생성된 출력은 '이름'이 지정되어 Server의 `output` 객체의 한 원소로 저장된다. 예를 들어, 코드에서 `output$distPlot`은 생성된 출력에 `"distPlot"`이라는 이름을 부여하고 이를 `output` 객체에 저장함을 의미한다. 이 이름은 UI 부분의 `plotOutput(outputId = "distPlot")`에서 사용되며, 이를 통해 해당 출력이 UI에 표출된다.
+둘째, 출력물은 `renderPlot({})`과 같은 **출력 생성 함수(렌더링 함수)**를 통해 이루어진다. 이렇게 생성된 출력은 '이름'이 지정되어 Server의 `output` 객체의 한 원소로 저장된다. 예를 들어, 코드에서 `output$distPlot`은 생성된 출력에 `"distPlot"`이라는 이름을 부여하고 이를 `output` 객체에 저장함을 의미한다. 이 이름은 UI의 출력 표출 함수 `plotOutput(outputId = "distPlot")`에서 사용되며, 이를 통해 해당 출력이 UI에 표출된다.
 
 셋째, 출력의 형태가 플롯이기 때문에 `renderPlot({})` 함수가 사용된 것이다. 출력의 형태에 따라 다양한 출력 생성 함수가 존재하며, 일반적으로 `render*({})`의 형식을 띤다. 뒤에서 자세히 다룬다.
 
@@ -213,7 +213,7 @@ function(input, output) {
 runApp("폴더명")
 ```
 
-위의 두 가지 방식을 결합한 제3의 길도 있다. 우선 위의 분리 파일 방식과 같이 UI와 Server 부분에 대한 파일을 개별적을 생성한다. 차이점은 반드시 ui와 server 객체를 할당하는 방식으로 일어져야 한다는 점이다. my_ui.R의 내용은 다음과 같다. 이 방식에서는 UI 부분의 파일 이름이 반드시 ui.R일 필요가 없다.
+위의 두 가지 방식을 결합한 제3의 길도 있다. 우선 위의 분리 파일 방식과 같이 UI와 Server 부분에 대한 파일을 개별적을 생성한다. 차이점은 반드시 ui와 server 객체를 할당하는 방식으로 이러우져야 한다는 점이다. my_ui.R의 내용은 다음과 같다. 이 방식에서는 UI 부분의 파일 이름이 반드시 ui.R일 필요가 없다.
 
 ```{r}
 #| eval: false
@@ -249,7 +249,7 @@ server <- function(input, output) {
 }
 ```
 
-그리고 나서 단일 파일 방식과 같이 app.R 파일을 통해 결합한다. 내용은 다음과 같다.
+그리고 나서 단일 파일 방식과 같이 app.R 파일을 통해 결합한다. app.R 파일의 내용은 다음과 같다.
 
 ```{r}
 #| eval: false
@@ -261,13 +261,13 @@ source("my_server.R")
 shinyApp(ui = ui, server = server)
 ```
 
-UI 파일과 Server 파일을 분리하는 방식은 코드가 매우 복잡할 때 사용하는 것으로 보통을 단일 파일 방식을 사용한다.
+UI 파일과 Server 파일을 분리하는 방식은 코드가 매우 복잡할 때 사용하는 것으로 보통은 단일 파일 방식을 사용한다.
 
 ## 입출력 함수의 종류
 
 ### 입력 함수
 
-입력 함수 혹은 입력 위젯 생성 함수의 종류는 다양한데, [R Shiny Components](https://shiny.posit.co/r/components/) 웹페이지 기준으로 대략 25개 정도이다. @fig-widget 은 그 중 일부를 보여주고 있다.
+앞에서 언급한 것처럼, 입력 함수 혹은 입력 위젯 생성 함수의 종류는 다양하다. [R Shiny Components](https://shiny.posit.co/r/components/) 웹페이지 기준으로 대략 25개 정도이다. @fig-widget 은 그 중 일부를 보여주고 있다.
 
 ![입력 위젯의 종류(<https://shiny.posit.co/r/getstarted/build-an-app/reactive-flow/ui-inputs.html>)](https://shiny.posit.co/r/getstarted/build-an-app/images/cheatsheet-inputs.png){#fig-widget}
 
@@ -275,13 +275,13 @@ UI 파일과 Server 파일을 분리하는 방식은 코드가 매우 복잡할 
 
 첫째, 모든 함수의 이름이 `*Input()` 형식인 것은 아니다. 특히 버튼 형식의 경우 `*Button()` 혹은 `*Buttons()` 형식을 띤다. 이 외에 `*Link()`, `*switch()`로 끝나는 함수도 있다.
 
-둘째, 입력 함수에 따라 인수의 종류가 다르다. 자세한 사항은 [R Shiny Components](https://shiny.posit.co/r/components/) 웹페이지를 참조한다.
+둘째, 입력 함수의 인수에 주목할 필요가 있다. 이름을 부여하는 `inputID` 인수와 입력 위젯의 설명 글귀를 지정하는 `label` 인수는 공통이다. 그러나 나머지 인수는 입력 함수에 따라 달라진다. 위의 예에서 `sliderInput()` 입력 함수는 `min`, `max`, `value`라는 추가적인 인수를 갖는데, `min`과 `max`는 슬라이더의 최대 및 최소값을, `value`는 위젯에 기본값을 지정하는 인수이다. 입력 함수별 인수에 대한 자세한 사항은 [R Shiny Components](https://shiny.posit.co/r/components/) 웹페이지를 참조한다.
 
 ### 출력 함수: 출력 표출 함수와 출력 생성 함수
 
-출력 함수는 서버에서 생성된 출력을 UI에서 표출해주는 출력 표출(바인딩) 함수와 서버에서 실질적으로 출력을 창출하는 출력 생성 함수로 구분된다. 출력 함수의 종류는 출력의 형식(플롯, 테이블, 텍스트, 이미지 등)에 의해 결정되기 때문에 기본적인 출력의 종류에 따라 출력 표출 함수와 출력 생성 함수가 쌍을 이룰 수 밖에 없다.
+출력 함수는 서버에서 생성된 출력을 UI에서 표출해주는 출력 표출(바인딩) 함수와 서버에서 실질적으로 출력을 창출하는 출력 생성 함수(렌더링 함수)로 구분된다. 출력 함수의 종류는 출력의 형식(플롯, 테이블, 텍스트, 이미지 등)에 의해 결정되기 때문에 기본적인 출력의 종류에 따라 출력 표출 함수와 출력 생성 함수가 쌍을 이룰 수 밖에 없다.
 
-다음은 다섯 가지 기본 출력 함수를 보여준다. 출력 표출 함수는 `*Output()`의 형식을, 출력 생성 함수는 `render*({})`의 형식을 취한다.
+다음은 다섯 가지 기본 출력 함수의 쌍을 보여준다. 출력 표출 함수는 `*Output()`의 형식을, 출력 생성 함수는 `render*({})`의 형식을 취한다.
 
 | 형식               | 출력 표출 함수                       | 출력 생성 함수  |
 |-------------------|----------------------------------|-------------------|
@@ -302,7 +302,7 @@ UI 파일과 Server 파일을 분리하는 방식은 코드가 매우 복잡할 
 | [**leaflet**](https://rstudio.github.io/leaflet/) | `leafletOutput(outputID = "")` | `renderLeaflet({})` |
 | [**tmap**](https://r-tmap.github.io/tmap/) | `tmapOutput(outputID = "")` | `renderTmap({})` |
 
-Shiny 웹 앱에서의 활용을 염두에 둔 패키지들은 모두 이러한 출력 함수의 쌍을 제공하고 있다. 따라서 출력 함수는 굉장히 많을 수 있다. [R Shiny Components](https://shiny.posit.co/r/components/) 웹페이지 기본 5개의 함수쌍에 주요 패키지를 포함하는 12개 정도의 출력 함수쌍을 예시로 제공하고 있다.
+Shiny 웹 앱에서의 활용을 염두에 둔 패키지들은 모두 이러한 출력 함수의 쌍을 제공하고 있다. 따라서 출력 함수는 굉장히 많을 수 있다. [R Shiny Components](https://shiny.posit.co/r/components/) 웹페이지는 기본 5개의 함수쌍에 주요 패키지를 포함하는 12개 정도의 출력 함수쌍을 예시로 제시하고 있다.
 
 ## 반응성 함수
 
