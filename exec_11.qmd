@@ -238,6 +238,7 @@ ui <- fluidPage(
 my_server.R의 내용은 다음과 같다. 마찬가지로 Server 부분의 파일의 이름이 server.R일 필요가 없다.
 
 ```{r}
+#| eval: false
 server <- function(input, output) {
     output$distPlot <- renderPlot({
         x    <- faithful[, 2]
@@ -283,26 +284,247 @@ UI 파일과 Server 파일을 분리하는 방식은 코드가 매우 복잡할 
 
 다음은 다섯 가지 기본 출력 함수의 쌍을 보여준다. 출력 표출 함수는 `*Output()`의 형식을, 출력 생성 함수는 `render*({})`의 형식을 취한다.
 
++--------------------+--------------------------------------+-----------------+
 | 형식               | 출력 표출 함수                       | 출력 생성 함수  |
-|-------------------|----------------------------------|-------------------|
++====================+======================================+=================+
 | 플롯               | `plotOutput(outputID = "")`          | `renderPlot()`  |
++--------------------+--------------------------------------+-----------------+
 | 테이블             | `tableOutput(outputID = "")`         | `renderTable()` |
++--------------------+--------------------------------------+-----------------+
 | 일반 텍스트        | `textOutput(outputID = "")`          | `renderText()`  |
++--------------------+--------------------------------------+-----------------+
 | 사전 포맷된 텍스트 | `verbatimeTextOutput(outputID = "")` | `renderPrint()` |
++--------------------+--------------------------------------+-----------------+
 | 이미지             | `imageOutput(outputID = "")`         | `renderImage()` |
++--------------------+--------------------------------------+-----------------+
 
 그런데 특히 주요 시각화 패키지들은 Shiny 웹 앱 구축을 염두에 두고 개별적인 출력 표출 함수와 출력 생성 함수를 제공하고 있다. 중요한 패키지에 대해 이를 정리하면 다음과 같다. 모두 `패키지명Output()`형식과 `render패키지명({})`의 형식을 띤다.
 
-| 패키지 | 출력 표출 함수 | 출력 생성 함수 |
-|------------------|-------------------------------|-----------------------|
-| [**DT**](https://rstudio.github.io/DT/) | `DTOutput(outputID = "")` | `renderDT({})` |
++----------------------------------------------------+----------------------------------+-----------------------+
+| 패키지                                             | 출력 표출 함수                   | 출력 생성 함수        |
++====================================================+==================================+=======================+
+| [**DT**](https://rstudio.github.io/DT/)            | `DTOutput(outputID = "")`        | `renderDT({})`        |
++----------------------------------------------------+----------------------------------+-----------------------+
 | [**reactable**](https://glin.github.io/reactable/) | `reactableOutput(outputID = "")` | `renderReactable({})` |
-| [**plotly**](https://plotly.com/r/) | `plotlyOutput(outputID = "")` | `renderPlotyl({})` |
++----------------------------------------------------+----------------------------------+-----------------------+
+| [**plotly**](https://plotly.com/r/)                | `plotlyOutput(outputID = "")`    | `renderPlotyl({})`    |
++----------------------------------------------------+----------------------------------+-----------------------+
 | [**echarts4r**](https://echarts4r.john-coene.com/) | `echarts4rOutput(outputID = "")` | `renderEcharts4r({})` |
-| [**leaflet**](https://rstudio.github.io/leaflet/) | `leafletOutput(outputID = "")` | `renderLeaflet({})` |
-| [**tmap**](https://r-tmap.github.io/tmap/) | `tmapOutput(outputID = "")` | `renderTmap({})` |
++----------------------------------------------------+----------------------------------+-----------------------+
+| [**leaflet**](https://rstudio.github.io/leaflet/)  | `leafletOutput(outputID = "")`   | `renderLeaflet({})`   |
++----------------------------------------------------+----------------------------------+-----------------------+
+| [**tmap**](https://r-tmap.github.io/tmap/)         | `tmapOutput(outputID = "")`      | `renderTmap({})`      |
++----------------------------------------------------+----------------------------------+-----------------------+
 
 Shiny 웹 앱에서의 활용을 염두에 둔 패키지들은 모두 이러한 출력 함수의 쌍을 제공하고 있다. 따라서 출력 함수는 굉장히 많을 수 있다. [R Shiny Components](https://shiny.posit.co/r/components/) 웹페이지는 기본 5개의 함수쌍에 주요 패키지를 포함하는 12개 정도의 출력 함수쌍을 예시로 제시하고 있다.
+
+## 최신 레이아웃 디자인: bslib 패키지
+
+### 개요
+
+위에서 Shiny의 전체 레이아웃은 위계적으로 구성된 레이아웃 함수들에 의해 결정된다고 했다. `fluidPage()`, `titlePanel()`, `sidebarLayout()`, `sidebarPanel()`, `mainPanel()` 과 같은 레이아웃를 통해 @fig-first 에 나타나 있는 것과 같은 외향의 레이아웃이 완성된 것이다.
+
+이러한 **전통적인** 레이아웃 디자인을 보다 현대적인 레이아웃으로 탈바꿈하기 위해 등장한 것이 [**bslib**](https://rstudio.github.io/bslib/) 패키지이다. [**bslib**](https://rstudio.github.io/bslib/) 패키지는 Bootstrap을 기반으로 Shiny와 R Markdown을 위한 현대적인 UI 도구 모음을 제공한다. 카드, 밸류 박스, 사이드바 등 재사용 가능한 UI 구성 요소를 통해 Shiny 웹 앱과 문서를 효율적으로 구성할 수 있으며, 테마 시스템을 활용해 웹 앱과 문서의 외관을 유연하게 사용자 정의하고 실시간으로 조정할 수 있다. 또한 최신 Bootstrap 및 Bootswatch를 지원하여, 기본적으로 Bootstrap 3에 의존하는 기존 Shiny 및 R Markdown 환경보다 현대적인 웹 UI 구현을 가능하게 한다.
+
+[**bslib**](https://rstudio.github.io/bslib/) 패키지는 shiny 패키지의 기본 레이아웃 함수와는 다른 종류의 함수를 제공한다. 그러므로 조금 더 현대적인 감각의 웹 앱을 생성하기 위해서는 [**bslib**](https://rstudio.github.io/bslib/) 패키지에서 제공되는 레이아웃 함수에 익숙해져야 한다. 여기서는 [**bslib**](https://rstudio.github.io/bslib/) 패키지를 통해 @fig-first 웹 앱이 어떻게 달라지는지는 살펴보고자 한다.
+
+우선 [**Shiny**](https://rstudio.github.io/shiny/) 패키지는 기본적으로 11개의 예제 웹 앱을 제공한다. 다음과 같이 실행해 본다.
+
+```{r}
+library(shiny)
+runExample()
+```
+
+이 들 중 첫 번째 예제인 "01_hello"가 @fig-first 웹 앱이다. 해당 예제를 실행하려면 다음과 같이 하면 된다.
+
+```{r}
+#| eval: false
+runExample("01_hello")
+```
+
+아래의 @fig-bslib-1 과같은 웹 앱이 생성된다. 이것을 @fig-first 와 비교해 보라. 조금 달라 보이며, 왼편 슬라이더바에서 \< 를 누르면 입력 사이드바를 숨길 수 있다.
+
+![[**bslib**](https://rstudio.github.io/bslib/) 패키지를 활용한 웹 앱의 예제](images/clipboard-1762722241.png){#fig-bslib-1}
+
+코드도 동시에 살펴보려면 다음과 같이 실행하면 된다.
+
+```{r}
+#| eval: false
+runExample("01_hello", display = "showcase")
+```
+
+삽입되어 있는 설명 부분을 제거하고 코드만 남기면 다음과 같다. 이것을 @fig-first 의 코드와 비교해 보라. 오로지 UI 부분의 코드만 다르고, 그것도 레이아웃 함수명만 달라져 있다는 것을 알 수 있다(입출력 함수는 그대로이다).
+
+```{r}
+#| eval: false
+library(shiny)
+library(bslib)
+
+ui <- page_sidebar(
+  title = "Hello Shiny!",
+  sidebar = sidebar(
+    sliderInput(
+      inputId = "bins",
+      label = "Number of bins:",
+      min = 1,
+      max = 50,
+      value = 30
+    )
+  ),
+  plotOutput(outputId = "distPlot")
+)
+
+server <- function(input, output) {
+  output$distPlot <- renderPlot({
+    x <- faithful$waiting
+    bins <- seq(min(x), max(x), length.out = input$bins + 1)
+
+    hist(
+      x,
+      breaks = bins,
+      col = "#75AADB",
+      border = "white",
+      xlab = "Waiting time to next eruption (in mins)",
+      main = "Histogram of waiting times"
+    )
+  })
+}
+
+shinyApp(ui = ui, server = server)
+```
+
+첫째, `page_sidebar()`가 최상위 레이아웃 함수이다. `page_sidebar()`는 [**bslib**](https://rstudio.github.io/bslib/)에서 가장 널리 사용되는 페이지 레이아웃 함수로, 전체 너비를 차지하는 헤더(제목)와 사용자 입력을 위한 사이드바를 갖춘 대시보드형 레이아웃을 손쉽게 구성할 수 있도록 설계되었다. `page_sidebar()`함수는 전통적인 shiny 레이아웃 함수 중 `fluidPage()`, `titlePanel()`, `sidebarLayout()` 함수의 역할을 동시에 수행한다고 생각할 수 있다.
+
+::: callout-note
+## page_fluid() 함수
+
+사실은 `page_fluid()` 함수가 `fluidPage()` 를 대신하고, `page_sidebar()` 함수가 `page_fluid()` 함수의 차하 위계 함수로 기능하면서 `titlePanel()`과 `sidebarLayout()` 함수를 대신하지만, 거의 무조건 `page_sidebar()` 함수로 시작한다.
+:::
+
+둘째, `page_sidebar()` 의 여러 인수가 전통적인 `titlePanel()` 함수와 `sidebarLayout()`의 하위 함수인 `sidebarPanel()` 함수를 대신한다.
+
+-   `title`: 대시보드의 제목을 설정할 수 있으며, `titlePanel()` 함수와 동일한 기능을 한다.
+
+-   `sidebar = sidebar()`: `sidebarPanel()` 함수와 동일한 기능을 한다. `sidebarPanel()` 함수 속에서 입력 함수인 `siderInput()` 함수가 들어가 있었던과 동일하게 `sidebar()` 속에 `siderInput()` 함수가 들어가 있다.
+
+셋째, 전통적인 Shiny의 `mainPanel()` 함수 없이 출력 표출 함수(`plotOutput()`)가 막바로 사용된다. 그러나 이것은 가장 단순한 방식으로, `card()` 함수를 사용하면 보다 풍성한 옵션을 사용할 수 있다. `card()` 함수 내부에서 `card_header()`와 `card_body()`라는 컴포넌트 함수를 활용한다.
+
+```{r}
+#| eval: false
+library(shiny)
+library(bslib)
+
+ui <- page_sidebar(
+  title = "Hello Shiny!",
+  sidebar = sidebar(
+    sliderInput(
+      inputId = "bins",
+      label = "Number of bins:",
+      min = 1,
+      max = 50,
+      value = 30
+    )
+  ),
+  card(
+    card_header("Histogram"),
+    card_body(
+      plotOutput(outputId = "distPlot")
+    )
+  )
+)
+
+server <- function(input, output) {
+  output$distPlot <- renderPlot({
+    x <- faithful$waiting
+    bins <- seq(min(x), max(x), length.out = input$bins + 1)
+
+    hist(
+      x,
+      breaks = bins,
+      col = "#75AADB",
+      border = "white",
+      xlab = "Waiting time to next eruption (in mins)",
+      main = "Histogram of waiting times"
+    )
+  })
+}
+
+shinyApp(ui = ui, server = server)
+```
+
+### 레이아웃과 컴포넌트
+
+#### 레이아웃
+
+다음과 같이 용도별 레이아웃 함수를 정리할 수 있다. 자세한 사항은 [**bslib**](https://rstudio.github.io/bslib/) 패키지 홈페이지의 [Get Started](https://rstudio.github.io/bslib/articles/dashboards/index.html)나 [Layouts](https://rstudio.github.io/bslib/articles/column-layout/index.html)를 참고할 수 있다.
+
++----------------------------+---------------------------+-------------------------------------+
+| 용도                       | 함수                      | 위치 및 특징                        |
++============================+===========================+=====================================+
+| 단일 페이지(사이드바 포함) | `page_sidebar()`          | 최상단                              |
+|                            |                           |                                     |
+|                            | `layout_siderbar()`       | `card()` 내부                       |
++----------------------------+---------------------------+-------------------------------------+
+| 다중 컬럼                  | `layout_columns()`        | `page_sidebar()` 내부               |
+|                            |                           |                                     |
+|                            | `layout_column_wrap()`    |                                     |
++----------------------------+---------------------------+-------------------------------------+
+| 다중 페이지                | `page_navbar()`           | 최상단                              |
+|                            |                           |                                     |
+|                            |                           | `nav_panel()`이 개별 페이지         |
++----------------------------+---------------------------+-------------------------------------+
+| 다중 패널(페이지 수준)     | `navset_tab()`            | `page_sidebar()` 내부               |
+|                            |                           |                                     |
+|                            | `navset_pill()`           | `nav_panel()`이 개별 패널           |
+|                            |                           |                                     |
+|                            | `navset_underline()`      |                                     |
++----------------------------+---------------------------+-------------------------------------+
+| 다중 패널(card 수준)       | `navset_card_tab()`       | `page_sidebar()` 이나 `card()` 내부 |
+|                            |                           |                                     |
+|                            | `navset_card_pill()`      | `nav_panel()`이 개별 패널           |
+|                            |                           |                                     |
+|                            | `navset_card_underline()` |                                     |
++----------------------------+---------------------------+-------------------------------------+
+
+#### 컴포넌트
+
+가장 중요한 컴포넌트에 카드(card), 사이드바(sidebar), 밸류 박스(value box), 툴팁(tooltip)과 팝오버(popover)가 있다. 자세한 사항은 [**bslib**](https://rstudio.github.io/bslib/) 패키지 홈페이지의 [Components](https://rstudio.github.io/bslib/articles/cards/index.html)를 참고할 수 있다.
+
+**카드**(card)는 현대적인 사용자 인터페이스(UI)에서 가장 널리 사용되는 정보 구성 단위 중 하나이다. 기본적으로 카드는 테두리와 여백을 갖는 직사각형 컨테이너에 불과하지만, 관련된 정보를 의미 있게 묶어 제시할 경우 사용자가 내용을 보다 쉽게 이해하고, 집중하며, 탐색할 수 있도록 돕는다. 이러한 특성 때문에 카드는 대시보드와 UI 설계에서 핵심적인 역할을 하며, 대부분의 성공적인 대시보드 및 UI 프레임워크는 카드를 주요 컴포넌트로 채택하고 있다. card() 함수는 다음과 같은 컴포넌트 함수를 갖는다.
+
+-   `card_header(),`
+
+-   `card_body()`
+
+-   `card_footer()`
+
+**사이드바**(sidebar)는 웹 인터페이스에서 필터, 설정, 기타 입력 요소를 사용자가 쉽게 접근할 수 있도록 제공하는 핵심 UI 컴포넌트로, 이들이 제어하는 대화형 기능과 나란히 배치된다는 점이 특징이다. 사이드바를 활용하면 사용자 입력과 결과 출력 간의 관계를 명확히 할 수 있어, 대시보드의 사용성과 탐색성이 크게 향상된다. [**bslib**](https://rstudio.github.io/bslib/)에서는 `page_sidebar()`와 `page_navbar()` 함수를 통해 페이지 수준(page-level)의 사이드바 레이아웃을 기본적으로 제공하며, 이 외에도 다양한 형태의 사이드바 레이아웃을 지원하여 인터페이스의 목적과 복잡도에 따라 유연한 UI 설계를 가능하게 한다.
+
+[**bslib**](https://rstudio.github.io/bslib/)에서 제공하는 사이드바 레이아웃은 크게 부유형(floating), 채움형(filling), 다중 페이지/탭형(multi-page/tab)의 세 가지로 구분할 수 있다.
+
+부유형 레이아웃은 `layout_sidebar()`를 사용하는데, 페이지의 어느 위치에나 배치할 수 있는 사이드바 레이아웃을 구성할 수 있다. 이 방식은 의미적으로 관련된 입력 요소와 출력 요소를 시각적으로 함께 묶어 제시하는 데 적합하다. 또한 `card()`와 함께 사용하면 전체 화면 확장(full-screen), 헤더·푸터 추가 등 카드가 제공하는 다양한 기능을 활용할 수 있다.
+
+채움형 레이아웃은 `page_sidebar()`를 사용하는데 페이지 전체를 채우는 사이드바 레이아웃을 생성한다. 내부적으로 `page_sidebar()`는 `page_fillable()`과 `layout_sidebar()`를 단순히 감싼(wrapper) 함수에 불과하다. 이 구조를 이해하면, 하나의 채움형 레이아웃 안에 여러 개의 사이드바 레이아웃을 유연하게 배치할 수 있는 가능성이 열린다.
+
+다중 페이지/탭 레이아웃은 `page_navbar()`나 `navset_card_tab()` 내부에서 `sidebar` 인수를 사용해 사이드바를 구성할 수 있다. 이 경우 사이드바는 페이지 전체를 채우는 동시에, 모든 페이지나 탭에서 동일하게 유지되어 표시된다. 이후에는 페이지별로 서로 다른 레이아웃을 구성하는 방법도 다루겠지만, 모든 페이지에서 동일한 사이드바를 사용하는 것이 바람직한 경우도 많다. 이러한 경우에는 conditionalPanel()을 활용하여 특정 페이지에서만 사이드바의 일부 내용을 표시하거나 숨길 수 있다.
+
+**밸류 박스**(value box)는 대시보드에서 핵심적인 수치나 지표를 한눈에 전달하기 위해 사용되는 UI 컴포넌트이다. 값(value), 설명(label), 아이콘(icon) 등을 함께 제시하여 사용자가 현재 상태나 주요 변화를 빠르게 파악할 수 있도록 돕는다. [**bslib**](https://rstudio.github.io/bslib/)의 `value_box()`는 카드(card) 기반 설계를 따르므로 다른 UI 요소들과 시각적으로 일관되게 어우러지며, Shiny의 반응성과 결합해 값이 동적으로 갱신되는 대시보드를 구성하는 데 특히 유용하다.
+
+`value_box()`는 네 가지 주요 구성 요소로 이루어진다.
+
+-   **value**는 표시하고자 하는 핵심 수치나 텍스트 값으로, 대시보드에서 가장 중요한 정보를 전달한다. 출력 표출 함수를 사용할 수도 있다.
+
+-   **title**은 value 위에 선택적으로 표시되는 설명 텍스트로, 해당 값의 의미나 지표명을 명확히 한다.
+
+-   **showcase**는 아이콘이나 기타 UI 요소와 같이 value 옆에 함께 배치되는 시각적 요소로, 정보를 보다 직관적으로 인식하도록 돕는다. `bs_icon()` 컴포넌트 함수를 주로 사용한다.
+
+-   **theme**은 값 상자의 색상이나 스타일을 조정하는 선택적 설정으로, 대시보드의 전체 디자인과 시각적 일관성을 유지하거나 강조 효과를 줄 수 있다.
+
+**툴팁**(tooltip)과 **팝오버**(popover)는 화면을 방해하지 않으면서 추가 정보를 제공하거나 상호작용을 가능하게 하는 유용한 UI 요소이다. 툴팁은 주로 간단한 설명을 표시하는 데 사용되며, 팝오버는 보다 풍부한 정보 제공이나 사용자 입력을 포함한 상호작용을 지원한다. 예를 들어, `card_header()`에 “도움말” 아이콘과 함께 `tooltip()`을 부착하면 사용자가 시각화된 데이터에 대한 추가 설명을 손쉽게 확인할 수 있다. 또한 동일한 헤더 영역에 “설정” 아이콘과 `popover()`를 연결하면 시각화의 매개변수를 직접 제어할 수 있는 인터페이스를 제공할 수 있다. 더 나아가 `card_footer()`의 링크에 `popover()`를 적용하면 추가 정보의 표시뿐 아니라 하이퍼링크와 같은 상호작용 요소를 함께 제공할 수 있어, 정보 탐색과 사용자 경험을 동시에 향상시킨다.
+
+구현 방식 측면에서 보면, 툴팁과 팝오버는 매우 유사하다. 두 컴포넌트 모두 사용자의 상호작용을 통해 표시 여부가 전환되는 트리거(trigger) UI 요소와, 화면에 표시될 메시지 내용을 필요로 한다. `tooltip()`과 `popover()`는 공통적으로 첫 번째 인수를 트리거로 취급하며, 이름이 지정되지 않은 나머지 인수들은 메시지 내용으로 사용된다. 또한 `popover()`의 경우에는 선택적으로 제목(title)을 함께 지정할 수 있다.
+
+반면, 사용자 경험(UX)과 활용 목적 측면에서는 두 컴포넌트의 성격이 뚜렷이 다르다. 툴팁은 포커스나 마우스 오버(hover)에 의해 표시되는 반면, 팝오버는 클릭을 통해 열리고 닫힌다. 이로 인해 팝오버는 툴팁보다 화면에 더 오래 유지되는, 즉 상대적으로 지속성이 높은 인터페이스이며, 추가적인 사용자 상호작용이 필요한 경우에 적합하다. 따라서 간단한 설명과 같은 읽기 전용(read-only) 정보에는 툴팁을 사용하는 것이 바람직하고, 메시지 자체와의 상호작용이 필요한 경우에는 팝오버를 사용하는 것이 적절하다.
 
 ## 반응성 함수
 
@@ -372,7 +594,7 @@ output$distPlot <- renderPlot({
 })
 ```
 
-입력 함수를 통해 받은 `input$bins`를 읽어 `bins`라는 새로운 반응형 객체를 생성하고, 그것을 출력 생성 함수에서 투입하는 방식을 보여주고 있다. 반응형 객체는 반드시 bins()처럼 함수 형식으로 호출해야만 한다.
+입력 함수를 통해 받은 `input$bins`를 읽어 `bins`라는 새로운 반응형 객체를 생성하고, 그것을 출력 생성 함수에서 투입하는 방식을 보여주고 있다. 반응형 객체는 반드시 `bins()`처럼 함수 형식으로 호출해야만 한다.
 
 그런데, 여기서는 사실 `reactive({})` 함수가 반드시 필요한 것은 아니다. 즉, 다음과 같이 해도 무방하다.
 
@@ -447,8 +669,6 @@ observe({
 ```
 
 그러나 `observeEvent()`는 이벤트 중심이고, 의존성을 명확히 분리하며, 가독성과 안전성을 높이는 장점이 있다. 따라서 버튼 처리에는 `observeEvent()`가 권장된다.
-
-## [**bslib**](https://rstudio.github.io/bslib/) 패키지의 활용
 
 ## 웹 앱의 공유
 
