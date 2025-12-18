@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.9.13">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="이상일(서울대학교 지리교육과)">
-<title>웹 앱 개발: Shiny의 활용 – Data Science</title>
+<title>웹 앱 개발: Shiny의 기초 – Data Science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -278,7 +278,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">웹 앱 개발: Shiny의 활용</h1>
+          <h1 class="quarto-secondary-nav-title">웹 앱 개발: Shiny의 기초</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="검색" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -380,7 +380,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_11.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">웹 앱 개발: Shiny의 활용</span></a>
+ <span class="menu-text">웹 앱 개발: Shiny의 기초</span></a>
   </div>
 </li>
       </ul>
@@ -721,7 +721,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <a href="#%EC%B5%9C%EC%8B%A0-%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83-%EB%94%94%EC%9E%90%EC%9D%B8-bslib-%ED%8C%A8%ED%82%A4%EC%A7%80" id="toc-최신-레이아웃-디자인-bslib-패키지" class="nav-link" data-scroll-target="#%EC%B5%9C%EC%8B%A0-%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83-%EB%94%94%EC%9E%90%EC%9D%B8-bslib-%ED%8C%A8%ED%82%A4%EC%A7%80"><span class="header-section-number">4</span> 최신 레이아웃 디자인: bslib 패키지</a>
   <ul class="collapse">
 <li><a href="#%EA%B0%9C%EC%9A%94-1" id="toc-개요-1" class="nav-link" data-scroll-target="#%EA%B0%9C%EC%9A%94-1"><span class="header-section-number">4.1</span> 개요</a></li>
-  <li><a href="#%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83%EA%B3%BC-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8" id="toc-레이아웃과-컴포넌트" class="nav-link" data-scroll-target="#%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83%EA%B3%BC-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8"><span class="header-section-number">4.2</span> 레이아웃과 컴포넌트</a></li>
+  <li><a href="#%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83-%ED%95%A8%EC%88%98-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88" id="toc-레이아웃-함수-컨테이너" class="nav-link" data-scroll-target="#%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83-%ED%95%A8%EC%88%98-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88"><span class="header-section-number">4.2</span> 레이아웃 함수: 컨테이너</a></li>
+  <li><a href="#%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-ui-%EA%B5%AC%EC%84%B1-%EC%9A%94%EC%86%8C" id="toc-컴포넌트-ui-구성-요소" class="nav-link" data-scroll-target="#%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-ui-%EA%B5%AC%EC%84%B1-%EC%9A%94%EC%86%8C"><span class="header-section-number">4.3</span> 컴포넌트: UI 구성 요소</a></li>
+  <li><a href="#%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%A0%95%EC%9D%98-%ED%85%8C%EB%A7%88" id="toc-사용자-정의-테마" class="nav-link" data-scroll-target="#%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%A0%95%EC%9D%98-%ED%85%8C%EB%A7%88"><span class="header-section-number">4.4</span> 사용자 정의 테마</a></li>
   </ul>
 </li>
   <li>
@@ -748,7 +750,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title d-none d-lg-block">웹 앱 개발: Shiny의 활용</h1>
+<h1 class="title d-none d-lg-block">웹 앱 개발: Shiny의 기초</h1>
 </div>
 
 
@@ -766,7 +768,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2025년 12월 17일</p>
+      <p class="date-modified">2025년 12월 18일</p>
     </div>
   </div>
     
@@ -780,7 +782,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><a href="https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/">Shiny for R</a></p></li>
 <li><p><a href="https://shiny.posit.co/py/">Shiny for Python</a></p></li>
 </ul>
-<p><a href="https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/"><strong>Shiny</strong></a>를 배우기 위한 다양한 리소스가 존재한다. 가장 중요한 리소스는 <a href="https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/">Shiny for R</a> 홈페이지이다. Get Started를 살펴본 후 Gallery의 다양한 예제를 살펴보는 것으로 시작하는 것이 좋다. 이 홈페이지의 내용만으로도 Shiny의 기본 구조와 문법을 익히기에 충분하다.</p>
+<p>Shiny를 배우기 위한 다양한 리소스가 존재한다. 가장 중요한 리소스는 <a href="https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/">Shiny for R</a> 홈페이지이다. Get Started를 살펴본 후 Gallery의 다양한 예제를 살펴보는 것으로 시작하는 것이 좋다. 이 홈페이지의 내용만으로도 Shiny의 기본 구조와 문법을 익히기에 충분하다.</p>
 <p>좀 더 종합적으로 Shiny을 이해하려면 다음의 웹 북을 활용할 수 있다. 첫 번째가 바이블이라고 할 수 있다.</p>
 <ul>
 <li><p><a href="https://mastering-shiny.org/"><em>Mastering Shiny</em></a> by <a href="https://hadley.nz/">Hadley Wickham</a></p></li>
@@ -820,13 +822,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>이렇게 하면 Shiny 프로젝트가 생성되고, 자동적으로 app.R이라는 스크립트 파일이 생성된다.</p>
 </section><section id="웹-앱의-생성" class="level3" data-number="1.3"><h3 data-number="1.3" class="anchored" data-anchor-id="웹-앱의-생성">
 <span class="header-section-number">1.3</span> 웹 앱의 생성</h3>
-<p>app.R에서 스크립트 윈도우 오른쪽 상단에 위치한 Run App 버튼을 클릭하면 <a href="#fig-first" class="quarto-xref">그림&nbsp;3</a> 같은웹 앱이 새로운 윈도우에 생성된다. 왼쪽의 슬라이더바를 움직이면 오른쪽의 히스토그램이 변한다는 점을 확인한다. 즉 빈(bin)의 개수를 달리하면서 데이터 분포를 탐색해보기 위한 단순한 웹 앱이 만들어진 것이다.</p>
+<p>app.R에서 스크립트 윈도우 오른쪽 상단에 위치한 Run App 버튼을 클릭하면 <a href="#fig-first" class="quarto-xref">그림&nbsp;3</a> 과 같은 웹 앱이 새로운 윈도우에 생성된다. 왼편의 슬라이더바를 움직이면 오른편의 히스토그램이 변한다는 점을 확인한다. 즉 빈(bin)의 개수를 달리하면서 데이터 분포를 탐색해보기 위한 단순한 웹 앱이 만들어진 것이다.</p>
 <div id="fig-first" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-first-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/clipboard-295121675.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="그림&nbsp;3: 단순한 웹 앱"><img src="images/clipboard-295121675.png" class="img-fluid figure-img"></a>
+<a href="images/clipboard-295121675.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="그림&nbsp;3: 단순한 웹 앱 예시"><img src="images/clipboard-295121675.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-first-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;3: 단순한 웹 앱
+그림&nbsp;3: 단순한 웹 앱 예시
 </figcaption></figure>
 </div>
 <p>이 단순한 웹 앱을 살펴본다. 다음과 같은 점을 확인할 수 있다.</p>
@@ -834,7 +836,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>둘째, 사용자의 입력은 빈(bin)의 갯수이고, Server는 이 값을 바탕으로 히스토그램이라는 출력을 생성한다. 생성된 출력은 UI로 이동하여 표출된다. 사용자의 입력값이 바뀌면 이 과정이 반복되고 히스토그램이 바뀌게 된다.</p>
 </section></section><section id="shiny의-기본-문법-체계" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="shiny의-기본-문법-체계">
 <span class="header-section-number">2</span> Shiny의 기본 문법 체계</h2>
-<p>이제 <a href="#fig-first" class="quarto-xref">그림&nbsp;3</a> 웹 앱을 생성한 코드를 살펴보도록 한다. 코드 속에는 다양한 설명이 포함되어 있는데 그것을 제거하고 코드만 남기면 결국 다음과 같다. 문법이 <a href="https://tidyverse.org/"><strong>tidyverse</strong></a>와는 많이 다르다는 점을 금방 인식할 수 있다. 따라서 <a href="https://rstudio.github.io/shiny/"><strong>shiny</strong></a>의 문법 체계는 따로 익힐 수 밖에 없다.</p>
+<p>이제 <a href="#fig-first" class="quarto-xref">그림&nbsp;3</a> 의 웹 앱을 생성한 코드를 살펴보도록 한다. 코드 속에는 다양한 설명이 포함되어 있는데 그것을 제거하고 코드만 남기면 다음만 남는다. 대충 보아도 문법이 <a href="https://tidyverse.org/"><strong>tidyverse</strong></a>와는 많이 다르다는 점을 금방 알 수 있다. 따라서 <a href="https://rstudio.github.io/shiny/"><strong>shiny</strong></a>의 문법 체계는 따로 익힐 수 밖에 없다.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.posit.co/">shiny</a></span><span class="op">)</span></span>
 <span></span>
@@ -866,7 +868,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html">shinyApp</a></span><span class="op">(</span>ui <span class="op">=</span> <span class="va">ui</span>, server <span class="op">=</span> <span class="va">server</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>코드를 자세히 살펴보자. 우선 <a href="https://rstudio.github.io/shiny/"><strong>shiny</strong></a>라는 R 패키지를 불러와야 한다. 코드가 ui, server, shinyApp의 세 부분으로 나뉘어져 있다는 것을 알 수 있고, 이것이 위에서 설명한 UI 부분, Server 부분, 결합 및 실행 부분을 담당한다는 점을 쉽게 이해할 수 있다.</p>
+<p>코드를 자세히 살펴보자. 우선 <a href="https://rstudio.github.io/shiny/"><strong>shiny</strong></a>라는 R 패키지를 불러와야 한다. 코드가 <code>ui</code>, <code>server</code>, <code>shinyApp</code>의 세 부분으로 나뉘어져 있다는 것을 알 수 있고, 이것이 위에서 설명한 UI 부분, Server 부분, 결합 및 실행 부분을 담당한다는 점을 쉽게 이해할 수 있다.</p>
 <section id="ui-부분" class="level3" data-number="2.1"><h3 data-number="2.1" class="anchored" data-anchor-id="ui-부분">
 <span class="header-section-number">2.1</span> UI 부분</h3>
 <p>UI 부분은 다양한 함수들이 위계 구조를 이루고 있는데, 전체 구조를 결정하는 <strong>레이아웃 함수</strong>가 마치 컨테이너처럼 존재하고 그 속에 <strong>입출력 함수</strong>가 포함되어 있는 구조이다.</p>
@@ -895,16 +897,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="header-section-number">2.2</span> Server 부분</h3>
 <p>Server 부분은 다음과 같은 구조를 가지고 있다.</p>
 <p>첫째, Server 부분은 반드시 <strong>함수</strong>로 정의되며, 일반적으로 <code>function(input, output){}</code> 혹은 <code>function(input, output, session){}</code>의 형식을 갖는다(<code>input</code>과 <code>output</code>은 필수이지만 <code>session</code>은 부가적으로 정의될 수 있다). 반드시 함수로 정의되어야 하는 것은 <code>input</code>과 <code>output</code>(부가적으로 session)을 인수로 받아, 입력 변화에 따라 반응형 출력이 생성 및 갱신되는 로직을 정의하기 때문입니다.</p>
-<p>둘째, 출력물은 <code>renderPlot({})</code>과 같은 <strong>출력 생성 함수(렌더링 함수)</strong>를 통해 이루어진다. 이렇게 생성된 출력은 ’이름’이 지정되어 Server의 <code>output</code> 객체의 한 원소로 저장된다. 예를 들어, 코드에서 <code>output$distPlot</code>은 생성된 출력에 <code>"distPlot"</code>이라는 이름을 부여하고 이를 <code>output</code> 객체에 저장함을 의미한다. 이 이름은 UI의 출력 표출 함수 <code>plotOutput(outputId = "distPlot")</code>에서 사용되며, 이를 통해 해당 출력이 UI에 표출된다.</p>
+<p>둘째, 출력물은 <code>renderPlot({})</code>과 같은 <strong>출력 생성 함수(렌더링 함수)</strong>를 통해 이루어진다. 이렇게 생성된 출력은 ’이름’이 지정되어 Server의 <code>output</code> 객체의 한 요소로 저장된다. 예를 들어, 코드에서 <code>output$distPlot</code>은 생성된 출력에 <code>"distPlot"</code>이라는 이름을 부여하고 이를 <code>output</code> 객체에 해당 이름으로 저장함을 의미한다. 이 이름은 UI의 출력 표출 함수 <code>plotOutput(outputId = "distPlot")</code>에서 사용되며, 이를 통해 해당 출력이 UI에 표출된다.</p>
 <p>셋째, 출력의 형태가 플롯이기 때문에 <code>renderPlot({})</code> 함수가 사용된 것이다. 출력의 형태에 따라 다양한 출력 생성 함수가 존재하며, 일반적으로 <code>render*({})</code>의 형식을 띤다. 뒤에서 자세히 다룬다.</p>
 <p>넷째, 입력 함수로부터 전달되어 Server의 <code>input</code> 객체의 요소로 저장된 입력값은 출력 생성 함수 내부에서 사용된다. 예를 들어, <code>seq(min(x), max(x), length.out = input$bins + 1)</code>에서 <code><a href="https://rdrr.io/pkg/shiny/man/sliderInput.html">sliderInput()</a></code> 함수로부터 전달된 <code>bins</code>라는 입력값(즉, <code>input</code> 객체의 한 요소)이 <code><a href="https://rdrr.io/r/base/seq.html">seq()</a></code> 함수 내부에서 사용된다. 입력값이 달라짐에 따라 히스토그램의 모양이 달라지는 이유가 여기에 있다.</p>
 <blockquote class="blockquote">
-<p>결국 Server는 UI에서 전달된 입력에 기반하여 출력을 산출한다. 구체적으로, <code>input$*</code> 형식의 입력값을 Server 내부에서 사용하여 <code>renderPlot({})</code>와 같은 출력 생성 함수를 통해 출력을 생성하고, 그 결과를 <code>output$*</code> 형식으로 저장함으로써 UI에 표출될 수 있도록 한다.</p>
+<p>결국 Server는 UI에서 전달된 입력에 기반하여 출력을 산출한다. 구체적으로, <code>input$*</code> 형식의 입력값을 Server 내부에서 사용하여 <code>renderPlot({})</code>과 같은 출력 생성 함수를 통해 출력을 생성하고, 그 결과를 <code>output$*</code> 형식으로 저장함으로써 UI에 표출될 수 있도록 한다.</p>
 </blockquote>
 </section><section id="결합-및-실행-부분" class="level3" data-number="2.3"><h3 data-number="2.3" class="anchored" data-anchor-id="결합-및-실행-부분">
 <span class="header-section-number">2.3</span> 결합 및 실행 부분</h3>
 <p>UI와 server 부분은 결합되어 하나의 Shiny 웹 앱을 구성하며, 이를 실행하기 위해 <code><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html">shinyApp()</a></code> 함수가 사용된다. <code>shinyApp(ui = ui, server = server)</code>에서 볼 수 있듯이, <code><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html">shinyApp()</a></code> 함수에 UI 부분과 Server 부분을 지정함으로써 Shiny 웹 앱이 생성되고 실행된다.</p>
-<p>이것은 단일 파일 방식으로 결합 및 실행을 하는 것이다. 콘솔창에서 실행하고자 한다면 다음과 같이하면 된다. 파일명에 app.R과 같은 UI와 Server 부분이 모두 포함된 파일의 이름을 지정하면 된다.</p>
+<p>이것은 단일 파일 방식으로 결합 및 실행을 행하는 것이다. 콘솔창에서 실행하고자 한다면 다음과 같이하면 된다. 파일명에 app.R과 같은 UI와 Server 부분이 모두 포함된 파일의 이름을 지정하면 된다.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/runApp.html">runApp</a></span><span class="op">(</span><span class="st">"파일명"</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -990,7 +992,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="header-section-number">3</span> 입출력 함수의 종류</h2>
 <section id="입력-함수" class="level3" data-number="3.1"><h3 data-number="3.1" class="anchored" data-anchor-id="입력-함수">
 <span class="header-section-number">3.1</span> 입력 함수</h3>
-<p>앞에서 언급한 것처럼, 입력 함수 혹은 입력 위젯 생성 함수의 종류는 다양하다. <a href="https://shiny.posit.co/r/components/">R Shiny Components</a> 웹페이지 기준으로 대략 25개 정도이다. <a href="#fig-widget" class="quarto-xref">그림&nbsp;4</a> 은 그 중 일부를 보여주고 있다.</p>
+<p>앞에서 언급한 것처럼, 입력 함수 혹은 입력 위젯 생성 함수의 종류는 다양하다. <a href="https://shiny.posit.co/r/components/">R Shiny Components</a> 웹페이지 기준으로 대략 25개 정도이다. <a href="#fig-widget" class="quarto-xref">그림&nbsp;4</a> 는 그 중 일부를 보여주고 있다.</p>
 <div id="fig-widget" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-widget-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="https://shiny.posit.co/r/getstarted/build-an-app/images/cheatsheet-inputs.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="그림&nbsp;4: 입력 위젯의 종류(https://shiny.posit.co/r/getstarted/build-an-app/reactive-flow/ui-inputs.html)"><img src="https://shiny.posit.co/r/getstarted/build-an-app/images/cheatsheet-inputs.png" class="img-fluid figure-img"></a>
@@ -1001,56 +1003,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>몇 가지 주목할 사항이 있다.</p>
 <p>첫째, 모든 함수의 이름이 <code>*Input()</code> 형식인 것은 아니다. 특히 버튼 형식의 경우 <code>*Button()</code> 혹은 <code>*Buttons()</code> 형식을 띤다. 이 외에 <code>*Link()</code>, <code>*switch()</code>로 끝나는 함수도 있다.</p>
-<p>둘째, 입력 함수의 인수에 주목할 필요가 있다. 이름을 부여하는 <code>inputID</code> 인수와 입력 위젯의 설명 글귀를 지정하는 <code>label</code> 인수는 공통이다. 그러나 나머지 인수는 입력 함수에 따라 달라진다. 위의 예에서 <code><a href="https://rdrr.io/pkg/shiny/man/sliderInput.html">sliderInput()</a></code> 입력 함수는 <code>min</code>, <code>max</code>, <code>value</code>라는 추가적인 인수를 갖는데, <code>min</code>과 <code>max</code>는 슬라이더의 최대 및 최소값을, <code>value</code>는 위젯에 기본값을 지정하는 인수이다. 입력 함수별 인수에 대한 자세한 사항은 <a href="https://shiny.posit.co/r/components/">R Shiny Components</a> 웹페이지를 참조한다.</p>
+<p>둘째, 입력 함수의 인수가 중요하다. 입력값에 이름을 부여하는 <code>inputID</code> 인수와 입력 위젯에 나타날 설명 글귀를 지정하는 <code>label</code> 인수는 공통이다. 그러나 나머지 인수는 입력 함수에 따라 달라진다. 위의 예에서 <code><a href="https://rdrr.io/pkg/shiny/man/sliderInput.html">sliderInput()</a></code> 입력 함수는 <code>min</code>, <code>max</code>, <code>value</code>라는 추가적인 인수를 갖는데, <code>min</code>과 <code>max</code>는 슬라이더의 최대 및 최소값을, <code>value</code>는 기본값을 지정하는 인수이다. 입력 함수별 인수에 대한 자세한 사항은 <a href="https://shiny.posit.co/r/components/">R Shiny Components</a> 웹페이지를 참조한다.</p>
 </section><section id="출력-함수-출력-표출-함수와-출력-생성-함수" class="level3" data-number="3.2"><h3 data-number="3.2" class="anchored" data-anchor-id="출력-함수-출력-표출-함수와-출력-생성-함수">
 <span class="header-section-number">3.2</span> 출력 함수: 출력 표출 함수와 출력 생성 함수</h3>
 <p>출력 함수는 서버에서 생성된 출력을 UI에서 표출해주는 출력 표출(바인딩) 함수와 서버에서 실질적으로 출력을 창출하는 출력 생성 함수(렌더링 함수)로 구분된다. 출력 함수의 종류는 출력의 형식(플롯, 테이블, 텍스트, 이미지 등)에 의해 결정되기 때문에 기본적인 출력의 종류에 따라 출력 표출 함수와 출력 생성 함수가 쌍을 이룰 수 밖에 없다.</p>
 <p>다음은 다섯 가지 기본 출력 함수의 쌍을 보여준다. 출력 표출 함수는 <code>*Output()</code>의 형식을, 출력 생성 함수는 <code>render*({})</code>의 형식을 취한다.</p>
+<div id="tbl-out1" class="quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[25, 50, 25]">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-out1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+표&nbsp;1: 기본 출력 함수
+</figcaption><div aria-describedby="tbl-out1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 26%">
-<col style="width: 49%">
-<col style="width: 22%">
+<col style="width: 25%">
+<col style="width: 50%">
+<col style="width: 25%">
 </colgroup>
 <thead><tr class="header">
 <th>형식</th>
-<th>출력 표출 함수</th>
-<th>출력 생성 함수</th>
+<th>출력 표출 함수(UI)</th>
+<th>출력 생성 함수(Server)</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
 <td>플롯</td>
 <td><code>plotOutput(outputID = "")</code></td>
-<td><code><a href="https://rdrr.io/pkg/shiny/man/renderPlot.html">renderPlot()</a></code></td>
+<td><code>renderPlot({})</code></td>
 </tr>
 <tr class="even">
 <td>테이블</td>
 <td><code>tableOutput(outputID = "")</code></td>
-<td><code><a href="https://rdrr.io/pkg/shiny/man/renderTable.html">renderTable()</a></code></td>
+<td><code>renderTable({})</code></td>
 </tr>
 <tr class="odd">
 <td>일반 텍스트</td>
 <td><code>textOutput(outputID = "")</code></td>
-<td><code><a href="https://rdrr.io/pkg/shiny/man/renderPrint.html">renderText()</a></code></td>
+<td><code>renderText({})</code></td>
 </tr>
 <tr class="even">
 <td>사전 포맷된 텍스트</td>
 <td><code>verbatimeTextOutput(outputID = "")</code></td>
-<td><code><a href="https://rdrr.io/pkg/shiny/man/renderPrint.html">renderPrint()</a></code></td>
+<td><code>renderPrint({})</code></td>
 </tr>
 <tr class="odd">
 <td>이미지</td>
 <td><code>imageOutput(outputID = "")</code></td>
-<td><code><a href="https://rdrr.io/pkg/shiny/man/renderImage.html">renderImage()</a></code></td>
+<td><code>renderImage({})</code></td>
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 <p>그런데 특히 주요 시각화 패키지들은 Shiny 웹 앱 구축을 염두에 두고 개별적인 출력 표출 함수와 출력 생성 함수를 제공하고 있다. 중요한 패키지에 대해 이를 정리하면 다음과 같다. 모두 <code>패키지명Output()</code>형식과 <code>render패키지명({})</code>의 형식을 띤다.</p>
+<div id="tbl-out2" class="quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[25, 50, 25]">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-out2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+표&nbsp;2: 패키지 출력 함수
+</figcaption><div aria-describedby="tbl-out2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 50%">
+<col style="width: 25%">
+</colgroup>
 <thead><tr class="header">
 <th>패키지</th>
-<th>출력 표출 함수</th>
-<th>출력 생성 함수</th>
+<th>출력 표출 함수(UI)</th>
+<th>출력 생성 함수(Server)</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -1085,6 +1103,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 <p>Shiny 웹 앱에서의 활용을 염두에 둔 패키지들은 모두 이러한 출력 함수의 쌍을 제공하고 있다. 따라서 출력 함수는 굉장히 많을 수 있다. <a href="https://shiny.posit.co/r/components/">R Shiny Components</a> 웹페이지는 기본 5개의 함수쌍에 주요 패키지를 포함하는 12개 정도의 출력 함수쌍을 예시로 제시하고 있다.</p>
 </section></section><section id="최신-레이아웃-디자인-bslib-패키지" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="최신-레이아웃-디자인-bslib-패키지">
 <span class="header-section-number">4</span> 최신 레이아웃 디자인: bslib 패키지</h2>
@@ -1092,17 +1113,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="header-section-number">4.1</span> 개요</h3>
 <p>위에서 Shiny의 전체 레이아웃은 위계적으로 구성된 레이아웃 함수들에 의해 결정된다고 했다. <code><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/titlePanel.html">titlePanel()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarLayout()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarPanel()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">mainPanel()</a></code> 과 같은 레이아웃를 통해 <a href="#fig-first" class="quarto-xref">그림&nbsp;3</a> 에 나타나 있는 것과 같은 외향의 레이아웃이 완성된 것이다.</p>
 <p>이러한 <strong>전통적인</strong> 레이아웃 디자인을 보다 현대적인 레이아웃으로 탈바꿈하기 위해 등장한 것이 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지이다. <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지는 Bootstrap을 기반으로 Shiny와 R Markdown을 위한 현대적인 UI 도구 모음을 제공한다. 카드, 밸류 박스, 사이드바 등 재사용 가능한 UI 구성 요소를 통해 Shiny 웹 앱과 문서를 효율적으로 구성할 수 있으며, 테마 시스템을 활용해 웹 앱과 문서의 외관을 유연하게 사용자 정의하고 실시간으로 조정할 수 있다. 또한 최신 Bootstrap 및 Bootswatch를 지원하여, 기본적으로 Bootstrap 3에 의존하는 기존 Shiny 및 R Markdown 환경보다 현대적인 웹 UI 구현을 가능하게 한다.</p>
-<p><a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지는 shiny 패키지의 기본 레이아웃 함수와는 다른 종류의 함수를 제공한다. 그러므로 조금 더 현대적인 감각의 웹 앱을 생성하기 위해서는 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지에서 제공되는 레이아웃 함수에 익숙해져야 한다. 여기서는 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지를 통해 <a href="#fig-first" class="quarto-xref">그림&nbsp;3</a> 웹 앱이 어떻게 달라지는지는 살펴보고자 한다.</p>
-<p>우선 <a href="https://rstudio.github.io/shiny/"><strong>Shiny</strong></a> 패키지는 기본적으로 11개의 예제 웹 앱을 제공한다. 다음과 같이 실행해 본다.</p>
+<p><a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지는 shiny 패키지의 기본 레이아웃 함수와는 다른 종류의 함수를 제공한다. 그러므로 조금 더 현대적인 감각의 웹 앱을 생성하기 위해서는 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지에서 제공되는 레이아웃 함수에 익숙해져야 한다. 여기서는 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지를 통해 <a href="#fig-first" class="quarto-xref">그림&nbsp;3</a> 웹 앱이 어떻게 달라지는지를 살펴본다.</p>
+<p><a href="https://rstudio.github.io/shiny/"><strong>Shiny</strong></a> 패키지는 기본적으로 11개의 예제 웹 앱을 제공한다. 다음과 같이 실행해 본다.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.posit.co/">shiny</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/runExample.html">runExample</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>이 들 중 첫 번째 예제인 “01_hello”가 <a href="#fig-first" class="quarto-xref">그림&nbsp;3</a> 웹 앱이다. 해당 예제를 실행하려면 다음과 같이 하면 된다.</p>
+<p>이 들 중 첫 번째 예제인 “01_hello”가 <a href="#fig-first" class="quarto-xref">그림&nbsp;3</a> 에 나타나 있는 웹 앱이다. 해당 예제를 실행하려면 다음과 같이 하면 된다.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/runExample.html">runExample</a></span><span class="op">(</span><span class="st">"01_hello"</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>아래의 <a href="#fig-bslib-1" class="quarto-xref">그림&nbsp;5</a> 과같은 웹 앱이 생성된다. 이것을 <a href="#fig-first" class="quarto-xref">그림&nbsp;3</a> 와 비교해 보라. 조금 달라 보이며, 왼편 슬라이더바에서 &lt; 를 누르면 입력 사이드바를 숨길 수 있다.</p>
+<p>아래의 <a href="#fig-bslib-1" class="quarto-xref">그림&nbsp;5</a> 와 같은 웹 앱이 생성된다. 이것을 <a href="#fig-first" class="quarto-xref">그림&nbsp;3</a> 과 비교해 보라. 조금 다르다는 것을 쉽게 알아 챌 수 있는데(왼편 슬라이더바에서 &lt; 를 눌러보라.), 이것이 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지를 활용하여 제작된 웹 앱이다.</p>
 <div id="fig-bslib-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-bslib-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/clipboard-1762722241.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="그림&nbsp;5: bslib 패키지를 활용한 웹 앱의 예제"><img src="images/clipboard-1762722241.png" class="img-fluid figure-img"></a>
@@ -1111,11 +1132,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 그림&nbsp;5: <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지를 활용한 웹 앱의 예제
 </figcaption></figure>
 </div>
-<p>코드도 동시에 살펴보려면 다음과 같이 실행하면 된다.</p>
+<p>웹 앱 뿐만 아니라 코드도 살펴보려면 다음과 같이 실행하면 된다.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/runExample.html">runExample</a></span><span class="op">(</span><span class="st">"01_hello"</span>, display <span class="op">=</span> <span class="st">"showcase"</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>삽입되어 있는 설명 부분을 제거하고 코드만 남기면 다음과 같다. 이것을 <a href="#fig-first" class="quarto-xref">그림&nbsp;3</a> 의 코드와 비교해 보라. 오로지 UI 부분의 코드만 다르고, 그것도 레이아웃 함수명만 달라져 있다는 것을 알 수 있다(입출력 함수는 그대로이다).</p>
+<p>삽입되어 있는 설명 부분을 제거하고 코드만 남기면 다음과 같다. 이것을 <a href="#fig-first" class="quarto-xref">그림&nbsp;3</a> 의 코드와 비교해 보라. 오로지 UI 부분의 코드만 다르고, 그것도 레이아웃 함수명만 달라져 있다는 것을 알 수 있다(입출력 함수는 그대로이다). 결국 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지는 UI 부분의 레이아웃만 바꾼다.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.posit.co/">shiny</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio.github.io/bslib/">bslib</a></span><span class="op">)</span></span>
@@ -1153,28 +1174,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html">shinyApp</a></span><span class="op">(</span>ui <span class="op">=</span> <span class="va">ui</span>, server <span class="op">=</span> <span class="va">server</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>첫째, <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code>가 최상위 레이아웃 함수이다. <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code>는 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a>에서 가장 널리 사용되는 페이지 레이아웃 함수로, 전체 너비를 차지하는 헤더(제목)와 사용자 입력을 위한 사이드바를 갖춘 대시보드형 레이아웃을 손쉽게 구성할 수 있도록 설계되었다. <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code>함수는 전통적인 shiny 레이아웃 함수 중 <code><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/titlePanel.html">titlePanel()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarLayout()</a></code> 함수의 역할을 동시에 수행한다고 생각할 수 있다.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span>page_fluid() 함수
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>사실은 <code><a href="https://rstudio.github.io/bslib/reference/page.html">page_fluid()</a></code> 함수가 <code><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage()</a></code> 를 대신하고, <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code> 함수가 <code><a href="https://rstudio.github.io/bslib/reference/page.html">page_fluid()</a></code> 함수의 차하 위계 함수로 기능하면서 <code><a href="https://rdrr.io/pkg/shiny/man/titlePanel.html">titlePanel()</a></code>과 <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarLayout()</a></code> 함수를 대신하지만, 거의 무조건 <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code> 함수로 시작한다.</p>
-</div>
-</div>
 <p>둘째, <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code> 의 여러 인수가 전통적인 <code><a href="https://rdrr.io/pkg/shiny/man/titlePanel.html">titlePanel()</a></code> 함수와 <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarLayout()</a></code>의 하위 함수인 <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarPanel()</a></code> 함수를 대신한다.</p>
 <ul>
 <li><p><code>title</code>: 대시보드의 제목을 설정할 수 있으며, <code><a href="https://rdrr.io/pkg/shiny/man/titlePanel.html">titlePanel()</a></code> 함수와 동일한 기능을 한다.</p></li>
-<li><p><code>sidebar = sidebar()</code>: <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarPanel()</a></code> 함수와 동일한 기능을 한다. <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarPanel()</a></code> 함수 속에서 입력 함수인 <code>siderInput()</code> 함수가 들어가 있었던과 동일하게 <code><a href="https://rstudio.github.io/bslib/reference/sidebar.html">sidebar()</a></code> 속에 <code>siderInput()</code> 함수가 들어가 있다.</p></li>
+<li><p><code>sidebar = sidebar()</code>: <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarPanel()</a></code> 함수와 동일한 기능을 한다. <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarPanel()</a></code> 함수 속에 입력 함수인 <code>siderInput()</code> 함수가 들어 있었던과 동일하게 <code><a href="https://rstudio.github.io/bslib/reference/sidebar.html">sidebar()</a></code> 속에 <code>siderInput()</code> 함수가 들어 있다.</p></li>
 </ul>
-<p>셋째, 전통적인 Shiny의 <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">mainPanel()</a></code> 함수 없이 출력 표출 함수(<code><a href="https://rdrr.io/pkg/shiny/man/plotOutput.html">plotOutput()</a></code>)가 막바로 사용된다. 그러나 이것은 가장 단순한 방식으로, <code><a href="https://rstudio.github.io/bslib/reference/card.html">card()</a></code> 함수를 사용하면 보다 풍성한 옵션을 사용할 수 있다. <code><a href="https://rstudio.github.io/bslib/reference/card.html">card()</a></code> 함수 내부에서 <code><a href="https://rstudio.github.io/bslib/reference/card_body.html">card_header()</a></code>와 <code><a href="https://rstudio.github.io/bslib/reference/card_body.html">card_body()</a></code>라는 컴포넌트 함수를 활용한다.</p>
+<p>셋째, 전통적인 Shiny의 <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">mainPanel()</a></code> 함수 없이 출력 표출 함수(<code><a href="https://rdrr.io/pkg/shiny/man/plotOutput.html">plotOutput()</a></code>)가 막바로 사용된다. 그러나 이것은 가장 단순한 방식으로, <code><a href="https://rstudio.github.io/bslib/reference/card.html">card()</a></code> 함수를 사용하면 보다 풍성한 옵션을 사용할 수 있다. <code><a href="https://rstudio.github.io/bslib/reference/card.html">card()</a></code> 함수 내부에서 <code><a href="https://rstudio.github.io/bslib/reference/card_body.html">card_header()</a></code>와 <code><a href="https://rstudio.github.io/bslib/reference/card_body.html">card_body()</a></code>라는 컴포넌트 함수를 활용한다. 아래는 위의 코드에 대해 두 가자 부가적인 조치를 한 것이다. 첫째, card() 함수를 통해 출력 표출 부분을 보완한다. 둘째, 기본 플롯 함수 대신 ggplot2 패키지를 통해 히스토그램을 작성하고 그것을 plotly 패키지의 ggplotly() 함수를 통해 인터랙티브 플롯을 생성한다. plotly 패키지의 출력 생성 및 출력 표출을 위해 <code>renderPlotly({})</code>와 <code><a href="https://rdrr.io/pkg/plotly/man/plotly-shiny.html">plotlyOutput()</a></code> 함수가 활용되는 점에 주목한다.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.posit.co/">shiny</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio.github.io/bslib/">bslib</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://plotly-r.com">plotly</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar</a></span><span class="op">(</span></span>
 <span>  title <span class="op">=</span> <span class="st">"Hello Shiny!"</span>,</span>
@@ -1188,41 +1198,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span>,</span>
 <span>  <span class="fu"><a href="https://rstudio.github.io/bslib/reference/card.html">card</a></span><span class="op">(</span></span>
-<span>    <span class="fu"><a href="https://rstudio.github.io/bslib/reference/card_body.html">card_header</a></span><span class="op">(</span><span class="st">"Histogram"</span><span class="op">)</span>,</span>
+<span>    <span class="fu"><a href="https://rstudio.github.io/bslib/reference/card_body.html">card_header</a></span><span class="op">(</span><span class="st">"ggplot2: Histogram"</span><span class="op">)</span>,</span>
 <span>    <span class="fu"><a href="https://rstudio.github.io/bslib/reference/card_body.html">card_body</a></span><span class="op">(</span></span>
-<span>      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/plotOutput.html">plotOutput</a></span><span class="op">(</span>outputId <span class="op">=</span> <span class="st">"distPlot"</span><span class="op">)</span></span>
+<span>      <span class="fu"><a href="https://rdrr.io/pkg/plotly/man/plotly-shiny.html">plotlyOutput</a></span><span class="op">(</span>outputId <span class="op">=</span> <span class="st">"distPlot"</span><span class="op">)</span></span>
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">output</span><span class="op">$</span><span class="va">distPlot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderPlot.html">renderPlot</a></span><span class="op">(</span><span class="op">{</span></span>
-<span>    <span class="va">x</span> <span class="op">&lt;-</span> <span class="va">faithful</span><span class="op">$</span><span class="va">waiting</span></span>
-<span>    <span class="va">bins</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, length.out <span class="op">=</span> <span class="va">input</span><span class="op">$</span><span class="va">bins</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span></span>
-<span></span>
-<span>    <span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span></span>
-<span>      <span class="va">x</span>,</span>
-<span>      breaks <span class="op">=</span> <span class="va">bins</span>,</span>
-<span>      col <span class="op">=</span> <span class="st">"#75AADB"</span>,</span>
-<span>      border <span class="op">=</span> <span class="st">"white"</span>,</span>
-<span>      xlab <span class="op">=</span> <span class="st">"Waiting time to next eruption (in mins)"</span>,</span>
-<span>      main <span class="op">=</span> <span class="st">"Histogram of waiting times"</span></span>
-<span>    <span class="op">)</span></span>
+<span>  <span class="va">output</span><span class="op">$</span><span class="va">distPlot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/plotly/man/plotly-shiny.html">renderPlotly</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>    <span class="va">x</span>    <span class="op">&lt;-</span> <span class="va">faithful</span><span class="op">[</span>, <span class="fl">2</span><span class="op">]</span></span>
+<span>    <span class="va">gg</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>      <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span></span>
+<span>        <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span><span class="op">)</span>, bins <span class="op">=</span> <span class="va">input</span><span class="op">$</span><span class="va">bins</span>, fill <span class="op">=</span> <span class="st">'darkgray'</span>, color <span class="op">=</span> <span class="st">'white'</span></span>
+<span>      <span class="op">)</span> <span class="op">+</span></span>
+<span>      <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>        x <span class="op">=</span> <span class="st">'Waiting time to next eruption (in mins)'</span>,</span>
+<span>        y <span class="op">=</span> <span class="st">"Frequencies"</span>,</span>
+<span>        title <span class="op">=</span> <span class="st">'Histogram of waiting times'</span></span>
+<span>      <span class="op">)</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/pkg/plotly/man/ggplotly.html">ggplotly</a></span><span class="op">(</span><span class="va">gg</span><span class="op">)</span></span>
 <span>  <span class="op">}</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html">shinyApp</a></span><span class="op">(</span>ui <span class="op">=</span> <span class="va">ui</span>, server <span class="op">=</span> <span class="va">server</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section><section id="레이아웃과-컴포넌트" class="level3" data-number="4.2"><h3 data-number="4.2" class="anchored" data-anchor-id="레이아웃과-컴포넌트">
-<span class="header-section-number">4.2</span> 레이아웃과 컴포넌트</h3>
-<section id="레이아웃" class="level4" data-number="4.2.1"><h4 data-number="4.2.1" class="anchored" data-anchor-id="레이아웃">
-<span class="header-section-number">4.2.1</span> 레이아웃</h4>
+</section><section id="레이아웃-함수-컨테이너" class="level3" data-number="4.2"><h3 data-number="4.2" class="anchored" data-anchor-id="레이아웃-함수-컨테이너">
+<span class="header-section-number">4.2</span> 레이아웃 함수: 컨테이너</h3>
 <p>다음과 같이 용도별 레이아웃 함수를 정리할 수 있다. 자세한 사항은 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지 홈페이지의 <a href="https://rstudio.github.io/bslib/articles/dashboards/index.html">Get Started</a>나 <a href="https://rstudio.github.io/bslib/articles/column-layout/index.html">Layouts</a>를 참고할 수 있다.</p>
+<div id="tbl-bslib1" class="quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[25, 35, 40]">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-bslib1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+표&nbsp;3: bslib 레이아웃 함수
+</figcaption><div aria-describedby="tbl-bslib1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 30%">
-<col style="width: 29%">
-<col style="width: 39%">
+<col style="width: 25%">
+<col style="width: 35%">
+<col style="width: 40%">
 </colgroup>
 <thead><tr class="header">
 <th>용도</th>
@@ -1231,83 +1243,156 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>단일 페이지(사이드바 포함)</td>
+<td>단일 페이지</td>
 <td>
+<p><code><a href="https://rstudio.github.io/bslib/reference/page.html">page_fluid()</a></code></p>
+<p><code><a href="https://rstudio.github.io/bslib/reference/page_fillable.html">page_fillable()</a></code></p>
 <p><code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code></p>
-<p><code>layout_siderbar()</code></p>
 </td>
 <td>
-<p>최상단</p>
-<p><code><a href="https://rstudio.github.io/bslib/reference/card.html">card()</a></code> 내부</p>
+<p>기본형</p>
+<p>대시보드형</p>
+<p>표준형(전역적 사이드바 포함)</p>
 </td>
 </tr>
 <tr class="even">
+<td>사이드바 레이아웃</td>
+<td><code>layout_siderbar()</code></td>
+<td>
+<p><code>page_*()</code> 내부</p>
+<p><code><a href="https://rstudio.github.io/bslib/reference/card.html">card()</a></code> 내부</p>
+<p><code><a href="https://rstudio.github.io/bslib/reference/nav-items.html">nav_panel()</a></code> 내부</p>
+</td>
+</tr>
+<tr class="odd">
 <td>다중 컬럼</td>
 <td>
 <p><code><a href="https://rstudio.github.io/bslib/reference/layout_columns.html">layout_columns()</a></code></p>
 <p><code><a href="https://rstudio.github.io/bslib/reference/layout_column_wrap.html">layout_column_wrap()</a></code></p>
 </td>
 <td>
-<code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code> 내부</td>
-</tr>
-<tr class="odd">
-<td>다중 페이지</td>
-<td><code><a href="https://rstudio.github.io/bslib/reference/page_navbar.html">page_navbar()</a></code></td>
-<td>
-<p>최상단</p>
-<p><code><a href="https://rstudio.github.io/bslib/reference/nav-items.html">nav_panel()</a></code>이 개별 페이지</p>
+<p><code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code> 내부</p>
+<p><code><a href="https://rstudio.github.io/bslib/reference/nav-items.html">nav_panel()</a></code> 내부</p>
 </td>
 </tr>
 <tr class="even">
-<td>다중 패널(페이지 수준)</td>
+<td>다중 페이지</td>
+<td><code><a href="https://rstudio.github.io/bslib/reference/page_navbar.html">page_navbar()</a></code></td>
+<td>
+<p>네비게이션바 레벨</p>
+<p><code><a href="https://rstudio.github.io/bslib/reference/nav-items.html">nav_panel()</a></code>이 개별 페이지</p>
+</td>
+</tr>
+<tr class="odd">
+<td>
+<p>다중 패널</p>
+<p>(페이지 레벨)</p>
+</td>
 <td>
 <p><code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_tab()</a></code></p>
 <p><code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_pill()</a></code></p>
 <p><code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_underline()</a></code></p>
 </td>
 <td>
-<p><code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code> 내부</p>
+<p><code><a href="https://rstudio.github.io/bslib/reference/page.html">page_fluid()</a></code> 혹은 <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code> 내부</p>
 <p><code><a href="https://rstudio.github.io/bslib/reference/nav-items.html">nav_panel()</a></code>이 개별 패널</p>
 </td>
 </tr>
-<tr class="odd">
-<td>다중 패널(card 수준)</td>
+<tr class="even">
+<td>
+<p>다중 패널</p>
+<p>(카드 레벨)</p>
+</td>
 <td>
 <p><code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_card_tab()</a></code></p>
 <p><code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_card_pill()</a></code></p>
 <p><code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_card_underline()</a></code></p>
 </td>
 <td>
-<p><code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code> 이나 <code><a href="https://rstudio.github.io/bslib/reference/card.html">card()</a></code> 내부</p>
+<p><code><a href="https://rstudio.github.io/bslib/reference/card.html">card()</a></code> 내부</p>
 <p><code><a href="https://rstudio.github.io/bslib/reference/nav-items.html">nav_panel()</a></code>이 개별 패널</p>
 </td>
 </tr>
 </tbody>
-</table></section><section id="컴포넌트" class="level4" data-number="4.2.2"><h4 data-number="4.2.2" class="anchored" data-anchor-id="컴포넌트">
-<span class="header-section-number">4.2.2</span> 컴포넌트</h4>
+</table>
+</div>
+</figure>
+</div>
+</section><section id="컴포넌트-ui-구성-요소" class="level3" data-number="4.3"><h3 data-number="4.3" class="anchored" data-anchor-id="컴포넌트-ui-구성-요소">
+<span class="header-section-number">4.3</span> 컴포넌트: UI 구성 요소</h3>
 <p>가장 중요한 컴포넌트에 카드(card), 사이드바(sidebar), 밸류 박스(value box), 툴팁(tooltip)과 팝오버(popover)가 있다. 자세한 사항은 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지 홈페이지의 <a href="https://rstudio.github.io/bslib/articles/cards/index.html">Components</a>를 참고할 수 있다.</p>
-<p><strong>카드</strong>(card)는 현대적인 사용자 인터페이스(UI)에서 가장 널리 사용되는 정보 구성 단위 중 하나이다. 기본적으로 카드는 테두리와 여백을 갖는 직사각형 컨테이너에 불과하지만, 관련된 정보를 의미 있게 묶어 제시할 경우 사용자가 내용을 보다 쉽게 이해하고, 집중하며, 탐색할 수 있도록 돕는다. 이러한 특성 때문에 카드는 대시보드와 UI 설계에서 핵심적인 역할을 하며, 대부분의 성공적인 대시보드 및 UI 프레임워크는 카드를 주요 컴포넌트로 채택하고 있다. card() 함수는 다음과 같은 컴포넌트 함수를 갖는다.</p>
+<section id="카드" class="level4" data-number="4.3.1"><h4 data-number="4.3.1" class="anchored" data-anchor-id="카드">
+<span class="header-section-number">4.3.1</span> 카드</h4>
+<p>카드(card)는 현대적인 UI에서 가장 널리 사용되는 정보 구성 단위 중 하나이다. 기본적으로 카드는 테두리와 여백을 갖는 직사각형 컨테이너에 불과하지만, 관련된 정보를 의미 있게 묶어 제시할 경우 사용자가 내용을 보다 쉽게 이해하고, 집중하며, 탐색할 수 있도록 돕는다. 이러한 특성 때문에 카드는 대시보드와 UI 설계에서 핵심적인 역할을 하며, 대부분의 성공적인 대시보드 및 UI 프레임워크는 카드를 주요 컴포넌트로 채택하고 있다. <code><a href="https://rstudio.github.io/bslib/reference/card.html">card()</a></code> 함수는 다음과 같은 컴포넌트 함수를 갖는다.</p>
 <ul>
-<li><p><code>card_header(),</code></p></li>
-<li><p><code><a href="https://rstudio.github.io/bslib/reference/card_body.html">card_body()</a></code></p></li>
-<li><p><code><a href="https://rstudio.github.io/bslib/reference/card_body.html">card_footer()</a></code></p></li>
-</ul>
-<p><strong>사이드바</strong>(sidebar)는 웹 인터페이스에서 필터, 설정, 기타 입력 요소를 사용자가 쉽게 접근할 수 있도록 제공하는 핵심 UI 컴포넌트로, 이들이 제어하는 대화형 기능과 나란히 배치된다는 점이 특징이다. 사이드바를 활용하면 사용자 입력과 결과 출력 간의 관계를 명확히 할 수 있어, 대시보드의 사용성과 탐색성이 크게 향상된다. <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a>에서는 <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code>와 <code><a href="https://rstudio.github.io/bslib/reference/page_navbar.html">page_navbar()</a></code> 함수를 통해 페이지 수준(page-level)의 사이드바 레이아웃을 기본적으로 제공하며, 이 외에도 다양한 형태의 사이드바 레이아웃을 지원하여 인터페이스의 목적과 복잡도에 따라 유연한 UI 설계를 가능하게 한다.</p>
+<li><p><code><a href="https://rstudio.github.io/bslib/reference/card_body.html">card_header()</a></code>: 제목</p></li>
+<li><p><code><a href="https://rstudio.github.io/bslib/reference/card_body.html">card_body()</a></code>: 주 콘텐츠(생략 가능: 바로 출력 표출 함수 표시 가능)</p></li>
+<li><p><code><a href="https://rstudio.github.io/bslib/reference/card_body.html">card_footer()</a></code>: 부가 설명</p></li>
+</ul></section><section id="사이드바" class="level4" data-number="4.3.2"><h4 data-number="4.3.2" class="anchored" data-anchor-id="사이드바">
+<span class="header-section-number">4.3.2</span> 사이드바</h4>
+<p>사이드바(sidebar)는 필터, 설정, 기타 입력 요소를 사용자가 쉽게 접근할 수 있도록 제공하는 핵심 UI 컴포넌트로, 이들이 제어하는 대화형 기능과 나란히 배치된다는 점이 특징이다. 사이드바를 활용하면 사용자 입력과 결과 출력 간의 관계를 명확히 할 수 있어, 대시보드의 사용성과 탐색성이 크게 향상된다. <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a>에서는 <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code>와 <code><a href="https://rstudio.github.io/bslib/reference/page_navbar.html">page_navbar()</a></code> 함수를 통해 페이지 수준(page-level)의 사이드바 레이아웃을 기본적으로 제공하며, 이 외에도 다양한 형태의 사이드바 레이아웃을 지원하여 인터페이스의 목적과 복잡도에 따라 유연한 UI 설계를 가능하게 한다.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span>사이드바 컴포넌트와 사이드바 레이아웃
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>사이드바 컴포넌트와 사이드바 레이아웃은 다르다. 사이드바 레이아웃은 공간을 나누는 구 조를 의미한다면, 사이드바 컴포넌트는 콘텐츠를 담는 UI 블록이다. 입력 위젯, 텍스트, 메뉴 등이 포함되며 독립적인 UI가 의미가 있다. 사이드바 레이아웃의 중요 함수에는 앞에서 살펴본 것과 같은 <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code>, <code><a href="https://rstudio.github.io/bslib/reference/sidebar.html">layout_sidebar()</a></code> 등이 있고, 사이드바 컴포넌트의 대표적인 함수에 <code><a href="https://rstudio.github.io/bslib/reference/sidebar.html">sidebar()</a></code>가 있다.</p>
 <p><a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a>에서 제공하는 사이드바 레이아웃은 크게 부유형(floating), 채움형(filling), 다중 페이지/탭형(multi-page/tab)의 세 가지로 구분할 수 있다.</p>
 <p>부유형 레이아웃은 <code><a href="https://rstudio.github.io/bslib/reference/sidebar.html">layout_sidebar()</a></code>를 사용하는데, 페이지의 어느 위치에나 배치할 수 있는 사이드바 레이아웃을 구성할 수 있다. 이 방식은 의미적으로 관련된 입력 요소와 출력 요소를 시각적으로 함께 묶어 제시하는 데 적합하다. 또한 <code><a href="https://rstudio.github.io/bslib/reference/card.html">card()</a></code>와 함께 사용하면 전체 화면 확장(full-screen), 헤더·푸터 추가 등 카드가 제공하는 다양한 기능을 활용할 수 있다.</p>
 <p>채움형 레이아웃은 <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code>를 사용하는데 페이지 전체를 채우는 사이드바 레이아웃을 생성한다. 내부적으로 <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code>는 <code><a href="https://rstudio.github.io/bslib/reference/page_fillable.html">page_fillable()</a></code>과 <code><a href="https://rstudio.github.io/bslib/reference/sidebar.html">layout_sidebar()</a></code>를 단순히 감싼(wrapper) 함수에 불과하다. 이 구조를 이해하면, 하나의 채움형 레이아웃 안에 여러 개의 사이드바 레이아웃을 유연하게 배치할 수 있는 가능성이 열린다.</p>
-<p>다중 페이지/탭 레이아웃은 <code><a href="https://rstudio.github.io/bslib/reference/page_navbar.html">page_navbar()</a></code>나 <code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_card_tab()</a></code> 내부에서 <code>sidebar</code> 인수를 사용해 사이드바를 구성할 수 있다. 이 경우 사이드바는 페이지 전체를 채우는 동시에, 모든 페이지나 탭에서 동일하게 유지되어 표시된다. 이후에는 페이지별로 서로 다른 레이아웃을 구성하는 방법도 다루겠지만, 모든 페이지에서 동일한 사이드바를 사용하는 것이 바람직한 경우도 많다. 이러한 경우에는 conditionalPanel()을 활용하여 특정 페이지에서만 사이드바의 일부 내용을 표시하거나 숨길 수 있다.</p>
-<p><strong>밸류 박스</strong>(value box)는 대시보드에서 핵심적인 수치나 지표를 한눈에 전달하기 위해 사용되는 UI 컴포넌트이다. 값(value), 설명(label), 아이콘(icon) 등을 함께 제시하여 사용자가 현재 상태나 주요 변화를 빠르게 파악할 수 있도록 돕는다. <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a>의 <code><a href="https://rstudio.github.io/bslib/reference/value_box.html">value_box()</a></code>는 카드(card) 기반 설계를 따르므로 다른 UI 요소들과 시각적으로 일관되게 어우러지며, Shiny의 반응성과 결합해 값이 동적으로 갱신되는 대시보드를 구성하는 데 특히 유용하다.</p>
-<p><code><a href="https://rstudio.github.io/bslib/reference/value_box.html">value_box()</a></code>는 네 가지 주요 구성 요소로 이루어진다.</p>
+<p>다중 페이지/탭 레이아웃은 <code><a href="https://rstudio.github.io/bslib/reference/page_navbar.html">page_navbar()</a></code>나 <code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_card_tab()</a></code> 내부에서 <code>sidebar</code> 인수를 사용해 사이드바를 구성할 수 있다. 이 경우 사이드바는 페이지 전체를 채우는 동시에, 모든 페이지나 탭에서 동일하게 유지되어 표시된다. 이후에는 페이지별로 서로 다른 레이아웃을 구성하는 방법도 다루겠지만, 모든 페이지에서 동일한 사이드바를 사용하는 것이 바람직한 경우도 많다. 이러한 경우에는 <code><a href="https://rdrr.io/pkg/shiny/man/conditionalPanel.html">conditionalPanel()</a></code>을 활용하여 특정 페이지에서만 사이드바의 일부 내용을 표시하거나 숨길 수 있다.</p>
+</div>
+</div>
+</div>
+</section><section id="밸류-박스" class="level4" data-number="4.3.3"><h4 data-number="4.3.3" class="anchored" data-anchor-id="밸류-박스">
+<span class="header-section-number">4.3.3</span> 밸류 박스</h4>
+<p>밸류 박스(value box)는 대시보드에서 핵심적인 수치나 지표를 한눈에 전달하기 위해 사용되는 UI 컴포넌트이다. 값(value), 설명(label), 아이콘(icon) 등을 함께 제시하여 사용자가 현재 상태나 주요 변화를 빠르게 파악할 수 있도록 돕는다. <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a>의 <code><a href="https://rstudio.github.io/bslib/reference/value_box.html">value_box()</a></code> 함수는 카드(card) 기반 설계를 따르므로 다른 UI 요소들과 시각적으로 일관되게 어우러지며, Shiny의 반응성과 결합해 값이 동적으로 갱신되는 대시보드를 구성하는 데 특히 유용하다.</p>
+<p><code><a href="https://rstudio.github.io/bslib/reference/value_box.html">value_box()</a></code> 함수는 네 가지 주요 구성 요소로 이루어진다.</p>
 <ul>
 <li><p><strong>value</strong>는 표시하고자 하는 핵심 수치나 텍스트 값으로, 대시보드에서 가장 중요한 정보를 전달한다. 출력 표출 함수를 사용할 수도 있다.</p></li>
 <li><p><strong>title</strong>은 value 위에 선택적으로 표시되는 설명 텍스트로, 해당 값의 의미나 지표명을 명확히 한다.</p></li>
-<li><p><strong>showcase</strong>는 아이콘이나 기타 UI 요소와 같이 value 옆에 함께 배치되는 시각적 요소로, 정보를 보다 직관적으로 인식하도록 돕는다. <code>bs_icon()</code> 컴포넌트 함수를 주로 사용한다.</p></li>
+<li><p><strong>showcase</strong>는 아이콘이나 기타 UI 요소와 같이 <strong>value</strong> 옆에 함께 배치되는 시각적 요소로, 정보를 보다 직관적으로 인식하도록 돕는다. <code>bs_icon()</code> 컴포넌트 함수를 주로 사용한다.</p></li>
 <li><p><strong>theme</strong>은 값 상자의 색상이나 스타일을 조정하는 선택적 설정으로, 대시보드의 전체 디자인과 시각적 일관성을 유지하거나 강조 효과를 줄 수 있다.</p></li>
-</ul>
-<p><strong>툴팁</strong>(tooltip)과 <strong>팝오버</strong>(popover)는 화면을 방해하지 않으면서 추가 정보를 제공하거나 상호작용을 가능하게 하는 유용한 UI 요소이다. 툴팁은 주로 간단한 설명을 표시하는 데 사용되며, 팝오버는 보다 풍부한 정보 제공이나 사용자 입력을 포함한 상호작용을 지원한다. 예를 들어, <code><a href="https://rstudio.github.io/bslib/reference/card_body.html">card_header()</a></code>에 “도움말” 아이콘과 함께 <code><a href="https://rstudio.github.io/bslib/reference/tooltip.html">tooltip()</a></code>을 부착하면 사용자가 시각화된 데이터에 대한 추가 설명을 손쉽게 확인할 수 있다. 또한 동일한 헤더 영역에 “설정” 아이콘과 <code><a href="https://rstudio.github.io/bslib/reference/popover.html">popover()</a></code>를 연결하면 시각화의 매개변수를 직접 제어할 수 있는 인터페이스를 제공할 수 있다. 더 나아가 <code><a href="https://rstudio.github.io/bslib/reference/card_body.html">card_footer()</a></code>의 링크에 <code><a href="https://rstudio.github.io/bslib/reference/popover.html">popover()</a></code>를 적용하면 추가 정보의 표시뿐 아니라 하이퍼링크와 같은 상호작용 요소를 함께 제공할 수 있어, 정보 탐색과 사용자 경험을 동시에 향상시킨다.</p>
+</ul></section><section id="툴팁과-팝오버" class="level4" data-number="4.3.4"><h4 data-number="4.3.4" class="anchored" data-anchor-id="툴팁과-팝오버">
+<span class="header-section-number">4.3.4</span> 툴팁과 팝오버</h4>
+<p>툴팁(tooltip)과 팝오버(popover)는 화면을 방해하지 않으면서 추가 정보를 제공하거나 상호작용을 가능하게 하는 유용한 UI 요소이다. 툴팁은 주로 간단한 설명을 표시하는 데 사용되며, 팝오버는 보다 풍부한 정보 제공이나 사용자 입력을 포함한 상호작용을 지원한다. 예를 들어, <code><a href="https://rstudio.github.io/bslib/reference/card_body.html">card_header()</a></code>에 “도움말” 아이콘과 함께 <code><a href="https://rstudio.github.io/bslib/reference/tooltip.html">tooltip()</a></code>을 부착하면 사용자가 시각화된 데이터에 대한 추가 설명을 손쉽게 확인할 수 있다. 또한 동일한 헤더 영역에 “설정” 아이콘과 <code><a href="https://rstudio.github.io/bslib/reference/popover.html">popover()</a></code>를 연결하면 시각화의 매개변수를 직접 제어할 수 있는 인터페이스를 제공할 수 있다. 더 나아가 <code><a href="https://rstudio.github.io/bslib/reference/card_body.html">card_footer()</a></code>의 링크에 <code><a href="https://rstudio.github.io/bslib/reference/popover.html">popover()</a></code>를 적용하면 추가 정보의 표시뿐 아니라 하이퍼링크와 같은 상호작용 요소를 함께 제공할 수 있어, 정보 탐색과 사용자 경험을 동시에 향상시킨다.</p>
 <p>구현 방식 측면에서 보면, 툴팁과 팝오버는 매우 유사하다. 두 컴포넌트 모두 사용자의 상호작용을 통해 표시 여부가 전환되는 트리거(trigger) UI 요소와, 화면에 표시될 메시지 내용을 필요로 한다. <code><a href="https://rstudio.github.io/bslib/reference/tooltip.html">tooltip()</a></code>과 <code><a href="https://rstudio.github.io/bslib/reference/popover.html">popover()</a></code>는 공통적으로 첫 번째 인수를 트리거로 취급하며, 이름이 지정되지 않은 나머지 인수들은 메시지 내용으로 사용된다. 또한 <code><a href="https://rstudio.github.io/bslib/reference/popover.html">popover()</a></code>의 경우에는 선택적으로 제목(title)을 함께 지정할 수 있다.</p>
 <p>반면, 사용자 경험(UX)과 활용 목적 측면에서는 두 컴포넌트의 성격이 뚜렷이 다르다. 툴팁은 포커스나 마우스 오버(hover)에 의해 표시되는 반면, 팝오버는 클릭을 통해 열리고 닫힌다. 이로 인해 팝오버는 툴팁보다 화면에 더 오래 유지되는, 즉 상대적으로 지속성이 높은 인터페이스이며, 추가적인 사용자 상호작용이 필요한 경우에 적합하다. 따라서 간단한 설명과 같은 읽기 전용(read-only) 정보에는 툴팁을 사용하는 것이 바람직하고, 메시지 자체와의 상호작용이 필요한 경우에는 팝오버를 사용하는 것이 적절하다.</p>
+</section></section><section id="사용자-정의-테마" class="level3" data-number="4.4"><h3 data-number="4.4" class="anchored" data-anchor-id="사용자-정의-테마">
+<span class="header-section-number">4.4</span> 사용자 정의 테마</h3>
+<p><a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지의 또 다른 중요한 기능은 다양한 사용자 정의 테마(custom theming)의 적용을 용이하게 한다는 점이다. <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a>는 Bootstrap 5를 기반으로 한 테마 시스템을 추상화하여, 사용자가 색상, 타이포그래피, 여백, 컴포넌트 스타일 등 핵심 디자인 요소를 일관된 방식으로 제어할 수 있도록 지원한다. 특히 <code><a href="https://rstudio.github.io/bslib/reference/bs_theme.html">bs_theme()</a></code>를 중심으로 한 테마 정의 방식은 개별 UI 요소를 일일이 스타일링하는 접근에서 벗어나, 디자인 전반을 하나의 체계적인 설정으로 관리할 수 있게 해준다. 이를 통해 인터랙티브 대시보드나 웹 애플리케이션의 시각적 일관성을 유지하면서도, 목적과 사용자 맥락에 맞는 다양한 테마를 손쉽게 적용할 수 있다. 이러한 사용자 정의 테마 기능은 bslib를 단순한 UI 구성 도구를 넘어, 재현 가능하고 확장 가능한 시각적 설계 도구로 자리매김하게 하는 핵심 요소라 할 수 있다.</p>
+<section id="bs_theme-함수" class="level4" data-number="4.4.1"><h4 data-number="4.4.1" class="anchored" data-anchor-id="bs_theme-함수">
+<span class="header-section-number">4.4.1</span> <code>bs_theme()</code> 함수</h4>
+<p><code><a href="https://rstudio.github.io/bslib/reference/bs_theme.html">bs_theme()</a></code> 함수는 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지에서 사용자 정의 테마를 정의하는 핵심 함수로, Bootstrap 기반 UI의 시각적 전반을 하나의 설정 객체로 통합 관리한다. 즉, <code><a href="https://rstudio.github.io/bslib/reference/bs_theme.html">bs_theme()</a></code> 함수는 색상, 글꼴, 여백, 컴포넌트 스타일 등 UI 전반의 디자인 규칙을 한 번에 정의하고 이를 Shiny 앱 전체에 일관되게 적요하도록 해주는 테마 객체 생성 함수이다.</p>
+<p><code><a href="https://rstudio.github.io/bslib/reference/bs_theme.html">bs_theme()</a></code> 함수의 주요 인수는 다음과 같다.</p>
+<ul>
+<li><p><code>version = 5</code>: 사용할 Bootstrap 버전으로 5가 기본값</p></li>
+<li><p><code>bg = "#ffffff"</code>, <code>fg = "#212529"</code>: 기본 배경색 및 기본 텍스트 색상</p></li>
+<li><p><code>primary = "#0d6efd"</code>, <code>secondary = ""</code>, <code>success = ""</code>, <code>info = ""</code>, <code>warning = ""</code>, <code>danger = ""</code>: Bootstrap의 의미 기반 색상 체계</p></li>
+<li><p><code>base_font = font_google("Noto Sans KR")</code>, <code>heading_font = font_google("Noto Serif KR")</code>, <code>code_font = font_google("JetBrains Mono"</code>): 본문 텍스트, 제목, 코드 블록의 타이포그래피 일관성 확보</p></li>
+<li><p><code>base_font_size = "1rem"</code>: 기본 글자 크기로 rem 단위 사용이 권장 된다.</p></li>
+<li><p><code>spacer = "1rem"</code>: 여백의 기준 단위</p></li>
+<li><p><code>border_radius = "0.5rem"</code>: 카드, 버튼 등의 모서리 둥글기</p></li>
+<li><p><code>bootswatch = "flatly"</code>: 미리 정의된 Bootswatch 테마</p></li>
+</ul></section><section id="테마-미리보기-및-검증" class="level4" data-number="4.4.2"><h4 data-number="4.4.2" class="anchored" data-anchor-id="테마-미리보기-및-검증">
+<span class="header-section-number">4.4.2</span> 테마 미리보기 및 검증</h4>
+<p><a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지의 <code><a href="https://rstudio.github.io/bslib/reference/bs_theme_preview.html">bs_theme_preview()</a></code> 함수는 사용자 정의 테마를 실제 UI 구성 요소에 적용해 보며 시각적 효과를 즉시 확인할 수 있는 테마 미리보기 및 검증 도구이다.</p>
+<p>콘솔에서 함수를 실행하면, 버튼, 카드, 입력 위젯 등 대표 UI 컴포넌트에 테마를 적용해볼 수 있고, 색상 대비, 타이포그래피, 여백 등을 한눈에 점검할 수 있을 뿐만 아니라, 테마 수정의 결과를 즉시 확인해 볼 수 있다. <a href="#fig-theming" class="quarto-xref">그림&nbsp;6</a> 에서 볼 수 있는 것처럼 오른편의 Theme customizer를 조작하여 이러한 기능을 활용해 볼 수 있다.</p>
+<div id="fig-theming" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-theming-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/clipboard-4114941204.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="그림&nbsp;6: be_theme_update() 함수를 활용한 테마 미리보기 및 검증"><img src="images/clipboard-4114941204.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-theming-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;6: <code>be_theme_update()</code> 함수를 활용한 테마 미리보기 및 검증
+</figcaption></figure>
+</div>
 </section></section></section><section id="반응성-함수" class="level2" data-number="5"><h2 data-number="5" class="anchored" data-anchor-id="반응성-함수">
 <span class="header-section-number">5</span> 반응성 함수</h2>
 <section id="정의" class="level3" data-number="5.1"><h3 data-number="5.1" class="anchored" data-anchor-id="정의">
