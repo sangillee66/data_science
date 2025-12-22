@@ -120,11 +120,11 @@ shinyApp(ui = ui, server = server)
 
 ### UI 부분
 
-UI 부분은 다양한 함수들이 위계 구조를 이루고 있는데, 전체 구조를 결정하는 **레이아웃 함수**가 마치 컨테이너처럼 존재하고 그 속에 **입출력 함수**가 포함되어 있는 구조이다.
+UI 부분은 다양한 함수들이 위계 구조를 이루고 있는데, 전체 형태를 결정하는 **컨테이너 함수**가 **입출력 함수**를 포함하고 있는 구조이다.
 
-첫째, 레이아웃 함수가 위계 구조를 이루고 있다. 최상위 `fluidPage()` 함수는 `titlePanel()`과 `sidebarLayout()`로 구성되고, `sidebarLayout()`은 다시 `sidebarPanel()`과 `mainPanel()`로 구성된다. 하나씩 위계적으로 살펴보면 다음과 같다.
+첫째, 컨테이너 함수가 위계 구조를 이루고 있다. 최상위 `fluidPage()` 함수는 `titlePanel()`과 `sidebarLayout()`로 구성되고, `sidebarLayout()`은 다시 `sidebarPanel()`과 `mainPanel()`로 구성된다. 하나씩 위계적으로 살펴보면 다음과 같다.
 
--   `fluidPage()` : UI의 최상위 컨테이너로서 전체 레이아웃을 관장하며, 브라우저 화면 크기에 따라 자동으로 늘어나고 줄어드는 반응형 레이아웃을 제공한다. 이러한 특성 때문에 ‘fluid’라는 이름이 붙었다. 고정 폭을 가진 레이아웃은 `fixedPage()`를 통해 정의할 수 있다. Shiny 앱에서는 기본적으로 `fluidPage()`를 사용한다고 생각하면 된다.
+-   `fluidPage()` : UI의 최상위 컨테이너로서 전체 UI 구조를 관장하며, 브라우저 화면 크기에 따라 자동으로 늘어나고 줄어드는 반응형 레이아웃을 제공한다. 이러한 특성 때문에 ‘fluid’라는 이름이 붙었다. 고정 폭을 가진 레이아웃은 `fixedPage()`를 통해 정의할 수 있다. Shiny 앱에서는 기본적으로 `fluidPage()`를 사용한다고 생각하면 된다.
 
     -   `titlePanel()` : 제목이 들어가는 부분이다. 생략가능하다.
 
@@ -322,15 +322,15 @@ UI 파일과 Server 파일을 분리하는 방식은 코드가 매우 복잡할 
 
 Shiny 웹 앱에서의 활용을 염두에 둔 패키지들은 모두 이러한 출력 함수의 쌍을 제공하고 있다. 따라서 출력 함수는 굉장히 많을 수 있다. [R Shiny Components](https://shiny.posit.co/r/components/) 웹페이지는 기본 5개의 함수쌍에 주요 패키지를 포함하는 12개 정도의 출력 함수쌍을 예시로 제시하고 있다.
 
-## 최신 레이아웃 디자인: bslib 패키지
+## bslib 패키지를 활용한 현대적 UI 구조 디자인
 
 ### 개요
 
-위에서 Shiny의 전체 레이아웃은 위계적으로 구성된 레이아웃 함수들에 의해 결정된다고 했다. `fluidPage()`, `titlePanel()`, `sidebarLayout()`, `sidebarPanel()`, `mainPanel()` 과 같은 레이아웃를 통해 @fig-first 에 나타나 있는 것과 같은 외향의 레이아웃이 완성된 것이다.
+위에서 Shiny의 전체 레이아웃은 위계적으로 구성된 컨테이너 함수들에 의해 결정된다고 했다. `fluidPage()`, `titlePanel()`, `sidebarLayout()`, `sidebarPanel()`, `mainPanel()` 과 같은 컨테이너 함수를 통해 @fig-first 에 나타나 있는 것과 같은 외향의 UI 구조가 완성된 것이다.
 
-이러한 **전통적인** 레이아웃 디자인을 보다 현대적인 레이아웃으로 탈바꿈하기 위해 등장한 것이 [**bslib**](https://rstudio.github.io/bslib/) 패키지이다. [**bslib**](https://rstudio.github.io/bslib/) 패키지는 Bootstrap을 기반으로 Shiny와 R Markdown을 위한 현대적인 UI 도구 모음을 제공한다. 카드, 밸류 박스, 사이드바 등 재사용 가능한 UI 구성 요소를 통해 Shiny 웹 앱과 문서를 효율적으로 구성할 수 있으며, 테마 시스템을 활용해 웹 앱과 문서의 외관을 유연하게 사용자 정의하고 실시간으로 조정할 수 있다. 또한 최신 Bootstrap 및 Bootswatch를 지원하여, 기본적으로 Bootstrap 3에 의존하는 기존 Shiny 및 R Markdown 환경보다 현대적인 웹 UI 구현을 가능하게 한다.
+보다 **현대적인** UI 구조 디자인을 위해 등장한 것이 [**bslib**](https://rstudio.github.io/bslib/) 패키지이다. [**bslib**](https://rstudio.github.io/bslib/) 패키지는 Bootstrap을 기반으로 Shiny와 R Markdown을 위한 현대적인 UI 도구 모음을 제공한다. [**bslib**](https://rstudio.github.io/bslib/)패키지는 다양하고 유연한 **컨테이너** 함수를 제공할 뿐만 아니라, 카드(card), 밸류 박스(value box), 사이드바(sidebar) 등 재사용 가능한 콘텐츠 **컴포넌트**를 통해 Shiny 웹 앱과 문서를 효율적으로 구성할 수 있게 한다(전통적인 Shiny에 부족한 부분). 또한 테마 시스템을 활용하여 웹 앱과 문서의 외관을 유연하게 사용자 정의하고, 이를 실시간으로 조정할 수 있다. 나아가 최신 Bootstrap 및 Bootswatch를 지원함으로써, 기본적으로 Bootstrap 3에 의존하는 기존 Shiny 및 R Markdown 환경에 비해 보다 현대적이고 일관된 웹 UI 구현을 가능하게 한다.
 
-[**bslib**](https://rstudio.github.io/bslib/) 패키지는 shiny 패키지의 기본 레이아웃 함수와는 다른 종류의 함수를 제공한다. 그러므로 조금 더 현대적인 감각의 웹 앱을 생성하기 위해서는 [**bslib**](https://rstudio.github.io/bslib/) 패키지에서 제공되는 레이아웃 함수에 익숙해져야 한다. 여기서는 [**bslib**](https://rstudio.github.io/bslib/) 패키지를 통해 @fig-first 웹 앱이 어떻게 달라지는지를 살펴본다.
+[**bslib**](https://rstudio.github.io/bslib/) 패키지를 이용해 좀 더 현대적인 감각의 웹 앱을 생성하기 위해서는 [**bslib**](https://rstudio.github.io/bslib/) 패키지에서 제공되는 다양한 **UI 구성 함수(컨테이너 함수와 컴포넌트 함수)**를 익혀야 하며, 뒤에서 자세히 다룬다. 여기서는 [**bslib**](https://rstudio.github.io/bslib/) 패키지를 통해 @fig-first 웹 앱이 어떻게 달라지는지에 대해서만 살펴본다.
 
 [**Shiny**](https://rstudio.github.io/shiny/) 패키지는 기본적으로 11개의 예제 웹 앱을 제공한다. 다음과 같이 실행해 본다.
 
@@ -358,7 +358,7 @@ runExample("01_hello")
 runExample("01_hello", display = "showcase")
 ```
 
-삽입되어 있는 설명 부분을 제거하고 코드만 남기면 다음과 같다. 이것을 @fig-first 의 코드와 비교해 보라. 오로지 UI 부분의 코드만 다르고, 그것도 레이아웃 함수명만 달라져 있다는 것을 알 수 있다(입출력 함수는 그대로이다). 결국 [**bslib**](https://rstudio.github.io/bslib/) 패키지는 UI 부분의 레이아웃만 바꾼다.
+삽입되어 있는 설명 부분을 제거하고 코드만 남기면 다음과 같다. 이것을 @fig-first 의 코드와 비교해 보라. 오로지 UI 부분의 코드만 다르고, 그것도 UI 함수명만 달라져 있다는 것을 알 수 있다(입출력 함수는 그대로이다). 결국 [**bslib**](https://rstudio.github.io/bslib/) 패키지는 UI 구조만 바꾼다.
 
 ```{r}
 #| eval: false
@@ -398,7 +398,7 @@ server <- function(input, output) {
 shinyApp(ui = ui, server = server)
 ```
 
-첫째, `page_sidebar()`가 최상위 레이아웃 함수이다. `page_sidebar()`는 [**bslib**](https://rstudio.github.io/bslib/)에서 가장 널리 사용되는 페이지 레이아웃 함수로, 전체 너비를 차지하는 헤더(제목)와 사용자 입력을 위한 사이드바를 갖춘 대시보드형 레이아웃을 손쉽게 구성할 수 있도록 설계되었다. `page_sidebar()`함수는 전통적인 shiny 레이아웃 함수 중 `fluidPage()`, `titlePanel()`, `sidebarLayout()` 함수의 역할을 동시에 수행한다고 생각할 수 있다.
+첫째, `page_sidebar()`가 최상위 **컨테이너** 함수이다. `page_sidebar()`는 [**bslib**](https://rstudio.github.io/bslib/)에서 가장 널리 사용되는 페이지 컨테이너 함수로, 전체 너비를 차지하는 헤더(제목)와 사용자 입력을 위한 사이드바를 갖춘 대시보드형 UI 구조를 손쉽게 구성할 수 있도록 설계되었다. `page_sidebar()`함수는 전통적인 Shiny 컨테이너 함수 중 `fluidPage()`, `titlePanel()`, `sidebarLayout()` 함수의 역할을 동시에 수행한다고 생각할 수 있다.
 
 둘째, `page_sidebar()` 의 여러 인수가 전통적인 `titlePanel()` 함수와 `sidebarLayout()`의 하위 함수인 `sidebarPanel()` 함수를 대신한다.
 
@@ -406,7 +406,7 @@ shinyApp(ui = ui, server = server)
 
 -   `sidebar = sidebar()`: `sidebarPanel()` 함수와 동일한 기능을 한다. `sidebarPanel()` 함수 속에 입력 함수인 `siderInput()` 함수가 들어 있었던과 동일하게 `sidebar()` 속에 `siderInput()` 함수가 들어 있다.
 
-셋째, 전통적인 Shiny의 `mainPanel()` 함수 없이 출력 표출 함수(`plotOutput()`)가 막바로 사용된다. 그러나 이것은 가장 단순한 방식으로, `card()` 함수를 사용하면 보다 풍성한 옵션을 사용할 수 있다. `card()` 함수 내부에서 `card_header()`와 `card_body()`라는 컴포넌트 함수를 활용한다. 아래는 위의 코드에 대해 두 가자 부가적인 조치를 한 것이다. 첫째, card() 함수를 통해 출력 표출 부분을 보완한다. 둘째, 기본 플롯 함수 대신 ggplot2 패키지를 통해 히스토그램을 작성하고 그것을 plotly 패키지의 ggplotly() 함수를 통해 인터랙티브 플롯을 생성한다. plotly 패키지의 출력 생성 및 출력 표출을 위해 `renderPlotly({})`와 `plotlyOutput()` 함수가 활용되는 점에 주목한다.
+셋째, 전통적인 Shiny의 `mainPanel()` 함수 없이 출력 표출 함수(`plotOutput()`)가 막바로 사용된다. 그러나 이것은 가장 단순한 방식으로, 대표적인 콘텐츠 **컴포넌트** 함수인 `card()` 함수를 사용하면 보다 풍성한 옵션을 사용할 수 있다. `card()` 함수 내부에서 `card_header()`와 `card_body()`라는 컴포넌트 함수를 활용한다. 아래는 위의 코드에 대해 두 가지 부가적인 조치를 한 것이다. 첫째, `card()` 함수를 통해 출력 표출 부분을 보완한다. 둘째, 기본 플롯 함수 대신 [**ggplot2**](https://ggplot2.tidyverse.org/) 패키지를 통해 히스토그램을 작성하고 그것을 [**plotly**](https://plotly.com/r/) 패키지의 `ggplotly()` 함수를 통해 인터랙티브 플롯을 생성한다. [**plotly**](https://plotly.com/r/) 패키지의 출력 생성 및 출력 표출을 위해 `renderPlotly({})`와 `plotlyOutput()` 함수가 활용되는 점에 주목한다.
 
 ```{r}
 #| eval: false
@@ -453,51 +453,65 @@ server <- function(input, output) {
 shinyApp(ui = ui, server = server)
 ```
 
-### 레이아웃 함수: 컨테이너
+### 컨테이너 함수
 
-다음과 같이 용도별 레이아웃 함수를 정리할 수 있다. 자세한 사항은 [**bslib**](https://rstudio.github.io/bslib/) 패키지 홈페이지의 [Get Started](https://rstudio.github.io/bslib/articles/dashboards/index.html)나 [Layouts](https://rstudio.github.io/bslib/articles/column-layout/index.html)를 참고할 수 있다.
+컨테이너 함수란 다른 UI 요소를 담되, 그 자체가 시각적 콘텐츠의 주제가 되지 않고 공간, 전환, 계층 구조를 정의하는 함수이다. 컨테이너 함수는 크게 세 가지로 나뉜다.
 
-+-------------------+---------------------------+-------------------------------------------+
-| 용도              | 함수                      | 위치 및 특징                              |
-+===================+===========================+===========================================+
-| 단일 페이지       | `page_fluid()`            | 기본형                                    |
-|                   |                           |                                           |
-|                   | `page_fillable()`         | 대시보드형                                |
-|                   |                           |                                           |
-|                   | `page_sidebar()`          | 표준형(전역적 사이드바 포함)              |
-+-------------------+---------------------------+-------------------------------------------+
-| 사이드바 레이아웃 | `layout_siderbar()`       | `page_*()` 내부                           |
-|                   |                           |                                           |
-|                   |                           | `card()` 내부                             |
-|                   |                           |                                           |
-|                   |                           | `nav_panel()` 내부                        |
-+-------------------+---------------------------+-------------------------------------------+
-| 다중 컬럼         | `layout_columns()`        | `page_sidebar()` 내부                     |
-|                   |                           |                                           |
-|                   | `layout_column_wrap()`    | `nav_panel()` 내부                        |
-+-------------------+---------------------------+-------------------------------------------+
-| 다중 페이지       | `page_navbar()`           | 네비게이션바 레벨                         |
-|                   |                           |                                           |
-|                   |                           | `nav_panel()`이 개별 페이지               |
-+-------------------+---------------------------+-------------------------------------------+
-| 다중 패널         | `navset_tab()`            | `page_fluid()` 혹은 `page_sidebar()` 내부 |
-|                   |                           |                                           |
-| (페이지 레벨)     | `navset_pill()`           | `nav_panel()`이 개별 패널                 |
-|                   |                           |                                           |
-|                   | `navset_underline()`      |                                           |
-+-------------------+---------------------------+-------------------------------------------+
-| 다중 패널         | `navset_card_tab()`       | `card()` 내부                             |
-|                   |                           |                                           |
-| (카드 레벨)       | `navset_card_pill()`      | `nav_panel()`이 개별 패널                 |
-|                   |                           |                                           |
-|                   | `navset_card_underline()` |                                           |
-+-------------------+---------------------------+-------------------------------------------+
+-   페이지 컨테이너: 페이지 전체의 폭, 높이, 스크롤 방식 등 최상위 UI 구조를 정의하는 컨테이너로, `page_*()` 형태를 띤다.
 
-: bslib 레이아웃 함수 {#tbl-bslib1 tbl-colwidths="\[25, 35, 40\]"}
+-   레이아웃 컨테이너: 페이지 내부에서 여러 UI 요소를 동시에 어떻게 배치할지를 결정하는 컨테이너로, `layout_*()` 형태를 띤다.
 
-### 컴포넌트: UI 구성 요소
+-   내비게이션 컨테이너: 여러 UI 패널을 묶어 사용자 상호작용에 따라 표시되는 콘텐츠를 전환하는 컨테이너로, `navset_*()`의 형태를 띤다.
 
-가장 중요한 컴포넌트에 카드(card), 사이드바(sidebar), 밸류 박스(value box), 툴팁(tooltip)과 팝오버(popover)가 있다. 자세한 사항은 [**bslib**](https://rstudio.github.io/bslib/) 패키지 홈페이지의 [Components](https://rstudio.github.io/bslib/articles/cards/index.html)를 참고할 수 있다.
+분류별 컨테이너 함수를 정리하면 @tbl-bslib1 과 같다. 자세한 사항은 [**bslib**](https://rstudio.github.io/bslib/) 패키지 홈페이지의 [Get Started](https://rstudio.github.io/bslib/articles/dashboards/index.html)나 [Layouts](https://rstudio.github.io/bslib/articles/column-layout/index.html)를 참고할 수 있다.
+
++------------------------+---------------------------+------------------------------------------+
+| 분류                   | 함수                      | 특징                                     |
++========================+===========================+==========================================+
+| 페이지 컨테이너(기본)  | `page_fixed()`            | 고정형(고정폭: 940픽셀)                  |
+|                        |                           |                                          |
+|                        | `page_fluid()`            | 유동형(웹페이지의 전체 폭)               |
+|                        |                           |                                          |
+|                        | `page_fillable()`         | 대시보드형(웹페이지의 전체 폭/높이)      |
++------------------------+---------------------------+------------------------------------------+
+| 페이지 컨테이너(확장)  | `page_sidebar()`          | 표준형(전역적 사이드바 포함)             |
+|                        |                           |                                          |
+|                        | `page_navbar()`           | 다중 페이지, `nav_panel()`의 집합        |
++------------------------+---------------------------+------------------------------------------+
+| 레이아웃 컨테이너      | `layout_siderbar()`       | `page_*()`, `card()`, `nav_panel()` 내부 |
+|                        |                           |                                          |
+|                        | `layout_columns()`        | `page_sidebar()` 내부                    |
+|                        |                           |                                          |
+|                        | `layout_column_wrap()`    | `nav_panel()` 내부                       |
++------------------------+---------------------------+------------------------------------------+
+| 내비게이션 컨테이너    | `navset_tab()`            | `nav_panel()`의 집합                     |
+|                        |                           |                                          |
+| (페이지/레이아웃 레벨) | `navset_pill()`           |                                          |
+|                        |                           |                                          |
+|                        | `navset_underline()`      |                                          |
++------------------------+---------------------------+------------------------------------------+
+| 내비게이션 컨테이너    | `navset_card_tab()`       | `nav_panel()`의 집합                     |
+|                        |                           |                                          |
+| (카드 레벨)            | `navset_card_pill()`      |                                          |
+|                        |                           |                                          |
+|                        | `navset_card_underline()` |                                          |
++------------------------+---------------------------+------------------------------------------+
+
+: bslib 컨테이너 함수 {#tbl-bslib1 tbl-colwidths="\[25, 32, 43\]"}
+
+우선 단일 페이지의 구조를 결정하는 가장 기본적인 **페이지 컨테이너** 함수에 `page_fixed()`, `page_fluid()`, `page_fillable()` 가 있다. `page_fixed()`는 중앙 정렬된 고정 폭 페이지 컨테이너이고, `page_fluid()`는 브라우저 폭에 따라 콘텐츠 영역이 유동적으로 변화는 페이지 컨테이너이고, `page_fillable()`는 브라우저의 가시 영역을 높이까지 포함해 채우도록 설계된 페이지 컨테이너이다. @fig-page_container 는 이 세가지 페이지 컨테이너를 개념적으로 비교하고 있다.
+
+![페이지 컨테이너의 종류(<https://shiny.posit.co/r/articles/build/layout-guide/>)](https://shiny.posit.co/r/articles/build/layout-guide/pages.png){#fig-page_container}
+
+그러나 가장 중요한 페이지 컨테이너 함수는 `page_sidebar()`로 [**bslib**](https://rstudio.github.io/bslib/) 패키지의 표준이다. 이것은 페이지 전체를 채우는 구조 위에 사이드바-메인 영역 분할을 기본으로 제공하는 고수준 페이지 컨테이너이다. 단순히 예기하면 `page_sidebar()`는 `page_fillable()`과 레이아웃 컨테이너인 `layout_siderbar()`를 결합한 것으로 이해할 수 있다. `page_navbar()`는 상단 내비게이션 바를 페이지의 기본 구조로 표함하여, 여러 화면을 전환하는 앱을 구성하는 고수준 페이지 컨테이너이다. `page_navbar()`는 개념적으로 페이지 컨테이너와 내비게이션 컨테이너(navbar)을 통합한다.
+
+**레이아웃 컨테이너**는 페이지 전체가 아니라 페이지 내부 배치를 담당하는데, 페이지 컨테이너와 달리 중첩 사용이 가능하지만 콘텐츠 자체를 표현하지는 않는다. `layout_siderbar()`는 사이드바와 메인 콘텐츠 영역으로 화면을 이분하는 레이아웃 컨테이너를 생성하는데 `page_*()`, `card()`, `nav_panel()` 내부 어디에도 존재할 수 있다. `layout_columns()`는 여러 UI 요소를 동일 행 내의 다중 컬럼으로 배치하는 레이아웃 컨테이너를 생성한다. 컬럼의 수와 폭을 명시적으로 제어할 수 있으며 정돈된 레이아웃 구현에 용이하다. `layout_column_wrap()`은 컬럼을 행 단위로 자동 줄바꿈하여 반응형 배치를 제공하는 레이아웃 컨테이너이다. 컬럼 폭 기준으로 자동 배치하며 화면 크기에 따라 행 수가 동적으로 변한다.
+
+**내비게이션 컨테이너**는 여러 UI 패널을 묶어 사용자 상호작요에 따라 표시되는 콘텐츠를 전환하는 컨테이너로, 페이지 컨테이너나 레이아웃 컨테이너의 내부에서 사용된다. 한 번에 하나의 패널만 활성화되며, 공간 배치가 아니라 상태 전환을 담당한다. `navset_tab()`, `navset_pill()`, `navset_underline()`는 모두 `nav_panel()`들의 집합으로 구성되며, 콘텐츠 전환의 방식이 다를 뿐이다. `navset_tab()`는 전통적인 탭 모양을, `navset_pill()`는 둥근 필(pill) 모양의 버튼을, `navset_underline()`는 밑줄을 그은 형태를 제공한다. `navset_card_tab()`, `navset_card_pill()`, `navset_card_underline()`은 동일한 기능을 하지만 `card` 스타일을 기본으로 내장한 컨테이너이다. `navset_*()` 함수가 페이지 또는 레이아웃의 주요 내비게이션과 같은 비교적 상위 UI 계층에서 사용되는데 반해 `navset_card_*()` 함수는 주로 콘텐츠 블록 내부에 위치하여 카드 수준의 국소적 전환에 사용된다.
+
+### 콘텐츠 컴포넌트: UI 구성 요소
+
+콘텐츠 컴포넌트는 UI 구조를 정의하지 않고, 컨테이너 내부에서 정보와 기능을 하나의 의미 있는 시각적 단위로 표현하는 재사용 가능한 UI 구성 요소이다. 컨테이너가 아니므로 구조에 관여하지 않으며, 사용자가 하나의 UI 플록으로 인식하는 부분이다. 컨테이너가 아니므로 페이지나 레이아웃 구조에 직접 관여하지 않으며, 사용자가 하나의 UI 블록으로 인식하는 부분을 이룬다. 이러한 컴포넌트는 여러 위치에서 반복 사용될 수 있고, 시각적 스타일과 의미를 함께 지닌다는 특징이 있다. [**bslib**](https://rstudio.github.io/bslib/)에서 제공하는 대표적인 콘텐츠 컴포넌트로는 카드(card), 사이드바(sidebar), 밸류 박스(value box), 툴팁(tooltip), 팝오버(popover) 등이 있다. 보다 자세한 내용은 [**bslib**](https://rstudio.github.io/bslib/) 패키지 공식 홈페이지의 [Components](https://rstudio.github.io/bslib/articles/cards/index.html) 섹션을 참고할 수 있다.
 
 #### 카드
 

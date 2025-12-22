@@ -718,11 +718,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul>
 </li>
   <li>
-<a href="#%EC%B5%9C%EC%8B%A0-%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83-%EB%94%94%EC%9E%90%EC%9D%B8-bslib-%ED%8C%A8%ED%82%A4%EC%A7%80" id="toc-최신-레이아웃-디자인-bslib-패키지" class="nav-link" data-scroll-target="#%EC%B5%9C%EC%8B%A0-%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83-%EB%94%94%EC%9E%90%EC%9D%B8-bslib-%ED%8C%A8%ED%82%A4%EC%A7%80"><span class="header-section-number">4</span> 최신 레이아웃 디자인: bslib 패키지</a>
+<a href="#bslib-%ED%8C%A8%ED%82%A4%EC%A7%80%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%ED%98%84%EB%8C%80%EC%A0%81-ui-%EA%B5%AC%EC%A1%B0-%EB%94%94%EC%9E%90%EC%9D%B8" id="toc-bslib-패키지를-활용한-현대적-ui-구조-디자인" class="nav-link" data-scroll-target="#bslib-%ED%8C%A8%ED%82%A4%EC%A7%80%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%ED%98%84%EB%8C%80%EC%A0%81-ui-%EA%B5%AC%EC%A1%B0-%EB%94%94%EC%9E%90%EC%9D%B8"><span class="header-section-number">4</span> bslib 패키지를 활용한 현대적 UI 구조 디자인</a>
   <ul class="collapse">
 <li><a href="#%EA%B0%9C%EC%9A%94-1" id="toc-개요-1" class="nav-link" data-scroll-target="#%EA%B0%9C%EC%9A%94-1"><span class="header-section-number">4.1</span> 개요</a></li>
-  <li><a href="#%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83-%ED%95%A8%EC%88%98-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88" id="toc-레이아웃-함수-컨테이너" class="nav-link" data-scroll-target="#%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83-%ED%95%A8%EC%88%98-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88"><span class="header-section-number">4.2</span> 레이아웃 함수: 컨테이너</a></li>
-  <li><a href="#%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-ui-%EA%B5%AC%EC%84%B1-%EC%9A%94%EC%86%8C" id="toc-컴포넌트-ui-구성-요소" class="nav-link" data-scroll-target="#%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-ui-%EA%B5%AC%EC%84%B1-%EC%9A%94%EC%86%8C"><span class="header-section-number">4.3</span> 컴포넌트: UI 구성 요소</a></li>
+  <li><a href="#%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%ED%95%A8%EC%88%98" id="toc-컨테이너-함수" class="nav-link" data-scroll-target="#%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%ED%95%A8%EC%88%98"><span class="header-section-number">4.2</span> 컨테이너 함수</a></li>
+  <li><a href="#%EC%BD%98%ED%85%90%EC%B8%A0-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-ui-%EA%B5%AC%EC%84%B1-%EC%9A%94%EC%86%8C" id="toc-콘텐츠-컴포넌트-ui-구성-요소" class="nav-link" data-scroll-target="#%EC%BD%98%ED%85%90%EC%B8%A0-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-ui-%EA%B5%AC%EC%84%B1-%EC%9A%94%EC%86%8C"><span class="header-section-number">4.3</span> 콘텐츠 컴포넌트: UI 구성 요소</a></li>
   <li><a href="#%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%A0%95%EC%9D%98-%ED%85%8C%EB%A7%88" id="toc-사용자-정의-테마" class="nav-link" data-scroll-target="#%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%A0%95%EC%9D%98-%ED%85%8C%EB%A7%88"><span class="header-section-number">4.4</span> 사용자 정의 테마</a></li>
   </ul>
 </li>
@@ -768,7 +768,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2025년 12월 18일</p>
+      <p class="date-modified">2025년 12월 22일</p>
     </div>
   </div>
     
@@ -871,11 +871,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>코드를 자세히 살펴보자. 우선 <a href="https://rstudio.github.io/shiny/"><strong>shiny</strong></a>라는 R 패키지를 불러와야 한다. 코드가 <code>ui</code>, <code>server</code>, <code>shinyApp</code>의 세 부분으로 나뉘어져 있다는 것을 알 수 있고, 이것이 위에서 설명한 UI 부분, Server 부분, 결합 및 실행 부분을 담당한다는 점을 쉽게 이해할 수 있다.</p>
 <section id="ui-부분" class="level3" data-number="2.1"><h3 data-number="2.1" class="anchored" data-anchor-id="ui-부분">
 <span class="header-section-number">2.1</span> UI 부분</h3>
-<p>UI 부분은 다양한 함수들이 위계 구조를 이루고 있는데, 전체 구조를 결정하는 <strong>레이아웃 함수</strong>가 마치 컨테이너처럼 존재하고 그 속에 <strong>입출력 함수</strong>가 포함되어 있는 구조이다.</p>
-<p>첫째, 레이아웃 함수가 위계 구조를 이루고 있다. 최상위 <code><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage()</a></code> 함수는 <code><a href="https://rdrr.io/pkg/shiny/man/titlePanel.html">titlePanel()</a></code>과 <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarLayout()</a></code>로 구성되고, <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarLayout()</a></code>은 다시 <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarPanel()</a></code>과 <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">mainPanel()</a></code>로 구성된다. 하나씩 위계적으로 살펴보면 다음과 같다.</p>
+<p>UI 부분은 다양한 함수들이 위계 구조를 이루고 있는데, 전체 형태를 결정하는 <strong>컨테이너 함수</strong>가 <strong>입출력 함수</strong>를 포함하고 있는 구조이다.</p>
+<p>첫째, 컨테이너 함수가 위계 구조를 이루고 있다. 최상위 <code><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage()</a></code> 함수는 <code><a href="https://rdrr.io/pkg/shiny/man/titlePanel.html">titlePanel()</a></code>과 <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarLayout()</a></code>로 구성되고, <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarLayout()</a></code>은 다시 <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarPanel()</a></code>과 <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">mainPanel()</a></code>로 구성된다. 하나씩 위계적으로 살펴보면 다음과 같다.</p>
 <ul>
 <li>
-<p><code><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage()</a></code> : UI의 최상위 컨테이너로서 전체 레이아웃을 관장하며, 브라우저 화면 크기에 따라 자동으로 늘어나고 줄어드는 반응형 레이아웃을 제공한다. 이러한 특성 때문에 ’fluid’라는 이름이 붙었다. 고정 폭을 가진 레이아웃은 <code><a href="https://rdrr.io/pkg/shiny/man/fixedPage.html">fixedPage()</a></code>를 통해 정의할 수 있다. Shiny 앱에서는 기본적으로 <code><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage()</a></code>를 사용한다고 생각하면 된다.</p>
+<p><code><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage()</a></code> : UI의 최상위 컨테이너로서 전체 UI 구조를 관장하며, 브라우저 화면 크기에 따라 자동으로 늘어나고 줄어드는 반응형 레이아웃을 제공한다. 이러한 특성 때문에 ’fluid’라는 이름이 붙었다. 고정 폭을 가진 레이아웃은 <code><a href="https://rdrr.io/pkg/shiny/man/fixedPage.html">fixedPage()</a></code>를 통해 정의할 수 있다. Shiny 앱에서는 기본적으로 <code><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage()</a></code>를 사용한다고 생각하면 된다.</p>
 <ul>
 <li><p><code><a href="https://rdrr.io/pkg/shiny/man/titlePanel.html">titlePanel()</a></code> : 제목이 들어가는 부분이다. 생략가능하다.</p></li>
 <li>
@@ -1107,13 +1107,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <p>Shiny 웹 앱에서의 활용을 염두에 둔 패키지들은 모두 이러한 출력 함수의 쌍을 제공하고 있다. 따라서 출력 함수는 굉장히 많을 수 있다. <a href="https://shiny.posit.co/r/components/">R Shiny Components</a> 웹페이지는 기본 5개의 함수쌍에 주요 패키지를 포함하는 12개 정도의 출력 함수쌍을 예시로 제시하고 있다.</p>
-</section></section><section id="최신-레이아웃-디자인-bslib-패키지" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="최신-레이아웃-디자인-bslib-패키지">
-<span class="header-section-number">4</span> 최신 레이아웃 디자인: bslib 패키지</h2>
+</section></section><section id="bslib-패키지를-활용한-현대적-ui-구조-디자인" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="bslib-패키지를-활용한-현대적-ui-구조-디자인">
+<span class="header-section-number">4</span> bslib 패키지를 활용한 현대적 UI 구조 디자인</h2>
 <section id="개요-1" class="level3" data-number="4.1"><h3 data-number="4.1" class="anchored" data-anchor-id="개요-1">
 <span class="header-section-number">4.1</span> 개요</h3>
-<p>위에서 Shiny의 전체 레이아웃은 위계적으로 구성된 레이아웃 함수들에 의해 결정된다고 했다. <code><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/titlePanel.html">titlePanel()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarLayout()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarPanel()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">mainPanel()</a></code> 과 같은 레이아웃를 통해 <a href="#fig-first" class="quarto-xref">그림&nbsp;3</a> 에 나타나 있는 것과 같은 외향의 레이아웃이 완성된 것이다.</p>
-<p>이러한 <strong>전통적인</strong> 레이아웃 디자인을 보다 현대적인 레이아웃으로 탈바꿈하기 위해 등장한 것이 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지이다. <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지는 Bootstrap을 기반으로 Shiny와 R Markdown을 위한 현대적인 UI 도구 모음을 제공한다. 카드, 밸류 박스, 사이드바 등 재사용 가능한 UI 구성 요소를 통해 Shiny 웹 앱과 문서를 효율적으로 구성할 수 있으며, 테마 시스템을 활용해 웹 앱과 문서의 외관을 유연하게 사용자 정의하고 실시간으로 조정할 수 있다. 또한 최신 Bootstrap 및 Bootswatch를 지원하여, 기본적으로 Bootstrap 3에 의존하는 기존 Shiny 및 R Markdown 환경보다 현대적인 웹 UI 구현을 가능하게 한다.</p>
-<p><a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지는 shiny 패키지의 기본 레이아웃 함수와는 다른 종류의 함수를 제공한다. 그러므로 조금 더 현대적인 감각의 웹 앱을 생성하기 위해서는 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지에서 제공되는 레이아웃 함수에 익숙해져야 한다. 여기서는 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지를 통해 <a href="#fig-first" class="quarto-xref">그림&nbsp;3</a> 웹 앱이 어떻게 달라지는지를 살펴본다.</p>
+<p>위에서 Shiny의 전체 레이아웃은 위계적으로 구성된 컨테이너 함수들에 의해 결정된다고 했다. <code><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/titlePanel.html">titlePanel()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarLayout()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarPanel()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">mainPanel()</a></code> 과 같은 컨테이너 함수를 통해 <a href="#fig-first" class="quarto-xref">그림&nbsp;3</a> 에 나타나 있는 것과 같은 외향의 UI 구조가 완성된 것이다.</p>
+<p>보다 <strong>현대적인</strong> UI 구조 디자인을 위해 등장한 것이 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지이다. <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지는 Bootstrap을 기반으로 Shiny와 R Markdown을 위한 현대적인 UI 도구 모음을 제공한다. <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a>패키지는 다양하고 유연한 <strong>컨테이너</strong> 함수를 제공할 뿐만 아니라, 카드(card), 밸류 박스(value box), 사이드바(sidebar) 등 재사용 가능한 콘텐츠 <strong>컴포넌트</strong>를 통해 Shiny 웹 앱과 문서를 효율적으로 구성할 수 있게 한다(전통적인 Shiny에 부족한 부분). 또한 테마 시스템을 활용하여 웹 앱과 문서의 외관을 유연하게 사용자 정의하고, 이를 실시간으로 조정할 수 있다. 나아가 최신 Bootstrap 및 Bootswatch를 지원함으로써, 기본적으로 Bootstrap 3에 의존하는 기존 Shiny 및 R Markdown 환경에 비해 보다 현대적이고 일관된 웹 UI 구현을 가능하게 한다.</p>
+<p><a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지를 이용해 좀 더 현대적인 감각의 웹 앱을 생성하기 위해서는 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지에서 제공되는 다양한 <strong>UI 구성 함수(컨테이너 함수와 컴포넌트 함수)</strong>를 익혀야 하며, 뒤에서 자세히 다룬다. 여기서는 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지를 통해 <a href="#fig-first" class="quarto-xref">그림&nbsp;3</a> 웹 앱이 어떻게 달라지는지에 대해서만 살펴본다.</p>
 <p><a href="https://rstudio.github.io/shiny/"><strong>Shiny</strong></a> 패키지는 기본적으로 11개의 예제 웹 앱을 제공한다. 다음과 같이 실행해 본다.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.posit.co/">shiny</a></span><span class="op">)</span></span>
@@ -1136,7 +1136,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/runExample.html">runExample</a></span><span class="op">(</span><span class="st">"01_hello"</span>, display <span class="op">=</span> <span class="st">"showcase"</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>삽입되어 있는 설명 부분을 제거하고 코드만 남기면 다음과 같다. 이것을 <a href="#fig-first" class="quarto-xref">그림&nbsp;3</a> 의 코드와 비교해 보라. 오로지 UI 부분의 코드만 다르고, 그것도 레이아웃 함수명만 달라져 있다는 것을 알 수 있다(입출력 함수는 그대로이다). 결국 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지는 UI 부분의 레이아웃만 바꾼다.</p>
+<p>삽입되어 있는 설명 부분을 제거하고 코드만 남기면 다음과 같다. 이것을 <a href="#fig-first" class="quarto-xref">그림&nbsp;3</a> 의 코드와 비교해 보라. 오로지 UI 부분의 코드만 다르고, 그것도 UI 함수명만 달라져 있다는 것을 알 수 있다(입출력 함수는 그대로이다). 결국 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지는 UI 구조만 바꾼다.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.posit.co/">shiny</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio.github.io/bslib/">bslib</a></span><span class="op">)</span></span>
@@ -1173,13 +1173,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html">shinyApp</a></span><span class="op">(</span>ui <span class="op">=</span> <span class="va">ui</span>, server <span class="op">=</span> <span class="va">server</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>첫째, <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code>가 최상위 레이아웃 함수이다. <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code>는 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a>에서 가장 널리 사용되는 페이지 레이아웃 함수로, 전체 너비를 차지하는 헤더(제목)와 사용자 입력을 위한 사이드바를 갖춘 대시보드형 레이아웃을 손쉽게 구성할 수 있도록 설계되었다. <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code>함수는 전통적인 shiny 레이아웃 함수 중 <code><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/titlePanel.html">titlePanel()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarLayout()</a></code> 함수의 역할을 동시에 수행한다고 생각할 수 있다.</p>
+<p>첫째, <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code>가 최상위 <strong>컨테이너</strong> 함수이다. <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code>는 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a>에서 가장 널리 사용되는 페이지 컨테이너 함수로, 전체 너비를 차지하는 헤더(제목)와 사용자 입력을 위한 사이드바를 갖춘 대시보드형 UI 구조를 손쉽게 구성할 수 있도록 설계되었다. <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code>함수는 전통적인 Shiny 컨테이너 함수 중 <code><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/titlePanel.html">titlePanel()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarLayout()</a></code> 함수의 역할을 동시에 수행한다고 생각할 수 있다.</p>
 <p>둘째, <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code> 의 여러 인수가 전통적인 <code><a href="https://rdrr.io/pkg/shiny/man/titlePanel.html">titlePanel()</a></code> 함수와 <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarLayout()</a></code>의 하위 함수인 <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarPanel()</a></code> 함수를 대신한다.</p>
 <ul>
 <li><p><code>title</code>: 대시보드의 제목을 설정할 수 있으며, <code><a href="https://rdrr.io/pkg/shiny/man/titlePanel.html">titlePanel()</a></code> 함수와 동일한 기능을 한다.</p></li>
 <li><p><code>sidebar = sidebar()</code>: <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarPanel()</a></code> 함수와 동일한 기능을 한다. <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarPanel()</a></code> 함수 속에 입력 함수인 <code>siderInput()</code> 함수가 들어 있었던과 동일하게 <code><a href="https://rstudio.github.io/bslib/reference/sidebar.html">sidebar()</a></code> 속에 <code>siderInput()</code> 함수가 들어 있다.</p></li>
 </ul>
-<p>셋째, 전통적인 Shiny의 <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">mainPanel()</a></code> 함수 없이 출력 표출 함수(<code><a href="https://rdrr.io/pkg/shiny/man/plotOutput.html">plotOutput()</a></code>)가 막바로 사용된다. 그러나 이것은 가장 단순한 방식으로, <code><a href="https://rstudio.github.io/bslib/reference/card.html">card()</a></code> 함수를 사용하면 보다 풍성한 옵션을 사용할 수 있다. <code><a href="https://rstudio.github.io/bslib/reference/card.html">card()</a></code> 함수 내부에서 <code><a href="https://rstudio.github.io/bslib/reference/card_body.html">card_header()</a></code>와 <code><a href="https://rstudio.github.io/bslib/reference/card_body.html">card_body()</a></code>라는 컴포넌트 함수를 활용한다. 아래는 위의 코드에 대해 두 가자 부가적인 조치를 한 것이다. 첫째, card() 함수를 통해 출력 표출 부분을 보완한다. 둘째, 기본 플롯 함수 대신 ggplot2 패키지를 통해 히스토그램을 작성하고 그것을 plotly 패키지의 ggplotly() 함수를 통해 인터랙티브 플롯을 생성한다. plotly 패키지의 출력 생성 및 출력 표출을 위해 <code>renderPlotly({})</code>와 <code><a href="https://rdrr.io/pkg/plotly/man/plotly-shiny.html">plotlyOutput()</a></code> 함수가 활용되는 점에 주목한다.</p>
+<p>셋째, 전통적인 Shiny의 <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">mainPanel()</a></code> 함수 없이 출력 표출 함수(<code><a href="https://rdrr.io/pkg/shiny/man/plotOutput.html">plotOutput()</a></code>)가 막바로 사용된다. 그러나 이것은 가장 단순한 방식으로, 대표적인 콘텐츠 <strong>컴포넌트</strong> 함수인 <code><a href="https://rstudio.github.io/bslib/reference/card.html">card()</a></code> 함수를 사용하면 보다 풍성한 옵션을 사용할 수 있다. <code><a href="https://rstudio.github.io/bslib/reference/card.html">card()</a></code> 함수 내부에서 <code><a href="https://rstudio.github.io/bslib/reference/card_body.html">card_header()</a></code>와 <code><a href="https://rstudio.github.io/bslib/reference/card_body.html">card_body()</a></code>라는 컴포넌트 함수를 활용한다. 아래는 위의 코드에 대해 두 가지 부가적인 조치를 한 것이다. 첫째, <code><a href="https://rstudio.github.io/bslib/reference/card.html">card()</a></code> 함수를 통해 출력 표출 부분을 보완한다. 둘째, 기본 플롯 함수 대신 <a href="https://ggplot2.tidyverse.org/"><strong>ggplot2</strong></a> 패키지를 통해 히스토그램을 작성하고 그것을 <a href="https://plotly.com/r/"><strong>plotly</strong></a> 패키지의 <code><a href="https://rdrr.io/pkg/plotly/man/ggplotly.html">ggplotly()</a></code> 함수를 통해 인터랙티브 플롯을 생성한다. <a href="https://plotly.com/r/"><strong>plotly</strong></a> 패키지의 출력 생성 및 출력 표출을 위해 <code>renderPlotly({})</code>와 <code><a href="https://rdrr.io/pkg/plotly/man/plotly-shiny.html">plotlyOutput()</a></code> 함수가 활용되는 점에 주목한다.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.posit.co/">shiny</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio.github.io/bslib/">bslib</a></span><span class="op">)</span></span>
@@ -1223,70 +1223,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html">shinyApp</a></span><span class="op">(</span>ui <span class="op">=</span> <span class="va">ui</span>, server <span class="op">=</span> <span class="va">server</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section><section id="레이아웃-함수-컨테이너" class="level3" data-number="4.2"><h3 data-number="4.2" class="anchored" data-anchor-id="레이아웃-함수-컨테이너">
-<span class="header-section-number">4.2</span> 레이아웃 함수: 컨테이너</h3>
-<p>다음과 같이 용도별 레이아웃 함수를 정리할 수 있다. 자세한 사항은 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지 홈페이지의 <a href="https://rstudio.github.io/bslib/articles/dashboards/index.html">Get Started</a>나 <a href="https://rstudio.github.io/bslib/articles/column-layout/index.html">Layouts</a>를 참고할 수 있다.</p>
-<div id="tbl-bslib1" class="quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[25, 35, 40]">
+</section><section id="컨테이너-함수" class="level3" data-number="4.2"><h3 data-number="4.2" class="anchored" data-anchor-id="컨테이너-함수">
+<span class="header-section-number">4.2</span> 컨테이너 함수</h3>
+<p>컨테이너 함수란 다른 UI 요소를 담되, 그 자체가 시각적 콘텐츠의 주제가 되지 않고 공간, 전환, 계층 구조를 정의하는 함수이다. 컨테이너 함수는 크게 세 가지로 나뉜다.</p>
+<ul>
+<li><p>페이지 컨테이너: 페이지 전체의 폭, 높이, 스크롤 방식 등 최상위 UI 구조를 정의하는 컨테이너로, <code>page_*()</code> 형태를 띤다.</p></li>
+<li><p>레이아웃 컨테이너: 페이지 내부에서 여러 UI 요소를 동시에 어떻게 배치할지를 결정하는 컨테이너로, <code>layout_*()</code> 형태를 띤다.</p></li>
+<li><p>내비게이션 컨테이너: 여러 UI 패널을 묶어 사용자 상호작용에 따라 표시되는 콘텐츠를 전환하는 컨테이너로, <code>navset_*()</code>의 형태를 띤다.</p></li>
+</ul>
+<p>분류별 컨테이너 함수를 정리하면 <a href="#tbl-bslib1" class="quarto-xref">표&nbsp;3</a> 과 같다. 자세한 사항은 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지 홈페이지의 <a href="https://rstudio.github.io/bslib/articles/dashboards/index.html">Get Started</a>나 <a href="https://rstudio.github.io/bslib/articles/column-layout/index.html">Layouts</a>를 참고할 수 있다.</p>
+<div id="tbl-bslib1" class="quarto-float quarto-figure quarto-figure-center anchored" data-tbl-colwidths="[25, 32, 43]">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-bslib1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-표&nbsp;3: bslib 레이아웃 함수
+표&nbsp;3: bslib 컨테이너 함수
 </figcaption><div aria-describedby="tbl-bslib1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
-<col style="width: 35%">
-<col style="width: 40%">
+<col style="width: 32%">
+<col style="width: 43%">
 </colgroup>
 <thead><tr class="header">
-<th>용도</th>
+<th>분류</th>
 <th>함수</th>
-<th>위치 및 특징</th>
+<th>특징</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>단일 페이지</td>
+<td>페이지 컨테이너(기본)</td>
 <td>
+<p><code><a href="https://rstudio.github.io/bslib/reference/page.html">page_fixed()</a></code></p>
 <p><code><a href="https://rstudio.github.io/bslib/reference/page.html">page_fluid()</a></code></p>
 <p><code><a href="https://rstudio.github.io/bslib/reference/page_fillable.html">page_fillable()</a></code></p>
-<p><code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code></p>
 </td>
 <td>
-<p>기본형</p>
-<p>대시보드형</p>
-<p>표준형(전역적 사이드바 포함)</p>
+<p>고정형(고정폭: 940픽셀)</p>
+<p>유동형(웹페이지의 전체 폭)</p>
+<p>대시보드형(웹페이지의 전체 폭/높이)</p>
 </td>
 </tr>
 <tr class="even">
-<td>사이드바 레이아웃</td>
-<td><code>layout_siderbar()</code></td>
+<td>페이지 컨테이너(확장)</td>
 <td>
-<p><code>page_*()</code> 내부</p>
-<p><code><a href="https://rstudio.github.io/bslib/reference/card.html">card()</a></code> 내부</p>
-<p><code><a href="https://rstudio.github.io/bslib/reference/nav-items.html">nav_panel()</a></code> 내부</p>
+<p><code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code></p>
+<p><code><a href="https://rstudio.github.io/bslib/reference/page_navbar.html">page_navbar()</a></code></p>
+</td>
+<td>
+<p>표준형(전역적 사이드바 포함)</p>
+<p>다중 페이지, <code><a href="https://rstudio.github.io/bslib/reference/nav-items.html">nav_panel()</a></code>의 집합</p>
 </td>
 </tr>
 <tr class="odd">
-<td>다중 컬럼</td>
+<td>레이아웃 컨테이너</td>
 <td>
+<p><code>layout_siderbar()</code></p>
 <p><code><a href="https://rstudio.github.io/bslib/reference/layout_columns.html">layout_columns()</a></code></p>
 <p><code><a href="https://rstudio.github.io/bslib/reference/layout_column_wrap.html">layout_column_wrap()</a></code></p>
 </td>
 <td>
+<p><code>page_*()</code>, <code><a href="https://rstudio.github.io/bslib/reference/card.html">card()</a></code>, <code><a href="https://rstudio.github.io/bslib/reference/nav-items.html">nav_panel()</a></code> 내부</p>
 <p><code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code> 내부</p>
 <p><code><a href="https://rstudio.github.io/bslib/reference/nav-items.html">nav_panel()</a></code> 내부</p>
 </td>
 </tr>
 <tr class="even">
-<td>다중 페이지</td>
-<td><code><a href="https://rstudio.github.io/bslib/reference/page_navbar.html">page_navbar()</a></code></td>
 <td>
-<p>네비게이션바 레벨</p>
-<p><code><a href="https://rstudio.github.io/bslib/reference/nav-items.html">nav_panel()</a></code>이 개별 페이지</p>
-</td>
-</tr>
-<tr class="odd">
-<td>
-<p>다중 패널</p>
-<p>(페이지 레벨)</p>
+<p>내비게이션 컨테이너</p>
+<p>(페이지/레이아웃 레벨)</p>
 </td>
 <td>
 <p><code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_tab()</a></code></p>
@@ -1294,13 +1296,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_underline()</a></code></p>
 </td>
 <td>
-<p><code><a href="https://rstudio.github.io/bslib/reference/page.html">page_fluid()</a></code> 혹은 <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code> 내부</p>
-<p><code><a href="https://rstudio.github.io/bslib/reference/nav-items.html">nav_panel()</a></code>이 개별 패널</p>
-</td>
+<code><a href="https://rstudio.github.io/bslib/reference/nav-items.html">nav_panel()</a></code>의 집합</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>
-<p>다중 패널</p>
+<p>내비게이션 컨테이너</p>
 <p>(카드 레벨)</p>
 </td>
 <td>
@@ -1309,18 +1309,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_card_underline()</a></code></p>
 </td>
 <td>
-<p><code><a href="https://rstudio.github.io/bslib/reference/card.html">card()</a></code> 내부</p>
-<p><code><a href="https://rstudio.github.io/bslib/reference/nav-items.html">nav_panel()</a></code>이 개별 패널</p>
-</td>
+<code><a href="https://rstudio.github.io/bslib/reference/nav-items.html">nav_panel()</a></code>의 집합</td>
 </tr>
 </tbody>
 </table>
 </div>
 </figure>
 </div>
-</section><section id="컴포넌트-ui-구성-요소" class="level3" data-number="4.3"><h3 data-number="4.3" class="anchored" data-anchor-id="컴포넌트-ui-구성-요소">
-<span class="header-section-number">4.3</span> 컴포넌트: UI 구성 요소</h3>
-<p>가장 중요한 컴포넌트에 카드(card), 사이드바(sidebar), 밸류 박스(value box), 툴팁(tooltip)과 팝오버(popover)가 있다. 자세한 사항은 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지 홈페이지의 <a href="https://rstudio.github.io/bslib/articles/cards/index.html">Components</a>를 참고할 수 있다.</p>
+<p>우선 단일 페이지의 구조를 결정하는 가장 기본적인 <strong>페이지 컨테이너</strong> 함수에 <code><a href="https://rstudio.github.io/bslib/reference/page.html">page_fixed()</a></code>, <code><a href="https://rstudio.github.io/bslib/reference/page.html">page_fluid()</a></code>, <code><a href="https://rstudio.github.io/bslib/reference/page_fillable.html">page_fillable()</a></code> 가 있다. <code><a href="https://rstudio.github.io/bslib/reference/page.html">page_fixed()</a></code>는 중앙 정렬된 고정 폭 페이지 컨테이너이고, <code><a href="https://rstudio.github.io/bslib/reference/page.html">page_fluid()</a></code>는 브라우저 폭에 따라 콘텐츠 영역이 유동적으로 변화는 페이지 컨테이너이고, <code><a href="https://rstudio.github.io/bslib/reference/page_fillable.html">page_fillable()</a></code>는 브라우저의 가시 영역을 높이까지 포함해 채우도록 설계된 페이지 컨테이너이다. <a href="#fig-page_container" class="quarto-xref">그림&nbsp;6</a> 는 이 세가지 페이지 컨테이너를 개념적으로 비교하고 있다.</p>
+<div id="fig-page_container" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-page_container-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://shiny.posit.co/r/articles/build/layout-guide/pages.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="그림&nbsp;6: 페이지 컨테이너의 종류(https://shiny.posit.co/r/articles/build/layout-guide/)"><img src="https://shiny.posit.co/r/articles/build/layout-guide/pages.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-page_container-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;6: 페이지 컨테이너의 종류(<a href="https://shiny.posit.co/r/articles/build/layout-guide/" class="uri">https://shiny.posit.co/r/articles/build/layout-guide/</a>)
+</figcaption></figure>
+</div>
+<p>그러나 가장 중요한 페이지 컨테이너 함수는 <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code>로 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지의 표준이다. 이것은 페이지 전체를 채우는 구조 위에 사이드바-메인 영역 분할을 기본으로 제공하는 고수준 페이지 컨테이너이다. 단순히 예기하면 <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code>는 <code><a href="https://rstudio.github.io/bslib/reference/page_fillable.html">page_fillable()</a></code>과 레이아웃 컨테이너인 <code>layout_siderbar()</code>를 결합한 것으로 이해할 수 있다. <code><a href="https://rstudio.github.io/bslib/reference/page_navbar.html">page_navbar()</a></code>는 상단 내비게이션 바를 페이지의 기본 구조로 표함하여, 여러 화면을 전환하는 앱을 구성하는 고수준 페이지 컨테이너이다. <code><a href="https://rstudio.github.io/bslib/reference/page_navbar.html">page_navbar()</a></code>는 개념적으로 페이지 컨테이너와 내비게이션 컨테이너(navbar)을 통합한다.</p>
+<p><strong>레이아웃 컨테이너</strong>는 페이지 전체가 아니라 페이지 내부 배치를 담당하는데, 페이지 컨테이너와 달리 중첩 사용이 가능하지만 콘텐츠 자체를 표현하지는 않는다. <code>layout_siderbar()</code>는 사이드바와 메인 콘텐츠 영역으로 화면을 이분하는 레이아웃 컨테이너를 생성하는데 <code>page_*()</code>, <code><a href="https://rstudio.github.io/bslib/reference/card.html">card()</a></code>, <code><a href="https://rstudio.github.io/bslib/reference/nav-items.html">nav_panel()</a></code> 내부 어디에도 존재할 수 있다. <code><a href="https://rstudio.github.io/bslib/reference/layout_columns.html">layout_columns()</a></code>는 여러 UI 요소를 동일 행 내의 다중 컬럼으로 배치하는 레이아웃 컨테이너를 생성한다. 컬럼의 수와 폭을 명시적으로 제어할 수 있으며 정돈된 레이아웃 구현에 용이하다. <code><a href="https://rstudio.github.io/bslib/reference/layout_column_wrap.html">layout_column_wrap()</a></code>은 컬럼을 행 단위로 자동 줄바꿈하여 반응형 배치를 제공하는 레이아웃 컨테이너이다. 컬럼 폭 기준으로 자동 배치하며 화면 크기에 따라 행 수가 동적으로 변한다.</p>
+<p><strong>내비게이션 컨테이너</strong>는 여러 UI 패널을 묶어 사용자 상호작요에 따라 표시되는 콘텐츠를 전환하는 컨테이너로, 페이지 컨테이너나 레이아웃 컨테이너의 내부에서 사용된다. 한 번에 하나의 패널만 활성화되며, 공간 배치가 아니라 상태 전환을 담당한다. <code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_tab()</a></code>, <code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_pill()</a></code>, <code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_underline()</a></code>는 모두 <code><a href="https://rstudio.github.io/bslib/reference/nav-items.html">nav_panel()</a></code>들의 집합으로 구성되며, 콘텐츠 전환의 방식이 다를 뿐이다. <code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_tab()</a></code>는 전통적인 탭 모양을, <code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_pill()</a></code>는 둥근 필(pill) 모양의 버튼을, <code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_underline()</a></code>는 밑줄을 그은 형태를 제공한다. <code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_card_tab()</a></code>, <code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_card_pill()</a></code>, <code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_card_underline()</a></code>은 동일한 기능을 하지만 <code>card</code> 스타일을 기본으로 내장한 컨테이너이다. <code>navset_*()</code> 함수가 페이지 또는 레이아웃의 주요 내비게이션과 같은 비교적 상위 UI 계층에서 사용되는데 반해 <code>navset_card_*()</code> 함수는 주로 콘텐츠 블록 내부에 위치하여 카드 수준의 국소적 전환에 사용된다.</p>
+</section><section id="콘텐츠-컴포넌트-ui-구성-요소" class="level3" data-number="4.3"><h3 data-number="4.3" class="anchored" data-anchor-id="콘텐츠-컴포넌트-ui-구성-요소">
+<span class="header-section-number">4.3</span> 콘텐츠 컴포넌트: UI 구성 요소</h3>
+<p>콘텐츠 컴포넌트는 UI 구조를 정의하지 않고, 컨테이너 내부에서 정보와 기능을 하나의 의미 있는 시각적 단위로 표현하는 재사용 가능한 UI 구성 요소이다. 컨테이너가 아니므로 구조에 관여하지 않으며, 사용자가 하나의 UI 플록으로 인식하는 부분이다. 컨테이너가 아니므로 페이지나 레이아웃 구조에 직접 관여하지 않으며, 사용자가 하나의 UI 블록으로 인식하는 부분을 이룬다. 이러한 컴포넌트는 여러 위치에서 반복 사용될 수 있고, 시각적 스타일과 의미를 함께 지닌다는 특징이 있다. <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a>에서 제공하는 대표적인 콘텐츠 컴포넌트로는 카드(card), 사이드바(sidebar), 밸류 박스(value box), 툴팁(tooltip), 팝오버(popover) 등이 있다. 보다 자세한 내용은 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지 공식 홈페이지의 <a href="https://rstudio.github.io/bslib/articles/cards/index.html">Components</a> 섹션을 참고할 수 있다.</p>
 <section id="카드" class="level4" data-number="4.3.1"><h4 data-number="4.3.1" class="anchored" data-anchor-id="카드">
 <span class="header-section-number">4.3.1</span> 카드</h4>
 <p>카드(card)는 현대적인 UI에서 가장 널리 사용되는 정보 구성 단위 중 하나이다. 기본적으로 카드는 테두리와 여백을 갖는 직사각형 컨테이너에 불과하지만, 관련된 정보를 의미 있게 묶어 제시할 경우 사용자가 내용을 보다 쉽게 이해하고, 집중하며, 탐색할 수 있도록 돕는다. 이러한 특성 때문에 카드는 대시보드와 UI 설계에서 핵심적인 역할을 하며, 대부분의 성공적인 대시보드 및 UI 프레임워크는 카드를 주요 컴포넌트로 채택하고 있다. <code><a href="https://rstudio.github.io/bslib/reference/card.html">card()</a></code> 함수는 다음과 같은 컴포넌트 함수를 갖는다.</p>
@@ -1384,13 +1394,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></section><section id="테마-미리보기-및-검증" class="level4" data-number="4.4.2"><h4 data-number="4.4.2" class="anchored" data-anchor-id="테마-미리보기-및-검증">
 <span class="header-section-number">4.4.2</span> 테마 미리보기 및 검증</h4>
 <p><a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지의 <code><a href="https://rstudio.github.io/bslib/reference/bs_theme_preview.html">bs_theme_preview()</a></code> 함수는 사용자 정의 테마를 실제 UI 구성 요소에 적용해 보며 시각적 효과를 즉시 확인할 수 있는 테마 미리보기 및 검증 도구이다.</p>
-<p>콘솔에서 함수를 실행하면, 버튼, 카드, 입력 위젯 등 대표 UI 컴포넌트에 테마를 적용해볼 수 있고, 색상 대비, 타이포그래피, 여백 등을 한눈에 점검할 수 있을 뿐만 아니라, 테마 수정의 결과를 즉시 확인해 볼 수 있다. <a href="#fig-theming" class="quarto-xref">그림&nbsp;6</a> 에서 볼 수 있는 것처럼 오른편의 Theme customizer를 조작하여 이러한 기능을 활용해 볼 수 있다.</p>
+<p>콘솔에서 함수를 실행하면, 버튼, 카드, 입력 위젯 등 대표 UI 컴포넌트에 테마를 적용해볼 수 있고, 색상 대비, 타이포그래피, 여백 등을 한눈에 점검할 수 있을 뿐만 아니라, 테마 수정의 결과를 즉시 확인해 볼 수 있다. <a href="#fig-theming" class="quarto-xref">그림&nbsp;7</a> 에서 볼 수 있는 것처럼 오른편의 Theme customizer를 조작하여 이러한 기능을 활용해 볼 수 있다.</p>
 <div id="fig-theming" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-theming-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/clipboard-4114941204.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="그림&nbsp;6: be_theme_update() 함수를 활용한 테마 미리보기 및 검증"><img src="images/clipboard-4114941204.png" class="img-fluid figure-img"></a>
+<a href="images/clipboard-4114941204.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="그림&nbsp;7: be_theme_update() 함수를 활용한 테마 미리보기 및 검증"><img src="images/clipboard-4114941204.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-theming-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;6: <code>be_theme_update()</code> 함수를 활용한 테마 미리보기 및 검증
+그림&nbsp;7: <code>be_theme_update()</code> 함수를 활용한 테마 미리보기 및 검증
 </figcaption></figure>
 </div>
 </section></section></section><section id="반응성-함수" class="level2" data-number="5"><h2 data-number="5" class="anchored" data-anchor-id="반응성-함수">
