@@ -284,39 +284,26 @@ UI 파일과 Server 파일을 분리하는 방식은 코드가 매우 복잡할 
 
 다음은 다섯 가지 기본 출력 함수의 쌍을 보여준다. 출력 표출 함수는 `*Output()`의 형식을, 출력 생성 함수는 `render*({})`의 형식을 취한다.
 
-+--------------------+--------------------------------------+------------------------+
-| 형식               | 출력 표출 함수(UI)                   | 출력 생성 함수(Server) |
-+====================+======================================+========================+
-| 플롯               | `plotOutput(outputID = "")`          | `renderPlot({})`       |
-+--------------------+--------------------------------------+------------------------+
-| 테이블             | `tableOutput(outputID = "")`         | `renderTable({})`      |
-+--------------------+--------------------------------------+------------------------+
-| 일반 텍스트        | `textOutput(outputID = "")`          | `renderText({})`       |
-+--------------------+--------------------------------------+------------------------+
-| 사전 포맷된 텍스트 | `verbatimeTextOutput(outputID = "")` | `renderPrint({})`      |
-+--------------------+--------------------------------------+------------------------+
-| 이미지             | `imageOutput(outputID = "")`         | `renderImage({})`      |
-+--------------------+--------------------------------------+------------------------+
+| 형식 | 출력 표출 함수(UI) | 출력 생성 함수(Server) |
+|----|----|----|
+| 플롯 | `plotOutput(outputID = "")` | `renderPlot({})` |
+| 테이블 | `tableOutput(outputID = "")` | `renderTable({})` |
+| 일반 텍스트 | `textOutput(outputID = "")` | `renderText({})` |
+| 사전 포맷된 텍스트 | `verbatimeTextOutput(outputID = "")` | `renderPrint({})` |
+| 이미지 | `imageOutput(outputID = "")` | `renderImage({})` |
 
 : 기본 출력 함수 {#tbl-out1 tbl-colwidths="\[25, 50, 25\]"}
 
 그런데 특히 주요 시각화 패키지들은 Shiny 웹 앱 구축을 염두에 두고 개별적인 출력 표출 함수와 출력 생성 함수를 제공하고 있다. 중요한 패키지에 대해 이를 정리하면 다음과 같다. 모두 `패키지명Output()`형식과 `render패키지명({})`의 형식을 띤다.
 
-+----------------------------------------------------+----------------------------------+------------------------+
-| 패키지                                             | 출력 표출 함수(UI)               | 출력 생성 함수(Server) |
-+====================================================+==================================+========================+
-| [**DT**](https://rstudio.github.io/DT/)            | `DTOutput(outputID = "")`        | `renderDT({})`         |
-+----------------------------------------------------+----------------------------------+------------------------+
-| [**reactable**](https://glin.github.io/reactable/) | `reactableOutput(outputID = "")` | `renderReactable({})`  |
-+----------------------------------------------------+----------------------------------+------------------------+
-| [**plotly**](https://plotly.com/r/)                | `plotlyOutput(outputID = "")`    | `renderPlotyl({})`     |
-+----------------------------------------------------+----------------------------------+------------------------+
-| [**echarts4r**](https://echarts4r.john-coene.com/) | `echarts4rOutput(outputID = "")` | `renderEcharts4r({})`  |
-+----------------------------------------------------+----------------------------------+------------------------+
-| [**leaflet**](https://rstudio.github.io/leaflet/)  | `leafletOutput(outputID = "")`   | `renderLeaflet({})`    |
-+----------------------------------------------------+----------------------------------+------------------------+
-| [**tmap**](https://r-tmap.github.io/tmap/)         | `tmapOutput(outputID = "")`      | `renderTmap({})`       |
-+----------------------------------------------------+----------------------------------+------------------------+
+| 패키지 | 출력 표출 함수(UI) | 출력 생성 함수(Server) |
+|----|----|----|
+| [**DT**](https://rstudio.github.io/DT/) | `DTOutput(outputID = "")` | `renderDT({})` |
+| [**reactable**](https://glin.github.io/reactable/) | `reactableOutput(outputID = "")` | `renderReactable({})` |
+| [**plotly**](https://plotly.com/r/) | `plotlyOutput(outputID = "")` | `renderPlotyl({})` |
+| [**echarts4r**](https://echarts4r.john-coene.com/) | `echarts4rOutput(outputID = "")` | `renderEcharts4r({})` |
+| [**leaflet**](https://rstudio.github.io/leaflet/) | `leafletOutput(outputID = "")` | `renderLeaflet({})` |
+| [**tmap**](https://r-tmap.github.io/tmap/) | `tmapOutput(outputID = "")` | `renderTmap({})` |
 
 : 패키지 출력 함수 {#tbl-out2 tbl-colwidths="\[25, 50, 25\]"}
 
