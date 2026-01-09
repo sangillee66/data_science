@@ -865,7 +865,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>코드를 자세히 살펴보자. 우선 <a href="https://rstudio.github.io/shiny/"><strong>shiny</strong></a>라는 R 패키지를 불러와야 한다. 코드가 <code>ui</code>, <code>server</code>, <code>shinyApp</code>의 세 부분으로 나뉘어져 있다는 것을 알 수 있고, 이것이 위에서 설명한 UI 부분, Server 부분, 결합 및 실행 부분을 담당한다는 점을 쉽게 이해할 수 있다.</p>
 <section id="ui-부분" class="level3" data-number="2.1"><h3 data-number="2.1" class="anchored" data-anchor-id="ui-부분">
 <span class="header-section-number">2.1</span> UI 부분</h3>
-<p>UI 부분은 다양한 함수들이 위계 구조를 이루고 있는데, 전체 형태를 결정하는 <strong>UI 구조 함수(컨테이너 함수)</strong>가 <strong>입력 함수와 출력 함수</strong>를 둘러싸고 있는 구조이다.</p>
+<p>UI 부분은 다양한 함수들이 위계 구조를 이루고 있는데, 전체 형태를 결정하는 <strong>UI 구조 함수(컨테이너 함수)</strong>가 <strong>입력 함수와 출력 함수</strong>를 둘러싸고 있는 구조이다. <a href="#fig-container" class="quarto-xref">그림&nbsp;4</a> 는 이것을 요약한 것이다.</p>
+<div id="fig-container" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-container-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://mastering-shiny.org/diagrams/action-layout/sidebar.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="그림&nbsp;4: UI 컨테이너 함수의 계층 구조 https://mastering-shiny.org/action-layout.html"><img src="https://mastering-shiny.org/diagrams/action-layout/sidebar.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="544"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-container-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;4: UI 컨테이너 함수의 계층 구조 <a href="https://mastering-shiny.org/action-layout.html" class="uri">https://mastering-shiny.org/action-layout.html</a>
+</figcaption></figure>
+</div>
 <p>첫째, 컨테이너 함수가 위계 구조를 이루고 있다. 최상위 <code><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage()</a></code> 함수는 <code><a href="https://rdrr.io/pkg/shiny/man/titlePanel.html">titlePanel()</a></code>과 <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarLayout()</a></code>로 구성되고, <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarLayout()</a></code>은 다시 <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarPanel()</a></code>과 <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">mainPanel()</a></code>로 구성된다. 하나씩 위계적으로 살펴보면 다음과 같다.</p>
 <ul>
 <li>
@@ -986,13 +994,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="header-section-number">3</span> 입력 함수와 출력 함수의 종류</h2>
 <section id="입력-함수" class="level3" data-number="3.1"><h3 data-number="3.1" class="anchored" data-anchor-id="입력-함수">
 <span class="header-section-number">3.1</span> 입력 함수</h3>
-<p>앞에서 언급한 것처럼, 입력 함수 혹은 입력 위젯 생성 함수의 종류는 다양하다. <a href="https://shiny.posit.co/r/components/">R Shiny Components</a> 웹페이지 기준으로 대략 25개 정도이다. <a href="#fig-widget" class="quarto-xref">그림&nbsp;4</a> 는 그 중 일부를 보여주고 있다.</p>
+<p>앞에서 언급한 것처럼, 입력 함수 혹은 입력 위젯 생성 함수의 종류는 다양하다. <a href="https://shiny.posit.co/r/components/">R Shiny Components</a> 웹페이지 기준으로 대략 25개 정도이다. <a href="#fig-widget" class="quarto-xref">그림&nbsp;5</a> 는 그 중 일부를 보여주고 있다.</p>
 <div id="fig-widget" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-widget-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="https://shiny.posit.co/r/getstarted/build-an-app/images/cheatsheet-inputs.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="그림&nbsp;4: 입력 위젯의 종류(https://shiny.posit.co/r/getstarted/build-an-app/reactive-flow/ui-inputs.html)"><img src="https://shiny.posit.co/r/getstarted/build-an-app/images/cheatsheet-inputs.png" class="img-fluid figure-img"></a>
+<a href="https://shiny.posit.co/r/getstarted/build-an-app/images/cheatsheet-inputs.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="그림&nbsp;5: 입력 위젯의 종류(https://shiny.posit.co/r/getstarted/build-an-app/reactive-flow/ui-inputs.html)"><img src="https://shiny.posit.co/r/getstarted/build-an-app/images/cheatsheet-inputs.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-widget-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;4: 입력 위젯의 종류(<a href="https://shiny.posit.co/r/getstarted/build-an-app/reactive-flow/ui-inputs.html" class="uri">https://shiny.posit.co/r/getstarted/build-an-app/reactive-flow/ui-inputs.html</a>)
+그림&nbsp;5: 입력 위젯의 종류(<a href="https://shiny.posit.co/r/getstarted/build-an-app/reactive-flow/ui-inputs.html" class="uri">https://shiny.posit.co/r/getstarted/build-an-app/reactive-flow/ui-inputs.html</a>)
 </figcaption></figure>
 </div>
 <p>몇 가지 주목할 사항이 있다.</p>
@@ -1117,13 +1125,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/runExample.html">runExample</a></span><span class="op">(</span><span class="st">"01_hello"</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>아래의 <a href="#fig-bslib-1" class="quarto-xref">그림&nbsp;5</a> 와 같은 웹 앱이 생성된다. 이것을 <a href="#fig-first" class="quarto-xref">그림&nbsp;3</a> 과 비교해 보라. 조금 다르다는 것을 쉽게 알아 챌 수 있는데(왼편 슬라이더바에서 &lt; 를 눌러보라.), 이것이 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지를 활용하여 제작된 웹 앱이다.</p>
+<p>아래의 <a href="#fig-bslib-1" class="quarto-xref">그림&nbsp;6</a> 와 같은 웹 앱이 생성된다. 이것을 <a href="#fig-first" class="quarto-xref">그림&nbsp;3</a> 과 비교해 보라. 조금 다르다는 것을 쉽게 알아 챌 수 있는데(왼편 슬라이더바에서 &lt; 를 눌러보라.), 이것이 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지를 활용하여 제작된 웹 앱이다.</p>
 <div id="fig-bslib-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-bslib-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/clipboard-1762722241.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="그림&nbsp;5: bslib 패키지를 활용한 웹 앱의 예제"><img src="images/clipboard-1762722241.png" class="img-fluid figure-img"></a>
+<a href="images/clipboard-1762722241.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="그림&nbsp;6: bslib 패키지를 활용한 웹 앱의 예제"><img src="images/clipboard-1762722241.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bslib-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;5: <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지를 활용한 웹 앱의 예제
+그림&nbsp;6: <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지를 활용한 웹 앱의 예제
 </figcaption></figure>
 </div>
 <p>웹 앱 뿐만 아니라 코드도 살펴보려면 다음과 같이 실행하면 된다.</p>
@@ -1310,13 +1318,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </figure>
 </div>
-<p>우선 단일 페이지의 구조를 결정하는 가장 기본적인 <strong>페이지 컨테이너</strong> 함수에 <code><a href="https://rstudio.github.io/bslib/reference/page.html">page_fixed()</a></code>, <code><a href="https://rstudio.github.io/bslib/reference/page.html">page_fluid()</a></code>, <code><a href="https://rstudio.github.io/bslib/reference/page_fillable.html">page_fillable()</a></code> 가 있다. <code><a href="https://rstudio.github.io/bslib/reference/page.html">page_fixed()</a></code>는 중앙 정렬된 고정 폭 페이지 컨테이너이고, <code><a href="https://rstudio.github.io/bslib/reference/page.html">page_fluid()</a></code>는 브라우저 폭에 따라 콘텐츠 영역이 유동적으로 변화는 페이지 컨테이너이고, <code><a href="https://rstudio.github.io/bslib/reference/page_fillable.html">page_fillable()</a></code>는 브라우저의 가시 영역을 높이까지 포함해 채우도록 설계된 페이지 컨테이너이다. <a href="#fig-page_container" class="quarto-xref">그림&nbsp;6</a> 는 이 세가지 페이지 컨테이너를 개념적으로 비교하고 있다.</p>
+<p>우선 단일 페이지의 구조를 결정하는 가장 기본적인 <strong>페이지 컨테이너</strong> 함수에 <code><a href="https://rstudio.github.io/bslib/reference/page.html">page_fixed()</a></code>, <code><a href="https://rstudio.github.io/bslib/reference/page.html">page_fluid()</a></code>, <code><a href="https://rstudio.github.io/bslib/reference/page_fillable.html">page_fillable()</a></code> 가 있다. <code><a href="https://rstudio.github.io/bslib/reference/page.html">page_fixed()</a></code>는 중앙 정렬된 고정 폭 페이지 컨테이너이고, <code><a href="https://rstudio.github.io/bslib/reference/page.html">page_fluid()</a></code>는 브라우저 폭에 따라 콘텐츠 영역이 유동적으로 변화는 페이지 컨테이너이고, <code><a href="https://rstudio.github.io/bslib/reference/page_fillable.html">page_fillable()</a></code>는 브라우저의 가시 영역을 높이까지 포함해 채우도록 설계된 페이지 컨테이너이다. <a href="#fig-page_container" class="quarto-xref">그림&nbsp;7</a> 는 이 세가지 페이지 컨테이너를 개념적으로 비교하고 있다.</p>
 <div id="fig-page_container" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-page_container-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="https://shiny.posit.co/r/articles/build/layout-guide/pages.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="그림&nbsp;6: 페이지 컨테이너의 종류(https://shiny.posit.co/r/articles/build/layout-guide/)"><img src="https://shiny.posit.co/r/articles/build/layout-guide/pages.png" class="img-fluid figure-img"></a>
+<a href="https://shiny.posit.co/r/articles/build/layout-guide/pages.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="그림&nbsp;7: 페이지 컨테이너의 종류(https://shiny.posit.co/r/articles/build/layout-guide/)"><img src="https://shiny.posit.co/r/articles/build/layout-guide/pages.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-page_container-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;6: 페이지 컨테이너의 종류(<a href="https://shiny.posit.co/r/articles/build/layout-guide/" class="uri">https://shiny.posit.co/r/articles/build/layout-guide/</a>)
+그림&nbsp;7: 페이지 컨테이너의 종류(<a href="https://shiny.posit.co/r/articles/build/layout-guide/" class="uri">https://shiny.posit.co/r/articles/build/layout-guide/</a>)
 </figcaption></figure>
 </div>
 <p>그러나 가장 중요한 페이지 컨테이너 함수는 <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code>로 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지의 표준이다. 이것은 페이지 전체를 채우는 구조 위에 사이드바-메인 영역 분할을 기본으로 제공하는 고수준 페이지 컨테이너이다. 단순히 예기하면 <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code>는 <code><a href="https://rstudio.github.io/bslib/reference/page_fillable.html">page_fillable()</a></code>과 레이아웃 컨테이너인 <code>layout_siderbar()</code>를 결합한 것으로 이해할 수 있다. <code><a href="https://rstudio.github.io/bslib/reference/page_navbar.html">page_navbar()</a></code>는 상단 내비게이션 바를 페이지의 기본 구조로 표함하여, 여러 화면을 전환하는 앱을 구성하는 고수준 페이지 컨테이너이다. <code><a href="https://rstudio.github.io/bslib/reference/page_navbar.html">page_navbar()</a></code>는 개념적으로 페이지 컨테이너와 내비게이션 컨테이너(navbar)을 통합한다.</p>
@@ -1388,13 +1396,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></section><section id="테마-미리보기-및-검증" class="level4" data-number="4.4.2"><h4 data-number="4.4.2" class="anchored" data-anchor-id="테마-미리보기-및-검증">
 <span class="header-section-number">4.4.2</span> 테마 미리보기 및 검증</h4>
 <p><a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지의 <code><a href="https://rstudio.github.io/bslib/reference/bs_theme_preview.html">bs_theme_preview()</a></code> 함수는 사용자 정의 테마를 실제 UI 구성 요소에 적용해 보며 시각적 효과를 즉시 확인할 수 있는 테마 미리보기 및 검증 도구이다.</p>
-<p>콘솔에서 함수를 실행하면, 버튼, 카드, 입력 위젯 등 대표 UI 컴포넌트에 테마를 적용해볼 수 있고, 색상 대비, 타이포그래피, 여백 등을 한눈에 점검할 수 있을 뿐만 아니라, 테마 수정의 결과를 즉시 확인해 볼 수 있다. <a href="#fig-theming" class="quarto-xref">그림&nbsp;7</a> 에서 볼 수 있는 것처럼 오른편의 Theme customizer를 조작하여 이러한 기능을 활용해 볼 수 있다.</p>
+<p>콘솔에서 함수를 실행하면, 버튼, 카드, 입력 위젯 등 대표 UI 컴포넌트에 테마를 적용해볼 수 있고, 색상 대비, 타이포그래피, 여백 등을 한눈에 점검할 수 있을 뿐만 아니라, 테마 수정의 결과를 즉시 확인해 볼 수 있다. <a href="#fig-theming" class="quarto-xref">그림&nbsp;8</a> 에서 볼 수 있는 것처럼 오른편의 Theme customizer를 조작하여 이러한 기능을 활용해 볼 수 있다.</p>
 <div id="fig-theming" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-theming-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/clipboard-4114941204.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="그림&nbsp;7: be_theme_update() 함수를 활용한 테마 미리보기 및 검증"><img src="images/clipboard-4114941204.png" class="img-fluid figure-img"></a>
+<a href="images/clipboard-4114941204.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="그림&nbsp;8: be_theme_update() 함수를 활용한 테마 미리보기 및 검증"><img src="images/clipboard-4114941204.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-theming-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;7: <code>be_theme_update()</code> 함수를 활용한 테마 미리보기 및 검증
+그림&nbsp;8: <code>be_theme_update()</code> 함수를 활용한 테마 미리보기 및 검증
 </figcaption></figure>
 </div>
 </section></section></section><section id="반응성-함수" class="level2" data-number="5"><h2 data-number="5" class="anchored" data-anchor-id="반응성-함수">
