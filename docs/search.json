@@ -1200,7 +1200,7 @@
     "href": "exec_11.html#기본-동작",
     "title": "웹 앱 개발: Shiny의 기초",
     "section": "\n1 기본 동작",
-    "text": "1 기본 동작\n\n1.1 기본 구조\nShiny는 크게 세 부분으로 나뉘어 진다(그림 1).\n첫째, UI(혹은 UX) 부분이다. 프론트엔트(front-end) 부분으로 입력을 받고, Server에서 산출된 출력을 표출하는 부분이다.\n둘째, Server 부분이다. 백엔드(back-end) 부분으로 UI에서 받은 입력에 기반하여 출력을 산출하는 부분이다.\n셋째, 결합 및 실행 부분이다. UI와 Server 부분을 결합해 웹 앱을 실행하는 부분이다. 결합 및 실행은 단일 파일 속에 UI와 Server를 함께 다루는 방식과, 두 개의 파일로 분할하여 다루는 방식으로 나뉜다. 여기서는 전자를 중심으로 설명한다.\n\n\n\n\n\n그림 1: Shiny의 구조(https://bookdown.org/hneth/i2ds/shiny.html)\n\n\n\n1.2 Shiny 프로젝트의 생성\n여기서는 RStudio에서 Shiny 프로젝트를 생성하는 방법에 대해 배운다. New Project &gt; New Directory &gt; Shiny Application을 선택한다. 그림 2 에서 Directory name과 Subdirectory의 위치를 설정한다.\n\n\n\n\n\n그림 2: Shiny 프로젝트의 생성\n\n\n이렇게 하면 Shiny 프로젝트가 생성되고, 자동적으로 app.R이라는 스크립트 파일이 생성된다.\n\n1.3 웹 앱의 생성\napp.R에서 스크립트 윈도우 오른쪽 상단에 위치한 Run App 버튼을 클릭하면 그림 3 과 같은 웹 앱이 새로운 윈도우에 생성된다. 왼편의 슬라이더바를 움직이면 오른편의 히스토그램이 변한다는 점을 확인한다. 즉 빈(bin)의 개수를 달리하면서 데이터 분포를 탐색해보기 위한 단순한 웹 앱이 만들어진 것이다.\n\n\n\n\n\n그림 3: 단순한 웹 앱 예시\n\n\n이 단순한 웹 앱을 살펴본다. 다음과 같은 점을 확인할 수 있다.\n첫째, 크게 두 부분으로 구성되어 있는데, 왼편의 슬라이더바가 있는 부분과 오른편의 히스토그램이 있는 부분으로 나뉜다. 부차적으로 상단에 제목(“Old Faithful Geyser Data”)이 있는 부분도 존재한다. 이 모든 것이 UI를 구성한다. 위에서 UI는 입력을 받고 출력을 표출한다고 했다. 왼편의 슬라이더바가 입력을 받는 부분이고, 오른편의 플롯 영역이 출력을 표출하는 부분이다.\n둘째, 사용자의 입력은 빈(bin)의 갯수이고, Server는 이 값을 바탕으로 히스토그램이라는 출력을 생성한다. 생성된 출력은 UI로 이동하여 표출된다. 사용자의 입력값이 바뀌면 이 과정이 반복되고 히스토그램이 바뀌게 된다.",
+    "text": "1 기본 동작\n\n1.1 기본 구조\nShiny는 크게 세 부분으로 나뉘어 진다(그림 1).\n첫째, UI(혹은 UX) 부분이다. 프론트엔트(front-end) 부분으로 입력을 받고, Server에서 산출된 출력을 표출하는 부분이다.\n둘째, Server 부분이다. 백엔드(back-end) 부분으로 UI에서 받은 입력에 바탕으로 출력을 산출하는 부분이다.\n셋째, 결합 및 실행 부분이다. UI와 Server 부분을 결합해 웹 앱을 실행하는 부분이다. 결합 및 실행은 단일 파일 속에 UI와 Server를 함께 다루는 방식과, 두 개의 파일로 분할하여 다루는 방식으로 나뉜다. 여기서는 전자를 중심으로 설명한다.\n\n\n\n\n\n그림 1: Shiny의 구조(https://bookdown.org/hneth/i2ds/shiny.html)\n\n\n\n1.2 Shiny 프로젝트의 생성\n여기서는 RStudio에서 Shiny 프로젝트를 생성하는 방법에 대해 배운다. New Project &gt; New Directory &gt; Shiny Application을 선택한다. 그림 2 에서 Directory name과 Subdirectory의 위치를 설정한다.\n\n\n\n\n\n그림 2: Shiny 프로젝트의 생성\n\n\n이렇게 하면 Shiny 프로젝트가 생성되고, 자동적으로 app.R이라는 스크립트 파일이 생성된다.\n\n1.3 웹 앱의 생성\napp.R에서 스크립트 윈도우 오른쪽 상단에 위치한 Run App 버튼을 클릭하면 그림 3 과 같은 웹 앱이 새로운 윈도우에 생성된다. 왼편의 슬라이더를 움직이면 오른편의 히스토그램이 변한다는 점을 확인한다. 즉 빈(bin)의 개수를 달리하면서 데이터 분포를 탐색해보기 위한 단순한 웹 앱이 만들어진 것이다.\n\n\n\n\n\n그림 3: 단순한 웹 앱 예시\n\n\n이 단순한 웹 앱을 살펴본다. 다음과 같은 점을 확인할 수 있다.\n첫째, 크게 두 부분으로 구성되어 있는데, 왼편의 슬라이더가 있는 부분과 오른편의 히스토그램이 있는 부분으로 나뉜다. 부차적으로 상단에 제목(“Old Faithful Geyser Data”)이 있는 부분도 존재한다. 이 모든 것이 UI를 구성한다. 위에서 UI는 입력을 받고 출력을 표출한다고 했다. 왼편의 슬라이더바가 입력을 받는 부분이고, 오른편의 플롯 영역이 출력을 표출하는 부분이다.\n둘째, 사용자의 입력은 빈(bin)의 갯수이고, Server는 이 값을 바탕으로 히스토그램이라는 출력을 생성한다. 생성된 출력은 UI로 이동하여 표출된다. 사용자의 입력값이 바뀌면 이 과정이 반복되고 히스토그램이 바뀌게 된다.",
     "crumbs": [
       "R과 데이터사이언스",
       "웹 앱 개발: Shiny의 기초"
@@ -1233,7 +1233,7 @@
     "href": "exec_11.html#shiny의-기본-문법-체계",
     "title": "웹 앱 개발: Shiny의 기초",
     "section": "\n2 Shiny의 기본 문법 체계",
-    "text": "2 Shiny의 기본 문법 체계\n이제 그림 3 의 웹 앱을 생성한 코드를 살펴보도록 한다. 코드 속에는 다양한 설명이 포함되어 있는데 그것을 제거하고 코드만 남기면 다음만 남는다. 대충 보아도 문법이 tidyverse와는 많이 다르다는 점을 금방 알 수 있다. 따라서 shiny의 문법 체계는 따로 익힐 수 밖에 없다.\n\nlibrary(shiny)\n\nui &lt;- fluidPage(\n    titlePanel(\"Old Faithful Geyser Data\"),\n    sidebarLayout(\n        sidebarPanel(\n            sliderInput(inputId = \"bins\",\n                        label = \"Number of bins:\",\n                        min = 1,\n                        max = 50,\n                        value = 30)\n        ),\n        mainPanel(\n           plotOutput(outputId = \"distPlot\")\n        )\n    )\n)\n\nserver &lt;- function(input, output) {\n    output$distPlot &lt;- renderPlot({\n        x    &lt;- faithful[, 2]\n        bins &lt;- seq(min(x), max(x), length.out = input$bins + 1)\n        hist(x, breaks = bins, col = 'darkgray', border = 'white',\n             xlab = 'Waiting time to next eruption (in mins)',\n             main = 'Histogram of waiting times')\n    })\n}\n\nshinyApp(ui = ui, server = server)\n\n코드를 자세히 살펴보자. 우선 shiny라는 R 패키지를 불러와야 한다. 코드가 ui, server, shinyApp의 세 부분으로 나뉘어져 있다는 것을 알 수 있고, 이것이 위에서 설명한 UI 부분, Server 부분, 결합 및 실행 부분을 담당한다는 점을 쉽게 이해할 수 있다.\n\n2.1 UI 부분\nUI 부분은 다양한 함수들이 위계 구조를 이루고 있는데, 전체 형태를 결정하는 컨테이너 함수가 입출력 함수를 포함하고 있는 구조이다.\n첫째, 컨테이너 함수가 위계 구조를 이루고 있다. 최상위 fluidPage() 함수는 titlePanel()과 sidebarLayout()로 구성되고, sidebarLayout()은 다시 sidebarPanel()과 mainPanel()로 구성된다. 하나씩 위계적으로 살펴보면 다음과 같다.\n\n\nfluidPage() : UI의 최상위 컨테이너로서 전체 UI 구조를 관장하며, 브라우저 화면 크기에 따라 자동으로 늘어나고 줄어드는 반응형 레이아웃을 제공한다. 이러한 특성 때문에 ’fluid’라는 이름이 붙었다. 고정 폭을 가진 레이아웃은 fixedPage()를 통해 정의할 수 있다. Shiny 앱에서는 기본적으로 fluidPage()를 사용한다고 생각하면 된다.\n\ntitlePanel() : 제목이 들어가는 부분이다. 생략가능하다.\n\nsidebarLayout(): UI의 핵심 부분으로, 가장 전형적인 “사이드바 + 메인 영역” 레이아웃을 fluidPage() 내에 생성할 수 있게 해준다.\n\nsidebarPanel(): 입력을 받는 부분으로, 입력 함수 혹은 입력 위젯(widget)을 담는 컨테이너이다.\nmainPanel() : 출력을 표출하는 부분으로, 서버에서 생성된 출력 객체가 UI에 표시될 수 있도록 출력 표출(바인딩) 함수를 담는 컨테이너이다.\n\n\n\n\n\n둘째, sidebarPanel() 내의 sliderInput()은 특정한 입력 함수 혹은 입력 위젯 생성 함수이다. 여기서는 슬라이더바 형태의 입력을 받기 때문에 sliderInput() 함수가 사용된 것이다. 입력의 형태에 따라 다양한 입력 함수가 존재하며, 일반적으로 *Input() 형식을 띤다. 뒤에서 자세히 다룬다. 개별 함수는 상호작용형 인터페이스 컴포넌트로 미리 만들어져 있기 때문에 위젯이라고 부른다. sliderInput()은 다양한 인수로 구성되어 있는데, 가장 중요한 것이 inputId 인수이다. 입력 함수는 위젯을 통해 입력값을 받고 그 입력값은 Server의 input 객체의 한 요소가 되는데 inputId 인수는 input 객체에서 해당 요소를 참조할 ’이름’을 지정한다.\n셋째, mainPanel() 내의 plotOutput()은 특정한 출력 표출 함수 혹은 출력 바인딩(binding) 함수이다. 이것은 Server에서 전달받은 출력 즉 output 객체의 요소를 표출한다. 바인딩 함수라고 부르는 것은 출력 요소와 브라우저의 특정 UI 영역을 ’연결(바인드)’하기 때문이다. 출력의 형태가 플롯(plot)이기 때문에 plotOutput() 함수가 사용된 것이다. 출력의 형태에 따라 다양한 출력 표출 함수가 존재하며, 일반적으로 *Output()의 형식을 띤다. 뒤에서 자세히 다룬다. plotOutput() 함수의 가장 중요한 인수는 outputId로 표출할 output 객체의 요소의 ’이름’을 지정한다. plotOutput(outputId = \"distPlot\")는 서버에서 만들어진 \"distPlot\"라는 이름의 플롯(output 객체의 한 요소)을 해당 위치에 표출한다는 의미이다.\n\n결국 UI는 입력을 받고 출력을 표출하는 두 가지 일을 하는데, 전자는 sliderInput()과 같은 입력 함수를 통해 이루어지며, 후자는 plotOutput()과 같은 출력 표출 함수를 통해 이루어진다. 이들 함수는 출력과 입력의 형식에 따라 일반적으로 *Input()과 *Output()의 형태를 띤다.\n\n\n2.2 Server 부분\nServer 부분은 다음과 같은 구조를 가지고 있다.\n첫째, Server 부분은 반드시 함수로 정의되며, 일반적으로 function(input, output){} 혹은 function(input, output, session){}의 형식을 갖는다(input과 output은 필수이지만 session은 부가적으로 정의될 수 있다). 반드시 함수로 정의되어야 하는 것은 input과 output(부가적으로 session)을 인수로 받아, 입력 변화에 따라 반응형 출력이 생성 및 갱신되는 로직을 정의하기 때문입니다.\n둘째, 출력물은 renderPlot({})과 같은 출력 생성 함수(렌더링 함수)를 통해 이루어진다. 이렇게 생성된 출력은 ’이름’이 지정되어 Server의 output 객체의 한 요소로 저장된다. 예를 들어, 코드에서 output$distPlot은 생성된 출력에 \"distPlot\"이라는 이름을 부여하고 이를 output 객체에 해당 이름으로 저장함을 의미한다. 이 이름은 UI의 출력 표출 함수 plotOutput(outputId = \"distPlot\")에서 사용되며, 이를 통해 해당 출력이 UI에 표출된다.\n셋째, 출력의 형태가 플롯이기 때문에 renderPlot({}) 함수가 사용된 것이다. 출력의 형태에 따라 다양한 출력 생성 함수가 존재하며, 일반적으로 render*({})의 형식을 띤다. 뒤에서 자세히 다룬다.\n넷째, 입력 함수로부터 전달되어 Server의 input 객체의 요소로 저장된 입력값은 출력 생성 함수 내부에서 사용된다. 예를 들어, seq(min(x), max(x), length.out = input$bins + 1)에서 sliderInput() 함수로부터 전달된 bins라는 입력값(즉, input 객체의 한 요소)이 seq() 함수 내부에서 사용된다. 입력값이 달라짐에 따라 히스토그램의 모양이 달라지는 이유가 여기에 있다.\n\n결국 Server는 UI에서 전달된 입력에 기반하여 출력을 산출한다. 구체적으로, input$* 형식의 입력값을 Server 내부에서 사용하여 renderPlot({})과 같은 출력 생성 함수를 통해 출력을 생성하고, 그 결과를 output$* 형식으로 저장함으로써 UI에 표출될 수 있도록 한다.\n\n\n2.3 결합 및 실행 부분\nUI와 server 부분은 결합되어 하나의 Shiny 웹 앱을 구성하며, 이를 실행하기 위해 shinyApp() 함수가 사용된다. shinyApp(ui = ui, server = server)에서 볼 수 있듯이, shinyApp() 함수에 UI 부분과 Server 부분을 지정함으로써 Shiny 웹 앱이 생성되고 실행된다.\n이것은 단일 파일 방식으로 결합 및 실행을 행하는 것이다. 콘솔창에서 실행하고자 한다면 다음과 같이하면 된다. 파일명에 app.R과 같은 UI와 Server 부분이 모두 포함된 파일의 이름을 지정하면 된다.\n\nrunApp(\"파일명\")\n\n만일 UI와 Server 부분을 다른 파일로 구성하는 분리 파일 방식인 경우는 다음과 같이 진행한다. 우선 UI 부분의 파일을 따로 만든다. 예를 들어 ui.R이라는 스크립트 파일을 다음과 같이 생성한다. 단일 파일 방식과 달리 UI 부분을 ui 객체에 할당하지 않아도 된다.\n\nlibrary(shiny)\n\nfluidPage(\n    titlePanel(\"Old Faithful Geyser Data\"),\n    sidebarLayout(\n        sidebarPanel(\n            sliderInput(inputId = \"bins\",\n                        label = \"Number of bins:\",\n                        min = 1,\n                        max = 50,\n                        value = 30)\n        ),\n        mainPanel(\n           plotOutput(outputId = \"distPlot\")\n        )\n    )\n)\n\n마찬가지로 Server 부분의 파일을 따로 만든다. 예를 들어 server.R이라는 스크립트 파일을 다음과 같이 생성한다. 단일 파일 방식과 달리 Server 부분을 server라는 객체에 할당하지 않아도 된다.\n\nlibrary(shiny)\n\nfunction(input, output) {\n    output$distPlot &lt;- renderPlot({\n        x    &lt;- faithful[, 2]\n        bins &lt;- seq(min(x), max(x), length.out = input$bins + 1)\n        hist(x, breaks = bins, col = 'darkgray', border = 'white',\n             xlab = 'Waiting time to next eruption (in mins)',\n             main = 'Histogram of waiting times')\n    })\n}\n\n콘솔 창에서 다음과 같이 실행한다. 이때 지정한 폴더에는 UI 부분을 정의한 파일(예: ui.R)과 server 부분을 정의한 파일(예: server.R)이 포함되어 있어야 한다. 이름은 반드시 ui.R과 server.R이어야 한다.\n\nrunApp(\"폴더명\")\n\n위의 두 가지 방식을 결합한 제3의 길도 있다. 우선 위의 분리 파일 방식과 같이 UI와 Server 부분에 대한 파일을 개별적을 생성한다. 차이점은 반드시 ui와 server 객체를 할당하는 방식으로 이러우져야 한다는 점이다. my_ui.R의 내용은 다음과 같다. 이 방식에서는 UI 부분의 파일 이름이 반드시 ui.R일 필요가 없다.\n\nui &lt;- fluidPage(\n    titlePanel(\"Old Faithful Geyser Data\"),\n    sidebarLayout(\n        sidebarPanel(\n            sliderInput(inputId = \"bins\",\n                        label = \"Number of bins:\",\n                        min = 1,\n                        max = 50,\n                        value = 30)\n        ),\n        mainPanel(\n           plotOutput(outputId = \"distPlot\")\n        )\n    )\n)\n\nmy_server.R의 내용은 다음과 같다. 마찬가지로 Server 부분의 파일의 이름이 server.R일 필요가 없다.\n\nserver &lt;- function(input, output) {\n    output$distPlot &lt;- renderPlot({\n        x    &lt;- faithful[, 2]\n        bins &lt;- seq(min(x), max(x), length.out = input$bins + 1)\n        hist(x, breaks = bins, col = 'darkgray', border = 'white',\n             xlab = 'Waiting time to next eruption (in mins)',\n             main = 'Histogram of waiting times')\n    })\n}\n\n그리고 나서 단일 파일 방식과 같이 app.R 파일을 통해 결합한다. app.R 파일의 내용은 다음과 같다.\n\nlibrary(shiny)\n\nsource(\"my_ui.R\")\nsource(\"my_server.R\")\n\nshinyApp(ui = ui, server = server)\n\nUI 파일과 Server 파일을 분리하는 방식은 코드가 매우 복잡할 때 사용하는 것으로 보통은 단일 파일 방식을 사용한다.",
+    "text": "2 Shiny의 기본 문법 체계\n이제 그림 3 의 웹 앱을 생성한 코드를 살펴보도록 한다. 코드 속에는 다양한 설명이 포함되어 있는데 그것을 제거하고 코드만 남기면 다음만 남는다. 대충 보아도 문법이 tidyverse와는 많이 다르다는 점을 금방 알 수 있다. 따라서 shiny의 문법 체계는 따로 익힐 수 밖에 없다.\n\nlibrary(shiny)\n\nui &lt;- fluidPage(\n    titlePanel(\"Old Faithful Geyser Data\"),\n    sidebarLayout(\n        sidebarPanel(\n            sliderInput(inputId = \"bins\",\n                        label = \"Number of bins:\",\n                        min = 1,\n                        max = 50,\n                        value = 30)\n        ),\n        mainPanel(\n           plotOutput(outputId = \"distPlot\")\n        )\n    )\n)\n\nserver &lt;- function(input, output) {\n    output$distPlot &lt;- renderPlot({\n        x    &lt;- faithful[, 2]\n        bins &lt;- seq(min(x), max(x), length.out = input$bins + 1)\n        hist(x, breaks = bins, col = 'darkgray', border = 'white',\n             xlab = 'Waiting time to next eruption (in mins)',\n             main = 'Histogram of waiting times')\n    })\n}\n\nshinyApp(ui = ui, server = server)\n\n코드를 자세히 살펴보자. 우선 shiny라는 R 패키지를 불러와야 한다. 코드가 ui, server, shinyApp의 세 부분으로 나뉘어져 있다는 것을 알 수 있고, 이것이 위에서 설명한 UI 부분, Server 부분, 결합 및 실행 부분을 담당한다는 점을 쉽게 이해할 수 있다.\n\n2.1 UI 부분\nUI 부분은 다양한 함수들이 위계 구조를 이루고 있는데, 전체 형태를 결정하는 UI 구조 함수(컨테이너 함수)가 입력 함수와 출력 함수를 둘러싸고 있는 구조이다.\n첫째, 컨테이너 함수가 위계 구조를 이루고 있다. 최상위 fluidPage() 함수는 titlePanel()과 sidebarLayout()로 구성되고, sidebarLayout()은 다시 sidebarPanel()과 mainPanel()로 구성된다. 하나씩 위계적으로 살펴보면 다음과 같다.\n\n\nfluidPage() : UI의 최상위 컨테이너로서 전체 UI 구조를 관장하며, 브라우저 화면 크기에 따라 자동으로 늘어나고 줄어드는 반응형 레이아웃을 제공한다. 이러한 특성 때문에 ’fluid’라는 이름이 붙었다. 고정 폭을 가진 레이아웃은 fixedPage()를 통해 정의할 수 있다. Shiny 앱에서는 기본적으로 fluidPage()를 사용한다고 생각하면 된다.\n\ntitlePanel() : 제목이 들어가는 부분이다. 생략가능하다.\n\nsidebarLayout(): UI의 핵심 부분으로, 가장 전형적인 “사이드바 + 메인 영역” 레이아웃을 fluidPage() 내에 생성할 수 있게 해준다.\n\nsidebarPanel(): 입력을 받는 부분으로, 입력 함수 혹은 입력 위젯(widget)을 담는 컨테이너이다.\nmainPanel() : 출력을 표출하는 부분으로, 서버에서 생성된 출력 객체가 UI에 표시될 수 있도록 출력 함수를 담는 컨테이너이다.\n\n\n\n\n\n둘째, sidebarPanel() 내의 sliderInput()은 특정한 입력 함수 혹은 입력 위젯 생성 함수이다. 여기서는 슬라이더 형태의 입력을 받기 때문에 sliderInput() 함수가 사용된 것이다. 입력의 형태에 따라 다양한 입력 함수가 존재하며, 일반적으로 *Input() 형식을 띤다. 뒤에서 자세히 다룬다. 개별 함수는 상호작용형 인터페이스 컴포넌트로 미리 만들어져 있기 때문에 위젯이라고 부른다. sliderInput()은 다양한 인수로 구성되어 있는데, 가장 중요한 것이 inputId 인수이다. 입력 함수는 위젯을 통해 입력값을 받고 그 입력값은 Server의 input 객체의 한 요소가 되는데 inputId 인수는 input 객체에서 해당 요소를 참조할 ’이름’을 지정한다.\n셋째, mainPanel() 내의 plotOutput()은 특정한 출력 함수 혹은 출력 바인딩(binding) 함수이다. 이것은 Server에서 전달받은 출력 즉 output 객체의 요소를 표출한다. 바인딩 함수라고 부르는 것은 출력 요소와 브라우저의 특정 UI 영역을 ’연결(바인드)’하기 때문이다. 출력의 형태가 플롯(plot)이기 때문에 plotOutput() 함수가 사용된 것이다. 출력의 형태에 따라 다양한 출력 표출 함수가 존재하며, 일반적으로 *Output()의 형식을 띤다. 뒤에서 자세히 다룬다. plotOutput() 함수의 가장 중요한 인수는 outputId로 표출할 output 객체의 요소의 ’이름’을 지정한다. plotOutput(outputId = \"distPlot\")는 서버에서 만들어진 \"distPlot\"라는 이름의 플롯(output 객체의 한 요소)을 해당 위치에 표출한다는 의미이다.\n\n결국 UI는 입력을 받고 출력을 표출하는 두 가지 일을 하는데, 전자는 sliderInput()과 같은 입력 함수를 통해 이루어지며, 후자는 plotOutput()과 같은 출력 함수를 통해 이루어진다. 이들 함수는 출력과 입력의 형식에 따라 일반적으로 *Input()과 *Output()의 형태를 띤다.\n\n\n2.2 Server 부분\nServer 부분은 다음과 같은 구조를 가지고 있다.\n첫째, Server 부분은 반드시 함수로 정의되며, 일반적으로 function(input, output){} 혹은 function(input, output, session){}의 형식을 갖는다(input과 output은 필수이지만 session은 부가적으로 정의될 수 있다). 반드시 함수로 정의되어야 하는 것은 input과 output(부가적으로 session)을 인수로 받아, 입력 변화에 따라 반응형 출력이 생성 및 갱신되는 로직을 정의하기 때문입니다.\n둘째, 출력물은 renderPlot({})과 같은 렌더링 함수를 통해 이루어진다. 이렇게 생성된 출력은 ’이름’이 지정되어 Server의 output 객체의 한 요소로 저장된다. 예를 들어, 코드에서 output$distPlot은 생성된 출력에 \"distPlot\"이라는 이름을 부여하고 이를 output 객체에 해당 이름으로 저장함을 의미한다. 이 이름은 UI의 출력 함수 plotOutput(outputId = \"distPlot\")에서 사용되며, 이를 통해 해당 출력이 UI에 표출된다.\n셋째, 출력의 형태가 플롯이기 때문에 renderPlot({}) 함수가 사용된 것이다. 출력의 형태에 따라 다양한 렌더링 함수가 존재하며, 일반적으로 render*({})의 형식을 띤다. 뒤에서 자세히 다룬다.\n넷째, 입력 함수로부터 전달되어 Server의 input 객체의 요소로 저장된 입력값은 렌더링 함수 내부에서 사용된다. 예를 들어, seq(min(x), max(x), length.out = input$bins + 1)에서 sliderInput() 함수로부터 전달된 bins라는 입력값(즉, input 객체의 한 요소)이 seq() 함수 내부에서 사용된다. 입력값이 달라짐에 따라 히스토그램의 모양이 달라지는 이유가 여기에 있다.\n\n결국 Server는 UI에서 전달된 입력에 기반하여 출력을 산출한다. 구체적으로, input$* 형식의 입력값을 Server 내부에서 사용하여 renderPlot({})과 같은 렌더링 함수를 통해 출력을 생성하고, 그 결과를 output$* 형식으로 저장함으로써 UI에 표출될 수 있도록 한다.\n\n\n2.3 결합 및 실행 부분\nUI와 server 부분은 결합되어 하나의 Shiny 웹 앱을 구성하며, 이를 실행하기 위해 shinyApp() 함수가 사용된다. shinyApp(ui = ui, server = server)에서 볼 수 있듯이, shinyApp() 함수에 UI 부분과 Server 부분을 지정함으로써 Shiny 웹 앱이 생성되고 실행된다.\n이것은 단일 파일 방식으로 결합 및 실행을 행하는 것이다. 콘솔창에서 실행하고자 한다면 다음과 같이하면 된다. 파일명에 app.R과 같은 UI와 Server 부분이 모두 포함된 파일의 이름을 지정하면 된다.\n\nrunApp(\"파일명\")\n\n만일 UI와 Server 부분을 다른 파일로 구성하는 분리 파일 방식인 경우는 다음과 같이 진행한다. 우선 UI 부분의 파일을 따로 만든다. 예를 들어 ui.R이라는 스크립트 파일을 다음과 같이 생성한다. 단일 파일 방식과 달리 UI 부분을 ui 객체에 할당하지 않아도 된다.\n\nlibrary(shiny)\n\nfluidPage(\n    titlePanel(\"Old Faithful Geyser Data\"),\n    sidebarLayout(\n        sidebarPanel(\n            sliderInput(inputId = \"bins\",\n                        label = \"Number of bins:\",\n                        min = 1,\n                        max = 50,\n                        value = 30)\n        ),\n        mainPanel(\n           plotOutput(outputId = \"distPlot\")\n        )\n    )\n)\n\n마찬가지로 Server 부분의 파일을 따로 만든다. 예를 들어 server.R이라는 스크립트 파일을 다음과 같이 생성한다. 단일 파일 방식과 달리 Server 부분을 server라는 객체에 할당하지 않아도 된다.\n\nlibrary(shiny)\n\nfunction(input, output) {\n    output$distPlot &lt;- renderPlot({\n        x    &lt;- faithful[, 2]\n        bins &lt;- seq(min(x), max(x), length.out = input$bins + 1)\n        hist(x, breaks = bins, col = 'darkgray', border = 'white',\n             xlab = 'Waiting time to next eruption (in mins)',\n             main = 'Histogram of waiting times')\n    })\n}\n\n콘솔 창에서 다음과 같이 실행한다. 이때 지정한 폴더에는 UI 부분을 정의한 파일(예: ui.R)과 server 부분을 정의한 파일(예: server.R)이 포함되어 있어야 한다. 이름은 반드시 ui.R과 server.R이어야 한다.\n\nrunApp(\"폴더명\")\n\n위의 두 가지 방식을 결합한 제3의 길도 있다. 우선 위의 분리 파일 방식과 같이 UI와 Server 부분에 대한 파일을 개별적을 생성한다. 차이점은 반드시 ui와 server 객체를 할당하는 방식으로 이러우져야 한다는 점이다. my_ui.R의 내용은 다음과 같다. 이 방식에서는 UI 부분의 파일 이름이 반드시 ui.R일 필요가 없다.\n\nui &lt;- fluidPage(\n    titlePanel(\"Old Faithful Geyser Data\"),\n    sidebarLayout(\n        sidebarPanel(\n            sliderInput(inputId = \"bins\",\n                        label = \"Number of bins:\",\n                        min = 1,\n                        max = 50,\n                        value = 30)\n        ),\n        mainPanel(\n           plotOutput(outputId = \"distPlot\")\n        )\n    )\n)\n\nmy_server.R의 내용은 다음과 같다. 마찬가지로 Server 부분의 파일의 이름이 server.R일 필요가 없다.\n\nserver &lt;- function(input, output) {\n    output$distPlot &lt;- renderPlot({\n        x    &lt;- faithful[, 2]\n        bins &lt;- seq(min(x), max(x), length.out = input$bins + 1)\n        hist(x, breaks = bins, col = 'darkgray', border = 'white',\n             xlab = 'Waiting time to next eruption (in mins)',\n             main = 'Histogram of waiting times')\n    })\n}\n\n그리고 나서 단일 파일 방식과 같이 app.R 파일을 통해 결합한다. app.R 파일의 내용은 다음과 같다.\n\nlibrary(shiny)\n\nsource(\"my_ui.R\")\nsource(\"my_server.R\")\n\nshinyApp(ui = ui, server = server)\n\nUI 파일과 Server 파일을 분리하는 방식은 코드가 매우 복잡할 때 사용하는 것으로 보통은 단일 파일 방식을 사용한다.",
     "crumbs": [
       "R과 데이터사이언스",
       "웹 앱 개발: Shiny의 기초"
@@ -1244,7 +1244,7 @@
     "href": "exec_11.html#반응성-함수",
     "title": "웹 앱 개발: Shiny의 기초",
     "section": "\n5 반응성 함수",
-    "text": "5 반응성 함수\n\n5.1 정의\nShiny의 반응성(reactivity)이란, 입력값의 변화에 따라 관련된 계산과 출력이 자동으로 재실행ㆍ갱신되는 메커니즘을 의미한다. 좀 더 기술적으로 표현하면 반응성은 입력(input)의 변화가 의존 관계(dependency)를 따라 전파되어, 반응형 표현식과 출력이 자동으로 갱신되는 실행 모델이다.\n반응성 함수란, 입력값에 대한 의존성을 추적하고 입력 변화 시 자동으로 재실행되는 함수를 말한다. 따라서 Shiny에서 반응성 함수는 공통적으로 다음 특징을 갖는다.\n\ninput$*에 의존\n입력이 바뀌면 자동으로 재실행\n사용자가 직접 호출하지 않음\nShiny의 반응성 그래프(dependency graph)에 의해 관리됨\n\n5.2 종류\nShiny의 반응성 함수는 역할에 따라 크게 세 부류로 나눌 수 있다.\n\n5.2.1 출력 생성 함수: render* 계열\n출력 생성 함수는 반응형 계산을 통해 출력물을 생성하고, 그 결과를 output 객체의 요소로 저장하는 함수이다. 일반 형식은 다음과 같다.\n\nrender*({\n  # 반응형 코드\n})\n\n반드시 output$이름 &lt;- render*({ ... }) 형태로 사용되며, 출력의 “최종 종착점”이며, UI의 *Output()과 1:1로 대응된다. 예시는 다음과 같다.\n\noutput$distPlot &lt;- renderPlot({\n  hist(x, breaks = input$bins)\n})\n\n\n5.2.2 반응형 표현식 함수: reactive({})\n\nreactive({})는 입력값에 따라 달라지는 계산 결과를 반응형 객체로 생성하는 함수이다. 입력을 받아 ’반응성 표현식(reactive expression)’을 생성한다. 여기서 반응성 표현식이란 단순히 최종 산출물(값이나 객체)만을 의미하지 않고, 그 산출물을 관리하는 메커니즘(종속성 추적, 지연 실행, 캐싱 등) 포함하는 동적인 객체를 의미한다. 따라서 반드시 함수 형태로 표기한다.\n하나의 입력이 여러 개의 출력 함수(출력 생성 함수)와 결부되는 경우에 주로 사용되는데 동일한 입력의 중복 사용을 회피하기 위해 해당 입력을 반응성 표현식으로 전환하여 다수의 출력 생성 함수에 입력으로 투입할 수 있다.\n일반 형식은 다음과 같다.\n\nr &lt;- reactive({\n  # 반응형 계산\n})\n\n출력이 아니라 중간 계산 결과를 생성하며, 반환값은 반응형 객체가 되고, 값에 접근할 때는 함수 형식으로 반드시 () 를 사용해야 한다. 예시는 다음과 같다.\n\nbins &lt;- reactive({\n  seq(min(x), max(x), length.out = input$bins + 1)\n})\n\noutput$distPlot &lt;- renderPlot({\n  hist(x, breaks = bins())\n})\n\n입력 함수를 통해 받은 input$bins를 읽어 bins라는 새로운 반응형 객체를 생성하고, 그것을 출력 생성 함수에서 투입하는 방식을 보여주고 있다. 반응형 객체는 반드시 bins()처럼 함수 형식으로 호출해야만 한다.\n그런데, 여기서는 사실 reactive({}) 함수가 반드시 필요한 것은 아니다. 즉, 다음과 같이 해도 무방하다.\n\nbins &lt;- seq(min(x), max(x), length.out = input$bins + 1)\n\noutput$distPlot &lt;- renderPlot({\n  hist(x, breaks = bins)\n})\n\n그러나 출력 생성 함수가 여러 개 사용되고 거기에 bins가 여러 번 사용된다면 위와 같이 하는 것이 훨씬 효율적이다.\n\n5.2.3 반응형 관찰자 함수: observe*() 계열\n반응형 관찰자 함수는 입력 변화에 반응하여 특정 동작(side effect)을 수행하는 함수이다. 대표적인 함수는 다음과 같다.\n\nobserve()\nobserveEvent()\neventReactive() (중간적 성격)\n\n특징은 값을 반화하지 않고, 출력 생성이 목적도 아니다. 주로 상태 변경, 메시지 출력, UI 업데이트에 사용된다. 다음에 예시가 있다.\n\nobserveEvent(input$go, {\n  cat(\"버튼이 눌렸습니다\\n\")\n})\n\n입력 함수 actionButton(inputID = \"go\", ...)로부터 버튼을 누를 때 마다 \"go\"라는 입력 요소의 값(input$go)이 1씩 증가하고, input$go값이 변할 때마다(즉, 버튼이 눌릴 때마다) Server에서 { } 속의 내용을 실행한다. 위의 예시의 경우 버튼을 클리할 때마다 콘솔에 “버튼이 눌렸습니다”가 출력된다.\n좀 더 현실적인 예시를 제시하면 다음과 같다. 버튼 클릭시 계산을 실행하게 할 수 있다.\n\nobserveEvent(input$go, {\n  result &lt;- heavy_calculation()\n  print(result)\n})\n\nUI 요소를 업데이트하게 할 수 있다.\n\nobserveEvent(input$go, {\n  updateSliderInput(session, \"bins\", value = 20)\n})\n\n파일을 저장하게 할 수 있다.\n\nobserveEvent(input$save, {\n  write.csv(data, \"result.csv\")\n})\n\n사실 observeEvent() 함수는 observe() 함수와 매우 유사하다. 아래는 동일하게 작동한다.\n\nobserve({\n  input$go\n  cat(\"버튼이 눌렸습니다\\n\")\n})\n\n그러나 observeEvent()는 이벤트 중심이고, 의존성을 명확히 분리하며, 가독성과 안전성을 높이는 장점이 있다. 따라서 버튼 처리에는 observeEvent()가 권장된다.",
+    "text": "5 반응성 함수\n\n5.1 정의\nShiny의 반응성(reactivity)이란, 입력값의 변화에 따라 관련된 계산과 출력이 자동으로 재실행ㆍ갱신되는 메커니즘을 의미한다. 좀 더 기술적으로 표현하면 반응성은 입력(input)의 변화가 의존 관계(dependency)를 따라 전파되어, 반응형 표현식과 출력이 자동으로 갱신되는 실행 모델이다.\n반응성 함수란, 입력값에 대한 의존성을 추적하고 입력 변화 시 자동으로 재실행되는 함수를 말한다. 따라서 Shiny에서 반응성 함수는 공통적으로 다음 특징을 갖는다.\n\ninput$*에 의존\n입력이 바뀌면 자동으로 재실행\n사용자가 직접 호출하지 않음\nShiny의 반응성 그래프(dependency graph)에 의해 관리됨\n\n5.2 종류\nShiny의 반응성 함수는 역할에 따라 크게 세 부류로 나눌 수 있다.\n\n5.2.1 렌더링 함수: render* 계열\n렌더링 함수는 반응형 계산을 통해 출력물을 생성하고, 그 결과를 output 객체의 요소로 저장하는 함수이다. 일반 형식은 다음과 같다.\n\nrender*({\n  # 반응형 코드\n})\n\n반드시 output$이름 &lt;- render*({ ... }) 형태로 사용되며, 출력의 “최종 종착점”이며, UI의 *Output()과 1:1로 대응된다. 예시는 다음과 같다.\n\noutput$distPlot &lt;- renderPlot({\n  hist(x, breaks = input$bins)\n})\n\n\n5.2.2 반응형 표현식 함수: reactive({})\n\nreactive({})는 입력값에 따라 달라지는 계산 결과를 반응형 객체로 생성하는 함수이다. 입력을 받아 ’반응성 표현식(reactive expression)’을 생성한다. 여기서 반응성 표현식이란 단순히 최종 산출물(값이나 객체)만을 의미하지 않고, 그 산출물을 관리하는 메커니즘(종속성 추적, 지연 실행, 캐싱 등) 포함하는 동적인 객체를 의미한다. 따라서 반드시 함수 형태로 표기한다.\n하나의 입력이 여러 개의 출력 함수(출력 생성 함수)와 결부되는 경우에 주로 사용되는데 동일한 입력의 중복 사용을 회피하기 위해 해당 입력을 반응성 표현식으로 전환하여 다수의 출력 생성 함수에 입력으로 투입할 수 있다.\n일반 형식은 다음과 같다.\n\nr &lt;- reactive({\n  # 반응형 계산\n})\n\n출력이 아니라 중간 계산 결과를 생성하며, 반환값은 반응형 객체가 되고, 값에 접근할 때는 함수 형식으로 반드시 () 를 사용해야 한다. 예시는 다음과 같다.\n\nbins &lt;- reactive({\n  seq(min(x), max(x), length.out = input$bins + 1)\n})\n\noutput$distPlot &lt;- renderPlot({\n  hist(x, breaks = bins())\n})\n\n입력 함수를 통해 받은 input$bins를 읽어 bins라는 새로운 반응형 객체를 생성하고, 그것을 출력 생성 함수에서 투입하는 방식을 보여주고 있다. 반응형 객체는 반드시 bins()처럼 함수 형식으로 호출해야만 한다.\n그런데, 여기서는 사실 reactive({}) 함수가 반드시 필요한 것은 아니다. 즉, 다음과 같이 해도 무방하다.\n\nbins &lt;- seq(min(x), max(x), length.out = input$bins + 1)\n\noutput$distPlot &lt;- renderPlot({\n  hist(x, breaks = bins)\n})\n\n그러나 출력 생성 함수가 여러 개 사용되고 거기에 bins가 여러 번 사용된다면 위와 같이 하는 것이 훨씬 효율적이다.\n\n5.2.3 반응형 관찰자 함수: observe*() 계열\n반응형 관찰자 함수는 입력 변화에 반응하여 특정 동작(side effect)을 수행하는 함수이다. 대표적인 함수는 다음과 같다.\n\nobserve()\nobserveEvent()\neventReactive() (중간적 성격)\n\n특징은 값을 반화하지 않고, 출력 생성이 목적도 아니다. 주로 상태 변경, 메시지 출력, UI 업데이트에 사용된다. 다음에 예시가 있다.\n\nobserveEvent(input$go, {\n  cat(\"버튼이 눌렸습니다\\n\")\n})\n\n입력 함수 actionButton(inputID = \"go\", ...)로부터 버튼을 누를 때 마다 \"go\"라는 입력 요소의 값(input$go)이 1씩 증가하고, input$go값이 변할 때마다(즉, 버튼이 눌릴 때마다) Server에서 { } 속의 내용을 실행한다. 위의 예시의 경우 버튼을 클리할 때마다 콘솔에 “버튼이 눌렸습니다”가 출력된다.\n좀 더 현실적인 예시를 제시하면 다음과 같다. 버튼 클릭시 계산을 실행하게 할 수 있다.\n\nobserveEvent(input$go, {\n  result &lt;- heavy_calculation()\n  print(result)\n})\n\nUI 요소를 업데이트하게 할 수 있다.\n\nobserveEvent(input$go, {\n  updateSliderInput(session, \"bins\", value = 20)\n})\n\n파일을 저장하게 할 수 있다.\n\nobserveEvent(input$save, {\n  write.csv(data, \"result.csv\")\n})\n\n사실 observeEvent() 함수는 observe() 함수와 매우 유사하다. 아래는 동일하게 작동한다.\n\nobserve({\n  input$go\n  cat(\"버튼이 눌렸습니다\\n\")\n})\n\n그러나 observeEvent()는 이벤트 중심이고, 의존성을 명확히 분리하며, 가독성과 안전성을 높이는 장점이 있다. 따라서 버튼 처리에는 observeEvent()가 권장된다.",
     "crumbs": [
       "R과 데이터사이언스",
       "웹 앱 개발: Shiny의 기초"
@@ -1486,7 +1486,7 @@
     "href": "exec_11.html#bslib-패키지를-활용한-현대적-ui-구조-디자인",
     "title": "웹 앱 개발: Shiny의 기초",
     "section": "\n4 bslib 패키지를 활용한 현대적 UI 구조 디자인",
-    "text": "4 bslib 패키지를 활용한 현대적 UI 구조 디자인\n\n4.1 개요\n위에서 Shiny의 전체 레이아웃은 위계적으로 구성된 컨테이너 함수들에 의해 결정된다고 했다. fluidPage(), titlePanel(), sidebarLayout(), sidebarPanel(), mainPanel() 과 같은 컨테이너 함수를 통해 그림 3 에 나타나 있는 것과 같은 외향의 UI 구조가 완성된 것이다.\n보다 현대적인 UI 구조 디자인을 위해 등장한 것이 bslib 패키지이다. bslib 패키지는 Bootstrap을 기반으로 Shiny와 R Markdown을 위한 현대적인 UI 도구 모음을 제공한다. bslib패키지는 다양하고 유연한 컨테이너 함수를 제공할 뿐만 아니라, 카드(card), 밸류 박스(value box), 사이드바(sidebar) 등 재사용 가능한 콘텐츠 컴포넌트를 통해 Shiny 웹 앱과 문서를 효율적으로 구성할 수 있게 한다(전통적인 Shiny에 부족한 부분). 또한 테마 시스템을 활용하여 웹 앱과 문서의 외관을 유연하게 사용자 정의하고, 이를 실시간으로 조정할 수 있다. 나아가 최신 Bootstrap 및 Bootswatch를 지원함으로써, 기본적으로 Bootstrap 3에 의존하는 기존 Shiny 및 R Markdown 환경에 비해 보다 현대적이고 일관된 웹 UI 구현을 가능하게 한다.\nbslib 패키지를 이용해 좀 더 현대적인 감각의 웹 앱을 생성하기 위해서는 bslib 패키지에서 제공되는 다양한 UI 구성 함수(컨테이너 함수와 컴포넌트 함수)를 익혀야 하며, 뒤에서 자세히 다룬다. 여기서는 bslib 패키지를 통해 그림 3 웹 앱이 어떻게 달라지는지에 대해서만 살펴본다.\nShiny 패키지는 기본적으로 11개의 예제 웹 앱을 제공한다. 다음과 같이 실행해 본다.\n\nlibrary(shiny)\nrunExample()\n\n이 들 중 첫 번째 예제인 “01_hello”가 그림 3 에 나타나 있는 웹 앱이다. 해당 예제를 실행하려면 다음과 같이 하면 된다.\n\nrunExample(\"01_hello\")\n\n아래의 그림 5 와 같은 웹 앱이 생성된다. 이것을 그림 3 과 비교해 보라. 조금 다르다는 것을 쉽게 알아 챌 수 있는데(왼편 슬라이더바에서 &lt; 를 눌러보라.), 이것이 bslib 패키지를 활용하여 제작된 웹 앱이다.\n\n\n\n\n\n그림 5: bslib 패키지를 활용한 웹 앱의 예제\n\n\n웹 앱 뿐만 아니라 코드도 살펴보려면 다음과 같이 실행하면 된다.\n\nrunExample(\"01_hello\", display = \"showcase\")\n\n삽입되어 있는 설명 부분을 제거하고 코드만 남기면 다음과 같다. 이것을 그림 3 의 코드와 비교해 보라. 오로지 UI 부분의 코드만 다르고, 그것도 UI 함수명만 달라져 있다는 것을 알 수 있다(입출력 함수는 그대로이다). 결국 bslib 패키지는 UI 구조만 바꾼다.\n\nlibrary(shiny)\nlibrary(bslib)\n\nui &lt;- page_sidebar(\n  title = \"Hello Shiny!\",\n  sidebar = sidebar(\n    sliderInput(\n      inputId = \"bins\",\n      label = \"Number of bins:\",\n      min = 1,\n      max = 50,\n      value = 30\n    )\n  ),\n  plotOutput(outputId = \"distPlot\")\n)\n\nserver &lt;- function(input, output) {\n  output$distPlot &lt;- renderPlot({\n    x &lt;- faithful$waiting\n    bins &lt;- seq(min(x), max(x), length.out = input$bins + 1)\n\n    hist(\n      x,\n      breaks = bins,\n      col = \"#75AADB\",\n      border = \"white\",\n      xlab = \"Waiting time to next eruption (in mins)\",\n      main = \"Histogram of waiting times\"\n    )\n  })\n}\n\nshinyApp(ui = ui, server = server)\n\n첫째, page_sidebar()가 최상위 컨테이너 함수이다. page_sidebar()는 bslib에서 가장 널리 사용되는 페이지 컨테이너 함수로, 전체 너비를 차지하는 헤더(제목)와 사용자 입력을 위한 사이드바를 갖춘 대시보드형 UI 구조를 손쉽게 구성할 수 있도록 설계되었다. page_sidebar()함수는 전통적인 Shiny 컨테이너 함수 중 fluidPage(), titlePanel(), sidebarLayout() 함수의 역할을 동시에 수행한다고 생각할 수 있다.\n둘째, page_sidebar() 의 여러 인수가 전통적인 titlePanel() 함수와 sidebarLayout()의 하위 함수인 sidebarPanel() 함수를 대신한다.\n\ntitle: 대시보드의 제목을 설정할 수 있으며, titlePanel() 함수와 동일한 기능을 한다.\nsidebar = sidebar(): sidebarPanel() 함수와 동일한 기능을 한다. sidebarPanel() 함수 속에 입력 함수인 siderInput() 함수가 들어 있었던과 동일하게 sidebar() 속에 siderInput() 함수가 들어 있다.\n\n셋째, 전통적인 Shiny의 mainPanel() 함수 없이 출력 표출 함수(plotOutput())가 막바로 사용된다. 그러나 이것은 가장 단순한 방식으로, 대표적인 콘텐츠 컴포넌트 함수인 card() 함수를 사용하면 보다 풍성한 옵션을 사용할 수 있다. card() 함수 내부에서 card_header()와 card_body()라는 컴포넌트 함수를 활용한다. 아래는 위의 코드에 대해 두 가지 부가적인 조치를 한 것이다. 첫째, card() 함수를 통해 출력 표출 부분을 보완한다. 둘째, 기본 플롯 함수 대신 ggplot2 패키지를 통해 히스토그램을 작성하고 그것을 plotly 패키지의 ggplotly() 함수를 통해 인터랙티브 플롯을 생성한다. plotly 패키지의 출력 생성 및 출력 표출을 위해 renderPlotly({})와 plotlyOutput() 함수가 활용되는 점에 주목한다.\n\nlibrary(shiny)\nlibrary(bslib)\nlibrary(tidyverse)\nlibrary(plotly)\n\nui &lt;- page_sidebar(\n  title = \"Hello Shiny!\",\n  sidebar = sidebar(\n    sliderInput(\n      inputId = \"bins\",\n      label = \"Number of bins:\",\n      min = 1,\n      max = 50,\n      value = 30\n    )\n  ),\n  card(\n    card_header(\"ggplot2: Histogram\"),\n    card_body(\n      plotlyOutput(outputId = \"distPlot\")\n    )\n  )\n)\n\nserver &lt;- function(input, output) {\n  output$distPlot &lt;- renderPlotly({\n    x    &lt;- faithful[, 2]\n    gg &lt;- ggplot() +\n      geom_histogram(\n        aes(x = x), bins = input$bins, fill = 'darkgray', color = 'white'\n      ) +\n      labs(\n        x = 'Waiting time to next eruption (in mins)',\n        y = \"Frequencies\",\n        title = 'Histogram of waiting times'\n      )\n    ggplotly(gg)\n  })\n}\n\nshinyApp(ui = ui, server = server)\n\n\n4.2 컨테이너 함수\n컨테이너 함수란 다른 UI 요소를 담되, 그 자체가 시각적 콘텐츠의 주제가 되지 않고 공간, 전환, 계층 구조를 정의하는 함수이다. 컨테이너 함수는 크게 세 가지로 나뉜다.\n\n페이지 컨테이너: 페이지 전체의 폭, 높이, 스크롤 방식 등 최상위 UI 구조를 정의하는 컨테이너로, page_*() 형태를 띤다.\n레이아웃 컨테이너: 페이지 내부에서 여러 UI 요소를 동시에 어떻게 배치할지를 결정하는 컨테이너로, layout_*() 형태를 띤다.\n내비게이션 컨테이너: 여러 UI 패널을 묶어 사용자 상호작용에 따라 표시되는 콘텐츠를 전환하는 컨테이너로, navset_*()의 형태를 띤다.\n\n분류별 컨테이너 함수를 정리하면 표 3 과 같다. 자세한 사항은 bslib 패키지 홈페이지의 Get Started나 Layouts를 참고할 수 있다.\n\n\n표 3: bslib 컨테이너 함수\n\n\n\n\n\n\n\n\n분류\n함수\n특징\n\n\n\n페이지 컨테이너(기본)\n\npage_fixed()\npage_fluid()\npage_fillable()\n\n\n고정형(고정폭: 940픽셀)\n유동형(웹페이지의 전체 폭)\n대시보드형(웹페이지의 전체 폭/높이)\n\n\n\n페이지 컨테이너(확장)\n\npage_sidebar()\npage_navbar()\n\n\n표준형(전역적 사이드바 포함)\n다중 페이지, nav_panel()의 집합\n\n\n\n레이아웃 컨테이너\n\nlayout_siderbar()\nlayout_columns()\nlayout_column_wrap()\n\n\npage_*(), card(), nav_panel() 내부\npage_sidebar() 내부\nnav_panel() 내부\n\n\n\n\n내비게이션 컨테이너\n(페이지/레이아웃 레벨)\n\n\nnavset_tab()\nnavset_pill()\nnavset_underline()\n\n\nnav_panel()의 집합\n\n\n\n내비게이션 컨테이너\n(카드 레벨)\n\n\nnavset_card_tab()\nnavset_card_pill()\nnavset_card_underline()\n\n\nnav_panel()의 집합\n\n\n\n\n\n\n우선 단일 페이지의 구조를 결정하는 가장 기본적인 페이지 컨테이너 함수에 page_fixed(), page_fluid(), page_fillable() 가 있다. page_fixed()는 중앙 정렬된 고정 폭 페이지 컨테이너이고, page_fluid()는 브라우저 폭에 따라 콘텐츠 영역이 유동적으로 변화는 페이지 컨테이너이고, page_fillable()는 브라우저의 가시 영역을 높이까지 포함해 채우도록 설계된 페이지 컨테이너이다. 그림 6 는 이 세가지 페이지 컨테이너를 개념적으로 비교하고 있다.\n\n\n\n\n\n그림 6: 페이지 컨테이너의 종류(https://shiny.posit.co/r/articles/build/layout-guide/)\n\n\n그러나 가장 중요한 페이지 컨테이너 함수는 page_sidebar()로 bslib 패키지의 표준이다. 이것은 페이지 전체를 채우는 구조 위에 사이드바-메인 영역 분할을 기본으로 제공하는 고수준 페이지 컨테이너이다. 단순히 예기하면 page_sidebar()는 page_fillable()과 레이아웃 컨테이너인 layout_siderbar()를 결합한 것으로 이해할 수 있다. page_navbar()는 상단 내비게이션 바를 페이지의 기본 구조로 표함하여, 여러 화면을 전환하는 앱을 구성하는 고수준 페이지 컨테이너이다. page_navbar()는 개념적으로 페이지 컨테이너와 내비게이션 컨테이너(navbar)을 통합한다.\n레이아웃 컨테이너는 페이지 전체가 아니라 페이지 내부 배치를 담당하는데, 페이지 컨테이너와 달리 중첩 사용이 가능하지만 콘텐츠 자체를 표현하지는 않는다. layout_siderbar()는 사이드바와 메인 콘텐츠 영역으로 화면을 이분하는 레이아웃 컨테이너를 생성하는데 page_*(), card(), nav_panel() 내부 어디에도 존재할 수 있다. layout_columns()는 여러 UI 요소를 동일 행 내의 다중 컬럼으로 배치하는 레이아웃 컨테이너를 생성한다. 컬럼의 수와 폭을 명시적으로 제어할 수 있으며 정돈된 레이아웃 구현에 용이하다. layout_column_wrap()은 컬럼을 행 단위로 자동 줄바꿈하여 반응형 배치를 제공하는 레이아웃 컨테이너이다. 컬럼 폭 기준으로 자동 배치하며 화면 크기에 따라 행 수가 동적으로 변한다.\n내비게이션 컨테이너는 여러 UI 패널을 묶어 사용자 상호작요에 따라 표시되는 콘텐츠를 전환하는 컨테이너로, 페이지 컨테이너나 레이아웃 컨테이너의 내부에서 사용된다. 한 번에 하나의 패널만 활성화되며, 공간 배치가 아니라 상태 전환을 담당한다. navset_tab(), navset_pill(), navset_underline()는 모두 nav_panel()들의 집합으로 구성되며, 콘텐츠 전환의 방식이 다를 뿐이다. navset_tab()는 전통적인 탭 모양을, navset_pill()는 둥근 필(pill) 모양의 버튼을, navset_underline()는 밑줄을 그은 형태를 제공한다. navset_card_tab(), navset_card_pill(), navset_card_underline()은 동일한 기능을 하지만 card 스타일을 기본으로 내장한 컨테이너이다. navset_*() 함수가 페이지 또는 레이아웃의 주요 내비게이션과 같은 비교적 상위 UI 계층에서 사용되는데 반해 navset_card_*() 함수는 주로 콘텐츠 블록 내부에 위치하여 카드 수준의 국소적 전환에 사용된다.\n\n4.3 콘텐츠 컴포넌트: UI 구성 요소\n콘텐츠 컴포넌트는 UI 구조를 정의하지 않고, 컨테이너 내부에서 정보와 기능을 하나의 의미 있는 시각적 단위로 표현하는 재사용 가능한 UI 구성 요소이다. 컨테이너가 아니므로 구조에 관여하지 않으며, 사용자가 하나의 UI 플록으로 인식하는 부분이다. 컨테이너가 아니므로 페이지나 레이아웃 구조에 직접 관여하지 않으며, 사용자가 하나의 UI 블록으로 인식하는 부분을 이룬다. 이러한 컴포넌트는 여러 위치에서 반복 사용될 수 있고, 시각적 스타일과 의미를 함께 지닌다는 특징이 있다. bslib에서 제공하는 대표적인 콘텐츠 컴포넌트로는 카드(card), 사이드바(sidebar), 밸류 박스(value box), 툴팁(tooltip), 팝오버(popover) 등이 있다. 보다 자세한 내용은 bslib 패키지 공식 홈페이지의 Components 섹션을 참고할 수 있다.\n\n4.3.1 카드\n카드(card)는 현대적인 UI에서 가장 널리 사용되는 정보 구성 단위 중 하나이다. 기본적으로 카드는 테두리와 여백을 갖는 직사각형 컨테이너에 불과하지만, 관련된 정보를 의미 있게 묶어 제시할 경우 사용자가 내용을 보다 쉽게 이해하고, 집중하며, 탐색할 수 있도록 돕는다. 이러한 특성 때문에 카드는 대시보드와 UI 설계에서 핵심적인 역할을 하며, 대부분의 성공적인 대시보드 및 UI 프레임워크는 카드를 주요 컴포넌트로 채택하고 있다. card() 함수는 다음과 같은 컴포넌트 함수를 갖는다.\n\ncard_header(): 제목\ncard_body(): 주 콘텐츠(생략 가능: 바로 출력 표출 함수 표시 가능)\ncard_footer(): 부가 설명\n\n4.3.2 사이드바\n사이드바(sidebar)는 필터, 설정, 기타 입력 요소를 사용자가 쉽게 접근할 수 있도록 제공하는 핵심 UI 컴포넌트로, 이들이 제어하는 대화형 기능과 나란히 배치된다는 점이 특징이다. 사이드바를 활용하면 사용자 입력과 결과 출력 간의 관계를 명확히 할 수 있어, 대시보드의 사용성과 탐색성이 크게 향상된다. bslib에서는 page_sidebar()와 page_navbar() 함수를 통해 페이지 수준(page-level)의 사이드바 레이아웃을 기본적으로 제공하며, 이 외에도 다양한 형태의 사이드바 레이아웃을 지원하여 인터페이스의 목적과 복잡도에 따라 유연한 UI 설계를 가능하게 한다.\n\n\n\n\n\n\n노트사이드바 컴포넌트와 사이드바 레이아웃\n\n\n\n\n\n사이드바 컴포넌트와 사이드바 레이아웃은 다르다. 사이드바 레이아웃은 공간을 나누는 구 조를 의미한다면, 사이드바 컴포넌트는 콘텐츠를 담는 UI 블록이다. 입력 위젯, 텍스트, 메뉴 등이 포함되며 독립적인 UI가 의미가 있다. 사이드바 레이아웃의 중요 함수에는 앞에서 살펴본 것과 같은 page_sidebar(), layout_sidebar() 등이 있고, 사이드바 컴포넌트의 대표적인 함수에 sidebar()가 있다.\nbslib에서 제공하는 사이드바 레이아웃은 크게 부유형(floating), 채움형(filling), 다중 페이지/탭형(multi-page/tab)의 세 가지로 구분할 수 있다.\n부유형 레이아웃은 layout_sidebar()를 사용하는데, 페이지의 어느 위치에나 배치할 수 있는 사이드바 레이아웃을 구성할 수 있다. 이 방식은 의미적으로 관련된 입력 요소와 출력 요소를 시각적으로 함께 묶어 제시하는 데 적합하다. 또한 card()와 함께 사용하면 전체 화면 확장(full-screen), 헤더·푸터 추가 등 카드가 제공하는 다양한 기능을 활용할 수 있다.\n채움형 레이아웃은 page_sidebar()를 사용하는데 페이지 전체를 채우는 사이드바 레이아웃을 생성한다. 내부적으로 page_sidebar()는 page_fillable()과 layout_sidebar()를 단순히 감싼(wrapper) 함수에 불과하다. 이 구조를 이해하면, 하나의 채움형 레이아웃 안에 여러 개의 사이드바 레이아웃을 유연하게 배치할 수 있는 가능성이 열린다.\n다중 페이지/탭 레이아웃은 page_navbar()나 navset_card_tab() 내부에서 sidebar 인수를 사용해 사이드바를 구성할 수 있다. 이 경우 사이드바는 페이지 전체를 채우는 동시에, 모든 페이지나 탭에서 동일하게 유지되어 표시된다. 이후에는 페이지별로 서로 다른 레이아웃을 구성하는 방법도 다루겠지만, 모든 페이지에서 동일한 사이드바를 사용하는 것이 바람직한 경우도 많다. 이러한 경우에는 conditionalPanel()을 활용하여 특정 페이지에서만 사이드바의 일부 내용을 표시하거나 숨길 수 있다.\n\n\n\n\n4.3.3 밸류 박스\n밸류 박스(value box)는 대시보드에서 핵심적인 수치나 지표를 한눈에 전달하기 위해 사용되는 UI 컴포넌트이다. 값(value), 설명(label), 아이콘(icon) 등을 함께 제시하여 사용자가 현재 상태나 주요 변화를 빠르게 파악할 수 있도록 돕는다. bslib의 value_box() 함수는 카드(card) 기반 설계를 따르므로 다른 UI 요소들과 시각적으로 일관되게 어우러지며, Shiny의 반응성과 결합해 값이 동적으로 갱신되는 대시보드를 구성하는 데 특히 유용하다.\nvalue_box() 함수는 네 가지 주요 구성 요소로 이루어진다.\n\nvalue는 표시하고자 하는 핵심 수치나 텍스트 값으로, 대시보드에서 가장 중요한 정보를 전달한다. 출력 표출 함수를 사용할 수도 있다.\ntitle은 value 위에 선택적으로 표시되는 설명 텍스트로, 해당 값의 의미나 지표명을 명확히 한다.\nshowcase는 아이콘이나 기타 UI 요소와 같이 value 옆에 함께 배치되는 시각적 요소로, 정보를 보다 직관적으로 인식하도록 돕는다. bs_icon() 컴포넌트 함수를 주로 사용한다.\ntheme은 값 상자의 색상이나 스타일을 조정하는 선택적 설정으로, 대시보드의 전체 디자인과 시각적 일관성을 유지하거나 강조 효과를 줄 수 있다.\n\n4.3.4 툴팁과 팝오버\n툴팁(tooltip)과 팝오버(popover)는 화면을 방해하지 않으면서 추가 정보를 제공하거나 상호작용을 가능하게 하는 유용한 UI 요소이다. 툴팁은 주로 간단한 설명을 표시하는 데 사용되며, 팝오버는 보다 풍부한 정보 제공이나 사용자 입력을 포함한 상호작용을 지원한다. 예를 들어, card_header()에 “도움말” 아이콘과 함께 tooltip()을 부착하면 사용자가 시각화된 데이터에 대한 추가 설명을 손쉽게 확인할 수 있다. 또한 동일한 헤더 영역에 “설정” 아이콘과 popover()를 연결하면 시각화의 매개변수를 직접 제어할 수 있는 인터페이스를 제공할 수 있다. 더 나아가 card_footer()의 링크에 popover()를 적용하면 추가 정보의 표시뿐 아니라 하이퍼링크와 같은 상호작용 요소를 함께 제공할 수 있어, 정보 탐색과 사용자 경험을 동시에 향상시킨다.\n구현 방식 측면에서 보면, 툴팁과 팝오버는 매우 유사하다. 두 컴포넌트 모두 사용자의 상호작용을 통해 표시 여부가 전환되는 트리거(trigger) UI 요소와, 화면에 표시될 메시지 내용을 필요로 한다. tooltip()과 popover()는 공통적으로 첫 번째 인수를 트리거로 취급하며, 이름이 지정되지 않은 나머지 인수들은 메시지 내용으로 사용된다. 또한 popover()의 경우에는 선택적으로 제목(title)을 함께 지정할 수 있다.\n반면, 사용자 경험(UX)과 활용 목적 측면에서는 두 컴포넌트의 성격이 뚜렷이 다르다. 툴팁은 포커스나 마우스 오버(hover)에 의해 표시되는 반면, 팝오버는 클릭을 통해 열리고 닫힌다. 이로 인해 팝오버는 툴팁보다 화면에 더 오래 유지되는, 즉 상대적으로 지속성이 높은 인터페이스이며, 추가적인 사용자 상호작용이 필요한 경우에 적합하다. 따라서 간단한 설명과 같은 읽기 전용(read-only) 정보에는 툴팁을 사용하는 것이 바람직하고, 메시지 자체와의 상호작용이 필요한 경우에는 팝오버를 사용하는 것이 적절하다.\n\n4.4 사용자 정의 테마\nbslib 패키지의 또 다른 중요한 기능은 다양한 사용자 정의 테마(custom theming)의 적용을 용이하게 한다는 점이다. bslib는 Bootstrap 5를 기반으로 한 테마 시스템을 추상화하여, 사용자가 색상, 타이포그래피, 여백, 컴포넌트 스타일 등 핵심 디자인 요소를 일관된 방식으로 제어할 수 있도록 지원한다. 특히 bs_theme()를 중심으로 한 테마 정의 방식은 개별 UI 요소를 일일이 스타일링하는 접근에서 벗어나, 디자인 전반을 하나의 체계적인 설정으로 관리할 수 있게 해준다. 이를 통해 인터랙티브 대시보드나 웹 애플리케이션의 시각적 일관성을 유지하면서도, 목적과 사용자 맥락에 맞는 다양한 테마를 손쉽게 적용할 수 있다. 이러한 사용자 정의 테마 기능은 bslib를 단순한 UI 구성 도구를 넘어, 재현 가능하고 확장 가능한 시각적 설계 도구로 자리매김하게 하는 핵심 요소라 할 수 있다.\n\n4.4.1 bs_theme() 함수\nbs_theme() 함수는 bslib 패키지에서 사용자 정의 테마를 정의하는 핵심 함수로, Bootstrap 기반 UI의 시각적 전반을 하나의 설정 객체로 통합 관리한다. 즉, bs_theme() 함수는 색상, 글꼴, 여백, 컴포넌트 스타일 등 UI 전반의 디자인 규칙을 한 번에 정의하고 이를 Shiny 앱 전체에 일관되게 적요하도록 해주는 테마 객체 생성 함수이다.\nbs_theme() 함수의 주요 인수는 다음과 같다.\n\nversion = 5: 사용할 Bootstrap 버전으로 5가 기본값\nbg = \"#ffffff\", fg = \"#212529\": 기본 배경색 및 기본 텍스트 색상\nprimary = \"#0d6efd\", secondary = \"\", success = \"\", info = \"\", warning = \"\", danger = \"\": Bootstrap의 의미 기반 색상 체계\nbase_font = font_google(\"Noto Sans KR\"), heading_font = font_google(\"Noto Serif KR\"), code_font = font_google(\"JetBrains Mono\"): 본문 텍스트, 제목, 코드 블록의 타이포그래피 일관성 확보\nbase_font_size = \"1rem\": 기본 글자 크기로 rem 단위 사용이 권장 된다.\nspacer = \"1rem\": 여백의 기준 단위\nborder_radius = \"0.5rem\": 카드, 버튼 등의 모서리 둥글기\nbootswatch = \"flatly\": 미리 정의된 Bootswatch 테마\n\n4.4.2 테마 미리보기 및 검증\nbslib 패키지의 bs_theme_preview() 함수는 사용자 정의 테마를 실제 UI 구성 요소에 적용해 보며 시각적 효과를 즉시 확인할 수 있는 테마 미리보기 및 검증 도구이다.\n콘솔에서 함수를 실행하면, 버튼, 카드, 입력 위젯 등 대표 UI 컴포넌트에 테마를 적용해볼 수 있고, 색상 대비, 타이포그래피, 여백 등을 한눈에 점검할 수 있을 뿐만 아니라, 테마 수정의 결과를 즉시 확인해 볼 수 있다. 그림 7 에서 볼 수 있는 것처럼 오른편의 Theme customizer를 조작하여 이러한 기능을 활용해 볼 수 있다.\n\n\n\n\n\n그림 7: be_theme_update() 함수를 활용한 테마 미리보기 및 검증",
+    "text": "4 bslib 패키지를 활용한 현대적 UI 구조 디자인\n\n4.1 개요\n위에서 Shiny의 전체 레이아웃은 위계적으로 구성된 UI 구조 함수, 즉 컨테이너 함수들에 의해 결정된다고 했다. fluidPage(), titlePanel(), sidebarLayout(), sidebarPanel(), mainPanel() 과 같은 컨테이너 함수를 통해 그림 3 에 나타나 있는 것과 같은 외향의 UI 구조가 완성된 것이다.\n보다 현대적인 UI 구조 디자인을 위해 등장한 것이 bslib 패키지이다. bslib 패키지는 Bootstrap을 기반으로 Shiny와 R Markdown을 위한 현대적인 UI 도구 모음을 제공한다. bslib패키지는 다양하고 유연한 컨테이너 함수를 제공할 뿐만 아니라, 카드(card), 밸류 박스(value box), 사이드바(sidebar) 등 재사용 가능한 UI 컴포넌트(콘텐츠 구성요소)를 통해 Shiny 웹 앱과 문서를 효율적으로 구성할 수 있게 한다(전통적인 Shiny에 부족한 부분). 또한 테마 시스템을 활용하여 웹 앱과 문서의 외관을 유연하게 사용자 정의하고, 이를 실시간으로 조정할 수 있다. 나아가 최신 Bootstrap 및 Bootswatch를 지원함으로써, 기본적으로 Bootstrap 3에 의존하는 기존 Shiny 및 R Markdown 환경에 비해 보다 현대적이고 일관된 웹 UI 구현을 가능하게 한다.\nbslib 패키지를 이용해 좀 더 현대적인 감각의 웹 앱을 생성하기 위해서는 bslib 패키지에서 제공되는 다양한 UI 컨테이너 함수와 UI 컴포넌트 함수를 익혀야 하며, 뒤에서 자세히 다룬다. 여기서는 bslib 패키지를 통해 그림 3 웹 앱이 어떻게 달라지는지에 대해서만 살펴본다.\nShiny 패키지는 기본적으로 11개의 예제 웹 앱을 제공한다. 다음과 같이 실행해 본다.\n\nlibrary(shiny)\nrunExample()\n\n이 들 중 첫 번째 예제인 “01_hello”가 그림 3 에 나타나 있는 웹 앱이다. 해당 예제를 실행하려면 다음과 같이 하면 된다.\n\nrunExample(\"01_hello\")\n\n아래의 그림 5 와 같은 웹 앱이 생성된다. 이것을 그림 3 과 비교해 보라. 조금 다르다는 것을 쉽게 알아 챌 수 있는데(왼편 슬라이더바에서 &lt; 를 눌러보라.), 이것이 bslib 패키지를 활용하여 제작된 웹 앱이다.\n\n\n\n\n\n그림 5: bslib 패키지를 활용한 웹 앱의 예제\n\n\n웹 앱 뿐만 아니라 코드도 살펴보려면 다음과 같이 실행하면 된다.\n\nrunExample(\"01_hello\", display = \"showcase\")\n\n삽입되어 있는 설명 부분을 제거하고 코드만 남기면 다음과 같다. 이것을 그림 3 의 코드와 비교해 보라. 오로지 UI 부분의 코드만 다르고, 그것도 UI 함수명만 달라져 있다는 것을 알 수 있다(입력 함수, 출력 함수, 렌더링 함수는 그대로이다). 결국 bslib 패키지는 UI 구조만 바꾼다.\n\nlibrary(shiny)\nlibrary(bslib)\n\nui &lt;- page_sidebar(\n  title = \"Hello Shiny!\",\n  sidebar = sidebar(\n    sliderInput(\n      inputId = \"bins\",\n      label = \"Number of bins:\",\n      min = 1,\n      max = 50,\n      value = 30\n    )\n  ),\n  plotOutput(outputId = \"distPlot\")\n)\n\nserver &lt;- function(input, output) {\n  output$distPlot &lt;- renderPlot({\n    x &lt;- faithful$waiting\n    bins &lt;- seq(min(x), max(x), length.out = input$bins + 1)\n\n    hist(\n      x,\n      breaks = bins,\n      col = \"#75AADB\",\n      border = \"white\",\n      xlab = \"Waiting time to next eruption (in mins)\",\n      main = \"Histogram of waiting times\"\n    )\n  })\n}\n\nshinyApp(ui = ui, server = server)\n\n첫째, page_sidebar()가 최상위 컨테이너 함수이다. page_sidebar()는 bslib에서 가장 널리 사용되는 페이지 컨테이너 함수로, 전체 너비를 차지하는 헤더(제목)와 사용자 입력을 위한 사이드바를 갖춘 대시보드형 UI 구조를 손쉽게 구성할 수 있도록 설계되었다. page_sidebar()함수는 전통적인 Shiny 컨테이너 함수 중 fluidPage(), titlePanel(), sidebarLayout() 함수의 역할을 동시에 수행한다고 생각할 수 있다.\n둘째, page_sidebar() 의 여러 인수가 전통적인 titlePanel() 함수와 sidebarLayout()의 하위 함수인 sidebarPanel() 함수를 대신한다.\n\ntitle: 대시보드의 제목을 설정할 수 있으며, titlePanel() 함수와 동일한 기능을 한다.\nsidebar = sidebar(): sidebarPanel() 함수와 동일한 기능을 한다. sidebarPanel() 함수 속에 입력 함수인 siderInput() 함수가 들어 있었던과 동일하게 sidebar() 속에 siderInput() 함수가 들어 있다.\n\n셋째, 전통적인 Shiny의 mainPanel() 함수 없이 출력 함수(plotOutput())가 막바로 사용된다. 그러나 이것은 가장 단순한 방식으로, 대표적인 컴포넌트 함수인 card() 함수를 사용하면 보다 풍성한 옵션을 사용할 수 있다. card() 함수 내부에서 card_header()와 card_body()라는 컴포넌트 함수를 활용한다. 아래는 위의 코드에 대해 두 가지 부가적인 조치를 한 것이다. 첫째, card() 함수를 통해 출력 표출 부분을 보완한다. 둘째, 기본 플롯 함수 대신 ggplot2 패키지를 통해 히스토그램을 작성하고 그것을 plotly 패키지의 ggplotly() 함수를 통해 인터랙티브 플롯을 생성한다. plotly 패키지의 출력 생성 및 출력 표출을 위해 renderPlotly({})와 plotlyOutput() 함수가 활용되는 점에 주목한다.\n\nlibrary(shiny)\nlibrary(bslib)\nlibrary(tidyverse)\nlibrary(plotly)\n\nui &lt;- page_sidebar(\n  title = \"Hello Shiny!\",\n  sidebar = sidebar(\n    sliderInput(\n      inputId = \"bins\",\n      label = \"Number of bins:\",\n      min = 1,\n      max = 50,\n      value = 30\n    )\n  ),\n  card(\n    card_header(\"ggplot2: Histogram\"),\n    card_body(\n      plotlyOutput(outputId = \"distPlot\")\n    )\n  )\n)\n\nserver &lt;- function(input, output) {\n  output$distPlot &lt;- renderPlotly({\n    x    &lt;- faithful[, 2]\n    gg &lt;- ggplot() +\n      geom_histogram(\n        aes(x = x), bins = input$bins, fill = 'darkgray', color = 'white'\n      ) +\n      labs(\n        x = 'Waiting time to next eruption (in mins)',\n        y = \"Frequencies\",\n        title = 'Histogram of waiting times'\n      )\n    ggplotly(gg)\n  })\n}\n\nshinyApp(ui = ui, server = server)\n\n\n4.2 컨테이너 함수\n컨테이너 함수란 다른 UI 요소를 담되, 그 자체가 시각적 콘텐츠의 주제가 되지 않고 공간, 전환, 계층 구조를 정의하는 함수이다. 컨테이너 함수는 크게 세 가지로 나뉜다.\n\n페이지 컨테이너: 페이지 전체의 폭, 높이, 스크롤 방식 등 최상위 UI 구조를 정의하는 컨테이너로, page_*() 형태를 띤다.\n레이아웃 컨테이너: 페이지 내부에서 여러 UI 요소를 동시에 어떻게 배치할지를 결정하는 컨테이너로, layout_*() 형태를 띤다.\n내비게이션 컨테이너: 여러 UI 패널을 묶어 사용자 상호작용에 따라 표시되는 콘텐츠를 전환하는 컨테이너로, navset_*()의 형태를 띤다.\n\n분류별 컨테이너 함수를 정리하면 표 3 과 같다. 자세한 사항은 bslib 패키지 홈페이지의 Get Started나 Layouts를 참고할 수 있다.\n\n\n표 3: bslib 컨테이너 함수\n\n\n\n\n\n\n\n\n분류\n함수\n특징\n\n\n\n페이지 컨테이너(기본)\n\npage_fixed()\npage_fluid()\npage_fillable()\n\n\n고정형(고정폭: 940픽셀)\n유동형(웹페이지의 전체 폭)\n대시보드형(웹페이지의 전체 폭/높이)\n\n\n\n페이지 컨테이너(확장)\n\npage_sidebar()\npage_navbar()\n\n\n표준형(전역적 사이드바 포함)\n다중 페이지, nav_panel()의 집합\n\n\n\n레이아웃 컨테이너\n\nlayout_siderbar()\nlayout_columns()\nlayout_column_wrap()\n\n\npage_*(), card(), nav_panel() 내부\npage_sidebar() 내부\nnav_panel() 내부\n\n\n\n\n내비게이션 컨테이너\n(페이지/레이아웃 레벨)\n\n\nnavset_tab()\nnavset_pill()\nnavset_underline()\n\n\nnav_panel()의 집합\n\n\n\n내비게이션 컨테이너\n(카드 레벨)\n\n\nnavset_card_tab()\nnavset_card_pill()\nnavset_card_underline()\n\n\nnav_panel()의 집합\n\n\n\n\n\n\n우선 단일 페이지의 구조를 결정하는 가장 기본적인 페이지 컨테이너 함수에 page_fixed(), page_fluid(), page_fillable() 가 있다. page_fixed()는 중앙 정렬된 고정 폭 페이지 컨테이너이고, page_fluid()는 브라우저 폭에 따라 콘텐츠 영역이 유동적으로 변화는 페이지 컨테이너이고, page_fillable()는 브라우저의 가시 영역을 높이까지 포함해 채우도록 설계된 페이지 컨테이너이다. 그림 6 는 이 세가지 페이지 컨테이너를 개념적으로 비교하고 있다.\n\n\n\n\n\n그림 6: 페이지 컨테이너의 종류(https://shiny.posit.co/r/articles/build/layout-guide/)\n\n\n그러나 가장 중요한 페이지 컨테이너 함수는 page_sidebar()로 bslib 패키지의 표준이다. 이것은 페이지 전체를 채우는 구조 위에 사이드바-메인 영역 분할을 기본으로 제공하는 고수준 페이지 컨테이너이다. 단순히 예기하면 page_sidebar()는 page_fillable()과 레이아웃 컨테이너인 layout_siderbar()를 결합한 것으로 이해할 수 있다. page_navbar()는 상단 내비게이션 바를 페이지의 기본 구조로 표함하여, 여러 화면을 전환하는 앱을 구성하는 고수준 페이지 컨테이너이다. page_navbar()는 개념적으로 페이지 컨테이너와 내비게이션 컨테이너(navbar)을 통합한다.\n레이아웃 컨테이너는 페이지 전체가 아니라 페이지 내부 배치를 담당하는데, 페이지 컨테이너와 달리 중첩 사용이 가능하지만 콘텐츠 자체를 표현하지는 않는다. layout_siderbar()는 사이드바와 메인 콘텐츠 영역으로 화면을 이분하는 레이아웃 컨테이너를 생성하는데 page_*(), card(), nav_panel() 내부 어디에도 존재할 수 있다. layout_columns()는 여러 UI 요소를 동일 행 내의 다중 컬럼으로 배치하는 레이아웃 컨테이너를 생성한다. 컬럼의 수와 폭을 명시적으로 제어할 수 있으며 정돈된 레이아웃 구현에 용이하다. layout_column_wrap()은 컬럼을 행 단위로 자동 줄바꿈하여 반응형 배치를 제공하는 레이아웃 컨테이너이다. 컬럼 폭 기준으로 자동 배치하며 화면 크기에 따라 행 수가 동적으로 변한다.\n내비게이션 컨테이너는 여러 UI 패널을 묶어 사용자 상호작요에 따라 표시되는 콘텐츠를 전환하는 컨테이너로, 페이지 컨테이너나 레이아웃 컨테이너의 내부에서 사용된다. 한 번에 하나의 패널만 활성화되며, 공간 배치가 아니라 상태 전환을 담당한다. navset_tab(), navset_pill(), navset_underline()는 모두 nav_panel()들의 집합으로 구성되며, 콘텐츠 전환의 방식이 다를 뿐이다. navset_tab()는 전통적인 탭 모양을, navset_pill()는 둥근 필(pill) 모양의 버튼을, navset_underline()는 밑줄을 그은 형태를 제공한다. navset_card_tab(), navset_card_pill(), navset_card_underline()은 동일한 기능을 하지만 card 스타일을 기본으로 내장한 컨테이너이다. navset_*() 함수가 페이지 또는 레이아웃의 주요 내비게이션과 같은 비교적 상위 UI 계층에서 사용되는데 반해 navset_card_*() 함수는 주로 콘텐츠 블록 내부에 위치하여 카드 수준의 국소적 전환에 사용된다.\n\n4.3 UI 컴포넌트: 콘텐츠 구성 요소\nUI 컴포넌트는 UI 구조를 정의하지 않고, 컨테이너 내부에서 정보와 기능을 하나의 의미 있는 시각적 단위로 표현하는 재사용 가능한 UI 구성 요소이다. 컨테이너가 아니므로 구조에 관여하지 않으며, 사용자가 하나의 UI 플록으로 인식하는 부분이다. 컨테이너가 아니므로 페이지나 레이아웃 구조에 직접 관여하지 않으며, 사용자가 하나의 UI 블록으로 인식하는 부분을 이룬다. 이러한 컴포넌트는 여러 위치에서 반복 사용될 수 있고, 시각적 스타일과 의미를 함께 지닌다는 특징이 있다. bslib에서 제공하는 대표적인 콘텐츠 컴포넌트로는 카드(card), 사이드바(sidebar), 밸류 박스(value box), 툴팁(tooltip), 팝오버(popover) 등이 있다. 보다 자세한 내용은 bslib 패키지 공식 홈페이지의 Components 섹션을 참고할 수 있다.\n\n4.3.1 카드\n카드(card)는 현대적인 UI에서 가장 널리 사용되는 정보 구성 단위 중 하나이다. 기본적으로 카드는 테두리와 여백을 갖는 직사각형 컨테이너에 불과하지만, 관련된 정보를 의미 있게 묶어 제시할 경우 사용자가 내용을 보다 쉽게 이해하고, 집중하며, 탐색할 수 있도록 돕는다. 이러한 특성 때문에 카드는 대시보드와 UI 설계에서 핵심적인 역할을 하며, 대부분의 성공적인 대시보드 및 UI 프레임워크는 카드를 주요 컴포넌트로 채택하고 있다. card() 함수는 다음과 같은 컴포넌트 함수를 갖는다.\n\ncard_header(): 제목\ncard_body(): 주 콘텐츠(생략 가능: 바로 출력 표출 함수 표시 가능)\ncard_footer(): 부가 설명\n\n4.3.2 사이드바\n사이드바(sidebar)는 필터, 설정, 기타 입력 요소를 사용자가 쉽게 접근할 수 있도록 제공하는 핵심 UI 컴포넌트로, 이들이 제어하는 대화형 기능과 나란히 배치된다는 점이 특징이다. 사이드바를 활용하면 사용자 입력과 결과 출력 간의 관계를 명확히 할 수 있어, 대시보드의 사용성과 탐색성이 크게 향상된다. bslib에서는 page_sidebar()와 page_navbar() 함수를 통해 페이지 수준(page-level)의 사이드바 레이아웃을 기본적으로 제공하며, 이 외에도 다양한 형태의 사이드바 레이아웃을 지원하여 인터페이스의 목적과 복잡도에 따라 유연한 UI 설계를 가능하게 한다.\n\n\n\n\n\n\n노트사이드바 컴포넌트와 사이드바 레이아웃\n\n\n\n\n\n사이드바 컴포넌트와 사이드바 레이아웃은 다르다. 사이드바 레이아웃은 공간을 나누는 구 조를 의미한다면, 사이드바 컴포넌트는 콘텐츠를 담는 UI 블록이다. 입력 위젯, 텍스트, 메뉴 등이 포함되며 독립적인 UI가 의미가 있다. 사이드바 레이아웃의 중요 함수에는 앞에서 살펴본 것과 같은 page_sidebar(), layout_sidebar() 등이 있고, 사이드바 컴포넌트의 대표적인 함수에 sidebar()가 있다.\nbslib에서 제공하는 사이드바 레이아웃은 크게 부유형(floating), 채움형(filling), 다중 페이지/탭형(multi-page/tab)의 세 가지로 구분할 수 있다.\n부유형 레이아웃은 layout_sidebar()를 사용하는데, 페이지의 어느 위치에나 배치할 수 있는 사이드바 레이아웃을 구성할 수 있다. 이 방식은 의미적으로 관련된 입력 요소와 출력 요소를 시각적으로 함께 묶어 제시하는 데 적합하다. 또한 card()와 함께 사용하면 전체 화면 확장(full-screen), 헤더·푸터 추가 등 카드가 제공하는 다양한 기능을 활용할 수 있다.\n채움형 레이아웃은 page_sidebar()를 사용하는데 페이지 전체를 채우는 사이드바 레이아웃을 생성한다. 내부적으로 page_sidebar()는 page_fillable()과 layout_sidebar()를 단순히 감싼(wrapper) 함수에 불과하다. 이 구조를 이해하면, 하나의 채움형 레이아웃 안에 여러 개의 사이드바 레이아웃을 유연하게 배치할 수 있는 가능성이 열린다.\n다중 페이지/탭 레이아웃은 page_navbar()나 navset_card_tab() 내부에서 sidebar 인수를 사용해 사이드바를 구성할 수 있다. 이 경우 사이드바는 페이지 전체를 채우는 동시에, 모든 페이지나 탭에서 동일하게 유지되어 표시된다. 이후에는 페이지별로 서로 다른 레이아웃을 구성하는 방법도 다루겠지만, 모든 페이지에서 동일한 사이드바를 사용하는 것이 바람직한 경우도 많다. 이러한 경우에는 conditionalPanel()을 활용하여 특정 페이지에서만 사이드바의 일부 내용을 표시하거나 숨길 수 있다.\n\n\n\n\n4.3.3 밸류 박스\n밸류 박스(value box)는 대시보드에서 핵심적인 수치나 지표를 한눈에 전달하기 위해 사용되는 UI 컴포넌트이다. 값(value), 설명(label), 아이콘(icon) 등을 함께 제시하여 사용자가 현재 상태나 주요 변화를 빠르게 파악할 수 있도록 돕는다. bslib의 value_box() 함수는 카드(card) 기반 설계를 따르므로 다른 UI 요소들과 시각적으로 일관되게 어우러지며, Shiny의 반응성과 결합해 값이 동적으로 갱신되는 대시보드를 구성하는 데 특히 유용하다.\nvalue_box() 함수는 네 가지 주요 구성 요소로 이루어진다.\n\nvalue는 표시하고자 하는 핵심 수치나 텍스트 값으로, 대시보드에서 가장 중요한 정보를 전달한다. 출력 표출 함수를 사용할 수도 있다.\ntitle은 value 위에 선택적으로 표시되는 설명 텍스트로, 해당 값의 의미나 지표명을 명확히 한다.\nshowcase는 아이콘이나 기타 UI 요소와 같이 value 옆에 함께 배치되는 시각적 요소로, 정보를 보다 직관적으로 인식하도록 돕는다. bs_icon() 컴포넌트 함수를 주로 사용한다.\ntheme은 값 상자의 색상이나 스타일을 조정하는 선택적 설정으로, 대시보드의 전체 디자인과 시각적 일관성을 유지하거나 강조 효과를 줄 수 있다.\n\n4.3.4 툴팁과 팝오버\n툴팁(tooltip)과 팝오버(popover)는 화면을 방해하지 않으면서 추가 정보를 제공하거나 상호작용을 가능하게 하는 유용한 UI 요소이다. 툴팁은 주로 간단한 설명을 표시하는 데 사용되며, 팝오버는 보다 풍부한 정보 제공이나 사용자 입력을 포함한 상호작용을 지원한다. 예를 들어, card_header()에 “도움말” 아이콘과 함께 tooltip()을 부착하면 사용자가 시각화된 데이터에 대한 추가 설명을 손쉽게 확인할 수 있다. 또한 동일한 헤더 영역에 “설정” 아이콘과 popover()를 연결하면 시각화의 매개변수를 직접 제어할 수 있는 인터페이스를 제공할 수 있다. 더 나아가 card_footer()의 링크에 popover()를 적용하면 추가 정보의 표시뿐 아니라 하이퍼링크와 같은 상호작용 요소를 함께 제공할 수 있어, 정보 탐색과 사용자 경험을 동시에 향상시킨다.\n구현 방식 측면에서 보면, 툴팁과 팝오버는 매우 유사하다. 두 컴포넌트 모두 사용자의 상호작용을 통해 표시 여부가 전환되는 트리거(trigger) UI 요소와, 화면에 표시될 메시지 내용을 필요로 한다. tooltip()과 popover()는 공통적으로 첫 번째 인수를 트리거로 취급하며, 이름이 지정되지 않은 나머지 인수들은 메시지 내용으로 사용된다. 또한 popover()의 경우에는 선택적으로 제목(title)을 함께 지정할 수 있다.\n반면, 사용자 경험(UX)과 활용 목적 측면에서는 두 컴포넌트의 성격이 뚜렷이 다르다. 툴팁은 포커스나 마우스 오버(hover)에 의해 표시되는 반면, 팝오버는 클릭을 통해 열리고 닫힌다. 이로 인해 팝오버는 툴팁보다 화면에 더 오래 유지되는, 즉 상대적으로 지속성이 높은 인터페이스이며, 추가적인 사용자 상호작용이 필요한 경우에 적합하다. 따라서 간단한 설명과 같은 읽기 전용(read-only) 정보에는 툴팁을 사용하는 것이 바람직하고, 메시지 자체와의 상호작용이 필요한 경우에는 팝오버를 사용하는 것이 적절하다.\n\n4.4 사용자 정의 테마\nbslib 패키지의 또 다른 중요한 기능은 다양한 사용자 정의 테마(custom themeing)의 적용을 용이하게 한다는 점이다. bslib는 Bootstrap 5를 기반으로 한 테마 시스템을 추상화하여, 사용자가 색상, 타이포그래피, 여백, 컴포넌트 스타일 등 핵심 디자인 요소를 일관된 방식으로 제어할 수 있도록 지원한다. 특히 bs_theme()를 중심으로 한 테마 정의 방식은 개별 UI 요소를 일일이 스타일링하는 접근에서 벗어나, 디자인 전반을 하나의 체계적인 설정으로 관리할 수 있게 해준다. 이를 통해 인터랙티브 대시보드나 웹 애플리케이션의 시각적 일관성을 유지하면서도, 목적과 사용자 맥락에 맞는 다양한 테마를 손쉽게 적용할 수 있다. 이러한 사용자 정의 테마 기능은 bslib를 단순한 UI 구성 도구를 넘어, 재현 가능하고 확장 가능한 시각적 설계 도구로 자리매김하게 하는 핵심 요소라 할 수 있다.\n\n4.4.1 bs_theme() 함수\nbs_theme() 함수는 bslib 패키지에서 사용자 정의 테마를 정의하는 핵심 함수로, Bootstrap 기반 UI의 시각적 전반을 하나의 설정 객체로 통합 관리한다. 즉, bs_theme() 함수는 색상, 글꼴, 여백, 컴포넌트 스타일 등 UI 전반의 디자인 규칙을 한 번에 정의하고 이를 Shiny 앱 전체에 일관되게 적요하도록 해주는 테마 객체 생성 함수이다.\nbs_theme() 함수의 주요 인수는 다음과 같다.\n\nversion = 5: 사용할 Bootstrap 버전으로 5가 기본값\nbg = \"#ffffff\", fg = \"#212529\": 기본 배경색 및 기본 텍스트 색상\nprimary = \"#0d6efd\", secondary = \"\", success = \"\", info = \"\", warning = \"\", danger = \"\": Bootstrap의 의미 기반 색상 체계\nbase_font = font_google(\"Noto Sans KR\"), heading_font = font_google(\"Noto Serif KR\"), code_font = font_google(\"JetBrains Mono\"): 본문 텍스트, 제목, 코드 블록의 타이포그래피 일관성 확보\nbase_font_size = \"1rem\": 기본 글자 크기로 rem 단위 사용이 권장 된다.\nspacer = \"1rem\": 여백의 기준 단위\nborder_radius = \"0.5rem\": 카드, 버튼 등의 모서리 둥글기\nbootswatch = \"flatly\": 미리 정의된 Bootswatch 테마\n\n4.4.2 테마 미리보기 및 검증\nbslib 패키지의 bs_theme_preview() 함수는 사용자 정의 테마를 실제 UI 구성 요소에 적용해 보며 시각적 효과를 즉시 확인할 수 있는 테마 미리보기 및 검증 도구이다.\n콘솔에서 함수를 실행하면, 버튼, 카드, 입력 위젯 등 대표 UI 컴포넌트에 테마를 적용해볼 수 있고, 색상 대비, 타이포그래피, 여백 등을 한눈에 점검할 수 있을 뿐만 아니라, 테마 수정의 결과를 즉시 확인해 볼 수 있다. 그림 7 에서 볼 수 있는 것처럼 오른편의 Theme customizer를 조작하여 이러한 기능을 활용해 볼 수 있다.\n\n\n\n\n\n그림 7: be_theme_update() 함수를 활용한 테마 미리보기 및 검증",
     "crumbs": [
       "R과 데이터사이언스",
       "웹 앱 개발: Shiny의 기초"
@@ -1831,6 +1831,1656 @@
     "crumbs": [
       "R 프레젠테이션: 2024/1",
       "R & RStudio"
+    ]
+  },
+  {
+    "objectID": "exec_11.html#입력-함수와-출력-함수의-종류",
+    "href": "exec_11.html#입력-함수와-출력-함수의-종류",
+    "title": "웹 앱 개발: Shiny의 기초",
+    "section": "\n3 입력 함수와 출력 함수의 종류",
+    "text": "3 입력 함수와 출력 함수의 종류\n\n3.1 입력 함수\n앞에서 언급한 것처럼, 입력 함수 혹은 입력 위젯 생성 함수의 종류는 다양하다. R Shiny Components 웹페이지 기준으로 대략 25개 정도이다. 그림 4 는 그 중 일부를 보여주고 있다.\n\n\n\n\n\n그림 4: 입력 위젯의 종류(https://shiny.posit.co/r/getstarted/build-an-app/reactive-flow/ui-inputs.html)\n\n\n몇 가지 주목할 사항이 있다.\n첫째, 모든 함수의 이름이 *Input() 형식인 것은 아니다. 특히 버튼 형식의 경우 *Button() 혹은 *Buttons() 형식을 띤다. 이 외에 *Link(), *switch()로 끝나는 함수도 있다.\n둘째, 입력 함수의 인수가 중요하다. 입력값에 이름을 부여하는 inputID 인수와 입력 위젯에 나타날 설명 글귀를 지정하는 label 인수는 공통이다. 그러나 나머지 인수는 입력 함수에 따라 달라진다. 위의 예에서 sliderInput() 입력 함수는 min, max, value라는 추가적인 인수를 갖는데, min과 max는 슬라이더의 최대 및 최소값을, value는 기본값을 지정하는 인수이다. 입력 함수별 인수에 대한 자세한 사항은 R Shiny Components 웹페이지를 참조한다.\n\n3.2 출력 함수와 렌더링 함수\n출력 함수는 서버에서 생성된 출력을 UI에서 표출해주는 함수인데 반해, 렌더링 함수는 서버에서 실질적으로 출력을 생성하는 함수이다. 출력 함수와 렌더링 함수 모두는 출력의 형식(플롯, 테이블, 텍스트, 이미지 등)에 따라 다양하기 때문에, 기본적으로 두 함수는 쌍을 이룰 수 밖에 없다.\n다음은 다섯 가지 기본 쌍을 보여준다. 출력 함수는 *Output()의 형식을, 렌더링 함수는 render*({})의 형식을 취한다.\n\n\n표 1: 기본 출력 함수와 렌더링 함수 쌍\n\n\n\n\n\n\n\n\n형식\n출력 함수(UI)\n렌더링 함수(Server)\n\n\n\n플롯\nplotOutput(outputID = \"\")\nrenderPlot({})\n\n\n테이블\ntableOutput(outputID = \"\")\nrenderTable({})\n\n\n일반 텍스트\ntextOutput(outputID = \"\")\nrenderText({})\n\n\n사전 포맷된 텍스트\nverbatimeTextOutput(outputID = \"\")\nrenderPrint({})\n\n\n이미지\nimageOutput(outputID = \"\")\nrenderImage({})\n\n\n\n\n\n\n그런데 특히 주요 시각화 패키지들은 Shiny 웹 앱 구축을 염두에 두고 개별적인 출력 함수와 렌더링 함수를 제공하고 있다. 중요한 패키지에 대해 이를 정리하면 다음과 같다. 모두 패키지명Output()형식과 render패키지명({})의 형식을 띤다.\n\n\n표 2: 주요 패키지별 출력 함수와 렌더링 함수 쌍\n\n\n\n\n\n\n\n\n패키지\n출력 함수(UI)\n렌더링 함수(Server)\n\n\n\nDT\nDTOutput(outputID = \"\")\nrenderDT({})\n\n\nreactable\nreactableOutput(outputID = \"\")\nrenderReactable({})\n\n\nplotly\nplotlyOutput(outputID = \"\")\nrenderPlotyl({})\n\n\necharts4r\necharts4rOutput(outputID = \"\")\nrenderEcharts4r({})\n\n\nleaflet\nleafletOutput(outputID = \"\")\nrenderLeaflet({})\n\n\ntmap\ntmapOutput(outputID = \"\")\nrenderTmap({})\n\n\n\n\n\n\nShiny 웹 앱에서의 활용을 염두에 둔 패키지들은 모두 이러한 출력 함수의 쌍을 제공하고 있다. 따라서 출력 함수는 굉장히 많을 수 있다. R Shiny Components 웹페이지는 기본 5개의 함수쌍에 주요 패키지를 포함하는 12개 정도의 출력 함수쌍을 예시로 제시하고 있다.",
+    "crumbs": [
+      "R과 데이터사이언스",
+      "웹 앱 개발: Shiny의 기초"
+    ]
+  },
+  {
+    "objectID": "R_lec_12_2025.html",
+    "href": "R_lec_12_2025.html",
+    "title": "R Lecture 12\n웹 앱 개발: Shiny 2",
+    "section": "",
+    "text": "https://www.shinyapps.io/\n계정 생성\n\n로그인 후 상단 오른쪽 끝 메뉴 “Tokens” 페이지로 이동\n페이지에서 Show를 통해 인증 토큰(Token)과 Secret 확보: Show secret를 클릭하여 secret까지 보이게 한 후 복사하기\n\nRStudio에 토큰 설정\n\nR 콘솔에 복사한 내용 붙여넣기 및 실행\n\nPublish 버튼 클릭\n\n스크립트 윈도우의 오른쪽 상단\n배포를 원하는 R 파일만 선택\n\nURL 생성: https://userid.shinyapps.io/project_name/\n\nhttps://sangillee.shinyapps.io/AIEDU2025_Example/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 12]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: Shiny 2]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_12_2025.html#웹-배포deployment",
+    "href": "R_lec_12_2025.html#웹-배포deployment",
+    "title": "R Lecture 12\n웹 앱 개발: Shiny 2",
+    "section": "",
+    "text": "https://www.shinyapps.io/\n계정 생성\n\n로그인 후 상단 오른쪽 끝 메뉴 “Tokens” 페이지로 이동\n페이지에서 Show를 통해 인증 토큰(Token)과 Secret 확보: Show secret를 클릭하여 secret까지 보이게 한 후 복사하기\n\nRStudio에 토큰 설정\n\nR 콘솔에 복사한 내용 붙여넣기 및 실행\n\nPublish 버튼 클릭\n\n스크립트 윈도우의 오른쪽 상단\n배포를 원하는 R 파일만 선택\n\nURL 생성: https://userid.shinyapps.io/project_name/\n\nhttps://sangillee.shinyapps.io/AIEDU2025_Example/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 12]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: Shiny 2]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_12_2025.html#quarto와-shiny의-결합",
+    "href": "R_lec_12_2025.html#quarto와-shiny의-결합",
+    "title": "R Lecture 12\n웹 앱 개발: Shiny 2",
+    "section": "Quarto와 Shiny의 결합",
+    "text": "Quarto와 Shiny의 결합\n\n상황: Quarto 대시보드의 일부 영역에서 Shiny 사용\n두 가지 접근\n\nShiny 중심 방식: Shiny 웹 앱의 생성\n\nQuarto 대시보드 내에서 Quarto 문법으로 Shiny 웹 앱 구축\nQuarto 대시보드 전체가 Shiny 웹 앱화: shinyapps.io를 통해 배포\n사례: https://sangillee.shinyapps.io/Dashboard_Example/\n\nQuarto 중심 방식: Quarto 대시보드의 유지\n\nQuarto 대시보드 속에 독립적으로 구축된 Shiny 웹 앱 임베딩\n여전히 Quarto 대시보드: Quarto Pub을 통해 배포\n사례: https://sangillee.snu.ac.kr/dashboard_examples/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 12]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: Shiny 2]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_12_2025.html#quarto와-shiny의-결합-shiny-중심-방식",
+    "href": "R_lec_12_2025.html#quarto와-shiny의-결합-shiny-중심-방식",
+    "title": "R Lecture 12\n웹 앱 개발: Shiny 2",
+    "section": "Quarto와 Shiny의 결합: Shiny 중심 방식",
+    "text": "Quarto와 Shiny의 결합: Shiny 중심 방식\n\n옵션 1: Quarto를 Shiny 웹 앱의 레이아웃 설정 도구로 사용\n\nshiny 패키지: fluidPage()\n\ntitlePanel(), SidebarLayout(), sidebarPanel(), mainPanel()\n\nbslib 패키지: page_sidebar()\n\nsidebar = sidebar(), card()\n\n\n옵션 2: Quarto 대시보드 내에서 Shiny 웹 앱 구축",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 12]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: Shiny 2]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_12_2025.html#quarto와-shiny의-결합-shiny-중심-방식-1",
+    "href": "R_lec_12_2025.html#quarto와-shiny의-결합-shiny-중심-방식-1",
+    "title": "R Lecture 12\n웹 앱 개발: Shiny 2",
+    "section": "Quarto와 Shiny의 결합: Shiny 중심 방식",
+    "text": "Quarto와 Shiny의 결합: Shiny 중심 방식\n\nhttps://quarto.org/docs/dashboards/interactivity/shiny-r.html\nYAML 헤더에 다음 첨가: server: shiny\nui 부분: 기본적으로는 r 코드 청크 속에 포함, 사이드바와 메인 병렬\n\n사이드바: 레이아웃 구성요소에 넣고 {.sidebar} CSS 클래스 지정 가능\n메인: 사이드바와 다른 레이아웃 구성요소에 넣기 가능\n\nserver 부분: r 코드 청크 속에 포함, 다음 지정\n\n#| context: server 지정\n\n기타(패키지, 데이터 등) 부분: r 코드 청크 속에 포함, 다음 지정\n\n#| context: setup\n#| include: false",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 12]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: Shiny 2]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_12_2025.html#quarto와-shiny의-결합-quarto-중심-방식",
+    "href": "R_lec_12_2025.html#quarto와-shiny의-결합-quarto-중심-방식",
+    "title": "R Lecture 12\n웹 앱 개발: Shiny 2",
+    "section": "Quarto와 Shiny의 결합: Quarto 중심 방식",
+    "text": "Quarto와 Shiny의 결합: Quarto 중심 방식\n\n보통 하나의 row에 임베딩\nsrc=\"\" 부분만 교체\n\n&lt;iframe src=\"https://...\" loading=\"lazy\" style=\"width: 100%; height: 600px; border: 0px none;\" allow=\"web-share; clipboard-write\"&gt;&lt;/iframe&gt;",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 12]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: Shiny 2]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_12_2025.html#chatbot-웹-앱",
+    "href": "R_lec_12_2025.html#chatbot-웹-앱",
+    "title": "R Lecture 12\n웹 앱 개발: Shiny 2",
+    "section": "Chatbot 웹 앱",
+    "text": "Chatbot 웹 앱\n\n\n\n\n\n\nhttps://ellmer.tidyverse.org/\n\n\n\n\n\n\n\nhttps://posit-dev.github.io/shinychat/r/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 12]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: Shiny 2]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_12_2025.html#chatbot-웹-앱-1",
+    "href": "R_lec_12_2025.html#chatbot-웹-앱-1",
+    "title": "R Lecture 12\n웹 앱 개발: Shiny 2",
+    "section": "Chatbot 웹 앱",
+    "text": "Chatbot 웹 앱\n\n코드웹 앱\n\n\n\nlibrary(shiny)\nlibrary(shinychat)\nlibrary(bslib)\nlibrary(ellmer)\n\nui &lt;- page_fillable(\n  chat_ui(\n    id = \"chat\",\n    messages = \"your messages here\"\n  ),\n  fillable_mobile = TRUE\n)\n\nserver &lt;- function(input, output, session) {\n  chat &lt;-\n    chat_openai(\n      base_url = \"https://api.openai.com/v1\",\n      model = \"gpt-5.1\",\n      api_key = your_api_key_here,\n      system_prompt = \"\"\n    )\n\n  observeEvent(input$chat_user_input, {\n    stream &lt;- chat$stream_async(input$chat_user_input)\n    chat_append(\"chat\", stream)\n  })\n}\n\nshinyApp(ui, server)",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 12]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: Shiny 2]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html",
+    "href": "R_lec_10_2025.html",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "데이터 레이어\n\n국가 경계, 호수, 그래티큘: 벡터(vector) 데이터\n인구밀도, 수심: 래스터(raster) 데이터\n\n데이터 원천\n\nNatural Earth Data: 국가 경계, 호수, 그래티큘, 수심\nNASA’s Socioeconomic Data and Applications Center (SEDAC): 인구 밀도\n\n투영법: 로빈슨 도법(Robinson projection)\n\nCRS (coordinate reference system, 좌표참조계)\n\n지도화 기법: 컬러, 범례, 주기 표기 등\n\n\n\n\n\n\n\n\n\n\nhttps://r-spatial.github.io/sf/\n\n\n\n\n\n\n\nhttps://rspatial.github.io/terra/\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://ggplot2.tidyverse.org/\n\n\n\n\n \n\n\n\n\n\nhttps://r-tmap.github.io/tmap/\n\n\n\n\n\n\n\n\n\n벡터(vector) 데이터\n\n포인트, 라인, 폴리곤\n형상 데이터 + 속성 데이터\n\n래스터(raster) 데이터\n\n그리드 셀(grid cell)\n일체형\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n벡터 데이터: 형상 데이터 + 속성 데이터\n\n형상 데이터 (기하, 도형, 공간 데이터)\n\n지리공간적 객체 자체에 대한 데이터\n포인트(점), 라인(선), 폴리곤(면)으로 구분\n버텍스(vertex)의 좌표값\n\n속성 데이터\n\n지리공간적 객체가 보유한 속성\n기존 일반 데이터와 동일\n\n\n\n\n\n\n\n형상 데이터: 셰이프 파일(shape file) (ESRI사)\n\nsigungu.shp: 버텍스의 좌표값이 포함된 핵심 파일\nsigungu.shx: 공간적 인덱싱 파일\nsigungu.dbf: 기본 속성 파일\nsigungu.prj: 투영 정보 파일\n\n특수한 패키지 필요: sf 패키지\n\nst_read() 혹은 read_sf() 함수\n\n\n\n\n\n\n\n\nhttps://allisonhorst.com/r-packages-functions\n\n\n\n\n\n\n\n\n\n\n\n\n구분\n함수\n\n\n\n\n읽고 쓰기\nst_read(), st_write(), read_sf(), write_sf()\n\n\n투영 관련\nst_crs(), st_transform()\n\n\n기하 측정\nst_area(), st_length(), st_perimeter(), st_distance()\n\n\n기하 변형\nst_centroid(), st_buffer(), st_boundary(), st_simplify()\n\n\n기하 생성\nst_point(), st_voronoi() , st_convex_hull(), st_make_grid()\n\n\n기하 검토\nst_is_valid(), st_make_valid()\n\n\n기하 중첩\nst_filter(), st_intersection(), st_union(), st_crop()\n\n\n기타\nst_coordinates(), st_cast(), st_as_sf(), st_graticule(), st_join()\n\n\n\n\n\n\n\nCodeResult\n\n\n\nlibrary(tidyverse)\nlibrary(sf)\nsigungu_shp &lt;- st_read(\"sigungu.shp\", options = \"ENCODING=CP949\")\nggplot() + geom_sf(data = sigungu_shp)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n속성 데이터\n\ncsv 파일: readr 패키지의 read_csv() 함수\n엑셀 파일: readxl 패키지의 read_excel() 함수\nOpen API를 통해 수집: tibble 객체\n\n형상 데이터와 속성 데이터의 결합: dplyr 패키지의 left_join() 함수\n\n왼편: 형상 데이터\n오른편: 속성 데이터\n\n\n\n\n\n\n데이터 형식\n\nTIFF 혹은 GeoTIFF\n\n패키지: terra 패키지\n\n불러오기: rast()\n변환하기: project(), mosaic(), crop()\n계산하기: global(), focal(), zonal()\n수 많은 다른 함수들\n\n\n\n\n\n\n\n\nhttps://datacarpentry.github.io/organization-geospatial/03-crs.html\n\n\n\n\n\n\n좌표참조계 Coordinate Reference System\n모든 지리공간데이터는 특정한 좌표참조계에 의거해 제작되며 이러한 좌표참조계는 매우 다양함\n\n준거타원체\n투영법(map projection)\n투영 파라미터: 투영축, 투영격, 중앙경선, 가상원점 등\n\n지리공간데이터의 SRID(Spatial Reference System Identifiers, 공간참조계식별자)\nsf 패키지: st_crs() 함수\n\n\n\n\n\nPROJ 정형문자열\n\nhttps://proj.org/en/9.4/\n준거타원체, 투영법, 투영 파라미터를 + 기호로 연결해 작성한 문자열\nUTM-K\n\n+proj=tmerc +lat_0=38 +lon_0=127.5 +k=0.9996 +x_0=1000000 +y_0=2000000 +ellps=GRS80 +units=m\n\n\nEPSG 숫자코드\n\nhttps://epsg.io/\n모든 CRS에 1024~32767 사이의 고유 숫자를 부여\nUTM-K\n\nEPSG: 5179\n\n\n\n\n\n\n\n세계지도를 위한 주요 투영법의 PROJ 별명(alias)\n\n\n\n\n\n\n\n\n\n투영법\nPROJ 파라미터\n\n\n\n\n정적원통 도법 Equal Area Cylindrical\n+proj=cea\n\n\n컴펙트 밀러 도법 Compact Miller\n+proj=comill\n\n\n에케르트 IV 도법 Eckert IV\n+proj=eck4\n\n\n정거원통 도법 Equidistant Cylindrical\n+proj=eqc\n\n\n구드 도법 Goode Homolosine\n+proj=goode\n\n\n단열형 구드 도법 Interrupted Goode Homolosine\n+proj=igh\n\n\n메르카토르 도법 Mercator\n+proj=merc\n\n\n몰바이데 도법 Mollweide\n+proj=moll\n\n\n로빈슨 도법 Robinson\n+proj=robin\n\n\n시뉴소이드 도법 Sinusoidal\n+proj=sinu\n\n\n빈켈트리펠 도법 Winkel Tripel\n+proj=wintri\n\n\n\n\n\n\n\n\n널리 사용되는 CRS의 EPSG\n\n\n\n\n\n\n\n\n\n\n적용 스케일\nEPSG 숫자코드\n설명\n\n\n\n\n전세계\nEPSG:4326\nWGS84, 측지좌표계, GPS에 사용\n\n\n\nEPSG:3857\n웹 메르카토르 도법, 구글 맵스, 오픈스트리트맵에서 사용\n\n\n\nEPSG:7789\nITRF2014\n\n\n미국\nEPSG:2163\n알베르스 정적원추 도법\n\n\n유럽\nEPSG:3035\n람베르트 정적방위 도법\n\n\n우리나라\nEPSG:5179\nUTM-K\n\n\n\nEPSG:5185\n서부원점\n\n\n\nEPSG:5186\n중부원점\n\n\n\nEPSG:5187\n동부원점\n\n\n\nEPSG:5188\n동해원점\n\n\n\n\n\n\n\n\n플라트카레컴펙트 밀러 도법로빈슨에케르트 IV\n\n\n\nggplot() +\n  geom_sf(data = world) +\n  geom_sf(data = ne_bbox, fill = NA) +\n  coord_sf(crs = \"+proj=eqc\") +\n  scale_x_continuous(breaks = seq(-180, 180, 30)) +\n  scale_y_continuous(breaks = c(-89.9, seq(-60, 60, 30), 89.9)) +\n  theme(\n    panel.background = element_rect(\"white\"),\n    panel.grid = element_line(color = \"gray80\")\n  )\n\n\n\n\n\n\n\n\n\n\n\nggplot() +\n  geom_sf(data = world) +\n  geom_sf(data = ne_bbox, fill = NA) +\n  coord_sf(crs = \"+proj=comill\") +\n  scale_x_continuous(breaks = seq(-180, 180, 30)) +\n  scale_y_continuous(breaks = c(-89.9, seq(-60, 60, 30), 89.9)) +\n  theme(\n    panel.background = element_rect(\"white\"),\n    panel.grid = element_line(color = \"gray80\")\n  )\n\n\n\n\n\n\n\n\n\n\n\nggplot() +\n  geom_sf(data = world) +\n  geom_sf(data = ne_bbox, fill = NA) +\n  coord_sf(crs = \"+proj=robin\") +\n  scale_x_continuous(breaks = seq(-180, 180, 30)) +\n  scale_y_continuous(breaks = c(-89.9, seq(-60, 60, 30), 89.9)) +\n  theme(\n    panel.background = element_rect(\"white\"),\n    panel.grid = element_line(color = \"gray80\")\n  )\n\n\n\n\n\n\n\n\n\n\n\nggplot() +\n  geom_sf(data = world) +\n  geom_sf(data = ne_bbox, fill = NA) +\n  coord_sf(crs = \"+proj=eck4\") +\n  scale_x_continuous(breaks = seq(-180, 180, 30)) +\n  scale_y_continuous(breaks = c(-89.9, seq(-60, 60, 30), 89.9)) +\n  theme(\n    panel.background = element_rect(\"white\"),\n    panel.grid = element_line(color = \"gray80\")\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n정적(static) 지도\n\nggplot2 패키지, tmap 패키지\n\n동적(animated) 지도\n\ngganimate 패키지\ntmap 패키지\n\n인터랙티브(interactive) 지도\n\nplotly 패키지의 ggplotly() 함수\nggiraph 패키지\nleaflet 패키지: Leaflet JS 라이브러리의 래퍼 패키지\n\n\n\n\n\n\n\n\n\n\n“지도도 그래프다” 관점: 일반성\n\nggplot2 패키지\n\ngeom_sf(), coord_sf()\n\n\n“지도는 지도이다” 관점: 특수성\n\ntmap 패키지\n\n4.2.0\n\n\n\n\n\n\n\n데이터 정리ggplot2: Codeggplot2: Resulttmap: Codetmap: Result\n\n\n\nlibrary(tidyverse)\nlibrary(spData)\nlibrary(sf)\ndata(world)\nworld &lt;- st_as_sf(world)\nwpp_2024 &lt;- read_rds(\"wpp_2024.rds\")\nmy_wpp &lt;- wpp_2024 |&gt; \n  filter(year == 2025)\nworld_data &lt;- world |&gt;\n  left_join(my_wpp, join_by(iso_a2 == ISO2))\n\n\n\n\nworld_map &lt;- ggplot() +\n  geom_sf(data = world_data, aes(fill = TFR, text = name_long)) +\n  coord_sf(crs = \"+proj=robin\") +\n  scale_fill_viridis_c() +\n  scale_x_continuous(breaks = seq(-180, 180, 30)) +\n  scale_y_continuous(breaks = c(-89.5, seq(-60, 60, 30), 89.5)) +\n  theme(\n    panel.background = element_rect(\"white\"),\n    panel.grid = element_line(color = \"gray80\")\n  )\nworld_map\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nlibrary(tmap)\ntm_world_map &lt;- tm_shape(world_data, crs = \"+proj=robin\") +\n  tm_graticules(\n    labels.show = FALSE,\n    x = seq(-180, 180, 30), \n    y = c(-89.5, seq(-60, 60, 30), 89.5)\n  ) + \n  tm_polygons(\n    fill = \"TFR\", \n    fill.scale = tm_scale_continuous(values = \"viridis\")\n  ) +\n  tm_layout(frame = FALSE)\ntm_world_map\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n데이터 정리ggplot2: Codeggplot2: Resulttmap: Codetmap: Result\n\n\n\nlibrary(tidyverse)\nlibrary(sf)\nsido_shp &lt;- st_read(\"sido.shp\", options = \"ENCODING=CP949\")\nsigungu_shp &lt;- st_read(\"sigungu.shp\", options = \"ENCODING=CP949\")\ndata_sigungu &lt;- read_rds(\"data_sigungu.rds\")\nsigungu_data &lt;- sigungu_shp |&gt; \n  left_join(data_sigungu, join_by(SGG1_CD == C1))\n\n\n\n\nlibrary(ggspatial)\nsigungu_data &lt;- sigungu_data |&gt; \n  mutate(\n    index_class = case_when(\n      index &lt; 0.2 ~ \"1\",\n      index &gt;= 0.2 & index &lt; 0.5 ~ \"2\",\n      index &gt;= 0.5 & index &lt; 1.0 ~ \"3\",\n      index &gt;= 1.0 & index &lt; 1.5 ~ \"4\",\n      index &gt;= 1.5 ~ \"5\"\n    ),\n    index_class = fct(index_class, levels = as.character(1:5))\n  )\nclass_color &lt;- c(\"1\" = \"#d7191c\", \"2\" = \"#fdae61\",\n                 \"3\" = \"#ffffbf\", \"4\" = \"#a6d96a\", \n                 \"5\" = \"#1a9641\")\nggplot_map &lt;- ggplot() +\n  geom_sf(\n    data = sigungu_data, \n    aes(fill = index_class, text = SGG1_FNM), \n    show.legend = TRUE\n  ) +\n  geom_sf(\n    data = sido_shp, \n    fill = NA, \n    lwd = 0.5\n  ) +\n  scale_fill_manual(\n    name = \"Classes\", \n    labels = c(\"&lt; 0.2\", \"0.2 ~ 0.5\", \"0.5 ~ 1.0\", \n               \"1.0 ~ 1.5\", \"&gt;= 1.5\"), \n    values = class_color, drop = FALSE\n  ) +\n  annotation_scale(\n    location = \"br\", \n    bar_cols = c(\"gray40\", \"white\"), \n    width_hint = 0.4\n  )\nggplot_map\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nclass_color &lt;- c(\"#d7191c\", \"#fdae61\", \"#ffffbf\", \"#a6d96a\", \"#1a9641\")\ntmap_map &lt;- tm_graticules(labels.cardinal = TRUE) +\n  tm_shape(sigungu_data) + \n  tm_polygons(\n    fill = \"index\", id = \"SGG1_FNM\", \n    fill.scale = tm_scale_intervals(\n      values = class_color, \n      breaks = c(0, 0.2, 0.5, 1.0, 1.5, Inf), \n      labels = c(\"&lt; 0.2\", \"0.2 ~ 0.5\", \"0.5 ~ 1.0\", \n               \"1.0 ~ 1.5\", \"&gt;= 1.5\")\n    ),\n    fill.legend = tm_legend(title = \"Classes\")\n  ) +\n  tm_shape(sido_shp) + tm_borders(lwd = 1.5) +\n  tm_scalebar(breaks = seq(0, 200, 50)) \ntmap_map\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCodeResult\n\n\n\nlibrary(plotly)\nggplotly(world_map)\n\n\n\n\nlibrary(plotly)\nggplotly(world_map)\n\n\n\n\n\n\n\n\n\n\n\n\nCodeResult\n\n\n\nlibrary(ggiraph)\nsigungu_data &lt;- sigungu_data |&gt; \n  mutate(\n    index = format(index, digits = 4, nsmall = 4),\n    my_tooltip = str_c(\"Name: \", SGG1_FNM, \"\\n Index: \", index)\n  )\ngg &lt;- ggplot() +\n  geom_sf_interactive(\n    data = sigungu_data, \n    aes(fill = index_class, tooltip = my_tooltip, data_id = SGG1_FNM), \n    show.legend = TRUE\n  ) +\n  geom_sf(data = sido_shp, fill = NA, lwd = 0.5) +\n  scale_fill_manual(\n    name = \"Classes\", \n    labels = c(\"&lt; 0.2\", \"0.2 ~ 0.5\", \"0.5 ~ 1.0\", \"1.0 ~ 1.5\", \"&gt;= 1.5\"), \n    values = class_color, drop = FALSE\n  ) \ngirafe(ggobj = gg) |&gt; \n  girafe_options(opts_hover(css = \"fill: gray\"))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR 래퍼 패키지: leaflet\n\n\n\n\nhttps://leafletjs.com/\n\n\n\n\n\n\nCodeResult\n\n\n\nlibrary(leaflet)\nleaflet() |&gt; \n  addTiles() |&gt; \n  addPopups(126.955184, 37.460422, \"Sang-Il's Office\",\n            options = popupOptions(closeButton = FALSE))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n세계: Code세계: Result우리나라: Code우리나라: Result\n\n\n\nlibrary(leaflet)\nworld_data &lt;- world_data |&gt; filter(!is.na(TFR))\n\nbins &lt;- c(0, 1.5, 2.1, 3, 4, 5, Inf)\npal &lt;- colorBin(\"YlOrRd\", domain = world_data$TFR, bins = bins)\nlabels &lt;- sprintf(\"&lt;strong&gt;%s&lt;/strong&gt;&lt;br/&gt;%g\",\n  world_data$name_long, world_data$TFR) |&gt; lapply(htmltools::HTML)\n\nleaflet(world_data) |&gt; \n  addProviderTiles(providers$Esri.WorldTopoMap) |&gt; \n  addPolygons(\n    fillColor = ~pal(TFR), weight =  2, opacity = 1, color = \"white\", \n    dashArray = \"3\", fillOpacity = 0.6,\n    highlightOptions = highlightOptions(\n      weight = 5, color = \"#666\", dashArray = \"\", \n      fillOpacity = 0.6, bringToFront = TRUE\n    ),\n    label = labels,\n    labelOptions = labelOptions(\n      style = list(\"font-weight\" = \"normal\", padding = \"3px 8px\"), \n      textsize = \"15px\", direction = \"auto\"\n    )\n  ) |&gt; \n  addLegend(\n    pal = pal, values = ~TFR, opacity = 0.6, title = NULL, position = \"bottomright\"\n  )\n\n\n\n\nlibrary(leaflet)\n\nworld_data &lt;- world_data |&gt; filter(!is.na(TFR))\n\nbins &lt;- c(0, 1.5, 2.1, 3, 4, 5, Inf)\npal &lt;- colorBin(\"YlOrRd\", domain = world_data$TFR, bins = bins)\nlabels &lt;- sprintf(\"&lt;strong&gt;%s&lt;/strong&gt;&lt;br/&gt;%g\",\n  world_data$name_long, world_data$TFR) |&gt; lapply(htmltools::HTML)\n\nleaflet(world_data) |&gt; \n  addProviderTiles(providers$Esri.WorldTopoMap) |&gt; \n  addPolygons(\n    fillColor = ~pal(TFR), weight =  2, opacity = 1, color = \"white\", \n    dashArray = \"3\", fillOpacity = 0.6,\n    highlightOptions = highlightOptions(\n      weight = 5, color = \"#666\", dashArray = \"\", \n      fillOpacity = 0.6, bringToFront = TRUE\n    ),\n    label = labels,\n    labelOptions = labelOptions(\n      style = list(\"font-weight\" = \"normal\", padding = \"3px 8px\"), \n      textsize = \"15px\", direction = \"auto\"\n    )\n  ) |&gt; \n  addLegend(\n    pal = pal, values = ~TFR, opacity = 0.6, title = NULL, position = \"bottomright\"\n  )\n\n\n\n\n\n\n\n\nlibrary(tmap)\nclass_color &lt;- c(\"#d7191c\", \"#fdae61\", \"#ffffbf\", \"#a6d96a\", \"#1a9641\")\nsigungu_data &lt;- sigungu_data |&gt; mutate(index = as.numeric(index))\ntmap_mode(mode = \"view\")\nmy_tmap &lt;- tm_shape(sigungu_data) + \n  tm_polygons(\n    fill = \"index\", fill_alpha = 0.6, col_alpha = 0.5,\n    popup.vars = c(\"지역소멸위험지수: \" = \"index\"), \n    popup.format = list(index = list(digits = 3)), \n    id = \"SGG1_FNM\", \n    fill.scale = tm_scale_intervals(\n      values = class_color, breaks = c(0, 0.2, 0.5, 1.0, 1.5, Inf), \n      labels = c(\"&lt; 0.2\", \"0.2~0.5\", \"0.5~1.0\", \"1.0~1.5\", \"&gt;= 1.5\")\n    ),\n    fill.legend = tm_legend(title = \"Classes\")\n  ) +\n  tm_shape(sido_shp) + tm_borders(lwd = 2)\nmy_tmap\n\n\n\n\nclass_color &lt;- c(\"#d7191c\", \"#fdae61\", \"#ffffbf\", \"#a6d96a\", \"#1a9641\")\nsigungu_data &lt;- sigungu_data |&gt; mutate(index = as.numeric(index))\ntmap_mode(mode = \"view\")\nmy_tmap &lt;- tm_shape(sigungu_data) + \n  tm_polygons(\n    fill = \"index\", fill_alpha = 0.6, col_alpha = 0.5,\n    popup.vars = c(\"지역소멸위험지수: \" = \"index\"), \n    popup.format = list(index = list(digits = 3)), \n    id = \"SGG1_FNM\", \n    fill.scale = tm_scale_intervals(\n      values = class_color, breaks = c(0, 0.2, 0.5, 1.0, 1.5, Inf), \n      labels = c(\"&lt; 0.2\", \"0.2~0.5\", \"0.5~1.0\", \"1.0~1.5\", \"&gt;= 1.5\")\n    ),\n    fill.legend = tm_legend(title = \"Classes\")\n  ) +\n  tm_shape(sido_shp) + tm_borders(lwd = 2)\nmy_tmap",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#사례-전-세계-인구-분포-지도-1",
+    "href": "R_lec_10_2025.html#사례-전-세계-인구-분포-지도-1",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "데이터 레이어\n\n국가 경계, 호수, 그래티큘: 벡터(vector) 데이터\n인구밀도, 수심: 래스터(raster) 데이터\n\n데이터 원천\n\nNatural Earth Data: 국가 경계, 호수, 그래티큘, 수심\nNASA’s Socioeconomic Data and Applications Center (SEDAC): 인구 밀도\n\n투영법: 로빈슨 도법(Robinson projection)\n\nCRS (coordinate reference system, 좌표참조계)\n\n지도화 기법: 컬러, 범례, 주기 표기 등",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#사례-전-세계-인구-분포-지도-2",
+    "href": "R_lec_10_2025.html#사례-전-세계-인구-분포-지도-2",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "https://r-spatial.github.io/sf/\n\n\n\n\n\n\n\nhttps://rspatial.github.io/terra/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#사례-전-세계-인구-분포-지도-3",
+    "href": "R_lec_10_2025.html#사례-전-세계-인구-분포-지도-3",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "https://ggplot2.tidyverse.org/\n\n\n\n\n \n\n\n\n\n\nhttps://r-tmap.github.io/tmap/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#지리공간적-데이터의-종류",
+    "href": "R_lec_10_2025.html#지리공간적-데이터의-종류",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "벡터(vector) 데이터\n\n포인트, 라인, 폴리곤\n형상 데이터 + 속성 데이터\n\n래스터(raster) 데이터\n\n그리드 셀(grid cell)\n일체형",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#벡터-데이터",
+    "href": "R_lec_10_2025.html#벡터-데이터",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "벡터 데이터: 형상 데이터 + 속성 데이터\n\n형상 데이터 (기하, 도형, 공간 데이터)\n\n지리공간적 객체 자체에 대한 데이터\n포인트(점), 라인(선), 폴리곤(면)으로 구분\n버텍스(vertex)의 좌표값\n\n속성 데이터\n\n지리공간적 객체가 보유한 속성\n기존 일반 데이터와 동일",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#벡터-데이터-1",
+    "href": "R_lec_10_2025.html#벡터-데이터-1",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "형상 데이터: 셰이프 파일(shape file) (ESRI사)\n\nsigungu.shp: 버텍스의 좌표값이 포함된 핵심 파일\nsigungu.shx: 공간적 인덱싱 파일\nsigungu.dbf: 기본 속성 파일\nsigungu.prj: 투영 정보 파일\n\n특수한 패키지 필요: sf 패키지\n\nst_read() 혹은 read_sf() 함수",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#벡터-데이터-sf-패키지",
+    "href": "R_lec_10_2025.html#벡터-데이터-sf-패키지",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "https://allisonhorst.com/r-packages-functions",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#벡터-데이터-sf-패키지-1",
+    "href": "R_lec_10_2025.html#벡터-데이터-sf-패키지-1",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "구분\n함수\n\n\n\n\n읽고 쓰기\nst_read(), st_write(), read_sf(), write_sf()\n\n\n투영 관련\nst_crs(), st_transform()\n\n\n기하 측정\nst_area(), st_length(), st_perimeter(), st_distance()\n\n\n기하 변형\nst_centroid(), st_buffer(), st_boundary(), st_simplify()\n\n\n기하 생성\nst_point(), st_voronoi() , st_convex_hull(), st_make_grid()\n\n\n기하 검토\nst_is_valid(), st_make_valid()\n\n\n기하 중첩\nst_filter(), st_intersection(), st_union(), st_crop()\n\n\n기타\nst_coordinates(), st_cast(), st_as_sf(), st_graticule(), st_join()",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#벡터-데이터-sf-패키지-2",
+    "href": "R_lec_10_2025.html#벡터-데이터-sf-패키지-2",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "CodeResult\n\n\n\nlibrary(tidyverse)\nlibrary(sf)\nsigungu_shp &lt;- st_read(\"sigungu.shp\", options = \"ENCODING=CP949\")\nggplot() + geom_sf(data = sigungu_shp)",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#벡터-데이터-2",
+    "href": "R_lec_10_2025.html#벡터-데이터-2",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "속성 데이터\n\ncsv 파일: readr 패키지의 read_csv() 함수\n엑셀 파일: readxl 패키지의 read_excel() 함수\nOpen API를 통해 수집: tibble 객체\n\n형상 데이터와 속성 데이터의 결합: dplyr 패키지의 left_join() 함수\n\n왼편: 형상 데이터\n오른편: 속성 데이터",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#래스터-데이터",
+    "href": "R_lec_10_2025.html#래스터-데이터",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "데이터 형식\n\nTIFF 혹은 GeoTIFF\n\n패키지: terra 패키지\n\n불러오기: rast()\n변환하기: project(), mosaic(), crop()\n계산하기: global(), focal(), zonal()\n수 많은 다른 함수들",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#crs",
+    "href": "R_lec_10_2025.html#crs",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "https://datacarpentry.github.io/organization-geospatial/03-crs.html",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#crs-정의",
+    "href": "R_lec_10_2025.html#crs-정의",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "좌표참조계 Coordinate Reference System\n모든 지리공간데이터는 특정한 좌표참조계에 의거해 제작되며 이러한 좌표참조계는 매우 다양함\n\n준거타원체\n투영법(map projection)\n투영 파라미터: 투영축, 투영격, 중앙경선, 가상원점 등\n\n지리공간데이터의 SRID(Spatial Reference System Identifiers, 공간참조계식별자)\nsf 패키지: st_crs() 함수",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#crs-방식",
+    "href": "R_lec_10_2025.html#crs-방식",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "PROJ 정형문자열\n\nhttps://proj.org/en/9.4/\n준거타원체, 투영법, 투영 파라미터를 + 기호로 연결해 작성한 문자열\nUTM-K\n\n+proj=tmerc +lat_0=38 +lon_0=127.5 +k=0.9996 +x_0=1000000 +y_0=2000000 +ellps=GRS80 +units=m\n\n\nEPSG 숫자코드\n\nhttps://epsg.io/\n모든 CRS에 1024~32767 사이의 고유 숫자를 부여\nUTM-K\n\nEPSG: 5179",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#crs-proj-정형문자열",
+    "href": "R_lec_10_2025.html#crs-proj-정형문자열",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "세계지도를 위한 주요 투영법의 PROJ 별명(alias)\n\n\n\n\n\n\n\n\n\n투영법\nPROJ 파라미터\n\n\n\n\n정적원통 도법 Equal Area Cylindrical\n+proj=cea\n\n\n컴펙트 밀러 도법 Compact Miller\n+proj=comill\n\n\n에케르트 IV 도법 Eckert IV\n+proj=eck4\n\n\n정거원통 도법 Equidistant Cylindrical\n+proj=eqc\n\n\n구드 도법 Goode Homolosine\n+proj=goode\n\n\n단열형 구드 도법 Interrupted Goode Homolosine\n+proj=igh\n\n\n메르카토르 도법 Mercator\n+proj=merc\n\n\n몰바이데 도법 Mollweide\n+proj=moll\n\n\n로빈슨 도법 Robinson\n+proj=robin\n\n\n시뉴소이드 도법 Sinusoidal\n+proj=sinu\n\n\n빈켈트리펠 도법 Winkel Tripel\n+proj=wintri",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#crs-epsg-숫자코드",
+    "href": "R_lec_10_2025.html#crs-epsg-숫자코드",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "널리 사용되는 CRS의 EPSG\n\n\n\n\n\n\n\n\n\n\n적용 스케일\nEPSG 숫자코드\n설명\n\n\n\n\n전세계\nEPSG:4326\nWGS84, 측지좌표계, GPS에 사용\n\n\n\nEPSG:3857\n웹 메르카토르 도법, 구글 맵스, 오픈스트리트맵에서 사용\n\n\n\nEPSG:7789\nITRF2014\n\n\n미국\nEPSG:2163\n알베르스 정적원추 도법\n\n\n유럽\nEPSG:3035\n람베르트 정적방위 도법\n\n\n우리나라\nEPSG:5179\nUTM-K\n\n\n\nEPSG:5185\n서부원점\n\n\n\nEPSG:5186\n중부원점\n\n\n\nEPSG:5187\n동부원점\n\n\n\nEPSG:5188\n동해원점",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#crs-세계지도에-적용",
+    "href": "R_lec_10_2025.html#crs-세계지도에-적용",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "플라트카레컴펙트 밀러 도법로빈슨에케르트 IV\n\n\n\nggplot() +\n  geom_sf(data = world) +\n  geom_sf(data = ne_bbox, fill = NA) +\n  coord_sf(crs = \"+proj=eqc\") +\n  scale_x_continuous(breaks = seq(-180, 180, 30)) +\n  scale_y_continuous(breaks = c(-89.9, seq(-60, 60, 30), 89.9)) +\n  theme(\n    panel.background = element_rect(\"white\"),\n    panel.grid = element_line(color = \"gray80\")\n  )\n\n\n\n\n\n\n\n\n\n\n\nggplot() +\n  geom_sf(data = world) +\n  geom_sf(data = ne_bbox, fill = NA) +\n  coord_sf(crs = \"+proj=comill\") +\n  scale_x_continuous(breaks = seq(-180, 180, 30)) +\n  scale_y_continuous(breaks = c(-89.9, seq(-60, 60, 30), 89.9)) +\n  theme(\n    panel.background = element_rect(\"white\"),\n    panel.grid = element_line(color = \"gray80\")\n  )\n\n\n\n\n\n\n\n\n\n\n\nggplot() +\n  geom_sf(data = world) +\n  geom_sf(data = ne_bbox, fill = NA) +\n  coord_sf(crs = \"+proj=robin\") +\n  scale_x_continuous(breaks = seq(-180, 180, 30)) +\n  scale_y_continuous(breaks = c(-89.9, seq(-60, 60, 30), 89.9)) +\n  theme(\n    panel.background = element_rect(\"white\"),\n    panel.grid = element_line(color = \"gray80\")\n  )\n\n\n\n\n\n\n\n\n\n\n\nggplot() +\n  geom_sf(data = world) +\n  geom_sf(data = ne_bbox, fill = NA) +\n  coord_sf(crs = \"+proj=eck4\") +\n  scale_x_continuous(breaks = seq(-180, 180, 30)) +\n  scale_y_continuous(breaks = c(-89.9, seq(-60, 60, 30), 89.9)) +\n  theme(\n    panel.background = element_rect(\"white\"),\n    panel.grid = element_line(color = \"gray80\")\n  )",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#지리공간적-시각화-정적-vs.-동적",
+    "href": "R_lec_10_2025.html#지리공간적-시각화-정적-vs.-동적",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "정적(static) 지도\n\nggplot2 패키지, tmap 패키지\n\n동적(animated) 지도\n\ngganimate 패키지\ntmap 패키지\n\n인터랙티브(interactive) 지도\n\nplotly 패키지의 ggplotly() 함수\nggiraph 패키지\nleaflet 패키지: Leaflet JS 라이브러리의 래퍼 패키지",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#정적-지도-두-가지-관점",
+    "href": "R_lec_10_2025.html#정적-지도-두-가지-관점",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "“지도도 그래프다” 관점: 일반성\n\nggplot2 패키지\n\ngeom_sf(), coord_sf()\n\n\n“지도는 지도이다” 관점: 특수성\n\ntmap 패키지\n\n4.2.0",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#ggplot2-vs-tmap-세계지도",
+    "href": "R_lec_10_2025.html#ggplot2-vs-tmap-세계지도",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "데이터 정리ggplot2: Codeggplot2: Resulttmap: Codetmap: Result\n\n\n\nlibrary(tidyverse)\nlibrary(spData)\nlibrary(sf)\ndata(world)\nworld &lt;- st_as_sf(world)\nwpp_2024 &lt;- read_rds(\"wpp_2024.rds\")\nmy_wpp &lt;- wpp_2024 |&gt; \n  filter(year == 2025)\nworld_data &lt;- world |&gt;\n  left_join(my_wpp, join_by(iso_a2 == ISO2))\n\n\n\n\nworld_map &lt;- ggplot() +\n  geom_sf(data = world_data, aes(fill = TFR, text = name_long)) +\n  coord_sf(crs = \"+proj=robin\") +\n  scale_fill_viridis_c() +\n  scale_x_continuous(breaks = seq(-180, 180, 30)) +\n  scale_y_continuous(breaks = c(-89.5, seq(-60, 60, 30), 89.5)) +\n  theme(\n    panel.background = element_rect(\"white\"),\n    panel.grid = element_line(color = \"gray80\")\n  )\nworld_map\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nlibrary(tmap)\ntm_world_map &lt;- tm_shape(world_data, crs = \"+proj=robin\") +\n  tm_graticules(\n    labels.show = FALSE,\n    x = seq(-180, 180, 30), \n    y = c(-89.5, seq(-60, 60, 30), 89.5)\n  ) + \n  tm_polygons(\n    fill = \"TFR\", \n    fill.scale = tm_scale_continuous(values = \"viridis\")\n  ) +\n  tm_layout(frame = FALSE)\ntm_world_map",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#ggplot2-vs-tmap-우리나라-지도",
+    "href": "R_lec_10_2025.html#ggplot2-vs-tmap-우리나라-지도",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "데이터 정리ggplot2: Codeggplot2: Resulttmap: Codetmap: Result\n\n\n\nlibrary(tidyverse)\nlibrary(sf)\nsido_shp &lt;- st_read(\"sido.shp\", options = \"ENCODING=CP949\")\nsigungu_shp &lt;- st_read(\"sigungu.shp\", options = \"ENCODING=CP949\")\ndata_sigungu &lt;- read_rds(\"data_sigungu.rds\")\nsigungu_data &lt;- sigungu_shp |&gt; \n  left_join(data_sigungu, join_by(SGG1_CD == C1))\n\n\n\n\nlibrary(ggspatial)\nsigungu_data &lt;- sigungu_data |&gt; \n  mutate(\n    index_class = case_when(\n      index &lt; 0.2 ~ \"1\",\n      index &gt;= 0.2 & index &lt; 0.5 ~ \"2\",\n      index &gt;= 0.5 & index &lt; 1.0 ~ \"3\",\n      index &gt;= 1.0 & index &lt; 1.5 ~ \"4\",\n      index &gt;= 1.5 ~ \"5\"\n    ),\n    index_class = fct(index_class, levels = as.character(1:5))\n  )\nclass_color &lt;- c(\"1\" = \"#d7191c\", \"2\" = \"#fdae61\",\n                 \"3\" = \"#ffffbf\", \"4\" = \"#a6d96a\", \n                 \"5\" = \"#1a9641\")\nggplot_map &lt;- ggplot() +\n  geom_sf(\n    data = sigungu_data, \n    aes(fill = index_class, text = SGG1_FNM), \n    show.legend = TRUE\n  ) +\n  geom_sf(\n    data = sido_shp, \n    fill = NA, \n    lwd = 0.5\n  ) +\n  scale_fill_manual(\n    name = \"Classes\", \n    labels = c(\"&lt; 0.2\", \"0.2 ~ 0.5\", \"0.5 ~ 1.0\", \n               \"1.0 ~ 1.5\", \"&gt;= 1.5\"), \n    values = class_color, drop = FALSE\n  ) +\n  annotation_scale(\n    location = \"br\", \n    bar_cols = c(\"gray40\", \"white\"), \n    width_hint = 0.4\n  )\nggplot_map\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nclass_color &lt;- c(\"#d7191c\", \"#fdae61\", \"#ffffbf\", \"#a6d96a\", \"#1a9641\")\ntmap_map &lt;- tm_graticules(labels.cardinal = TRUE) +\n  tm_shape(sigungu_data) + \n  tm_polygons(\n    fill = \"index\", id = \"SGG1_FNM\", \n    fill.scale = tm_scale_intervals(\n      values = class_color, \n      breaks = c(0, 0.2, 0.5, 1.0, 1.5, Inf), \n      labels = c(\"&lt; 0.2\", \"0.2 ~ 0.5\", \"0.5 ~ 1.0\", \n               \"1.0 ~ 1.5\", \"&gt;= 1.5\")\n    ),\n    fill.legend = tm_legend(title = \"Classes\")\n  ) +\n  tm_shape(sido_shp) + tm_borders(lwd = 1.5) +\n  tm_scalebar(breaks = seq(0, 200, 50)) \ntmap_map",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#인터랙티브-지도-ggplotly-함수",
+    "href": "R_lec_10_2025.html#인터랙티브-지도-ggplotly-함수",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "CodeResult\n\n\n\nlibrary(plotly)\nggplotly(world_map)\n\n\n\n\nlibrary(plotly)\nggplotly(world_map)",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#인터렉티브-지도-ggiraph-패키지",
+    "href": "R_lec_10_2025.html#인터렉티브-지도-ggiraph-패키지",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "CodeResult\n\n\n\nlibrary(ggiraph)\nsigungu_data &lt;- sigungu_data |&gt; \n  mutate(\n    index = format(index, digits = 4, nsmall = 4),\n    my_tooltip = str_c(\"Name: \", SGG1_FNM, \"\\n Index: \", index)\n  )\ngg &lt;- ggplot() +\n  geom_sf_interactive(\n    data = sigungu_data, \n    aes(fill = index_class, tooltip = my_tooltip, data_id = SGG1_FNM), \n    show.legend = TRUE\n  ) +\n  geom_sf(data = sido_shp, fill = NA, lwd = 0.5) +\n  scale_fill_manual(\n    name = \"Classes\", \n    labels = c(\"&lt; 0.2\", \"0.2 ~ 0.5\", \"0.5 ~ 1.0\", \"1.0 ~ 1.5\", \"&gt;= 1.5\"), \n    values = class_color, drop = FALSE\n  ) \ngirafe(ggobj = gg) |&gt; \n  girafe_options(opts_hover(css = \"fill: gray\"))",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#leaflet-자바스크립트-라이브러리",
+    "href": "R_lec_10_2025.html#leaflet-자바스크립트-라이브러리",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "R 래퍼 패키지: leaflet\n\n\n\n\nhttps://leafletjs.com/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#leaflet-단순-일반도",
+    "href": "R_lec_10_2025.html#leaflet-단순-일반도",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "CodeResult\n\n\n\nlibrary(leaflet)\nleaflet() |&gt; \n  addTiles() |&gt; \n  addPopups(126.955184, 37.460422, \"Sang-Il's Office\",\n            options = popupOptions(closeButton = FALSE))",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#leaflet-매시업mashup-주제도",
+    "href": "R_lec_10_2025.html#leaflet-매시업mashup-주제도",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "",
+    "text": "세계: Code세계: Result우리나라: Code우리나라: Result\n\n\n\nlibrary(leaflet)\nworld_data &lt;- world_data |&gt; filter(!is.na(TFR))\n\nbins &lt;- c(0, 1.5, 2.1, 3, 4, 5, Inf)\npal &lt;- colorBin(\"YlOrRd\", domain = world_data$TFR, bins = bins)\nlabels &lt;- sprintf(\"&lt;strong&gt;%s&lt;/strong&gt;&lt;br/&gt;%g\",\n  world_data$name_long, world_data$TFR) |&gt; lapply(htmltools::HTML)\n\nleaflet(world_data) |&gt; \n  addProviderTiles(providers$Esri.WorldTopoMap) |&gt; \n  addPolygons(\n    fillColor = ~pal(TFR), weight =  2, opacity = 1, color = \"white\", \n    dashArray = \"3\", fillOpacity = 0.6,\n    highlightOptions = highlightOptions(\n      weight = 5, color = \"#666\", dashArray = \"\", \n      fillOpacity = 0.6, bringToFront = TRUE\n    ),\n    label = labels,\n    labelOptions = labelOptions(\n      style = list(\"font-weight\" = \"normal\", padding = \"3px 8px\"), \n      textsize = \"15px\", direction = \"auto\"\n    )\n  ) |&gt; \n  addLegend(\n    pal = pal, values = ~TFR, opacity = 0.6, title = NULL, position = \"bottomright\"\n  )\n\n\n\n\nlibrary(leaflet)\n\nworld_data &lt;- world_data |&gt; filter(!is.na(TFR))\n\nbins &lt;- c(0, 1.5, 2.1, 3, 4, 5, Inf)\npal &lt;- colorBin(\"YlOrRd\", domain = world_data$TFR, bins = bins)\nlabels &lt;- sprintf(\"&lt;strong&gt;%s&lt;/strong&gt;&lt;br/&gt;%g\",\n  world_data$name_long, world_data$TFR) |&gt; lapply(htmltools::HTML)\n\nleaflet(world_data) |&gt; \n  addProviderTiles(providers$Esri.WorldTopoMap) |&gt; \n  addPolygons(\n    fillColor = ~pal(TFR), weight =  2, opacity = 1, color = \"white\", \n    dashArray = \"3\", fillOpacity = 0.6,\n    highlightOptions = highlightOptions(\n      weight = 5, color = \"#666\", dashArray = \"\", \n      fillOpacity = 0.6, bringToFront = TRUE\n    ),\n    label = labels,\n    labelOptions = labelOptions(\n      style = list(\"font-weight\" = \"normal\", padding = \"3px 8px\"), \n      textsize = \"15px\", direction = \"auto\"\n    )\n  ) |&gt; \n  addLegend(\n    pal = pal, values = ~TFR, opacity = 0.6, title = NULL, position = \"bottomright\"\n  )\n\n\n\n\n\n\n\n\nlibrary(tmap)\nclass_color &lt;- c(\"#d7191c\", \"#fdae61\", \"#ffffbf\", \"#a6d96a\", \"#1a9641\")\nsigungu_data &lt;- sigungu_data |&gt; mutate(index = as.numeric(index))\ntmap_mode(mode = \"view\")\nmy_tmap &lt;- tm_shape(sigungu_data) + \n  tm_polygons(\n    fill = \"index\", fill_alpha = 0.6, col_alpha = 0.5,\n    popup.vars = c(\"지역소멸위험지수: \" = \"index\"), \n    popup.format = list(index = list(digits = 3)), \n    id = \"SGG1_FNM\", \n    fill.scale = tm_scale_intervals(\n      values = class_color, breaks = c(0, 0.2, 0.5, 1.0, 1.5, Inf), \n      labels = c(\"&lt; 0.2\", \"0.2~0.5\", \"0.5~1.0\", \"1.0~1.5\", \"&gt;= 1.5\")\n    ),\n    fill.legend = tm_legend(title = \"Classes\")\n  ) +\n  tm_shape(sido_shp) + tm_borders(lwd = 2)\nmy_tmap\n\n\n\n\nclass_color &lt;- c(\"#d7191c\", \"#fdae61\", \"#ffffbf\", \"#a6d96a\", \"#1a9641\")\nsigungu_data &lt;- sigungu_data |&gt; mutate(index = as.numeric(index))\ntmap_mode(mode = \"view\")\nmy_tmap &lt;- tm_shape(sigungu_data) + \n  tm_polygons(\n    fill = \"index\", fill_alpha = 0.6, col_alpha = 0.5,\n    popup.vars = c(\"지역소멸위험지수: \" = \"index\"), \n    popup.format = list(index = list(digits = 3)), \n    id = \"SGG1_FNM\", \n    fill.scale = tm_scale_intervals(\n      values = class_color, breaks = c(0, 0.2, 0.5, 1.0, 1.5, Inf), \n      labels = c(\"&lt; 0.2\", \"0.2~0.5\", \"0.5~1.0\", \"1.0~1.5\", \"&gt;= 1.5\")\n    ),\n    fill.legend = tm_legend(title = \"Classes\")\n  ) +\n  tm_shape(sido_shp) + tm_borders(lwd = 2)\nmy_tmap",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#llm-개념",
+    "href": "R_lec_10_2025.html#llm-개념",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "LLM: 개념",
+    "text": "LLM: 개념\n\nLarge Language Model (거대 언어 모델)\n\n\n\n\nhttps://www.geeksforgeeks.org/artificial-intelligence/large-language-model-llm/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#llm-개념-1",
+    "href": "R_lec_10_2025.html#llm-개념-1",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "LLM: 개념",
+    "text": "LLM: 개념\n\n\n\nhttps://x.com/samuraipreneur/status/1888530105280168421",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#llm-api-프로그래밍적-접근",
+    "href": "R_lec_10_2025.html#llm-api-프로그래밍적-접근",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "LLM API: 프로그래밍적 접근",
+    "text": "LLM API: 프로그래밍적 접근\n\nLLM을 웹 인터페이스에서 사용하는 것이 아니라, 코드로 직접 제어하고 자동화하는 방식\nAPI(Application Programming Interface, 응용프로그램 프로그래밍 인터페이스)\n\n응용프로그램(예: 웹 앱)이 프로그래밍을 통해 다른 프로그램이나 서비스(예: ChatGPT)와 상호작용하도록 해 주는 접점\nHTTP 요청(POST) + JSON 구조로 메시지 전달\n모델 이름, 메시지, 파라미터를 코드로 지정\n응답은 JSON 형태의 텍스트/토큰\n\n대량 처리, 반복 처리, 자동화, 소프트웨어 통합",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#llm-api-기본-구조",
+    "href": "R_lec_10_2025.html#llm-api-기본-구조",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "LLM API: 기본 구조",
+    "text": "LLM API: 기본 구조\n\n요청(request) 구성 요소\n\nBase URL: 모델 서버의 접속 주소, https://api.openai.com/v1\n모델 이름: gpt-5.1\nAPI Key (인증): 사용자 신원 증명 토큰\n메시지: 모델에 보낼 내용, JSON 배열로 구성\n\n응답(response) 구성 요소\n\n모델 출력 텍스트: 모델이 생성한 실제 답변\n토큰 사용량: 과금 및 모델 내부 처리량 계산에 사용\n메시지 구조(JSON)",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#사례-google-gemini",
+    "href": "R_lec_10_2025.html#사례-google-gemini",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "사례: Google Gemini",
+    "text": "사례: Google Gemini\n\nGoogle AI Studio(https://aistudio.google.com/app/) 접속\n\n구글 계정 로그인 필요\n\n왼쪽 하단에서 Get API Key 클릭\n오른쪽 상단에서 API 키 만들기 클릭\n새 키 만들기 창\n\n키 이름 지정: 이름 지정\n가져온 프로젝트 선택: 프로젝트 가져오기 혹은 프로젝트 만들기\n\n오른쪽 아이콘 중 Copy API key 선택",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#사례-google-gemini-1",
+    "href": "R_lec_10_2025.html#사례-google-gemini-1",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "사례: Google Gemini",
+    "text": "사례: Google Gemini\n\n콘솔: usethis::edit_r_environ() 실행\n.Renviron 파일\n\nGEMINI_API_KEY=your_key_here\n저장\n\nSession &gt; Restart R 실행",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#ellmer-패키지",
+    "href": "R_lec_10_2025.html#ellmer-패키지",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "ellmer 패키지",
+    "text": "ellmer 패키지\n\n\n\nhttps://ellmer.tidyverse.org/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#ellmer-패키지-1",
+    "href": "R_lec_10_2025.html#ellmer-패키지-1",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "ellmer 패키지",
+    "text": "ellmer 패키지\n\n코드결과\n\n\n\nlibrary(ellmer)\nchat &lt;- chat_google_gemini(\n  base_url = \"https://generativelanguage.googleapis.com/v1beta/\",\n  api_key = Sys.getenv(\"GEMINI_API_KEY\"),\n  model = \"gemini-2.5-flash\",\n  system_prompt = \"\"\n)\nchat$chat(\"서울대학교 AI융합교육학과를 소개해주세요.\")\n\n\n\n\nlibrary(ellmer)\nchat &lt;- chat_google_gemini(\n  base_url = \"https://generativelanguage.googleapis.com/v1beta/\",\n  api_key = Sys.getenv(\"GEMINI_API_KEY\"),\n  model = \"gemini-2.5-flash\",\n  system_prompt = \"\"\n)\nchat$chat(\"서울대학교 AI융합교육학과를 소개해주세요.\")\n\n서울대학교 AI융합교육학과는 AI 기술과 교육학의 전문성을 결합하여 AI 시대의 교육 혁신을 이끌어갈 인재를 양성하기 위해 설립된 혁신적인 \n학과입니다. 단순히 AI 기술자를 양성하는 것을 넘어, 교육 현장에 AI를 효과적으로 적용하고, AI 시대에 필요한 새로운 교육 패러다임을 \n제시하는 데 중점을 둡니다.\n\n**주요 특징 및 목표:**\n\n1.  **AI와 교육학의 융합:**\n    *   인공지능(AI)의 핵심 원리 및 기술(머신러닝, 딥러닝, 데이터 분석 등)에 대한 깊이 있는 이해를 바탕으로 합니다.\n    *   동시에 교육학 이론, 교수학습 방법론, 교육공학, 교육심리 등 교육학적 통찰력을 결합하여 AI를 교육적으로 활용할 수 있는 \n역량을 키웁니다.\n    *   AI 기반 교수학습 시스템 개발, 지능형 튜터링 시스템 설계, 교육 데이터 분석 및 활용, AI 교육 콘텐츠 기획 및 제작 등을\n다룹니다.\n\n2.  **미래 교육 혁신 선도:**\n    *   AI 기술이 교육에 미치는 긍정적 영향뿐만 아니라 윤리적, 사회적 문제에 대한 이해를 바탕으로 AI 시대에 적합한 교육 방향을 \n모색합니다.\n    *   개별 학습자 맞춤형 교육, 협력 학습 환경 조성, 평가 방식 혁신 등 AI 기반 교육 혁신 모델을 연구하고 구현하는 데 \n주력합니다.\n\n3.  **실천적 문제 해결 능력 함양:**\n    *   이론 학습을 넘어 실제 교육 현장의 문제를 AI 기술로 해결하는 프로젝트 기반 학습을 강조합니다.\n    *   교육 현장과 연계된 실습, 인턴십 등을 통해 실무 역량을 강화합니다.\n\n4.  **다학제적 접근:**\n    *   컴퓨터 과학, 데이터 과학, 인지 과학, 교육학 등 다양한 학문 분야의 지식을 통합적으로 학습하여 융합적 사고 능력을 키웁니다.\n\n**교육과정 (예시, 실제 커리큘럼은 변경될 수 있음):**\n\n*   **AI 기초:** 인공지능 개론, 프로그래밍, 자료구조, 알고리즘, 머신러닝 기초, 딥러닝 기초 등\n*   **교육학 심화:** 교육학 개론, 교육심리학, 교육철학, 교수학습이론, 교육공학, 교육과정 및 평가 등\n*   **AI융합 교육 특화:** AI와 교육, 지능형 학습 시스템 설계, 교육 데이터 분석 및 시각화, AI 기반 교육 콘텐츠 개발, \n에듀테크 스타트업 실무, AI 윤리와 교육, 미래 교육과 기술 등\n\n**졸업 후 진로:**\n\nAI융합교육학과 졸업생들은 AI 기술과 교육학적 전문성을 동시에 갖춘 융합 인재로서 다양한 분야에서 활약할 수 있습니다.\n\n*   **에듀테크 기업:** AI 기반 교육 콘텐츠 개발자, 교육 솔루션 기획자, 데이터 분석가, 서비스 운영자 등\n*   **정부 및 공공기관:** AI 교육 정책 전문가, 교육 시스템 개발 및 관리자, 교육 연구원 등\n*   **학교 및 교육기관:** AI 활용 교육 전문가, 미래 교육 과정 기획자, 교수학습 지원 전문가 등\n*   **일반 기업:** 기업 교육 및 HRD 부서의 AI 기반 인재 개발 전문가\n*   **연구기관:** AI 교육 분야 전문 연구원\n*   **창업:** 에듀테크 스타트업 창업\n*   **대학원 진학:** AI, 교육공학, 컴퓨터 과학 등 관련 분야 심화 학습\n\n서울대학교 AI융합교육학과는 AI 시대의 교육 혁신을 주도하며 새로운 지평을 열어갈 핵심 인재 양성의 요람이 될 것입니다. AI 기술에 대한 \n흥미와 교육 분야에 대한 열정을 가진 학생들에게 매우 적합한 학과입니다.",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#로컬-llm-ollama",
+    "href": "R_lec_10_2025.html#로컬-llm-ollama",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "로컬 LLM: Ollama",
+    "text": "로컬 LLM: Ollama\n\nOllama 홈페이지 접속: https://ollama.com/\nDownload 클릭\n\nWindows / macOS / Linux 중 하나를 선택\n\n모델 다운로드: Windows PowerShell 실행\n\nollama pull gemma3:4b\n\n실행",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#로컬-llm-ollama-1",
+    "href": "R_lec_10_2025.html#로컬-llm-ollama-1",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "로컬 LLM: Ollama",
+    "text": "로컬 LLM: Ollama\n\n코드결과\n\n\n\nlibrary(ellmer)\nchat &lt;- chat_ollama(\n  base_url = \"http://localhost:11434\",\n  model = \"gemma3:4b\",\n  system_prompt = \"\"\n)\nchat$chat(\"서울대학교 AI융합교육학과를 소개해주세요.\")\n\n\n\n\nlibrary(ellmer)\nchat &lt;- chat_ollama(\n  base_url = \"http://localhost:11434\",\n  model = \"gemma3:4b\",\n  system_prompt = \"\"\n)\nchat$chat(\"서울대학교 AI융합교육학과를 소개해주세요.\")\n\n서울대학교 AI융합교육학과(이하 AI융합학과)는 인공지능(AI) 기술이 빠르게 발전하면서 교육 분야에 미치는 영향에 주목하여, AI 기술과 \n교육을 융합적으로 이해하고 활용하는 인재를 양성하기 위해 설립된 학과입니다. 2023년 신설되었으며, AI 기술을 교육 분야에 적용하는 방법을\n연구하고 교육하는 데 집중하고 있습니다.\n\n**학과 특징 및 목표:**\n\n*   **AI와 교육의 융합:** AI 기술을 단순히 활용하는 것을 넘어, 교육 과정 설계, 학습 방법, 평가 방법 등 교육의 전반에 걸쳐 \nAI 기술이 어떻게 혁신을 가져올 수 있는지 탐구합니다.\n*   **융합적 사고 능력:** 교육학, 컴퓨터 과학, 인지과학, 심리학 등 다양한 분야의 지식을 융합하여 교육 문제를 해결하고 새로운 교육\n모델을 개발하는 능력을 키웁니다.\n*   **실용적인 AI 교육 콘텐츠 개발:** AI 기술을 활용한 교육 솔루션, 학습 콘텐츠, 평가 시스템 등을 개발하고 적용하는 실무 \n능력을 배양합니다.\n*   **미래 교육을 선도하는 인재 양성:** AI 기술 발전에 발맞춰 미래 교육 환경을 예측하고, 새로운 교육 패러다임을 제시하는 리더를 \n육성합니다.\n\n**주요 교육 내용:**\n\n*   **기초 교양:** 교육학 원론, 인지심리학, 통계학 등 교육 및 AI 분야의 기초 지식을 다룹니다.\n*   **핵전공:**\n    *   AI 기초 (머신러닝, 딥러닝, 자연어 처리 등)\n    *   교육용 AI 시스템 개발\n    *   AI 기반 학습 콘텐츠 설계 및 개발\n    *   AI 윤리 및 교육\n*   **교양:** AI, 빅데이터, 데이터 분석 등의 최신 기술 동향을 학습합니다.\n*   **선택 과목:** 교육 평가, 교육 심리, 교육 공학 등 다양한 분야의 선택 과목을 통해 전문성을 심화합니다.\n\n**졸업 목표:**\n\nAI 기술을 활용하여 교육 혁신을 주도하고, 미래 교육 환경을 선도할 수 있는 인재를 목표로 합니다. 구체적으로 다음과 같은 역량을 갖추게 \n됩니다.\n\n*   AI 기술을 교육 현장에 적용하는 비즈니스 모델을 설계하고 개발할 수 있습니다.\n*   AI 기반의 맞춤형 학습 시스템을 구축하고 운영할 수 있습니다.\n*   AI 윤리 문제를 고려하여 교육용 AI 시스템을 개발하고 사용할 수 있습니다.\n*   교육 분야의 새로운 트렌드를 분석하고, 미래 교육을 위한 전략을 제시할 수 있습니다.\n\n**더 자세한 정보는 다음 링크에서 확인하실 수 있습니다.**\n\n*   **서울대학교 AI융합교육학과 홈페이지:** \n[https://www.snu.ac.kr/ai_edu/](https://www.snu.ac.kr/ai_edu/)\n*   **학과 소개 영상:** \n[https://www.youtube.com/watch?v=lFp-N0qQ93I](https://www.youtube.com/watch?v=lFp-N0qQ93I)\n\n궁금한 점이 있으시면 언제든지 다시 질문해주세요.",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_10_2025.html#llm과-웹-앱",
+    "href": "R_lec_10_2025.html#llm과-웹-앱",
+    "title": "R Lecture 10\n웹 앱 개발: 심화",
+    "section": "LLM과 웹 앱",
+    "text": "LLM과 웹 앱\n\nshiny: 서버형 웹 앱 개발 프레임워크\nshinychat: LLM shiny 웹 앱 개발 도우미 패키지\n\nellmer 패키지와 결합\n\n예시: https://sangillee.shinyapps.io/KosisChat/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 10]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 심화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html",
+    "href": "R_lec_08_2025.html",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "",
+    "text": "https://r4ds.hadley.nz/import.html\n\n\n\n\n\n\n웹스크레이핑(webscraping)\n오픈 API의 활용",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#데이터사이언스-프로세스",
+    "href": "R_lec_08_2025.html#데이터사이언스-프로세스",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "",
+    "text": "https://r4ds.hadley.nz/import.html",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#데이터-수집-방법",
+    "href": "R_lec_08_2025.html#데이터-수집-방법",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "",
+    "text": "웹스크레이핑(webscraping)\n오픈 API의 활용",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#웹스크레이핑의-정의",
+    "href": "R_lec_08_2025.html#웹스크레이핑의-정의",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "웹스크레이핑의 정의",
+    "text": "웹스크레이핑의 정의\n\n웹페이지로부터 데이터를 추출하는 것, 데이터 긁어 오기\n데이터 크롤링(crawling)과 유사, 박박 기면서 수집하기\n해킹(hacking)과의 경계가 모호\n\n허가 없이 정보 시스템에 침투하여 데이터를 취득하는 행위\n\n최근들어 점점 회피하는 추세",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#html의-정의",
+    "href": "R_lec_08_2025.html#html의-정의",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "HTML의 정의",
+    "text": "HTML의 정의\n\nHyperText Markup Language, 하이퍼텍스터 마크업 언어\n\n웹 브라우저를 통해 표출되는 사항(무엇이 어떻게)을 프로그래밍하는 마크업(markup) 언어 혹은 웹 다큐먼트를 작성하는 마크업 언어\n\n마크업 언어: 다큐먼트의 구조와 포맷을 관장하는 텍스트-엔코딩 시스템\n\n\n마크다운(markdown) 언어\n\n사용자의 편이성이 강화된 마크업 언어\nQuarto: 비주얼 에디터",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#html의-기초",
+    "href": "R_lec_08_2025.html#html의-기초",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "HTML의 기초",
+    "text": "HTML의 기초\n\n웹페이지는 다양한 태그(tag)로 구성\n\n각 태그는 시작 태그와 종료 태그로 구성되며, 둘 사이에 해당 콘텐츠가 위치\n\n태그의 종류는 다양하며, 크게 세 가지로 구분\n\n최상위인 html 태그\n웹페이지의 전반적인 구조를 결정하는 블록(block) 태그\n\n예: h1, section, p, ol 태그 등\n\n블록 태그 내부의 특정 부분에만 적용되는 인라인(inline) 태그\n\n예: b, i, a 태그 등",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#html의-기초-1",
+    "href": "R_lec_08_2025.html#html의-기초-1",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "HTML의 기초",
+    "text": "HTML의 기초\n\n태그들은 복잡한 다단계 구조를 이룸\n태그는 속성(attribute)를 가질 수 있음\n\n특별히 중요한 속성: 클래스(class), 아이디(id)\np나 div 태그와 같은 블록 태그: height, width, margin, padding\nimg 태그: src, alt, width, height\na 태그: href",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#section",
+    "href": "R_lec_08_2025.html#section",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "",
+    "text": "https://odinuv.cz/articles/html/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#html-엘리먼트의-선택",
+    "href": "R_lec_08_2025.html#html-엘리먼트의-선택",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "HTML 엘리먼트의 선택",
+    "text": "HTML 엘리먼트의 선택\n\nHTML 엘리먼트\n\n태그와 속성으로 구성된 HTML의 한 단위 혹은 특정 부분\n웹스크레이핑의 타깃의 주소\n\nHTML 엘리먼트의 선택: CSS 선택자(casading style sheet selector)\n\n\n\n\n\n\n\n\n\n\n선택 대상\nCSS 선택자\n결과\n\n\n\n\n태그(tag)\ntag1\n“tag1”이라는 이름의 모든 tag\n\n\n클래스(class)\n.class1\n“class1”이라는 class 속성을 갖는 모든 요소\n\n\n아이디(id)\n#id1\n“id1”이라는 id 속성을 갖는 모든 요소\n\n\ntag와 class의 결합\ntag1.class1\n“tag1”이라는 tag의 “class1”이라는 class 속성을 갖는 모든 요소\n\n\nclass1과 class2의 결합\n.class1.class2\n“class1”이라는 이름의 class 속성과 “class2”라는 이름의 class 속성을 동시에 갖는 모든 요소",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#html-엘리먼트의-선택-1",
+    "href": "R_lec_08_2025.html#html-엘리먼트의-선택-1",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "HTML 엘리먼트의 선택",
+    "text": "HTML 엘리먼트의 선택\n\n정확한 CSS 선택자의 확인\n\n웹페이지에서 오른쪽 마우스 버튼을 눌러 “검사” 선택한 뒤, 탐색\n브라우저 확장 프로그램의 활용: SelectGadget",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#rvest-패키지",
+    "href": "R_lec_08_2025.html#rvest-패키지",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "rvest 패키지",
+    "text": "rvest 패키지\n\n\n\nhttps://rvest.tidyverse.org/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#rvest-패키지를-활용한-웹스크레이핑-절차",
+    "href": "R_lec_08_2025.html#rvest-패키지를-활용한-웹스크레이핑-절차",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "rvest 패키지를 활용한 웹스크레이핑 절차",
+    "text": "rvest 패키지를 활용한 웹스크레이핑 절차\n\n1단계: 웹페이지 읽기\n\n웹스크레이핑의 대상이 되는 웹페이지의 URL 읽기\n\n2단계: HTML 엘리먼트 선택\n\n필요한 정보를 포함하고 있는 엘리먼트의 지정\n\n3단계: 하위 엘리먼트 선택\n\n필요한 정보를 포함하고 있는 하위 엘리먼트의 지정\n\n4단계: 엘리먼트로부터 데이터 추출\n\n데이블 데이터, 텍스트 등을 추출",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#사례-1-스타워즈",
+    "href": "R_lec_08_2025.html#사례-1-스타워즈",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "사례 1: 스타워즈",
+    "text": "사례 1: 스타워즈\nvignette(“starwars”)\n\n&lt;section&gt;\n  &lt;h2 data-id=\"1\"&gt;The Phantom Menace&lt;/h2&gt;\n  &lt;p&gt;Released: 1999-05-19&lt;/p&gt;\n  &lt;p&gt;Director: &lt;span class=\"director\"&gt;George Lucas&lt;/span&gt;&lt;/p&gt;\n  \n  &lt;div class=\"crawl\"&gt;\n    &lt;p&gt;...&lt;/p&gt;\n    &lt;p&gt;...&lt;/p&gt;\n    &lt;p&gt;...&lt;/p&gt;\n  &lt;/div&gt;\n&lt;/section&gt;",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#사례-1-스타워즈-1",
+    "href": "R_lec_08_2025.html#사례-1-스타워즈-1",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "사례 1: 스타워즈",
+    "text": "사례 1: 스타워즈\n\nCode 1Result 1Code 2Result 2\n\n\n\nlibrary(tidyverse)\nlibrary(rvest)\nurl &lt;- \"https://rvest.tidyverse.org/articles/starwars.html\"\nread_html(url) |&gt; \n  html_elements(\"section\") |&gt; \n  html_element(\"h2\") |&gt; \n  html_text2()\n\n\n\n\nlibrary(tidyverse)\nlibrary(rvest)\nurl &lt;- \"https://rvest.tidyverse.org/articles/starwars.html\"\nread_html(url) |&gt; \n  html_elements(\"section\") |&gt; \n  html_element(\"h2\") |&gt; \n  html_text2()\n\n[1] \"The Phantom Menace\"      \"Attack of the Clones\"   \n[3] \"Revenge of the Sith\"     \"A New Hope\"             \n[5] \"The Empire Strikes Back\" \"Return of the Jedi\"     \n[7] \"The Force Awakens\"      \n\n\n\n\n\nsection &lt;- read_html(url) |&gt; \n  html_elements(\"section\")\ntibble(\n  title = section |&gt; \n    html_element(\"h2\") |&gt; \n    html_text2(),\n  released = section |&gt; \n    html_element(\"p\") |&gt; \n    html_text2() |&gt; \n    str_remove(\"Released: \") |&gt; \n    parse_date(),\n  director = section |&gt; \n    html_element(\".director\") |&gt; \n    html_text2(),\n  intro = section |&gt; \n    html_element(\".crawl\") |&gt; \n    html_text2()\n)\n\n\n\n\n\n# A tibble: 7 × 4\n  title                   released   director         intro                     \n  &lt;chr&gt;                   &lt;date&gt;     &lt;chr&gt;            &lt;chr&gt;                     \n1 The Phantom Menace      1999-05-19 George Lucas     \"Turmoil has engulfed the…\n2 Attack of the Clones    2002-05-16 George Lucas     \"There is unrest in the G…\n3 Revenge of the Sith     2005-05-19 George Lucas     \"War! The Republic is cru…\n4 A New Hope              1977-05-25 George Lucas     \"It is a period of civil …\n5 The Empire Strikes Back 1980-05-17 Irvin Kershner   \"It is a dark time for th…\n6 Return of the Jedi      1983-05-25 Richard Marquand \"Luke Skywalker has retur…\n7 The Force Awakens       2015-12-11 J. J. Abrams     \"Luke Skywalker has vanis…",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#사례-2-웹-상의-테이블",
+    "href": "R_lec_08_2025.html#사례-2-웹-상의-테이블",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "사례 2: 웹 상의 테이블",
+    "text": "사례 2: 웹 상의 테이블\n위키피디어: 전 세계 국가 관련 항목\n\nCode 1Result 1Code 2Result 2\n\n\n\nlibrary(tidyverse)\nlibrary(rvest)\nurl &lt;- \"https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population\"\nmy_table &lt;- url |&gt; \n  read_html() |&gt; \n  html_element(\"table\") |&gt; \n  html_table()\n\n\n\n\nmy_table\n\n# A tibble: 240 × 6\n   Location      Population    `% ofworld` Date     Source (official or …¹ Notes\n   &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;                  &lt;chr&gt;\n 1 World         8,232,000,000 100%        13 Jun … UN projection[1][3]    \"\"   \n 2 India         1,417,492,000 17.2%       1 Jul 2… Official projection[4] \"[b]\"\n 3 China         1,408,280,000 17.1%       31 Dec … Official estimate[5]   \"[c]\"\n 4 United States 340,110,988   4.1%        1 Jul 2… Official estimate[6]   \"[d]\"\n 5 Indonesia     284,438,782   3.5%        30 Jun … National annual proje… \"\"   \n 6 Pakistan      241,499,431   2.9%        1 Mar 2… 2023 census result[8]  \"[e]\"\n 7 Nigeria       223,800,000   2.7%        1 Jul 2… Official projection[9] \"\"   \n 8 Brazil        213,421,037   2.6%        1 Jul 2… Official estimate[10]  \"\"   \n 9 Bangladesh    169,828,911   2.1%        14 Jun … 2022 census result[11] \"[f]\"\n10 Russia        146,028,325   1.8%        1 Jan 2… Official estimate[13]  \"[g]\"\n# ℹ 230 more rows\n# ℹ abbreviated name: ¹​`Source (official or fromthe United Nations)`\n\n\n\n\n\nmy_table_new &lt;- my_table |&gt; \n  select(-Notes) |&gt; \n  rename(\n    location = \"Location\",\n    population = \"Population\",\n    pop_pct = \"% ofworld\",\n    date = \"Date\",\n    source = \"Source (official or fromthe United Nations)\"\n  ) |&gt; \n  mutate(\n    population = parse_number(population, \",\"),\n    population = as.numeric(population),\n    pop_pct = str_remove_all(pop_pct, \"%\"),\n    pop_pct = as.numeric(pop_pct),\n    date = dmy(date)\n  )\n\n\n\n\nmy_table_new \n\n# A tibble: 240 × 5\n   location      population pop_pct date       source                       \n   &lt;chr&gt;              &lt;dbl&gt;   &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;                        \n 1 World         8232000000   100   2025-06-13 UN projection[1][3]          \n 2 India         1417492000    17.2 2025-07-01 Official projection[4]       \n 3 China         1408280000    17.1 2024-12-31 Official estimate[5]         \n 4 United States  340110988     4.1 2024-07-01 Official estimate[6]         \n 5 Indonesia      284438782     3.5 2025-06-30 National annual projection[7]\n 6 Pakistan       241499431     2.9 2023-03-01 2023 census result[8]        \n 7 Nigeria        223800000     2.7 2023-07-01 Official projection[9]       \n 8 Brazil         213421037     2.6 2025-07-01 Official estimate[10]        \n 9 Bangladesh     169828911     2.1 2022-06-14 2022 census result[11]       \n10 Russia         146028325     1.8 2025-01-01 Official estimate[13]        \n# ℹ 230 more rows",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#api의-정의",
+    "href": "R_lec_08_2025.html#api의-정의",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "API의 정의",
+    "text": "API의 정의\n\nAPI(application programming interface)는 일종의 통신 규약(protocol)\n\n복수의 프로그램들이 서로 상호작용하는 방법을 정의하는 일련의 규칙\n한 애플리케이션이 다른 애플리케이션의 기능들을 불러 사용할 수 있게 해주는 통로\n오픈 API: API 키(key)\n\n데이터 API\n\n데이터를 보유하고 있는 공적 기관이 데이터의 사용 권한을 사용자들에게 부여함으로써 데이터에 대한 접근성을 높여주는 일련의 방식",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#api-활용의-다양성",
+    "href": "R_lec_08_2025.html#api-활용의-다양성",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "API 활용의 다양성",
+    "text": "API 활용의 다양성\n\n정형 수치 데이터의 수집\n\nKOSIS의 API를 활용한 센서스 데이터 수집\n공공데이터포털 API를 활용한 전국 초중등학교 위치 데이터 수집\nInternational Database(IDB)의 API를 활용한 세계 인구 데이터 수집\n\n정형 텍스트 데이터 수집\n\n공공데이터포털 API를 활용한 학위 논문의 수집\n\n비정형 텍스트 데이터 수집: 텍스트 마이닝(text mining)으로 연결\n\n네이버 검색 API를 활용한 뉴스 데이터 수집\n유튜브 API를 활용한 댓글 데이터 수집",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#api-활용의-다양성-1",
+    "href": "R_lec_08_2025.html#api-활용의-다양성-1",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "API 활용의 다양성",
+    "text": "API 활용의 다양성\n\nGoogle Maps Platform (https://mapsplatform.google.com/)\n7 종류의 API\n\nGoogle Direction API\nGoogle Distance API\nGoogle Elevation API\nGoogle Timezone API\nGoogle Geocode API\nGoogle Reverse Geocode API\nGoogle Places API\n\nR 래퍼(rapper) 패키지: googleway",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#httr2-패키지",
+    "href": "R_lec_08_2025.html#httr2-패키지",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "httr2 패키지",
+    "text": "httr2 패키지\n\n\n\nhttps://httr.r-lib.org/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#사례-공공데이터포털",
+    "href": "R_lec_08_2025.html#사례-공공데이터포털",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "사례: 공공데이터포털",
+    "text": "사례: 공공데이터포털\n\nhttps://www.data.go.kr/\n회원가입\n데이터 검색: “전국 초중등학교 위치”\nOpen API, 인증키\n\nBase URL: api.odcloud.kr/api\n일반 인증키(Decoding)\n데이터 API: /15099519/v1/uddi:e83bc47a-f235-4b44-96d8-a9d0686435a5",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#사례-공공데이터포털-1",
+    "href": "R_lec_08_2025.html#사례-공공데이터포털-1",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "사례: 공공데이터포털",
+    "text": "사례: 공공데이터포털\n\nCode 1Result 1Code 2Result 2\n\n\n\nlibrary(httr2)\nbase_url &lt;- \"https://api.odcloud.kr/api/15099519/v1/uddi:e83bc47a-f235-4b44-96d8-a9d0686435a5\" \nrequest(base_url) |&gt;\n  req_url_query(\n    serviceKey = your_api_key,\n    page = 1,\n    perPage = 1000\n  ) |&gt;\n  req_perform() |&gt; \n  resp_body_json() |&gt; \n  _[[\"data\"]] |&gt; bind_rows() |&gt; as_tibble() |&gt; slice_head(n = 5)\n\n\n\n\n\n# A tibble: 5 × 18\n  경도          교육지원청명 교육지원청코드 데이터기준일자 변경일자 본교분교구분\n  &lt;chr&gt;         &lt;chr&gt;                 &lt;int&gt; &lt;chr&gt;          &lt;chr&gt;    &lt;chr&gt;       \n1 126.83075160… 전북특별자치도정읍교육…        8362000 2025-09-22     2025-07… 본교        \n2 126.62621220… 인천광역시서부교육지원…        7361000 2025-09-22     2025-07… 본교        \n3 127.61483550… 전북특별자치도장수교육…        8422000 2025-09-22     2025-07… 본교        \n4 129.39651960… 경상북도포항교육지원청…        8761000 2025-09-22     2025-07… 본교        \n5 129.07938730… 부산광역시동래교육지원…        7191000 2025-09-22     2025-07… 본교        \n# ℹ 12 more variables: 생성일자 &lt;chr&gt;, 설립일자 &lt;chr&gt;, 설립형태 &lt;chr&gt;,\n#   소재지도로명주소 &lt;chr&gt;, 소재지지번주소 &lt;chr&gt;, 시도교육청명 &lt;chr&gt;,\n#   시도교육청코드 &lt;int&gt;, 운영상태 &lt;chr&gt;, 위도 &lt;chr&gt;, 학교ID &lt;chr&gt;,\n#   학교급구분 &lt;chr&gt;, 학교명 &lt;chr&gt;\n\n\n\n\n\nfinal_data &lt;- map_dfr(1:12, function(p) {\n  request(base_url) |&gt;\n    req_url_query(\n      serviceKey = your_api_key, \n      page = p, \n      perPage = 1000) |&gt;\n    req_perform() |&gt;\n    resp_body_json() |&gt;\n    _[[\"data\"]] |&gt; bind_rows() |&gt; as_tibble()\n})\n\n\n\n\nfinal_data\n\n# A tibble: 12,000 × 18\n   경도         교육지원청명 교육지원청코드 데이터기준일자 변경일자 본교분교구분\n   &lt;chr&gt;        &lt;chr&gt;                 &lt;int&gt; &lt;chr&gt;          &lt;chr&gt;    &lt;chr&gt;       \n 1 126.8307516… 전북특별자치도정읍교육…        8362000 2025-09-22     2025-07… 본교        \n 2 126.6262122… 인천광역시서부교육지원…        7361000 2025-09-22     2025-07… 본교        \n 3 127.6148355… 전북특별자치도장수교육…        8422000 2025-09-22     2025-07… 본교        \n 4 129.3965196… 경상북도포항교육지원청…        8761000 2025-09-22     2025-07… 본교        \n 5 129.0793873… 부산광역시동래교육지원…        7191000 2025-09-22     2025-07… 본교        \n 6 128.8886173… 경상남도김해교육지원청…        9091000 2025-09-22     2025-07… 본교        \n 7 128.0643803… 경상남도사천교육지원청…        9081000 2025-09-22     2025-07… 본교        \n 8 126.4853077… 전라남도무안교육지원청…        8661000 2025-09-22     2025-07… 본교        \n 9 126.7792304… 경기도파주교육지원청……        7681000 2025-09-22     2025-07… 본교        \n10 128.5672852… 대구광역시서부교육지원…        7261000 2025-09-22     2025-07… 본교        \n# ℹ 11,990 more rows\n# ℹ 12 more variables: 생성일자 &lt;chr&gt;, 설립일자 &lt;chr&gt;, 설립형태 &lt;chr&gt;,\n#   소재지도로명주소 &lt;chr&gt;, 소재지지번주소 &lt;chr&gt;, 시도교육청명 &lt;chr&gt;,\n#   시도교육청코드 &lt;int&gt;, 운영상태 &lt;chr&gt;, 위도 &lt;chr&gt;, 학교ID &lt;chr&gt;,\n#   학교급구분 &lt;chr&gt;, 학교명 &lt;chr&gt;",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#사례-kosis",
+    "href": "R_lec_08_2025.html#사례-kosis",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "사례: KOSIS",
+    "text": "사례: KOSIS\n\nKOSIS 공유서비스 웹페이지(https://kosis.kr/openapi/) 접속\n상단의 [활용신청] 탭 클릭\n\n통계청의 ONE-ID로 통합로그인(없으면 회원가입 필수)\n\n활용신청하여 사용자 인증키 획득\n\n사용자 인증키는 마이페이지에서 언제든 확인 가능\n\nkosis 패키지: 주석훈",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#사례-kosis-1",
+    "href": "R_lec_08_2025.html#사례-kosis-1",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "사례: KOSIS",
+    "text": "사례: KOSIS\n\nhttps://sangillee.snu.ac.kr/dashboard_popgeo/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#사례-네이버-뉴스",
+    "href": "R_lec_08_2025.html#사례-네이버-뉴스",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "사례: 네이버 뉴스",
+    "text": "사례: 네이버 뉴스\n\nNAVER Developer (https://developers.naver.com/main/)\n[Products]-[서비스 API]-[검색] (https://developers.naver.com/products/service-api/search/search.md)\n\n오픈 API 이용 신청 절차\nClientID와 Client Secret 개념\n요청 URL: https://openapi.naver.com/v1/search/news.json\n파라미터: query, display, start, sort\n\n오픈 API 이용 신청\n\n애플리케이션 이름: 아무 이름이나 입력\n사용 API: ’검색’이 선택된 상태를 유지\n비로그인 오픈 API 서비스 환경: ‘WEB’ 설정\n웹 서비스 URL (최대 10개): ’http://localhost’를 입력",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#사례-네이버-뉴스-1",
+    "href": "R_lec_08_2025.html#사례-네이버-뉴스-1",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "사례: 네이버 뉴스",
+    "text": "사례: 네이버 뉴스\n\nCode 1Result 1Code 2Result 2\n\n\n\nlibrary(httr2)\nsearch &lt;- \"지역소멸\"\nbase_url &lt;- \"https://openapi.naver.com/v1/search/news.json\"\nresult_naver &lt;- base_url |&gt; \n  request() |&gt; \n  req_headers(\n    \"X-Naver-Client-ID\" = your_ClientID,\n    \"X-Naver-Client-Secret\" = your_Client_Secret\n  ) |&gt; \n  req_url_query(\n    query = search,\n    display = 100,\n    start = 1,\n    sort = \"date\"\n  ) |&gt; \n  req_perform() |&gt; \n  resp_body_json(check_type = FALSE) |&gt; \n  pluck(\"items\") |&gt; bind_rows()\n\n\n\n\nresult_naver |&gt; slice_head(n = 5)\n\n# A tibble: 5 × 5\n  title                                   originallink link  description pubDate\n  &lt;chr&gt;                                   &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;  \n1 담양군 한국대나무박물관, '박구환 작가 특별 초대전' 열어…… http://www.… http… \"박구환 작가는 1… Fri, 0…\n2 순창발효관광재단, 주민참여형 축제로 도지사 표창…… https://www… http… \"전북 순창발효관광… Fri, 0…\n3 의령곤충생태학습관, 2025년 관람객 개관 이후 최다…… https://www… http… \"&lt;b&gt;지역&lt;/b&gt;… Fri, 0…\n4 담양군 한국대나무박물관, 박구환 작가 특별 초대전 개최…… https://www… http… \"박구환 작가는 1… Fri, 0…\n5 심민 임실군수 민생지원금 20만원 빠르게 추진 당부…… http://www.… http… \"사용기간이 지나면… Fri, 0…\n\n\n\n\n\nnaver_extractor &lt;- function(base_url, search_item, n_start = 1, n_display = 100){\n  news &lt;- request(base_url) |&gt; \n  req_headers(\n    \"X-Naver-Client-ID\" = your_ClientID,\n    \"X-Naver-Client-Secret\" = your_Client_Secret\n  ) |&gt; \n  req_url_query(\n    query = search_item,\n    display = n_display,\n    start = n_start,\n    sort = \"date\"\n  ) |&gt; \n  req_perform() |&gt; \n  resp_body_json() |&gt; pluck(\"items\") |&gt; bind_rows()\n}\n\nsearch &lt;- \"지역소멸\"\nrep &lt;- 10\nresult_naver &lt;- map_dfr(\n  start_idx &lt;- (0:(rep-1)) * 100 + 1,\n  \\(x) naver_extractor(\n    a_url       = your_url,\n    search_item = search,\n    n_start     = x,\n    n_display = 100\n  )\n)\n\n\n\n\nresult_naver |&gt; slice_head(n = 5)\n\n# A tibble: 5 × 5\n  title                                   originallink link  description pubDate\n  &lt;chr&gt;                                   &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;  \n1 담양군 한국대나무박물관, '박구환 작가 특별 초대전' 열어…… http://www.… http… \"박구환 작가는 1… Fri, 0…\n2 순창발효관광재단, 주민참여형 축제로 도지사 표창…… https://www… http… \"전북 순창발효관광… Fri, 0…\n3 의령곤충생태학습관, 2025년 관람객 개관 이후 최다…… https://www… http… \"&lt;b&gt;지역&lt;/b&gt;… Fri, 0…\n4 담양군 한국대나무박물관, 박구환 작가 특별 초대전 개최…… https://www… http… \"박구환 작가는 1… Fri, 0…\n5 심민 임실군수 민생지원금 20만원 빠르게 추진 당부…… http://www.… http… \"사용기간이 지나면… Fri, 0…",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#텍스트-마이닝과-자연어처리",
+    "href": "R_lec_08_2025.html#텍스트-마이닝과-자연어처리",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "텍스트 마이닝과 자연어처리",
+    "text": "텍스트 마이닝과 자연어처리\n\n텍스트 마이닝\n\n비정형 텍스트 데이터로부터 패턴 또는 관계를 추출하여 의미 있는 정보를 찾아내는 기법\n기본 과정: 텍스트 전처리, 토큰화하기, 단어 빈도 분석하기\n고급 분석: 비교 분석, 감정 분석, 의미망 분석, 토픽 모델링 등\n\n자연어처리(NLP; natural language processing)\n\nKoNLP(Korean Natural Language Processing)",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_08_2025.html#mall-패키지",
+    "href": "R_lec_08_2025.html#mall-패키지",
+    "title": "R Lecture 8\n데이터 수집하기",
+    "section": "mall 패키지",
+    "text": "mall 패키지\n\n\n\nhttps://mlverse.github.io/mall/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 8]{style=\"color:coral;font-size:0.6em\"}\n| [데이터 수집하기]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html",
+    "href": "R_lec_01_2025.html",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "",
+    "text": "https://www.mdpi.com/2075-1729/12/5/648\n\n\n\n\nhttps://en.wikipedia.org/wiki/Bell_Labs\n\n\n\n\n\n\n\nhttps://knihobot.cz/g/485637\n\n\n\n\n\nhttps://link.springer.com/book/10.1007/978-1-4615-7826-0\n\n\n\n\n\n\n\n\n\n\n조지 로스 이하카 George Ross Ihaka\n\n\n\n\n\n오클랜드 대학 University of Auckland\n\n\n\n\n\n로버트 젠틀맨 Robert C. Gentleman\n\n\n\n\n\n\n\nhttps://www.r-consortium.org/blog/2023/02/28/happy-23rd-birthday-r\n\n\n\n\n\n\n\nhttps://ggplot2.tidyverse.org/\n\n\n\n \n\n\n\n\n해들리 위컴(Hadley Wickham), posit\n\n\n\n\n\n\n\nhttps://posit.co/download/rstudio-desktop/\n\n\n\n\n\n\n\n\n\n\nhttps://shiny.posit.co/\n\n\n\n\n\n\n\n\n\n\nhttps://www.tidyverse.org/\n\n\n\n \n\n\n\n\nhttps://www.tidyverse.org/\n\n\n\n\n\n\n\nhttps://posit.co/\n\n\n\n\n\n\n\nhttps://quarto.org/\n\n\n\n\n\nhttps://rstudio.github.io/cheatsheets/html/quarto.html",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#주요-사건들",
+    "href": "R_lec_01_2025.html#주요-사건들",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "",
+    "text": "https://www.mdpi.com/2075-1729/12/5/648",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#bell-labs-in-1975",
+    "href": "R_lec_01_2025.html#bell-labs-in-1975",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "",
+    "text": "https://en.wikipedia.org/wiki/Bell_Labs",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#s-plus-1997",
+    "href": "R_lec_01_2025.html#s-plus-1997",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "",
+    "text": "https://knihobot.cz/g/485637\n\n\n\n\n\nhttps://link.springer.com/book/10.1007/978-1-4615-7826-0",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#fathers-of-r-1993",
+    "href": "R_lec_01_2025.html#fathers-of-r-1993",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "",
+    "text": "조지 로스 이하카 George Ross Ihaka\n\n\n\n\n\n오클랜드 대학 University of Auckland\n\n\n\n\n\n로버트 젠틀맨 Robert C. Gentleman",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#official-birth",
+    "href": "R_lec_01_2025.html#official-birth",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "",
+    "text": "https://www.r-consortium.org/blog/2023/02/28/happy-23rd-birthday-r",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#ggplot2-2007",
+    "href": "R_lec_01_2025.html#ggplot2-2007",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "",
+    "text": "https://ggplot2.tidyverse.org/\n\n\n\n \n\n\n\n\n해들리 위컴(Hadley Wickham), posit",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#rstudio-2011",
+    "href": "R_lec_01_2025.html#rstudio-2011",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "",
+    "text": "https://posit.co/download/rstudio-desktop/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#shiny-2012",
+    "href": "R_lec_01_2025.html#shiny-2012",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "",
+    "text": "https://shiny.posit.co/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#tidyverse-2016",
+    "href": "R_lec_01_2025.html#tidyverse-2016",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "",
+    "text": "https://www.tidyverse.org/\n\n\n\n \n\n\n\n\nhttps://www.tidyverse.org/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#posit-2022",
+    "href": "R_lec_01_2025.html#posit-2022",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "",
+    "text": "https://posit.co/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#quarto-2022",
+    "href": "R_lec_01_2025.html#quarto-2022",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "",
+    "text": "https://quarto.org/\n\n\n\n\n\nhttps://rstudio.github.io/cheatsheets/html/quarto.html",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#ide",
+    "href": "R_lec_01_2025.html#ide",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "IDE",
+    "text": "IDE\nIDE(integrated development environment, 통합개발환경)",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#ide-1",
+    "href": "R_lec_01_2025.html#ide-1",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "IDE",
+    "text": "IDE\n\n\nhttps://moderndive.com/1-getting-started.html#r-rstudio",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#ide-2",
+    "href": "R_lec_01_2025.html#ide-2",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "IDE",
+    "text": "IDE\n\n\nhttps://djangostars.com/blog/python-ide/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#ide-3",
+    "href": "R_lec_01_2025.html#ide-3",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "IDE",
+    "text": "IDE\n\n\nhttps://posit.co/blog/positron-product-announcement-aug-2025/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#개의-창",
+    "href": "R_lec_01_2025.html#개의-창",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "4개의 창",
+    "text": "4개의 창",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#r-project",
+    "href": "R_lec_01_2025.html#r-project",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "R Project",
+    "text": "R Project",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#r-project-1",
+    "href": "R_lec_01_2025.html#r-project-1",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "R Project",
+    "text": "R Project\n\n\nhttps://allisonhorst.com/allison-horst",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#rstudio-가이드",
+    "href": "R_lec_01_2025.html#rstudio-가이드",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "RStudio 가이드",
+    "text": "RStudio 가이드\n\nRStudio IDE User Guide\nPosit Cheatsheets",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#프로그래밍의-기본-개념",
+    "href": "R_lec_01_2025.html#프로그래밍의-기본-개념",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "프로그래밍의 기본 개념",
+    "text": "프로그래밍의 기본 개념\n\n\n객체(object): R 환경 안에 존재하는, 식별가능하고 조작 가능한 모든 엔터티\n\n데이터 객체: 숫자/문자/논리값, 벡터, 데이터 프레임\n비데이터 객체: 함수, 플롯, 모형 등\n\n\n\n할당(assignment): 데이터와 이름을 연결해 R 환경에 객체를 저장하는 프로그래밍 언어적 동작\n\n특정한 할당 연산자 사용: &lt;- 또는 =\n\n\n\n연산자(operator): 하나 이상의 객체(피연산자)에 적용되어, 객체의 상태를 바꾸거나 새로운 값을 만드는 프로그래밍 언어의 기본 요소\n함수(function): 특정 동작을 수행하는 코드 블록. 인풋을 함수에 적용하면 함수의 고유한 동작을 통해 아웃풋이 산출",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#연산자-operators",
+    "href": "R_lec_01_2025.html#연산자-operators",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "연산자 Operators",
+    "text": "연산자 Operators\n\n\nhttps://learnetutorials.com/r-programming/operators-and-types",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#할당-연산자",
+    "href": "R_lec_01_2025.html#할당-연산자",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "할당 연산자",
+    "text": "할당 연산자",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#산술-연산자",
+    "href": "R_lec_01_2025.html#산술-연산자",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "산술 연산자",
+    "text": "산술 연산자\n\n\nOperator\nDescription\nExample\n\n\n\n+\naddition\n5+5=10\n\n\n-\nsubtraction\n5-5=0\n\n\n*\nmultiplication\n2*8=16\n\n\n/\ndivision\n100/10=10\n\n\n\n^ (or **)\nexponent/power\n5^2=25\n\n\n%%\nmodulo\n100%%15=10\n\n\n%/%\ninteger division\n100%/%15=6",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#관계-논리-기타-연산자",
+    "href": "R_lec_01_2025.html#관계-논리-기타-연산자",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "관계, 논리, 기타 연산자",
+    "text": "관계, 논리, 기타 연산자\n\n\nType\nOperator\nCondition\n\n\n\n관계 Relational\nx &lt; y\nWhere x less than y\n\n\n\n\nx &gt; y\nWhere x greater than y\n\n\n\n\nx &lt;= y\nWhere x less than or equal to y\n\n\n\n\nx &gt;= y\nWhere x greater than or equal to y\n\n\n\n\nx == y\nWhere x (exactly) equals y\n\n\n\n\nx != y\nWhere x is not equal to y\n\n\n\n논리 Logical\n!\nNegation\n\n\n\n&\nLogical “and” (x &gt;= 20 & x &lt; 35)\n\n\n\n|\nLogical “or (x == 20 | x &gt; 45)\n\n\n\nxor\nLogical “exclusive or” (xor(x == 20, x == 50)\n\n\n기타 Miscellaneous\nx %in% y\nWhere x is in y\n\n\n\n\n!x %in% y\nWhere x is not in y",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#webr-연습",
+    "href": "R_lec_01_2025.html#webr-연습",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "webr 연습",
+    "text": "webr 연습\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#함수-functions",
+    "href": "R_lec_01_2025.html#함수-functions",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "함수 functions",
+    "text": "함수 functions\n\nseq(from = 2, to = 100, by = 2)\n\n\n\nhttps://www.r4epi.com/speaking-rs-language",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#주요-산술-함수",
+    "href": "R_lec_01_2025.html#주요-산술-함수",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "주요 산술 함수",
+    "text": "주요 산술 함수\n\n\n분류\n함수\n\n\n\n절대값/부호\n\nabs(), sign()\n\n\n\n제곱근/지수\n\nsqrt(), exp()\n\n\n\n로그\n\nlog(), log10(), log2()\n\n\n\n삼각함수\n\nsin(), cos(), tan(), asin()\n\n\n\n반올림\n\nround(), floor(), ceiling(), trunc()\n\n\n\n요약\n\nsum(), mean(), median(), var(), sd(), min(), max(), range(), summary()",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#그-외-많이-쓰이는-함수",
+    "href": "R_lec_01_2025.html#그-외-많이-쓰이는-함수",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "그 외 많이 쓰이는 함수",
+    "text": "그 외 많이 쓰이는 함수\n\n\n\n\n\n\n분류\n함수\n\n\n\n논리형 판별\n\nis.na(), is.numeric(), is.character(), is.null()\n\n\n\n수열/반복\n\nseq(), rep()\n\n\n\n난수/표본 생성\n\nsample(), rnorm()\n\n\n\n유형 변환\n\nas.numeric(), as.character()\n\n\n\n표준화\nscale()\n\n\n길이\nlength()\n\n\n정렬\n\nsort(), order()\n\n\n\n중복 처리\n\nunique(), duplicated()",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#데이터-객체-데이터-유형",
+    "href": "R_lec_01_2025.html#데이터-객체-데이터-유형",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "데이터 객체: 데이터 유형",
+    "text": "데이터 객체: 데이터 유형",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#벡터와-데이터-프레임",
+    "href": "R_lec_01_2025.html#벡터와-데이터-프레임",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "벡터와 데이터 프레임",
+    "text": "벡터와 데이터 프레임\n\n\nR 코드\nwebr 연습\n\n\n\n\na &lt;- c(58, 26, 24, 19)\nb &lt;- c(58L, 26L, 24L, 32L)\nc &lt;- c(TRUE, TRUE, FALSE, FALSE)\nd &lt;- c(\"이상일\", \"김우형\", \"박서우\", \"이하은\")\ndf &lt;- data.frame(a, b, c, d)\ndf\n\n   a  b     c      d\n1 58 58  TRUE 이상일\n2 26 26  TRUE 김우형\n3 24 24 FALSE 박서우\n4 19 32 FALSE 이하은\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#differences",
+    "href": "R_lec_01_2025.html#differences",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "Differences",
+    "text": "Differences",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#differences-1",
+    "href": "R_lec_01_2025.html#differences-1",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "Differences",
+    "text": "Differences",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#r-for-open-science",
+    "href": "R_lec_01_2025.html#r-for-open-science",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "R for Open Science",
+    "text": "R for Open Science",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#r-for-reproducible-research",
+    "href": "R_lec_01_2025.html#r-for-reproducible-research",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "R for Reproducible Research",
+    "text": "R for Reproducible Research",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#r-communities",
+    "href": "R_lec_01_2025.html#r-communities",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "R Communities",
+    "text": "R Communities",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#r-communities-1",
+    "href": "R_lec_01_2025.html#r-communities-1",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "R Communities",
+    "text": "R Communities",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_01_2025.html#r-and-python-in-harmony",
+    "href": "R_lec_01_2025.html#r-and-python-in-harmony",
+    "title": "\nR Lecture 1R과 RStudio\n",
+    "section": "R and Python in Harmony",
+    "text": "R and Python in Harmony",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 1]{style=\"color:coral;font-size:0.6em\"}\n| [R과 RStudio]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html",
+    "href": "R_lec_09_2025.html",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "",
+    "text": "역동성과 상호작용성이 부가된 시각화\n구현 방식\n\n임베딩(embedding): 외부 콘텐츠 삽입\n동적ㆍ반응형 내용 요소의 직접 제작\n\n\n\n\n\n\n개념\n\n외부 웹 사이트/앱의 콘텐츠를 현재 웹 사이트/앱 안에 삽입하여 보여주는 기법\nHTML의 iframe 태그 활용\n별도의 페이지 전환 없이 다른 서비스나 시각화 결과를 한 웹 앱에 통합\n일부 사이트는 임베딩 불가능\n\n대상\n\n동적ㆍ반응형 시각화 웹 사이트/앱\n상호작용형 교육ㆍ협업 도구: Padlet, Mentimeter, Google Forms 등\n동영상: YouTube\n\n\n\n\n\n\nR 패키지 활용\n\n동적ㆍ반응형 내용 요소 제작을 지원하는 R 자체 패키지\ngganimate, ggiraph\n\nR 래퍼 패키지 활용\n\nJS 라이브러리와의 가교\nDT, plotly\n\n결합\n\nR 패키지로 제작한 정적 콘텐츠를 R 래퍼 패키지를 통해 동적ㆍ반응형 콘텐츠로 전환\nggplot2 + plotly",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#동적ㆍ반응형-시각화의-구현",
+    "href": "R_lec_09_2025.html#동적ㆍ반응형-시각화의-구현",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "",
+    "text": "역동성과 상호작용성이 부가된 시각화\n구현 방식\n\n임베딩(embedding): 외부 콘텐츠 삽입\n동적ㆍ반응형 내용 요소의 직접 제작",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#임베딩",
+    "href": "R_lec_09_2025.html#임베딩",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "",
+    "text": "개념\n\n외부 웹 사이트/앱의 콘텐츠를 현재 웹 사이트/앱 안에 삽입하여 보여주는 기법\nHTML의 iframe 태그 활용\n별도의 페이지 전환 없이 다른 서비스나 시각화 결과를 한 웹 앱에 통합\n일부 사이트는 임베딩 불가능\n\n대상\n\n동적ㆍ반응형 시각화 웹 사이트/앱\n상호작용형 교육ㆍ협업 도구: Padlet, Mentimeter, Google Forms 등\n동영상: YouTube",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#직접-제작",
+    "href": "R_lec_09_2025.html#직접-제작",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "",
+    "text": "R 패키지 활용\n\n동적ㆍ반응형 내용 요소 제작을 지원하는 R 자체 패키지\ngganimate, ggiraph\n\nR 래퍼 패키지 활용\n\nJS 라이브러리와의 가교\nDT, plotly\n\n결합\n\nR 패키지로 제작한 정적 콘텐츠를 R 래퍼 패키지를 통해 동적ㆍ반응형 콘텐츠로 전환\nggplot2 + plotly",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#사례-1",
+    "href": "R_lec_09_2025.html#사례-1",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "사례 1",
+    "text": "사례 1\n\n통계놀이터(https://kosis.kr/edu/)\n\n\nCodeResult\n\n\n&lt;iframe src=\"https://kosis.kr/edu/share.do?shareID=S0500_16\" \nloading=\"lazy\" style=\"width: 100%; height: 600px; border: \n0px none;\" allow=\"web-share; clipboard-write\"&gt;&lt;/iframe&gt;",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#사례-2",
+    "href": "R_lec_09_2025.html#사례-2",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "사례 2",
+    "text": "사례 2\n\nOur World in Data(https://ourworldindata.org/)\n\n\nCodeResult\n\n\n&lt;iframe src=\"https://ourworldindata.org/explorers/population-and-demography?indicator=Fertility+rate&Sex=Both+sexes&Age=Total&Projection+scenario=Medium&country=Asia+%28UN%29~Europe+%28UN%29~Africa+%28UN%29~Oceania+%28UN%29~Northern+America+%28UN%29~Latin+America+and+the+Caribbean+%28UN%29~OWID_WRL~KOR&tab=chart&hideControls=true\" loading=\"lazy\" style=\"width: 70%; height: 600px; border: 0px none;\" allow=\"web-share; clipboard-write\"&gt;&lt;/iframe&gt;",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#개요",
+    "href": "R_lec_09_2025.html#개요",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "개요",
+    "text": "개요\n\n테이블 역시 시각화의 일부\n\n데이터 변형 및 요약을 거친 정적 테이블\n시각성이 가미된 정적 테이블\n인터랙티브 테이블\n\n테이블 디자인 원칙(핸즈온 데이터 시각화, 2022)\n\n열 제목을 데이터 상단에 눈에 띄게 만들어라.\n밝은 음영을 사용해 열이나 행을 구분하라.\n읽기 쉽도록 텍스트는 왼쪽 정렬하고 숫자는 오른쪽 정렬하라.\n레이블을 첫 번째 행에만 배치하여 중복을 피하라.\n테이터를 그룹화 및 정렬하여 의미 있는 패턴을 강조하라.",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#도구의-분류",
+    "href": "R_lec_09_2025.html#도구의-분류",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "도구의 분류",
+    "text": "도구의 분류\n\n\n\nhttps://r-graph-gallery.com/table.html",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#gt-패키지",
+    "href": "R_lec_09_2025.html#gt-패키지",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "gt 패키지",
+    "text": "gt 패키지\n\n\n\nhttps://gt.rstudio.com/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#gt-패키지-1",
+    "href": "R_lec_09_2025.html#gt-패키지-1",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "gt 패키지",
+    "text": "gt 패키지\n\n\n\nhttps://gt.rstudio.com/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#gt-패키지-2",
+    "href": "R_lec_09_2025.html#gt-패키지-2",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "gt 패키지",
+    "text": "gt 패키지\n\n\n\nhttps://towardsdatascience.com/exploring-the-gt-grammar-of-tables-package-in-r-7fff9d0b40cd",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#flextable패키지",
+    "href": "R_lec_09_2025.html#flextable패키지",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "flextable패키지",
+    "text": "flextable패키지\n\n웹북(https://ardata-fr.github.io/flextable-book/)\n\n\n\n\nhttps://twitter.com/DavidGohel/status/1376892794627883016/photo/1",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#인터랙티브-테이블",
+    "href": "R_lec_09_2025.html#인터랙티브-테이블",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "인터랙티브 테이블",
+    "text": "인터랙티브 테이블\n\n\n\n자바스크립트 라이브러리\nR 래퍼 패키지\n\n\n\n\nDataTables\nDT\n\n\nTanstack Table\nreactable",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#래퍼-패키지-dt",
+    "href": "R_lec_09_2025.html#래퍼-패키지-dt",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "래퍼 패키지: DT",
+    "text": "래퍼 패키지: DT\n\nDataTables: 자바스크립트 라이브러리\nR 래퍼 패키지: DT\n\n웹북: D3 for R Users\n\n\n\n\n\nhttps://datatables.net/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#래퍼-패키지-dt-1",
+    "href": "R_lec_09_2025.html#래퍼-패키지-dt-1",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "래퍼 패키지: DT",
+    "text": "래퍼 패키지: DT\n\nPagination: 페이지 이동 기능\nInstant search: 즉각적 검색 기능(Search에 타이핑하기 시작하면 즉각적으로 검색 결과 보여줌)\nOrdering/sorging: 컬럼 정렬 기능\nMulti-column ordering: 다중 컬럼 정렬 기능(컬럼 하나를 선택한 후 ctrl을 누른 상태에서 다른 컬럼을 선택)\nFiltering: 값 추림 기능\nEditable: 셀 값 수정 기능\nButtons: 셀 숨기기 기능, CSV, PDF, XLSX 등의 확장자로 내보내기 등을 수행하는 버튼 생성 기능",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#래퍼-패키지-dt-2",
+    "href": "R_lec_09_2025.html#래퍼-패키지-dt-2",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "래퍼 패키지: DT",
+    "text": "래퍼 패키지: DT\n\nCodeResult\n\n\n\ngapminder |&gt; \n  datatable(\n    filter = \"top\",\n    extensions = \"Buttons\",\n    options = list(\n      pageLength = 5,\n      autoWidth = TRUE,\n      dom = \"Bfrtip\",\n      buttons = c(\"copy\", \"excel\", \"pdf\", \"print\")\n    )\n  )\n\n\n\n\nlibrary(DT)\nlibrary(gapminder)\ngapminder |&gt; \n  datatable(\n    filter = \"top\",\n    extensions = \"Buttons\",\n    options = list(\n      pageLength = 5,\n      autoWidth = TRUE,\n      dom = \"Bftip\",\n      buttons = c(\"copy\", \"excel\", \"pdf\", \"print\")\n    )\n  )",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#r-패키지-gganimate",
+    "href": "R_lec_09_2025.html#r-패키지-gganimate",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "R 패키지: gganimate",
+    "text": "R 패키지: gganimate\n\nCodeResult\n\n\n\nlibrary(gganimate)\nP &lt;- gapminder |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, size = pop, color = continent)) +\n  geom_point(show.legend = FALSE, alpha = 0.7) +\n  scale_x_log10() +\n  scale_size(range = c(2, 12))\nP + transition_time(year) +\n  labs(title = \"Year: {frame_time}\")",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#r-패키지-ggiraph-패키지",
+    "href": "R_lec_09_2025.html#r-패키지-ggiraph-패키지",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "R 패키지: ggiraph 패키지",
+    "text": "R 패키지: ggiraph 패키지\n\nggplot2 패키지의 확장\n상호작용형 기하객체(geometry): geom_*_interactive\n\ngeom_point(): geom_point_interactive()\ngeom_sf(): geom_sf_interactive()\n…\n\n상호작용형 시각속성(aethetics)\n\ntoolitp\nonclick\ndata_id\n\n웹북: ggiraph-book",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#r-패키지-ggiraph-패키지-1",
+    "href": "R_lec_09_2025.html#r-패키지-ggiraph-패키지-1",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "R 패키지: ggiraph 패키지",
+    "text": "R 패키지: ggiraph 패키지\n\nCodeResult\n\n\n\nlibrary(tidyverse)\nlibrary(ggiraph)\ndata &lt;- mtcars\ndata &lt;- data |&gt; rownames_to_column(var = \"carname\")\ngg_point = ggplot(data = data) +\n  geom_point_interactive(\n    aes(x = wt, y = qsec, color = disp, \n        tooltip = carname, data_id = carname)\n  ) + \n  theme_minimal()\ngirafe(ggobj = gg_point)\n\n\n\n\nlibrary(tidyverse)\nlibrary(ggiraph)\ndata &lt;- mtcars\ndata &lt;- data |&gt; rownames_to_column(var = \"carname\")\ngg_point = ggplot(data = data) +\n  geom_point_interactive(\n    aes(x = wt, y = qsec, color = disp, \n        tooltip = carname, data_id = carname)\n  ) + \n  theme_minimal()\ngirafe(ggobj = gg_point)",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#래퍼-패키지-활용",
+    "href": "R_lec_09_2025.html#래퍼-패키지-활용",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "래퍼 패키지 활용",
+    "text": "래퍼 패키지 활용\n\n\n\n\n\n\n\n자바스크립트 라이브러리\nR 래퍼 패키지\n\n\n\n\nPlotly\nplotly\n\n\nD3\nr2d3\n\n\nHighcharts\nhighcharter\n\n\nECharts\necharts4r, echarty\n\n\ndygraphs\ndygraphs\n\n\nGoogle Charts\ngoogleVis\n\n\nChart.js\nchartjs\n\n\nthree.js\nr3js",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#래퍼-패키지-plotly-패키지",
+    "href": "R_lec_09_2025.html#래퍼-패키지-plotly-패키지",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "래퍼 패키지: plotly 패키지",
+    "text": "래퍼 패키지: plotly 패키지\n\nPlotly: 자바스크립트 라이브러리\nR 래퍼 패키지: plotly package\n\nggplotly() 함수\n\n\n\n\n\nhttps://plotly.com/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#래퍼-패키지-plotly-패키지-1",
+    "href": "R_lec_09_2025.html#래퍼-패키지-plotly-패키지-1",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "래퍼 패키지: plotly 패키지",
+    "text": "래퍼 패키지: plotly 패키지\n\nCodeResult\n\n\n\nlibrary(plotly)\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  plot_ly(\n    x = ~gdpPercap, \n    y = ~lifeExp, \n    color = ~continent,\n    text = ~paste(\n      \"Country: \", country, \n      \"&lt;br&gt;GDP per capita: \", gdpPercap, \n      \"$&lt;br&gt;Life Expectancy at Birth:\", lifeExp\n    )\n  )\n\n\n\n\nlibrary(plotly)\ngapminder |&gt; \n  filter(year == 2007) |&gt; \n  plot_ly(\n    x = ~gdpPercap, \n    y = ~lifeExp, \n    color = ~continent,\n    text = ~paste(\n      \"Country: \", country, \n      \"&lt;br&gt;GDP per capita: \", gdpPercap, \n      \"$&lt;br&gt;Life Expectancy at Birth:\", lifeExp\n    )\n  )",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#래퍼-패키지-plotly-패키지-2",
+    "href": "R_lec_09_2025.html#래퍼-패키지-plotly-패키지-2",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "래퍼 패키지: plotly 패키지",
+    "text": "래퍼 패키지: plotly 패키지\n\nCodeResult\n\n\n\ngapminder |&gt; \n  plot_ly(\n    x = ~log10(gdpPercap), y = ~lifeExp,\n    text = ~paste(\n      \"Country:\", country, \n      \"&lt;/br&gt;Continent:\", continent, \n      \"&lt;/br&gt;lifeExp:\", lifeExp\n    )\n  ) |&gt; \n  add_markers(\n    color = ~continent, \n    size = ~pop, \n    frame = ~year, \n    marker = list(sizeref = 0.2, sizemode = \"area\")\n  )\n\n\n\n\ngapminder |&gt; \n  plot_ly(\n    x = ~log10(gdpPercap), y = ~lifeExp,\n    text = ~paste(\n      \"Country:\", country, \n      \"&lt;/br&gt;Continent:\", continent, \n      \"&lt;/br&gt;lifeExp:\", lifeExp\n    )\n  ) |&gt; \n  add_markers(\n    color = ~continent, \n    size = ~pop, \n    frame = ~year, \n    marker = list(sizeref = 0.2, sizemode = \"area\")\n  )",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#래퍼-패키지-plotly-패키지의-ggplotly-함수",
+    "href": "R_lec_09_2025.html#래퍼-패키지-plotly-패키지의-ggplotly-함수",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "래퍼 패키지: plotly 패키지의 ggplotly() 함수",
+    "text": "래퍼 패키지: plotly 패키지의 ggplotly() 함수\n\nCodeResult\n\n\n\nP &lt;- gapminder |&gt; \n  filter(year == 2007) |&gt; \n  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent)) +\n  geom_point() + \n  scale_color_brewer(palette = \"Set2\") +\n  theme_minimal()\nggplotly(P)",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_09_2025.html#래퍼-패키지-echarts4r-패키지",
+    "href": "R_lec_09_2025.html#래퍼-패키지-echarts4r-패키지",
+    "title": "R Lecture 9\n웹 앱 개발: 인터랙티브 시각화",
+    "section": "래퍼 패키지: echarts4r 패키지",
+    "text": "래퍼 패키지: echarts4r 패키지\n\nCodeResult\n\n\n\nlibrary(tidyverse)\nlibrary(echarts4r)\nlibrary(RColorBrewer)\nmy.data &lt;- read_rds(\"D:/My R/Population Geography/wpp_2024.rds\")\ndata.sel &lt;- my.data |&gt; \n  filter(\n    type == \"Subregion\" | region_name == \"Northern America\",\n    year == 2025\n  )\ncustom_colors &lt;- brewer.pal(n = 6, name = \"Set2\")\ndata.sel |&gt; \n  arrange(median_age) |&gt; \n  mutate(\n    median_age = round(median_age, digits = 1)\n  ) |&gt; \n  group_by(Region_NM) |&gt; \n  e_charts(region_name, width = \"100%\", height = \"800px\") |&gt; \n  e_bar(serie = median_age, stack = \"grp\") |&gt; \n  e_color(custom_colors) |&gt; \n  e_flip_coords() |&gt; \n  e_x_axis(name = \"Median Age\") |&gt; \n  e_tooltip() |&gt; \n  e_legend()",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 9]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: 인터랙티브 시각화]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_11_2025.html",
+    "href": "R_lec_11_2025.html",
+    "title": "R Lecture 11\n웹 앱 개발: Shiny 1",
+    "section": "",
+    "text": "https://shiny.posit.co/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 11]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: Shiny 1]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_11_2025.html#shiny-서버-기반-웹-앱-개발-프레임워크",
+    "href": "R_lec_11_2025.html#shiny-서버-기반-웹-앱-개발-프레임워크",
+    "title": "R Lecture 11\n웹 앱 개발: Shiny 1",
+    "section": "",
+    "text": "https://shiny.posit.co/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 11]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: Shiny 1]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_11_2025.html#리소스-shiny-홈페이지",
+    "href": "R_lec_11_2025.html#리소스-shiny-홈페이지",
+    "title": "R Lecture 11\n웹 앱 개발: Shiny 1",
+    "section": "리소스: Shiny 홈페이지",
+    "text": "리소스: Shiny 홈페이지\n\nhttps://shiny.posit.co/\n\nShiny for R(https://shiny.posit.co/r/)\nShiny for Python(https://shiny.posit.co/py/)\n\n11개 예시\n\n예시의 이름 검색: runExample()\n\n“01_hello”, “02_text”, “03_reactivity”, “04_mpg”, “05_sliders”, “06_tabsets”, “07_widgets”, “08_html”, “09_upload”, “10_download”, “11_timer”\n\n예시의 웹 앱 및 코드 보기: runExample(\"01_hello\", display = \"showcase\")",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 11]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: Shiny 1]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_11_2025.html#리소스-웹북",
+    "href": "R_lec_11_2025.html#리소스-웹북",
+    "title": "R Lecture 11\n웹 앱 개발: Shiny 1",
+    "section": "리소스: 웹북",
+    "text": "리소스: 웹북\n\nMastering Shiny by Hadley Wickham\nOutstanding User Interfaces with Shiny\nEngineering Production-Grade Shiny Apps\nInteractive Web-Based Data Visualization with R, plotly, and shiny\nR Shiny Applications in Finance, Medicine Pharma and Education Industry\nIntroduction to Data Science: 25 Shiny Applications\n데이터 사이언스를 위한 R 프로그래밍: 14 shiny",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 11]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: Shiny 1]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_11_2025.html#기본-구조",
+    "href": "R_lec_11_2025.html#기본-구조",
+    "title": "R Lecture 11\n웹 앱 개발: Shiny 1",
+    "section": "기본 구조",
+    "text": "기본 구조\n\nui 부분: 프론트엔드(front-end) 부분\n\n입력을 받고 출력을 보여주는 부분\n\nserver 부분: 백엔드(back-end) 부분\n\n받은 입력으로 출력을 산출하는 부분\n\n결합: shinyApp(ui = ui, server = server)\n\n\n\n\nhttps://bookdown.org/hneth/i2ds/shiny.html",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 11]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: Shiny 1]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_11_2025.html#기본-구조-ui-부분",
+    "href": "R_lec_11_2025.html#기본-구조-ui-부분",
+    "title": "R Lecture 11\n웹 앱 개발: Shiny 1",
+    "section": "기본 구조: ui 부분",
+    "text": "기본 구조: ui 부분\n\n입력(input)\n\n‘입력 함수’: 사용자로부터 입력을 받아 ’입력 객체’를 만드는 함수\n위젯(widget): ui를 위한 기본 시각 요소로, 미리 만들어져 있는 것\n\n버튼, 스크롤 바, 텍스트 상자, 체크박스, 라디오 버튼 등\n\n입력의 종류에 따라 다양: *Input()\n\nsliderInput(inputID = \"\")\n\n\n출력(output)\n\n‘출력 함수’: 서버로부터 ’출력 객체’를 받아 디스플레이하는 함수\n출력의 종류에 따라 다양: *Output()\n\nplotOutput(outputID = \"\")",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 11]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: Shiny 1]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_11_2025.html#기본-구조-ui-부분-1",
+    "href": "R_lec_11_2025.html#기본-구조-ui-부분-1",
+    "title": "R Lecture 11\n웹 앱 개발: Shiny 1",
+    "section": "기본 구조: ui 부분",
+    "text": "기본 구조: ui 부분\n\n입력 함수(위젯): https://shiny.posit.co/r/components/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 11]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: Shiny 1]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_11_2025.html#기본-구조-ui-부분-2",
+    "href": "R_lec_11_2025.html#기본-구조-ui-부분-2",
+    "title": "R Lecture 11\n웹 앱 개발: Shiny 1",
+    "section": "기본 구조: ui 부분",
+    "text": "기본 구조: ui 부분\n\n출력 함수: https://shiny.posit.co/r/components/\n주요 함수: *Output(outputID = \"\")\n\n플롯: plotOutput(outputID = \"\")\n테이블: tableOutput(outputID = \"\")\n일반 텍스트: textOutput(outputID = \"\")\n사전 포맷된 텍스트: verbatimeTextOutput(outputID = \"\")\n이미지: imageOutput(outputID = \"\")",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 11]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: Shiny 1]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_11_2025.html#기본-구조-server-부분",
+    "href": "R_lec_11_2025.html#기본-구조-server-부분",
+    "title": "R Lecture 11\n웹 앱 개발: Shiny 1",
+    "section": "기본 구조: server 부분",
+    "text": "기본 구조: server 부분\n\n입력 객체를 받아 특정한 출력 객체를 생성\n\n입력 객체: input$inputID\n\n출력 객체 생성 함수(렌더링 함수): render*({})\n\nrenderPlot({})\n출력 객체: output$outputID\n\n주요 함수: render*()\n\n플롯: renderPlot()\n테이블: renderTable()\n일반 텍스트: renderText()\n사전 포맷된 텍스트: renderPrint()\n이미지: renderImage()",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 11]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: Shiny 1]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_11_2025.html#기본-구조-ui-server-연계",
+    "href": "R_lec_11_2025.html#기본-구조-ui-server-연계",
+    "title": "R Lecture 11\n웹 앱 개발: Shiny 1",
+    "section": "기본 구조: ui-server 연계",
+    "text": "기본 구조: ui-server 연계\n\n출력 생성(렌더링) 함수와 출력 함수: https://shiny.posit.co/r/components/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 11]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: Shiny 1]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_11_2025.html#기본-구조-ui-server-연계-1",
+    "href": "R_lec_11_2025.html#기본-구조-ui-server-연계-1",
+    "title": "R Lecture 11\n웹 앱 개발: Shiny 1",
+    "section": "기본 구조: ui-server 연계",
+    "text": "기본 구조: ui-server 연계\n\n주요 패키지별 출력 생성(렌더링) 함수 및 출력 함수\n\n\n\n\n주요 패키지\n출력 생성(렌더링) 함수\n출력 함수\n\n\n\n\nDT\nrenderDT({})\nDTOutput(outputID = \"\")\n\n\nreactable\nrenderReactable({})\nreactableOutput(outputID = \"\")\n\n\nplotly\nrenderPlotyl({})\nplotlyOutput(outputID = \"\")\n\n\necharts4r\nrenderEcharts4r({})\necharts4rOutput(outputID = \"\")\n\n\nleaflet\nrenderLeaflet({})\nleafletOutput(outputID = \"\")\n\n\ntmap\nrenderTmap({})\ntmapOutput(outputID = \"\")",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 11]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: Shiny 1]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_11_2025.html#반응성-함수-reactive",
+    "href": "R_lec_11_2025.html#반응성-함수-reactive",
+    "title": "R Lecture 11\n웹 앱 개발: Shiny 1",
+    "section": "반응성 함수 reactive({})",
+    "text": "반응성 함수 reactive({})\n\nrender*() 함수는 이미 반응성 함수\n\n사용자의 선택이 바뀔 때마다 갱신\n\n반응성 함수 reactive({})\n\n입력 객체를 받아 ‘반응성 표현식(reactive expression)’ 생성\n반응성 표현식: 단순히 최종 산출물(값이나 객체)만을 의미하지 않고, 그 산출물을 관리하는 메커니즘(종속성 추적, 지연 실행, 캐싱 등) 포함하는 동적인 객체\n\n반드시 함수 형태로 표기\n\n하나의 ’입력 객체’가 다양한 ’출력 객체(출력 생성 함수)’와 결부되는 경우\n\n동일한 입력 객체의 중복 사용 회피 목적\n해당 입력 객체를 반응성 표현식으로 전환\n다수의 출력 생성 함수에 입력 객체로 투입",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 11]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: Shiny 1]{style=\"font-size:1em\"}"
+    ]
+  },
+  {
+    "objectID": "R_lec_11_2025.html#확장-bslib-패키지",
+    "href": "R_lec_11_2025.html#확장-bslib-패키지",
+    "title": "R Lecture 11\n웹 앱 개발: Shiny 1",
+    "section": "확장: bslib 패키지",
+    "text": "확장: bslib 패키지\n\n\n\nhttps://rstudio.github.io/bslib/",
+    "crumbs": [
+      "R 프레젠테이션: 2025/2",
+      "| [R Lecture 11]{style=\"color:coral;font-size:0.6em\"}\n| [웹 앱 개발: Shiny 1]{style=\"font-size:1em\"}"
     ]
   }
 ]
