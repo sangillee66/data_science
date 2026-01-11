@@ -721,8 +721,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <a href="#bslib-%ED%8C%A8%ED%82%A4%EC%A7%80%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%ED%98%84%EB%8C%80%EC%A0%81-ui-%EA%B5%AC%EC%A1%B0-%EB%94%94%EC%9E%90%EC%9D%B8" id="toc-bslib-패키지를-활용한-현대적-ui-구조-디자인" class="nav-link" data-scroll-target="#bslib-%ED%8C%A8%ED%82%A4%EC%A7%80%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%ED%98%84%EB%8C%80%EC%A0%81-ui-%EA%B5%AC%EC%A1%B0-%EB%94%94%EC%9E%90%EC%9D%B8"><span class="header-section-number">4</span> <strong>bslib</strong> 패키지를 활용한 현대적 UI 구조 디자인</a>
   <ul class="collapse">
 <li><a href="#%EA%B0%9C%EC%9A%94-1" id="toc-개요-1" class="nav-link" data-scroll-target="#%EA%B0%9C%EC%9A%94-1"><span class="header-section-number">4.1</span> 개요</a></li>
-  <li><a href="#%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%ED%95%A8%EC%88%98" id="toc-컨테이너-함수" class="nav-link" data-scroll-target="#%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%ED%95%A8%EC%88%98"><span class="header-section-number">4.2</span> 컨테이너 함수</a></li>
-  <li><a href="#ui-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%BD%98%ED%85%90%EC%B8%A0-%EA%B5%AC%EC%84%B1-%EC%9A%94%EC%86%8C" id="toc-ui-컴포넌트-콘텐츠-구성-요소" class="nav-link" data-scroll-target="#ui-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%BD%98%ED%85%90%EC%B8%A0-%EA%B5%AC%EC%84%B1-%EC%9A%94%EC%86%8C"><span class="header-section-number">4.3</span> UI 컴포넌트: 콘텐츠 구성 요소</a></li>
+  <li><a href="#ui-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%ED%95%A8%EC%88%98" id="toc-ui-컨테이너-함수" class="nav-link" data-scroll-target="#ui-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%ED%95%A8%EC%88%98"><span class="header-section-number">4.2</span> UI 컨테이너 함수</a></li>
+  <li><a href="#ui-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%BD%98%ED%85%90%EC%B8%A0-%EA%B5%AC%EC%84%B1%EC%9A%94%EC%86%8C" id="toc-ui-컴포넌트-콘텐츠-구성요소" class="nav-link" data-scroll-target="#ui-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%BD%98%ED%85%90%EC%B8%A0-%EA%B5%AC%EC%84%B1%EC%9A%94%EC%86%8C"><span class="header-section-number">4.3</span> UI 컴포넌트: 콘텐츠 구성요소</a></li>
   <li><a href="#%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%A0%95%EC%9D%98-%ED%85%8C%EB%A7%88" id="toc-사용자-정의-테마" class="nav-link" data-scroll-target="#%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%A0%95%EC%9D%98-%ED%85%8C%EB%A7%88"><span class="header-section-number">4.4</span> 사용자 정의 테마</a></li>
   </ul>
 </li>
@@ -762,7 +762,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2026년 1월 9일</p>
+      <p class="date-modified">2026년 1월 11일</p>
     </div>
   </div>
     
@@ -840,9 +840,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>        <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarPanel</a></span><span class="op">(</span></span>
 <span>            <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/sliderInput.html">sliderInput</a></span><span class="op">(</span>inputId <span class="op">=</span> <span class="st">"bins"</span>,</span>
 <span>                        label <span class="op">=</span> <span class="st">"Number of bins:"</span>,</span>
-<span>                        min <span class="op">=</span> <span class="fl">1</span>,</span>
-<span>                        max <span class="op">=</span> <span class="fl">50</span>,</span>
-<span>                        value <span class="op">=</span> <span class="fl">30</span><span class="op">)</span></span>
+<span>                        min <span class="op">=</span> <span class="fl">1</span>, max <span class="op">=</span> <span class="fl">50</span>, value <span class="op">=</span> <span class="fl">30</span><span class="op">)</span></span>
 <span>        <span class="op">)</span>,</span>
 <span>        <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">mainPanel</a></span><span class="op">(</span></span>
 <span>           <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/plotOutput.html">plotOutput</a></span><span class="op">(</span>outputId <span class="op">=</span> <span class="st">"distPlot"</span><span class="op">)</span></span>
@@ -922,9 +920,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>        <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarPanel</a></span><span class="op">(</span></span>
 <span>            <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/sliderInput.html">sliderInput</a></span><span class="op">(</span>inputId <span class="op">=</span> <span class="st">"bins"</span>,</span>
 <span>                        label <span class="op">=</span> <span class="st">"Number of bins:"</span>,</span>
-<span>                        min <span class="op">=</span> <span class="fl">1</span>,</span>
-<span>                        max <span class="op">=</span> <span class="fl">50</span>,</span>
-<span>                        value <span class="op">=</span> <span class="fl">30</span><span class="op">)</span></span>
+<span>                        min <span class="op">=</span> <span class="fl">1</span>, max <span class="op">=</span> <span class="fl">50</span>, value <span class="op">=</span> <span class="fl">30</span><span class="op">)</span></span>
 <span>        <span class="op">)</span>,</span>
 <span>        <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">mainPanel</a></span><span class="op">(</span></span>
 <span>           <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/plotOutput.html">plotOutput</a></span><span class="op">(</span>outputId <span class="op">=</span> <span class="st">"distPlot"</span><span class="op">)</span></span>
@@ -958,9 +954,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>        <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarPanel</a></span><span class="op">(</span></span>
 <span>            <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/sliderInput.html">sliderInput</a></span><span class="op">(</span>inputId <span class="op">=</span> <span class="st">"bins"</span>,</span>
 <span>                        label <span class="op">=</span> <span class="st">"Number of bins:"</span>,</span>
-<span>                        min <span class="op">=</span> <span class="fl">1</span>,</span>
-<span>                        max <span class="op">=</span> <span class="fl">50</span>,</span>
-<span>                        value <span class="op">=</span> <span class="fl">30</span><span class="op">)</span></span>
+<span>                        min <span class="op">=</span> <span class="fl">1</span>, max <span class="op">=</span> <span class="fl">50</span>, value <span class="op">=</span> <span class="fl">30</span><span class="op">)</span></span>
 <span>        <span class="op">)</span>,</span>
 <span>        <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">mainPanel</a></span><span class="op">(</span></span>
 <span>           <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/plotOutput.html">plotOutput</a></span><span class="op">(</span>outputId <span class="op">=</span> <span class="st">"distPlot"</span><span class="op">)</span></span>
@@ -1050,6 +1044,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>이미지</td>
 <td><code>imageOutput(outputID = "")</code></td>
 <td><code>renderImage({})</code></td>
+</tr>
+<tr class="even">
+<td>HTML 원문</td>
+<td><code>uiOutput(outputID = "")</code></td>
+<td><code>renderUI({})</code></td>
 </tr>
 </tbody>
 </table>
@@ -1149,9 +1148,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/sliderInput.html">sliderInput</a></span><span class="op">(</span></span>
 <span>      inputId <span class="op">=</span> <span class="st">"bins"</span>,</span>
 <span>      label <span class="op">=</span> <span class="st">"Number of bins:"</span>,</span>
-<span>      min <span class="op">=</span> <span class="fl">1</span>,</span>
-<span>      max <span class="op">=</span> <span class="fl">50</span>,</span>
-<span>      value <span class="op">=</span> <span class="fl">30</span></span>
+<span>      min <span class="op">=</span> <span class="fl">1</span>, max <span class="op">=</span> <span class="fl">50</span>, value <span class="op">=</span> <span class="fl">30</span></span>
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span>,</span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/plotOutput.html">plotOutput</a></span><span class="op">(</span>outputId <span class="op">=</span> <span class="st">"distPlot"</span><span class="op">)</span></span>
@@ -1161,12 +1158,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>  <span class="va">output</span><span class="op">$</span><span class="va">distPlot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderPlot.html">renderPlot</a></span><span class="op">(</span><span class="op">{</span></span>
 <span>    <span class="va">x</span> <span class="op">&lt;-</span> <span class="va">faithful</span><span class="op">$</span><span class="va">waiting</span></span>
 <span>    <span class="va">bins</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, length.out <span class="op">=</span> <span class="va">input</span><span class="op">$</span><span class="va">bins</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span></span>
-<span></span>
 <span>    <span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span></span>
-<span>      <span class="va">x</span>,</span>
-<span>      breaks <span class="op">=</span> <span class="va">bins</span>,</span>
-<span>      col <span class="op">=</span> <span class="st">"#75AADB"</span>,</span>
-<span>      border <span class="op">=</span> <span class="st">"white"</span>,</span>
+<span>      <span class="va">x</span>, breaks <span class="op">=</span> <span class="va">bins</span>, col <span class="op">=</span> <span class="st">"#75AADB"</span>, border <span class="op">=</span> <span class="st">"white"</span>,</span>
 <span>      xlab <span class="op">=</span> <span class="st">"Waiting time to next eruption (in mins)"</span>,</span>
 <span>      main <span class="op">=</span> <span class="st">"Histogram of waiting times"</span></span>
 <span>    <span class="op">)</span></span>
@@ -1194,9 +1187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/sliderInput.html">sliderInput</a></span><span class="op">(</span></span>
 <span>      inputId <span class="op">=</span> <span class="st">"bins"</span>,</span>
 <span>      label <span class="op">=</span> <span class="st">"Number of bins:"</span>,</span>
-<span>      min <span class="op">=</span> <span class="fl">1</span>,</span>
-<span>      max <span class="op">=</span> <span class="fl">50</span>,</span>
-<span>      value <span class="op">=</span> <span class="fl">30</span></span>
+<span>      min <span class="op">=</span> <span class="fl">1</span>, max <span class="op">=</span> <span class="fl">50</span>, value <span class="op">=</span> <span class="fl">30</span></span>
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span>,</span>
 <span>  <span class="fu"><a href="https://rstudio.github.io/bslib/reference/card.html">card</a></span><span class="op">(</span></span>
@@ -1225,9 +1216,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html">shinyApp</a></span><span class="op">(</span>ui <span class="op">=</span> <span class="va">ui</span>, server <span class="op">=</span> <span class="va">server</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section><section id="컨테이너-함수" class="level3" data-number="4.2"><h3 data-number="4.2" class="anchored" data-anchor-id="컨테이너-함수">
-<span class="header-section-number">4.2</span> 컨테이너 함수</h3>
-<p>컨테이너 함수란 다른 UI 요소를 담되, 그 자체가 시각적 콘텐츠의 주제가 되지 않고 공간, 전환, 계층 구조를 정의하는 함수이다. 컨테이너 함수는 크게 세 가지로 나뉜다.</p>
+</section><section id="ui-컨테이너-함수" class="level3" data-number="4.2"><h3 data-number="4.2" class="anchored" data-anchor-id="ui-컨테이너-함수">
+<span class="header-section-number">4.2</span> UI 컨테이너 함수</h3>
+<p>UI 컨테이너 함수란 다른 UI 요소를 담되, 그 자체가 시각적 콘텐츠의 주제가 되지 않고 공간, 전환, 계층 구조를 정의하는 함수이다. 컨테이너 함수는 크게 세 가지로 나뉜다.</p>
 <ul>
 <li><p>페이지 컨테이너: 페이지 전체의 폭, 높이, 스크롤 방식 등 최상위 UI 구조를 정의하는 컨테이너로, <code>page_*()</code> 형태를 띤다.</p></li>
 <li><p>레이아웃 컨테이너: 페이지 내부에서 여러 UI 요소를 동시에 어떻게 배치할지를 결정하는 컨테이너로, <code>layout_*()</code> 형태를 띤다.</p></li>
@@ -1330,9 +1321,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>그러나 가장 중요한 페이지 컨테이너 함수는 <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code>로 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지의 표준이다. 이것은 페이지 전체를 채우는 구조 위에 사이드바-메인 영역 분할을 기본으로 제공하는 고수준 페이지 컨테이너이다. 단순히 예기하면 <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code>는 <code><a href="https://rstudio.github.io/bslib/reference/page_fillable.html">page_fillable()</a></code>과 레이아웃 컨테이너인 <code>layout_siderbar()</code>를 결합한 것으로 이해할 수 있다. <code><a href="https://rstudio.github.io/bslib/reference/page_navbar.html">page_navbar()</a></code>는 상단 내비게이션 바를 페이지의 기본 구조로 표함하여, 여러 화면을 전환하는 앱을 구성하는 고수준 페이지 컨테이너이다. <code><a href="https://rstudio.github.io/bslib/reference/page_navbar.html">page_navbar()</a></code>는 개념적으로 페이지 컨테이너와 내비게이션 컨테이너(navbar)을 통합한다.</p>
 <p><strong>레이아웃 컨테이너</strong>는 페이지 전체가 아니라 페이지 내부 배치를 담당하는데, 페이지 컨테이너와 달리 중첩 사용이 가능하지만 콘텐츠 자체를 표현하지는 않는다. <code>layout_siderbar()</code>는 사이드바와 메인 콘텐츠 영역으로 화면을 이분하는 레이아웃 컨테이너를 생성하는데 <code>page_*()</code>, <code><a href="https://rstudio.github.io/bslib/reference/card.html">card()</a></code>, <code><a href="https://rstudio.github.io/bslib/reference/nav-items.html">nav_panel()</a></code> 내부 어디에도 존재할 수 있다. <code><a href="https://rstudio.github.io/bslib/reference/layout_columns.html">layout_columns()</a></code>는 여러 UI 요소를 동일 행 내의 다중 컬럼으로 배치하는 레이아웃 컨테이너를 생성한다. 컬럼의 수와 폭을 명시적으로 제어할 수 있으며 정돈된 레이아웃 구현에 용이하다. <code><a href="https://rstudio.github.io/bslib/reference/layout_column_wrap.html">layout_column_wrap()</a></code>은 컬럼을 행 단위로 자동 줄바꿈하여 반응형 배치를 제공하는 레이아웃 컨테이너이다. 컬럼 폭 기준으로 자동 배치하며 화면 크기에 따라 행 수가 동적으로 변한다.</p>
 <p><strong>내비게이션 컨테이너</strong>는 여러 UI 패널을 묶어 사용자 상호작요에 따라 표시되는 콘텐츠를 전환하는 컨테이너로, 페이지 컨테이너나 레이아웃 컨테이너의 내부에서 사용된다. 한 번에 하나의 패널만 활성화되며, 공간 배치가 아니라 상태 전환을 담당한다. <code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_tab()</a></code>, <code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_pill()</a></code>, <code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_underline()</a></code>는 모두 <code><a href="https://rstudio.github.io/bslib/reference/nav-items.html">nav_panel()</a></code>들의 집합으로 구성되며, 콘텐츠 전환의 방식이 다를 뿐이다. <code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_tab()</a></code>는 전통적인 탭 모양을, <code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_pill()</a></code>는 둥근 필(pill) 모양의 버튼을, <code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_underline()</a></code>는 밑줄을 그은 형태를 제공한다. <code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_card_tab()</a></code>, <code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_card_pill()</a></code>, <code><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_card_underline()</a></code>은 동일한 기능을 하지만 <code>card</code> 스타일을 기본으로 내장한 컨테이너이다. <code>navset_*()</code> 함수가 페이지 또는 레이아웃의 주요 내비게이션과 같은 비교적 상위 UI 계층에서 사용되는데 반해 <code>navset_card_*()</code> 함수는 주로 콘텐츠 블록 내부에 위치하여 카드 수준의 국소적 전환에 사용된다.</p>
-</section><section id="ui-컴포넌트-콘텐츠-구성-요소" class="level3" data-number="4.3"><h3 data-number="4.3" class="anchored" data-anchor-id="ui-컴포넌트-콘텐츠-구성-요소">
-<span class="header-section-number">4.3</span> UI 컴포넌트: 콘텐츠 구성 요소</h3>
-<p>UI 컴포넌트는 UI 구조를 정의하지 않고, 컨테이너 내부에서 정보와 기능을 하나의 의미 있는 시각적 단위로 표현하는 재사용 가능한 UI 구성 요소이다. 컨테이너가 아니므로 구조에 관여하지 않으며, 사용자가 하나의 UI 플록으로 인식하는 부분이다. 컨테이너가 아니므로 페이지나 레이아웃 구조에 직접 관여하지 않으며, 사용자가 하나의 UI 블록으로 인식하는 부분을 이룬다. 이러한 컴포넌트는 여러 위치에서 반복 사용될 수 있고, 시각적 스타일과 의미를 함께 지닌다는 특징이 있다. <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a>에서 제공하는 대표적인 콘텐츠 컴포넌트로는 카드(card), 사이드바(sidebar), 밸류 박스(value box), 툴팁(tooltip), 팝오버(popover) 등이 있다. 보다 자세한 내용은 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지 공식 홈페이지의 <a href="https://rstudio.github.io/bslib/articles/cards/index.html">Components</a> 섹션을 참고할 수 있다.</p>
+</section><section id="ui-컴포넌트-콘텐츠-구성요소" class="level3" data-number="4.3"><h3 data-number="4.3" class="anchored" data-anchor-id="ui-컴포넌트-콘텐츠-구성요소">
+<span class="header-section-number">4.3</span> UI 컴포넌트: 콘텐츠 구성요소</h3>
+<p>UI 컴포넌트는 UI 구조를 정의하지 않고, 컨테이너 내부에서 정보와 기능을 하나의 의미 있는 시각적 단위로 표현하는 재사용 가능한 UI 구성 요소로 역시 함수의 형태로 주어진다. 컨테이너가 아니므로 구조에 관여하지 않으며, 사용자가 하나의 UI 플록으로 인식하는 부분이다. 컨테이너가 아니므로 페이지나 레이아웃 구조에 직접 관여하지 않으며, 사용자가 하나의 UI 블록으로 인식하는 부분을 이룬다. 이러한 컴포넌트는 여러 위치에서 반복 사용될 수 있고, 시각적 스타일과 의미를 함께 지닌다는 특징이 있다. <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a>에서 제공하는 대표적인 콘텐츠 컴포넌트로는 카드(card), 사이드바(sidebar), 밸류 박스(value box), 툴팁(tooltip), 팝오버(popover) 등이 있다. 보다 자세한 내용은 <a href="https://rstudio.github.io/bslib/"><strong>bslib</strong></a> 패키지 공식 홈페이지의 <a href="https://rstudio.github.io/bslib/articles/cards/index.html">Components</a> 섹션을 참고할 수 있다.</p>
 <section id="카드" class="level4" data-number="4.3.1"><h4 data-number="4.3.1" class="anchored" data-anchor-id="카드">
 <span class="header-section-number">4.3.1</span> 카드</h4>
 <p>카드(card)는 현대적인 UI에서 가장 널리 사용되는 정보 구성 단위 중 하나이다. 기본적으로 카드는 테두리와 여백을 갖는 직사각형 컨테이너에 불과하지만, 관련된 정보를 의미 있게 묶어 제시할 경우 사용자가 내용을 보다 쉽게 이해하고, 집중하며, 탐색할 수 있도록 돕는다. 이러한 특성 때문에 카드는 대시보드와 UI 설계에서 핵심적인 역할을 하며, 대부분의 성공적인 대시보드 및 UI 프레임워크는 카드를 주요 컴포넌트로 채택하고 있다. <code><a href="https://rstudio.github.io/bslib/reference/card.html">card()</a></code> 함수는 다음과 같은 컴포넌트 함수를 갖는다.</p>
@@ -1410,102 +1401,234 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="정의" class="level3" data-number="5.1"><h3 data-number="5.1" class="anchored" data-anchor-id="정의">
 <span class="header-section-number">5.1</span> 정의</h3>
 <p>Shiny의 반응성(reactivity)이란, 입력값의 변화에 따라 관련된 계산과 출력이 자동으로 재실행ㆍ갱신되는 메커니즘을 의미한다. 좀 더 기술적으로 표현하면 반응성은 입력(<code>input</code>)의 변화가 의존 관계(dependency)를 따라 전파되어, 반응형 표현식과 출력이 자동으로 갱신되는 실행 모델이다.</p>
-<p>반응성 함수란, 입력값에 대한 의존성을 추적하고 입력 변화 시 자동으로 재실행되는 함수를 말한다. 따라서 Shiny에서 반응성 함수는 공통적으로 다음 특징을 갖는다.</p>
+<p><a href="#fig-reactive_flow" class="quarto-xref">그림&nbsp;9</a> 는 총체적인 Shiny의 반응성 플로(reactive flow)의 개념을 나타내고 있다.</p>
+<div id="fig-reactive_flow" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-reactive_flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/clipboard-2758836398.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="그림&nbsp;9: 반응성 플로 https://shiny.posit.co/r/getstarted/build-an-app/reactive-flow/reactive-flow.html"><img src="images/clipboard-2758836398.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reactive_flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;9: 반응성 플로 <a href="https://shiny.posit.co/r/getstarted/build-an-app/reactive-flow/reactive-flow.html" style="font-size:1rem">https://shiny.posit.co/r/getstarted/build-an-app/reactive-flow/reactive-flow.html</a>
+</figcaption></figure>
+</div>
+<p>Shiny 반응성 플로의 핵심 골자를 우선적으로 이해할 필요가 있고, <a href="#fig-reactive_flow_2" class="quarto-xref">그림&nbsp;10</a> 은 <a href="#fig-reactive_flow" class="quarto-xref">그림&nbsp;9</a> 의 가운데 부분만 따로 떼서 나타낸 것이다.</p>
+<div id="fig-reactive_flow_2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-reactive_flow_2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/clipboard-2314936399.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="그림&nbsp;10: 단순화된 반응성 플로 https://shiny.posit.co/r/getstarted/build-an-app/reactive-flow/reactive-flow.html"><img src="images/clipboard-2314936399.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reactive_flow_2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;10: 단순화된 반응성 플로 <a href="https://shiny.posit.co/r/getstarted/build-an-app/reactive-flow/reactive-flow.html" style="font-size:1rem">https://shiny.posit.co/r/getstarted/build-an-app/reactive-flow/reactive-flow.html</a>
+</figcaption></figure>
+</div>
+<p>여기에서 보면, Shiny의 반응성 플로는 크게 세 부분, 즉 반응형 입력, 반응형 표현식, 반응형 출력으로 구분된다는 것을 알 수 있다. 사용자가 어떤 입력을 선택하면, 그 입력은 서버에서 특정 표현식(연산)을 거쳐 처리되고, 그 결과가 출력으로 렌더링된다. 사용자가 입력 값을 변경할 때마다, 출력을 생성하는 해당 표현식은 자동으로 다시 실행되며, 새로운 입력 값에 기반하여 관련 출력이 다시 렌더링된.</p>
+<p>그런데, 이러한 반응성 플로의 각 단계는 특정한 반응성 함수에 의해 수행된다. 반응성 함수란 입력값에 대한 의존성을 추적하고 입력 변화 시 자동으로 재실행되는 함수를 말한다. 따라서 Shiny에서 반응성 함수는 공통적으로 다음의 특징을 갖는다.</p>
 <ul>
 <li><p><code>input$*</code>에 의존</p></li>
 <li><p>입력이 바뀌면 자동으로 재실행</p></li>
 <li><p>사용자가 직접 호출하지 않음</p></li>
-<li><p>Shiny의 반응성 그래프(dependency graph)에 의해 관리됨</p></li>
+<li><p>Shiny의 의존성 그래프(dependency graph)에 의해 관리됨</p></li>
 </ul></section><section id="종류" class="level3" data-number="5.2"><h3 data-number="5.2" class="anchored" data-anchor-id="종류">
 <span class="header-section-number">5.2</span> 종류</h3>
-<p>Shiny의 반응성 함수는 <strong>역할에 따라 크게 세 부류</strong>로 나눌 수 있다.</p>
-<section id="렌더링-함수-render-계열" class="level4" data-number="5.2.1"><h4 data-number="5.2.1" class="anchored" data-anchor-id="렌더링-함수-render-계열">
-<span class="header-section-number">5.2.1</span> 렌더링 함수: <code>render*</code> 계열</h4>
+<p><a href="#fig-reactive_flow" class="quarto-xref">그림&nbsp;9</a> 를 보면, Shiny의 반응성 플로에서 다양한 반응성 함수가 사용되고 있음을 알 수 있다. 이러한 Shiny의 반응성 함수는 <strong>역할에 따라 크게 다섯 부류</strong>로 나눌 수 있다.</p>
+<section id="입력-함수-input-계열" class="level4" data-number="5.2.1"><h4 data-number="5.2.1" class="anchored" data-anchor-id="입력-함수-input-계열">
+<span class="header-section-number">5.2.1</span> 입력 함수: <code>*Input()</code> 계열</h4>
+<p>입력 함수는 입력 위젯을 통해 사용자의 입력값을 받는데, 그 값은 <code>input</code> 객체에 저장된다. <code>input</code> 객체는 리스트처럼 보이는 반응형 값(reactive value)이며, 웹 브라우저에서 전달된 입력에 의해 설정되는 여러 개의 개별 반응형 값을 포함하고 있다. 서버에서 <code>input$*</code>과 같은 형태로 호출된다.</p>
+</section><section id="렌더링-함수-render-계열" class="level4" data-number="5.2.2"><h4 data-number="5.2.2" class="anchored" data-anchor-id="렌더링-함수-render-계열">
+<span class="header-section-number">5.2.2</span> 렌더링 함수: <code>render*()</code> 계열</h4>
 <p>렌더링 함수는 반응형 계산을 통해 출력물을 생성하고, 그 결과를 <code>output</code> 객체의 요소로 저장하는 함수이다. 일반 형식은 다음과 같다.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">render</span><span class="op">*</span><span class="op">(</span><span class="op">{</span></span>
 <span>  <span class="co"># 반응형 코드</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>반드시 <code>output$이름 &lt;- render*({ ... })</code> 형태로 사용되며, <strong>출력의 “최종 종착점”이며,</strong> UI의 <code>*Output()</code>과 1:1로 대응된다. 예시는 다음과 같다.</p>
+<p>반드시 <code>output$* &lt;- render*({ ... })</code> 형태로 사용되며, 출력의 최종 종착점이며<strong>,</strong> UI의 <code>*Output()</code> 함수와 일대일로 대응된다. 이래의 예시에서, <code>renderPlot({})</code> 함수는 플롯 형식을 출력을 생성하고 그것을 <code>output</code> 객체에 <code>distPlot</code>이라는 ID로 저장한다. 이것은 UI의 출력 함수를 통해 호출되어 메인 콘텐츠 영역에 표출된다.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">output</span><span class="op">$</span><span class="va">distPlot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderPlot.html">renderPlot</a></span><span class="op">(</span><span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">x</span>, breaks <span class="op">=</span> <span class="va">input</span><span class="op">$</span><span class="va">bins</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section><section id="반응형-표현식-함수-reactive" class="level4" data-number="5.2.2"><h4 data-number="5.2.2" class="anchored" data-anchor-id="반응형-표현식-함수-reactive">
-<span class="header-section-number">5.2.2</span> 반응형 표현식 함수: <code>reactive({})</code>
-</h4>
-<p><code>reactive({})</code>는 입력값에 따라 달라지는 계산 결과를 반응형 객체로 생성하는 함수이다. 입력을 받아 ’반응성 표현식(reactive expression)’을 생성한다. 여기서 반응성 표현식이란 단순히 최종 산출물(값이나 객체)만을 의미하지 않고, 그 산출물을 관리하는 메커니즘(종속성 추적, 지연 실행, 캐싱 등) 포함하는 동적인 객체를 의미한다. 따라서 반드시 함수 형태로 표기한다.</p>
-<p>하나의 입력이 여러 개의 출력 함수(출력 생성 함수)와 결부되는 경우에 주로 사용되는데 동일한 입력의 중복 사용을 회피하기 위해 해당 입력을 반응성 표현식으로 전환하여 다수의 출력 생성 함수에 입력으로 투입할 수 있다.</p>
-<p>일반 형식은 다음과 같다.</p>
+</section><section id="반응형-표현식-함수-reactive-계열" class="level4" data-number="5.2.3"><h4 data-number="5.2.3" class="anchored" data-anchor-id="반응형-표현식-함수-reactive-계열">
+<span class="header-section-number">5.2.3</span> 반응형 표현식 함수: <code>reactive({})</code> 계열</h4>
+<p>반응형 표현식 함수에 포함되는 것에 다음과 같은 함수가 포함된다.</p>
+<ul>
+<li><p><code>reactive({})</code>: 대표적인 일반 반응형 표현식 함수</p></li>
+<li><p><code><a href="https://rdrr.io/pkg/shiny/man/reactiveVal.html">reactiveVal()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/reactiveValues.html">reactiveValues()</a></code>: 사용자가 직접 저장하고 갱신하는 값의 ‘저장소’ 함수</p></li>
+<li><p><code><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">eventReactive()</a></code>: 트리거가 존재할 때만 작동하는 반응형 표현식 함수</p></li>
+</ul>
+<p><code>reactive({})</code> 함수는 입력값에 따라 달라지는 계산 결과를 반응형 객체로 생성하는 함수이다. 입력을 받아 ’반응성 표현식(reactive expression)’을 생성한다. 여기서 반응성 표현식이란 단순히 최종 산출물(값이나 객체)만을 의미하는 것이 아니라, 그 산출물을 관리하는 메커니즘(종속성 추적, 지연 실행, 캐싱 등) 포함하는 동적인 객체를 의미한다. 따라서 반드시 함수 형태로 표기한다.</p>
+<p>하나의 입력이 여러 개의 출력 함수(출력 생성 함수)와 결부되는 경우에 주로 사용되는데 동일한 입력의 중복 사용을 회피하기 위해 해당 입력을 반응성 표현식으로 전환하여 다수의 출력 생성 함수에 입력으로 투입할 수 있다. 일반 형식은 다음과 같다.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">r</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/reactive.html">reactive</a></span><span class="op">(</span><span class="op">{</span></span>
 <span>  <span class="co"># 반응형 계산</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>출력이 아니라 중간 계산 결과를 생성하며, 반환값은 반응형 객체가 되고, 값에 접근할 때는 함수 형식으로 반드시 <code>()</code> 를 사용해야 한다. 예시는 다음과 같다.</p>
+<p>출력이 아니라 중간 계산 결과를 생성하며, 반환값은 반응형 객체가 되고, 값에 접근할 때는 함수 형식으로 반드시 <code>()</code> 를 사용해야 한다. 다음의 예시를 살펴본다.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">bins</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/reactive.html">reactive</a></span><span class="op">(</span><span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, length.out <span class="op">=</span> <span class="va">input</span><span class="op">$</span><span class="va">bins</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
-<span></span>
 <span><span class="va">output</span><span class="op">$</span><span class="va">distPlot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderPlot.html">renderPlot</a></span><span class="op">(</span><span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">x</span>, breaks <span class="op">=</span> <span class="fu">bins</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>입력 함수를 통해 받은 <code>input$bins</code>를 읽어 <code>bins</code>라는 새로운 반응형 객체를 생성하고, 그것을 출력 생성 함수에서 투입하는 방식을 보여주고 있다. 반응형 객체는 반드시 <code>bins()</code>처럼 함수 형식으로 호출해야만 한다.</p>
-<p>그런데, 여기서는 사실 <code>reactive({})</code> 함수가 반드시 필요한 것은 아니다. 즉, 다음과 같이 해도 무방하다.</p>
+<p>그런데, 여기서는 사실 <code>reactive({})</code> 함수가 반드시 필요한 것은 아니다. 즉, 다음과 같이 해도 아무런 문제가 없다. 그러나 출력 생성 함수가 여러 개 사용되고 거기에 bins가 여러 번 사용된다면 위와 같이 하는 것이 훨씬 효율적이다.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">bins</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, length.out <span class="op">=</span> <span class="va">input</span><span class="op">$</span><span class="va">bins</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span></span>
-<span></span>
 <span><span class="va">output</span><span class="op">$</span><span class="va">distPlot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderPlot.html">renderPlot</a></span><span class="op">(</span><span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">x</span>, breaks <span class="op">=</span> <span class="va">bins</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>그러나 출력 생성 함수가 여러 개 사용되고 거기에 bins가 여러 번 사용된다면 위와 같이 하는 것이 훨씬 효율적이다.</p>
-</section><section id="반응형-관찰자-함수-observe-계열" class="level4" data-number="5.2.3"><h4 data-number="5.2.3" class="anchored" data-anchor-id="반응형-관찰자-함수-observe-계열">
-<span class="header-section-number">5.2.3</span> 반응형 관찰자 함수: <code>observe*()</code> 계열</h4>
-<p>반응형 관찰자 함수는 입력 변화에 반응하여 특정 동작(side effect)을 수행하는 함수이다. 대표적인 함수는 다음과 같다.</p>
-<ul>
-<li><p><code><a href="https://rdrr.io/pkg/shiny/man/observe.html">observe()</a></code></p></li>
-<li><p><code><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">observeEvent()</a></code></p></li>
-<li><p><code><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">eventReactive()</a></code> (중간적 성격)</p></li>
-</ul>
-<p>특징은 값을 반화하지 않고, 출력 생성이 목적도 아니다. 주로 상태 변경, 메시지 출력, UI 업데이트에 사용된다. 다음에 예시가 있다.</p>
+<p><code>reactive({})</code> 계열 함수에 포함되는 함수들에 <code><a href="https://rdrr.io/pkg/shiny/man/reactiveVal.html">reactiveVal()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/reactiveValues.html">reactiveValues()</a></code>가 있다. <code><a href="https://rdrr.io/pkg/shiny/man/reactive.html">reactive()</a></code> 함수가 입력이 바뀌면 자동으로 갱신되는 ’계산식’인데 반해, <code><a href="https://rdrr.io/pkg/shiny/man/reactiveVal.html">reactiveVal()</a></code>과 <code><a href="https://rdrr.io/pkg/shiny/man/reactiveValues.html">reactiveValues()</a></code>는 사용자가 직접 저장하고 갱신하는 값의 ’저장소’이다.</p>
+<p><code><a href="https://rdrr.io/pkg/shiny/man/reactiveVal.html">reactiveVal()</a></code>은 하나의 스칼라 값을 저장하고 갱신하는 반응형 변수이다. 아래에 예시가 있다.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">observeEvent</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">go</span>, <span class="op">{</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"버튼이 눌렸습니다\n"</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">counter</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/reactiveVal.html">reactiveVal</a></span><span class="op">(</span><span class="fl">0</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">observeEvent</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">add</span>, <span class="op">{</span></span>
+<span>  <span class="fu">counter</span><span class="op">(</span><span class="fu">counter</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>입력 함수 <code>actionButton(inputID = "go", ...)</code>로부터 버튼을 누를 때 마다 <code>"go"</code>라는 입력 요소의 값(<code>input$go</code>)이 1씩 증가하고, <code>input$go</code>값이 변할 때마다(즉, 버튼이 눌릴 때마다) Server에서 <code><a href="https://rdrr.io/r/base/Paren.html">{ }</a></code> 속의 내용을 실행한다. 위의 예시의 경우 버튼을 클리할 때마다 콘솔에 “버튼이 눌렸습니다”가 출력된다.</p>
+<p><code><a href="https://rdrr.io/pkg/shiny/man/reactiveValues.html">reactiveValues()</a></code>는 여러 개의 반응형 값을 저장할 수 있는 일종의 반응형 리스트이다.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rv</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/reactiveValues.html">reactiveValues</a></span><span class="op">(</span>count <span class="op">=</span> <span class="fl">0</span>, msg <span class="op">=</span> <span class="st">"Hello"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">observeEvent</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">add</span>, <span class="op">{</span></span>
+<span>  <span class="va">rv</span><span class="op">$</span><span class="va">count</span> <span class="op">&lt;-</span> <span class="va">rv</span><span class="op">$</span><span class="va">count</span> <span class="op">+</span> <span class="fl">1</span></span>
+<span><span class="op">}</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><code><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">eventReactive()</a></code> 함수는 지정한 이벤트가 발생할 때에만 갱신되는 반응형 표현식을 생성하는 함수이다. 표현식을 생성한다는 의미에서 <code>reactive({})</code> 함수와 동일하지만, 특정한 트리거에만 반응한다는 의미에서 다음에서 다룰 반응형 관찰자 함수(특히, <code><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">observeEvent()</a></code> 함수)와도 밀접히 관련되어 있다.</p>
+<p><code>reactive({})</code> 함수는 입력값이 바뀔 때마다 자동으로 계산되기 때문에, 예를 들어 슬라이더를 움직일 때마다 모델을 다시 돌린다거나, 입력창을 타이핑할 때마다 무거운 연산을 반복한다거나 하는 비효율적인 상황이 발생할 수 있다. <code>eventReactive(source, {handler})</code>는 이를 방지하기 위해 특정 이벤트(<code>source</code>)가 발생할 때만 반응형 표현식을 갱신하고 그 외의 입력 변화는 무시하는 구조를 제공한다. 아래에 예시가 있다.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">eventReactive</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">go</span>, <span class="op">{</span></span>
+<span>  <span class="va">input</span><span class="op">$</span><span class="va">x</span> <span class="op">*</span> <span class="fl">2</span></span>
+<span><span class="op">}</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>입력 함수 <code>actionButton(inputID = "go", ...)</code>로부터 버튼을 누를 때 마다, 즉 <code>input$go</code> 이벤트가 발생할 때에만 <code>result()</code>를 재계산한다. <code>input$x</code>가 변한다고 자동적으로 갱신하지는 않는다.</p>
+</section><section id="반응형-관찰자-함수-observe-계열" class="level4" data-number="5.2.4"><h4 data-number="5.2.4" class="anchored" data-anchor-id="반응형-관찰자-함수-observe-계열">
+<span class="header-section-number">5.2.4</span> 반응형 관찰자 함수: <code>observe*()</code> 계열</h4>
+<p>반응형 관찰자 함수는 반응형 값(<code>*Input()</code>, <code><a href="https://rdrr.io/pkg/shiny/man/reactive.html">reactive()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/reactiveVal.html">reactiveVal()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/reactiveValues.html">reactiveValues()</a></code> 등)의 변화가 발생했을 때 특정 동작(side effect)을 수행하는 반응형 구성 요소이다. 특정한 트리거에 반응(triggering reactions)하는 함수이다. 반응형 관찰자 함수는 값을 반환하지 않고, 대신 다음과 같은 동작을 행한다.</p>
+<ul>
+<li><p><code>update*Input()</code> 함수를 통해 UI 업데이트</p></li>
+<li><p>로그 출력</p></li>
+<li><p>파일 저장/데이터베이스 기록</p></li>
+<li><p>알림 메시지 표시</p></li>
+<li><p>내부 상태 갱신</p></li>
+</ul>
+<p>대표적인 함수에 <code><a href="https://rdrr.io/pkg/shiny/man/observe.html">observe()</a></code> 와 <code><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">observeEvent()</a></code> 가 있다. <code><a href="https://rdrr.io/pkg/shiny/man/observe.html">observe()</a></code> 는 블록 내부에서 읽은 모든 반응성 입력값에 자동으로 의존하며, 의존성이 자동 추적되므로 가장 기본적인 함수이다. 아래의 예시에서 보면 사용자가 <code>input$region</code>을 바꿀 때마다 자동 실행된다.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/observe.html">observe</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"현재 선택된 값:"</span>, <span class="va">input</span><span class="op">$</span><span class="va">region</span>, <span class="st">"\n"</span><span class="op">)</span></span>
+<span><span class="op">}</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><code>observeEvent(source, {handler})</code> 함수는 “이벤트(트리거)”가 발생할 때문 실행되며, source에 지정한 값(보통 입력 위젯)만을 트리거로 사용한다. 내부에서 참조하는 다른 값들은 트리거로 작동하지 않는다. 특정 이벤트 발생 시에만 실행되고, 불필요한 재실행을 방지하기 위해 종속성 자동 추적을 하지 않는다. 버튼 클릭, 발짜 선택, 파일 업로드 등 “이벤트 기반” 작업에 매우 적합하다.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">observeEvent</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">go</span>, <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"버튼이 눌렸습니다\n"</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"현재 선택된 값:"</span>, <span class="va">input</span><span class="op">$</span><span class="va">region</span>, <span class="st">"\n"</span><span class="op">)</span></span>
+<span><span class="op">}</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>입력 함수 <code>actionButton(inputID = "go", ...)</code>로부터 버튼을 누를 때 마다 <code>"go"</code>라는 입력 요소의 값(<code>input$go</code>)이 1씩 증가하고, <code>input$go</code>값이 변할 때마다(즉, 버튼이 눌릴 때마다) Server에서 <code><a href="https://rdrr.io/r/base/Paren.html">{ }</a></code> 속의 내용을 실행한다. 위의 예시의 경우 버튼을 클리할 때마다 콘솔에 “버튼이 눌렸습니다”가 출력된다. 두 번째 줄은 슬라이더(input$slider) 값이 변해도 실행되지 않는데, 슬라이더 값은 읽지만 트리거가 아니기 때문이다.</p>
 <p>좀 더 현실적인 예시를 제시하면 다음과 같다. 버튼 클릭시 계산을 실행하게 할 수 있다.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">observeEvent</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">go</span>, <span class="op">{</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">observeEvent</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">go</span>, <span class="op">{</span></span>
 <span>  <span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">heavy_calculation</span><span class="op">(</span><span class="op">)</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">result</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>UI 요소를 업데이트하게 할 수 있다.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">observeEvent</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">go</span>, <span class="op">{</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">observeEvent</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">go</span>, <span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/updateSliderInput.html">updateSliderInput</a></span><span class="op">(</span><span class="va">session</span>, <span class="st">"bins"</span>, value <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>파일을 저장하게 할 수 있다.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">observeEvent</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">save</span>, <span class="op">{</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">observeEvent</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">save</span>, <span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.csv</a></span><span class="op">(</span><span class="va">data</span>, <span class="st">"result.csv"</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>사실 observeEvent() 함수는 observe() 함수와 매우 유사하다. 아래는 동일하게 작동한다.</p>
+<p>사실 <code><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">observeEvent()</a></code> 함수는 <code><a href="https://rdrr.io/pkg/shiny/man/observe.html">observe()</a></code> 함수와 매우 유사하다. 아래는 동일하게 작동한다.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/observe.html">observe</a></span><span class="op">(</span><span class="op">{</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/observe.html">observe</a></span><span class="op">(</span><span class="op">{</span></span>
 <span>  <span class="va">input</span><span class="op">$</span><span class="va">go</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"버튼이 눌렸습니다\n"</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>그러나 <code><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">observeEvent()</a></code>는 이벤트 중심이고, 의존성을 명확히 분리하며, 가독성과 안전성을 높이는 장점이 있다. 따라서 버튼 처리에는 <code><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">observeEvent()</a></code>가 권장된다.</p>
+<p>마지막으로 <code><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">observeEvent()</a></code> 와 <code><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">eventReactive()</a></code>를 비교할 필요가 있다.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 36%">
+<col style="width: 41%">
+</colgroup>
+<thead><tr class="header">
+<th>기능</th>
+<th><code><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">observeEvent()</a></code></th>
+<th><code><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">eventReactive()</a></code></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>반환값</td>
+<td>없음</td>
+<td>있음</td>
+</tr>
+<tr class="even">
+<td>용도</td>
+<td>행동(action), UI 업데이트</td>
+<td>계산 결과 저장 및 반환</td>
+</tr>
+<tr class="odd">
+<td>호출 방식</td>
+<td>그냥 실행</td>
+<td>result()처럼 반응성 객체 호출</td>
+</tr>
+<tr class="even">
+<td>내부 로직</td>
+<td>사이드 이펙트 수행</td>
+<td>이벤트 기반 계산식</td>
+</tr>
+</tbody>
+</table></section><section id="반응형-유틸리티-함수" class="level4" data-number="5.2.5"><h4 data-number="5.2.5" class="anchored" data-anchor-id="반응형-유틸리티-함수">
+<span class="header-section-number">5.2.5</span> 반응형 유틸리티 함수</h4>
+<p>반응형 유틸리티 함수(reactive utilities)는 반응형 표현식 함수나 반응형 관찰자 함수 내부에서 반응성의 작동 방식을 제어하거나, 예외 처리(validation), 성승/흐름 제어(throttle/debounce), 종속성 무시(isolate), 요구 조건 검사(req) 등을 수행하는 보조 함수를 말한다. 이 함수들은 새로운 반응형 값을 생성하지 않고, 반응성을 보조하거나, 억제하거나, 예외를 조절하는 함수이다.</p>
+<p>Shiny에서 실전적으로 가장 많이 사용되는 반응형 유틸리티 함수는 다음의 네 종류이다.</p>
+<ul>
+<li><p><code><a href="https://rdrr.io/pkg/shiny/man/isolate.html">isolate()</a></code>: 특정 값에 대한 반응성 추적을 일시적으로 끊기</p></li>
+<li><p><code><a href="https://rdrr.io/pkg/shiny/man/req.html">req()</a></code>: 특정 조건 만족 시에만 반응식 실행(조건 미달 시 중단)</p></li>
+<li><p><code><a href="https://rdrr.io/pkg/shiny/man/validate.html">validate()</a></code>/<code><a href="https://rdrr.io/pkg/shiny/man/validate.html">need()</a></code>: 사용자에게 친절한 메시지를 표시하며 반응식 실행 조건을 제어</p></li>
+<li><p><code><a href="https://rdrr.io/pkg/shiny/man/debounce.html">debounce()</a></code>/<code><a href="https://rdrr.io/pkg/shiny/man/debounce.html">throttle()</a></code>: 빠르게 변하는 반응형 값의 업데이트 빈도를 제어(성능 최적화)</p></li>
+</ul>
+<p><code><a href="https://rdrr.io/pkg/shiny/man/isolate.html">isolate()</a></code> 함수는 다른 반응형 함수 내에서 특정 표현식에 대한 의존성 추적을 비활성화한다. 즉, <code><a href="https://rdrr.io/pkg/shiny/man/isolate.html">isolate()</a></code> 안의 input/reactive 값을 읽어도 해당 값이 바뀌어도 재실행 트리거가 되지 않는다. 다음의 예제를 보자. 여기에서 <code><a href="https://rdrr.io/pkg/shiny/man/observe.html">observe()</a></code>는 <code>input$run</code>에만 의존하고, <code>input$slider</code>는 <code><a href="https://rdrr.io/pkg/shiny/man/isolate.html">isolate()</a></code> 안에 있으므로, <code>slider</code> 값을 바꿔도 <code><a href="https://rdrr.io/pkg/shiny/man/observe.html">observe()</a></code>는 재실행되지 않는다. 단, 실행될 때 <code>slider</code> 값을 읽을 수는 있다</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/observe.html">observe</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>  <span class="va">input</span><span class="op">$</span><span class="va">run</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/isolate.html">isolate</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"현재 슬라이더 값:"</span>, <span class="va">input</span><span class="op">$</span><span class="va">slider</span>, <span class="st">"\n"</span><span class="op">)</span></span>
+<span>  <span class="op">}</span><span class="op">)</span></span>
+<span><span class="op">}</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><code><a href="https://rdrr.io/pkg/shiny/man/req.html">req()</a></code> 함수는 특정 조건이 만족하지 않으면 렌더링 함수, 반응형 표현식 함수, 반응형 관찰자 함수 블록의 실행을 중단한다. 조건이 충족될 때까지 아무것도 실행하지 않게 하는 보호 장치이다. 아래의 예에서 <code>input$number</code>가 비어 있거나 NULL이면 그 순간 랜더링 실행이 중단된다. 정상 숫자 입력이 있을 때만 아래 코드가 실행된다.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">output</span><span class="op">$</span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderPrint.html">renderText</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/req.html">req</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">number</span><span class="op">)</span>     </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"값:"</span>, <span class="va">input</span><span class="op">$</span><span class="va">number</span><span class="op">)</span></span>
+<span><span class="op">}</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><code><a href="https://rdrr.io/pkg/shiny/man/validate.html">validate()</a></code> 함수와 <code><a href="https://rdrr.io/pkg/shiny/man/validate.html">need()</a></code> 함수는 사용자에게 표시되는 유효성 검사 메시지(validation)을 제공한다. <code><a href="https://rdrr.io/pkg/shiny/man/validate.html">validate()</a></code> 함수는 해당 메시지를 반응형 출력에 표시(렌더링 중단 포함)하고, <code><a href="https://rdrr.io/pkg/shiny/man/validate.html">need()</a></code> 함수는 조건을 검사하여 메시지를 생성한다. 아래 예시를 살표보자. 조건을 만족하지 않으면 플롯 영역에 메시지(“x는 0보다 커야 합니다.”가 표시되고, 조건이 만족해야만 실제 플롯이 그려진다.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">output</span><span class="op">$</span><span class="va">plot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderPlot.html">renderPlot</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/validate.html">validate</a></span><span class="op">(</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/validate.html">need</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">x</span> <span class="op">&gt;</span> <span class="fl">0</span>, <span class="st">"x는 0보다 커야 합니다."</span><span class="op">)</span>,</span>
+<span>    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/validate.html">need</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html">is.null</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">y</span><span class="op">)</span>, <span class="st">"y 값을 입력하세요."</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="va">input</span><span class="op">$</span><span class="va">x</span><span class="op">)</span></span>
+<span><span class="op">}</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>마지막으로 <code><a href="https://rdrr.io/pkg/shiny/man/debounce.html">debounce()</a></code> 함수와 <code><a href="https://rdrr.io/pkg/shiny/man/debounce.html">throttle()</a></code> 함수는 빠르게 변하는 반응형 값의 업데이트 빈도를 조절하여 성능을 최적화하는 함수이다. <code>debounce(x, millis)</code> 함수는 입력 변화가 멈춘 뒤 특정 시간(millis) 이후에 값을 전달한다. <code>throttle(x, millis)</code> 함수는 일정 주기(millis)마다 값을 업데이트한다. 아래의 예시를 살펴보자. 사용자가 검색창에 입력할 때마다 즉시 반응하는 것이 아니라 입력이 멈춘 후 0.5초 뒤에만 반응하다. API 조회, DB 질의 같은 무거운 연산에 매우 유용하다.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">search_text</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/debounce.html">debounce</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/reactive.html">reactive</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">query</span><span class="op">)</span>, <span class="fl">500</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">observeEvent</a></span><span class="op">(</span><span class="fu">search_text</span><span class="op">(</span><span class="op">)</span>, <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"검색 실행:"</span>, <span class="fu">search_text</span><span class="op">(</span><span class="op">)</span>, <span class="st">"\n"</span><span class="op">)</span></span>
+<span><span class="op">}</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section></section></section><section id="웹-앱의-공유" class="level2" data-number="6"><h2 data-number="6" class="anchored" data-anchor-id="웹-앱의-공유">
 <span class="header-section-number">6</span> 웹 앱의 공유</h2>
 <section id="웹-앱-배포deployment" class="level3" data-number="6.1"><h3 data-number="6.1" class="anchored" data-anchor-id="웹-앱-배포deployment">
@@ -2035,7 +2158,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
-<p>Copyright 2024, Sang-Il Lee</p>
+<p>Copyright 2026, Sang-Il Lee</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;

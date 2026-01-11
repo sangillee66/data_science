@@ -10,10 +10,6 @@ website:
     style: floating
     contents: 
       - index.qmd
-      # - text: "---"    
-      # - section: "데이터사이언스 강의"
-      #   contents:   
-      #     - lectures.qmd
       - text: "---"    
       - section: "R과 데이터사이언스"
         contents:   
@@ -87,7 +83,7 @@ website:
   back-to-top-navigation: true
   page-navigation: true
   page-footer: 
-    left: "Copyright 2024, Sang-Il Lee"
+    left: "Copyright 2026, Sang-Il Lee"
     right: 
       - icon: house
         href: https://sangillee.snu.ac.kr/
