@@ -1428,7 +1428,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Shiny의 의존성 그래프(dependency graph)에 의해 관리됨</p></li>
 </ul></section><section id="종류" class="level3" data-number="5.2"><h3 data-number="5.2" class="anchored" data-anchor-id="종류">
 <span class="header-section-number">5.2</span> 종류</h3>
-<p><a href="#fig-reactive_flow" class="quarto-xref">그림&nbsp;9</a> 를 보면, Shiny의 반응성 플로에서 다양한 반응성 함수가 사용되고 있음을 알 수 있다. 이러한 Shiny의 반응성 함수는 역할에 따라 크게 다음과 같은 다섯 부류로 나눌 수 있다.</p>
+<p><a href="#fig-reactive_flow" class="quarto-xref">그림&nbsp;9</a> 를 보면, Shiny의 반응성 플로에서 다양한 반응성 함수가 사용되고 있음을 알 수 있다. 이러한 Shiny의 반응성 함수는 역할에 따라 크게 다음과 같은 여섯 부류로 나눌 수 있다.</p>
 <ul>
 <li><p>입력 함수: <code>*Input()</code> 계열</p></li>
 <li><p>렌더링 함수: <code>render*()</code> 계열</p></li>
@@ -1438,8 +1438,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>반응형 유틸리티(reactive utility) 함수: 반응형 표현식 함수나 반응형 관찰자 함수 내부에서 특정 기능을 수행하는 보조 함수로 <code><a href="https://rdrr.io/pkg/shiny/man/req.html">req()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/isolate.html">isolate()</a></code> 함수 등이 포함</p></li>
 </ul>
 <p>입력 함수와 렌더링 함수는 앞에서 이미 다루었으므로, 여기서는 나머지 세 종류의 함수에 집중하고자 한다.</p>
-<section id="반응형-표현식-함수-reactive-계열" class="level4" data-number="5.2.1"><h4 data-number="5.2.1" class="anchored" data-anchor-id="반응형-표현식-함수-reactive-계열">
-<span class="header-section-number">5.2.1</span> 반응형 표현식 함수: <code>reactive({})</code> 계열</h4>
+<section id="반응형-표현식-함수" class="level4" data-number="5.2.1"><h4 data-number="5.2.1" class="anchored" data-anchor-id="반응형-표현식-함수">
+<span class="header-section-number">5.2.1</span> 반응형 표현식 함수</h4>
 <p>반응형 표현식 함수란 다른 반응형 값에 의존하여 값을 계산하고 반환(return)하는 반응형 계산 단위이다. 이 표현식에 의존하는 값이 변경되면 자동으로 다시 계산된다. 반응형 표현식 함수에 다음의 두 가지가 있다.</p>
 <ul>
 <li><p><code>reactive({})</code>: 대표적인 일반 반응형 표현식 함수</p></li>
@@ -1533,7 +1533,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>마지막으로 <code><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">observeEvent()</a></code> 와 <code><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">eventReactive()</a></code>를 비교할 필요가 있다.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 20%">
+<col style="width: 19%">
 <col style="width: 35%">
 <col style="width: 43%">
 </colgroup>
