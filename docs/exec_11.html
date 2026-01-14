@@ -740,16 +740,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul>
 </li>
   <li>
-<a href="#llm%EA%B3%BC-%EC%9B%B9-%EC%95%B1%EC%9D%98-%EA%B2%B0%ED%95%A9" id="toc-llm과-웹-앱의-결합" class="nav-link" data-scroll-target="#llm%EA%B3%BC-%EC%9B%B9-%EC%95%B1%EC%9D%98-%EA%B2%B0%ED%95%A9"><span class="header-section-number">7</span> LLM과 웹 앱의 결합</a>
+<a href="#quarto%EC%99%80-shiny%EC%9D%98-%EA%B2%B0%ED%95%A9" id="toc-quarto와-shiny의-결합" class="nav-link" data-scroll-target="#quarto%EC%99%80-shiny%EC%9D%98-%EA%B2%B0%ED%95%A9"><span class="header-section-number">7</span> Quarto와 Shiny의 결합</a>
   <ul class="collapse">
-<li><a href="#llm%EA%B3%BC-shiny%EC%9D%98-%EA%B2%B0%ED%95%A9-%EC%B1%97%EB%B4%87" id="toc-llm과-shiny의-결합-챗봇" class="nav-link" data-scroll-target="#llm%EA%B3%BC-shiny%EC%9D%98-%EA%B2%B0%ED%95%A9-%EC%B1%97%EB%B4%87"><span class="header-section-number">7.1</span> LLM과 Shiny의 결합: 챗봇</a></li>
+<li><a href="#shiny-%EC%A4%91%EC%8B%AC-%EB%B0%A9%EC%8B%9D" id="toc-shiny-중심-방식" class="nav-link" data-scroll-target="#shiny-%EC%A4%91%EC%8B%AC-%EB%B0%A9%EC%8B%9D"><span class="header-section-number">7.1</span> Shiny 중심 방식</a></li>
+  <li><a href="#quarto-%EC%A4%91%EC%8B%AC-%EB%B0%A9%EC%8B%9D" id="toc-quarto-중심-방식" class="nav-link" data-scroll-target="#quarto-%EC%A4%91%EC%8B%AC-%EB%B0%A9%EC%8B%9D"><span class="header-section-number">7.2</span> Quarto 중심 방식</a></li>
   </ul>
 </li>
   <li>
-<a href="#quarto%EC%99%80-shiny%EC%9D%98-%EA%B2%B0%ED%95%A9" id="toc-quarto와-shiny의-결합" class="nav-link" data-scroll-target="#quarto%EC%99%80-shiny%EC%9D%98-%EA%B2%B0%ED%95%A9"><span class="header-section-number">8</span> Quarto와 Shiny의 결합</a>
+<a href="#llm%EA%B3%BC-%EC%9B%B9-%EC%95%B1%EC%9D%98-%EA%B2%B0%ED%95%A9" id="toc-llm과-웹-앱의-결합" class="nav-link" data-scroll-target="#llm%EA%B3%BC-%EC%9B%B9-%EC%95%B1%EC%9D%98-%EA%B2%B0%ED%95%A9"><span class="header-section-number">8</span> LLM과 웹 앱의 결합</a>
   <ul class="collapse">
-<li><a href="#shiny-%EC%A4%91%EC%8B%AC-%EB%B0%A9%EC%8B%9D" id="toc-shiny-중심-방식" class="nav-link" data-scroll-target="#shiny-%EC%A4%91%EC%8B%AC-%EB%B0%A9%EC%8B%9D"><span class="header-section-number">8.1</span> Shiny 중심 방식</a></li>
-  <li><a href="#quarto-%EC%A4%91%EC%8B%AC-%EB%B0%A9%EC%8B%9D" id="toc-quarto-중심-방식" class="nav-link" data-scroll-target="#quarto-%EC%A4%91%EC%8B%AC-%EB%B0%A9%EC%8B%9D"><span class="header-section-number">8.2</span> Quarto 중심 방식</a></li>
+<li><a href="#%EC%B1%97%EB%B4%87-%EB%A7%8C%EB%93%A4%EA%B8%B0" id="toc-챗봇-만들기" class="nav-link" data-scroll-target="#%EC%B1%97%EB%B4%87-%EB%A7%8C%EB%93%A4%EA%B8%B0"><span class="header-section-number">8.1</span> 챗봇 만들기</a></li>
+  <li><a href="#%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%A7%8C%EB%93%A4%EA%B8%B0" id="toc-게시판-만들기" class="nav-link" data-scroll-target="#%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%A7%8C%EB%93%A4%EA%B8%B0"><span class="header-section-number">8.2</span> 게시판 만들기</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>이슈 보고</a></li></ul></div></nav>
@@ -1661,15 +1662,100 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>다섯째, URL을 얻는다. 다음의 형식으로 생성된다.</p>
 <ul>
 <li>https://userid.shinyapps.io/project_name/</li>
-</ul></section></section><section id="llm과-웹-앱의-결합" class="level2" data-number="7"><h2 data-number="7" class="anchored" data-anchor-id="llm과-웹-앱의-결합">
-<span class="header-section-number">7</span> LLM과 웹 앱의 결합</h2>
+</ul></section></section><section id="quarto와-shiny의-결합" class="level2" data-number="7"><h2 data-number="7" class="anchored" data-anchor-id="quarto와-shiny의-결합">
+<span class="header-section-number">7</span> Quarto와 Shiny의 결합</h2>
+<p>Quarto를 통해서 프로트엔드 웹 앱을 만들 수 있고, Shiny를 활용하면 서버-기반 웹 앱을 만들 수 있다. Quarto로 만들어진 웹 앱은 제작이 용이하고 가벼우며 호스팅 절차가 간단하다는 장점이 있지만 상호작용성을 고양하는데는 한계가 있다. Shiny로 만들어진 웹 앱은 높은 수준의 사용자 상호작용성을 보장하다는 확실한 장점이 있지만 제작이 상대적으로 어렵고 무거우며 호스팅 절차가 복잡하다는 단점이 있다.</p>
+<p>따라서 많은 경우 두 가지의 장점을 결합하는 것이 도움이 된다. 특히 Shiny를 통해 구현되는 서버-기반 웹 앱의 요소가 많은 부분을 차지하는 웹 앱이 아니라면 Quarto 웹 앱을 기본으로 하고 거기에 Shiny 웹 앱의 요소를 부가하는 방식이 적절하다. 따라서 여기서는 Quarto 대시보드의 일부 영역에서 Shiny 사용하는 방법에 대해 다룬다.</p>
+<p>여기에는 두 가지 접근이 있을 수 있다. 이것은 두 개의 결합으로 만들어지는 최종 웹 앱이 어떤 것이냐에 달려 있다. 즉, 최종적으로 Shiny 웹 앱이 만들어지면 Shiny 중심 방식이고, Quarto 웹 앱이 만들어지면 Quarto 중심 방식이라 부를 수 있다.</p>
+<p>Shiny 중심 방식은 Quarto 대시보드 내에서 Quarto 문법으로 Shiny 웹 앱을 구축하는 것이다. 이렇게 하면 웹 앱 전체가 Shiny 웹 앱화 되며 따라서 shinyapps.io를 통해 배포해야만 한다. 이에 반해 Quarto 중심 방식은 Quarto 대시보드 속에 독립적으로 구축된 Shiny 웹 앱 임베딩하는 것으로 Quarto 웹 앱이 그대로 유지된다. 따라서 Quarto Pub을 통해 배포할 수 있다. 다음의 두 웹 앱을 비교할 수 있다.</p>
+<ul>
+<li><p>Shiny 중심 방식: <a href="https://sangillee.shinyapps.io/Dashboard_Example/" class="uri">https://sangillee.shinyapps.io/Dashboard_Example/</a></p></li>
+<li><p>Quarto 중심 방식: <a href="https://sangillee.snu.ac.kr/dashboard_examples/" class="uri">https://sangillee.snu.ac.kr/dashboard_examples/</a></p></li>
+</ul>
+<section id="shiny-중심-방식" class="level3" data-number="7.1"><h3 data-number="7.1" class="anchored" data-anchor-id="shiny-중심-방식">
+<span class="header-section-number">7.1</span> Shiny 중심 방식</h3>
+<p>Shiny 중심 방식은 Quarto의 행렬 분할을 통한 레이아웃 설정 방식을 활용하여 입력 함수와 출력 함수를 포함하는 전략을 사용한다. 원 Shiny 패키지가 <code><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/titlePanel.html">titlePanel()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarLayout()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarPanel()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">mainPanel()</a></code>과 같은 UI 구조 함수를 사용하고, bslib 패키지가 <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code>, <code><a href="https://rstudio.github.io/bslib/reference/sidebar.html">sidebar()</a></code>, <code><a href="https://rstudio.github.io/bslib/reference/card.html">card()</a></code> 함수를 사용하는 것과 동일한 방식으로 Quarto의 레이아웃 함수를 활용하는 것이다. 중요한 것은 구조, 컨테이너, 레이아웃 속에 입력 함수와 출력 함수를 위치시키는 것이다.</p>
+<p>이렇게 Quarto 대시보드 내에서 Shiny 웹 앱 구축하는 방법에 대해서는 다음의 내용을 참고할 수 있다.</p>
+<ul>
+<li><a href="https://quarto.org/docs/dashboards/interactivity/shiny-r.html" class="uri">https://quarto.org/docs/dashboards/interactivity/shiny-r.html</a></li>
+</ul>
+<p>위의 내용을 정리하면 다음과 같다.</p>
+<p>첫째, YAML 헤더에 <code>server: shiny</code>를 첨가한다. 이것이 포함되는 순간 전체 웹 앱이 Shiny 웹 앱으로 바뀐다.</p>
+<p>둘째, 사이드바와 메인 출력 영역으로 구성되는 UI 부분은 단일 row의 두 column 속에 배치한다.</p>
+<ul>
+<li><p>사이드바: 첫 번째 column 속에 <code>r</code> 코드 청크를 열고 그 속에 입력 함수를 위치 시킨다. 그리고 해당 column에 <code>{.sidebar}</code> CSS 클래스를 지정한다.</p></li>
+<li><p>메인 출력 영역: 두 번째 column 속에 <code>r</code> 코드 청크를 열어 그 속에 출력 함수를 위치 시킨다.</p></li>
+</ul>
+<p>셋째, Server 부분은 row와 column에 관계 없이 <code>r</code> 코드 청크를 열고 그 속에 랜더 함수를 포함한 서버 내용을 위치시킨다. 그리고 청크 옵션으로 다음을 지정한다.</p>
+<ul>
+<li><code>#| context: server</code></li>
+</ul>
+<p>넷째, 기타(패키지, 데이터 등) 부분은 row와 column에 관계 없이 <code>r</code> 코드 청크를 열고 그 속에 내용을 위치시킨다. 그리고 청크 옵션으로 다음을 지정한다.</p>
+<ul>
+<li><p><code>#| context: setup</code></p></li>
+<li><p><code>#| include: false</code></p></li>
+</ul>
+<p>앞의 예제는 아래와 같이 처리하면 유사한 형태의 웹 앱이 만들어진다. Quarto로 만든 다른 row와 column이 있을 경우 해당 웹 앱은 전체가 shiny 웹 앱화한다.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>title: "quarto-shiny-1"</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>format: dashboard</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>server: shiny</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>## shiny</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>### sidebar {.sidebar}</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>```{r}</span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>sliderInput(inputId = "bins", </span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>            label = "Number of bins:",</span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>            min = 1, max = 50, value = 30)</span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>```</span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>### main</span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>```{r}</span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>#| context: setup</span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>#| include: false</span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>library(shiny)</span>
+<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>library(tidyverse)</span>
+<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a>library(bslib)</span>
+<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a>library(plotly)</span>
+<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a>```</span>
+<span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a>```{r}</span>
+<span id="cb30-29"><a href="#cb30-29" aria-hidden="true" tabindex="-1"></a>plotlyOutput("distPlot")</span>
+<span id="cb30-30"><a href="#cb30-30" aria-hidden="true" tabindex="-1"></a>```</span>
+<span id="cb30-31"><a href="#cb30-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-32"><a href="#cb30-32" aria-hidden="true" tabindex="-1"></a>```{r}</span>
+<span id="cb30-33"><a href="#cb30-33" aria-hidden="true" tabindex="-1"></a>#| context: server</span>
+<span id="cb30-34"><a href="#cb30-34" aria-hidden="true" tabindex="-1"></a>output$distPlot &lt;- renderPlotly({</span>
+<span id="cb30-35"><a href="#cb30-35" aria-hidden="true" tabindex="-1"></a>  x &lt;- faithful[, 2]</span>
+<span id="cb30-36"><a href="#cb30-36" aria-hidden="true" tabindex="-1"></a>  gg &lt;- ggplot() +</span>
+<span id="cb30-37"><a href="#cb30-37" aria-hidden="true" tabindex="-1"></a>    geom_histogram(</span>
+<span id="cb30-38"><a href="#cb30-38" aria-hidden="true" tabindex="-1"></a>      aes(x = x), bins = input$bins, fill = 'darkgray', color = 'white'</span>
+<span id="cb30-39"><a href="#cb30-39" aria-hidden="true" tabindex="-1"></a>    ) +</span>
+<span id="cb30-40"><a href="#cb30-40" aria-hidden="true" tabindex="-1"></a>    labs(</span>
+<span id="cb30-41"><a href="#cb30-41" aria-hidden="true" tabindex="-1"></a>      x = 'Waiting time to next eruption (in mins)',</span>
+<span id="cb30-42"><a href="#cb30-42" aria-hidden="true" tabindex="-1"></a>      y = "Frequencies",</span>
+<span id="cb30-43"><a href="#cb30-43" aria-hidden="true" tabindex="-1"></a>      title = 'Histogram of waiting times'</span>
+<span id="cb30-44"><a href="#cb30-44" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb30-45"><a href="#cb30-45" aria-hidden="true" tabindex="-1"></a>  ggplotly(gg)</span>
+<span id="cb30-46"><a href="#cb30-46" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb30-47"><a href="#cb30-47" aria-hidden="true" tabindex="-1"></a>```</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+</section><section id="quarto-중심-방식" class="level3" data-number="7.2"><h3 data-number="7.2" class="anchored" data-anchor-id="quarto-중심-방식">
+<span class="header-section-number">7.2</span> Quarto 중심 방식</h3>
+<p>외부에서 만들어진 Shiny 웹 앱을 임베딩한다. 만일 <a href="#fig-first" class="quarto-xref">그림&nbsp;3</a> 과 같은 전형적인 사이드바와 메일 콘텐츠 영역으로 이루어진 웹 앱이라면 Quarto 웹 앱의 한 row 속에 임베딩하면 된다. 아래의 <code>src=""</code> 부분에 Shiny 웹 앱의 URL을 넣으면 된다.</p>
+<pre><code>&lt;iframe src="https://..." loading="lazy" style="width: 100%; height: 600px; border: 0px none;" allow="web-share; clipboard-write"&gt;&lt;/iframe&gt;</code></pre>
+</section></section><section id="llm과-웹-앱의-결합" class="level2" data-number="8"><h2 data-number="8" class="anchored" data-anchor-id="llm과-웹-앱의-결합">
+<span class="header-section-number">8</span> LLM과 웹 앱의 결합</h2>
 <p>LLM을 웹 앱과 결합하는 다양한 방식에 대해 고민할 필요가 있다. LLM의 능력을 이용해 웹 앱의 내용 요소를 구성하는 것이 AI 기술과 웹 앱 기술을 접목하는 가장 좋은 방법이다.</p>
-<section id="llm과-shiny의-결합-챗봇" class="level3" data-number="7.1"><h3 data-number="7.1" class="anchored" data-anchor-id="llm과-shiny의-결합-챗봇">
-<span class="header-section-number">7.1</span> LLM과 Shiny의 결합: 챗봇</h3>
+<section id="챗봇-만들기" class="level3" data-number="8.1"><h3 data-number="8.1" class="anchored" data-anchor-id="챗봇-만들기">
+<span class="header-section-number">8.1</span> 챗봇 만들기</h3>
 <p>LLM과 Shiny를 결합하여 챗봇을 만들어 본다. 이를 위해 <a href="https://ellmer.tidyverse.org/"><strong>ellmer</strong></a> 패키지와 <a href="https://posit-dev.github.io/shinychat/r/"><strong>shinychat</strong></a> 패키지를 활용한다. <a href="https://ellmer.tidyverse.org/"><strong>ellmer</strong></a> 패키지는 R 환경에서 LLM을 쉽고 직관적으로 호출하고 사용할 수 있도록 설계된 채팅 기반 인터페이스 패키지이다. 다양한 LLM과의 통합, 채팅 중심의 상호작용, 구조화된 데이터 추출, 도구 호출 및 함수 생성 등의 기능을 제공한다. <a href="https://posit-dev.github.io/shinychat/r/"><strong>shinychat</strong></a> 패키지는 Shiny 웹 앱 내에 현대적이고 세련된 채팅 인터페이스를 손쉽게 구축할 수 있도록 도와주는 패키지이다. 완성된 채팅 UI를 제공하며, 실시간 스트리밍 응답을 구현한다.</p>
 <p>다음의 코드를 통해 ChatGPT를 활용한 챗봇을 구축할 수 있다.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.posit.co/">shiny</a></span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.posit.co/">shiny</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://posit-dev.github.io/shinychat/r/">shinychat</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio.github.io/bslib/">bslib</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ellmer.tidyverse.org">ellmer</a></span><span class="op">)</span></span>
@@ -1700,91 +1786,134 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html">shinyApp</a></span><span class="op">(</span><span class="va">ui</span>, <span class="va">server</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><code><a href="https://posit-dev.github.io/shinychat/r/reference/chat_ui.html">chat_ui()</a></code>와 <code><a href="https://posit-dev.github.io/shinychat/r/reference/chat_append.html">chat_append()</a></code> 함수가 <a href="https://posit-dev.github.io/shinychat/r/"><strong>shinychat</strong></a> 패키지 함수이다. <code><a href="https://posit-dev.github.io/shinychat/r/reference/chat_ui.html">chat_ui()</a></code> 함수는 채팅창 인터페이스를 생성하는 함수이며, <code><a href="https://posit-dev.github.io/shinychat/r/reference/chat_append.html">chat_append()</a></code> 함수는 채팅창에 새로운 메시지를 추가하는 함수이다. <code><a href="https://ellmer.tidyverse.org/reference/chat_openai.html">chat_openai()</a></code> 함수가 <a href="https://ellmer.tidyverse.org/"><strong>ellmer</strong></a> 패키지의 함수인데, R 세션과 OpenAI의 LLM 사이의 연결 통로를 생성하는 역할을 한다. LLM 모델과의 인터페이스 구축, 대화 맥락 유지, 시스템 프롬프트 설정, 다양한 응답 방식 지원 등의 기능을 한다.</p>
-</section></section><section id="quarto와-shiny의-결합" class="level2" data-number="8"><h2 data-number="8" class="anchored" data-anchor-id="quarto와-shiny의-결합">
-<span class="header-section-number">8</span> Quarto와 Shiny의 결합</h2>
-<p>Quarto를 통해서 프로트엔드 웹 앱을 만들 수 있고, Shiny를 활용하면 서버-기반 웹 앱을 만들 수 있다. Quarto로 만들어진 웹 앱은 제작이 용이하고 가벼우며 호스팅 절차가 간단하다는 장점이 있지만 상호작용성을 고양하는데는 한계가 있다. Shiny로 만들어진 웹 앱은 높은 수준의 사용자 상호작용성을 보장하다는 확실한 장점이 있지만 제작이 상대적으로 어렵고 무거우며 호스팅 절차가 복잡하다는 단점이 있다.</p>
-<p>따라서 많은 경우 두 가지의 장점을 결합하는 것이 도움이 된다. 특히 Shiny를 통해 구현되는 서버-기반 웹 앱의 요소가 많은 부분을 차지하는 웹 앱이 아니라면 Quarto 웹 앱을 기본으로 하고 거기에 Shiny 웹 앱의 요소를 부가하는 방식이 적절하다. 따라서 여기서는 Quarto 대시보드의 일부 영역에서 Shiny 사용하는 방법에 대해 다룬다.</p>
-<p>여기에는 두 가지 접근이 있을 수 있다. 이것은 두 개의 결합으로 만들어지는 최종 웹 앱이 어떤 것이냐에 달려 있다. 즉, 최종적으로 Shiny 웹 앱이 만들어지면 Shiny 중심 방식이고, Quarto 웹 앱이 만들어지면 Quarto 중심 방식이라 부를 수 있다.</p>
-<p>Shiny 중심 방식은 Quarto 대시보드 내에서 Quarto 문법으로 Shiny 웹 앱을 구축하는 것이다. 이렇게 하면 웹 앱 전체가 Shiny 웹 앱화 되며 따라서 shinyapps.io를 통해 배포해야만 한다. 이에 반해 Quarto 중심 방식은 Quarto 대시보드 속에 독립적으로 구축된 Shiny 웹 앱 임베딩하는 것으로 Quarto 웹 앱이 그대로 유지된다. 따라서 Quarto Pub을 통해 배포할 수 있다. 다음의 두 웹 앱을 비교할 수 있다.</p>
+</section><section id="게시판-만들기" class="level3" data-number="8.2"><h3 data-number="8.2" class="anchored" data-anchor-id="게시판-만들기">
+<span class="header-section-number">8.2</span> 게시판 만들기</h3>
+<p>Shiny와 <a href="https://workspace.google.com/intl/ko/products/sheets/">구글 스프레드시트</a>를 결합하면 게시판을 구축할 수 있다. 이를 위해서 <a href="https://googlesheets4.tidyverse.org/"><strong>googlesheets4</strong></a> 패키지를 활용해야 한다. <a href="https://googlesheets4.tidyverse.org/"><strong>googlesheets4</strong></a>패키지는 Google Sheets API(v4)를 R과 연결해주는 라이브러리이다. R에서 구글 스프레드시트를 자유자재로 읽고, 쓰고, 수정할 수 있게 해주는 도구이다. 주요 기능은 다음과 같다.</p>
+<p>첫째, 데이터 파이프라인 구축(연결 및 읽기) 기능을 제공한다. 단순한 파일 업로드를 넘어, R과 구글 시트를 실시간으로 동기화하는 통로 역할을 한다. 설문 조사 결과 모니터링, 실시간 업데이트되는 원본 데이터를 불러오는 등의 용도로 활용될 수 있다. 주요 함수는 다음과 같다.</p>
 <ul>
-<li><p>Shiny 중심 방식: <a href="https://sangillee.shinyapps.io/Dashboard_Example/" class="uri">https://sangillee.shinyapps.io/Dashboard_Example/</a></p></li>
-<li><p>Quarto 중심 방식: <a href="https://sangillee.snu.ac.kr/dashboard_examples/" class="uri">https://sangillee.snu.ac.kr/dashboard_examples/</a></p></li>
+<li><p><code><a href="https://googlesheets4.tidyverse.org/reference/gs4_auth.html">gs4_auth()</a></code>: 대화형 인증을 실행. 최초 1회 인중 후, 로컬 폴더에 저장된 캐시 토큰을 사용</p></li>
+<li><p><code><a href="https://googlesheets4.tidyverse.org/reference/gs4_deauth.html">gs4_deauth()</a></code>: 로그인이 필요없는 공개 시트의 경우, 복잡한 인증 절차 없이 바로 읽을 수 있음</p></li>
+<li><p><code><a href="https://googlesheets4.tidyverse.org/reference/range_read.html">read_sheet()</a></code>: URL이나 시트 ID만으로 데이터를 즉시 데이터 프레임 형태로 변환</p></li>
+<li><p><code>range_rad()</code>: 특정 범위나 특정 워크시트만 선택적으로 로드</p></li>
 </ul>
-<section id="shiny-중심-방식" class="level3" data-number="8.1"><h3 data-number="8.1" class="anchored" data-anchor-id="shiny-중심-방식">
-<span class="header-section-number">8.1</span> Shiny 중심 방식</h3>
-<p>Shiny 중심 방식은 Quarto의 행렬 분할을 통한 레이아웃 설정 방식을 활용하여 입력 함수와 출력 함수를 포함하는 전략을 사용한다. 원 Shiny 패키지가 <code><a href="https://rdrr.io/pkg/shiny/man/fluidPage.html">fluidPage()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/titlePanel.html">titlePanel()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarLayout()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">sidebarPanel()</a></code>, <code><a href="https://rdrr.io/pkg/shiny/man/sidebarLayout.html">mainPanel()</a></code>과 같은 UI 구조 함수를 사용하고, bslib 패키지가 <code><a href="https://rstudio.github.io/bslib/reference/page_sidebar.html">page_sidebar()</a></code>, <code><a href="https://rstudio.github.io/bslib/reference/sidebar.html">sidebar()</a></code>, <code><a href="https://rstudio.github.io/bslib/reference/card.html">card()</a></code> 함수를 사용하는 것과 동일한 방식으로 Quarto의 레이아웃 함수를 활용하는 것이다. 중요한 것은 구조, 컨테이너, 레이아웃 속에 입력 함수와 출력 함수를 위치시키는 것이다.</p>
-<p>이렇게 Quarto 대시보드 내에서 Shiny 웹 앱 구축하는 방법에 대해서는 다음의 내용을 참고할 수 있다.</p>
+<p>둘째, 동적 결과 피드백(수정 및 쓰기) 기능을 제공한다. R에서 처리된 통계 모델 결과나 정제된 데이터를 다시 시트에 기록하여 협업 효율을 높인다. 분석 리포트 자동 업데이터, 팀원과 데이터 공유, 대시보드 데이터 공급 등의 용도로 활용될 수 있다. 주요 함수는 다음과 같다.</p>
 <ul>
-<li><a href="https://quarto.org/docs/dashboards/interactivity/shiny-r.html" class="uri">https://quarto.org/docs/dashboards/interactivity/shiny-r.html</a></li>
+<li><p><code><a href="https://googlesheets4.tidyverse.org/reference/sheet_write.html">sheet_write()</a></code>: 데이터를 시트에 덮어쓰거나 새로운 파일 생성</p></li>
+<li><p><code><a href="https://googlesheets4.tidyverse.org/reference/sheet_append.html">sheet_append()</a></code>: 기존 데이터 아래에 새로운 행을 추가</p></li>
+<li><p><code><a href="https://googlesheets4.tidyverse.org/reference/range_write.html">range_write()</a></code>: 시트 내의 특정 셀 위치에만 데이터를 정밀하게 기록</p></li>
 </ul>
-<p>위의 내용을 정리하면 다음과 같다.</p>
-<p>첫째, YAML 헤더에 <code>server: shiny</code>를 첨가한다. 이것이 포함되는 순간 전체 웹 앱이 Shiny 웹 앱으로 바뀐다.</p>
-<p>둘째, 사이드바와 메인 출력 영역으로 구성되는 UI 부분은 단일 row의 두 column 속에 배치한다.</p>
+<p>셋째, 스프레드시트 구조 및 서식 관리 기능을 제공한다. 단순히 데이터만 주고받는 것이 아니라, 구글 시트 파일 자체를 R 코드로 제어한다. 주기적인 보고서 양식 생성, 불필요한 시트 정리, 데이터 정리 자동화 등의 용도로 활용될 수 있다. 주요 함수는 다음과 같다.</p>
 <ul>
-<li><p>사이드바: 첫 번째 column 속에 <code>r</code> 코드 청크를 열고 그 속에 입력 함수를 위치 시킨다. 그리고 해당 column에 <code>{.sidebar}</code> CSS 클래스를 지정한다.</p></li>
-<li><p>메인 출력 영역: 두 번째 column 속에 <code>r</code> 코드 청크를 열어 그 속에 출력 함수를 위치 시킨다.</p></li>
+<li><p>시트 관리: <code><a href="https://googlesheets4.tidyverse.org/reference/gs4_create.html">gs4_create()</a></code>(파일 생성), <code><a href="https://googlesheets4.tidyverse.org/reference/sheet_add.html">sheet_add()</a></code>(탭 추가), <code><a href="https://googlesheets4.tidyverse.org/reference/sheet_delete.html">sheet_delete()</a></code>(탭 삭제)</p></li>
+<li><p>메타데이터 제어: 파일 이름 변경, 시트 순서 변경 등 파일의 구조적 속성 관리</p></li>
 </ul>
-<p>셋째, Server 부분은 row와 column에 관계 없이 <code>r</code> 코드 청크를 열고 그 속에 랜더 함수를 포함한 서버 내용을 위치시킨다. 그리고 청크 옵션으로 다음을 지정한다.</p>
-<ul>
-<li><code>#| context: server</code></li>
-</ul>
-<p>넷째, 기타(패키지, 데이터 등) 부분은 row와 column에 관계 없이 <code>r</code> 코드 청크를 열고 그 속에 내용을 위치시킨다. 그리고 청크 옵션으로 다음을 지정한다.</p>
-<ul>
-<li><p><code>#| context: setup</code></p></li>
-<li><p><code>#| include: false</code></p></li>
-</ul>
-<p>앞의 예제는 아래와 같이 처리하면 유사한 형태의 웹 앱이 만들어진다. Quarto로 만든 다른 row와 column이 있을 경우 해당 웹 앱은 전체가 shiny 웹 앱화한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>title: "quarto-shiny-1"</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>format: dashboard</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>server: shiny</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>## shiny</span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>### sidebar {.sidebar}</span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>```{r}</span>
-<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>sliderInput(inputId = "bins", </span>
-<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>            label = "Number of bins:",</span>
-<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>            min = 1, max = 50, value = 30)</span>
-<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>```</span>
-<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>### main</span>
-<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a>```{r}</span>
-<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>#| context: setup</span>
-<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a>#| include: false</span>
-<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a>library(shiny)</span>
-<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a>library(tidyverse)</span>
-<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a>library(bslib)</span>
-<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a>library(plotly)</span>
-<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a>```</span>
-<span id="cb31-27"><a href="#cb31-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a>```{r}</span>
-<span id="cb31-29"><a href="#cb31-29" aria-hidden="true" tabindex="-1"></a>plotlyOutput("distPlot")</span>
-<span id="cb31-30"><a href="#cb31-30" aria-hidden="true" tabindex="-1"></a>```</span>
-<span id="cb31-31"><a href="#cb31-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-32"><a href="#cb31-32" aria-hidden="true" tabindex="-1"></a>```{r}</span>
-<span id="cb31-33"><a href="#cb31-33" aria-hidden="true" tabindex="-1"></a>#| context: server</span>
-<span id="cb31-34"><a href="#cb31-34" aria-hidden="true" tabindex="-1"></a>output$distPlot &lt;- renderPlotly({</span>
-<span id="cb31-35"><a href="#cb31-35" aria-hidden="true" tabindex="-1"></a>  x &lt;- faithful[, 2]</span>
-<span id="cb31-36"><a href="#cb31-36" aria-hidden="true" tabindex="-1"></a>  gg &lt;- ggplot() +</span>
-<span id="cb31-37"><a href="#cb31-37" aria-hidden="true" tabindex="-1"></a>    geom_histogram(</span>
-<span id="cb31-38"><a href="#cb31-38" aria-hidden="true" tabindex="-1"></a>      aes(x = x), bins = input$bins, fill = 'darkgray', color = 'white'</span>
-<span id="cb31-39"><a href="#cb31-39" aria-hidden="true" tabindex="-1"></a>    ) +</span>
-<span id="cb31-40"><a href="#cb31-40" aria-hidden="true" tabindex="-1"></a>    labs(</span>
-<span id="cb31-41"><a href="#cb31-41" aria-hidden="true" tabindex="-1"></a>      x = 'Waiting time to next eruption (in mins)',</span>
-<span id="cb31-42"><a href="#cb31-42" aria-hidden="true" tabindex="-1"></a>      y = "Frequencies",</span>
-<span id="cb31-43"><a href="#cb31-43" aria-hidden="true" tabindex="-1"></a>      title = 'Histogram of waiting times'</span>
-<span id="cb31-44"><a href="#cb31-44" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb31-45"><a href="#cb31-45" aria-hidden="true" tabindex="-1"></a>  ggplotly(gg)</span>
-<span id="cb31-46"><a href="#cb31-46" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb31-47"><a href="#cb31-47" aria-hidden="true" tabindex="-1"></a>```</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
-</section><section id="quarto-중심-방식" class="level3" data-number="8.2"><h3 data-number="8.2" class="anchored" data-anchor-id="quarto-중심-방식">
-<span class="header-section-number">8.2</span> Quarto 중심 방식</h3>
-<p>외부에서 만들어진 Shiny 웹 앱을 임베딩한다. 만일 <a href="#fig-first" class="quarto-xref">그림&nbsp;3</a> 과 같은 전형적인 사이드바와 메일 콘텐츠 영역으로 이루어진 웹 앱이라면 Quarto 웹 앱의 한 row 속에 임베딩하면 된다. 아래의 <code>src=""</code> 부분에 Shiny 웹 앱의 URL을 넣으면 된다.</p>
-<pre><code>&lt;iframe src="https://..." loading="lazy" style="width: 100%; height: 600px; border: 0px none;" allow="web-share; clipboard-write"&gt;&lt;/iframe&gt;</code></pre>
+<p>다음의 코드로 게시판을 만들 수 있다. 일반적인 상황이라면 <code><a href="https://googlesheets4.tidyverse.org/reference/gs4_auth.html">gs4_auth()</a></code> 함수를 통해 1회 인증하면 그 다음부터 사용하지만 Shiny 서버에 이러한 정보가 함께 올라가는 것이 아니므로 <code><a href="https://rdrr.io/r/base/options.html">options()</a></code>를 통해 OAuth 토큰(인증 파일)을 저장하는 캐시 폴더( <code>.secrets</code>)를 지정한다. 서버 배포시 인증 파일을 함께 업로드함으로써 인증 파일을 프로젝트 내부에 고정한다. 또한 Google API 인증 시 사용할 기본 이메일 계정을 지정해 둔다.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.posit.co/">shiny</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio.github.io/bslib/">bslib</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://googlesheets4.tidyverse.org">googlesheets4</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/DT">DT</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">sheet_url</span> <span class="op">&lt;-</span> <span class="st">"you sheet URL here"</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span></span>
+<span>  gargle_oauth_cache <span class="op">=</span> <span class="st">".secrets"</span>,</span>
+<span>  gargle_oauth_email <span class="op">=</span> <span class="st">"your google email address"</span></span>
+<span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/gs4_auth.html">gs4_auth</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rstudio.github.io/bslib/reference/page.html">page_fluid</a></span><span class="op">(</span></span>
+<span>  <span class="fu"><a href="https://rstudio.github.io/bslib/reference/navset.html">navset_tab</a></span><span class="op">(</span></span>
+<span>    id <span class="op">=</span> <span class="st">"tabs"</span>,</span>
+<span>    <span class="fu"><a href="https://rstudio.github.io/bslib/reference/nav-items.html">nav_panel</a></span><span class="op">(</span></span>
+<span>      title <span class="op">=</span> <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html">h6</a></span><span class="op">(</span><span class="st">"글 목록"</span><span class="op">)</span>, value <span class="op">=</span> <span class="st">"tab_1"</span>, <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html">br</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>      <span class="fu"><a href="https://rdrr.io/pkg/DT/man/dataTableOutput.html">DTOutput</a></span><span class="op">(</span><span class="st">"table"</span>, width <span class="op">=</span> <span class="st">"100%"</span><span class="op">)</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    <span class="fu"><a href="https://rstudio.github.io/bslib/reference/nav-items.html">nav_panel</a></span><span class="op">(</span></span>
+<span>      title <span class="op">=</span> <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html">h6</a></span><span class="op">(</span><span class="st">"글 작성"</span><span class="op">)</span>,</span>
+<span>      value <span class="op">=</span> <span class="st">"tab_2"</span>, <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html">br</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/textInput.html">textInput</a></span><span class="op">(</span><span class="st">"author"</span>, <span class="st">"작성자"</span>, width <span class="op">=</span> <span class="st">"100%"</span><span class="op">)</span>,</span>
+<span>      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/textInput.html">textInput</a></span><span class="op">(</span><span class="st">"title"</span>, <span class="st">"제목"</span>, width <span class="op">=</span> <span class="st">"100%"</span><span class="op">)</span>,</span>
+<span>      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/textAreaInput.html">textAreaInput</a></span><span class="op">(</span><span class="st">"content"</span>, <span class="st">"내용"</span>, rows <span class="op">=</span> <span class="fl">8</span>, width <span class="op">=</span> <span class="st">"100%"</span><span class="op">)</span>,</span>
+<span>      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/actionButton.html">actionButton</a></span><span class="op">(</span><span class="st">"submit"</span>, <span class="st">"등록하기"</span><span class="op">)</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    <span class="fu"><a href="https://rstudio.github.io/bslib/reference/nav-items.html">nav_panel</a></span><span class="op">(</span></span>
+<span>      title <span class="op">=</span> <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html">h6</a></span><span class="op">(</span><span class="st">"글 보기"</span><span class="op">)</span>,</span>
+<span>      value <span class="op">=</span> <span class="st">"tab_3"</span>, </span>
+<span>      <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html">br</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>      <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/htmlOutput.html">uiOutput</a></span><span class="op">(</span><span class="st">"post_ui"</span><span class="op">)</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">posts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/reactiveVal.html">reactiveVal</a></span><span class="op">(</span><span class="cn">NULL</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/observe.html">observe</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>    <span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/range_read.html">read_sheet</a></span><span class="op">(</span><span class="va">sheet_url</span><span class="op">)</span></span>
+<span>    <span class="fu">posts</span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span>
+<span>  <span class="op">}</span><span class="op">)</span></span>
+<span>  <span class="va">output</span><span class="op">$</span><span class="va">table</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/DT/man/dataTableOutput.html">renderDT</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>    <span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">posts</span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/req.html">req</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span>  </span>
+<span>    <span class="fu"><a href="https://rdrr.io/pkg/DT/man/datatable.html">datatable</a></span><span class="op">(</span></span>
+<span>      <span class="va">df</span>,</span>
+<span>      selection <span class="op">=</span> <span class="st">"single"</span>,</span>
+<span>      options <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>pageLength <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">}</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">observeEvent</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">submit</span>, <span class="op">{</span></span>
+<span>    <span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/range_read.html">read_sheet</a></span><span class="op">(</span><span class="va">sheet_url</span><span class="op">)</span></span>
+<span>    <span class="va">new_id</span> <span class="op">&lt;-</span> <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span> <span class="fl">1</span> <span class="kw">else</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">번호</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">+</span> <span class="fl">1</span></span>
+<span>    <span class="va">new_row</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
+<span>      번호      <span class="op">=</span> <span class="va">new_id</span>,</span>
+<span>      작성일    <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.time</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>      작성자  <span class="op">=</span> <span class="va">input</span><span class="op">$</span><span class="va">author</span>,</span>
+<span>      제목  <span class="op">=</span> <span class="va">input</span><span class="op">$</span><span class="va">title</span>,</span>
+<span>      내용 <span class="op">=</span> <span class="va">input</span><span class="op">$</span><span class="va">content</span></span>
+<span>    <span class="op">)</span></span>
+<span>    <span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/sheet_append.html">sheet_append</a></span><span class="op">(</span><span class="va">sheet_url</span>, <span class="va">new_row</span><span class="op">)</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/showNotification.html">showNotification</a></span><span class="op">(</span><span class="st">"글이 등록되었습니다."</span>, type <span class="op">=</span> <span class="st">"message"</span><span class="op">)</span></span>
+<span>    <span class="va">df2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/range_read.html">read_sheet</a></span><span class="op">(</span><span class="va">sheet_url</span><span class="op">)</span></span>
+<span>    <span class="fu">posts</span><span class="op">(</span><span class="va">df2</span><span class="op">)</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/updateTextInput.html">updateTextInput</a></span><span class="op">(</span><span class="va">session</span>, <span class="st">"작성자"</span>, value <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/updateTextInput.html">updateTextInput</a></span><span class="op">(</span><span class="va">session</span>, <span class="st">"제목"</span>,  value <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/updateTextAreaInput.html">updateTextAreaInput</a></span><span class="op">(</span><span class="va">session</span>, <span class="st">"내용"</span>, value <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span>
+<span>  <span class="op">}</span><span class="op">)</span></span>
+<span>  <span class="va">current_id</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/reactiveVal.html">reactiveVal</a></span><span class="op">(</span><span class="cn">NULL</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/observeEvent.html">observeEvent</a></span><span class="op">(</span><span class="va">input</span><span class="op">$</span><span class="va">table_rows_selected</span>, <span class="op">{</span></span>
+<span>    <span class="va">row</span> <span class="op">&lt;-</span> <span class="va">input</span><span class="op">$</span><span class="va">table_rows_selected</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/req.html">req</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">row</span><span class="op">)</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span></span>
+<span>    <span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">posts</span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/req.html">req</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span> <span class="op">&gt;=</span> <span class="va">row</span><span class="op">)</span></span>
+<span>    <span class="va">this_post</span> <span class="op">&lt;-</span> <span class="va">df</span><span class="op">[</span><span class="va">row</span>, <span class="op">]</span></span>
+<span>    <span class="fu">current_id</span><span class="op">(</span><span class="va">this_post</span><span class="op">$</span><span class="va">번호</span><span class="op">)</span></span>
+<span>    <span class="fu"><a href="https://rstudio.github.io/bslib/reference/nav_select.html">nav_select</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"tabs"</span>, selected <span class="op">=</span> <span class="st">"tab_3"</span><span class="op">)</span> </span>
+<span>  <span class="op">}</span><span class="op">)</span></span>
+<span>  <span class="va">output</span><span class="op">$</span><span class="va">post_ui</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderUI.html">renderUI</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/req.html">req</a></span><span class="op">(</span><span class="fu">current_id</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">posts</span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="va">post</span> <span class="op">&lt;-</span> <span class="va">df</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">번호</span> <span class="op">==</span> <span class="fu">current_id</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span>    </span>
+<span>    <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">post</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span></span>
+<span>      <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html">p</a></span><span class="op">(</span><span class="st">"선택된 글이 없습니다."</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="op">}</span></span>
+<span>    </span>
+<span>    <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/tagList.html">tagList</a></span><span class="op">(</span></span>
+<span>      <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html">h3</a></span><span class="op">(</span><span class="va">post</span><span class="op">$</span><span class="va">제목</span><span class="op">)</span>,</span>
+<span>      <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html">p</a></span><span class="op">(</span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html">strong</a></span><span class="op">(</span><span class="st">"작성자: "</span><span class="op">)</span>, <span class="va">post</span><span class="op">$</span><span class="va">작성자</span><span class="op">)</span>,</span>
+<span>      <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html">p</a></span><span class="op">(</span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html">strong</a></span><span class="op">(</span><span class="st">"작성일: "</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="va">post</span><span class="op">$</span><span class="va">작성일</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>      <span class="va">tags</span><span class="op">$</span><span class="fu">hr</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>      <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html">pre</a></span><span class="op">(</span><span class="va">post</span><span class="op">$</span><span class="va">내용</span><span class="op">)</span>  </span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">}</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/observe.html">observe</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/invalidateLater.html">invalidateLater</a></span><span class="op">(</span><span class="fl">30000</span>, <span class="va">session</span><span class="op">)</span></span>
+<span>  <span class="op">}</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html">shinyApp</a></span><span class="op">(</span><span class="va">ui</span>, <span class="va">server</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 
 
 </section></section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> 맨 위로</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">

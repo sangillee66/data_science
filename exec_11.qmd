@@ -893,52 +893,6 @@ observeEvent(search_text(), {
 
 -   https://userid.shinyapps.io/project_name/
 
-## LLM과 웹 앱의 결합
-
-LLM을 웹 앱과 결합하는 다양한 방식에 대해 고민할 필요가 있다. LLM의 능력을 이용해 웹 앱의 내용 요소를 구성하는 것이 AI 기술과 웹 앱 기술을 접목하는 가장 좋은 방법이다.
-
-### LLM과 Shiny의 결합: 챗봇
-
-LLM과 Shiny를 결합하여 챗봇을 만들어 본다. 이를 위해 [**ellmer**](https://ellmer.tidyverse.org/) 패키지와 [**shinychat**](https://posit-dev.github.io/shinychat/r/) 패키지를 활용한다. [**ellmer**](https://ellmer.tidyverse.org/) 패키지는 R 환경에서 LLM을 쉽고 직관적으로 호출하고 사용할 수 있도록 설계된 채팅 기반 인터페이스 패키지이다. 다양한 LLM과의 통합, 채팅 중심의 상호작용, 구조화된 데이터 추출, 도구 호출 및 함수 생성 등의 기능을 제공한다. [**shinychat**](https://posit-dev.github.io/shinychat/r/) 패키지는 Shiny 웹 앱 내에 현대적이고 세련된 채팅 인터페이스를 손쉽게 구축할 수 있도록 도와주는 패키지이다. 완성된 채팅 UI를 제공하며, 실시간 스트리밍 응답을 구현한다.
-
-다음의 코드를 통해 ChatGPT를 활용한 챗봇을 구축할 수 있다.
-
-```{r}
-#| eval: false
-
-library(shiny)
-library(shinychat)
-library(bslib)
-library(ellmer)
-
-ui <- page_fillable(
-  chat_ui(
-    id = "chat",
-    messages = "your messages here"
-  ),
-  fillable_mobile = TRUE
-)
-
-server <- function(input, output, session) {
-  chat <-
-    chat_openai(
-      base_url = "https://api.openai.com/v1",
-      model = "gpt-5.2",
-      api_key = "your_api_key_here",
-      system_prompt = ""
-    )
-
-  observeEvent(input$chat_user_input, {
-    stream <- chat$stream_async(input$chat_user_input)
-    chat_append("chat", stream)
-  })
-}
-
-shinyApp(ui, server)
-```
-
-`chat_ui()`와 `chat_append()` 함수가 [**shinychat**](https://posit-dev.github.io/shinychat/r/) 패키지 함수이다. `chat_ui()` 함수는 채팅창 인터페이스를 생성하는 함수이며, `chat_append()` 함수는 채팅창에 새로운 메시지를 추가하는 함수이다. `chat_openai()` 함수가 [**ellmer**](https://ellmer.tidyverse.org/) 패키지의 함수인데, R 세션과 OpenAI의 LLM 사이의 연결 통로를 생성하는 역할을 한다. LLM 모델과의 인터페이스 구축, 대화 맥락 유지, 시스템 프롬프트 설정, 다양한 응답 방식 지원 등의 기능을 한다.
-
 ## Quarto와 Shiny의 결합
 
 Quarto를 통해서 프로트엔드 웹 앱을 만들 수 있고, Shiny를 활용하면 서버-기반 웹 앱을 만들 수 있다. Quarto로 만들어진 웹 앱은 제작이 용이하고 가벼우며 호스팅 절차가 간단하다는 장점이 있지만 상호작용성을 고양하는데는 한계가 있다. Shiny로 만들어진 웹 앱은 높은 수준의 사용자 상호작용성을 보장하다는 확실한 장점이 있지만 제작이 상대적으로 어렵고 무거우며 호스팅 절차가 복잡하다는 단점이 있다.
@@ -1039,4 +993,188 @@ output$distPlot <- renderPlotly({
 
 ```         
 <iframe src="https://..." loading="lazy" style="width: 100%; height: 600px; border: 0px none;" allow="web-share; clipboard-write"></iframe>
+```
+
+## LLM과 웹 앱의 결합
+
+LLM을 웹 앱과 결합하는 다양한 방식에 대해 고민할 필요가 있다. LLM의 능력을 이용해 웹 앱의 내용 요소를 구성하는 것이 AI 기술과 웹 앱 기술을 접목하는 가장 좋은 방법이다.
+
+### 챗봇 만들기
+
+LLM과 Shiny를 결합하여 챗봇을 만들어 본다. 이를 위해 [**ellmer**](https://ellmer.tidyverse.org/) 패키지와 [**shinychat**](https://posit-dev.github.io/shinychat/r/) 패키지를 활용한다. [**ellmer**](https://ellmer.tidyverse.org/) 패키지는 R 환경에서 LLM을 쉽고 직관적으로 호출하고 사용할 수 있도록 설계된 채팅 기반 인터페이스 패키지이다. 다양한 LLM과의 통합, 채팅 중심의 상호작용, 구조화된 데이터 추출, 도구 호출 및 함수 생성 등의 기능을 제공한다. [**shinychat**](https://posit-dev.github.io/shinychat/r/) 패키지는 Shiny 웹 앱 내에 현대적이고 세련된 채팅 인터페이스를 손쉽게 구축할 수 있도록 도와주는 패키지이다. 완성된 채팅 UI를 제공하며, 실시간 스트리밍 응답을 구현한다.
+
+다음의 코드를 통해 ChatGPT를 활용한 챗봇을 구축할 수 있다.
+
+```{r}
+#| eval: false
+
+library(shiny)
+library(shinychat)
+library(bslib)
+library(ellmer)
+
+ui <- page_fillable(
+  chat_ui(
+    id = "chat",
+    messages = "your messages here"
+  ),
+  fillable_mobile = TRUE
+)
+
+server <- function(input, output, session) {
+  chat <-
+    chat_openai(
+      base_url = "https://api.openai.com/v1",
+      model = "gpt-5.2",
+      api_key = "your_api_key_here",
+      system_prompt = ""
+    )
+
+  observeEvent(input$chat_user_input, {
+    stream <- chat$stream_async(input$chat_user_input)
+    chat_append("chat", stream)
+  })
+}
+
+shinyApp(ui, server)
+```
+
+`chat_ui()`와 `chat_append()` 함수가 [**shinychat**](https://posit-dev.github.io/shinychat/r/) 패키지 함수이다. `chat_ui()` 함수는 채팅창 인터페이스를 생성하는 함수이며, `chat_append()` 함수는 채팅창에 새로운 메시지를 추가하는 함수이다. `chat_openai()` 함수가 [**ellmer**](https://ellmer.tidyverse.org/) 패키지의 함수인데, R 세션과 OpenAI의 LLM 사이의 연결 통로를 생성하는 역할을 한다. LLM 모델과의 인터페이스 구축, 대화 맥락 유지, 시스템 프롬프트 설정, 다양한 응답 방식 지원 등의 기능을 한다.
+
+### 게시판 만들기
+
+Shiny와 [구글 스프레드시트](https://workspace.google.com/intl/ko/products/sheets/)를 결합하면 게시판을 구축할 수 있다. 이를 위해서 [**googlesheets4**](https://googlesheets4.tidyverse.org/) 패키지를 활용해야 한다. [**googlesheets4**](https://googlesheets4.tidyverse.org/)패키지는 Google Sheets API(v4)를 R과 연결해주는 라이브러리이다. R에서 구글 스프레드시트를 자유자재로 읽고, 쓰고, 수정할 수 있게 해주는 도구이다. 주요 기능은 다음과 같다.
+
+첫째, 데이터 파이프라인 구축(연결 및 읽기) 기능을 제공한다. 단순한 파일 업로드를 넘어, R과 구글 시트를 실시간으로 동기화하는 통로 역할을 한다. 설문 조사 결과 모니터링, 실시간 업데이트되는 원본 데이터를 불러오는 등의 용도로 활용될 수 있다. 주요 함수는 다음과 같다.
+
+-   `gs4_auth()`: 대화형 인증을 실행. 최초 1회 인중 후, 로컬 폴더에 저장된 캐시 토큰을 사용
+
+-   `gs4_deauth()`: 로그인이 필요없는 공개 시트의 경우, 복잡한 인증 절차 없이 바로 읽을 수 있음
+
+-   `read_sheet()`: URL이나 시트 ID만으로 데이터를 즉시 데이터 프레임 형태로 변환
+
+-   `range_rad()`: 특정 범위나 특정 워크시트만 선택적으로 로드
+
+둘째, 동적 결과 피드백(수정 및 쓰기) 기능을 제공한다. R에서 처리된 통계 모델 결과나 정제된 데이터를 다시 시트에 기록하여 협업 효율을 높인다. 분석 리포트 자동 업데이터, 팀원과 데이터 공유, 대시보드 데이터 공급 등의 용도로 활용될 수 있다. 주요 함수는 다음과 같다.
+
+-   `sheet_write()`: 데이터를 시트에 덮어쓰거나 새로운 파일 생성
+
+-   `sheet_append()`: 기존 데이터 아래에 새로운 행을 추가
+
+-   `range_write()`: 시트 내의 특정 셀 위치에만 데이터를 정밀하게 기록
+
+셋째, 스프레드시트 구조 및 서식 관리 기능을 제공한다. 단순히 데이터만 주고받는 것이 아니라, 구글 시트 파일 자체를 R 코드로 제어한다. 주기적인 보고서 양식 생성, 불필요한 시트 정리, 데이터 정리 자동화 등의 용도로 활용될 수 있다. 주요 함수는 다음과 같다.
+
+-   시트 관리: `gs4_create()`(파일 생성), `sheet_add()`(탭 추가), `sheet_delete()`(탭 삭제)
+
+-   메타데이터 제어: 파일 이름 변경, 시트 순서 변경 등 파일의 구조적 속성 관리
+
+다음의 코드로 게시판을 만들 수 있다. 일반적인 상황이라면 `gs4_auth()` 함수를 통해 1회 인증하면 그 다음부터 사용하지만 Shiny 서버에 이러한 정보가 함께 올라가는 것이 아니므로 `options()`를 통해 OAuth 토큰(인증 파일)을 저장하는 캐시 폴더( `.secrets`)를 지정한다. 서버 배포시 인증 파일을 함께 업로드함으로써 인증 파일을 프로젝트 내부에 고정한다. 또한 Google API 인증 시 사용할 기본 이메일 계정을 지정해 둔다.
+
+```{r}
+#| eval: false
+library(shiny)
+library(bslib)
+library(googlesheets4)
+library(dplyr)
+library(DT)
+
+sheet_url <- "you sheet URL here"
+
+options(
+  gargle_oauth_cache = ".secrets",
+  gargle_oauth_email = "your google email address"
+)
+gs4_auth()
+
+ui <- page_fluid(
+  navset_tab(
+    id = "tabs",
+    nav_panel(
+      title = h6("글 목록"), value = "tab_1", br(),
+      DTOutput("table", width = "100%")
+    ),
+    nav_panel(
+      title = h6("글 작성"),
+      value = "tab_2", br(),
+      textInput("author", "작성자", width = "100%"),
+      textInput("title", "제목", width = "100%"),
+      textAreaInput("content", "내용", rows = 8, width = "100%"),
+      actionButton("submit", "등록하기")
+    ),
+    nav_panel(
+      title = h6("글 보기"),
+      value = "tab_3", 
+      br(),
+      uiOutput("post_ui")
+    )
+  )
+)
+
+server <- function(input, output, session) {
+  posts <- reactiveVal(NULL)
+  observe({
+    df <- read_sheet(sheet_url)
+    posts(df)
+  })
+  output$table <- renderDT({
+    df <- posts()
+    req(df)  
+    datatable(
+      df,
+      selection = "single",
+      options = list(pageLength = 10)
+    )
+  })
+  observeEvent(input$submit, {
+    df <- read_sheet(sheet_url)
+    new_id <- if (nrow(df) == 0) 1 else max(df$번호, na.rm = TRUE) + 1
+    new_row <- data.frame(
+      번호      = new_id,
+      작성일    = Sys.time(),
+      작성자  = input$author,
+      제목  = input$title,
+      내용 = input$content
+    )
+    sheet_append(sheet_url, new_row)
+    showNotification("글이 등록되었습니다.", type = "message")
+    df2 <- read_sheet(sheet_url)
+    posts(df2)
+    updateTextInput(session, "작성자", value = "")
+    updateTextInput(session, "제목",  value = "")
+    updateTextAreaInput(session, "내용", value = "")
+  })
+  current_id <- reactiveVal(NULL)
+  observeEvent(input$table_rows_selected, {
+    row <- input$table_rows_selected
+    req(length(row) == 1)
+    df <- posts()
+    req(nrow(df) >= row)
+    this_post <- df[row, ]
+    current_id(this_post$번호)
+    nav_select(id = "tabs", selected = "tab_3") 
+  })
+  output$post_ui <- renderUI({
+    req(current_id())
+    df <- posts()
+    post <- df |> filter(번호 == current_id())
+    
+    if (nrow(post) == 0) {
+      return(p("선택된 글이 없습니다."))
+    }
+    
+    tagList(
+      h3(post$제목),
+      p(strong("작성자: "), post$작성자),
+      p(strong("작성일: "), as.character(post$작성일)),
+      tags$hr(),
+      pre(post$내용)  
+    )
+  })
+  observe({
+    invalidateLater(30000, session)
+  })
+}
+
+shinyApp(ui, server)
 ```
