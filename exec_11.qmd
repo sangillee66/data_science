@@ -280,21 +280,21 @@ UI 파일과 Server 파일을 분리하는 방식은 코드가 매우 복잡할 
 
 다음은 다섯 가지 기본 쌍을 보여준다. 출력 함수는 `*Output()`의 형식을, 렌더링 함수는 `render*({})`의 형식을 취한다.
 
-+----------------------+--------------------------------------+----------------------+
-| 형식                 | 출력 함수(UI)                        | 렌더링 함수(Server)  |
-+======================+======================================+======================+
-| 플롯                 | `plotOutput(outputID = "")`          | `renderPlot({})`     |
-+----------------------+--------------------------------------+----------------------+
-| 테이블               | `tableOutput(outputID = "")`         | `renderTable({})`    |
-+----------------------+--------------------------------------+----------------------+
-| 일반 텍스트          | `textOutput(outputID = "")`          | `renderText({})`     |
-+----------------------+--------------------------------------+----------------------+
-| 사전 포맷된 텍스트   | `verbatimeTextOutput(outputID = "")` | `renderPrint({})`    |
-+----------------------+--------------------------------------+----------------------+
-| 이미지               | `imageOutput(outputID = "")`         | `renderImage({})`    |
-+----------------------+--------------------------------------+----------------------+
-| HTML 원문            | `uiOutput(outputID = "")`            | `renderUI({})`       |
-+----------------------+--------------------------------------+----------------------+
++--------------------+--------------------------------------+---------------------+
+| 형식               | 출력 함수(UI)                        | 렌더링 함수(Server) |
++====================+======================================+=====================+
+| 플롯               | `plotOutput(outputID = "")`          | `renderPlot({})`    |
++--------------------+--------------------------------------+---------------------+
+| 테이블             | `tableOutput(outputID = "")`         | `renderTable({})`   |
++--------------------+--------------------------------------+---------------------+
+| 일반 텍스트        | `textOutput(outputID = "")`          | `renderText({})`    |
++--------------------+--------------------------------------+---------------------+
+| 사전 포맷된 텍스트 | `verbatimeTextOutput(outputID = "")` | `renderPrint({})`   |
++--------------------+--------------------------------------+---------------------+
+| 이미지             | `imageOutput(outputID = "")`         | `renderImage({})`   |
++--------------------+--------------------------------------+---------------------+
+| HTML 원문          | `uiOutput(outputID = "")`            | `renderUI({})`      |
++--------------------+--------------------------------------+---------------------+
 
 : 기본 출력 함수와 렌더링 함수 쌍 {#tbl-out1 tbl-colwidths="\[25, 50, 25\]"}
 
@@ -631,7 +631,7 @@ Shiny 반응성 플로의 핵심 골자를 우선적으로 이해할 필요가 �
 
 입력 함수와 렌더링 함수는 앞에서 이미 다루었으므로, 여기서는 나머지 세 종류의 함수에 집중하고자 한다.
 
-#### 반응형 표현식 함수 
+#### 반응형 표현식 함수
 
 반응형 표현식 함수란 다른 반응형 값에 의존하여 값을 계산하고 반환(return)하는 반응형 계산 단위이다. 이 표현식에 의존하는 값이 변경되면 자동으로 다시 계산된다. 반응형 표현식 함수에 다음의 두 가지가 있다.
 
@@ -768,17 +768,17 @@ observe({
 
 마지막으로 `observeEvent()` 와 `eventReactive()`를 비교할 필요가 있다.
 
-+--------------+---------------------------+---------------------------------+
-| 기능         | `observeEvent()`          | `eventReactive()`               |
-+==============+===========================+=================================+
-| 반환값       | 없음                      | 있음                            |
-+--------------+---------------------------+---------------------------------+
-| 용도         | 행동(action), UI 업데이트 | 계산 결과 저장 및 반환          |
-+--------------+---------------------------+---------------------------------+
-| 호출 방식    | 그냥 실행                 | `result()`처럼 반응성 객체 호출 |
-+--------------+---------------------------+---------------------------------+
-| 내부 로직    | 사이드 이펙트 수행        | 이벤트 기반 계산식              |
-+--------------+---------------------------+---------------------------------+
++---------------+---------------------------+---------------------------------+
+| 기능          | `observeEvent()`          | `eventReactive()`               |
++===============+===========================+=================================+
+| 반환값        | 없음                      | 있음                            |
++---------------+---------------------------+---------------------------------+
+| 용도          | 행동(action), UI 업데이트 | 계산 결과 저장 및 반환          |
++---------------+---------------------------+---------------------------------+
+| 호출 방식     | 그냥 실행                 | `result()`처럼 반응성 객체 호출 |
++---------------+---------------------------+---------------------------------+
+| 내부 로직     | 사이드 이펙트 수행        | 이벤트 기반 계산식              |
++---------------+---------------------------+---------------------------------+
 
 #### 반응형 저장소 함수
 
@@ -869,7 +869,7 @@ observeEvent(search_text(), {
 
 ### 웹 앱 배포(deployment)
 
-웹 앱을 배포하는 방법은 다양할 수 있지만 여기서는 [shinyapp.io](https://www.shinyapps.io/)를 이용하는 방법에 대해 배운다.
+웹 앱을 배포하는 데는 몇 가지 방법이 있지만 여기서는 [shinyapp.io](https://www.shinyapps.io/)를 이용하는 방법에 대해 배운다.
 
 첫째, 해당 홈페이지(<https://www.shinyapps.io/>)에 접속한다.
 
@@ -893,67 +893,149 @@ observeEvent(search_text(), {
 
 -   https://userid.shinyapps.io/project_name/
 
-### Quarto와 Shiny의 결합
+## LLM과 웹 앱의 결합
 
--   상황: Quarto 대시보드의 일부 영역에서 Shiny 사용
+LLM을 웹 앱과 결합하는 다양한 방식에 대해 고민할 필요가 있다. LLM의 능력을 이용해 웹 앱의 내용 요소를 구성하는 것이 AI 기술과 웹 앱 기술을 접목하는 가장 좋은 방법이다.
 
--   두 가지 접근
+### LLM과 Shiny의 결합: 챗봇
 
-    -   Shiny 중심 방식: Shiny 웹 앱의 생성
+LLM과 Shiny를 결합하여 챗봇을 만들어 본다. 이를 위해 [**ellmer**](https://ellmer.tidyverse.org/) 패키지와 [**shinychat**](https://posit-dev.github.io/shinychat/r/) 패키지를 활용한다. [**ellmer**](https://ellmer.tidyverse.org/) 패키지는 R 환경에서 LLM을 쉽고 직관적으로 호출하고 사용할 수 있도록 설계된 채팅 기반 인터페이스 패키지이다. 다양한 LLM과의 통합, 채팅 중심의 상호작용, 구조화된 데이터 추출, 도구 호출 및 함수 생성 등의 기능을 제공한다. [**shinychat**](https://posit-dev.github.io/shinychat/r/) 패키지는 Shiny 웹 앱 내에 현대적이고 세련된 채팅 인터페이스를 손쉽게 구축할 수 있도록 도와주는 패키지이다. 완성된 채팅 UI를 제공하며, 실시간 스트리밍 응답을 구현한다.
 
-        -   Quarto 대시보드 내에서 Quarto 문법으로 Shiny 웹 앱 구축
+다음의 코드를 통해 ChatGPT를 활용한 챗봇을 구축할 수 있다.
 
-        -   Quarto 대시보드 전체가 Shiny 웹 앱화: shinyapps.io를 통해 배포
+```{r}
+#| eval: false
 
-        -   사례: <https://sangillee.shinyapps.io/Dashboard_Example/>
+library(shiny)
+library(shinychat)
+library(bslib)
+library(ellmer)
 
-    -   Quarto 중심 방식: Quarto 대시보드의 유지
+ui <- page_fillable(
+  chat_ui(
+    id = "chat",
+    messages = "your messages here"
+  ),
+  fillable_mobile = TRUE
+)
 
-        -   Quarto 대시보드 속에 독립적으로 구축된 Shiny 웹 앱 임베딩
+server <- function(input, output, session) {
+  chat <-
+    chat_openai(
+      base_url = "https://api.openai.com/v1",
+      model = "gpt-5.2",
+      api_key = "your_api_key_here",
+      system_prompt = ""
+    )
 
-        -   여전히 Quarto 대시보드: Quarto Pub을 통해 배포
+  observeEvent(input$chat_user_input, {
+    stream <- chat$stream_async(input$chat_user_input)
+    chat_append("chat", stream)
+  })
+}
 
-        -   사례: <https://sangillee.snu.ac.kr/dashboard_examples/>
+shinyApp(ui, server)
+```
 
-#### Shiny 중심 방식
+`chat_ui()`와 `chat_append()` 함수가 [**shinychat**](https://posit-dev.github.io/shinychat/r/) 패키지 함수이다. `chat_ui()` 함수는 채팅창 인터페이스를 생성하는 함수이며, `chat_append()` 함수는 채팅창에 새로운 메시지를 추가하는 함수이다. `chat_openai()` 함수가 [**ellmer**](https://ellmer.tidyverse.org/) 패키지의 함수인데, R 세션과 OpenAI의 LLM 사이의 연결 통로를 생성하는 역할을 한다. LLM 모델과의 인터페이스 구축, 대화 맥락 유지, 시스템 프롬프트 설정, 다양한 응답 방식 지원 등의 기능을 한다.
 
--   옵션 1: Quarto를 Shiny 웹 앱의 레이아웃 설정 도구로 사용
+## Quarto와 Shiny의 결합
 
-    -   **shiny** 패키지: [`fluidPage()`](https://rdrr.io/pkg/shiny/man/fluidPage.html)
+Quarto를 통해서 프로트엔드 웹 앱을 만들 수 있고, Shiny를 활용하면 서버-기반 웹 앱을 만들 수 있다. Quarto로 만들어진 웹 앱은 제작이 용이하고 가벼우며 호스팅 절차가 간단하다는 장점이 있지만 상호작용성을 고양하는데는 한계가 있다. Shiny로 만들어진 웹 앱은 높은 수준의 사용자 상호작용성을 보장하다는 확실한 장점이 있지만 제작이 상대적으로 어렵고 무거우며 호스팅 절차가 복잡하다는 단점이 있다.
 
-        -   [`titlePanel()`](https://rdrr.io/pkg/shiny/man/titlePanel.html), `SidebarLayout()`, [`sidebarPanel()`](https://rdrr.io/pkg/shiny/man/sidebarLayout.html), [`mainPanel()`](https://rdrr.io/pkg/shiny/man/sidebarLayout.html)
+따라서 많은 경우 두 가지의 장점을 결합하는 것이 도움이 된다. 특히 Shiny를 통해 구현되는 서버-기반 웹 앱의 요소가 많은 부분을 차지하는 웹 앱이 아니라면 Quarto 웹 앱을 기본으로 하고 거기에 Shiny 웹 앱의 요소를 부가하는 방식이 적절하다. 따라서 여기서는 Quarto 대시보드의 일부 영역에서 Shiny 사용하는 방법에 대해 다룬다.
 
-    -   **bslib** 패키지: [`page_sidebar()`](https://rstudio.github.io/bslib/reference/page_sidebar.html)
+여기에는 두 가지 접근이 있을 수 있다. 이것은 두 개의 결합으로 만들어지는 최종 웹 앱이 어떤 것이냐에 달려 있다. 즉, 최종적으로 Shiny 웹 앱이 만들어지면 Shiny 중심 방식이고, Quarto 웹 앱이 만들어지면 Quarto 중심 방식이라 부를 수 있다.
 
-        -   `sidebar = sidebar()`, [`card()`](https://rstudio.github.io/bslib/reference/card.html)
+Shiny 중심 방식은 Quarto 대시보드 내에서 Quarto 문법으로 Shiny 웹 앱을 구축하는 것이다. 이렇게 하면 웹 앱 전체가 Shiny 웹 앱화 되며 따라서 shinyapps.io를 통해 배포해야만 한다. 이에 반해 Quarto 중심 방식은 Quarto 대시보드 속에 독립적으로 구축된 Shiny 웹 앱 임베딩하는 것으로 Quarto 웹 앱이 그대로 유지된다. 따라서 Quarto Pub을 통해 배포할 수 있다. 다음의 두 웹 앱을 비교할 수 있다.
 
--   옵션 2: Quarto 대시보드 내에서 Shiny 웹 앱 구축
+-   Shiny 중심 방식: <https://sangillee.shinyapps.io/Dashboard_Example/>
+
+-   Quarto 중심 방식: <https://sangillee.snu.ac.kr/dashboard_examples/>
+
+### Shiny 중심 방식
+
+Shiny 중심 방식은 Quarto의 행렬 분할을 통한 레이아웃 설정 방식을 활용하여 입력 함수와 출력 함수를 포함하는 전략을 사용한다. 원 Shiny 패키지가 `fluidPage()`, `titlePanel()`, `sidebarLayout()`, `sidebarPanel()`, `mainPanel()`과 같은 UI 구조 함수를 사용하고, bslib 패키지가 `page_sidebar()`, `sidebar()`, `card()` 함수를 사용하는 것과 동일한 방식으로 Quarto의 레이아웃 함수를 활용하는 것이다. 중요한 것은 구조, 컨테이너, 레이아웃 속에 입력 함수와 출력 함수를 위치시키는 것이다.
+
+이렇게 Quarto 대시보드 내에서 Shiny 웹 앱 구축하는 방법에 대해서는 다음의 내용을 참고할 수 있다.
 
 -   <https://quarto.org/docs/dashboards/interactivity/shiny-r.html>
 
--   YAML 헤더에 다음 첨가: `server: shiny`
+위의 내용을 정리하면 다음과 같다.
 
--   ui 부분: 기본적으로는 `r` 코드 청크 속에 포함, 사이드바와 메인 병렬
+첫째, YAML 헤더에 `server: shiny`를 첨가한다. 이것이 포함되는 순간 전체 웹 앱이 Shiny 웹 앱으로 바뀐다.
 
-    -   사이드바: 레이아웃 구성요소에 넣고 `{.sidebar}` CSS 클래스 지정 가능
+둘째, 사이드바와 메인 출력 영역으로 구성되는 UI 부분은 단일 row의 두 column 속에 배치한다.
 
-    -   메인: 사이드바와 다른 레이아웃 구성요소에 넣기 가능
+-   사이드바: 첫 번째 column 속에 `r` 코드 청크를 열고 그 속에 입력 함수를 위치 시킨다. 그리고 해당 column에 `{.sidebar}` CSS 클래스를 지정한다.
 
--   server 부분: `r` 코드 청크 속에 포함, 다음 지정
+-   메인 출력 영역: 두 번째 column 속에 `r` 코드 청크를 열어 그 속에 출력 함수를 위치 시킨다.
 
-    -   `#| context: server` 지정
+셋째, Server 부분은 row와 column에 관계 없이 `r` 코드 청크를 열고 그 속에 랜더 함수를 포함한 서버 내용을 위치시킨다. 그리고 청크 옵션으로 다음을 지정한다.
 
--   기타(패키지, 데이터 등) 부분: `r` 코드 청크 속에 포함, 다음 지정
+-   `#| context: server`
 
-    -   `#| context: setup`
+넷째, 기타(패키지, 데이터 등) 부분은 row와 column에 관계 없이 `r` 코드 청크를 열고 그 속에 내용을 위치시킨다. 그리고 청크 옵션으로 다음을 지정한다.
 
-    -   `#| include: false`
+-   `#| context: setup`
 
-#### Quarto 중심 방식
+-   `#| include: false`
 
--   보통 하나의 row에 임베딩
+앞의 예제는 아래와 같이 처리하면 유사한 형태의 웹 앱이 만들어진다. Quarto로 만든 다른 row와 column이 있을 경우 해당 웹 앱은 전체가 shiny 웹 앱화한다.
 
--   `src=""` 부분만 교체
+````{verbatim}
+---
+title: "quarto-shiny-1"
+format: dashboard
+server: shiny
+---
+
+## shiny
+
+### sidebar {.sidebar}
+
+```{r}
+sliderInput(inputId = "bins", 
+            label = "Number of bins:",
+            min = 1, max = 50, value = 30)
+```
+
+### main
+
+```{r}
+#| context: setup
+#| include: false
+library(shiny)
+library(tidyverse)
+library(bslib)
+library(plotly)
+```
+
+```{r}
+plotlyOutput("distPlot")
+```
+
+```{r}
+#| context: server
+output$distPlot <- renderPlotly({
+  x <- faithful[, 2]
+  gg <- ggplot() +
+    geom_histogram(
+      aes(x = x), bins = input$bins, fill = 'darkgray', color = 'white'
+    ) +
+    labs(
+      x = 'Waiting time to next eruption (in mins)',
+      y = "Frequencies",
+      title = 'Histogram of waiting times'
+    )
+  ggplotly(gg)
+})
+```
+````
+
+### Quarto 중심 방식
+
+외부에서 만들어진 Shiny 웹 앱을 임베딩한다. 만일 @fig-first 과 같은 전형적인 사이드바와 메일 콘텐츠 영역으로 이루어진 웹 앱이라면 Quarto 웹 앱의 한 row 속에 임베딩하면 된다. 아래의 `src=""` 부분에 Shiny 웹 앱의 URL을 넣으면 된다.
 
 ```         
 <iframe src="https://..." loading="lazy" style="width: 100%; height: 600px; border: 0px none;" allow="web-share; clipboard-write"></iframe>
