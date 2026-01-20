@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.13">
+<meta name="generator" content="quarto-1.8.26">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="author" content="이상일(서울대학교 지리교육과)">
+
 <title>소통하기: Quarto로 대시보드 만들기 – Data Science</title>
 <style>
 code{white-space: pre-wrap;}
@@ -55,6 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -71,9 +75,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ac077c1e730dfeb5e42400639d17284e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-ea00d30dd9b950c7ecb6e17bc6ca0835.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ac077c1e730dfeb5e42400639d17284e.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-9e227471bb36b425561843ed1c2ca3ae.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -81,7 +85,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-9e227471bb36b425561843ed1c2ca3ae.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -107,8 +112,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "검색",
     "search-label": "검색"
   }
-}</script><link rel="stylesheet" href="styles.css">
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -274,7 +283,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -285,9 +296,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Data Science</a> 
         <div class="sidebar-tools-main">
@@ -302,7 +317,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">웹사이트 소개</span></a>
@@ -317,8 +332,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R과 RStudio</span></a>
@@ -381,11 +396,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">웹 앱 개발: Shiny의 활용</span></a>
+ <span class="menu-text">웹 앱 개발: Shiny의 기초</span></a>
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -395,8 +410,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R_lec_01_2025.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">| <span style="color:coral;font-size:0.6em">R Lecture 1</span> | <span style="font-size:1em">R과 RStudio</span></span></a>
@@ -469,7 +484,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -479,8 +494,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R_lec_01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R &amp; RStudio</span></a>
@@ -541,7 +556,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -551,8 +566,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lab_01_2025.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R and RStudio</span></a>
@@ -613,7 +628,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -623,8 +638,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lab_01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab01: R과 RStudio</span></a>
@@ -685,48 +700,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">목차</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
    
   <ul>
-<li><a href="#%EA%B0%9C%EC%9A%94" id="toc-개요" class="nav-link active" data-scroll-target="#%EA%B0%9C%EC%9A%94">개요</a></li>
-  <li>
-<a href="#quarto-%EC%9E%85%EB%AC%B8" id="toc-quarto-입문" class="nav-link" data-scroll-target="#quarto-%EC%9E%85%EB%AC%B8"><span class="header-section-number">1</span> Quarto 입문</a>
+  <li><a href="#개요" id="toc-개요" class="nav-link active" data-scroll-target="#개요">개요</a></li>
+  <li><a href="#quarto-입문" id="toc-quarto-입문" class="nav-link" data-scroll-target="#quarto-입문"><span class="header-section-number">1</span> Quarto 입문</a>
   <ul class="collapse">
-<li><a href="#quarto%EB%9E%80" id="toc-quarto란" class="nav-link" data-scroll-target="#quarto%EB%9E%80"><span class="header-section-number">1.1</span> Quarto란?</a></li>
-  <li><a href="#quarto-%EB%8B%A4%ED%81%90%EB%A8%BC%ED%8A%B8%EC%9D%98-%EA%B8%B0%EB%B3%B8-%EA%B5%AC%EC%A1%B0" id="toc-quarto-다큐먼트의-기본-구조" class="nav-link" data-scroll-target="#quarto-%EB%8B%A4%ED%81%90%EB%A8%BC%ED%8A%B8%EC%9D%98-%EA%B8%B0%EB%B3%B8-%EA%B5%AC%EC%A1%B0"><span class="header-section-number">1.2</span> Quarto 다큐먼트의 기본 구조</a></li>
-  <li><a href="#%EA%B8%B0%EB%B3%B8-quarto-%EB%8B%A4%ED%81%90%EB%A8%BC%ED%8A%B8%EC%9D%98-%EC%9E%91%EC%84%B1" id="toc-기본-quarto-다큐먼트의-작성" class="nav-link" data-scroll-target="#%EA%B8%B0%EB%B3%B8-quarto-%EB%8B%A4%ED%81%90%EB%A8%BC%ED%8A%B8%EC%9D%98-%EC%9E%91%EC%84%B1"><span class="header-section-number">1.3</span> 기본 Quarto 다큐먼트의 작성</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#%EA%B0%9C%EC%9D%B8-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0" id="toc-개인-블로그-만들기" class="nav-link" data-scroll-target="#%EA%B0%9C%EC%9D%B8-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0"><span class="header-section-number">2</span> 개인 블로그 만들기</a>
+  <li><a href="#quarto란" id="toc-quarto란" class="nav-link" data-scroll-target="#quarto란"><span class="header-section-number">1.1</span> Quarto란?</a></li>
+  <li><a href="#quarto-다큐먼트의-기본-구조" id="toc-quarto-다큐먼트의-기본-구조" class="nav-link" data-scroll-target="#quarto-다큐먼트의-기본-구조"><span class="header-section-number">1.2</span> Quarto 다큐먼트의 기본 구조</a></li>
+  <li><a href="#기본-quarto-다큐먼트의-작성" id="toc-기본-quarto-다큐먼트의-작성" class="nav-link" data-scroll-target="#기본-quarto-다큐먼트의-작성"><span class="header-section-number">1.3</span> 기본 Quarto 다큐먼트의 작성</a></li>
+  </ul></li>
+  <li><a href="#개인-블로그-만들기" id="toc-개인-블로그-만들기" class="nav-link" data-scroll-target="#개인-블로그-만들기"><span class="header-section-number">2</span> 개인 블로그 만들기</a>
   <ul class="collapse">
-<li><a href="#%EC%83%88%EB%A1%9C%EC%9A%B4-quarto-blog-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0" id="toc-새로운-quarto-blog-프로젝트-시작하기" class="nav-link" data-scroll-target="#%EC%83%88%EB%A1%9C%EC%9A%B4-quarto-blog-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0"><span class="header-section-number">2.1</span> 새로운 Quarto Blog 프로젝트 시작하기</a></li>
-  <li><a href="#%EB%A0%8C%EB%8D%94%EB%A7%81%ED%95%98%EC%97%AC-%EA%B2%B0%EA%B3%BC%EB%A5%BC-%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0" id="toc-렌더링하여-결과를-살펴보기" class="nav-link" data-scroll-target="#%EB%A0%8C%EB%8D%94%EB%A7%81%ED%95%98%EC%97%AC-%EA%B2%B0%EA%B3%BC%EB%A5%BC-%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0"><span class="header-section-number">2.2</span> 렌더링하여 결과를 살펴보기</a></li>
-  <li><a href="#%EA%B5%AC%EC%84%B1-%EC%9A%94%EC%86%8C-%EC%88%98%EC%A0%95%ED%95%98%EA%B8%B0" id="toc-구성-요소-수정하기" class="nav-link" data-scroll-target="#%EA%B5%AC%EC%84%B1-%EC%9A%94%EC%86%8C-%EC%88%98%EC%A0%95%ED%95%98%EA%B8%B0"><span class="header-section-number">2.3</span> 구성 요소 수정하기</a></li>
-  <li><a href="#%EB%B8%94%EB%A1%9C%EA%B7%B8%EB%A5%BC-%EC%9B%B9-%EC%83%81%EC%97%90-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0" id="toc-블로그를-웹-상에-배포하기" class="nav-link" data-scroll-target="#%EB%B8%94%EB%A1%9C%EA%B7%B8%EB%A5%BC-%EC%9B%B9-%EC%83%81%EC%97%90-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0"><span class="header-section-number">2.4</span> 블로그를 웹 상에 배포하기</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0" id="toc-대시보드-만들기" class="nav-link" data-scroll-target="#%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0"><span class="header-section-number">3</span> 대시보드 만들기</a>
+  <li><a href="#새로운-quarto-blog-프로젝트-시작하기" id="toc-새로운-quarto-blog-프로젝트-시작하기" class="nav-link" data-scroll-target="#새로운-quarto-blog-프로젝트-시작하기"><span class="header-section-number">2.1</span> 새로운 Quarto Blog 프로젝트 시작하기</a></li>
+  <li><a href="#렌더링하여-결과를-살펴보기" id="toc-렌더링하여-결과를-살펴보기" class="nav-link" data-scroll-target="#렌더링하여-결과를-살펴보기"><span class="header-section-number">2.2</span> 렌더링하여 결과를 살펴보기</a></li>
+  <li><a href="#구성-요소-수정하기" id="toc-구성-요소-수정하기" class="nav-link" data-scroll-target="#구성-요소-수정하기"><span class="header-section-number">2.3</span> 구성 요소 수정하기</a></li>
+  <li><a href="#블로그를-웹-상에-배포하기" id="toc-블로그를-웹-상에-배포하기" class="nav-link" data-scroll-target="#블로그를-웹-상에-배포하기"><span class="header-section-number">2.4</span> 블로그를 웹 상에 배포하기</a></li>
+  </ul></li>
+  <li><a href="#대시보드-만들기" id="toc-대시보드-만들기" class="nav-link" data-scroll-target="#대시보드-만들기"><span class="header-section-number">3</span> 대시보드 만들기</a>
   <ul class="collapse">
-<li><a href="#%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C%EC%9D%98-%EA%B8%B0%EB%B3%B8-%EA%B5%AC%EC%A1%B0" id="toc-대시보드의-기본-구조" class="nav-link" data-scroll-target="#%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C%EC%9D%98-%EA%B8%B0%EB%B3%B8-%EA%B5%AC%EC%A1%B0"><span class="header-section-number">3.1</span> 대시보드의 기본 구조</a></li>
-  <li><a href="#%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83-%EC%84%A4%EC%A0%95" id="toc-레이아웃-설정" class="nav-link" data-scroll-target="#%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83-%EC%84%A4%EC%A0%95"><span class="header-section-number">3.2</span> 레이아웃 설정</a></li>
-  <li><a href="#%EB%82%B4%EB%B9%84%EA%B2%8C%EC%9D%B4%EC%85%98%EB%B0%94%EC%99%80-%EC%82%AC%EC%9D%B4%EB%93%9C%EB%B0%94%EC%9D%98-%EC%84%A4%EC%A0%95" id="toc-내비게이션바와-사이드바의-설정" class="nav-link" data-scroll-target="#%EB%82%B4%EB%B9%84%EA%B2%8C%EC%9D%B4%EC%85%98%EB%B0%94%EC%99%80-%EC%82%AC%EC%9D%B4%EB%93%9C%EB%B0%94%EC%9D%98-%EC%84%A4%EC%A0%95"><span class="header-section-number">3.3</span> 내비게이션바와 사이드바의 설정</a></li>
-  <li><a href="#%EC%B9%B4%EB%93%9C%EC%99%80-%EB%82%B4%EC%9A%A9-%EC%9A%94%EC%86%8C" id="toc-카드와-내용-요소" class="nav-link" data-scroll-target="#%EC%B9%B4%EB%93%9C%EC%99%80-%EB%82%B4%EC%9A%A9-%EC%9A%94%EC%86%8C"><span class="header-section-number">3.4</span> 카드와 내용 요소</a></li>
-  <li><a href="#%EC%98%88%EC%8B%9C-%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0" id="toc-예시-대시보드-만들기" class="nav-link" data-scroll-target="#%EC%98%88%EC%8B%9C-%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0"><span class="header-section-number">3.5</span> 예시 대시보드 만들기</a></li>
-  <li><a href="#%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C%EB%A5%BC-%EC%9B%B9%EC%83%81%EC%97%90-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0" id="toc-대시보드를-웹상에-배포하기" class="nav-link" data-scroll-target="#%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C%EB%A5%BC-%EC%9B%B9%EC%83%81%EC%97%90-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0"><span class="header-section-number">3.6</span> 대시보드를 웹상에 배포하기</a></li>
+  <li><a href="#대시보드의-기본-구조" id="toc-대시보드의-기본-구조" class="nav-link" data-scroll-target="#대시보드의-기본-구조"><span class="header-section-number">3.1</span> 대시보드의 기본 구조</a></li>
+  <li><a href="#레이아웃-설정" id="toc-레이아웃-설정" class="nav-link" data-scroll-target="#레이아웃-설정"><span class="header-section-number">3.2</span> 레이아웃 설정</a></li>
+  <li><a href="#내비게이션바와-사이드바의-설정" id="toc-내비게이션바와-사이드바의-설정" class="nav-link" data-scroll-target="#내비게이션바와-사이드바의-설정"><span class="header-section-number">3.3</span> 내비게이션바와 사이드바의 설정</a></li>
+  <li><a href="#카드와-내용-요소" id="toc-카드와-내용-요소" class="nav-link" data-scroll-target="#카드와-내용-요소"><span class="header-section-number">3.4</span> 카드와 내용 요소</a></li>
+  <li><a href="#예시-대시보드-만들기" id="toc-예시-대시보드-만들기" class="nav-link" data-scroll-target="#예시-대시보드-만들기"><span class="header-section-number">3.5</span> 예시 대시보드 만들기</a></li>
+  <li><a href="#대시보드를-웹상에-배포하기" id="toc-대시보드를-웹상에-배포하기" class="nav-link" data-scroll-target="#대시보드를-웹상에-배포하기"><span class="header-section-number">3.6</span> 대시보드를 웹상에 배포하기</a></li>
+  </ul></li>
   </ul>
-</li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>이슈 보고</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>이슈 보고</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
 <h1 class="title d-none d-lg-block">소통하기: Quarto로 대시보드 만들기</h1>
 </div>
 
@@ -753,7 +769,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><section id="개요" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="개요">개요</h2>
+</header>
+
+
+<section id="개요" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="개요">개요</h2>
 <p>여기서는 데이터사이언스 과정의 ‘소통(communication)’ 단계 혹은 ’데이터로 소통하기’를 위한 핵심 도구로서의 <a href="https://quarto.org/"><strong>Quarto</strong></a>를 다룬다. 그리고 더 나아가 <a href="https://quarto.org/"><strong>Quarto</strong></a>를 활용해 대시보드를 만드는 과정에 대해 설명한다.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -768,41 +788,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Quarto는 한글로 ’쿼토’라고 읽는다.</p>
 </div>
 </div>
-</section><section id="quarto-입문" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="quarto-입문">
-<span class="header-section-number">1</span> Quarto 입문</h2>
-<section id="quarto란" class="level3" data-number="1.1"><h3 data-number="1.1" class="anchored" data-anchor-id="quarto란">
-<span class="header-section-number">1.1</span> Quarto란?</h3>
+</section>
+<section id="quarto-입문" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="quarto-입문"><span class="header-section-number">1</span> Quarto 입문</h2>
+<section id="quarto란" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="quarto란"><span class="header-section-number">1.1</span> Quarto란?</h3>
 <p><a href="https://quarto.org/"><strong>Quarto</strong></a>는 “과학적, 기술적 출판을 위한 오픈소스 시스템(an open-source scientific and technical publishing system)”으로 정의되는데, 다양한 형식의 저작물(연구 논문, 프레젠테이션, 대시보드, 웹사이트, 블로그, 서적 등)을 다양한 디지털 포맷(HTML, PDF, MS Word, ePub 등)으로 출판할 수 있게 해준다.</p>
 <p><a href="https://quarto.org/"><strong>Quarto</strong></a>는 연구 노트, 레포트, 블로그 등을 작성할 수 있게 해준다는 측면에서 ‘개인적’ 도구이지만, 다양한 규모의 프로젝트의 원할한 진행을 도와준다는 측면에서 ‘협업’ 도구이며, 더 나아가 과학 커뮤니티 전체의 재현성(reproducibility) 고양에 도움을 줄 수 있다는 측면에서 ‘사회적’ 도구이기도 하다.</p>
 <p>원래 R 커뮤니티에는 유사한 기능을 수행하는 <a href="https://rmarkdown.rstudio.com/"><strong>RMarkdown</strong></a>이라는 도구가 존재했고 여전히 많은 사람들이 사용하고 있다. <a href="https://quarto.org/"><strong>Quarto</strong></a>는 기존의 <a href="https://rmarkdown.rstudio.com/"><strong>RMarkdown</strong></a>에 ’통합’이라는 키워드를 적용시켜 보다 발전된 형태의 저작 시스템으로 거듭난 것이다. 우선 <a href="https://quarto.org/"><strong>Quarto</strong></a>는 다양한 오픈소스 프로그래밍 언어에서 사용될 수 있다(R, Python, Julia, Observable). 둘째, <a href="https://quarto.org/"><strong>Quarto</strong></a>는 출판물의 다양한 형식에 구애되지 않는 일관성있는 저작 시스템을 제공한다.</p>
 <div id="fig-quarto-1" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-quarto-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-quarto-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/clipboard-746810244.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="그림&nbsp;1: Quarto의 기본 개념(https://rstudio.github.io/cheatsheets/html/quarto.html)"><img src="images/clipboard-746810244.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quarto-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;1: <strong>Quarto</strong>의 기본 개념(<a href="https://rstudio.github.io/cheatsheets/html/quarto.html" class="uri">https://rstudio.github.io/cheatsheets/html/quarto.html</a>)
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 <p><a href="https://quarto.org/"><strong>Quarto</strong></a> 다큐먼트의 기본 구문은 마크다운(markdown), 혹은 마크다운의 보다 특수한 형태로서의 팬독(pandoc) 마크다운이다. 마크다운 언어는 마크업(markup) 언어의 일종인데, 마크업 언어는 다큐먼트의 구조와 포맷을 관장하는 텍스트-엔코딩 시스템이다. 그런데 마크업 언어는 배우기 어렵다. 예를 들어, 대표적인 마크업 언어인 HTML은 수많은 태그의 복잡한 위계 구조를 가지고 있어 사용자 입장에서는 읽기도 어렵고, 쓰기도 어렵다. 마크다운 언어는 사용자가 보다 사용하기 쉬운 구문 구조를 제공함으로써 동일한 웹 결과물을 보다 용이하게 제작할 수 있게 도와준다. <a href="https://quarto.org/"><strong>Quarto</strong></a>는 이러한 마크다운 언어에 기반하고 있다.</p>
 <p>프로그래밍 언어와의 관련성이라는 측면에서 보면, <a href="https://quarto.org/"><strong>Quarto</strong></a> 다큐먼트는 기본적으로 워드프로세서에 프로그래밍 언어가 부가된 것으로 이해할 수 있다. 워드프로세서가 기본적으로 제공하는 텍스트 작성, 테이블 작성, 그래픽 삽입 등의 기능 외에 코드 편집, 코드 실행, 실행 결과 삽입 등의 기능이 함께 포함되어 있다. 이렇게 작성된 <a href="https://quarto.org/"><strong>Quarto</strong></a> 다큐먼트는 <code>.qmd</code>라는 확장자를 갖는다. <a href="https://quarto.org/"><strong>Quarto</strong></a> 다큐먼트를 렌더링하면 <code>knitr</code> 패키지가 마크다운 파일(.md)을 생성하고, pandoc이 그것들을 다양한 포맷의 산출물로 변환한다.</p>
 <div id="fig-quarto-2" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-quarto-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-quarto-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="https://quarto.org/docs/get-started/hello/images/rstudio-qmd-how-it-works.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="그림&nbsp;2: Quarto의 작동 방식(https://quarto.org/docs/get-started/hello/rstudio.html)"><img src="https://quarto.org/docs/get-started/hello/images/rstudio-qmd-how-it-works.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quarto-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;2: <strong>Quarto</strong>의 작동 방식(<a href="https://quarto.org/docs/get-started/hello/rstudio.html" class="uri">https://quarto.org/docs/get-started/hello/rstudio.html</a>)
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
-</section><section id="quarto-다큐먼트의-기본-구조" class="level3" data-number="1.2"><h3 data-number="1.2" class="anchored" data-anchor-id="quarto-다큐먼트의-기본-구조">
-<span class="header-section-number">1.2</span> Quarto 다큐먼트의 기본 구조</h3>
+</section>
+<section id="quarto-다큐먼트의-기본-구조" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="quarto-다큐먼트의-기본-구조"><span class="header-section-number">1.2</span> Quarto 다큐먼트의 기본 구조</h3>
 <p><a href="#fig-example" class="quarto-xref">그림&nbsp;3</a> 을 바탕으로 <a href="https://quarto.org/"><strong>Quarto</strong></a>다큐먼트의 기본 구조를 설명하고자 한다. 왼쪽은 비주얼 에디터(visual editor)를 사용한 것이고, 오른쪽은 소스 에디터(source editor)를 사용한 것이다. 소스 에디터는 마크다운 구문을 그대로 사용하는 것이므로 마크다운의 <a href="https://quarto.org/docs/authoring/markdown-basics.html">기본 형식</a>에 대한 이해가 선행되어야 한다. 이에 반해 비주얼 에디터는 마치 워드프로세서를 다루듯 메뉴 형식으로 <a href="https://quarto.org/"><strong>Quarto</strong></a> 다큐먼트를 작성할 수 있다. 비주얼 에디터에 대해서는 뒤에서 상세히 다루기로 한다.</p>
 <div id="fig-example" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="https://quarto.org/docs/get-started/hello/images/rstudio-source-visual.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="그림&nbsp;3: Quarto의 기본 구조와 비주얼 에디터"><img src="https://quarto.org/docs/get-started/hello/images/rstudio-source-visual.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;3: <strong>Quarto</strong>의 기본 구조와 비주얼 에디터
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 <p><a href="#fig-example" class="quarto-xref">그림&nbsp;3</a> 의 왼쪽 그림에서 보다 잘 드러나는 것처럼, <a href="https://quarto.org/"><strong>Quarto</strong></a> 다큐먼트는 크게 세 부분으로 나뉘어진다.</p>
 <ul>
@@ -810,8 +838,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>코드 청크(code chunk)</p></li>
 <li><p>마크다운 텍스트</p></li>
 </ul>
-<section id="yaml-헤더" class="level4" data-number="1.2.1"><h4 data-number="1.2.1" class="anchored" data-anchor-id="yaml-헤더">
-<span class="header-section-number">1.2.1</span> YAML 헤더</h4>
+<section id="yaml-헤더" class="level4" data-number="1.2.1">
+<h4 data-number="1.2.1" class="anchored" data-anchor-id="yaml-헤더"><span class="header-section-number">1.2.1</span> YAML 헤더</h4>
 <p>YAML 헤더는 <a href="https://quarto.org/"><strong>Quarto</strong></a> 다큐먼트의 최상단에 위치하는 것으로, 일종의 메타데이터로 다큐먼트의 전반적인 사항을 관장한다. YAML 헤더 부분은 세 개의 대시 부호(- - -)를 통해 다른 부분과 구분된다.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -829,18 +857,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>YAML 헤더의 모든 요소는 기본적으로 <code>key: value</code>의 행태를 띤다. <code>key</code>는 항목이고, <code>value</code>는 해당 항목에 대한 옵션값이다. 위의 예에는 <code>title</code>, <code>format</code>, <code>editor</code>의 세 <code>key</code>가 사용되었는데, 제목은 “Hello, Quarto”이며, 산출 포맷은 HTML이며, Quarto 다큐먼트 작성을 비주얼 에디터를 통해 할 것이라는 점을 명시하고 있다.</p>
 <p><a href="https://quarto.org/docs/reference/formats/html.html">다양한 <code>key</code></a>를 설정할 수 있으며, 다음의 것들이 중요하다.</p>
 <div id="tbl-yaml" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-yaml-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-yaml-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 표&nbsp;1: YAML 헤더의 다양한 <code>key</code>
-</figcaption><div aria-describedby="tbl-yaml-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption>
+<div aria-describedby="tbl-yaml-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
 </colgroup>
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th>key</th>
 <th>설명</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td><code>title</code></td>
@@ -883,14 +915,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </figure>
 </div>
-</section><section id="코드-청크" class="level4" data-number="1.2.2"><h4 data-number="1.2.2" class="anchored" data-anchor-id="코드-청크">
-<span class="header-section-number">1.2.2</span> 코드 청크</h4>
+</section>
+<section id="코드-청크" class="level4" data-number="1.2.2">
+<h4 data-number="1.2.2" class="anchored" data-anchor-id="코드-청크"><span class="header-section-number">1.2.2</span> 코드 청크</h4>
 <p>코드 청크는 프로그래밍 언어의 코드가 들어가는 부분이다. R를 사용하는 경우 <code>{r}</code>로 시작한다. 데이터 불러오기, 정리하기, 변형하기, 시각화하기, 탐색하기, 수집하기와 관련된 모든 종류의 코드가 여기에 들어갈 수 있다. 보통 하나의 <a href="https://quarto.org/"><strong>Quarto</strong></a> 다큐먼트에 다수의 코드 정크가 포함된다. 각 코드 청크 내에서 코드를 실행할 수 있다. 한 단위씩 실행할 때는 <strong>Ctrl + Enter</strong> 단축기를 사용하지만 한 코드 청크 내 모든 코드를 실행하고자 할 때는 <strong>Ctrl + Shift + Enter</strong> 단축기를 사용한다.</p>
 <p>각 코드 청크의 앞 부분에 해당 코드 정크와 관련된 다양한 옵션을 <code>#|</code> 형태로 삽입할 수 있다. YAML 헤더에서처럼, <code>key: value</code>의 행태를 띤다. 가장 중요한 옵션은 코드 청크의 내용이나 실행 결과 등이 산출물에 어떻게 표현되는지를 결정하는 것들이다. 다음의 표는 코드를 실행할지의 여부, 코드를 보여줄지의 여부, 코드의 결과를 보여줄지의 여부, 생성되는 플롯을 보여줄지의 여부, 메시지나 경고문을 보여줄지의 여부 등을 관장하는 다양한 옵션을 정리한 것이다.</p>
 <div id="tbl-codechunk" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-codechunk-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-codechunk-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 표&nbsp;2: 다양한 코드 청크 옵션
-</figcaption><div aria-describedby="tbl-codechunk-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption>
+<div aria-describedby="tbl-codechunk-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
 <col style="width: 24%">
@@ -901,7 +936,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <col style="width: 13%">
 <col style="width: 13%">
 </colgroup>
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th>Option</th>
 <th style="text-align: center;">Run code</th>
 <th style="text-align: center;">Show code</th>
@@ -909,7 +945,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th style="text-align: center;">Plots</th>
 <th style="text-align: center;">Messages</th>
 <th style="text-align: center;">Warnings</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td><code>eval: false</code></td>
@@ -979,21 +1016,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </figure>
 </div>
-</section><section id="마크다운-텍스트" class="level4" data-number="1.2.3"><h4 data-number="1.2.3" class="anchored" data-anchor-id="마크다운-텍스트">
-<span class="header-section-number">1.2.3</span> 마크다운 텍스트</h4>
+</section>
+<section id="마크다운-텍스트" class="level4" data-number="1.2.3">
+<h4 data-number="1.2.3" class="anchored" data-anchor-id="마크다운-텍스트"><span class="header-section-number">1.2.3</span> 마크다운 텍스트</h4>
 <p>워드프로세서처럼 텍스트를 작성한다. 섹션 헤더, 하이퍼링크(hyperlink), 이미지 등을 지정할 수 있고, 인라인 코드 청크(inline code chunk)도 삽입할 수 있다. 마크다운 텍스트의 작성에 비주얼 에디터는 큰 역할을 한다. 비주얼 에디터는 마크다운 언어의 사용자 편이성을 한번 더 강화한 것으로 볼 수 있다.</p>
 <p>비주얼 에디터는 다음의 메뉴로 구성된다. 워드프로세서와 비슷한 형태를 가지고 있음을 알 수 있다. 많이 사용되는 기능은 아이콘을 통해 전면에 배치되어 있다.</p>
 <div id="fig-visualeditor-1" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-visualeditor-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-visualeditor-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="https://quarto.org/docs/visual-editor/images/visual-editing-toolbar.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="그림&nbsp;4: 비주얼 에디터의 메뉴바"><img src="https://quarto.org/docs/visual-editor/images/visual-editing-toolbar.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-visualeditor-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;4: 비주얼 에디터의 메뉴바
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 <p>포맷(Format), 삽입(Insert), 테이블(Table) 메뉴 속에 다양한 하위 기능들이 포함되어 있다. <a href="https://quarto.org/"><strong>Quarto</strong></a>를 마스트하는데 비주얼 에디터의 기능을 숙달하는 것이 필수적이다.</p>
 <div id="fig-visualeditor-2" class="quarto-layout-panel">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-visualeditor-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-visualeditor-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <p><a href="https://quarto.org/docs/visual-editor/images/visual-editing-format-menu.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="그림&nbsp;5: 비주얼 에디터의 메뉴 구성"><img src="https://quarto.org/docs/visual-editor/images/visual-editing-format-menu.png" class="img-fluid figure-img"></a></p>
@@ -1008,38 +1049,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-visualeditor-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;5: 비주얼 에디터의 메뉴 구성
-</figcaption></figure>
-</div>
-</section></section><section id="기본-quarto-다큐먼트의-작성" class="level3" data-number="1.3"><h3 data-number="1.3" class="anchored" data-anchor-id="기본-quarto-다큐먼트의-작성">
-<span class="header-section-number">1.3</span> 기본 Quarto 다큐먼트의 작성</h3>
-<section id="새-quarto-다큐먼트-열기" class="level4" data-number="1.3.1"><h4 data-number="1.3.1" class="anchored" data-anchor-id="새-quarto-다큐먼트-열기">
-<span class="header-section-number">1.3.1</span> 새 Quarto 다큐먼트 열기</h4>
-<p><strong>File</strong> &gt; <strong>New File</strong> &gt; <strong>Quarto Document</strong>를 실행한다. Title과 Author란에 적절한 텍스트를 기입하고 아래에 위치한 Create 버튼을 클릭한다.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/clipboard-970877987.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="images/clipboard-970877987.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
+</figcaption>
 </figure>
 </div>
-</section><section id="quarto-다큐먼트의-작성" class="level4" data-number="1.3.2"><h4 data-number="1.3.2" class="anchored" data-anchor-id="quarto-다큐먼트의-작성">
-<span class="header-section-number">1.3.2</span> Quarto 다큐먼트의 작성</h4>
+</section>
+</section>
+<section id="기본-quarto-다큐먼트의-작성" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="기본-quarto-다큐먼트의-작성"><span class="header-section-number">1.3</span> 기본 Quarto 다큐먼트의 작성</h3>
+<section id="새-quarto-다큐먼트-열기" class="level4" data-number="1.3.1">
+<h4 data-number="1.3.1" class="anchored" data-anchor-id="새-quarto-다큐먼트-열기"><span class="header-section-number">1.3.1</span> 새 Quarto 다큐먼트 열기</h4>
+<p><strong>File</strong> &gt; <strong>New File</strong> &gt; <strong>Quarto Document</strong>를 실행한다. Title과 Author란에 적절한 텍스트를 기입하고 아래에 위치한 Create 버튼을 클릭한다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/clipboard-970877987.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="images/clipboard-970877987.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
+</figure>
+</div>
+</section>
+<section id="quarto-다큐먼트의-작성" class="level4" data-number="1.3.2">
+<h4 data-number="1.3.2" class="anchored" data-anchor-id="quarto-다큐먼트의-작성"><span class="header-section-number">1.3.2</span> Quarto 다큐먼트의 작성</h4>
 <p>비주얼 에디터를 통해 아래와 같은 결과물이 나오도록 <a href="https://quarto.org/"><strong>Quarto</strong></a> 다큐먼트를 작성해본다.</p>
 <div id="fig-result" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-result-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-result-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="https://quarto.org/docs/get-started/computations/images/rstudio-exec-echo-true-preview.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="그림&nbsp;6: 렌더링 결과"><img src="https://quarto.org/docs/get-started/computations/images/rstudio-exec-echo-true-preview.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-result-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;6: 렌더링 결과
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
-</section><section id="quarto-다큐먼트의-렌더링" class="level4" data-number="1.3.3"><h4 data-number="1.3.3" class="anchored" data-anchor-id="quarto-다큐먼트의-렌더링">
-<span class="header-section-number">1.3.3</span> Quarto 다큐먼트의 렌더링</h4>
+</section>
+<section id="quarto-다큐먼트의-렌더링" class="level4" data-number="1.3.3">
+<h4 data-number="1.3.3" class="anchored" data-anchor-id="quarto-다큐먼트의-렌더링"><span class="header-section-number">1.3.3</span> Quarto 다큐먼트의 렌더링</h4>
 <p>아래의 그림에 나타나 있는 <strong>Render</strong> 버튼을 클릭해 다큐먼트를 실행한다. 결과는 오른편 하단의 <strong>Viewer</strong> 탭에 나타난다. 결과를 <a href="#fig-result" class="quarto-xref">그림&nbsp;6</a> 과 비교한다. 최종적인 html은 프로젝트 파일이 들어있는 폴더에 저장되어 있다.</p>
 <p><a href="https://quarto.org/docs/get-started/hello/images/rstudio-render.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="https://quarto.org/docs/get-started/hello/images/rstudio-render.png" class="img-fluid"></a></p>
-</section></section></section><section id="개인-블로그-만들기" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="개인-블로그-만들기">
-<span class="header-section-number">2</span> 개인 블로그 만들기</h2>
-<section id="새로운-quarto-blog-프로젝트-시작하기" class="level3" data-number="2.1"><h3 data-number="2.1" class="anchored" data-anchor-id="새로운-quarto-blog-프로젝트-시작하기">
-<span class="header-section-number">2.1</span> 새로운 Quarto Blog 프로젝트 시작하기</h3>
-<section id="file-new-project-create-project-quarto-blog를-선택한다." class="level4" data-number="2.1.1"><h4 data-number="2.1.1" class="anchored" data-anchor-id="file-new-project-create-project-quarto-blog를-선택한다.">
-<span class="header-section-number">2.1.1</span> <strong>File</strong> &gt; <strong>New Project</strong> &gt; <strong>Create Project</strong> &gt; <strong>Quarto Blog</strong>를 선택한다.</h4>
+</section>
+</section>
+</section>
+<section id="개인-블로그-만들기" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="개인-블로그-만들기"><span class="header-section-number">2</span> 개인 블로그 만들기</h2>
+<section id="새로운-quarto-blog-프로젝트-시작하기" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="새로운-quarto-blog-프로젝트-시작하기"><span class="header-section-number">2.1</span> 새로운 Quarto Blog 프로젝트 시작하기</h3>
+<section id="file-new-project-create-project-quarto-blog를-선택한다." class="level4" data-number="2.1.1">
+<h4 data-number="2.1.1" class="anchored" data-anchor-id="file-new-project-create-project-quarto-blog를-선택한다."><span class="header-section-number">2.1.1</span> <strong>File</strong> &gt; <strong>New Project</strong> &gt; <strong>Create Project</strong> &gt; <strong>Quarto Blog</strong>를 선택한다.</h4>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
@@ -1052,26 +1104,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>디렉토리 이름과 경로를 설정하고, 아래에 위치한 <strong>Create Project</strong> 버튼을 클릭한다.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="https://quarto.org/docs/websites/images/rstudio-project-blog-options.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="https://quarto.org/docs/websites/images/rstudio-project-blog-options.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
+<figure class="figure">
+<p><a href="https://quarto.org/docs/websites/images/rstudio-project-blog-options.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="https://quarto.org/docs/websites/images/rstudio-project-blog-options.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
 </figure>
 </div>
-</section></section><section id="렌더링하여-결과를-살펴보기" class="level3" data-number="2.2"><h3 data-number="2.2" class="anchored" data-anchor-id="렌더링하여-결과를-살펴보기">
-<span class="header-section-number">2.2</span> 렌더링하여 결과를 살펴보기</h3>
+</section>
+</section>
+<section id="렌더링하여-결과를-살펴보기" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="렌더링하여-결과를-살펴보기"><span class="header-section-number">2.2</span> 렌더링하여 결과를 살펴보기</h3>
 <p><strong>Render</strong> 버튼을 클릭하여 결과를 확인한다. 결과는 오른쪽 패널의 <strong>Viewer</strong> 탭에 나타난다. <strong>Viewer</strong> 탭의 <strong>Show in new window</strong> 아이콘을 클릭하면 웹브라우저 상에 결과를 나타낼 수 있다.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="https://quarto.org/docs/websites/images/rstudio-project-blog-preview.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="https://quarto.org/docs/websites/images/rstudio-project-blog-preview.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
+<figure class="figure">
+<p><a href="https://quarto.org/docs/websites/images/rstudio-project-blog-preview.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="https://quarto.org/docs/websites/images/rstudio-project-blog-preview.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
 </figure>
 </div>
 <p><strong>Files</strong> 탭을 클릭하면 프로젝트 폴더에 다음과 같은 파일들이 생성되어 있음을 확인할 수 있다. 각각의 파일이 어떠한 역할을 하는지 파악한다.</p>
 <div id="tbl-blog" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-blog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-blog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 표&nbsp;3: Quarto Blog 프로젝트의 파일 구조
-</figcaption><div aria-describedby="tbl-blog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption>
+<div aria-describedby="tbl-blog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th>File</th>
 <th>Description</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td><code>_quarto.yml</code></td>
@@ -1102,27 +1162,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </figure>
 </div>
-</section><section id="구성-요소-수정하기" class="level3" data-number="2.3"><h3 data-number="2.3" class="anchored" data-anchor-id="구성-요소-수정하기">
-<span class="header-section-number">2.3</span> 구성 요소 수정하기</h3>
+</section>
+<section id="구성-요소-수정하기" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="구성-요소-수정하기"><span class="header-section-number">2.3</span> 구성 요소 수정하기</h3>
 <p>구성 요소를 수정하여 자신의 개인 블로그를 만들어 나간다.</p>
-<section id="메타데이터" class="level4" data-number="2.3.1"><h4 data-number="2.3.1" class="anchored" data-anchor-id="메타데이터">
-<span class="header-section-number">2.3.1</span> <strong>메타데이터</strong>
-</h4>
+<section id="메타데이터" class="level4" data-number="2.3.1">
+<h4 data-number="2.3.1" class="anchored" data-anchor-id="메타데이터"><span class="header-section-number">2.3.1</span> <strong>메타데이터</strong></h4>
 <p>블로그의 전체적인 모습은 <code>_quarto.yml</code> 파일에 의해 규정된다. <code>_quarto.yml</code> 파일의 내용을 살펴보고 필요한 부분을 수정한다.</p>
 <p>다음의 <a href="https://quarto.org/docs/output-formats/html-themes.html">웹사이트</a>를 참조한다. 특히, 25개의 테마를 살펴보고, 그 중 하나를 선택한다.</p>
-</section><section id="홈페이지home-page" class="level4" data-number="2.3.2"><h4 data-number="2.3.2" class="anchored" data-anchor-id="홈페이지home-page">
-<span class="header-section-number">2.3.2</span> <strong>홈페이지(home page)</strong>
-</h4>
+</section>
+<section id="홈페이지home-page" class="level4" data-number="2.3.2">
+<h4 data-number="2.3.2" class="anchored" data-anchor-id="홈페이지home-page"><span class="header-section-number">2.3.2</span> <strong>홈페이지(home page)</strong></h4>
 <p>블로그의 홈페이지는 포스트 디렉토리에 포함되는 모든 포스트의 리스트를 제공하는 것으로 <code>index.qmd</code> 파일에 의해 규정된다. <code>index.qmd</code> 파일의 내용을 살펴보고 필요한 부분을 수정한다.</p>
 <p>다음의 <a href="https://quarto.org/docs/websites/website-listings.html">웹사이트</a>를 참조한다. 특히 리스팅 유형(listing types) 옵션 세개(default, table, grid)를 살펴보고, 그 중 하나를 선택한다.</p>
-</section><section id="어바우트-페이지about-page" class="level4" data-number="2.3.3"><h4 data-number="2.3.3" class="anchored" data-anchor-id="어바우트-페이지about-page">
-<span class="header-section-number">2.3.3</span> <strong>어바우트 페이지(about page)</strong>
-</h4>
+</section>
+<section id="어바우트-페이지about-page" class="level4" data-number="2.3.3">
+<h4 data-number="2.3.3" class="anchored" data-anchor-id="어바우트-페이지about-page"><span class="header-section-number">2.3.3</span> <strong>어바우트 페이지(about page)</strong></h4>
 <p>어바우트 페이지는 블로그와 블로그의 저작자에 대한 부가 정보를 제공하는 것으로 <code>about.qmd</code> 파일에 의해 규정된다. <code>about.qmd</code> 파일의 내용을 살펴보고 필요한 부분을 수정한다.</p>
 <p>다음의 <a href="https://quarto.org/docs/websites/website-about.html">웹사이트</a>를 참조한다. 특히 템플릿(template) 옵션 다섯개(jolla, trestles, solana, marquee, broadside)를 살펴보고, 그 중 하나를 선택한다.</p>
-</section><section id="포스트-디렉토리posts-directory" class="level4" data-number="2.3.4"><h4 data-number="2.3.4" class="anchored" data-anchor-id="포스트-디렉토리posts-directory">
-<span class="header-section-number">2.3.4</span> <strong>포스트 디렉토리(posts directory)</strong>
-</h4>
+</section>
+<section id="포스트-디렉토리posts-directory" class="level4" data-number="2.3.4">
+<h4 data-number="2.3.4" class="anchored" data-anchor-id="포스트-디렉토리posts-directory"><span class="header-section-number">2.3.4</span> <strong>포스트 디렉토리(posts directory)</strong></h4>
 <p>블로그의 콘텐츠는 포스트 디렉토리 속에 포함되어 있다. 기본적으로 하나의 포스트는 하나의 폴드인데, 개별 폴드 속에는 index.qmd라는 이름의 Quarto 파일이 들어 있다. 그리고 Quarto 다큐먼트에 포함되어 있는 이미지는 images라는 서브 폴드에 저장되어 있다.</p>
 <p>다음의 절차에 따라 새로운 포스트를 생성해 본다.</p>
 <ul>
@@ -1137,8 +1197,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>date<span class="sc">-</span>modified<span class="sc">:</span> last<span class="sc">-</span>modified</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section></section><section id="블로그를-웹-상에-배포하기" class="level3" data-number="2.4"><h3 data-number="2.4" class="anchored" data-anchor-id="블로그를-웹-상에-배포하기">
-<span class="header-section-number">2.4</span> 블로그를 웹 상에 배포하기</h3>
+</section>
+</section>
+<section id="블로그를-웹-상에-배포하기" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="블로그를-웹-상에-배포하기"><span class="header-section-number">2.4</span> 블로그를 웹 상에 배포하기</h3>
 <p>완성된 개인 블로그를 다음의 절차에 따라 웹에 출판한다. 여기서는 <a href="https://posit.co/">Posit</a>에서 제공하는 무료 출판 사이트인 <a href="https://quartopub.com/">Quarto Pub</a>을 활용한다.</p>
 <ul>
 <li><p><a href="https://quartopub.com/">Quarto Pub</a>에 접속하여 계정을 만든다.</p></li>
@@ -1146,19 +1208,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>프롬프트에 다음과 같이 입력하고 실행한다: <code>quarto publish quarto-pub</code></p></li>
 </ul>
 <p>다음을 <a href="https://quarto.org/docs/publishing/quarto-pub.html">웹사이트</a>를 참고한다.</p>
-</section></section><section id="대시보드-만들기" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="대시보드-만들기">
-<span class="header-section-number">3</span> 대시보드 만들기</h2>
+</section>
+</section>
+<section id="대시보드-만들기" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="대시보드-만들기"><span class="header-section-number">3</span> 대시보드 만들기</h2>
 <p>여기서는 <a href="https://quarto.org/"><strong>Quarto</strong></a>를 이용해 데이터 대시보드(dashboard)를 만들어 본다. 대시보드는 단일한 주제에 대한 상호연관된 다양한 정보를 주로 그래픽 형태로 일관성 있게 제시한 것을 말한다. 일반적인 대시보드에서 결국 ’대시보드형 인터랙티브 웹 앱(web app)’을 만드는 것을 지향한다.</p>
-<section id="대시보드의-기본-구조" class="level3" data-number="3.1"><h3 data-number="3.1" class="anchored" data-anchor-id="대시보드의-기본-구조">
-<span class="header-section-number">3.1</span> 대시보드의 기본 구조</h3>
+<section id="대시보드의-기본-구조" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="대시보드의-기본-구조"><span class="header-section-number">3.1</span> 대시보드의 기본 구조</h3>
 <p>대시보드는 기본적으로 다섯 가지의 구성요소로 이루어진다. 각각은 메인 바디, 헤더, 내비게이터, 사이드바, 푸터이다.</p>
 <div id="fig-dashboard-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-dashboard-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dashboard-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/layout.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="그림&nbsp;7: 대시보드의 기본 구조(https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/#tabset)"><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/layout.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dashboard-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;7: 대시보드의 기본 구조(<a href="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/#tabset" class="uri">https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/#tabset</a>)
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 <p>첫째, 메인 바디(main body)는 대시보드의 핵심 요소이다. 메인 바디는 카드(card)라고 불리는 기본 단위들로 구성된다. 개별 카드는 다양한 내용 요소(텍스트, 그래프, 표, 지도, 밸류박스 등)를 가질 수 있다. 즉, 어떤 카드 속에는 그래프가 들어가며, 어떤 카드 속에는 지도가 들어간다. 이러한 카드들은 특정한 레이아웃 요소(페이지, 행, 열, 탭셋 등)를 통해 메인 바디에 배열된다. 페이지(page)는 대시보드 레이아웃 요소 중 최상위 레벨인데, 개별 페이지는 다수의 행(row) 혹은 열(column)로 구성된다. 행 혹은 열을 또다른 행 혹은 열이 아닌 탭 클릭 방식으로 분할하고 싶을 때 탭셋(tabset)이 사용된다.</p>
 <p>둘째, 헤더(header)는 대시보드의 가장 중요한 메타 정보(로고, 제목, 저자 등)를 포함한다.</p>
@@ -1168,12 +1234,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>다섯개의 구성 요소 중 가장 중요한 것은 메인 바디, 해더, 내비게이터이다. <a href="https://quarto.org/"><strong>Quarto</strong></a>는 헤더와 내비게이터를 통합한 내비게이션바(navigation bar)를 제공한다. 사이드바는 <a href="https://shiny.posit.co/"><strong>Shiny</strong></a> 패키지를 활용한 동적인 대시보드에서는 매우 중요하지만, 이번 실습에서는 사용하지 않는다. 푸터는 가장 지엽적인 요소이다.</p>
 <p>다음의 대시보드를 살펴보자.</p>
 <div id="fig-dashboard-2" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-dashboard-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dashboard-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="https://quarto.org/docs/dashboards/examples/thumbnails/customer-churn-dashboard.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="그림&nbsp;8: 대시보드의 사례(https://quarto.org/docs/dashboards/)"><img src="https://quarto.org/docs/dashboards/examples/thumbnails/customer-churn-dashboard.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dashboard-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;8: 대시보드의 사례(<a href="https://quarto.org/docs/dashboards/" class="uri">https://quarto.org/docs/dashboards/</a>)
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 <p>이 대시보드는 크게 내비게이션바와 메인 바디로 구성되어 있다. 네비게이션바에는 다음의 내용이 포함되어 있다.</p>
 <ul>
@@ -1187,10 +1255,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>첫 번째 페이지의 두 번째 행은 두 개의 열(즉, 카드)로 구성되어 있는데, 내용 요소는 모두 그래프(graph)이다.</p></li>
 <li><p>첫 번째 페이지의 세 번째 행은 단일한 열(즉, 카드)로 구성되어 있는데, 내용 요소는 테이블(table)이다.</p></li>
 <li><p>두 번째 페이지에도 다양한 사항이 포함되어 있을 것이다.</p></li>
-</ul></section><section id="레이아웃-설정" class="level3" data-number="3.2"><h3 data-number="3.2" class="anchored" data-anchor-id="레이아웃-설정">
-<span class="header-section-number">3.2</span> 레이아웃 설정</h3>
-<section id="행과-열의-설정" class="level4" data-number="3.2.1"><h4 data-number="3.2.1" class="anchored" data-anchor-id="행과-열의-설정">
-<span class="header-section-number">3.2.1</span> 행과 열의 설정</h4>
+</ul>
+</section>
+<section id="레이아웃-설정" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="레이아웃-설정"><span class="header-section-number">3.2</span> 레이아웃 설정</h3>
+<section id="행과-열의-설정" class="level4" data-number="3.2.1">
+<h4 data-number="3.2.1" class="anchored" data-anchor-id="행과-열의-설정"><span class="header-section-number">3.2.1</span> 행과 열의 설정</h4>
 <p>행(row)과 열(column)은 가장 기본이 되는 레이아웃 요소이다. 기본 원칙은 다음과 같다.</p>
 <ul>
 <li><p>헤더 2(header 2) 레벨이 행과 열의 구분을 일차적으로 결정한다.</p></li>
@@ -1211,15 +1281,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>Card <span class="dv">2-2</span> </span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <p>위와 같이 설정하면 다음과 같은 결과를 얻을 수 있다. Row의 경우는 <code>{height}</code> 태그를 통해서, Column의 경우는 <code>{width}</code>태그를 통해 상대적인 크기를 설정할 수 있다.</p>
 <div id="fig-dashboard-3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-dashboard-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dashboard-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="그림&nbsp;9: 대시보드의 행렬 구조(https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/)"><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dashboard-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;9: 대시보드의 행렬 구조(<a href="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/" class="uri">https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/</a>)
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
-</section><section id="탭셋의-설정" class="level4" data-number="3.2.2"><h4 data-number="3.2.2" class="anchored" data-anchor-id="탭셋의-설정">
-<span class="header-section-number">3.2.2</span> 탭셋의 설정</h4>
+</section>
+<section id="탭셋의-설정" class="level4" data-number="3.2.2">
+<h4 data-number="3.2.2" class="anchored" data-anchor-id="탭셋의-설정"><span class="header-section-number">3.2.2</span> 탭셋의 설정</h4>
 <p>탭셋(tabset)은 행(row)과 열(column)을 다른 하위 행과 열이 아닌 탭의 설정을 통해 분할하고자 할 때 사용된다.</p>
 <pre><code>## Row {height=70%}
 
@@ -1236,7 +1309,8 @@ Card 2-1 {width=50%}
 Card 2-2 {width=50%}</code></pre>
 <p>위와 같이 설정하면 다음과 같은 결과를 얻을 수 있다. 탭셋의 설정을 위해 <code>{.tabset}</code> 태그가 사용된다는 점에 주의한다.</p>
 <div id="fig-dashboard-4" class="quarto-layout-panel">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-dashboard-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dashboard-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><a href="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/tabset1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18" title="그림&nbsp;10: 대시보드의 탭셋 구조"><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/tabset1.png" class="img-fluid figure-img"></a></p>
@@ -1248,10 +1322,12 @@ Card 2-2 {width=50%}</code></pre>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dashboard-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;10: 대시보드의 탭셋 구조
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
-</section><section id="페이지의-설정" class="level4" data-number="3.2.3"><h4 data-number="3.2.3" class="anchored" data-anchor-id="페이지의-설정">
-<span class="header-section-number">3.2.3</span> 페이지의 설정</h4>
+</section>
+<section id="페이지의-설정" class="level4" data-number="3.2.3">
+<h4 data-number="3.2.3" class="anchored" data-anchor-id="페이지의-설정"><span class="header-section-number">3.2.3</span> 페이지의 설정</h4>
 <p>페이지(page)는 최상위 레이아웃 요소이다. 기본 원칙은 다음과 같다.</p>
 <ul>
 <li><p>헤더 1(header 1) 레벨이 페이지의 구분을 결정한다.</p></li>
@@ -1278,7 +1354,8 @@ Card 2-2 {width=50%}</code></pre>
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>Card <span class="dv">3</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <p>위와 같이 설정하면 다음과 같은 결과를 얻을 수 있다. 페이지가 내비게이션바에서 마치 탭셋처럼 존재하는 것에 주의한다.</p>
 <div id="fig-dashboard-5" class="quarto-layout-panel">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-dashboard-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dashboard-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><a href="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20" title="그림&nbsp;11: 대시보드의 페이지 구조"><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/card4.png" class="img-fluid figure-img"></a></p>
@@ -1290,73 +1367,88 @@ Card 2-2 {width=50%}</code></pre>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dashboard-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;11: 대시보드의 페이지 구조
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
-</section></section><section id="내비게이션바와-사이드바의-설정" class="level3" data-number="3.3"><h3 data-number="3.3" class="anchored" data-anchor-id="내비게이션바와-사이드바의-설정">
-<span class="header-section-number">3.3</span> 내비게이션바와 사이드바의 설정</h3>
-<section id="내비게이션바의-설정" class="level4" data-number="3.3.1"><h4 data-number="3.3.1" class="anchored" data-anchor-id="내비게이션바의-설정">
-<span class="header-section-number">3.3.1</span> 내비게이션바의 설정</h4>
+</section>
+</section>
+<section id="내비게이션바와-사이드바의-설정" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="내비게이션바와-사이드바의-설정"><span class="header-section-number">3.3</span> 내비게이션바와 사이드바의 설정</h3>
+<section id="내비게이션바의-설정" class="level4" data-number="3.3.1">
+<h4 data-number="3.3.1" class="anchored" data-anchor-id="내비게이션바의-설정"><span class="header-section-number">3.3.1</span> 내비게이션바의 설정</h4>
 <p>내비게이션바는 헤더와 내비게이터로 구성된다. 내비게이터는 페이지가 설정된 경우에만 나타나게 된다. 여기서는 헤더에 집중하고자 한다. 대시보드 헤더는 다른 Quarto 다큐먼트와 마찬가지로 YAML 헤더를 통해 통제된다. 다음과 같은 요소들이 중요하다.</p>
 <ul>
 <li><p>제목(title): 대시보드 전체의 이름을 결정한다.</p></li>
 <li><p>저자(author): 만든 사람이나 관리 회사의 이름이지만, 부제로 활용되기도 한다.</p></li>
-<li>
-<p>포맷(format): 기본 설정인 대시보드(dashboard) 하에 다양한 하위 설정이 가능하다.</p>
+<li><p>포맷(format): 기본 설정인 대시보드(dashboard) 하에 다양한 하위 설정이 가능하다.</p>
 <ul>
 <li><p>logo: 로고 그림 파일을 지정하면 내비게이션바의 왼쪽 끝에 나타난다.</p></li>
 <li><p>nav-buttons: github이나 이메일 연결을 설정할 수 있다.</p></li>
 <li><p>scrolling: true 설정: 디폴트는 false인데, 레이아웃 요소들의 높이들의 합이 100%가 되도록 일괄적으로 조절된다. true로 지정하면, 개별 내용 요소의 원 크기를 그대로 살리면서 스크롤되게 디자인이 바뀐다. 둘 다를 실험해 보고 자신의 목적에 맞는 것을 고른다.</p></li>
-</ul>
-</li>
+</ul></li>
 <li><p>테마(theme): 대시보드의 외관을 한꺼번에 바꿀 수 있다. 모두 25개의 <a href="https://quarto.org/docs/dashboards/theming.html">부트스와치(bootswatch)</a> 테마가 존재한다. 여러가지를 실험해 보고 자신의 취향에 맞는 것을 선정한다.</p></li>
-</ul></section><section id="사이드바의-설정" class="level4" data-number="3.3.2"><h4 data-number="3.3.2" class="anchored" data-anchor-id="사이드바의-설정">
-<span class="header-section-number">3.3.2</span> 사이드바의 설정</h4>
+</ul>
+</section>
+<section id="사이드바의-설정" class="level4" data-number="3.3.2">
+<h4 data-number="3.3.2" class="anchored" data-anchor-id="사이드바의-설정"><span class="header-section-number">3.3.2</span> 사이드바의 설정</h4>
 <p>사이드바(sidebar)는 <code>{.sidebar}</code> 태그를 통해 만들 수 있는데, 헤더 1(header 1) 레벨이므로 특정한 페이지에 종속되지 않는다. 사이드바는 주로 사용자의 투입을 받을 때 사용되기 때문에 동적인 대시보드에 주로 사용된다. 정적인 대시보드의 경우에는 텍스트를 통한 특정 정보의 제공에 사용될 수 있다.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># {.sidebar}</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>Sidebar content</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <p>위와 같이 설정하면 다음과 같은 결과를 얻을 수 있다.</p>
 <div id="fig-dashbard-6" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-dashbard-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dashbard-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/sidebar.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="그림&nbsp;12: 대시보드의 사이드바 구조(https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/)"><img src="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/img/sidebar.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dashbard-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;12: 대시보드의 사이드바 구조(<a href="https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/" class="uri">https://blog.zarathu.com/posts/2023-12-11-quarto-dashboard/</a>)
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
-</section></section><section id="카드와-내용-요소" class="level3" data-number="3.4"><h3 data-number="3.4" class="anchored" data-anchor-id="카드와-내용-요소">
-<span class="header-section-number">3.4</span> 카드와 내용 요소</h3>
+</section>
+</section>
+<section id="카드와-내용-요소" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="카드와-내용-요소"><span class="header-section-number">3.4</span> 카드와 내용 요소</h3>
 <p>카드(card)란 특정한 내용 요소(텍스트, 벨류박스, 테이블, 그래프, 지도 등)를 포함하고 있는, 대시보드의 가장 기본적인 단위이다. 다음의 두 가지 사항이 중요하다.</p>
 <ul>
 <li><p>카드의 제목이 중요하다. 완성된 대시보드 상에 등장하기 때문에 이해하기 쉬운 제목이 부여되어야 한다.</p></li>
 <li><p>내용 요소에 따라 카드를 작성하는 방법이 조금 다르다.</p></li>
 </ul>
 <p>내용 요소 제작의 세세한 사항은 아래의 “예시 대시보드 만들기”에서 확인한다.</p>
-<section id="그래프" class="level4" data-number="3.4.1"><h4 data-number="3.4.1" class="anchored" data-anchor-id="그래프">
-<span class="header-section-number">3.4.1</span> 그래프</h4>
+<section id="그래프" class="level4" data-number="3.4.1">
+<h4 data-number="3.4.1" class="anchored" data-anchor-id="그래프"><span class="header-section-number">3.4.1</span> 그래프</h4>
 <p>Quarto는 그래프 하나를 만들어내는 코드 청크를 하나의 카드로 인식한다. 그래프 카드의 제목은 코드 청크 내의 <code>#| title:</code> 옵션을 통해 부여된다. <code>ggplot2</code>와 같은 정적인 플롯 도구 뿐만 아니라 <code>plotly</code>와 같은 반응형 플롯 도구를 사용하여 그래프 카드를 생성한다.</p>
-</section><section id="테이블" class="level4" data-number="3.4.2"><h4 data-number="3.4.2" class="anchored" data-anchor-id="테이블">
-<span class="header-section-number">3.4.2</span> 테이블</h4>
-<p>Quarto는 테이블 하나를 디스플레이하는 코드 청크를 하나의 카드로 인식한다. 테이블 카드의 제목은 코드 청크 내의 <code>#| title:</code> 옵션을 통해 부여된다. <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html"><code>knitr</code> 패키지</a>의 <code><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable()</a></code> 함수, <a href="https://gt.rstudio.com/">gt 패키지</a>의 <code>gt()</code> 함수, <a href="https://rstudio.github.io/DT/"><code>DT</code> 패키지</a>의 <code><a href="https://rdrr.io/pkg/DT/man/datatable.html">datatable()</a></code> 함수 등을 이용해 테이블 카드를 생성한다.</p>
-</section><section id="지도" class="level4" data-number="3.4.3"><h4 data-number="3.4.3" class="anchored" data-anchor-id="지도">
-<span class="header-section-number">3.4.3</span> 지도</h4>
+</section>
+<section id="테이블" class="level4" data-number="3.4.2">
+<h4 data-number="3.4.2" class="anchored" data-anchor-id="테이블"><span class="header-section-number">3.4.2</span> 테이블</h4>
+<p>Quarto는 테이블 하나를 디스플레이하는 코드 청크를 하나의 카드로 인식한다. 테이블 카드의 제목은 코드 청크 내의 <code>#| title:</code> 옵션을 통해 부여된다. <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html"><code>knitr</code> 패키지</a>의 <code>kable()</code> 함수, <a href="https://gt.rstudio.com/">gt 패키지</a>의 <code>gt()</code> 함수, <a href="https://rstudio.github.io/DT/"><code>DT</code> 패키지</a>의 <code>datatable()</code> 함수 등을 이용해 테이블 카드를 생성한다.</p>
+</section>
+<section id="지도" class="level4" data-number="3.4.3">
+<h4 data-number="3.4.3" class="anchored" data-anchor-id="지도"><span class="header-section-number">3.4.3</span> 지도</h4>
 <p>Quarto는 지도 하나를 디스플레이하는 코드 청크를 하나의 카드로 인식한다. 지도 카드의 제목은 코드 청크 내의 <code>#| title:</code> 옵션을 통해 부여된다. <code>ggplot2</code>와 같은 정적인 지도 제작 도구 뿐만 아니라 <a href="https://leafletjs.com/"><code>leaflet</code></a>과 같은 반응형 지도 제작 도구를 사용하여 지도 카드를 생성한다.</p>
-</section><section id="텍스트" class="level4" data-number="3.4.4"><h4 data-number="3.4.4" class="anchored" data-anchor-id="텍스트">
-<span class="header-section-number">3.4.4</span> 텍스트</h4>
+</section>
+<section id="텍스트" class="level4" data-number="3.4.4">
+<h4 data-number="3.4.4" class="anchored" data-anchor-id="텍스트"><span class="header-section-number">3.4.4</span> 텍스트</h4>
 <p>일종의 텍스트 박스도 하나의 카드로 간주된다. 그래프, 테이블, 지도가 하나의 코드 청크가 하나의 카드로 인식되는데 반해 텍스트 카드는 다른 형식을 취한다. <code>::: {.card}</code>&nbsp;div를 사용해야 하며 <code>#| title:</code> 옵션을 사용해 제목을 지정해야 한다.</p>
-</section><section id="밸류박스" class="level4" data-number="3.4.5"><h4 data-number="3.4.5" class="anchored" data-anchor-id="밸류박스">
-<span class="header-section-number">3.4.5</span> 밸류박스</h4>
+</section>
+<section id="밸류박스" class="level4" data-number="3.4.5">
+<h4 data-number="3.4.5" class="anchored" data-anchor-id="밸류박스"><span class="header-section-number">3.4.5</span> 밸류박스</h4>
 <p>요약적 수치를 큰 박스 속에 나타내는 것을 밸류박스(value box)라고 하는데, 코드 청크로 표현하지만 형식은 조금 다르다. <code>#| content: valuebox</code>라는 옵션이 반드시 포함되야 하며, 제목을 지정하기 위해 <code>#| title:</code> 옵션도 필요하다. 또한 리스트를 이용해 아이콘(icon), 컬러(color), 수치(value)를 지정해야 한다.</p>
 <p>아이콘은 <a href="https://icons.getbootstrap.com/">부트스트랩 아이콘(bootstrap icon)</a>이 사용된다. 적절한 아이콘을 찾고 그 이름을 <code>icon =</code> 옵션을 통해 설정하는 것이 중요하다.</p>
 <p>모든 컬러가 다 사용가능한 것은 아니다. 아래의 표를 참조하여 컬러를 설정해야 한다.</p>
 <div id="tbl-value" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-value-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-value-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 표&nbsp;4: 밸류박스의 컬러 선택
-</figcaption><div aria-describedby="tbl-value-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption>
+<div aria-describedby="tbl-value-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th>Color Alias</th>
 <th>Default Theme Color(s)</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td><code>primary</code></td>
@@ -1395,16 +1487,18 @@ Card 2-2 {width=50%}</code></pre>
 </div>
 </figure>
 </div>
-</section></section><section id="예시-대시보드-만들기" class="level3" data-number="3.5"><h3 data-number="3.5" class="anchored" data-anchor-id="예시-대시보드-만들기">
-<span class="header-section-number">3.5</span> 예시 대시보드 만들기</h3>
+</section>
+</section>
+<section id="예시-대시보드-만들기" class="level3" data-number="3.5">
+<h3 data-number="3.5" class="anchored" data-anchor-id="예시-대시보드-만들기"><span class="header-section-number">3.5</span> 예시 대시보드 만들기</h3>
 <p>예시 대시보드(<a href="https://sangillee.quarto.pub/my-first-dashboard/" class="uri">https://sangillee.quarto.pub/my-first-dashboard/</a>)에 접속하여 구성을 살펴본다. 다음의 사항에 주목한다.</p>
 <ul>
 <li><p>내비게이션바에 서울대학교 로고가 있고, 오른쪽 맨 끝애 github 및 이메일 아이콘이 위치해 있다.</p></li>
 <li><p>대시보드가 네 개의 페이지(Intro, Graphs, Tables, Maps)로 나뉘어져 있고, 각 페이지마다 행, 열, 탭셋과 같은 레이아웃 요소들이 배치되어 있다.</p></li>
 </ul>
 <p>어떤 식으로 제작할 수 있을지 생각해 본다. 새로운 프로젝트를 생성하고 Quarto 다큐먼트를 생성한다. 아래는 해당 대시보드를 만들기 위해 사용된 코드이다. 참고하여 자신만의 대시보드를 만들어 본다.</p>
-<section id="yaml-해더" class="level4" data-number="3.5.1"><h4 data-number="3.5.1" class="anchored" data-anchor-id="yaml-해더">
-<span class="header-section-number">3.5.1</span> YAML 해더</h4>
+<section id="yaml-해더" class="level4" data-number="3.5.1">
+<h4 data-number="3.5.1" class="anchored" data-anchor-id="yaml-해더"><span class="header-section-number">3.5.1</span> YAML 해더</h4>
 <p>특히, <code>nav-buttons:</code> 옵션의 지정 형식에 주의한다. <code>scrolling</code> 옵션과 다양한 <code>theme:</code> 옵션을 시험해 본다.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"My First Dashboard"</span></span>
@@ -1425,52 +1519,53 @@ Card 2-2 {width=50%}</code></pre>
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>editor_options<span class="sc">:</span> </span>
 <span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  chunk_output_type<span class="sc">:</span> console</span>
 <span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
-</section><section id="intro-페이지" class="level4" data-number="3.5.2"><h4 data-number="3.5.2" class="anchored" data-anchor-id="intro-페이지">
-<span class="header-section-number">3.5.2</span> Intro 페이지</h4>
+</section>
+<section id="intro-페이지" class="level4" data-number="3.5.2">
+<h4 data-number="3.5.2" class="anchored" data-anchor-id="intro-페이지"><span class="header-section-number">3.5.2</span> Intro 페이지</h4>
 <p>Intro라는 이름의 페이지를 설정한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Intro</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Intro</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>첫번째 행: Text 카드</strong></p>
 <p>행을 설정하고 행의 상대적인 높이(10%)를 지정한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## Row {height="10%"}</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Row {height="10%"}</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <p>텍스트 카드를 생성한다. 텍스트 카드를 생성하기 위해 <code>{.card}</code> 태그가 사용되어야 하며, 텍스트 카드의 제목을 지정하기 위해 <code>title=</code> 옵션이 사용되어야 함에 주의한다.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span> {.card title<span class="ot">=</span><span class="st">"Text"</span>}</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>This is my first dashboard.</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>두번째 행의 탭셋: Histogram of GDP per capita &amp; Table of Mean Values</strong></p>
 <p>행을 설정하고 행의 상대적인 높이(70%)를 지정한다. 탭셋을 생성하기 위해 <code>{.tabset}</code> 태그가 사용되어야 함에 주의한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## Row {.tabset height="70%"}</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Row {.tabset height="70%"}</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <p>그래프 카드를 생성하기 위해 <code>ggplot2</code> 패키지를 활용한다. 그래프 카드의 제목을 지정하기 위해 <code>title=</code> 옵션이 사용되어야 함에 주의한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#| title: "Histogram of GDP per capita"</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jennybc/gapminder">gapminder</a></span><span class="op">)</span></span>
-<span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
-<p>테이블 카드를 생성하기 위해 <code>knitr</code> 패키지의 <code><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable()</a></code> 함수를 활용한다. 테이블 카드의 제목을 지정하기 위해 <code>title=</code> 옵션이 사용되어야 함에 주의한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#| title: "Table of Mean Values"</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span></span>
-<span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span></span>
-<span>    GDP_percap <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">gdpPercap</span><span class="op">)</span>,</span>
-<span>    Life_Exp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">lifeExp</span><span class="op">)</span>,</span>
-<span>    Population <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">pop</span><span class="op">)</span>,</span>
-<span>    .by <span class="op">=</span> <span class="va">continent</span></span>
-<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: "Histogram of GDP per capita"</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> gdpPercap)) <span class="sc">+</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<p>테이블 카드를 생성하기 위해 <code>knitr</code> 패키지의 <code>kable()</code> 함수를 활용한다. 테이블 카드의 제목을 지정하기 위해 <code>title=</code> 옵션이 사용되어야 함에 주의한다.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: "Table of Mean Values"</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">GDP_percap =</span> <span class="fu">mean</span>(gdpPercap),</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Life_Exp =</span> <span class="fu">mean</span>(lifeExp),</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">Population =</span> <span class="fu">mean</span>(pop),</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">.by =</span> continent</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>세번째 행의 3개의 밸류박스</strong></p>
 <p>행을 설정하고 행의 상대적인 높이(20%)를 지정한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## Row {height="20%"}</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Row {height="20%"}</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <p>첫번째 밸류박스를 생성한다. <code>#| content: valuebox</code> 옵션과 <code>#| title:</code> 옵션이 사용됨에 주의한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#| content: valuebox</span></span>
-<span><span class="co">#| title: "Number of Countries"</span></span>
-<span><span class="va">n_countries</span> <span class="op">&lt;-</span> <span class="va">gapminder</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">country</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
-<span>  icon <span class="op">=</span> <span class="st">"asterisk"</span>,</span>
-<span>  color <span class="op">=</span> <span class="st">"primary"</span>,</span>
-<span>  value <span class="op">=</span> <span class="va">n_countries</span></span>
-<span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| content: valuebox</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: "Number of Countries"</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>n_countries <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span> <span class="fu">distinct</span>(country) <span class="sc">|&gt;</span> <span class="fu">nrow</span>()</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">icon =</span> <span class="st">"asterisk"</span>,</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="st">"primary"</span>,</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> n_countries</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <p>두번째 밸류박스를 생성한다.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| content: valuebox</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: "First Year"</span></span>
@@ -1480,76 +1575,81 @@ Card 2-2 {width=50%}</code></pre>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="st">"secondary"</span>,</span>
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> first_year</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <p>세번째 밸류박스를 생성한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#| content: valuebox</span></span>
-<span><span class="co">#| title: "Last Year"</span></span>
-<span><span class="va">last_year</span> <span class="op">&lt;-</span> <span class="va">gapminder</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/nth.html">last</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
-<span>  icon <span class="op">=</span> <span class="st">"bank"</span>,</span>
-<span>  color <span class="op">=</span> <span class="st">"success"</span>,</span>
-<span>  value <span class="op">=</span> <span class="va">last_year</span></span>
-<span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
-</section><section id="graphs-페이지" class="level4" data-number="3.5.3"><h4 data-number="3.5.3" class="anchored" data-anchor-id="graphs-페이지">
-<span class="header-section-number">3.5.3</span> Graphs 페이지</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| content: valuebox</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: "Last Year"</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>last_year <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span> <span class="fu">distinct</span>(year) <span class="sc">|&gt;</span> <span class="fu">pull</span>() <span class="sc">|&gt;</span> <span class="fu">last</span>()</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">icon =</span> <span class="st">"bank"</span>,</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="st">"success"</span>,</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> last_year</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="graphs-페이지" class="level4" data-number="3.5.3">
+<h4 data-number="3.5.3" class="anchored" data-anchor-id="graphs-페이지"><span class="header-section-number">3.5.3</span> Graphs 페이지</h4>
 <p>Graphs라는 이름의 페이지를 설정한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Graphs</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Graphs</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>첫번째 행의 그래프 카드: GDP and Life Expectancy</strong></p>
 <p>행을 설정한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## Row</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Row</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <p><code>ggplot2</code> 패키지를 활용하여 그래프 카드를 생성한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#| title: GDP and Life Expectancy</span></span>
-<span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log10</a></span><span class="op">(</span><span class="va">gdpPercap</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">continent</span><span class="op">)</span>, show.legend <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">continent</span>, ncol <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: GDP and Life Expectancy</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log10</span>(gdpPercap), <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> continent), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span> </span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>continent, <span class="at">ncol =</span> <span class="dv">5</span>)</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>두번째 행의 그래프 카드: Population &amp; Life Expectancy</strong></p>
 <p>첫번째 그래프(Population)를 위한 열을 설정한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">### Column</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Column</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <p>그래프 카드를 생성한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#| title: Population</span></span>
-<span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span></span>
-<span>    sum_pop <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">pop</span><span class="op">)</span>,</span>
-<span>    .by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">continent</span><span class="op">)</span></span>
-<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">sum_pop</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_ribbon.html">geom_area</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">continent</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Year"</span>, y <span class="op">=</span> <span class="st">"Population"</span>, fill <span class="op">=</span> <span class="st">"Continents"</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: Population</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">sum_pop =</span> <span class="fu">sum</span>(pop),</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">.by =</span> <span class="fu">c</span>(year, continent)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> sum_pop)) <span class="sc">+</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="fu">aes</span>(<span class="at">fill =</span> continent)) <span class="sc">+</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">y =</span> <span class="st">"Population"</span>, <span class="at">fill =</span> <span class="st">"Continents"</span>)</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <p>두번째 그래프(Life Expectancy)를 위한 열을 설정한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">### Column</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Column</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <p>그래프 카드를 생성한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#| title: Life Expectancy</span></span>
-<span><span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">continent</span>, group <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Year"</span>, y <span class="op">=</span> <span class="st">"Life Expectancy"</span>, color <span class="op">=</span> <span class="st">"Continents"</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
-</section><section id="tables-페이지" class="level4" data-number="3.5.4"><h4 data-number="3.5.4" class="anchored" data-anchor-id="tables-페이지">
-<span class="header-section-number">3.5.4</span> Tables 페이지</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: Life Expectancy</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> continent, <span class="at">group =</span> country)) <span class="sc">+</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">y =</span> <span class="st">"Life Expectancy"</span>, <span class="at">color =</span> <span class="st">"Continents"</span>)</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="tables-페이지" class="level4" data-number="3.5.4">
+<h4 data-number="3.5.4" class="anchored" data-anchor-id="tables-페이지"><span class="header-section-number">3.5.4</span> Tables 페이지</h4>
 <p>Tables라는 이름의 페이지를 설정한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Tables</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tables</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <p>단일 행을 설정한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## Row</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Row</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <p><code>DT</code> 패키지를 활용하여 테이블 카드를 생성한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#| title: Lookup Table</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/DT">DT</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/DT/man/datatable.html">datatable</a></span><span class="op">(</span><span class="va">gapminder</span>, filter <span class="op">=</span> <span class="st">"top"</span>, </span>
-<span>          options <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
-<span>            pageLength <span class="op">=</span> <span class="fl">5</span>, autoWidth <span class="op">=</span> <span class="cn">TRUE</span></span>
-<span>          <span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
-</section><section id="maps-페이지" class="level4" data-number="3.5.5"><h4 data-number="3.5.5" class="anchored" data-anchor-id="maps-페이지">
-<span class="header-section-number">3.5.5</span> Maps 페이지</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: Lookup Table</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(gapminder, <span class="at">filter =</span> <span class="st">"top"</span>, </span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">options =</span> <span class="fu">list</span>(</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">pageLength =</span> <span class="dv">5</span>, <span class="at">autoWidth =</span> <span class="cn">TRUE</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>          ))</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="maps-페이지" class="level4" data-number="3.5.5">
+<h4 data-number="3.5.5" class="anchored" data-anchor-id="maps-페이지"><span class="header-section-number">3.5.5</span> Maps 페이지</h4>
 <p>Maps라는 이름의 페이지를 설정한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Maps</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Maps</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <p>단일 행을 설정한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## Row</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Row</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <p><code>leaflet</code> 패키지를 활용하여 지도 카드를 생성한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#| title: A Reference Map </span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio.github.io/leaflet/">leaflet</a></span><span class="op">)</span> </span>
-<span><span class="fu"><a href="https://rstudio.github.io/leaflet/reference/leaflet.html">leaflet</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span>  </span>
-<span>  <span class="fu"><a href="https://rstudio.github.io/leaflet/reference/map-layers.html">addTiles</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
-</section></section><section id="대시보드를-웹상에-배포하기" class="level3" data-number="3.6"><h3 data-number="3.6" class="anchored" data-anchor-id="대시보드를-웹상에-배포하기">
-<span class="header-section-number">3.6</span> 대시보드를 웹상에 배포하기</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: A Reference Map </span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet) </span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>() <span class="sc">|&gt;</span>  </span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>()</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="대시보드를-웹상에-배포하기" class="level3" data-number="3.6">
+<h3 data-number="3.6" class="anchored" data-anchor-id="대시보드를-웹상에-배포하기"><span class="header-section-number">3.6</span> 대시보드를 웹상에 배포하기</h3>
 <p>블로그와 마찬가지로 다음의 절차에 따라 완성된 대시보드를 웹 상에 출판한다. 여기서는 <a href="https://posit.co/">Posit</a>에서 제공하는 무료 출판 사이트인 <a href="https://quartopub.com/">Quarto Pub</a>을 활용한다.</p>
 <ul>
 <li><p><a href="https://quartopub.com/">Quarto Pub</a>에 접속하여 계정을 만든다.</p></li>
@@ -1559,7 +1659,11 @@ Card 2-2 {width=50%}</code></pre>
 </ul>
 
 
-</section></section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> 맨 위로</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> 맨 위로</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1971,7 +2075,9 @@ Card 2-2 {width=50%}</code></pre>
       }
     }
   });
-  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
       <a href="./exec_02.html" class="pagination-link" aria-label="R과 데이터사이언스 과정">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">R과 데이터사이언스 과정</span>
       </a>          
@@ -1983,7 +2089,8 @@ Card 2-2 {width=50%}</code></pre>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p>Copyright 2024, Sang-Il Lee</p>
 </div>   
@@ -1992,7 +2099,7 @@ Card 2-2 {width=50%}</code></pre>
     <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>이슈 보고</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-<li class="nav-item compact">
+    <li class="nav-item compact">
     <a class="nav-link" href="https://sangillee.snu.ac.kr/">
       <i class="bi bi-house" role="img">
 </i> 
@@ -2011,9 +2118,10 @@ Card 2-2 {width=50%}</code></pre>
     </a>
   </li>  
 </ul>
-</div>
+    </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
@@ -2045,6 +2153,8 @@ Card 2-2 {width=50%}</code></pre>
   
 })();
           </script>
+
+
 
 
 </body></html>

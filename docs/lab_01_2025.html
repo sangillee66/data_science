@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.13">
+<meta name="generator" content="quarto-1.8.26">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="author" content="Sang-Il Lee ft. Ha-eun Lee">
+
 <title>R and RStudio – Data Science</title>
 <style>
 code{white-space: pre-wrap;}
@@ -55,6 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -70,9 +74,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ac077c1e730dfeb5e42400639d17284e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-ea00d30dd9b950c7ecb6e17bc6ca0835.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ac077c1e730dfeb5e42400639d17284e.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-9e227471bb36b425561843ed1c2ca3ae.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -80,7 +84,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-9e227471bb36b425561843ed1c2ca3ae.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -106,8 +111,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "검색",
     "search-label": "검색"
   }
-}</script><link rel="stylesheet" href="styles.css">
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -273,7 +282,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -284,9 +295,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Data Science</a> 
         <div class="sidebar-tools-main">
@@ -301,7 +316,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">웹사이트 소개</span></a>
@@ -316,8 +331,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exec_01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R과 RStudio</span></a>
@@ -384,7 +399,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -394,8 +409,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R_lec_01_2025.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">| <span style="color:coral;font-size:0.6em">R Lecture 1</span> | <span style="font-size:1em">R과 RStudio</span></span></a>
@@ -468,7 +483,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -478,8 +493,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R_lec_01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R &amp; RStudio</span></a>
@@ -540,7 +555,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -550,8 +565,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lab_01_2025.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">R and RStudio</span></a>
@@ -612,7 +627,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -622,8 +637,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lab_01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab01: R과 RStudio</span></a>
@@ -684,41 +699,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">목차</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
    
   <ul>
-<li><a href="#%EA%B0%9C%EC%9A%94" id="toc-개요" class="nav-link active" data-scroll-target="#%EA%B0%9C%EC%9A%94">개요</a></li>
-  <li>
-<a href="#r%EA%B3%BC-rstudio-%EC%84%A4%EC%B9%98" id="toc-r과-rstudio-설치" class="nav-link" data-scroll-target="#r%EA%B3%BC-rstudio-%EC%84%A4%EC%B9%98"><span class="header-section-number">1</span> R과 RStudio 설치</a>
+  <li><a href="#개요" id="toc-개요" class="nav-link active" data-scroll-target="#개요">개요</a></li>
+  <li><a href="#r과-rstudio-설치" id="toc-r과-rstudio-설치" class="nav-link" data-scroll-target="#r과-rstudio-설치"><span class="header-section-number">1</span> R과 RStudio 설치</a>
   <ul class="collapse">
-<li><a href="#r%EC%9D%98-%EC%84%A4%EC%B9%98" id="toc-r의-설치" class="nav-link" data-scroll-target="#r%EC%9D%98-%EC%84%A4%EC%B9%98"><span class="header-section-number">1.1</span> R의 설치</a></li>
-  <li><a href="#rstudio%EC%9D%98-%EC%84%A4%EC%B9%98" id="toc-rstudio의-설치" class="nav-link" data-scroll-target="#rstudio%EC%9D%98-%EC%84%A4%EC%B9%98"><span class="header-section-number">1.2</span> RStudio의 설치</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#rstudio-%EB%91%98%EB%9F%AC%EB%B3%B4%EA%B8%B0" id="toc-rstudio-둘러보기" class="nav-link" data-scroll-target="#rstudio-%EB%91%98%EB%9F%AC%EB%B3%B4%EA%B8%B0"><span class="header-section-number">2</span> RStudio 둘러보기</a>
+  <li><a href="#r의-설치" id="toc-r의-설치" class="nav-link" data-scroll-target="#r의-설치"><span class="header-section-number">1.1</span> R의 설치</a></li>
+  <li><a href="#rstudio의-설치" id="toc-rstudio의-설치" class="nav-link" data-scroll-target="#rstudio의-설치"><span class="header-section-number">1.2</span> RStudio의 설치</a></li>
+  </ul></li>
+  <li><a href="#rstudio-둘러보기" id="toc-rstudio-둘러보기" class="nav-link" data-scroll-target="#rstudio-둘러보기"><span class="header-section-number">2</span> RStudio 둘러보기</a>
   <ul class="collapse">
-<li><a href="#%EC%B0%BDpane-%ED%8C%A8%EC%9D%B8" id="toc-창pane-패인" class="nav-link" data-scroll-target="#%EC%B0%BDpane-%ED%8C%A8%EC%9D%B8"><span class="header-section-number">2.1</span> 창(pane, 패인)</a></li>
-  <li><a href="#console-%EC%B0%BD%EC%97%90%EC%84%9C-%EB%86%80%EC%95%84%EB%B3%B4%EA%B8%B0" id="toc-console-창에서-놀아보기" class="nav-link" data-scroll-target="#console-%EC%B0%BD%EC%97%90%EC%84%9C-%EB%86%80%EC%95%84%EB%B3%B4%EA%B8%B0"><span class="header-section-number">2.2</span> Console 창에서 놀아보기</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8project%EC%99%80-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8script" id="toc-프로젝트project와-스크립트script" class="nav-link" data-scroll-target="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8project%EC%99%80-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8script"><span class="header-section-number">3</span> 프로젝트(project)와 스크립트(script)</a>
+  <li><a href="#창pane-패인" id="toc-창pane-패인" class="nav-link" data-scroll-target="#창pane-패인"><span class="header-section-number">2.1</span> 창(pane, 패인)</a></li>
+  <li><a href="#console-창에서-놀아보기" id="toc-console-창에서-놀아보기" class="nav-link" data-scroll-target="#console-창에서-놀아보기"><span class="header-section-number">2.2</span> Console 창에서 놀아보기</a></li>
+  </ul></li>
+  <li><a href="#프로젝트project와-스크립트script" id="toc-프로젝트project와-스크립트script" class="nav-link" data-scroll-target="#프로젝트project와-스크립트script"><span class="header-section-number">3</span> 프로젝트(project)와 스크립트(script)</a>
   <ul class="collapse">
-<li><a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0" id="toc-프로젝트-만들기" class="nav-link" data-scroll-target="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0"><span class="header-section-number">3.1</span> 프로젝트 만들기</a></li>
-  <li><a href="#%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0" id="toc-스크립트-만들기" class="nav-link" data-scroll-target="#%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0"><span class="header-section-number">3.2</span> 스크립트 만들기</a></li>
+  <li><a href="#프로젝트-만들기" id="toc-프로젝트-만들기" class="nav-link" data-scroll-target="#프로젝트-만들기"><span class="header-section-number">3.1</span> 프로젝트 만들기</a></li>
+  <li><a href="#스크립트-만들기" id="toc-스크립트-만들기" class="nav-link" data-scroll-target="#스크립트-만들기"><span class="header-section-number">3.2</span> 스크립트 만들기</a></li>
+  </ul></li>
   </ul>
-</li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>이슈 보고</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>이슈 보고</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
 <h1 class="title d-none d-lg-block">R and RStudio</h1>
 </div>
 
@@ -737,7 +753,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2025년 12월 23일</p>
+      <p class="date-modified">2026년 1월 20일</p>
     </div>
   </div>
     
@@ -745,7 +761,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><section id="개요" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="개요">개요</h2>
+</header>
+
+
+<section id="개요" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="개요">개요</h2>
 <p>여기서는 R과 RStudio의 기본기를 다진다. 다음과 같은 사항이 다루어진다.</p>
 <p>1. R과 RStudio 설치</p>
 <p>2. RStudio 둘러보기</p>
@@ -765,20 +785,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Mac: 프로젝트 폴더 이름 설정만 잘 신경쓰면 된다.</p>
 </div>
 </div>
-</section><section id="r과-rstudio-설치" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="r과-rstudio-설치">
-<span class="header-section-number">1</span> R과 RStudio 설치</h2>
+</section>
+<section id="r과-rstudio-설치" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="r과-rstudio-설치"><span class="header-section-number">1</span> R과 RStudio 설치</h2>
 <p>프로그램을 다운로드하기 위해 다음의 <a href="https://posit.co/download/rstudio-desktop/">웹사이트</a>로 이동한다. 여기는 RStudio를 만든 <a href="https://posit.co/">posit</a>(과거에는 회사명 자체도 RStudio였음)이라는 회사가 관리하는 RStudio Desktop 다운로드 페이지이다.</p>
 <p>그러면 <a href="#fig-install-rstudio" class="quarto-xref">그림&nbsp;1</a> 과 같이 R과 RStudio를 설치할 수 있는 화면이 나타날 것이다.</p>
 <div id="fig-install-rstudio" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-install-rstudio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-install-rstudio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/R_RStudio_Install.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="그림&nbsp;1: 다운로드 화면"><img src="images/R_RStudio_Install.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-rstudio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;1: 다운로드 화면
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
-<section id="r의-설치" class="level3" data-number="1.1"><h3 data-number="1.1" class="anchored" data-anchor-id="r의-설치">
-<span class="header-section-number">1.1</span> R의 설치</h3>
+<section id="r의-설치" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="r의-설치"><span class="header-section-number">1.1</span> R의 설치</h3>
 <p>왼쪽의 다운로드 바를 클릭하면 <a href="https://cran.rstudio.com/">CRAN(The Comprehensive R Archive Network)</a>으로 이동한다. 자신의 운영체계에 맞는 R의 최신 버전을 다운로드하고 자신의 디바이스에 설치한다. 이 다큐먼트 작성 시점 기준으로 R의 최신 버전은 4.5.1이다.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -793,23 +816,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>CRAN은 R의 핵심 소프트웨어 저장소(software repository)이다. R 프로그램 자체의 과거와 현재의 버전들 뿐만 아니라 수많은 R 패키지(package)(현재 대략 20,000개)가 모여 있는 곳이다. 1997년 Kurt Hornik와 Friedrich Leisch에 의해 처음 만들어졌으며, 현재에도 Hornik와 많은 자원봉사자들에 의해 운영되고 있다. 자세한 사항은 <a href="https://en.wikipedia.org/wiki/R_package#Comprehensive_R_Archive_Network_(CRAN)">Wikipedia</a>를 참조할 수 있다.</p>
 </div>
 </div>
-</section><section id="rstudio의-설치" class="level3" data-number="1.2"><h3 data-number="1.2" class="anchored" data-anchor-id="rstudio의-설치">
-<span class="header-section-number">1.2</span> RStudio의 설치</h3>
+</section>
+<section id="rstudio의-설치" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="rstudio의-설치"><span class="header-section-number">1.2</span> RStudio의 설치</h3>
 <p>R의 지배적인 IDE(Integrated Development Environment, 통합개발환경)인 RStudio를 설치한다. 다시 원래의 다운로드 페이지로 돌아와, 오른편의 다운로드 바를 클릭하면 윈도우즈용 RStudio의 파일을 다운로드할 수 있다. 스크롤 다운하면 다른 운영체계를 위한 RStudio를 다운로드할 수 있다. 다운받은 RStudio를 자신의 디바이스에 설치한다. 이 다큐먼트 작성 시점 기준으로 RStudio의 최신 버전은 2025년 5월 1일에 발표된 2025.05.1+513이다.</p>
 <p>RStudio는 R만을 위한 IDE인데, <a href="https://posit.co/">posit</a>은 최근 R과 Python 모두를 사용할 수 있는 범용 IDE인 <a href="https://positron.posit.co/">Positron</a>을 개발하였다. 2025년 7월 3일에 베타 버전을 끝내고 정식 출시했으며, 현재는 2025년 8월 14일에 출시된 2025.08.0-130이 최신 버전이다. Positron은 RStudio와 Python에서 많이 사용되는 <a href="https://code.visualstudio.com/">VS Code</a>를 결합한 것으로, 향상된 기능과 외견이 기대된다. 2026년부터는 RStudio에서 Positron으로의 이동이 본격화될 것이다. Positron을 살펴보는데 아래의 동영상이 도움이 될 것이다.</p>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/4Ir_HX4riHw" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</section></section><section id="rstudio-둘러보기" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="rstudio-둘러보기">
-<span class="header-section-number">2</span> RStudio 둘러보기</h2>
-<section id="창pane-패인" class="level3" data-number="2.1"><h3 data-number="2.1" class="anchored" data-anchor-id="창pane-패인">
-<span class="header-section-number">2.1</span> 창(pane, 패인)</h3>
+</section>
+</section>
+<section id="rstudio-둘러보기" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="rstudio-둘러보기"><span class="header-section-number">2</span> RStudio 둘러보기</h2>
+<section id="창pane-패인" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="창pane-패인"><span class="header-section-number">2.1</span> 창(pane, 패인)</h3>
 <p>RStudio를 실행하면 아마도 대부분의 경우 <a href="#fig-3-panes" class="quarto-xref">그림&nbsp;2</a> 와 같은 화면을 보게 될 것이다. 크게 세 개의 창으로 구성되어 있음을 알 수 있다.</p>
 <div id="fig-3-panes" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-3-panes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-3-panes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="https://r4ds.hadley.nz/diagrams/rstudio/console.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="그림&nbsp;2: 세 개의 창"><img src="https://r4ds.hadley.nz/diagrams/rstudio/console.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-3-panes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;2: 세 개의 창
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 <p>왼편에 가장 크게 나타나 있는 것을 Console 창(pane)이라고 부르고, 우하의 창은 Output 창 혹은 File 창이라고 부른다. 우상에도 또 다른 창이 하나 보이는데 보통 Environment 창이라고 부른다.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -825,8 +853,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>개별 창은 여러 개의 탭(tab)으로 구성되어 있는데, 탭의 기능이 매우 다양하기 때문에 소속 탭의 모든 기능을 포괄하는 일관성 있는 창 이름을 붙이는 것이 매우 어렵다. 예를 들어 Output 창의 경우 Plots와 Viewer 탭은 결과물을 보여주는 것이라 할 수 있지만 나머지 탭은 꼭 그렇지도 않다.</p>
 </div>
 </div>
-</section><section id="console-창에서-놀아보기" class="level3" data-number="2.2"><h3 data-number="2.2" class="anchored" data-anchor-id="console-창에서-놀아보기">
-<span class="header-section-number">2.2</span> Console 창에서 놀아보기</h3>
+</section>
+<section id="console-창에서-놀아보기" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="console-창에서-놀아보기"><span class="header-section-number">2.2</span> Console 창에서 놀아보기</h3>
 <p>여기서는 Console 창을 통해 R의 가장 기본적인 다음의 개념들에 대해 알아보고자 한다. Console 창은 R에서 CLI(command-line interface, 명령줄(어) 인터페이스) 역할을 하는 가장 핵심적인 부분이다. 사용자가 프로그램을 통해 컴퓨터와 상호작용하는 인터페이스이다.</p>
 <ul>
 <li><p>프롬프트(prompt): 명령 프롬프트(command prompt)라고도 불리는 것으로, CLI에서 명령어 대기 상태를 나타내는 일종의 부호이다. R에서는 <code>&gt;</code>를 사용한다.</p></li>
@@ -836,25 +865,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>벡터(vector): 숫자의 일차원적 집합으로 보통 개별 행(row) 혹은 개별 열(column)을 의미한다.</p></li>
 <li><p>데이터 프레임(data frame): 하나 이상의 벡터를 모아 둔 숫자의 2차원적 집합으로, 다수의 행과 다수의 열로 이루어진 테이블을 의미한다. 이것이 보통 우리가 데이터셋이라고 부르는 것이다.</p></li>
 </ul>
-<section id="프롬프트-할당-객체" class="level4" data-number="2.2.1"><h4 data-number="2.2.1" class="anchored" data-anchor-id="프롬프트-할당-객체">
-<span class="header-section-number">2.2.1</span> 프롬프트, 할당, 객체</h4>
+<section id="프롬프트-할당-객체" class="level4" data-number="2.2.1">
+<h4 data-number="2.2.1" class="anchored" data-anchor-id="프롬프트-할당-객체"><span class="header-section-number">2.2.1</span> 프롬프트, 할당, 객체</h4>
 <p>콘솔 창에 R 프롬프트인 <code>&gt;</code>가 나타나 있을 것이다. 아래와 같이 숫자 1을 타이핑하고 실행을 위해 [enter] 키를 누른다.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fl">1</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1</code></pre>
 </div>
 </div>
 <p>간단한 연산을 해본다. 사실 R은 기본적으로 계산기이다.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fl">1</span> <span class="op">+</span> <span class="fl">2</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">2</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3</code></pre>
 </div>
 </div>
 <p>이제 할당 연산자(<code>&lt;-</code>)를 활용하여 할당을 해보자.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fl">1</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>우상의 Environment 창을 보면 뭔가 생성된 것을 확인할 수 있을 것이다. <code>a</code>라는 객체가 생성되었으며 그것은 1이라는 값을 품고 있다는 의미이다. 이제 <code>a</code>는 알파벳 소문자가 아니라 1이라는 숫자와 필연적으로 결합해 있는 객체이다. 다음을 실행하면 이러한 사실을 보다 명확히 확인할 수 있다.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -871,16 +900,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">a</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>a</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1</code></pre>
 </div>
 </div>
 <p>아래와 같이 하면 객체끼리의 연산이 가능하다.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">b</span> <span class="op">&lt;-</span> <span class="fl">2</span></span>
-<span><span class="va">c</span> <span class="op">&lt;-</span> <span class="va">a</span> <span class="op">+</span> <span class="va">b</span></span>
-<span><span class="va">c</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> a <span class="sc">+</span> b</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>c</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3</code></pre>
 </div>
@@ -893,18 +922,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <col style="width: 25%">
 <col style="width: 25%">
 </colgroup>
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th>범주</th>
 <th>연산자</th>
 <th>설명</th>
 <th>예시</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td>할당(assignment) 연산자</td>
-<td>
-<code>&lt;-</code> 혹은 <code>-&gt;</code>
-</td>
+<td><code>&lt;-</code> 혹은 <code>-&gt;</code></td>
 <td>데이터를 객체에 할당</td>
 <td><code>a &lt;- 5</code></td>
 </tr>
@@ -934,9 +963,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td></td>
-<td>
-<code>^</code> 혹은 <code>**</code>
-</td>
+<td><code>^</code> 혹은 <code>**</code></td>
 <td>제곱(exponent/power)</td>
 <td><code>5^2 = 25</code></td>
 </tr>
@@ -956,43 +983,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>관계(relational) 연산자</td>
 <td><code>x &lt; y</code></td>
 <td>x가 y보다 작은 경우</td>
-<td>3 &lt; 4 <code>TRUE</code>
-</td>
+<td>3 &lt; 4 <code>TRUE</code></td>
 </tr>
 <tr class="even">
 <td></td>
 <td><code>x &gt; y</code></td>
 <td>x가 y보다 큰 경우</td>
-<td>3 &gt; 4 <code>FALSE</code>
-</td>
+<td>3 &gt; 4 <code>FALSE</code></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td><code>x &lt;= y</code></td>
 <td>x가 y보다 작거나 같은 경우</td>
-<td>3 &lt;= 4 <code>TRUE</code>
-</td>
+<td>3 &lt;= 4 <code>TRUE</code></td>
 </tr>
 <tr class="even">
 <td></td>
 <td><code>x &gt;= y</code></td>
 <td>x가 y보다 크거나 같은 경우</td>
-<td>3 &gt;= 4 <code>FALSE</code>
-</td>
+<td>3 &gt;= 4 <code>FALSE</code></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td><code>x == y</code></td>
 <td>x와 y가 같은 경우</td>
-<td>3 == 4 <code>FALSE</code>
-</td>
+<td>3 == 4 <code>FALSE</code></td>
 </tr>
 <tr class="even">
 <td></td>
 <td><code>x != y</code></td>
 <td>x와 y가 다른 경우</td>
-<td>3 != 4 <code>TRUE</code>
-</td>
+<td>3 != 4 <code>TRUE</code></td>
 </tr>
 <tr class="odd">
 <td>논리(logical) 연산자</td>
@@ -1031,11 +1052,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>벡터 x의 각 원소가 y 안에 존재하지 않는지 확인</td>
 </tr>
 </tbody>
-</table></section><section id="함수" class="level4" data-number="2.2.2"><h4 data-number="2.2.2" class="anchored" data-anchor-id="함수">
-<span class="header-section-number">2.2.2</span> 함수</h4>
-<p><code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code> 함수를 사용하여 동일한 연산을 할 수 있다. <code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code>은 R에 기본적으로 내장되어 있는 Base R 함수 중 하나이다.</p>
+</table>
+</section>
+<section id="함수" class="level4" data-number="2.2.2">
+<h4 data-number="2.2.2" class="anchored" data-anchor-id="함수"><span class="header-section-number">2.2.2</span> 함수</h4>
+<p><code>sum()</code> 함수를 사용하여 동일한 연산을 할 수 있다. <code>sum()</code>은 R에 기본적으로 내장되어 있는 Base R 함수 중 하나이다.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(a, b)</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3</code></pre>
 </div>
@@ -1053,17 +1076,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>지금부터 모든 함수명에는 항상 <code>()</code>를 연결하여 나타낼 것이다. 다른 객체명과의 혼동을 방지하기 위한 것도 있지만, 모든 함수는 <code>()</code> 속에 인풋(이것을 인자(argument)라고 부른다)을 받아들이기 때문이다.</p>
 </div>
 </div>
-<p>R에는 수많은 내장 함수가 있다. 그 중 몇가지만 실행하면 다음과 같다. <code><a href="https://rdrr.io/r/base/MathFun.html">sqrt()</a></code>는 제곱근을, <code><a href="https://rdrr.io/r/base/MathFun.html">abs()</a></code>는 절대값을, <code><a href="https://rdrr.io/r/base/Log.html">log10()</a></code>는 밑을 10으로 하는 로그값을 산출해준다.</p>
+<p>R에는 수많은 내장 함수가 있다. 그 중 몇가지만 실행하면 다음과 같다. <code>sqrt()</code>는 제곱근을, <code>abs()</code>는 절대값을, <code>log10()</code>는 밑을 10으로 하는 로그값을 산출해준다.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">2</span>)</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.414214</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="op">-</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">abs</span>(<span class="sc">-</span><span class="dv">3</span>)</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log10</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log10</span>(<span class="dv">100</span>)</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2</code></pre>
 </div>
@@ -1075,39 +1098,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <col style="width: 33%">
 <col style="width: 33%">
 </colgroup>
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th>범주</th>
 <th>구분</th>
 <th>함수</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td>논리형 판별 함수</td>
 <td>결측치 여부</td>
-<td>
-<code><a href="https://rdrr.io/r/base/NA.html">is.na()</a></code>, <code><a href="https://rdrr.io/r/base/is.finite.html">is.nan()</a></code>, <code><a href="https://rdrr.io/r/base/is.finite.html">is.infinite()</a></code>, <code><a href="https://rdrr.io/r/base/is.finite.html">is.finite()</a></code>
-</td>
+<td><code>is.na()</code>, <code>is.nan()</code>, <code>is.infinite()</code>, <code>is.finite()</code></td>
 </tr>
 <tr class="even">
 <td></td>
 <td>유형 확인</td>
-<td>
-<code><a href="https://rdrr.io/r/base/numeric.html">is.numeric()</a></code>, <code><a href="https://rdrr.io/r/base/integer.html">is.integer()</a></code>, <code><a href="https://rdrr.io/r/base/character.html">is.character()</a></code>, <code><a href="https://rdrr.io/r/base/logical.html">is.logical()</a></code>, <code><a href="https://rdrr.io/r/base/factor.html">is.factor()</a></code>
-</td>
+<td><code>is.numeric()</code>, <code>is.integer()</code>, <code>is.character()</code>, <code>is.logical()</code>, <code>is.factor()</code></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>구조 확인</td>
-<td>
-<code><a href="https://rdrr.io/r/base/as.data.frame.html">is.data.frame()</a></code>, <code><a href="https://rdrr.io/r/base/matrix.html">is.matrix()</a></code>, <code><a href="https://rdrr.io/r/base/list.html">is.list()</a></code>, <code><a href="https://rdrr.io/r/base/vector.html">is.vector()</a></code>
-</td>
+<td><code>is.data.frame()</code>, <code>is.matrix()</code>, <code>is.list()</code>, <code>is.vector()</code></td>
 </tr>
 <tr class="even">
 <td></td>
 <td>기타</td>
-<td>
-<code><a href="https://rdrr.io/r/base/NULL.html">is.null()</a></code>, <code><a href="https://rdrr.io/r/base/is.recursive.html">is.atomic()</a></code>, <code><a href="https://rdrr.io/r/base/sets.html">is.element()</a></code>
-</td>
+<td><code>is.null()</code>, <code>is.atomic()</code>, <code>is.element()</code></td>
 </tr>
 <tr class="odd">
 <td>위치 기반 추출 함수</td>
@@ -1127,143 +1144,117 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="even">
 <td></td>
 <td>앞의 몇 개의 원소</td>
-<td><code><a href="https://rdrr.io/r/utils/head.html">head()</a></code></td>
+<td><code>head()</code></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>뒤의 몇 개의 원소</td>
-<td><code><a href="https://rdrr.io/r/utils/head.html">tail()</a></code></td>
+<td><code>tail()</code></td>
 </tr>
 <tr class="even">
 <td>수학 함수</td>
 <td>절댓값/부호</td>
-<td>
-<code><a href="https://rdrr.io/r/base/MathFun.html">abs()</a></code>, <code><a href="https://rdrr.io/r/base/sign.html">sign()</a></code>
-</td>
+<td><code>abs()</code>, <code>sign()</code></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>제곱근/지수</td>
-<td>
-<code><a href="https://rdrr.io/r/base/MathFun.html">sqrt()</a></code>, <code><a href="https://rdrr.io/r/base/Log.html">exp()</a></code>
-</td>
+<td><code>sqrt()</code>, <code>exp()</code></td>
 </tr>
 <tr class="even">
 <td></td>
 <td>로그</td>
-<td>
-<code><a href="https://rdrr.io/r/base/Log.html">log()</a></code>, <code><a href="https://rdrr.io/r/base/Log.html">log10()</a></code>, <code><a href="https://rdrr.io/r/base/Log.html">log2()</a></code>
-</td>
+<td><code>log()</code>, <code>log10()</code>, <code>log2()</code></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>삼각함수</td>
-<td>
-<code><a href="https://rdrr.io/r/base/Trig.html">sin()</a></code>, <code><a href="https://rdrr.io/r/base/Trig.html">cos()</a></code>, <code><a href="https://rdrr.io/r/base/Trig.html">tan()</a></code>, <code><a href="https://rdrr.io/r/base/Trig.html">asin()</a></code>
-</td>
+<td><code>sin()</code>, <code>cos()</code>, <code>tan()</code>, <code>asin()</code></td>
 </tr>
 <tr class="even">
 <td></td>
 <td>반올림</td>
-<td>
-<code><a href="https://rdrr.io/r/base/Round.html">round()</a></code>, <code><a href="https://rdrr.io/r/base/Round.html">floor()</a></code>, <code><a href="https://rdrr.io/r/base/Round.html">ceiling()</a></code>, <code><a href="https://rdrr.io/r/base/Round.html">trunc()</a></code>
-</td>
+<td><code>round()</code>, <code>floor()</code>, <code>ceiling()</code>, <code>trunc()</code></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>요약</td>
-<td>
-<code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code>, <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code>, <code><a href="https://rdrr.io/r/stats/median.html">median()</a></code>, <code><a href="https://rdrr.io/r/stats/cor.html">var()</a></code>, <code><a href="https://rdrr.io/r/stats/sd.html">sd()</a></code>, <code><a href="https://rdrr.io/r/base/Extremes.html">min()</a></code>, <code><a href="https://rdrr.io/r/base/Extremes.html">max()</a></code>, <code><a href="https://rdrr.io/r/base/range.html">range()</a></code>, <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code>
-</td>
+<td><code>sum()</code>, <code>mean()</code>, <code>median()</code>, <code>var()</code>, <code>sd()</code>, <code>min()</code>, <code>max()</code>, <code>range()</code>, <code>summary()</code></td>
 </tr>
 <tr class="even">
 <td>벡터 생성 함수</td>
 <td>수열/반복</td>
-<td>
-<code><a href="https://rdrr.io/r/base/seq.html">seq()</a></code>, <code><a href="https://rdrr.io/r/base/rep.html">rep()</a></code>
-</td>
+<td><code>seq()</code>, <code>rep()</code></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>특정 유형</td>
-<td>
-<code><a href="https://rdrr.io/r/base/numeric.html">numeric()</a></code>, <code><a href="https://rdrr.io/r/base/integer.html">integer()</a></code>, <code><a href="https://rdrr.io/r/base/logical.html">logical()</a></code>, <code><a href="https://rdrr.io/r/base/character.html">character()</a></code>
-</td>
+<td><code>numeric()</code>, <code>integer()</code>, <code>logical()</code>, <code>character()</code></td>
 </tr>
 <tr class="even">
 <td></td>
 <td>난수/표본 생성</td>
-<td>
-<code><a href="https://rdrr.io/r/base/sample.html">sample()</a></code>, <code><a href="https://rdrr.io/r/stats/Normal.html">rnorm()</a></code>, <code><a href="https://rdrr.io/r/stats/Uniform.html">runif()</a></code>, <code><a href="https://rdrr.io/r/stats/Binomial.html">rbinom()</a></code>
-</td>
+<td><code>sample()</code>, <code>rnorm()</code>, <code>runif()</code>, <code>rbinom()</code></td>
 </tr>
 <tr class="odd">
 <td>집합 연산 함수</td>
 <td>합집합</td>
-<td><code><a href="https://rdrr.io/r/base/sets.html">union()</a></code></td>
+<td><code>union()</code></td>
 </tr>
 <tr class="even">
 <td></td>
 <td>교집합</td>
-<td><code><a href="https://rdrr.io/r/base/sets.html">intersect()</a></code></td>
+<td><code>intersect()</code></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>차집합</td>
-<td><code><a href="https://rdrr.io/r/base/sets.html">setdiff()</a></code></td>
+<td><code>setdiff()</code></td>
 </tr>
 <tr class="even">
 <td></td>
 <td>동일 여부</td>
-<td><code><a href="https://rdrr.io/r/base/sets.html">setequal()</a></code></td>
+<td><code>setequal()</code></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>원소 포함 여부</td>
-<td><code><a href="https://rdrr.io/r/base/sets.html">is.element()</a></code></td>
+<td><code>is.element()</code></td>
 </tr>
 <tr class="even">
 <td>변환 함수</td>
 <td>유형 변환</td>
-<td>
-<code><a href="https://rdrr.io/r/base/numeric.html">as.numeric()</a></code>, <code><a href="https://rdrr.io/r/base/character.html">as.character()</a></code>, <code><a href="https://rdrr.io/r/base/factor.html">as.factor()</a></code>, <code><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame()</a></code>
-</td>
+<td><code>as.numeric()</code>, <code>as.character()</code>, <code>as.factor()</code>, <code>as.data.frame()</code></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>재코딩/재배열</td>
-<td>
-<code><a href="https://rdrr.io/r/base/cut.html">cut()</a></code>, <code><a href="https://rdrr.io/r/stats/relevel.html">relevel()</a></code>, <code><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder()</a></code>
-</td>
+<td><code>cut()</code>, <code>relevel()</code>, <code>reorder()</code></td>
 </tr>
 <tr class="even">
 <td></td>
 <td>표준화</td>
-<td><code><a href="https://rdrr.io/r/base/scale.html">scale()</a></code></td>
+<td><code>scale()</code></td>
 </tr>
 <tr class="odd">
 <td>기타 함수</td>
 <td>길이</td>
-<td><code><a href="https://rdrr.io/r/base/length.html">length()</a></code></td>
+<td><code>length()</code></td>
 </tr>
 <tr class="even">
 <td></td>
 <td>정렬</td>
-<td>
-<code><a href="https://rdrr.io/r/base/sort.html">sort()</a></code>, <code><a href="https://rdrr.io/r/base/order.html">order()</a></code>
-</td>
+<td><code>sort()</code>, <code>order()</code></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>중복 처리</td>
-<td>
-<code><a href="https://rdrr.io/r/base/unique.html">unique()</a></code>, <code><a href="https://rdrr.io/r/base/duplicated.html">duplicated()</a></code>
-</td>
+<td><code>unique()</code>, <code>duplicated()</code></td>
 </tr>
 <tr class="even">
 <td></td>
 <td>결측치 처리</td>
-<td><code><a href="https://rdrr.io/r/stats/na.fail.html">na.omit()</a></code></td>
+<td><code>na.omit()</code></td>
 </tr>
 </tbody>
 </table>
@@ -1280,14 +1271,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>최근 <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a> 패키지의 사용이 활발해 지면서 이러한 Base R 함수의 활용에 약간의 변동이 발생하고 있다. <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a> 패키지는 <a href="https://design.tidyverse.org/">타이디버스 디자인 원리</a>에 의거해 새로운 함수를 디자인하여 제공하고 있다. 이러한 타이디버스 함수가 Base R 함수나 기존의 패키지의 함수를 대체해 나가고 있는 실정이다. 여전히 많은 사람이 여기에 열거되어 있는 Base R의 기본 함수를 사용하고, 그러한 문법에 따라 코드를 작성하고 있다. 나는 타이디버스가 R의 미래라고 확신하며 가능한 코드를 타이디버스 함수를 이용해 작성하도록 노력할 것이다. 여기서 Base R의 함수는 기본적으로 벡터에 적용되는 함수이고, 타이디버스 함수는 데이터 프레임에 적용되는 함수라는 점을 명확히 할 필요가 있다. 따라서 타이디버스에서 벡터 연산을 할 때는 위에서 열거한 많은 함수를 그대로 사용한다. 특히, 논리형 판별 함수와 수학 함수는 그대로 사용하고 있다. 집합 연산 함수는 이름은 동일하지만 사실 새롭게 디자인한 함수이다. 타이디버스는 새로운 데이터 프레임 기반 함수를 통해 기존의 벡터 기반 함수가 하는 일을 대체하고자 한다. 그렇지만 모든 코드를 데이터 프레임 함수로만 작성할 수 없고, Base R의 여러 벡터 함수는 여전히 유용하게 사용되고 있다. 타이디버스가 부가적으로 제공하는 벡터 함수에 대해서는 다른 장에서 다루도록 한다.</p>
 </div>
 </div>
-</section><section id="벡터와-데이터-프레임" class="level4" data-number="2.2.3"><h4 data-number="2.2.3" class="anchored" data-anchor-id="벡터와-데이터-프레임">
-<span class="header-section-number">2.2.3</span> 벡터와 데이터 프레임</h4>
+</section>
+<section id="벡터와-데이터-프레임" class="level4" data-number="2.2.3">
+<h4 data-number="2.2.3" class="anchored" data-anchor-id="벡터와-데이터-프레임"><span class="header-section-number">2.2.3</span> 벡터와 데이터 프레임</h4>
 <p>위에서 살펴본 숫자 하나하나는 큰 의미가 없다. 우리는 보통 숫자의 집합(array), 즉 벡터를 다룬다.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">29</span>, <span class="fl">27</span>, <span class="fl">23</span><span class="op">)</span></span>
-<span><span class="va">b</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">29L</span>, <span class="fl">27L</span>, <span class="fl">23L</span><span class="op">)</span></span>
-<span><span class="va">c</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="va">d</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"이하은"</span>, <span class="st">"김우형"</span>, <span class="st">"박서우"</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">29</span>, <span class="dv">27</span>, <span class="dv">23</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">29</span>L, <span class="dv">27</span>L, <span class="dv">23</span>L)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"이하은"</span>, <span class="st">"김우형"</span>, <span class="st">"박서우"</span>)</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>는 모두 벡터이다. 우상의 Environment 창에서도 이러한 사실을 확인할 수 있다. 그런데, 이 세가지 벡터는 데이터의 유형(type)이라는 측면에서 서로 다르다. <code>a</code>는 숫자형(numeric), <code>b</code>는 정수형(integer), <code>c</code>는 논리형(logical), <code>d</code>는 문자형(character)이다. Environment 창을 보면, <code>a</code>에 대해서는 <code>num</code>, <code>b</code>에 대해서는 int, <code>c</code>에 대해서는 <code>logi</code>, <code>d</code>에 대해서는 <code>chr</code>이라는 축약어가 붙어 있음을 알 수 있는데, 이것이 바로 벡터의 유형을 나타내고 있는 것이다. 사실 R에서 다루는 벡터의 유형은 10가지가 넘는다.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1303,10 +1295,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a> 패키지의 핵심 패키지 중의 하나인 <a href="https://tibble.tidyverse.org/"><strong>tibble</strong></a> 패키지에서 규정된 데이터 유형에 대해서는 다음의 웹사이트를 참고할 수 있다. <a href="https://tibble.tidyverse.org/articles/types.html" class="uri">https://tibble.tidyverse.org/articles/types.html</a></p>
 </div>
 </div>
-<p>벡터를 <code><a href="https://rdrr.io/r/base/data.frame.html">data.frame()</a></code>이라는 함수를 통해 결합하면 데이터 프레임을 만들 수 있다.</p>
+<p>벡터를 <code>data.frame()</code>이라는 함수를 통해 결합하면 데이터 프레임을 만들 수 있다.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span>, <span class="va">c</span>, <span class="va">d</span><span class="op">)</span></span>
-<span><span class="va">df</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(a, b, c, d)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   a  b     c      d
 1 29 29  TRUE 이하은
@@ -1315,25 +1307,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>우상의 Environment 창을 보면 뭔가 변화가 있음을 확인할 수 있을 것이다. Data가 생겼고 그 아래에 <code>df</code>가 생성되어 있을 것이다. “3 obs. of 4 variables”라는 말이 굉장히 중요하다. 이것은 <code>df</code>라는 데이터 프레임 객체가 3개의 관측 개체(observations)와 4개의 변수(variables)로 구성되어 있다는 것을 의미한다. 데이터 프레임, 관측 개체, 변수에 대해서는 강의에서 상세하게 다룬다.</p>
-<p>Environment 창에서 <code>df</code>를 클릭해보라. 그러면 왼편에 또 하나의 창이 생기면서 마치 엑셀과 같은 형식으로 데이터가 나타날 것이다. <code><a href="https://rdrr.io/r/utils/View.html">View()</a></code> 함수를 실행해도 동일한 결과를 얻을 수 있다.</p>
+<p>Environment 창에서 <code>df</code>를 클릭해보라. 그러면 왼편에 또 하나의 창이 생기면서 마치 엑셀과 같은 형식으로 데이터가 나타날 것이다. <code>View()</code> 함수를 실행해도 동일한 결과를 얻을 수 있다.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/View.html">View</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(df)</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>여기서 중요한 것은 새로 생긴 창이다. 이것을 보통 Editor 창이라고 부른다. 이제부터 Console은 부차적인 목적으로만 사용할 것이고 Editor 창이 주인공이 된다.</p>
-</section></section></section><section id="프로젝트project와-스크립트script" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="프로젝트project와-스크립트script">
-<span class="header-section-number">3</span> 프로젝트(project)와 스크립트(script)</h2>
-<section id="프로젝트-만들기" class="level3" data-number="3.1"><h3 data-number="3.1" class="anchored" data-anchor-id="프로젝트-만들기">
-<span class="header-section-number">3.1</span> 프로젝트 만들기</h3>
-<section id="r-프로젝트의-개념" class="level4" data-number="3.1.1"><h4 data-number="3.1.1" class="anchored" data-anchor-id="r-프로젝트의-개념">
-<span class="header-section-number">3.1.1</span> R 프로젝트의 개념</h4>
+</section>
+</section>
+</section>
+<section id="프로젝트project와-스크립트script" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="프로젝트project와-스크립트script"><span class="header-section-number">3</span> 프로젝트(project)와 스크립트(script)</h2>
+<section id="프로젝트-만들기" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="프로젝트-만들기"><span class="header-section-number">3.1</span> 프로젝트 만들기</h3>
+<section id="r-프로젝트의-개념" class="level4" data-number="3.1.1">
+<h4 data-number="3.1.1" class="anchored" data-anchor-id="r-프로젝트의-개념"><span class="header-section-number">3.1.1</span> R 프로젝트의 개념</h4>
 <p>RStudio에서 프로젝트란 한 단위의 R 과업을 의미한다. 매우 단순한 과업도 있겠지만, 보통 데이터를 읽고, 정돈하고, 변형하고, 시각화하고, 모델링하는 등의 다양한 활동이 개입된다. 하나의 일관된 목적을 위해 이러한 다양한 일을 한다면, 이것들을 한데 모아 함께 관리하는 것이 좋을 것이다. 프로젝트는 하나의 과업을 위해 당신이 행한 모든 것이 체계적으로 정돈되어 있는 가상의 방이다. 좀 이질적인 과업을 하게 된다면 기존의 프로젝트 속에서 하기 보다는 또 다른 프로젝트를 만들어 그 속에서 하는 것이 효과적일 것이다.</p>
 <p>RStudio의 프로젝트는 실질적으로 하나의 폴더를 의미한다. 하나의 폴더 속에 모든 활동과 그것의 인풋 및 아웃풋이 모두 저장되고, RStudio는 그것을 체계적으로 관리할 수 있게 해주는 툴을 제공한다.</p>
 <p>다음과 같은 관행을 추천한다.</p>
 <ul>
 <li><p>디바이스에 모든 R 프로젝트를 포괄하는 최상위 폴더를 만든다. 걸맞는 폴더명(예: R_Projects)을 부여한다. 이것은 R 외부에서 미리 해둔다. 물론 Output 창의 Files 탭을 이용하면 R 내부에서도 할 수 있다.</p></li>
 <li><p>최상위 폴더 아래에 개별 R 프로젝트를 위한 폴더를 만든다. 과업에 걸맞는 폴더명(예: AI_Class_2025)을 부여한다. 이것을 R 외부에서 미리 해둘 수도 있고, R 내부에서 프로젝트를 생성할 때 할 수도 있다. 후자를 추천한다.</p></li>
-</ul></section><section id="r-프로젝트-만들기" class="level4" data-number="3.1.2"><h4 data-number="3.1.2" class="anchored" data-anchor-id="r-프로젝트-만들기">
-<span class="header-section-number">3.1.2</span> R 프로젝트 만들기</h4>
+</ul>
+</section>
+<section id="r-프로젝트-만들기" class="level4" data-number="3.1.2">
+<h4 data-number="3.1.2" class="anchored" data-anchor-id="r-프로젝트-만들기"><span class="header-section-number">3.1.2</span> R 프로젝트 만들기</h4>
 <p>두 가지 방법이 있다.</p>
 <ul>
 <li><p>최상단 메뉴를 이용: File &gt; New Project</p></li>
@@ -1346,12 +1343,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>3단계: ’Directory name:’에 과제를 위한 폴더명을 타이핑한다(예: AI_Class_2025). ’Create project as subdirectory of:’에 최상위 폴더(예: R_Projects)를 선택한다.</p></li>
 </ul>
 <div id="fig-R-project" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-R-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-R-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="https://r4ds.hadley.nz/diagrams/new-project.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="그림&nbsp;3: R 프로젝트의 생성 절차"><img src="https://r4ds.hadley.nz/diagrams/new-project.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-R-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;3: R 프로젝트의 생성 절차
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 <p>Output 창의 Files 탭을 누르면, 다양한 기본 파일들이 해당 폴드에 생성되었음을 확인할 수 있다. 가장 중요한 파일은 .RProj라는 확장자를 가진 파일이다. 나중에 R 외부에서 이 파일을 더블클릭하면 R 프로젝트를 열 수 있다.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1370,33 +1369,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section><section id="옵션의-변경" class="level4" data-number="3.1.3"><h4 data-number="3.1.3" class="anchored" data-anchor-id="옵션의-변경">
-<span class="header-section-number">3.1.3</span> 옵션의 변경</h4>
+</section>
+<section id="옵션의-변경" class="level4" data-number="3.1.3">
+<h4 data-number="3.1.3" class="anchored" data-anchor-id="옵션의-변경"><span class="header-section-number">3.1.3</span> 옵션의 변경</h4>
 <p>RStudio의 기본 세팅값을 바꿀 수 있는 다양한 옵션이 존재한다. Tools &gt; Global Options를 선택하면 <a href="#fig-global-options" class="quarto-xref">그림&nbsp;4</a> 과 같은 화면을 볼 수 있을 것이다. 다음의 두 가지를 해보라.</p>
 <ul>
 <li><p>자신이 좀 숙달된 R 사용자가 되었다고 판단되는 즈음에, 가운데 Workspace 부분을 그림과 동일하게 변경해보라. 디폴트는 체크가 되어 있는 것인데, 프로젝트를 다시 열었을 때 그 전에 만들어 둔 데이터나 객체가 모두 그대로 남아있게 한다. 초보자에게는 이것이 좋을 것이다. 그러나 새로운 세션을 시작할 때 마다 그 전의 흔적을 밀어버리고, 다시 모든 코드를 실행하여 결과를 새로이 얻는 것이, 프로그래밍 측면에서는 ‘완전한’ 일이다.</p></li>
 <li><p>왼쪽에서 Apearance를 선택한 후, ’Editor font size:’나 ’Editor theme’을 변경하여 자신의 선호를 반영하라.</p></li>
 </ul>
 <div id="fig-global-options" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-global-options-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-global-options-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="https://r4ds.hadley.nz/diagrams/rstudio/clean-slate.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="그림&nbsp;4: 옵션의 변경"><img src="https://r4ds.hadley.nz/diagrams/rstudio/clean-slate.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-global-options-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;4: 옵션의 변경
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
-</section></section><section id="스크립트-만들기" class="level3" data-number="3.2"><h3 data-number="3.2" class="anchored" data-anchor-id="스크립트-만들기">
-<span class="header-section-number">3.2</span> 스크립트 만들기</h3>
-<section id="console에서-script-editor로" class="level4" data-number="3.2.1"><h4 data-number="3.2.1" class="anchored" data-anchor-id="console에서-script-editor로">
-<span class="header-section-number">3.2.1</span> Console에서 Script Editor로</h4>
+</section>
+</section>
+<section id="스크립트-만들기" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="스크립트-만들기"><span class="header-section-number">3.2</span> 스크립트 만들기</h3>
+<section id="console에서-script-editor로" class="level4" data-number="3.2.1">
+<h4 data-number="3.2.1" class="anchored" data-anchor-id="console에서-script-editor로"><span class="header-section-number">3.2.1</span> Console에서 Script Editor로</h4>
 <p>Console은 명령어를 입력하고 그 결과를 볼 수 있는 곳이다. 이것은 Base R의 기본 기능을 RStudio가 충실하게 구현한 것이다. 그런데 제법 복잡한 R 프로젝트를 수행하고자 할 때 Console을 이용하는 방식은 제한점이 많다.</p>
 <ul>
 <li><p>다양하고 복잡한 R 명령어를 실행하고 그 결과를 보기에는 공간이 협소하다.</p></li>
 <li><p>Console에서 행한 것은 저장되지 않는다. 보다 정확하게 말하면, 산출물은 저장될 수 있지만, 그러한 산출물을 얻는데 동원된 일련의 코드는 저장되지 않는다. RStudio를 나갔다가 다시 들어오면 객체, 플롯 등의 산출물은 그대로 남아 있지만 어떤 과정을 거쳐 그러한 결과물을 산출했는지에 대한 것을 남아 있지 않다. 이런 점은 상당한 기간이 지난 후에는 더 큰 문제로 다가온다.</p></li>
 </ul>
 <p>이러한 의미에서 R을 가지고 행한 것을 모두 저장하는, 일종의 연구노트와 같은 것이 필요하다. 이것을 R 스크립트(script)라고 부르는데, 좌상의 Editor 창에서 스크립트를 다루고, <code>.R</code>이라는 확장자를 가진 파일로 저장한다.</p>
-</section><section id="스크립트-파일-생성하고-저장하기" class="level4" data-number="3.2.2"><h4 data-number="3.2.2" class="anchored" data-anchor-id="스크립트-파일-생성하고-저장하기">
-<span class="header-section-number">3.2.2</span> 스크립트 파일 생성하고 저장하기</h4>
+</section>
+<section id="스크립트-파일-생성하고-저장하기" class="level4" data-number="3.2.2">
+<h4 data-number="3.2.2" class="anchored" data-anchor-id="스크립트-파일-생성하고-저장하기"><span class="header-section-number">3.2.2</span> 스크립트 파일 생성하고 저장하기</h4>
 <p>스크립트 파일을 생성하는 세 가지 정도의 방법이 있다.</p>
 <ul>
 <li><p>File &gt; New File &gt; R Script 선택</p></li>
@@ -1405,23 +1410,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>이렇게 하면 <a href="#fig-four-panes" class="quarto-xref">그림&nbsp;5</a> 과 같이 좌상에 Editor 창이 생성된다. 그 안에서 그림에서 보는 바와 같이 코드를 작성하게 된다.</p>
 <div id="fig-four-panes" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-four-panes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-four-panes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="https://docs.posit.co/ide/user/ide/guide/ui/images/rstudio-panes-labeled.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="그림&nbsp;5: 네 개의 창(https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html)"><img src="https://docs.posit.co/ide/user/ide/guide/ui/images/rstudio-panes-labeled.jpeg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-four-panes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;5: 네 개의 창(<a href="https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html" class="uri">https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html</a>)
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 <p>스크립트 파일에 이름을 부여하고 저장한다.</p>
 <ul>
 <li><p>File &gt; Save 선택</p></li>
 <li><p>Save current document 아이콘 클릭</p></li>
 <li><p>단축키(Ctrl + S) 실행</p></li>
-</ul></section><section id="스크립트-파일에서의-실행" class="level4" data-number="3.2.3"><h4 data-number="3.2.3" class="anchored" data-anchor-id="스크립트-파일에서의-실행">
-<span class="header-section-number">3.2.3</span> 스크립트 파일에서의 실행</h4>
+</ul>
+</section>
+<section id="스크립트-파일에서의-실행" class="level4" data-number="3.2.3">
+<h4 data-number="3.2.3" class="anchored" data-anchor-id="스크립트-파일에서의-실행"><span class="header-section-number">3.2.3</span> 스크립트 파일에서의 실행</h4>
 <p>앞에서 Console에서 했던 모든 일을 동일하게 할 수 있다. 단 실행 방식이 조금 다르다. 앞에서 생성한 <code>df</code> 데이터 프레임의 <code>a</code> 벡터(변수)의 평균값을 구하기 위해 이전과 동일하게 입력한다. 그런데 프롬프트가 없고, [enter]를 눌러도 실행되지 않는다.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">a</span><span class="op">)</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(df<span class="sc">$</span>a)</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>우선 실행할 코드 라인 혹은 코드의 영역을 지정해야 한다. 두 가지 방법이 있다.</p>
 <ul>
@@ -1434,12 +1443,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Editor 창의 우상에 있는 ‘Run the current line or selection’ 아이콘을 클릭(<a href="#fig-run-script" class="quarto-xref">그림&nbsp;6</a> 참조)</p></li>
 </ul>
 <div id="fig-run-script" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-run-script-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-run-script-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="https://docs.posit.co/ide/user/ide/guide/code/images/run-current-line.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="그림&nbsp;6: 스크립트 파일에서의 실행(https://docs.posit.co/ide/user/ide/guide/code/execution.html)"><img src="https://docs.posit.co/ide/user/ide/guide/code/images/run-current-line.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-run-script-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;6: 스크립트 파일에서의 실행(<a href="https://docs.posit.co/ide/user/ide/guide/code/execution.html" class="uri">https://docs.posit.co/ide/user/ide/guide/code/execution.html</a>)
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 <p>이전의 실행을 반복하고자 할 때는 다음과 같이 하면 된다.</p>
 <ul>
@@ -1449,25 +1460,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>스크립트 파일 내 모든 코드를 실행하고자 할 때는 다음과 같이 하면 된다.</p>
 <ul>
 <li>단축키(<strong>Crtl + Shift + S</strong>)</li>
-</ul></section><section id="코멘트" class="level4" data-number="3.2.4"><h4 data-number="3.2.4" class="anchored" data-anchor-id="코멘트">
-<span class="header-section-number">3.2.4</span> 코멘트</h4>
+</ul>
+</section>
+<section id="코멘트" class="level4" data-number="3.2.4">
+<h4 data-number="3.2.4" class="anchored" data-anchor-id="코멘트"><span class="header-section-number">3.2.4</span> 코멘트</h4>
 <p>코드에 대한 코멘트를 스크립트 파일 곳곳에 남겨두면 나중에 코드 작성의 의도를 보다 쉽게 파악할 수 있다. 이와 관련하여 두 가지 사항을 알아두면 유용하다.</p>
 <p>첫째, # 표시 뒤의 것은 R이 실행하지 않기 때문에 중간중간에 # 표시를 하고 그 뒤에 자신의 코멘트를 남겨두는 것을 권한다.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">a</span><span class="op">)</span> <span class="co"># 세 사람의 나이 평균을 구함. 첫 번째 사람 나이가 엄청나게 많음.</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(df<span class="sc">$</span>a) <span class="co"># 세 사람의 나이 평균을 구함. 첫 번째 사람 나이가 엄청나게 많음.</span></span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>둘째, 코드가 길어지면, 그것을 몇 개의 섹션으로 나누고 그것에 코멘트를 달아 줄 수 있다. 단축키(<strong>Crtl + Shift + R</strong>)를 실행하여 섹션 라벨(Section label)을 달 수 있고, Editor 창의 왼쪽 하단에 있는 작은 아이콘을 이용해 섹션을 빠르게 이동할 수 있다.</p>
 <div id="fig-section-comment" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-section-comment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-section-comment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="https://r4ds.hadley.nz/screenshots/rstudio-nav.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="그림&nbsp;7: 섹션 코멘트 달기(https://r4ds.hadley.nz/workflow-style.html#sectioning-comments)"><img src="https://r4ds.hadley.nz/screenshots/rstudio-nav.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-section-comment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;7: 섹션 코멘트 달기(<a href="https://r4ds.hadley.nz/workflow-style.html#sectioning-comments" class="uri">https://r4ds.hadley.nz/workflow-style.html#sectioning-comments</a>)
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 
 
-</section></section></section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> 맨 위로</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> 맨 위로</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1879,7 +1899,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       }
     }
   });
-  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
       <a href="./lab_02_2025.html" class="pagination-link" aria-label="R과 데이터사이언스 과정">
@@ -1888,7 +1910,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p>Copyright 2024, Sang-Il Lee</p>
 </div>   
@@ -1897,7 +1920,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sangillee66/data_science/issues/new" class="toc-action"><i class="bi bi-github"></i>이슈 보고</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-<li class="nav-item compact">
+    <li class="nav-item compact">
     <a class="nav-link" href="https://sangillee.snu.ac.kr/">
       <i class="bi bi-house" role="img">
 </i> 
@@ -1916,9 +1939,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
   </li>  
 </ul>
-</div>
+    </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
@@ -1950,6 +1974,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 })();
           </script>
+
+
 
 
 </body></html>

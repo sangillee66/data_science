@@ -1,0 +1,579 @@
+---
+title: |
+  | [R Lecture 9]{style="color:coral;font-size:0.6em"}   
+  | [웹 앱 개발: 인터랙티브 시각화]{style="font-size:1em"} 
+author: <br> 이상일(서울대학교 지리교육과 교수)
+date: 2025-11-11
+format: 
+  revealjs:
+    logo: snu_edu_1.png
+    footer: https://sangillee.snu.ac.kr/
+    transition: fade
+    transition-speed: fast
+    margin: 0.05
+    center: false
+    # smaller: false
+    # scrollable: false
+    code-link: true
+    code-line-numbers: false
+    code-copy: true
+    code-overflow: scroll
+    slide-number: true
+    width: 960 * 1.5
+    height: 700 * 1.5
+    lightbox: false
+    # min-scale: 1
+    # max-scale: 1
+    pointer:
+      pointerSize: 20
+      color: red
+    menu: true
+    embed-resources: false
+    theme: [default, custom_hq_pretendard_step.scss] # 슬라이드 본문 폰트 크기 조정
+    revealjs-plugins:
+      - pointer
+    css: styles.css
+execute: 
+  warning: false
+  error: false
+  freeze: auto  
+dpi: 600
+editor: visual
+webr: 
+  show-startup-message: false     
+  packages: []
+filters:
+  - webr
+# suppress-bibliography: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# [기본 개념]{style="color:coral"}
+
+## Quarto/R 기반의 웹 앱 개발 프레임워크
+
+![](images/clipboard-4226295984.png)
+
+## 동적ㆍ반응형 시각화의 구현
+
+-   역동성과 상호작용성이 부가된 시각화
+
+-   구현 방식
+
+    -   임베딩(embedding): 외부 콘텐츠 삽입
+
+    -   동적ㆍ반응형 내용 요소의 직접 제작
+
+## 임베딩
+
+-   개념
+
+    -   외부 웹 사이트/앱의 콘텐츠를 현재 웹 사이트/앱 안에 삽입하여 보여주는 기법
+
+    -   HTML의 `iframe` 태그 활용
+
+    -   별도의 페이지 전환 없이 다른 서비스나 시각화 결과를 한 웹 앱에 통합
+
+    -   일부 사이트는 임베딩 불가능
+
+-   대상
+
+    -   동적ㆍ반응형 시각화 웹 사이트/앱
+
+    -   상호작용형 교육ㆍ협업 도구: Padlet, Mentimeter, Google Forms 등
+
+    -   동영상: YouTube
+
+## 직접 제작
+
+-   R 패키지 활용
+
+    -   동적ㆍ반응형 내용 요소 제작을 지원하는 R 자체 패키지
+
+    -   [**gganimate**](https://gganimate.com/)**,** [**ggiraph**](https://davidgohel.github.io/ggiraph/)
+
+-   R 래퍼 패키지 활용
+
+    -   JS 라이브러리와의 가교
+
+    -   [**DT**](https://rstudio.github.io/DT/), [**plotly**](https://plotly.com/r/)
+
+-   결합
+
+    -   R 패키지로 제작한 정적 콘텐츠를 R 래퍼 패키지를 통해 동적ㆍ반응형 콘텐츠로 전환
+
+    -   [**ggplot2**](https://ggplot2.tidyverse.org/) + [**plotly**](https://plotly.com/r/)
+
+# [임베딩]{style="color:coral"}
+
+## 사례 1
+
+-   통계놀이터(<https://kosis.kr/edu/>)
+
+::: panel-tabset
+## Code
+
+```         
+<iframe src="https://kosis.kr/edu/share.do?shareID=S0500_16" 
+loading="lazy" style="width: 100%; height: 600px; border: 
+0px none;" allow="web-share; clipboard-write"></iframe>
+```
+
+## Result
+
+```{=html}
+<iframe data-external="1" src="https://kosis.kr/edu/share.do?shareID=S0500_16" loading="lazy" style="width: 100%; height: 600px; border:
+0px none;" allow="web-share; clipboard-write">
+```
+
+</iframe>
+:::
+
+## 사례 2
+
+-   Our World in Data(<https://ourworldindata.org/>)
+
+::: panel-tabset
+## Code
+
+```         
+<iframe src="https://ourworldindata.org/explorers/population-and-demography?indicator=Fertility+rate&Sex=Both+sexes&Age=Total&Projection+scenario=Medium&country=Asia+%28UN%29~Europe+%28UN%29~Africa+%28UN%29~Oceania+%28UN%29~Northern+America+%28UN%29~Latin+America+and+the+Caribbean+%28UN%29~OWID_WRL~KOR&tab=chart&hideControls=true" loading="lazy" style="width: 70%; height: 600px; border: 0px none;" allow="web-share; clipboard-write"></iframe>
+```
+
+## Result
+
+```{=html}
+<iframe data-external="1" src="https://ourworldindata.org/explorers/population-and-demography?indicator=Fertility+rate&amp;Sex=Both+sexes&amp;Age=Total&amp;Projection+scenario=Medium&amp;country=Asia+%28UN%29~Europe+%28UN%29~Africa+%28UN%29~Oceania+%28UN%29~Northern+America+%28UN%29~Latin+America+and+the+Caribbean+%28UN%29~OWID_WRL~KOR&amp;tab=chart&amp;hideControls=true" loading="lazy" style="width: 70%; height: 600px; border: 0px none;" allow="web-share; clipboard-write">
+
+</iframe>
+```
+:::
+
+# [테이블]{style="color:coral"}
+
+## 개요
+
+-   테이블 역시 시각화의 일부
+
+    -   데이터 변형 및 요약을 거친 정적 테이블
+
+    -   시각성이 가미된 정적 테이블
+
+    -   인터랙티브 테이블
+
+-   테이블 디자인 원칙(핸즈온 데이터 시각화, 2022)
+
+    -   열 제목을 데이터 상단에 눈에 띄게 만들어라.
+
+    -   밝은 음영을 사용해 열이나 행을 구분하라.
+
+    -   읽기 쉽도록 텍스트는 왼쪽 정렬하고 숫자는 오른쪽 정렬하라.
+
+    -   레이블을 첫 번째 행에만 배치하여 중복을 피하라.
+
+    -   테이터를 그룹화 및 정렬하여 의미 있는 패턴을 강조하라.
+
+## 도구의 분류
+
+![[https://r-graph-gallery.com/table.html](https://r-graph-gallery.com/table.html){style="font-size:1.25rem"}](https://sangillee.snu.ac.kr/2024_AIEDAP/images/clipboard-3923512479.png)
+
+## [**gt**](https://gt.rstudio.com/) 패키지
+
+![[https://gt.rstudio.com/](https://gt.rstudio.com/){style="font-size:1.25rem"}](https://gt.rstudio.com/reference/figures/gt_workflow_diagram.svg){fig-align="center"}
+
+## [**gt**](https://gt.rstudio.com/) 패키지
+
+![[https://gt.rstudio.com/](https://gt.rstudio.com/){style="font-size:1.25rem"}](https://gt.rstudio.com/reference/figures/gt_parts_of_a_table.svg){fig-align="center"}
+
+## [**gt**](https://gt.rstudio.com/) 패키지
+
+![[https://towardsdatascience.com/exploring-the-gt-grammar-of-tables-package-in-r-7fff9d0b40cd](https://towardsdatascience.com/exploring-the-gt-grammar-of-tables-package-in-r-7fff9d0b40cd){style="font-size:1.25rem"}](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*lmJ_N_Hy3xGaB4W66L40FQ.jpeg)
+
+## [**flextable**](https://davidgohel.github.io/flextable/)패키지
+
+-   웹북(<https://ardata-fr.github.io/flextable-book/>)
+
+![[https://twitter.com/DavidGohel/status/1376892794627883016/photo/1](https://twitter.com/DavidGohel/status/1376892794627883016/photo/1){style="font-size:1.25rem"}](images/clipboard-1943740998.png)
+
+## 인터랙티브 테이블
+
+| 자바스크립트 라이브러리 | R 래퍼 패키지 |
+|------------------------------------|------------------------------------|
+| [DataTables](https://datatables.net/) | [DT](https://rstudio.github.io/DT/) |
+| [Tanstack Table](https://tanstack.com/table/v7/) | [reactable](https://glin.github.io/reactable/) |
+
+## 래퍼 패키지: [**DT**](https://rstudio.github.io/DT/)
+
+-   [DataTables](https://datatables.net/): 자바스크립트 라이브러리
+
+-   R 래퍼 패키지: [**DT**](https://rstudio.github.io/DT/)
+
+    -   웹북: [D3 for R Users](https://jtr13.github.io/d3book/)
+
+![[https://datatables.net/](https://datatables.net/){style="font-size:1.25rem"}](https://sangillee.snu.ac.kr/2024_AIEDAP/images/clipboard-4023553912.png)
+
+## 래퍼 패키지: [**DT**](https://rstudio.github.io/DT/)
+
+-   Pagination: 페이지 이동 기능
+
+-   Instant search: 즉각적 검색 기능(Search에 타이핑하기 시작하면 즉각적으로 검색 결과 보여줌)
+
+-   Ordering/sorging: 컬럼 정렬 기능
+
+-   Multi-column ordering: 다중 컬럼 정렬 기능(컬럼 하나를 선택한 후 ctrl을 누른 상태에서 다른 컬럼을 선택)
+
+-   Filtering: 값 추림 기능
+
+-   Editable: 셀 값 수정 기능
+
+-   Buttons: 셀 숨기기 기능, CSV, PDF, XLSX 등의 확장자로 내보내기 등을 수행하는 버튼 생성 기능
+
+## 래퍼 패키지: [**DT**](https://rstudio.github.io/DT/) {.scrollable}
+
+::: panel-tabset
+## Code
+
+```{r}
+#| eval: false
+#| echo: true
+gapminder |> 
+  datatable(
+    filter = "top",
+    extensions = "Buttons",
+    options = list(
+      pageLength = 5,
+      autoWidth = TRUE,
+      dom = "Bfrtip",
+      buttons = c("copy", "excel", "pdf", "print")
+    )
+  )
+```
+
+## Result
+
+```{r}
+library(DT)
+library(gapminder)
+gapminder |> 
+  datatable(
+    filter = "top",
+    extensions = "Buttons",
+    options = list(
+      pageLength = 5,
+      autoWidth = TRUE,
+      dom = "Bftip",
+      buttons = c("copy", "excel", "pdf", "print")
+    )
+  )
+```
+:::
+
+# [차트]{style="color:coral"}
+
+## R 패키지: [**gganimate**](https://gganimate.com/)
+
+::: panel-tabset
+## Code
+
+```{r}
+#| eval: false
+#| echo: true
+library(gganimate)
+P <- gapminder |> 
+  ggplot(aes(x = gdpPercap, y = lifeExp, size = pop, color = continent)) +
+  geom_point(show.legend = FALSE, alpha = 0.7) +
+  scale_x_log10() +
+  scale_size(range = c(2, 12))
+P + transition_time(year) +
+  labs(title = "Year: {frame_time}")
+```
+
+## Result
+
+```{r}
+#| echo: false
+#| fig-width: 4
+#| fig-asp: 0.618
+library(gganimate)
+P <- gapminder |> 
+  ggplot(aes(x = gdpPercap, y = lifeExp, size = pop, color = continent)) +
+  geom_point(show.legend = FALSE, alpha = 0.7) +
+  scale_x_log10() +
+  scale_size(range = c(2, 12))
+P + transition_time(year) +
+  labs(title = "Year: {frame_time}")
+```
+:::
+
+## R 패키지: [**ggiraph**](https://davidgohel.github.io/ggiraph/) 패키지
+
+-   [**ggplot2**](https://ggplot2.tidyverse.org/) 패키지의 확장
+
+-   상호작용형 기하객체(geometry): `geom_*_interactive`
+
+    -   `geom_point()`: `geom_point_interactive()`
+
+    -   `geom_sf()`: `geom_sf_interactive()`
+
+    -   ...
+
+-   상호작용형 시각속성(aethetics)
+
+    -   `toolitp`
+
+    -   `onclick`
+
+    -   `data_id`
+
+-   웹북: [ggiraph-book](https://www.ardata.fr/ggiraph-book/)
+
+## R 패키지: [**ggiraph**](https://davidgohel.github.io/ggiraph/) 패키지
+
+::: panel-tabset
+## Code
+
+```{r}
+#| eval: false
+#| echo: true
+library(tidyverse)
+library(ggiraph)
+data <- mtcars
+data <- data |> rownames_to_column(var = "carname")
+gg_point = ggplot(data = data) +
+  geom_point_interactive(
+    aes(x = wt, y = qsec, color = disp, 
+        tooltip = carname, data_id = carname)
+  ) + 
+  theme_minimal()
+girafe(ggobj = gg_point)
+```
+
+## Result
+
+```{r}
+library(tidyverse)
+library(ggiraph)
+data <- mtcars
+data <- data |> rownames_to_column(var = "carname")
+gg_point = ggplot(data = data) +
+  geom_point_interactive(
+    aes(x = wt, y = qsec, color = disp, 
+        tooltip = carname, data_id = carname)
+  ) + 
+  theme_minimal()
+girafe(ggobj = gg_point)
+```
+:::
+
+## 래퍼 패키지 활용
+
+| 자바스크립트 라이브러리 | R 래퍼 패키지 |
+|------------------------------------|------------------------------------|
+| [Plotly](https://plotly.com/graphing-libraries/) | [plotly](https://plotly.com/r/) |
+| [D3](https://d3js.org/) | [r2d3](https://rstudio.github.io/r2d3/) |
+| [Highcharts](https://www.highcharts.com/) | [highcharter](https://jkunst.com/highcharter/) |
+| [ECharts](https://echarts.apache.org/) | [echarts4r](https://echarts4r.john-coene.com/), [echarty](https://helgasoft.github.io/echarty/) |
+| [dygraphs](https://dygraphs.com/) | [dygraphs](https://rstudio.github.io/dygraphs/) |
+| [Google Charts](https://developers.google.com/chart?hl=ko) | [googleVis](https://mages.github.io/googleVis/articles/googleVis_intro.html) |
+| [Chart.js](https://www.chartjs.org/docs/latest/) | [chartjs](https://tutuchan.github.io/chartjs/) |
+| [three.js](https://threejs.org/) | [r3js](https://shwilks.github.io/r3js/) |
+
+: {tbl-colwidths="\[50,50\]"}
+
+## 래퍼 패키지: [**plotly**](https://plotly.com/r/) 패키지
+
+-   [Plotly](https://plotly.com/graphing-libraries/): 자바스크립트 라이브러리
+
+-   R 래퍼 패키지: [**plotly**](https://plotly.com/r/) package
+
+    -   `ggplotly()` 함수
+
+![[https://plotly.com/](https://plotly.com/){style="font-size:1.25rem"}](https://sangillee.snu.ac.kr/2024_AIEDAP/images/clipboard-933558486.png)
+
+## 래퍼 패키지: [**plotly**](https://plotly.com/r/) 패키지
+
+::: panel-tabset
+## Code
+
+```{r}
+#| eval: false
+#| echo: true
+library(plotly)
+gapminder |> 
+  filter(year == 2007) |> 
+  plot_ly(
+    x = ~gdpPercap, 
+    y = ~lifeExp, 
+    color = ~continent,
+    text = ~paste(
+      "Country: ", country, 
+      "<br>GDP per capita: ", gdpPercap, 
+      "$<br>Life Expectancy at Birth:", lifeExp
+    )
+  )
+```
+
+## Result
+
+```{r}
+library(plotly)
+gapminder |> 
+  filter(year == 2007) |> 
+  plot_ly(
+    x = ~gdpPercap, 
+    y = ~lifeExp, 
+    color = ~continent,
+    text = ~paste(
+      "Country: ", country, 
+      "<br>GDP per capita: ", gdpPercap, 
+      "$<br>Life Expectancy at Birth:", lifeExp
+    )
+  )
+```
+:::
+
+## 래퍼 패키지: [**plotly**](https://plotly.com/r/) 패키지
+
+::: panel-tabset
+## Code
+
+```{r}
+#| eval: false
+#| echo: true
+gapminder |> 
+  plot_ly(
+    x = ~log10(gdpPercap), y = ~lifeExp,
+    text = ~paste(
+      "Country:", country, 
+      "</br>Continent:", continent, 
+      "</br>lifeExp:", lifeExp
+    )
+  ) |> 
+  add_markers(
+    color = ~continent, 
+    size = ~pop, 
+    frame = ~year, 
+    marker = list(sizeref = 0.2, sizemode = "area")
+  )
+```
+
+## Result
+
+```{r}
+gapminder |> 
+  plot_ly(
+    x = ~log10(gdpPercap), y = ~lifeExp,
+    text = ~paste(
+      "Country:", country, 
+      "</br>Continent:", continent, 
+      "</br>lifeExp:", lifeExp
+    )
+  ) |> 
+  add_markers(
+    color = ~continent, 
+    size = ~pop, 
+    frame = ~year, 
+    marker = list(sizeref = 0.2, sizemode = "area")
+  )
+```
+:::
+
+## 래퍼 패키지: [**plotly**](https://plotly.com/r/) 패키지의 `ggplotly()` 함수
+
+::: panel-tabset
+## Code
+
+```{r}
+#| eval: false
+#| echo: true
+P <- gapminder |> 
+  filter(year == 2007) |> 
+  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent)) +
+  geom_point() + 
+  scale_color_brewer(palette = "Set2") +
+  theme_minimal()
+ggplotly(P)
+```
+
+## Result
+
+```{r}
+#| echo: false
+P <- gapminder |> 
+  filter(year == 2007) |> 
+  ggplot(aes(x = gdpPercap, y = lifeExp, color = continent)) +
+  geom_point() + 
+  scale_color_brewer(palette = "Set2") +
+  theme_minimal()
+ggplotly(P)
+```
+:::
+
+## 래퍼 패키지: [**echarts4r**](https://echarts4r.john-coene.com/) 패키지
+
+::: panel-tabset
+## Code
+
+```{r}
+#| eval: false
+#| echo: true
+library(tidyverse)
+library(echarts4r)
+library(RColorBrewer)
+my.data <- read_rds("D:/My R/Population Geography/wpp_2024.rds")
+data.sel <- my.data |> 
+  filter(
+    type == "Subregion" | region_name == "Northern America",
+    year == 2025
+  )
+custom_colors <- brewer.pal(n = 6, name = "Set2")
+data.sel |> 
+  arrange(median_age) |> 
+  mutate(
+    median_age = round(median_age, digits = 1)
+  ) |> 
+  group_by(Region_NM) |> 
+  e_charts(region_name, width = "100%", height = "800px") |> 
+  e_bar(serie = median_age, stack = "grp") |> 
+  e_color(custom_colors) |> 
+  e_flip_coords() |> 
+  e_x_axis(name = "Median Age") |> 
+  e_tooltip() |> 
+  e_legend()
+```
+
+## Result
+
+```{r}
+#| echo: false
+library(tidyverse)
+library(echarts4r)
+library(RColorBrewer)
+my.data <- read_rds("D:/My R/Population Geography/wpp_2024.rds")
+# my.data |> 
+#   filter(
+#     type == "Region"
+#   ) |> 
+#   distinct(region_name) |> pull() -> UN.region.name
+data.sel <- my.data |> 
+  filter(
+    type == "Subregion" | region_name == "Northern America",
+    year == 2025
+  )
+custom_colors <- brewer.pal(n = 6, name = "Set2")
+data.sel |> 
+  arrange(median_age) |> 
+  mutate(
+    median_age = round(median_age, digits = 1)
+  ) |> 
+  group_by(Region_NM) |> 
+  e_charts(region_name, width = "100%", height = "750px") |> 
+  e_bar(serie = median_age, stack = "grp") |> 
+  e_color(custom_colors) |> 
+  e_flip_coords() |> 
+  e_x_axis(name = "Median Age") |> 
+  e_tooltip() |> 
+  e_legend()
+```
+:::
